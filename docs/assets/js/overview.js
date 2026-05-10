@@ -205,13 +205,24 @@
   }
 
   function renderExpiry(ex) {
+    // Determine the topmost non-zero series for each quarter so we can round
+    // only that segment per bar — fixes the mix of flat / rounded tops when
+    // stacking depth varies by quarter.
+    const topSeriesIdx = ex.quarters.map((_, qi) => {
+      for (let i = ex.series.length - 1; i >= 0; i--) {
+        if (ex.series[i].data[qi] > 0) return i;
+      }
+      return -1;
+    });
     const series = ex.series.map((s, i) => ({
       name: s.name,
       type: 'bar',
       stack: 'expiry',
       barMaxWidth: 28,
-      itemStyle: { borderRadius: i === 0 ? [0, 0, 6, 6] : i === ex.series.length - 1 ? [6, 6, 0, 0] : 0 },
-      data: s.data,
+      data: s.data.map((v, qi) => ({
+        value: v,
+        itemStyle: { borderRadius: topSeriesIdx[qi] === i ? [6, 6, 0, 0] : 0 },
+      })),
       emphasis: { focus: 'series' },
     }));
     const inst = ChartFactory.make(document.getElementById('chart-expiry'), {
