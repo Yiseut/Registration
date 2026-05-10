@@ -14,7 +14,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC_CSV = ROOT / "data" / "registration_records_master.csv"
-SRC_MANIFEST = ROOT / "data" / "manifest.json"
 OUT_DIR = ROOT / "docs" / "assets" / "data"
 TRACK_DIR = OUT_DIR / "tracks"
 
@@ -415,8 +414,13 @@ def main() -> None:
         card["_raw"] = row
         records.append(card)
 
+    # Anchor "generated_at" to the source CSV's mtime, not the current clock.
+    # This keeps the JSON output byte-identical when the data hasn't changed,
+    # so git push noise vanishes when there's nothing real to publish.
+    csv_mtime = datetime.fromtimestamp(SRC_CSV.stat().st_mtime)
+
     overview = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "generated_at": csv_mtime.isoformat(timespec="seconds"),
         "kpi": kpi_block(records),
         "segments": segment_summary(records),
         "portfolio_matrix": portfolio_matrix(records),
@@ -429,7 +433,7 @@ def main() -> None:
         json.dumps(overview, ensure_ascii=False, indent=2), encoding="utf-8")
 
     manifest = {
-        "generated_at": overview["generated_at"],
+        "generated_at": csv_mtime.isoformat(timespec="seconds"),
         "tracks": [
             {**meta,
              "url": f"tracks/{meta['key']}.html",

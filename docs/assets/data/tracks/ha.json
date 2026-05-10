@@ -159,21 +159,21 @@
       "爱美客",
       "其胜生物",
       "海雅美",
-      "LG化学 LG Chem, Ltd.",
       "BNC",
+      "LG化学 LG Chem, Ltd.",
       "杭州协合",
       "麦施美学 / Merz",
-      "山东凯乐普生物工程有限公司",
-      "和康生物科技股份有限公司"
+      "和康生物科技股份有限公司",
+      "山东凯乐普生物工程有限公司"
     ],
     "indications": [
       "鼻唇沟",
       "肤质改善",
-      "中面部",
       "下颌部",
+      "中面部",
       "鼻部",
-      "颈部",
       "额部",
+      "颈部",
       "手部",
       "唇部"
     ],
@@ -184,19 +184,14 @@
         5
       ],
       [
-        5,
+        6,
         3,
         1
       ],
       [
-        6,
+        5,
         3,
         3
-      ],
-      [
-        0,
-        10,
-        2
       ],
       [
         0,
@@ -204,7 +199,12 @@
         2
       ],
       [
-        3,
+        0,
+        10,
+        2
+      ],
+      [
+        2,
         2,
         1
       ],
@@ -229,13 +229,13 @@
         4
       ],
       [
-        2,
+        3,
         0,
         1
       ],
       [
         0,
-        6,
+        7,
         3
       ],
       [
@@ -259,7 +259,7 @@
         2
       ],
       [
-        2,
+        3,
         2,
         1
       ],
@@ -274,27 +274,27 @@
         2
       ],
       [
+        5,
+        0,
+        1
+      ],
+      [
         6,
         0,
         1
       ],
       [
-        5,
-        0,
-        1
-      ],
-      [
+        2,
         3,
-        3,
-        1
-      ],
-      [
-        3,
-        5,
         1
       ],
       [
         2,
+        5,
+        1
+      ],
+      [
+        3,
         1,
         1
       ],
@@ -304,7 +304,7 @@
         2
       ],
       [
-        3,
+        2,
         1,
         1
       ],
@@ -324,18 +324,18 @@
         1
       ],
       [
-        5,
+        6,
         5,
         1
       ],
       [
         0,
-        7,
+        6,
         4
       ],
       [
-        2,
-        6,
+        3,
+        7,
         1
       ],
       [
@@ -740,7 +740,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLBELLA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 ALLERGAN",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20213130109",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -818,7 +818,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20213130485",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1230,7 +1230,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20223130141",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1528,7 +1528,7 @@
       "product_name": "注射用交联透明质酸钠凝胶 Juvéderm ULTRA",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20153131709",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2395,7 +2395,7 @@
       "product_name": "注射用交联透明质酸钠凝胶 Juvéderm ULTRA Plus",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20153131708",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2470,7 +2470,7 @@
       "product_name": "注射用交联透明质酸钠凝胶 Juvéderm Voluma",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20193130410",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2699,7 +2699,7 @@
       "product_name": "注射用交联透明质酸钠凝胶 Juvéderm VOLIFT with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20203130165",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2849,7 +2849,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUX",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 ALLERGAN",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20243130405",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2888,7 +2888,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm ULTRA PLUS XC",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 ALLERGAN",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20243130412",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2927,7 +2927,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm ULTRA XC",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 ALLERGAN",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20243130436",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3404,8 +3404,7 @@
       "portfolio_segments": [
         "玻尿酸",
         "再生类",
-        "EBD 设备类",
-        "肉毒素"
+        "EBD 设备类"
       ],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
@@ -3521,8 +3520,7 @@
       "portfolio_segments": [
         "玻尿酸",
         "再生类",
-        "EBD 设备类",
-        "肉毒素"
+        "EBD 设备类"
       ],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
@@ -4406,7 +4404,7 @@
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 Allergan / AbbVie",
+      "registrant": "艾尔建 / AbbVie",
       "certificate_no": "国械注进20213130485",
       "origin": "进口",
       "category": "透明质酸钠",

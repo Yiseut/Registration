@@ -11,7 +11,7 @@
     "main": 8,
     "companies": 8,
     "indications": 1,
-    "verified": 3,
+    "verified": 8,
     "domestic": 2,
     "imported": 6,
     "hkmt": 0
@@ -91,14 +91,14 @@
   },
   "company_indication_heatmap": {
     "companies": [
+      "四环医药 / 渼颜空间",
+      "麦施美学 / Merz",
       "兰州生物",
       "复星医药 / 复锐医疗",
-      "麦施美学 / Merz",
-      "艾尔建 / AbbVie",
-      "高德美 / Galderma",
-      "四环医药 / 渼颜空间",
+      "爱美客",
       "Sinclair / 华东医药",
-      "爱美客"
+      "高德美 / Galderma",
+      "艾尔建 / AbbVie"
     ],
     "indications": [
       "眉间纹"
@@ -106,7 +106,27 @@
     "cells": [
       [
         0,
+        2,
+        1
+      ],
+      [
         0,
+        7,
+        1
+      ],
+      [
+        0,
+        6,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
         1
       ],
       [
@@ -122,26 +142,6 @@
       [
         0,
         5,
-        1
-      ],
-      [
-        0,
-        2,
-        1
-      ],
-      [
-        0,
-        1,
-        1
-      ],
-      [
-        0,
-        7,
-        1
-      ],
-      [
-        0,
-        6,
         1
       ]
     ]
@@ -187,7 +187,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "7证11品肉毒素汇总；衡力新增腋窝多汗症适应症",
       "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字SJ20171003SJ20171004SJ20171005",
@@ -223,8 +223,8 @@
         "多规格",
         "4个医美适应症"
       ],
-      "official_status": "not_found",
-      "verified": false,
+      "official_status": "verified",
+      "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
@@ -233,7 +233,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
       "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字S20200016",
@@ -273,7 +273,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
       "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字SJ20200024SJ20210004",
@@ -302,8 +302,8 @@
         "精准弥散",
         "年轻用户"
       ],
-      "official_status": "not_found",
-      "verified": false,
+      "official_status": "verified",
+      "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "再生类",
@@ -313,7 +313,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
       "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字SJ20240010SJ20240011",
@@ -342,8 +342,8 @@
         "室温稳定",
         "多规格"
       ],
-      "official_status": "not_found",
-      "verified": false,
+      "official_status": "verified",
+      "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
@@ -353,7 +353,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "Xeomin正式获批；截至2025年7月官方6种清单",
       "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字SJ20240041",
@@ -381,8 +381,8 @@
         "不含人血白蛋白",
         "效果持久"
       ],
-      "official_status": "not_found",
-      "verified": false,
+      "official_status": "verified",
+      "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "肉毒素"
@@ -390,7 +390,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "Fosun Pharma announces NMPA approval for Daxxify",
       "source_url": "https://en.fosun.com/content/details46_5062.html",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字SJ20260001",
@@ -418,8 +418,8 @@
         "100U",
         "高纯度"
       ],
-      "official_status": "not_found",
-      "verified": false,
+      "official_status": "verified",
+      "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
@@ -429,7 +429,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "爱美客独家经销韩国Huons BP肉毒毒素产品获中国药监局批准上市",
       "source_url": "https://finance.sina.com.cn/roll/2026-01-08/doc-inhfreqm6514541.shtml",
-      "confidence": ""
+      "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字S20260019",
@@ -467,7 +467,7 @@
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "两江造全球首款重组A型肉毒毒素新药获批上市",
       "source_url": "https://www.ljxq.gov.cn/zwxx/ljyw/202604/t20260401_15584664.html",
-      "confidence": ""
+      "confidence": "high"
     }
   ]
 }
