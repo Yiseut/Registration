@@ -1,0 +1,319 @@
+{
+  "track_key": "pcl",
+  "track_meta": {
+    "key": "pcl",
+    "name": "少女针 / PCL",
+    "tagline": "再生类小众但溢价高的细分",
+    "accent": "#C15F3C"
+  },
+  "kpi": {
+    "total": 5,
+    "main": 5,
+    "companies": 3,
+    "indications": 3,
+    "verified": 5,
+    "domestic": 3,
+    "imported": 2,
+    "hkmt": 0
+  },
+  "company_share": [
+    {
+      "name": "Sinclair / 华东医药",
+      "value": 2
+    },
+    {
+      "name": "山东采采 / 谷雨春",
+      "value": 2
+    },
+    {
+      "name": "四环医药 / 渼颜空间",
+      "value": 1
+    }
+  ],
+  "long_tail_company_count": 0,
+  "indication_share": [
+    {
+      "name": "鼻唇沟",
+      "value": 3
+    },
+    {
+      "name": "下颏/下颌部",
+      "value": 1
+    },
+    {
+      "name": "颞部",
+      "value": 1
+    }
+  ],
+  "origin_share": [
+    {
+      "name": "进口",
+      "value": 2
+    },
+    {
+      "name": "国产",
+      "value": 3
+    }
+  ],
+  "material_share": [
+    {
+      "name": "PCL",
+      "value": 5
+    }
+  ],
+  "timeline": {
+    "years": [
+      2021,
+      2024,
+      2025,
+      2026
+    ],
+    "values": [
+      1,
+      1,
+      2,
+      1
+    ]
+  },
+  "company_indication_heatmap": {
+    "companies": [
+      "Sinclair / 华东医药",
+      "山东采采 / 谷雨春",
+      "四环医药 / 渼颜空间"
+    ],
+    "indications": [
+      "鼻唇沟",
+      "下颏/下颌部",
+      "颞部"
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        1
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "PCL-国械注进20213130100",
+      "track": "pcl",
+      "track_name": "少女针 / PCL",
+      "strategic": "再生类",
+      "product_name": "注射用聚己内酯微球面部填充剂",
+      "company": "Sinclair / 华东医药",
+      "company_key": "sinclair",
+      "registrant": "Sinclair Pharma Limited",
+      "certificate_no": "国械注进20213130100",
+      "origin": "进口",
+      "category": "PCL少女针",
+      "material_family": "PCL",
+      "material_form": "PCL+CMC凝胶",
+      "approval_date": "2021-04-13",
+      "approval_year": 2021,
+      "valid_until": "",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "进口首证",
+        "PCL+CMC",
+        "30% PCL微球",
+        "12个月型",
+        "鼻唇沟"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "中国整形美容协会三正规平台 / 公众号交叉",
+      "source_title": "注射用聚己内酯微球面部填充剂价格对比；“少女针”来了！美容美到了鼻唇沟",
+      "source_url": "https://www.caparz.cn/index/product/detail/id/210.html",
+      "confidence": "high"
+    },
+    {
+      "id": "PCL-国械注准20243131626",
+      "track": "pcl",
+      "track_name": "少女针 / PCL",
+      "strategic": "再生类",
+      "product_name": "注射用聚己内酯微球面部填充剂",
+      "company": "山东采采 / 谷雨春",
+      "company_key": "山东采采 / 谷雨春",
+      "registrant": "山东采采医疗科技有限公司",
+      "certificate_no": "国械注准20243131626",
+      "origin": "国产",
+      "category": "PCL少女针",
+      "material_family": "PCL",
+      "material_form": "PCL微球凝胶悬液",
+      "approval_date": "2024-08-27",
+      "approval_year": 2024,
+      "valid_until": "",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "国产首款PCL",
+        "30% PCL微球",
+        "PCL+CMC",
+        "鼻唇沟"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "国家生物材料创新合作平台 / 华龙证券交叉",
+      "source_title": "喜报 | 热烈祝贺我院在孵项目获批第三类医疗器械注册证！",
+      "source_url": "https://mp.weixin.qq.com/s/oe8cKFLQIFHTjUZpgoXpdA",
+      "confidence": "high"
+    },
+    {
+      "id": "PCL-国械注准20253130671",
+      "track": "pcl",
+      "track_name": "少女针 / PCL",
+      "strategic": "再生类",
+      "product_name": "注射用聚己内酯微球面部填充剂",
+      "company": "四环医药 / 渼颜空间",
+      "company_key": "sihuan",
+      "registrant": "渼颜空间生物科技（吉林）有限公司",
+      "certificate_no": "国械注准20253130671",
+      "origin": "国产",
+      "category": "PCL少女针",
+      "material_family": "PCL",
+      "material_form": "PCL微球凝胶悬液",
+      "approval_date": "2025-03-31",
+      "approval_year": 2025,
+      "valid_until": "",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "国产PCL",
+        "2.0mL",
+        "PCL+CMC",
+        "鼻唇沟",
+        "四环医药",
+        "倾研"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类",
+        "肉毒素",
+        "玻尿酸"
+      ],
+      "source_account": "四环医药中期报告 / 医美部落公开页 / 兔灵产品库交叉",
+      "source_title": "四环医药中期报告；四环医药旗下「PCL面部微球」获批",
+      "source_url": "https://ir.sihuanpharm.com/media/rw2a3vqo/hkex-eps_20250915_11841228_0.pdf",
+      "confidence": "high"
+    },
+    {
+      "id": "PCL-国械注准20253132404",
+      "track": "pcl",
+      "track_name": "少女针 / PCL",
+      "strategic": "再生类",
+      "product_name": "注射用聚己内酯微球面部填充剂",
+      "company": "山东采采 / 谷雨春",
+      "company_key": "山东采采 / 谷雨春",
+      "registrant": "山东采采医疗科技有限公司",
+      "certificate_no": "国械注准20253132404",
+      "origin": "国产",
+      "category": "PCL少女针",
+      "material_family": "PCL",
+      "material_form": "PCL微球凝胶悬液",
+      "approval_date": "2025-11-28",
+      "approval_year": 2025,
+      "valid_until": "",
+      "primary_indication": "下颏/下颌部",
+      "indications": [
+        "下颏",
+        "下颌部"
+      ],
+      "tags": [
+        "同产品新增适应证",
+        "下颏",
+        "下颌部",
+        "可降解微球",
+        "国产PCL"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "丽和康",
+      "source_title": "医美快讯 | 国内首个“可降解微球类”+“下颏部位”填充剂横空出世！",
+      "source_url": "https://mp.weixin.qq.com/s/Yfc9O14pXJmRAfsUnLJBfQ",
+      "confidence": "high"
+    },
+    {
+      "id": "PCL-国械注进20263130151",
+      "track": "pcl",
+      "track_name": "少女针 / PCL",
+      "strategic": "再生类",
+      "product_name": "注射用聚己内酯微球面部填充剂",
+      "company": "Sinclair / 华东医药",
+      "company_key": "sinclair",
+      "registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
+      "certificate_no": "国械注进20263130151",
+      "origin": "进口",
+      "category": "PCL少女针",
+      "material_family": "PCL",
+      "material_form": "PCL+CMC凝胶",
+      "approval_date": "2026-04-21",
+      "approval_year": 2026,
+      "valid_until": "",
+      "primary_indication": "颞部",
+      "indications": [
+        "颞部"
+      ],
+      "tags": [
+        "进口PCL",
+        "Ellansé-M",
+        "33.1% PCL微球",
+        "颞部",
+        "伊妍仕恒耀"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "华东医药公告 / NMPA官方查询",
+      "source_title": "华东医药：关于全资子公司获得医疗器械注册证的公告",
+      "source_url": "http://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12171420&stockid=000963",
+      "confidence": "high"
+    }
+  ]
+}

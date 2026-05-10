@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Registration Insights · 中国医美注册准入情报</title>
+<meta name="description" content="Claude 风格的中国医美注册准入 Dashboard:厂家组合策略、适应症-材料热力、证书到期压力、国产/进口演化、赛道集中度。" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="stylesheet" href="assets/css/theme.css" />
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <span>Registration <strong>Insights</strong></span>
+  </div>
+  <nav id="nav-root">
+    <a href="index.html" class="active">总览</a>
+    <a href="tracks/ha.html">玻尿酸</a>
+    <a href="tracks/collagen.html">胶原</a>
+    <a href="tracks/plla.html">PLLA</a>
+    <a href="tracks/pcl.html">PCL</a>
+    <a href="tracks/caha.html">CaHA</a>
+    <a href="tracks/botulinum.html">肉毒</a>
+    <a href="tracks/ebd.html">EBD</a>
+  </nav>
+</header>
+
+<main class="shell">
+
+  <section class="hero rise">
+    <span class="eyebrow">Industry Intelligence · 2026</span>
+    <h1>中国医美注册准入<br/><span class="gradient">行业情报 Dashboard</span></h1>
+    <p class="lede">
+      把 NMPA 注射类、再生类、肉毒、EBD 设备类的获批数据,沉淀成可下钻的厂家与赛道情报。
+      浅色专业咨询风格,点击任意数字、卡片或图表区块,即可查看背后的注册证、产品和厂家。
+    </p>
+    <div class="meta">
+      <span>● 数据截至 <span id="meta-generated">—</span></span>
+      <span>● <span id="meta-records">—</span> 条注册记录</span>
+      <span>● 主格局口径:三类医疗器械 + 药品批准</span>
+    </div>
+  </section>
+
+  <!-- KPI strip -->
+  <section class="grid grid-4" style="margin-top:14px">
+    <div class="card kpi lift rise rise-1">
+      <div class="label">主格局注册证</div>
+      <div class="value"><span data-animate-to="0" id="kpi-main">0</span><span class="unit">张</span></div>
+      <div class="delta">三类医疗器械 + 药品 · 共 <span id="kpi-total">0</span> 条原始记录</div>
+    </div>
+    <div class="card kpi lift rise rise-2 tone-ocean">
+      <div class="label">注册人/集团数</div>
+      <div class="value"><span data-animate-to="0" id="kpi-companies">0</span><span class="unit">家</span></div>
+      <div class="delta">含别名归并、集团归并</div>
+    </div>
+    <div class="card kpi lift rise rise-3 tone-gold">
+      <div class="label">官方核验率</div>
+      <div class="value"><span data-animate-to="0" data-decimals="1" data-suffix="%" id="kpi-verified">0</span></div>
+      <div class="delta">NMPA / 国家政务平台口径</div>
+    </div>
+    <div class="card kpi lift rise rise-4 tone-sage">
+      <div class="label">国产 : 进口 : 港澳台</div>
+      <div class="value"><span id="kpi-mix">— : — : —</span></div>
+      <div class="delta">主格局口径下的来源结构</div>
+    </div>
+  </section>
+
+  <!-- Segment grid -->
+  <div class="section-head rise">
+    <h2>七大战略子赛道</h2>
+    <p>点击任意子赛道卡片进入详情页:厂家份额、适应症布局、时间线、列表全部可下钻。</p>
+  </div>
+  <section class="segments" id="segments-grid"></section>
+
+  <!-- New angle #2 — Portfolio matrix -->
+  <div class="section-head rise">
+    <h2>厂家集团组合策略矩阵</h2>
+    <p>横轴是六大战略板块,每行是一家集团。颜色越深代表该板块证书越多。点击任一格子查看背后注册证。</p>
+  </div>
+  <section class="card lift">
+    <div class="card-title">
+      <h3>多赛道布局 vs 单点深耕</h3>
+      <span class="sub">显示覆盖 ≥2 个板块或拥有 ≥2 张证的集团</span>
+    </div>
+    <div id="chart-portfolio" class="chart chart-xl"></div>
+    <div class="callout" style="margin-top:14px" id="portfolio-callout">—</div>
+  </section>
+
+  <!-- New angle #4 — Indication × material heatmap -->
+  <div class="section-head rise">
+    <h2>适应症 × 材料家族热力</h2>
+    <p>注射类各材料家族在主流适应症/部位上的卡位。颜色越深,代表该材料在该部位的获批密度越大。</p>
+  </div>
+  <section class="card lift">
+    <div class="card-title">
+      <h3>谁抢了哪个部位</h3>
+      <span class="sub">仅含主格局口径的注射类</span>
+    </div>
+    <div id="chart-heatmap" class="chart chart-tall"></div>
+  </section>
+
+  <!-- Two-up: cert expiry + origin evolution -->
+  <div class="section-head rise">
+    <h2>结构性压力与演化</h2>
+    <p>左边是未来三年的证书到期压力,右边是国产/进口/港澳台批准结构的年度变化。</p>
+  </div>
+  <section class="grid grid-12">
+    <div class="card lift span-7">
+      <div class="card-title">
+        <h3>证书到期热力 · 未来 13 个季度</h3>
+        <span class="sub">按 valid_until 切季度,叠加显示各赛道</span>
+      </div>
+      <div id="chart-expiry" class="chart chart-tall"></div>
+    </div>
+    <div class="card lift span-5">
+      <div class="card-title">
+        <h3>国产 vs 进口 vs 港澳台</h3>
+        <span class="sub">按 approval_year 排布</span>
+      </div>
+      <div id="chart-origin" class="chart chart-tall"></div>
+    </div>
+  </section>
+
+  <!-- Concentration -->
+  <div class="section-head rise">
+    <h2>赛道集中度对照</h2>
+    <p>HHI、CR4、CR8 三个口径告诉你哪个赛道是寡头、哪个是高度分散。点击赛道行进入子页。</p>
+  </div>
+  <section class="card lift">
+    <div class="card-title">
+      <h3>七赛道集中度</h3>
+      <span class="sub">HHI 越接近 0 越分散,越接近 10000 越垄断</span>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="table" id="table-concentration">
+        <thead>
+          <tr>
+            <th>赛道</th>
+            <th class="num">证书数</th>
+            <th class="num">注册人/集团</th>
+            <th class="num">CR4 (%)</th>
+            <th class="num">CR8 (%)</th>
+            <th class="num">HHI</th>
+            <th>市场结构</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>Registration Insights · 静态站点,数据来源于本地主表 CSV</div>
+    <div>Built with Claude Code · ECharts</div>
+  </footer>
+
+</main>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/overview.js"></script>
+</body>
+</html>

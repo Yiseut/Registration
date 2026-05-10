@@ -1,0 +1,280 @@
+{
+  "track_key": "caha",
+  "track_meta": {
+    "key": "caha",
+    "name": "羟基磷酸钙 / CaHA",
+    "tagline": "再生类骨相支撑材料",
+    "accent": "#5B7B9A"
+  },
+  "kpi": {
+    "total": 5,
+    "main": 2,
+    "companies": 2,
+    "indications": 1,
+    "verified": 2,
+    "domestic": 1,
+    "imported": 1,
+    "hkmt": 0
+  },
+  "company_share": [
+    {
+      "name": "摩漾生物",
+      "value": 1
+    },
+    {
+      "name": "麦施美学 / Merz",
+      "value": 1
+    }
+  ],
+  "long_tail_company_count": 0,
+  "indication_share": [
+    {
+      "name": "鼻唇沟",
+      "value": 2
+    }
+  ],
+  "origin_share": [
+    {
+      "name": "国产",
+      "value": 1
+    },
+    {
+      "name": "进口",
+      "value": 1
+    }
+  ],
+  "material_share": [
+    {
+      "name": "CaHA",
+      "value": 2
+    }
+  ],
+  "timeline": {
+    "years": [
+      2025
+    ],
+    "values": [
+      2
+    ]
+  },
+  "company_indication_heatmap": {
+    "companies": [
+      "摩漾生物",
+      "麦施美学 / Merz"
+    ],
+    "indications": [
+      "鼻唇沟"
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "CAHA-国械注准20253130390",
+      "track": "caha",
+      "track_name": "羟基磷酸钙 / CaHA",
+      "strategic": "再生类",
+      "product_name": "注射用羟基磷酸钙微球面部填充剂",
+      "company": "摩漾生物",
+      "company_key": "摩漾生物",
+      "registrant": "上海摩漾生物科技有限公司",
+      "certificate_no": "国械注准20253130390",
+      "origin": "国产",
+      "category": "CaHA羟基磷酸钙微球",
+      "material_family": "CaHA",
+      "material_form": "CaHA+CMC微球凝胶",
+      "approval_date": "2025-02-17",
+      "approval_year": 2025,
+      "valid_until": "",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "国产首证",
+        "CaHA+CMC",
+        "30-35μm微球",
+        "树莓状通孔结构",
+        "鼻唇沟"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "摩漾生物/美通社 + 公众号线索",
+      "source_title": "摩漾生物旗下aphranel®优法兰™CC针获NMPA三类医疗器械注册首证",
+      "source_url": "https://www.prnasia.com/story/479794-1.shtml",
+      "confidence": "high"
+    },
+    {
+      "id": "CAHA-国械注进20253130124",
+      "track": "caha",
+      "track_name": "羟基磷酸钙 / CaHA",
+      "strategic": "再生类",
+      "product_name": "注射用羟基磷酸钙微球面部填充剂",
+      "company": "麦施美学 / Merz",
+      "company_key": "merz",
+      "registrant": "Merz North America, Inc.",
+      "certificate_no": "国械注进20253130124",
+      "origin": "进口",
+      "category": "CaHA羟基磷酸钙微球",
+      "material_family": "CaHA",
+      "material_form": "CaHA+CMC微球凝胶",
+      "approval_date": "2025-03-07",
+      "approval_year": 2025,
+      "valid_until": "",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "进口首证",
+        "CaHA+CMC",
+        "30% CaHA",
+        "25-45μm微球",
+        "鼻唇沟",
+        "芮得怡"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "麦施美学/美通社 + 医美部落公开页",
+      "source_title": "麦施美学旗下重要星品XEOMIN®思奥美®和RADIESSE 芮得怡上市会正式召开；Radiesse正式获批",
+      "source_url": "https://www.prnasia.com/story/513176-1.shtml",
+      "confidence": "high"
+    },
+    {
+      "id": "CAHA-国械注准20173130346",
+      "track": "caha",
+      "track_name": "羟基磷酸钙 / CaHA",
+      "strategic": "再生类",
+      "product_name": "羟基磷灰石生物陶瓷",
+      "company": "四川拜阿蒙 / 睿合医药",
+      "company_key": "四川拜阿蒙 / 睿合医药",
+      "registrant": "四川拜阿蒙生物活性材料有限责任公司",
+      "certificate_no": "国械注准20173130346",
+      "origin": "国产",
+      "category": "CaHA边界市场",
+      "material_family": "CaHA",
+      "material_form": "羟基磷灰石生物陶瓷",
+      "approval_date": "2021-12-02",
+      "approval_year": 2021,
+      "valid_until": "2027-03-02",
+      "primary_indication": "软组织修复/增强",
+      "indications": [
+        "软组织修复",
+        "增强",
+        "非承重性骨缺损"
+      ],
+      "tags": [
+        "边界市场",
+        "软组织修复",
+        "增强",
+        "CaHA生物陶瓷",
+        "L",
+        "M",
+        "S市场分型",
+        "非面部医美专证"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "医药魔方/中华网/界面新闻交叉",
+      "source_title": "羟基磷灰石生物陶瓷注册信息；菲林普利引领再生填充新范式",
+      "source_url": "https://bydrug.pharmcube.com/detailpage/deviceCNImported/42d1b2ce7d39b4581689fc4d20efdb9d",
+      "confidence": "medium_high"
+    },
+    {
+      "id": "CAHA-国械注准20183131912",
+      "track": "caha",
+      "track_name": "羟基磷酸钙 / CaHA",
+      "strategic": "再生类",
+      "product_name": "羟基磷灰石生物陶瓷",
+      "company": "昊海生科 / 上海倍尔康",
+      "company_key": "昊海生科 / 上海倍尔康",
+      "registrant": "上海倍尔康生物医学科技有限公司",
+      "certificate_no": "国械注准20183131912",
+      "origin": "国产",
+      "category": "CaHA边界市场",
+      "material_family": "CaHA",
+      "material_form": "羟基磷灰石生物陶瓷",
+      "approval_date": "2018",
+      "approval_year": 2018,
+      "valid_until": "2028",
+      "primary_indication": "非承重性骨缺损",
+      "indications": [
+        "非承重性骨缺损"
+      ],
+      "tags": [
+        "边界市场",
+        "非承重性骨缺损",
+        "高定塑形",
+        "骨相支撑",
+        "非面部医美专证"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "医美部落/容蝶网/界面新闻交叉",
+      "source_title": "昊海生科：海魅·云境新品发布，正式布局再生医美",
+      "source_url": "https://www.sohu.com/a/742457641_121303447",
+      "confidence": "medium_high"
+    },
+    {
+      "id": "CAHA-国械注准20153131017",
+      "track": "caha",
+      "track_name": "羟基磷酸钙 / CaHA",
+      "strategic": "再生类",
+      "product_name": "复合磷酸钙骨植入材料",
+      "company": "上海睿星 / 铭融医药",
+      "company_key": "上海睿星 / 铭融医药",
+      "registrant": "上海睿星医疗器材有限公司",
+      "certificate_no": "国械注准20153131017",
+      "origin": "国产",
+      "category": "CaHA边界市场",
+      "material_family": "CaHA/β-TCP",
+      "material_form": "复合磷酸钙骨植入材料",
+      "approval_date": "2015",
+      "approval_year": 2015,
+      "valid_until": "",
+      "primary_indication": "非承重性骨缺损",
+      "indications": [
+        "非承重性骨缺损"
+      ],
+      "tags": [
+        "边界市场",
+        "复合磷酸钙",
+        "羟基磷灰石+β-TCP",
+        "骨植入材料",
+        "非面部医美专证"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "悦龄塑官网/药品招商信息/界面新闻交叉",
+      "source_title": "悦龄塑官网；复合磷酸钙骨植入材料招商代理",
+      "source_url": "https://www.yuelingsu.com/",
+      "confidence": "medium_high"
+    }
+  ]
+}

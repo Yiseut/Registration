@@ -1,0 +1,473 @@
+{
+  "track_key": "botulinum",
+  "track_meta": {
+    "key": "botulinum",
+    "name": "肉毒毒素",
+    "tagline": "药品监管的医美准入,寡头格局",
+    "accent": "#8B9D7F"
+  },
+  "kpi": {
+    "total": 8,
+    "main": 8,
+    "companies": 8,
+    "indications": 1,
+    "verified": 3,
+    "domestic": 2,
+    "imported": 6,
+    "hkmt": 0
+  },
+  "company_share": [
+    {
+      "name": "兰州生物",
+      "value": 1
+    },
+    {
+      "name": "艾尔建 / AbbVie",
+      "value": 1
+    },
+    {
+      "name": "高德美 / Galderma",
+      "value": 1
+    },
+    {
+      "name": "四环医药 / 渼颜空间",
+      "value": 1
+    },
+    {
+      "name": "麦施美学 / Merz",
+      "value": 1
+    },
+    {
+      "name": "复星医药 / 复锐医疗",
+      "value": 1
+    },
+    {
+      "name": "爱美客",
+      "value": 1
+    },
+    {
+      "name": "Sinclair / 华东医药",
+      "value": 1
+    }
+  ],
+  "long_tail_company_count": 0,
+  "indication_share": [
+    {
+      "name": "眉间纹",
+      "value": 8
+    }
+  ],
+  "origin_share": [
+    {
+      "name": "国产",
+      "value": 2
+    },
+    {
+      "name": "进口",
+      "value": 6
+    }
+  ],
+  "material_share": [
+    {
+      "name": "A型肉毒毒素",
+      "value": 8
+    }
+  ],
+  "timeline": {
+    "years": [
+      2009,
+      2012,
+      2020,
+      2024,
+      2026
+    ],
+    "values": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ]
+  },
+  "company_indication_heatmap": {
+    "companies": [
+      "兰州生物",
+      "艾尔建 / AbbVie",
+      "高德美 / Galderma",
+      "四环医药 / 渼颜空间",
+      "麦施美学 / Merz",
+      "复星医药 / 复锐医疗",
+      "爱美客",
+      "Sinclair / 华东医药"
+    ],
+    "indications": [
+      "眉间纹"
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        4,
+        1
+      ],
+      [
+        0,
+        5,
+        1
+      ],
+      [
+        0,
+        6,
+        1
+      ],
+      [
+        0,
+        7,
+        1
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "BOTULINUM-国药准字S10970037",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "兰州生物",
+      "company_key": "兰州生物",
+      "registrant": "兰州生物技术开发有限公司",
+      "certificate_no": "国药准字S10970037",
+      "origin": "国产",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2012",
+      "approval_year": 2012,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [
+        "眉间纹",
+        "腋窝多汗"
+      ],
+      "tags": [
+        "国产",
+        "传统天然A型",
+        "动物源明胶",
+        "较广弥散",
+        "大肌群",
+        "多汗适应症扩展",
+        "毒性药品"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "7证11品肉毒素汇总；衡力新增腋窝多汗症适应症",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20171003SJ20171004SJ20171005",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "艾尔建 / AbbVie",
+      "company_key": "abbvie_allergan",
+      "registrant": "Allergan Pharmaceuticals Ireland",
+      "certificate_no": "国药准字SJ20171003 / SJ20171004 / SJ20171005",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2009",
+      "approval_year": 2009,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [
+        "眉间纹",
+        "鱼尾纹",
+        "咬肌突出",
+        "额纹"
+      ],
+      "tags": [
+        "进口",
+        "高端品牌",
+        "传统天然A型",
+        "人血白蛋白",
+        "精准弥散",
+        "精细皱纹",
+        "多规格",
+        "4个医美适应症"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字S20200016",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "高德美 / Galderma",
+      "company_key": "galderma",
+      "registrant": "Ipsen Biopharm Limited",
+      "certificate_no": "国药准字S20200016",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2020-06-17",
+      "approval_year": 2020,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "中高端",
+        "传统天然A型",
+        "人血白蛋白",
+        "宽弥散",
+        "起效快"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20200024SJ20210004",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "四环医药 / 渼颜空间",
+      "company_key": "sihuan",
+      "registrant": "Hugel, Inc.",
+      "certificate_no": "国药准字SJ20200024 / SJ20210004",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2020-10",
+      "approval_year": 2020,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "韩系",
+        "传统天然A型",
+        "人血白蛋白",
+        "精准弥散",
+        "年轻用户"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类",
+        "肉毒素",
+        "玻尿酸"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20240010SJ20240011",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "麦施美学 / Merz",
+      "company_key": "merz",
+      "registrant": "Merz Pharmaceuticals GmbH",
+      "certificate_no": "国药准字SJ20240010 / SJ20240011",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "纯化天然A型",
+      "approval_date": "2024-02-23",
+      "approval_year": 2024,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "纯化",
+        "无复合蛋白",
+        "无动物源",
+        "室温稳定",
+        "多规格"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "Xeomin正式获批；截至2025年7月官方6种清单",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20240041",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "复星医药 / 复锐医疗",
+      "company_key": "复星医药 / 复锐医疗",
+      "registrant": "Revance Therapeutics, Inc.",
+      "certificate_no": "国药准字SJ20240041",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "长效肽类A型",
+      "approval_date": "2024-09-09",
+      "approval_year": 2024,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "长效",
+        "肽类稳定技术",
+        "不含人血白蛋白",
+        "效果持久"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "Fosun Pharma announces NMPA approval for Daxxify",
+      "source_url": "https://en.fosun.com/content/details46_5062.html",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20260001",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "爱美客",
+      "company_key": "imeik",
+      "registrant": "Huons BioPharma Co., Ltd.",
+      "certificate_no": "国药准字SJ20260001",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2026-01-05",
+      "approval_year": 2026,
+      "valid_until": "2031-01-04",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "韩系",
+        "爱美客独家经销",
+        "100U",
+        "高纯度"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "爱美客独家经销韩国Huons BP肉毒毒素产品获中国药监局批准上市",
+      "source_url": "https://finance.sina.com.cn/roll/2026-01-08/doc-inhfreqm6514541.shtml",
+      "confidence": ""
+    },
+    {
+      "id": "BOTULINUM-国药准字S20260019",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒素",
+      "product_name": "注射用重组A型肉毒毒素",
+      "company": "Sinclair / 华东医药",
+      "company_key": "sinclair",
+      "registrant": "重庆誉颜制药有限公司",
+      "certificate_no": "国药准字S20260019",
+      "origin": "国产",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "重组A型",
+      "approval_date": "2026-03-25",
+      "approval_year": 2026,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "国产",
+        "重组",
+        "全球首款重组A型",
+        "华东医药独家商业化",
+        "低免疫原性"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "两江造全球首款重组A型肉毒毒素新药获批上市",
+      "source_url": "https://www.ljxq.gov.cn/zwxx/ljyw/202604/t20260401_15584664.html",
+      "confidence": ""
+    }
+  ]
+}

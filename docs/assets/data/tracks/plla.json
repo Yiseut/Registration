@@ -1,0 +1,569 @@
+{
+  "track_key": "plla",
+  "track_meta": {
+    "key": "plla",
+    "name": "童颜针 / PLLA",
+    "tagline": "再生类的旗手,国际品牌主导",
+    "accent": "#8B5A6B"
+  },
+  "kpi": {
+    "total": 12,
+    "main": 12,
+    "companies": 12,
+    "indications": 3,
+    "verified": 12,
+    "domestic": 9,
+    "imported": 3,
+    "hkmt": 0
+  },
+  "company_share": [
+    {
+      "name": "圣博玛",
+      "value": 1
+    },
+    {
+      "name": "爱美客",
+      "value": 1
+    },
+    {
+      "name": "丽臻生物科技",
+      "value": 1
+    },
+    {
+      "name": "高德美 / Galderma",
+      "value": 1
+    },
+    {
+      "name": "普丽妍医疗",
+      "value": 1
+    },
+    {
+      "name": "四环医药 / 渼颜空间",
+      "value": 1
+    },
+    {
+      "name": "乐普医疗",
+      "value": 1
+    },
+    {
+      "name": "西宏生物",
+      "value": 1
+    },
+    {
+      "name": "PRP Science",
+      "value": 1
+    },
+    {
+      "name": "浙江微度",
+      "value": 1
+    },
+    {
+      "name": "伊臻生物",
+      "value": 1
+    },
+    {
+      "name": "和妍医疗",
+      "value": 1
+    }
+  ],
+  "long_tail_company_count": 0,
+  "indication_share": [
+    {
+      "name": "鼻唇沟",
+      "value": 10
+    },
+    {
+      "name": "中面部",
+      "value": 1
+    },
+    {
+      "name": "颞部",
+      "value": 1
+    }
+  ],
+  "origin_share": [
+    {
+      "name": "国产",
+      "value": 9
+    },
+    {
+      "name": "进口",
+      "value": 3
+    }
+  ],
+  "material_share": [
+    {
+      "name": "PLLA",
+      "value": 12
+    }
+  ],
+  "timeline": {
+    "years": [
+      2021,
+      2024,
+      2025,
+      2026
+    ],
+    "values": [
+      1,
+      4,
+      5,
+      2
+    ]
+  },
+  "company_indication_heatmap": {
+    "companies": [
+      "圣博玛",
+      "爱美客",
+      "丽臻生物科技",
+      "高德美 / Galderma",
+      "普丽妍医疗",
+      "四环医药 / 渼颜空间",
+      "乐普医疗",
+      "西宏生物",
+      "PRP Science",
+      "浙江微度"
+    ],
+    "indications": [
+      "鼻唇沟",
+      "中面部",
+      "颞部"
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        3,
+        1
+      ],
+      [
+        0,
+        4,
+        1
+      ],
+      [
+        0,
+        5,
+        1
+      ],
+      [
+        0,
+        6,
+        1
+      ],
+      [
+        0,
+        7,
+        1
+      ],
+      [
+        0,
+        8,
+        1
+      ],
+      [
+        0,
+        9,
+        1
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "PLLA-国械注准20213130276",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "聚乳酸面部填充剂",
+      "company": "圣博玛",
+      "company_key": "圣博玛",
+      "registrant": "长春圣博玛生物材料有限公司",
+      "certificate_no": "国械注准20213130276",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2024-05-31",
+      "approval_year": 2024,
+      "valid_until": "2031-04-18",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20213130460",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "含左旋乳酸-乙二醇共聚物微球的交联透明质酸钠凝胶",
+      "company": "爱美客",
+      "company_key": "imeik",
+      "registrant": "爱美客技术发展股份有限公司",
+      "certificate_no": "国械注准20213130460",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA/HA复合凝胶",
+      "approval_date": "2021-06-24",
+      "approval_year": 2021,
+      "valid_until": "2026-06-23",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注进20243130043",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "聚乳酸面部填充剂 AestheFill",
+      "company": "丽臻生物科技",
+      "company_key": "丽臻生物科技",
+      "registrant": "（株）丽臻生物科技股份有限公司REGEN Biotech, Inc.",
+      "certificate_no": "国械注进20243130043",
+      "origin": "进口",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PDLLA冻干粉",
+      "approval_date": "2024-01-17",
+      "approval_year": 2024,
+      "valid_until": "2029-01-16",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注进20243130557",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "注射用聚左旋乳酸填充剂Poly-L-lactic acid implant for injection",
+      "company": "高德美 / Galderma",
+      "company_key": "galderma",
+      "registrant": "科医有限公司Q-Med AB",
+      "certificate_no": "国械注进20243130557",
+      "origin": "进口",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA冻干粉",
+      "approval_date": "2024-09-30",
+      "approval_year": 2024,
+      "valid_until": "2029-09-29",
+      "primary_indication": "中面部",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "肉毒素"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20243132279",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "聚乳酸面部填充剂",
+      "company": "普丽妍医疗",
+      "company_key": "普丽妍医疗",
+      "registrant": "普丽妍（南京）医疗科技有限公司",
+      "certificate_no": "国械注准20243132279",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2024-11-21",
+      "approval_year": 2024,
+      "valid_until": "2029-11-20",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20253130831",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "聚乳酸面部填充剂",
+      "company": "四环医药 / 渼颜空间",
+      "company_key": "sihuan",
+      "registrant": "渼颜空间生物科技（吉林）有限公司",
+      "certificate_no": "国械注准20253130831",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2025-04-23",
+      "approval_year": 2025,
+      "valid_until": "2030-04-22",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类",
+        "肉毒素",
+        "玻尿酸"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20253131101",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "聚乳酸面部填充剂",
+      "company": "乐普医疗",
+      "company_key": "lepu",
+      "registrant": "乐普（北京）医疗器械股份有限公司",
+      "certificate_no": "国械注准20253131101",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA冻干粉",
+      "approval_date": "2025-05-30",
+      "approval_year": 2025,
+      "valid_until": "2030-05-29",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "EBD 设备类",
+        "肉毒素"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20253131356",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "注射用聚左旋乳酸微球填充剂",
+      "company": "西宏生物",
+      "company_key": "西宏生物",
+      "registrant": "江苏西宏生物医药有限公司",
+      "certificate_no": "国械注准20253131356",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2025-09-11",
+      "approval_year": 2025,
+      "valid_until": "2030-07-09",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注进20253130300",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "注射用聚左旋乳酸面部填充剂",
+      "company": "PRP Science",
+      "company_key": "prp science",
+      "registrant": "PRP SCIENCE Co.,Ltd.(주)피알피사이언스",
+      "certificate_no": "国械注进20253130300",
+      "origin": "进口",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA冻干粉",
+      "approval_date": "2025-07-10",
+      "approval_year": 2025,
+      "valid_until": "2030-07-09",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20253132268",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "注射用聚左旋乳酸微球填充剂",
+      "company": "浙江微度",
+      "company_key": "浙江微度",
+      "registrant": "浙江微度医疗器械有限公司",
+      "certificate_no": "国械注准20253132268",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA+HA复配冻干粉",
+      "approval_date": "2025-11-05",
+      "approval_year": 2025,
+      "valid_until": "2030-11-04",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20263130095",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "注射用聚左旋乳酸填充剂",
+      "company": "伊臻生物",
+      "company_key": "伊臻生物",
+      "registrant": "成都伊臻生物科技有限公司",
+      "certificate_no": "国械注准20263130095",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2026-02-12",
+      "approval_year": 2026,
+      "valid_until": "2031-01-13",
+      "primary_indication": "颞部",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    },
+    {
+      "id": "PLLA-国械注准20263130388",
+      "track": "plla",
+      "track_name": "童颜针 / PLLA",
+      "strategic": "再生类",
+      "product_name": "注射用聚左旋乳酸微球填充剂",
+      "company": "和妍医疗",
+      "company_key": "和妍医疗",
+      "registrant": "和妍（上海）医疗器械有限公司",
+      "certificate_no": "国械注准20263130388",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2026-02-13",
+      "approval_year": 2026,
+      "valid_until": "2031-02-12",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "再生类"
+      ],
+      "source_account": "美圈老卢",
+      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": ""
+    }
+  ]
+}

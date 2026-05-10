@@ -1,0 +1,1360 @@
+{
+  "track_key": "ebd",
+  "track_meta": {
+    "key": "ebd",
+    "name": "EBD 设备类",
+    "tagline": "射频/超声/激光/微针的器械准入",
+    "accent": "#6E6A65"
+  },
+  "kpi": {
+    "total": 29,
+    "main": 21,
+    "companies": 18,
+    "indications": 9,
+    "verified": 21,
+    "domestic": 18,
+    "imported": 3,
+    "hkmt": 0
+  },
+  "company_share": [
+    {
+      "name": "深圳半岛医疗集团股份有限公司",
+      "value": 3
+    },
+    {
+      "name": "深圳市宗匠科技有限公司",
+      "value": 2
+    },
+    {
+      "name": "杭州时光机智能电子科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "上海维脉医疗科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "深圳宇石科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "乐普医疗",
+      "value": 1
+    },
+    {
+      "name": "杭州瑞彼加医疗科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "深圳金茉科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "热芙美（湖南）科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "广东花至美容科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "无锡威脉通医疗科技有限公司",
+      "value": 1
+    },
+    {
+      "name": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+      "value": 1
+    }
+  ],
+  "long_tail_company_count": 6,
+  "indication_share": [
+    {
+      "name": "面部轻度皱纹",
+      "value": 10
+    },
+    {
+      "name": "面部轻中度皱纹",
+      "value": 3
+    },
+    {
+      "name": "中下面部/颏下/颈部皮肤松弛",
+      "value": 2
+    },
+    {
+      "name": "中上面部轻中度皱纹",
+      "value": 1
+    },
+    {
+      "name": "面部萎缩性痤疮瘢痕",
+      "value": 1
+    },
+    {
+      "name": "吸脂术前脂肪软化",
+      "value": 1
+    },
+    {
+      "name": "文身祛除",
+      "value": 1
+    },
+    {
+      "name": "手部",
+      "value": 1
+    },
+    {
+      "name": "瘢痕治疗",
+      "value": 1
+    }
+  ],
+  "origin_share": [
+    {
+      "name": "国产",
+      "value": 18
+    },
+    {
+      "name": "进口",
+      "value": 3
+    }
+  ],
+  "material_share": [
+    {
+      "name": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "value": 9
+    },
+    {
+      "name": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻中度皱纹",
+      "value": 3
+    },
+    {
+      "name": "超声设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 中下面部/颏下/颈部皮肤松弛",
+      "value": 2
+    },
+    {
+      "name": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 中上面部轻中度皱纹",
+      "value": 1
+    },
+    {
+      "name": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部萎缩性痤疮瘢痕",
+      "value": 1
+    },
+    {
+      "name": "射频设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 面部轻度皱纹",
+      "value": 1
+    },
+    {
+      "name": "射频塑形设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 吸脂术前脂肪软化",
+      "value": 1
+    },
+    {
+      "name": "激光/IPL设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 文身祛除",
+      "value": 1
+    },
+    {
+      "name": "热玛吉 / Thermage CPT / 单极射频 / 射频治疗仪",
+      "value": 1
+    },
+    {
+      "name": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
+      "value": 1
+    }
+  ],
+  "timeline": {
+    "years": [
+      2014,
+      2015,
+      2022,
+      2024,
+      2025,
+      2026
+    ],
+    "values": [
+      1,
+      1,
+      1,
+      5,
+      9,
+      4
+    ]
+  },
+  "company_indication_heatmap": {
+    "companies": [
+      "深圳半岛医疗集团股份有限公司",
+      "深圳市宗匠科技有限公司",
+      "杭州时光机智能电子科技有限公司",
+      "上海维脉医疗科技有限公司",
+      "深圳宇石科技有限公司",
+      "乐普医疗",
+      "杭州瑞彼加医疗科技有限公司",
+      "深圳金茉科技有限公司",
+      "热芙美（湖南）科技有限公司",
+      "广东花至美容科技有限公司"
+    ],
+    "indications": [
+      "面部轻度皱纹",
+      "面部轻中度皱纹",
+      "中下面部/颏下/颈部皮肤松弛",
+      "中上面部轻中度皱纹",
+      "面部萎缩性痤疮瘢痕",
+      "吸脂术前脂肪软化",
+      "文身祛除",
+      "手部"
+    ],
+    "cells": [
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        4,
+        0,
+        1
+      ],
+      [
+        5,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        3,
+        3,
+        1
+      ],
+      [
+        0,
+        4,
+        1
+      ],
+      [
+        1,
+        5,
+        1
+      ],
+      [
+        0,
+        6,
+        1
+      ],
+      [
+        0,
+        7,
+        1
+      ],
+      [
+        1,
+        8,
+        1
+      ],
+      [
+        0,
+        9,
+        1
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "RAW-RF-国械注准20243092006",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "深圳市宗匠科技有限公司",
+      "company_key": "深圳市宗匠科技有限公司",
+      "registrant": "深圳市宗匠科技有限公司",
+      "certificate_no": "国械注准20243092006",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2024-10-11",
+      "approval_year": 2024,
+      "valid_until": "2029-10-10",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20243092006 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20243092479",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "杭州时光机智能电子科技有限公司",
+      "company_key": "杭州时光机智能电子科技有限公司",
+      "registrant": "杭州时光机智能电子科技有限公司",
+      "certificate_no": "国械注准20243092479",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2024-12-13",
+      "approval_year": 2024,
+      "valid_until": "2029-12-12",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20243092479 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20263090660",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "上海维脉医疗科技有限公司",
+      "company_key": "上海维脉医疗科技有限公司",
+      "registrant": "上海维脉医疗科技有限公司",
+      "certificate_no": "国械注准20263090660",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 中上面部轻中度皱纹",
+      "material_form": "",
+      "approval_date": "2026-03-27",
+      "approval_year": 2026,
+      "valid_until": "2031-03-26",
+      "primary_indication": "中上面部轻中度皱纹",
+      "indications": [
+        "中上面部轻中度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "中上面部轻中度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20263090660 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20243092482",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "深圳市宗匠科技有限公司",
+      "company_key": "深圳市宗匠科技有限公司",
+      "registrant": "深圳市宗匠科技有限公司",
+      "certificate_no": "国械注准20243092482",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2024-12-13",
+      "approval_year": 2024,
+      "valid_until": "2029-12-12",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20243092482 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20243092007",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "深圳宇石科技有限公司",
+      "company_key": "深圳宇石科技有限公司",
+      "registrant": "深圳宇石科技有限公司",
+      "certificate_no": "国械注准20243092007",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2024-10-11",
+      "approval_year": 2024,
+      "valid_until": "2029-10-10",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20243092007 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20263090882",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "乐普医疗",
+      "company_key": "lepu",
+      "registrant": "四川兴泰普乐医疗科技有限公司",
+      "certificate_no": "国械注准20263090882",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻中度皱纹",
+      "material_form": "",
+      "approval_date": "2026-04-27",
+      "approval_year": 2026,
+      "valid_until": "2031-04-26",
+      "primary_indication": "面部轻中度皱纹",
+      "indications": [
+        "面部轻中度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻中度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "再生类",
+        "EBD 设备类",
+        "肉毒素"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20263090882 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20253091137",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "杭州瑞彼加医疗科技有限公司",
+      "company_key": "杭州瑞彼加医疗科技有限公司",
+      "registrant": "杭州瑞彼加医疗科技有限公司",
+      "certificate_no": "国械注准20253091137",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2025-06-06",
+      "approval_year": 2025,
+      "valid_until": "2030-06-05",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20253091137 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20253091300",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "深圳金茉科技有限公司",
+      "company_key": "深圳金茉科技有限公司",
+      "registrant": "深圳金茉科技有限公司",
+      "certificate_no": "国械注准20253091300",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2025-07-04",
+      "approval_year": 2025,
+      "valid_until": "2030-07-03",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20253091300 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20253091135",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "热芙美（湖南）科技有限公司",
+      "company_key": "热芙美（湖南）科技有限公司",
+      "registrant": "热芙美（湖南）科技有限公司",
+      "certificate_no": "国械注准20253091135",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻中度皱纹",
+      "material_form": "",
+      "approval_date": "2025-06-06",
+      "approval_year": 2025,
+      "valid_until": "2030-06-05",
+      "primary_indication": "面部轻中度皱纹",
+      "indications": [
+        "面部轻中度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻中度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20253091135 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20253091163",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "广东花至美容科技有限公司",
+      "company_key": "广东花至美容科技有限公司",
+      "registrant": "广东花至美容科技有限公司",
+      "certificate_no": "国械注准20253091163",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2025-06-20",
+      "approval_year": 2025,
+      "valid_until": "2030-06-19",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20253091163 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20243092361",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "无锡威脉通医疗科技有限公司",
+      "company_key": "无锡威脉通医疗科技有限公司",
+      "registrant": "无锡威脉通医疗科技有限公司",
+      "certificate_no": "国械注准20243092361",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻中度皱纹",
+      "material_form": "",
+      "approval_date": "2024-11-21",
+      "approval_year": 2024,
+      "valid_until": "2029-11-20",
+      "primary_indication": "面部轻中度皱纹",
+      "indications": [
+        "面部轻中度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻中度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20243092361 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20253091825",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+      "company_key": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+      "registrant": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+      "certificate_no": "国械注准20253091825",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2025-09-05",
+      "approval_year": 2025,
+      "valid_until": "2030-09-04",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20253091825 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20253092104",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "深圳半岛医疗集团股份有限公司",
+      "company_key": "深圳半岛医疗集团股份有限公司",
+      "registrant": "深圳半岛医疗集团股份有限公司",
+      "certificate_no": "国械注准20253092104",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部萎缩性痤疮瘢痕",
+      "material_form": "",
+      "approval_date": "2025-10-27",
+      "approval_year": 2025,
+      "valid_until": "2030-10-26",
+      "primary_indication": "面部萎缩性痤疮瘢痕",
+      "indications": [
+        "面部萎缩性痤疮瘢痕"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部萎缩性痤疮瘢痕"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20253092104 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注准20263090453",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "广东雅思电子有限公司",
+      "company_key": "广东雅思电子有限公司",
+      "registrant": "广东雅思电子有限公司",
+      "certificate_no": "国械注准20263090453",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2026-03-03",
+      "approval_year": 2026,
+      "valid_until": "2031-03-02",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注准20263090453 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-RF-国械注进20253090264",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频皮肤治疗仪",
+      "company": "雅萌株式会社ヤーマン株式会社",
+      "company_key": "雅萌株式会社ヤーマン株式会社",
+      "registrant": "雅萌株式会社ヤーマン株式会社",
+      "certificate_no": "国械注进20253090264",
+      "origin": "进口",
+      "category": "射频设备",
+      "material_family": "射频设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 面部轻度皱纹",
+      "material_form": "",
+      "approval_date": "2025-06-20",
+      "approval_year": 2025,
+      "valid_until": "2030-06-19",
+      "primary_indication": "面部轻度皱纹",
+      "indications": [
+        "面部轻度皱纹"
+      ],
+      "tags": [
+        "射频设备",
+        "三类医疗器械",
+        "进口",
+        "NMPA官方核验",
+        "面部轻度皱纹"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频皮肤治疗仪 国械注进20253090264 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
+      "track": "body_contouring_device",
+      "track_name": "射频塑形设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频治疗仪",
+      "company": "深圳半岛医疗集团股份有限公司",
+      "company_key": "深圳半岛医疗集团股份有限公司",
+      "registrant": "深圳半岛医疗集团股份有限公司",
+      "certificate_no": "国械注准20223090571",
+      "origin": "国产",
+      "category": "射频塑形设备",
+      "material_family": "射频塑形设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 吸脂术前脂肪软化",
+      "material_form": "",
+      "approval_date": "2022-04-29",
+      "approval_year": 2022,
+      "valid_until": "2027-04-28",
+      "primary_indication": "吸脂术前脂肪软化",
+      "indications": [
+        "吸脂术前脂肪软化"
+      ],
+      "tags": [
+        "射频塑形设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "吸脂术前脂肪软化"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "射频治疗仪 国械注准20223090571 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-ULTRASOUND-国械注准20263010880",
+      "track": "raw_ultrasound",
+      "track_name": "超声设备",
+      "strategic": "EBD 设备类",
+      "product_name": "聚焦超声皮肤治疗仪",
+      "company": "深圳普门科技股份有限公司",
+      "company_key": "深圳普门科技股份有限公司",
+      "registrant": "深圳普门科技股份有限公司",
+      "certificate_no": "国械注准20263010880",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 中下面部/颏下/颈部皮肤松弛",
+      "material_form": "",
+      "approval_date": "2026-04-27",
+      "approval_year": 2026,
+      "valid_until": "2031-04-26",
+      "primary_indication": "中下面部/颏下/颈部皮肤松弛",
+      "indications": [
+        "中下面部",
+        "颏下",
+        "颈部皮肤松弛"
+      ],
+      "tags": [
+        "超声设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "中下面部",
+        "颏下",
+        "颈部皮肤松弛"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "聚焦超声皮肤治疗仪 国械注准20263010880 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-ULTRASOUND-国械注准20253092193",
+      "track": "raw_ultrasound",
+      "track_name": "超声设备",
+      "strategic": "EBD 设备类",
+      "product_name": "聚焦超声皮肤治疗仪",
+      "company": "深圳半岛医疗集团股份有限公司",
+      "company_key": "深圳半岛医疗集团股份有限公司",
+      "registrant": "深圳半岛医疗集团股份有限公司",
+      "certificate_no": "国械注准20253092193",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 中下面部/颏下/颈部皮肤松弛",
+      "material_form": "",
+      "approval_date": "2025-10-30",
+      "approval_year": 2025,
+      "valid_until": "2030-10-29",
+      "primary_indication": "中下面部/颏下/颈部皮肤松弛",
+      "indications": [
+        "中下面部",
+        "颏下",
+        "颈部皮肤松弛"
+      ],
+      "tags": [
+        "超声设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "中下面部",
+        "颏下",
+        "颈部皮肤松弛"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "聚焦超声皮肤治疗仪 国械注准20253092193 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注准20253092690",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "strategic": "EBD 设备类",
+      "product_name": "Nd:YAG皮秒激光治疗仪",
+      "company": "南京麦澜德医疗科技股份有限公司",
+      "company_key": "南京麦澜德医疗科技股份有限公司",
+      "registrant": "南京麦澜德医疗科技股份有限公司",
+      "certificate_no": "国械注准20253092690",
+      "origin": "国产",
+      "category": "激光/IPL设备",
+      "material_family": "激光/IPL设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 文身祛除",
+      "material_form": "",
+      "approval_date": "2025-12-29",
+      "approval_year": 2025,
+      "valid_until": "2030-12-28",
+      "primary_indication": "文身祛除",
+      "indications": [
+        "文身祛除"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "三类医疗器械",
+        "国产",
+        "NMPA官方核验",
+        "文身祛除"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "Nd:YAG皮秒激光治疗仪 国械注准20253092690 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-THERMAGE_RF-国械注进20153092408",
+      "track": "raw_thermage_rf",
+      "track_name": "热玛吉类/单极射频设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频治疗仪Thermage CPT System",
+      "company": "Solta Medical, Inc.",
+      "company_key": "solta medical, inc.",
+      "registrant": "索塔医疗有限公司Solta Medical, Inc.",
+      "certificate_no": "国械注进20153092408",
+      "origin": "进口",
+      "category": "热玛吉类/单极射频设备",
+      "material_family": "热玛吉 / Thermage CPT / 单极射频 / 射频治疗仪",
+      "material_form": "",
+      "approval_date": "2023-03-27",
+      "approval_year": 2015,
+      "valid_until": "2029-12-25",
+      "primary_indication": "手部",
+      "indications": [
+        "手部"
+      ],
+      "tags": [
+        "热玛吉",
+        "Thermage CPT",
+        "单极射频",
+        "射频治疗仪"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "医药魔方/ByDrug",
+      "source_title": "射频治疗仪 Thermage CPT System 中国大陆上市注册信息",
+      "source_url": "https://bydrug.pharmcube.com/detailpage/deviceCNImported/2be6afa9232f85ea9fe915d23edc22e1",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-ULTRASOUND-国械注准20253092173",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "strategic": "EBD 设备类",
+      "product_name": "半导体激光治疗机",
+      "company": "曼迪森光电",
+      "company_key": "曼迪森光电",
+      "registrant": "上海曼迪森光电有限公司",
+      "certificate_no": "国械注准20253092173",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声 / 聚焦超声 / 超声炮",
+      "material_form": "",
+      "approval_date": "2025-10-30",
+      "approval_year": 2025,
+      "valid_until": "2030-10-29",
+      "primary_indication": "疼痛缓解/非医美核心",
+      "indications": [
+        "手部"
+      ],
+      "tags": [
+        "三类线索",
+        "激光设备",
+        "非医美核心适用范围"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "丽和康",
+      "source_title": "医美快讯 | 半岛医疗新突破，国产首款III类「聚焦超声皮肤治疗仪」获批！",
+      "source_url": "https://mp.weixin.qq.com/s/5Iiq5Z5ffKb3_SA-ZNRI8A",
+      "confidence": "medium"
+    },
+    {
+      "id": "RAW-ULTRASOUND-湘械注准20212090940",
+      "track": "raw_ultrasound",
+      "track_name": "超声设备",
+      "strategic": "EBD 设备类",
+      "product_name": "",
+      "company": "未标注厂家",
+      "company_key": "未标注厂家",
+      "registrant": "",
+      "certificate_no": "湘械注准20212090940",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声 / 聚焦超声 / 超声炮",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2021,
+      "valid_until": "",
+      "primary_indication": "",
+      "indications": [],
+      "tags": [
+        "超声",
+        "聚焦超声",
+        "超声炮"
+      ],
+      "official_status": "unsupported_certificate_type",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "",
+      "source_title": "采美推荐 | 国产聚焦超声美容系统：超声炮黄金版、尖峰之声超声王、钻石超音波、Taixl黄金炮",
+      "source_url": "https://mp.weixin.qq.com/s/d7aVo63wpUTiqjZ5TBTnXQ",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-ULTRASOUND-湘械注准20222090919",
+      "track": "raw_ultrasound",
+      "track_name": "超声设备",
+      "strategic": "EBD 设备类",
+      "product_name": "",
+      "company": "未标注厂家",
+      "company_key": "未标注厂家",
+      "registrant": "",
+      "certificate_no": "湘械注准20222090919",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声 / 聚焦超声 / 超声炮",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2022,
+      "valid_until": "",
+      "primary_indication": "",
+      "indications": [],
+      "tags": [
+        "超声",
+        "聚焦超声",
+        "超声炮"
+      ],
+      "official_status": "unsupported_certificate_type",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "",
+      "source_title": "采美推荐 | 国产聚焦超声美容系统：超声炮黄金版、尖峰之声超声王、钻石超音波、Taixl黄金炮",
+      "source_url": "https://mp.weixin.qq.com/s/d7aVo63wpUTiqjZ5TBTnXQ",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-ULTRASOUND-晋械注准20232090046",
+      "track": "raw_ultrasound",
+      "track_name": "超声设备",
+      "strategic": "EBD 设备类",
+      "product_name": "",
+      "company": "未标注厂家",
+      "company_key": "未标注厂家",
+      "registrant": "",
+      "certificate_no": "晋械注准20232090046",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声 / 聚焦超声 / 超声炮",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2023,
+      "valid_until": "",
+      "primary_indication": "",
+      "indications": [],
+      "tags": [
+        "超声",
+        "聚焦超声",
+        "超声炮"
+      ],
+      "official_status": "unsupported_certificate_type",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "",
+      "source_title": "采美推荐 | 国产聚焦超声美容系统：超声炮黄金版、尖峰之声超声王、钻石超音波、Taixl黄金炮",
+      "source_url": "https://mp.weixin.qq.com/s/d7aVo63wpUTiqjZ5TBTnXQ",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-ULTRASOUND-湘械注准20232090277",
+      "track": "raw_ultrasound",
+      "track_name": "超声设备",
+      "strategic": "EBD 设备类",
+      "product_name": "",
+      "company": "未标注厂家",
+      "company_key": "未标注厂家",
+      "registrant": "",
+      "certificate_no": "湘械注准20232090277",
+      "origin": "国产",
+      "category": "超声设备",
+      "material_family": "超声 / 聚焦超声 / 超声炮",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2023,
+      "valid_until": "",
+      "primary_indication": "",
+      "indications": [],
+      "tags": [
+        "超声",
+        "聚焦超声",
+        "超声炮"
+      ],
+      "official_status": "unsupported_certificate_type",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "",
+      "source_title": "采美推荐 | 国产聚焦超声美容系统：超声炮黄金版、尖峰之声超声王、钻石超音波、Taixl黄金炮",
+      "source_url": "https://mp.weixin.qq.com/s/d7aVo63wpUTiqjZ5TBTnXQ",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-MICRONEEDLE-国械注进20143095670",
+      "track": "raw_microneedle",
+      "track_name": "微针/射频微针设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频微针治疗仪Electrosurgical Unit",
+      "company": "Jeisys / 帝医思",
+      "company_key": "jeisys / 帝医思",
+      "registrant": "杰希思医疗公司Jeisys Medical Inc.",
+      "certificate_no": "国械注进20143095670",
+      "origin": "进口",
+      "category": "微针/射频微针设备",
+      "material_family": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
+      "material_form": "",
+      "approval_date": "2023-04-07",
+      "approval_year": 2014,
+      "valid_until": "2029-10-21",
+      "primary_indication": "瘢痕治疗",
+      "indications": [
+        "手部"
+      ],
+      "tags": [
+        "进口",
+        "射频微针",
+        "含治疗头线索"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备类"
+      ],
+      "source_account": "采美阿积",
+      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
+      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-MICRONEEDLE-国械注进20183251955",
+      "track": "raw_microneedle",
+      "track_name": "微针/射频微针设备",
+      "strategic": "EBD 设备类",
+      "product_name": "相控射频微针设备",
+      "company": "EndyMed / 美迪迈",
+      "company_key": "endymed / 美迪迈",
+      "registrant": "EndyMed Medical Ltd.",
+      "certificate_no": "国械注进20183251955",
+      "origin": "进口",
+      "category": "微针/射频微针设备",
+      "material_family": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2018,
+      "valid_until": "",
+      "primary_indication": "射频微针治疗",
+      "indications": [],
+      "tags": [
+        "进口",
+        "相控点阵",
+        "微针"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "采美阿积",
+      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
+      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-MICRONEEDLE-粤械注准20182010997",
+      "track": "raw_microneedle",
+      "track_name": "微针/射频微针设备",
+      "strategic": "EBD 设备类",
+      "product_name": "黄金微针设备",
+      "company": "半岛医疗",
+      "company_key": "半岛医疗",
+      "registrant": "半岛医疗相关主体",
+      "certificate_no": "粤械注准20182010997",
+      "origin": "国产",
+      "category": "微针/射频微针设备",
+      "material_family": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2018,
+      "valid_until": "",
+      "primary_indication": "二类边界/历史证照",
+      "indications": [],
+      "tags": [
+        "二类",
+        "黄金微针",
+        "边界样本"
+      ],
+      "official_status": "unsupported_certificate_type",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "采美阿积",
+      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
+      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
+      "confidence": "high"
+    },
+    {
+      "id": "RAW-MICRONEEDLE-国械注进20163090059",
+      "track": "raw_microneedle",
+      "track_name": "微针/射频微针设备",
+      "strategic": "EBD 设备类",
+      "product_name": "射频微针治疗仪",
+      "company": "Lutronic / 路创丽",
+      "company_key": "lutronic / 路创丽",
+      "registrant": "Lutronic Corporation",
+      "certificate_no": "国械注进20163090059",
+      "origin": "进口",
+      "category": "微针/射频微针设备",
+      "material_family": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
+      "material_form": "",
+      "approval_date": "",
+      "approval_year": 2016,
+      "valid_until": "",
+      "primary_indication": "射频微针治疗",
+      "indications": [],
+      "tags": [
+        "进口",
+        "点阵射频",
+        "微针"
+      ],
+      "official_status": "not_found",
+      "verified": false,
+      "main_landscape": false,
+      "portfolio_segments": [],
+      "source_account": "采美阿积",
+      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
+      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
+      "confidence": "high"
+    }
+  ]
+}

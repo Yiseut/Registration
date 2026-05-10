@@ -1,0 +1,19 @@
+# Test screenshots produced during local dev (do not commit)
+overview_test*.png
+track_*_test.png
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / tmp
+/tmp/
+*.log

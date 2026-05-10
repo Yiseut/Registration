@@ -1,0 +1,2258 @@
+{
+  "generated_at": "2026-05-10T16:13:57",
+  "kpi": {
+    "total_records": 216,
+    "main_records": 176,
+    "excluded": 40,
+    "companies": 93,
+    "indications": 28,
+    "verified_share": 96.0,
+    "domestic": 99,
+    "imported": 71,
+    "hkmt": 6
+  },
+  "segments": [
+    {
+      "key": "ha",
+      "name": "玻尿酸 / 透明质酸钠",
+      "tagline": "中国医美注射填充的基础盘",
+      "accent": "#D97757",
+      "records": 108,
+      "main_records": 108,
+      "companies": 51,
+      "verified": 106,
+      "latest_year": 2026,
+      "leading_company": "华熙生物"
+    },
+    {
+      "key": "collagen",
+      "name": "胶原蛋白",
+      "tagline": "国产新势力快速崛起的赛道",
+      "accent": "#B5915A",
+      "records": 46,
+      "main_records": 18,
+      "companies": 11,
+      "verified": 18,
+      "latest_year": 2026,
+      "leading_company": "双美生物"
+    },
+    {
+      "key": "plla",
+      "name": "童颜针 / PLLA",
+      "tagline": "再生类的旗手,国际品牌主导",
+      "accent": "#8B5A6B",
+      "records": 12,
+      "main_records": 12,
+      "companies": 12,
+      "verified": 12,
+      "latest_year": 2026,
+      "leading_company": "圣博玛"
+    },
+    {
+      "key": "pcl",
+      "name": "少女针 / PCL",
+      "tagline": "再生类小众但溢价高的细分",
+      "accent": "#C15F3C",
+      "records": 5,
+      "main_records": 5,
+      "companies": 3,
+      "verified": 5,
+      "latest_year": 2026,
+      "leading_company": "Sinclair / 华东医药"
+    },
+    {
+      "key": "caha",
+      "name": "羟基磷酸钙 / CaHA",
+      "tagline": "再生类骨相支撑材料",
+      "accent": "#5B7B9A",
+      "records": 5,
+      "main_records": 2,
+      "companies": 2,
+      "verified": 2,
+      "latest_year": 2025,
+      "leading_company": "摩漾生物"
+    },
+    {
+      "key": "botulinum",
+      "name": "肉毒毒素",
+      "tagline": "药品监管的医美准入,寡头格局",
+      "accent": "#8B9D7F",
+      "records": 8,
+      "main_records": 8,
+      "companies": 8,
+      "verified": 3,
+      "latest_year": 2026,
+      "leading_company": "兰州生物"
+    },
+    {
+      "key": "ebd",
+      "name": "EBD 设备类",
+      "tagline": "射频/超声/激光/微针的器械准入",
+      "accent": "#6E6A65",
+      "records": 29,
+      "main_records": 21,
+      "companies": 18,
+      "verified": 21,
+      "latest_year": 2026,
+      "leading_company": "深圳半岛医疗集团股份有限公司"
+    }
+  ],
+  "portfolio_matrix": {
+    "segments": [
+      "EBD 设备类",
+      "再生类",
+      "新型材料",
+      "玻尿酸",
+      "肉毒素",
+      "胶原蛋白"
+    ],
+    "rows": [
+      {
+        "company_key": "galderma",
+        "company": "高德美 / Galderma",
+        "total": 10,
+        "segments_covered": 3,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 1,
+          "新型材料": 0,
+          "玻尿酸": 8,
+          "肉毒素": 1,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "imeik",
+        "company": "爱美客",
+        "total": 8,
+        "segments_covered": 3,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 1,
+          "新型材料": 0,
+          "玻尿酸": 6,
+          "肉毒素": 1,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "merz",
+        "company": "麦施美学 / Merz",
+        "total": 4,
+        "segments_covered": 3,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 1,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 1,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "lepu",
+        "company": "乐普医疗",
+        "total": 4,
+        "segments_covered": 3,
+        "by_segment": {
+          "EBD 设备类": 1,
+          "再生类": 1,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "abbvie_allergan",
+        "company": "艾尔建 / AbbVie",
+        "total": 12,
+        "segments_covered": 2,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 11,
+          "肉毒素": 1,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "巨子生物",
+        "company": "巨子生物",
+        "total": 3,
+        "segments_covered": 2,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 1,
+          "肉毒素": 0,
+          "胶原蛋白": 2
+        }
+      },
+      {
+        "company_key": "sihuan",
+        "company": "四环医药 / 渼颜空间",
+        "total": 3,
+        "segments_covered": 2,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 2,
+          "新型材料": 0,
+          "玻尿酸": 0,
+          "肉毒素": 1,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "sinclair",
+        "company": "Sinclair / 华东医药",
+        "total": 3,
+        "segments_covered": 2,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 2,
+          "新型材料": 0,
+          "玻尿酸": 0,
+          "肉毒素": 1,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "西宏生物",
+        "company": "西宏生物",
+        "total": 2,
+        "segments_covered": 2,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 1,
+          "新型材料": 0,
+          "玻尿酸": 1,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "bloomage",
+        "company": "华熙生物",
+        "total": 11,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 11,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "其胜生物",
+        "company": "其胜生物",
+        "total": 5,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 5,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "lg化学 lg chem, ltd.",
+        "company": "LG化学 LG Chem, Ltd.",
+        "total": 4,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 4,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "海雅美",
+        "company": "海雅美",
+        "total": 4,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 4,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "bnc",
+        "company": "BNC",
+        "total": 4,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 4,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "杭州协合",
+        "company": "杭州协合",
+        "total": 3,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 3,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "双美生物",
+        "company": "双美生物",
+        "total": 3,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 0,
+          "肉毒素": 0,
+          "胶原蛋白": 3
+        }
+      },
+      {
+        "company_key": "锦波生物",
+        "company": "锦波生物",
+        "total": 3,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 0,
+          "肉毒素": 0,
+          "胶原蛋白": 3
+        }
+      },
+      {
+        "company_key": "深圳半岛医疗集团股份有限公司",
+        "company": "深圳半岛医疗集团股份有限公司",
+        "total": 3,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 3,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 0,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "山东凯乐普生物工程有限公司",
+        "company": "山东凯乐普生物工程有限公司",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "和康生物科技股份有限公司",
+        "company": "和康生物科技股份有限公司",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "常州药研所",
+        "company": "常州药研所",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "东邦医疗 dong bang medical co., ltd.",
+        "company": "东邦医疗 Dong Bang Medical Co., Ltd.",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "细基生物株式会社 cg bio co., ltd.",
+        "company": "细基生物株式会社 CG Bio Co., Ltd.",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
+        "company_key": "吉诺斯株式会社 genoss co., ltd.",
+        "company": "吉诺斯株式会社 Genoss Co., Ltd.",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备类": 0,
+          "再生类": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒素": 0,
+          "胶原蛋白": 0
+        }
+      }
+    ]
+  },
+  "indication_heatmap": {
+    "materials": [
+      "透明质酸钠 / 玻尿酸",
+      "PLLA",
+      "动物源胶原",
+      "A型肉毒毒素",
+      "重组/类人源胶原",
+      "PCL",
+      "CaHA"
+    ],
+    "indications": [
+      "鼻唇沟",
+      "肤质改善",
+      "眉间纹",
+      "中面部",
+      "额部动力纹",
+      "下颌部",
+      "颈部",
+      "额部",
+      "鼻部",
+      "唇部",
+      "手部",
+      "颞部",
+      "面颊部平滑度",
+      "鱼尾纹"
+    ],
+    "cells": [
+      [
+        0,
+        0,
+        68
+      ],
+      [
+        1,
+        0,
+        10
+      ],
+      [
+        3,
+        0,
+        5
+      ],
+      [
+        5,
+        0,
+        5
+      ],
+      [
+        6,
+        0,
+        4
+      ],
+      [
+        7,
+        0,
+        4
+      ],
+      [
+        8,
+        0,
+        4
+      ],
+      [
+        9,
+        0,
+        3
+      ],
+      [
+        10,
+        0,
+        3
+      ],
+      [
+        11,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        10
+      ],
+      [
+        3,
+        1,
+        1
+      ],
+      [
+        11,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        4,
+        2,
+        2
+      ],
+      [
+        12,
+        2,
+        1
+      ],
+      [
+        13,
+        2,
+        2
+      ],
+      [
+        2,
+        3,
+        8
+      ],
+      [
+        4,
+        4,
+        4
+      ],
+      [
+        12,
+        4,
+        1
+      ],
+      [
+        0,
+        5,
+        3
+      ],
+      [
+        11,
+        5,
+        1
+      ],
+      [
+        0,
+        6,
+        2
+      ]
+    ]
+  },
+  "cert_expiry": {
+    "quarters": [
+      "2026Q2",
+      "2026Q3",
+      "2026Q4",
+      "2027Q1",
+      "2027Q2",
+      "2027Q3",
+      "2027Q4",
+      "2028Q1",
+      "2028Q2",
+      "2028Q3",
+      "2028Q4",
+      "2029Q1",
+      "2029Q2"
+    ],
+    "series": [
+      {
+        "key": "ha",
+        "name": "玻尿酸 / 透明质酸钠",
+        "data": [
+          2,
+          2,
+          3,
+          2,
+          5,
+          2,
+          2,
+          7,
+          2,
+          0,
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "key": "collagen",
+        "name": "胶原蛋白",
+        "data": [
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "key": "plla",
+        "name": "童颜针 / PLLA",
+        "data": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "key": "pcl",
+        "name": "少女针 / PCL",
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "caha",
+        "name": "羟基磷酸钙 / CaHA",
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "botulinum",
+        "name": "肉毒毒素",
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "key": "ebd",
+        "name": "EBD 设备类",
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "upcoming_top": [
+      {
+        "id": "HA-国械注准20163130861-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶",
+        "company": "华熙生物",
+        "company_key": "bloomage",
+        "registrant": "华熙生物科技股份有限公司",
+        "certificate_no": "国械注准20163130861",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2021-05-31",
+        "approval_year": 2021,
+        "valid_until": "2026-05-30",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 20
+      },
+      {
+        "id": "HA-国械注进20173135168-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶 Princess Volume",
+        "company": "克罗玛医药有限公司 CROMA-PHARMA",
+        "company_key": "克罗玛医药有限公司 croma-pharma",
+        "registrant": "克罗玛医药有限公司 CROMA-PHARMA",
+        "certificate_no": "国械注进20173135168",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2021-06-24",
+        "approval_year": 2021,
+        "valid_until": "2026-06-23",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 44
+      },
+      {
+        "id": "PLLA-国械注准20213130460",
+        "track": "plla",
+        "track_name": "童颜针 / PLLA",
+        "strategic": "再生类",
+        "product_name": "含左旋乳酸-乙二醇共聚物微球的交联透明质酸钠凝胶",
+        "company": "爱美客",
+        "company_key": "imeik",
+        "registrant": "爱美客技术发展股份有限公司",
+        "certificate_no": "国械注准20213130460",
+        "origin": "国产",
+        "category": "PLLA童颜针",
+        "material_family": "PLLA",
+        "material_form": "PLLA/HA复合凝胶",
+        "approval_date": "2021-06-24",
+        "approval_year": 2021,
+        "valid_until": "2026-06-23",
+        "primary_indication": "鼻唇沟",
+        "indications": [],
+        "tags": [],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "再生类",
+          "肉毒素"
+        ],
+        "source_account": "美圈老卢",
+        "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
+        "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+        "confidence": "",
+        "days_to_expiry": 44
+      },
+      {
+        "id": "COLLAGEN-国械注准20213130488",
+        "track": "collagen",
+        "track_name": "胶原蛋白",
+        "strategic": "胶原蛋白",
+        "product_name": "重组Ⅲ型人源化胶原蛋白冻干纤维",
+        "company": "锦波生物",
+        "company_key": "锦波生物",
+        "registrant": "山西锦波生物医药股份有限公司",
+        "certificate_no": "国械注准20213130488",
+        "origin": "国产",
+        "category": "胶原蛋白",
+        "material_family": "重组/类人源胶原",
+        "material_form": "重组/类人源非填充注射",
+        "approval_date": "2021-06-28",
+        "approval_year": 2021,
+        "valid_until": "2026-06-27",
+        "primary_indication": "额部动力纹",
+        "indications": [],
+        "tags": [
+          "非容量填充"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "胶原蛋白"
+        ],
+        "source_account": "公众号汇总/NMPA校准",
+        "source_title": "胶原蛋白汇总文章交叉校准",
+        "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
+        "confidence": "",
+        "days_to_expiry": 48
+      },
+      {
+        "id": "HA-国械注许20163130035-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶 Formaderm Dermal Filler Injection",
+        "company": "和康生物科技股份有限公司",
+        "company_key": "和康生物科技股份有限公司",
+        "registrant": "和康生物科技股份有限公司",
+        "certificate_no": "国械注许20163130035",
+        "origin": "港澳台",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2021-07-02",
+        "approval_year": 2021,
+        "valid_until": "2026-07-01",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "港澳台",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 52
+      },
+      {
+        "id": "HA-国械注准20173133254-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "山东凯乐普生物工程有限公司",
+        "company_key": "山东凯乐普生物工程有限公司",
+        "registrant": "山东凯乐普生物工程有限公司",
+        "certificate_no": "国械注准20173133254",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2021-07-15",
+        "approval_year": 2021,
+        "valid_until": "2026-07-14",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 65
+      },
+      {
+        "id": "HA-国械注进20213130421-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶 Belotero Balance Lidocaine",
+        "company": "麦施美学 / Merz",
+        "company_key": "merz",
+        "registrant": "安缇思股份公司 Anteis SA",
+        "certificate_no": "国械注进20213130421",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2021-10-21",
+        "approval_year": 2021,
+        "valid_until": "2026-10-20",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "再生类",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 163
+      },
+      {
+        "id": "COLLAGEN-国械注进20163132859",
+        "track": "collagen",
+        "track_name": "胶原蛋白",
+        "strategic": "胶原蛋白",
+        "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
+        "company": "荷兰汉福",
+        "company_key": "荷兰汉福",
+        "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
+        "certificate_no": "国械注进20163132859",
+        "origin": "进口",
+        "category": "胶原蛋白",
+        "material_family": "动物源胶原",
+        "material_form": "动物源胶原+PMMA填充剂",
+        "approval_date": "2021-10-26",
+        "approval_year": 2021,
+        "valid_until": "2026-10-25",
+        "primary_indication": "鼻唇沟/隆鼻",
+        "indications": [],
+        "tags": [
+          "含利多卡因",
+          "PMMA复合"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "胶原蛋白"
+        ],
+        "source_account": "公众号汇总/NMPA校准",
+        "source_title": "胶原蛋白汇总文章交叉校准",
+        "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
+        "confidence": "",
+        "days_to_expiry": 168
+      },
+      {
+        "id": "COLLAGEN-国械注准20163131609",
+        "track": "collagen",
+        "track_name": "胶原蛋白",
+        "strategic": "胶原蛋白",
+        "product_name": "医用胶原充填剂",
+        "company": "斐缦生物",
+        "company_key": "斐缦生物",
+        "registrant": "斐缦（长春）医药生物科技有限责任公司",
+        "certificate_no": "国械注准20163131609",
+        "origin": "国产",
+        "category": "胶原蛋白",
+        "material_family": "动物源胶原",
+        "material_form": "动物源填充植入剂",
+        "approval_date": "2021-11-03",
+        "approval_year": 2021,
+        "valid_until": "2026-11-02",
+        "primary_indication": "鼻唇沟",
+        "indications": [],
+        "tags": [
+          "含利多卡因"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "胶原蛋白"
+        ],
+        "source_account": "UDI/NMPA UDI",
+        "source_title": "UDI 胶原蛋白赛道召回样本",
+        "source_url": "https://fiman.com/",
+        "confidence": "",
+        "days_to_expiry": 176
+      },
+      {
+        "id": "HA-国械注进20213130485-鼻部",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
+        "company": "艾尔建 / AbbVie",
+        "company_key": "abbvie_allergan",
+        "registrant": "艾尔建 Allergan",
+        "certificate_no": "国械注进20213130485",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2021-11-26",
+        "approval_year": 2021,
+        "valid_until": "2026-11-25",
+        "primary_indication": "鼻部",
+        "indications": [
+          "鼻部"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联",
+          "含利多卡因"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 199
+      },
+      {
+        "id": "HA-国械注进20213130485-颞部",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
+        "company": "艾尔建 / AbbVie",
+        "company_key": "abbvie_allergan",
+        "registrant": "艾尔建 Allergan / AbbVie",
+        "certificate_no": "国械注进20213130485",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2026-05-08",
+        "approval_year": 2026,
+        "valid_until": "2026-11-25",
+        "primary_indication": "颞部",
+        "indications": [
+          "颞部"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联",
+          "含利多卡因"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "肉毒素"
+        ],
+        "source_account": "公众号原文",
+        "source_title": "乔雅登丰颜获批新适应证，改善颞部凹陷",
+        "source_url": "https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
+        "confidence": "high",
+        "days_to_expiry": 199
+      },
+      {
+        "id": "HA-国械注进20223130127-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "东邦医疗 Dong Bang Medical Co., Ltd.",
+        "company_key": "东邦医疗 dong bang medical co., ltd.",
+        "registrant": "东邦医疗 Dong Bang Medical Co., Ltd.",
+        "certificate_no": "国械注进20223130127",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-03-02",
+        "approval_year": 2022,
+        "valid_until": "2027-03-01",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 295
+      },
+      {
+        "id": "HA-国械注进20223130141-鼻部",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
+        "company": "艾尔建 / AbbVie",
+        "company_key": "abbvie_allergan",
+        "registrant": "艾尔建 Allergan",
+        "certificate_no": "国械注进20223130141",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-03-10",
+        "approval_year": 2022,
+        "valid_until": "2027-03-09",
+        "primary_indication": "鼻部",
+        "indications": [
+          "鼻部"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联",
+          "含利多卡因"
+        ],
+        "official_status": "not_found",
+        "verified": false,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 303
+      },
+      {
+        "id": "HA-国械注准20223130481-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "浙江景嘉医疗科技有限公司",
+        "company_key": "浙江景嘉医疗科技有限公司",
+        "registrant": "浙江景嘉医疗科技有限公司",
+        "certificate_no": "国械注准20223130481",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-04-12",
+        "approval_year": 2022,
+        "valid_until": "2027-04-11",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 336
+      },
+      {
+        "id": "HA-国械注进20223130181-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶 Dermax Deep",
+        "company": "北京爱思特医疗美容有限公司 / ACROSS CO., LTD.",
+        "company_key": "北京爱思特医疗美容有限公司 / across co., ltd.",
+        "registrant": "北京爱思特医疗美容有限公司 / ACROSS CO., LTD.",
+        "certificate_no": "国械注进20223130181",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2022-04-12",
+        "approval_year": 2022,
+        "valid_until": "2027-04-11",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 336
+      },
+      {
+        "id": "HA-国械注准20223130516-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "北京凯诺瑞和医疗器械有限公司",
+        "company_key": "北京凯诺瑞和医疗器械有限公司",
+        "registrant": "北京凯诺瑞和医疗器械有限公司",
+        "certificate_no": "国械注准20223130516",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-04-20",
+        "approval_year": 2022,
+        "valid_until": "2027-04-19",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 344
+      },
+      {
+        "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
+        "track": "body_contouring_device",
+        "track_name": "射频塑形设备",
+        "strategic": "EBD 设备类",
+        "product_name": "射频治疗仪",
+        "company": "深圳半岛医疗集团股份有限公司",
+        "company_key": "深圳半岛医疗集团股份有限公司",
+        "registrant": "深圳半岛医疗集团股份有限公司",
+        "certificate_no": "国械注准20223090571",
+        "origin": "国产",
+        "category": "射频塑形设备",
+        "material_family": "射频塑形设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 吸脂术前脂肪软化",
+        "material_form": "",
+        "approval_date": "2022-04-29",
+        "approval_year": 2022,
+        "valid_until": "2027-04-28",
+        "primary_indication": "吸脂术前脂肪软化",
+        "indications": [
+          "吸脂术前脂肪软化"
+        ],
+        "tags": [
+          "射频塑形设备",
+          "三类医疗器械",
+          "国产",
+          "NMPA官方核验",
+          "吸脂术前脂肪软化"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "EBD 设备类"
+        ],
+        "source_account": "NMPA 官方查询",
+        "source_title": "射频治疗仪 国械注准20223090571 NMPA 医疗器械注册证",
+        "source_url": "https://www.nmpa.gov.cn/",
+        "confidence": "official",
+        "days_to_expiry": 353
+      },
+      {
+        "id": "HA-国械注准20173130810-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "其胜生物",
+        "company_key": "其胜生物",
+        "registrant": "上海其胜生物制剂有限公司",
+        "certificate_no": "国械注准20173130810",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-02-08",
+        "approval_year": 2022,
+        "valid_until": "2027-05-21",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 376
+      },
+      {
+        "id": "HA-国械注进20173132005-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶",
+        "company": "LG化学 LG Chem, Ltd.",
+        "company_key": "lg化学 lg chem, ltd.",
+        "registrant": "LG化学 LG Chem, Ltd.",
+        "certificate_no": "国械注进20173132005",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2022-07-01",
+        "approval_year": 2022,
+        "valid_until": "2027-06-30",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 416
+      },
+      {
+        "id": "HA-国械注准20223130874-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "武汉医佳宝生物材料有限公司",
+        "company_key": "武汉医佳宝生物材料有限公司",
+        "registrant": "武汉医佳宝生物材料有限公司",
+        "certificate_no": "国械注准20223130874",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-07-11",
+        "approval_year": 2022,
+        "valid_until": "2027-07-10",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 426
+      },
+      {
+        "id": "HA-国械注准20173134379-额部",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "医用羟丙基甲基纤维素-透明质酸钠溶液",
+        "company": "爱美客",
+        "company_key": "imeik",
+        "registrant": "爱美客技术发展股份有限公司",
+        "certificate_no": "国械注准20173134379",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "非交联HA溶液",
+        "approval_date": "2022-09-02",
+        "approval_year": 2022,
+        "valid_until": "2027-09-06",
+        "primary_indication": "额部",
+        "indications": [
+          "额部"
+        ],
+        "tags": [
+          "水光",
+          "肤质类",
+          "国产",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "再生类",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 484
+      },
+      {
+        "id": "HA-国械注进20223130501-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "细基生物株式会社 CG Bio Co., Ltd.",
+        "company_key": "细基生物株式会社 cg bio co., ltd.",
+        "registrant": "细基生物株式会社 CG Bio Co., Ltd.",
+        "certificate_no": "国械注进20223130501",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2023-01-31",
+        "approval_year": 2023,
+        "valid_until": "2027-10-24",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 532
+      },
+      {
+        "id": "HA-国械注准20223131647-中面部",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "华熙生物",
+        "company_key": "bloomage",
+        "registrant": "华熙生物科技股份有限公司",
+        "certificate_no": "国械注准20223131647",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-12-14",
+        "approval_year": 2022,
+        "valid_until": "2027-12-13",
+        "primary_indication": "中面部",
+        "indications": [
+          "中面部"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 582
+      },
+      {
+        "id": "HA-国械注进20233130009-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶 Belotero Volume Lidocaine",
+        "company": "麦施美学 / Merz",
+        "company_key": "merz",
+        "registrant": "安缇思股份公司 Anteis SA",
+        "certificate_no": "国械注进20233130009",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2023-03-27",
+        "approval_year": 2023,
+        "valid_until": "2028-01-12",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "再生类",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 612
+      },
+      {
+        "id": "HA-国械注进20233130011-中面部",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶 Restylane Volume",
+        "company": "高德美 / Galderma",
+        "company_key": "galderma",
+        "registrant": "科医有限公司 Q-Med AB",
+        "certificate_no": "国械注进20233130011",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2023-01-13",
+        "approval_year": 2023,
+        "valid_until": "2028-01-12",
+        "primary_indication": "中面部",
+        "indications": [
+          "中面部"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "再生类",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 612
+      },
+      {
+        "id": "HA-国械注进20183131717-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶 YVOIRE volume s",
+        "company": "LG化学 LG Chem, Ltd.",
+        "company_key": "lg化学 lg chem, ltd.",
+        "registrant": "LG化学 LG Chem, Ltd.",
+        "certificate_no": "国械注进20183131717",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2022-09-14",
+        "approval_year": 2022,
+        "valid_until": "2028-02-12",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 643
+      },
+      {
+        "id": "HA-国械注许20183130062-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶",
+        "company": "科妍生物科技股份有限公司",
+        "company_key": "科妍生物科技股份有限公司",
+        "registrant": "科妍生物科技股份有限公司",
+        "certificate_no": "国械注许20183130062",
+        "origin": "港澳台",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2023-01-17",
+        "approval_year": 2023,
+        "valid_until": "2028-02-12",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "港澳台",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 643
+      },
+      {
+        "id": "HA-国械注进20233130068-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶 MONALISA Lidocaine Filler",
+        "company": "吉诺斯株式会社 GENOSS Co., Ltd.",
+        "company_key": "吉诺斯株式会社 genoss co., ltd.",
+        "registrant": "吉诺斯株式会社 GENOSS Co., Ltd.",
+        "certificate_no": "国械注进20233130068",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2023-03-07",
+        "approval_year": 2023,
+        "valid_until": "2028-03-06",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 666
+      },
+      {
+        "id": "HA-国械注进20173136998-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用修饰透明质酸钠凝胶",
+        "company": "高德美 / Galderma",
+        "company_key": "galderma",
+        "registrant": "科医有限公司 Q-Med AB",
+        "certificate_no": "国械注进20173136998",
+        "origin": "进口",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "修饰HA填充凝胶",
+        "approval_date": "2023-03-23",
+        "approval_year": 2023,
+        "valid_until": "2028-03-22",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "进口",
+          "非交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸",
+          "再生类",
+          "肉毒素"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 682
+      },
+      {
+        "id": "HA-国械注准20183130109-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "strategic": "玻尿酸",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "常州药研所",
+        "company_key": "常州药研所",
+        "registrant": "常州药物研究所有限公司",
+        "certificate_no": "国械注准20183130109",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-04-29",
+        "approval_year": 2022,
+        "valid_until": "2028-03-27",
+        "primary_indication": "鼻唇沟",
+        "indications": [
+          "鼻唇沟"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "days_to_expiry": 687
+      }
+    ]
+  },
+  "origin_evolution": {
+    "years": [
+      2014,
+      2015,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "series": [
+      {
+        "name": "国产",
+        "data": [
+          0,
+          0,
+          0,
+          9,
+          8,
+          6,
+          21,
+          40,
+          14
+        ]
+      },
+      {
+        "name": "进口",
+        "data": [
+          1,
+          1,
+          2,
+          8,
+          5,
+          11,
+          22,
+          17,
+          3
+        ]
+      },
+      {
+        "name": "港澳台",
+        "data": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          3,
+          0,
+          2,
+          0
+        ]
+      },
+      {
+        "name": "未标注",
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "concentration": {
+    "ha": {
+      "track_name": "玻尿酸 / 透明质酸钠",
+      "total_certs": 108,
+      "company_count": 52,
+      "hhi": 424.0,
+      "cr4": 33.3,
+      "cr8": 49.1,
+      "top": [
+        {
+          "company": "华熙生物",
+          "certs": 11,
+          "share": 10.2
+        },
+        {
+          "company": "艾尔建 / AbbVie",
+          "certs": 11,
+          "share": 10.2
+        },
+        {
+          "company": "高德美 / Galderma",
+          "certs": 8,
+          "share": 7.4
+        },
+        {
+          "company": "爱美客",
+          "certs": 6,
+          "share": 5.6
+        },
+        {
+          "company": "其胜生物",
+          "certs": 5,
+          "share": 4.6
+        },
+        {
+          "company": "LG化学 LG Chem, Ltd.",
+          "certs": 4,
+          "share": 3.7
+        },
+        {
+          "company": "海雅美",
+          "certs": 4,
+          "share": 3.7
+        },
+        {
+          "company": "BNC",
+          "certs": 4,
+          "share": 3.7
+        }
+      ]
+    },
+    "collagen": {
+      "track_name": "胶原蛋白",
+      "total_certs": 18,
+      "company_count": 11,
+      "hhi": 1111.0,
+      "cr4": 55.6,
+      "cr8": 83.3,
+      "top": [
+        {
+          "company": "双美生物",
+          "certs": 3,
+          "share": 16.7
+        },
+        {
+          "company": "锦波生物",
+          "certs": 3,
+          "share": 16.7
+        },
+        {
+          "company": "崇山生物",
+          "certs": 2,
+          "share": 11.1
+        },
+        {
+          "company": "珂瑞康",
+          "certs": 2,
+          "share": 11.1
+        },
+        {
+          "company": "巨子生物",
+          "certs": 2,
+          "share": 11.1
+        },
+        {
+          "company": "艾佰瑞",
+          "certs": 1,
+          "share": 5.6
+        },
+        {
+          "company": "奇璞生物",
+          "certs": 1,
+          "share": 5.6
+        },
+        {
+          "company": "斐缦生物",
+          "certs": 1,
+          "share": 5.6
+        }
+      ]
+    },
+    "plla": {
+      "track_name": "童颜针 / PLLA",
+      "total_certs": 12,
+      "company_count": 12,
+      "hhi": 833.0,
+      "cr4": 33.3,
+      "cr8": 66.7,
+      "top": [
+        {
+          "company": "圣博玛",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "爱美客",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "丽臻生物科技",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "高德美 / Galderma",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "普丽妍医疗",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "四环医药 / 渼颜空间",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "乐普医疗",
+          "certs": 1,
+          "share": 8.3
+        },
+        {
+          "company": "西宏生物",
+          "certs": 1,
+          "share": 8.3
+        }
+      ]
+    },
+    "pcl": {
+      "track_name": "少女针 / PCL",
+      "total_certs": 5,
+      "company_count": 3,
+      "hhi": 3600.0,
+      "cr4": 100.0,
+      "cr8": 100.0,
+      "top": [
+        {
+          "company": "Sinclair / 华东医药",
+          "certs": 2,
+          "share": 40.0
+        },
+        {
+          "company": "山东采采 / 谷雨春",
+          "certs": 2,
+          "share": 40.0
+        },
+        {
+          "company": "四环医药 / 渼颜空间",
+          "certs": 1,
+          "share": 20.0
+        }
+      ]
+    },
+    "caha": {
+      "track_name": "羟基磷酸钙 / CaHA",
+      "total_certs": 2,
+      "company_count": 2,
+      "hhi": 5000.0,
+      "cr4": 100.0,
+      "cr8": 100.0,
+      "top": [
+        {
+          "company": "摩漾生物",
+          "certs": 1,
+          "share": 50.0
+        },
+        {
+          "company": "麦施美学 / Merz",
+          "certs": 1,
+          "share": 50.0
+        }
+      ]
+    },
+    "botulinum": {
+      "track_name": "肉毒毒素",
+      "total_certs": 8,
+      "company_count": 8,
+      "hhi": 1250.0,
+      "cr4": 50.0,
+      "cr8": 100.0,
+      "top": [
+        {
+          "company": "兰州生物",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "艾尔建 / AbbVie",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "高德美 / Galderma",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "四环医药 / 渼颜空间",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "麦施美学 / Merz",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "复星医药 / 复锐医疗",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "爱美客",
+          "certs": 1,
+          "share": 12.5
+        },
+        {
+          "company": "Sinclair / 华东医药",
+          "certs": 1,
+          "share": 12.5
+        }
+      ]
+    },
+    "ebd": {
+      "track_name": "EBD 设备类",
+      "total_certs": 21,
+      "company_count": 18,
+      "hhi": 658.0,
+      "cr4": 33.3,
+      "cr8": 52.4,
+      "top": [
+        {
+          "company": "深圳半岛医疗集团股份有限公司",
+          "certs": 3,
+          "share": 14.3
+        },
+        {
+          "company": "深圳市宗匠科技有限公司",
+          "certs": 2,
+          "share": 9.5
+        },
+        {
+          "company": "杭州时光机智能电子科技有限公司",
+          "certs": 1,
+          "share": 4.8
+        },
+        {
+          "company": "上海维脉医疗科技有限公司",
+          "certs": 1,
+          "share": 4.8
+        },
+        {
+          "company": "深圳宇石科技有限公司",
+          "certs": 1,
+          "share": 4.8
+        },
+        {
+          "company": "乐普医疗",
+          "certs": 1,
+          "share": 4.8
+        },
+        {
+          "company": "杭州瑞彼加医疗科技有限公司",
+          "certs": 1,
+          "share": 4.8
+        },
+        {
+          "company": "深圳金茉科技有限公司",
+          "certs": 1,
+          "share": 4.8
+        }
+      ]
+    }
+  }
+}
