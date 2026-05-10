@@ -339,8 +339,12 @@
       },
       series: [{
         type: 'heatmap', data: hm.cells,
-        label: { show: true, color: palette.ink, fontSize: 11, fontWeight: 600,
-                 formatter: (p) => p.value[2] || '' },
+        label: {
+          show: true, fontSize: 11, fontWeight: 600,
+          // flip text to white once the cell color gets dark enough
+          color: (p) => p.value[2] >= maxV * 0.55 ? '#FFFFFF' : palette.ink,
+          formatter: (p) => p.value[2] || '',
+        },
         itemStyle: { borderColor: palette.bg, borderWidth: 2, borderRadius: 5 },
         emphasis: { itemStyle: { shadowBlur: 12, shadowColor: 'rgba(28,22,18,0.15)' } },
         animationDuration: 800,

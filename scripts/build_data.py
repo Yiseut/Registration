@@ -344,15 +344,37 @@ def per_track_payload(records: list[dict], tk: str) -> dict:
     year_counter = Counter(r["approval_year"] for r in main if r["approval_year"])
     years = sorted(year_counter)
 
-    # indication × company (for top 10 companies × top 8 indications)
-    top_companies = [c for c, _ in company_counter.most_common(10)]
-    top_indications = [i for i, _ in indication_counter.most_common(8)]
+    # Company × indication heatmap — use ALL records (not just main landscape)
+    # so adjacent / boundary registrations are visible too. Then prune any
+    # row/column that ends up empty after the top-N intersection.
+    co_company_counter = Counter(r["company"] for r in recs)
+    co_indication_counter = Counter(r["primary_indication"] for r in recs if r["primary_indication"])
+    candidate_companies = [c for c, _ in co_company_counter.most_common(12)]
+    candidate_indications = [i for i, _ in co_indication_counter.most_common(10)]
+
+    raw_cells = {}
+    for r in recs:
+        if not r["primary_indication"] or r["primary_indication"] not in candidate_indications:
+            continue
+        if r["company"] not in candidate_companies:
+            continue
+        key = (r["company"], r["primary_indication"])
+        raw_cells[key] = raw_cells.get(key, 0) + 1
+
+    # keep only companies / indications that actually appear in the matrix
+    used_companies = sorted(
+        {c for (c, _) in raw_cells.keys()},
+        key=lambda c: -co_company_counter[c],
+    )
+    used_indications = sorted(
+        {i for (_, i) in raw_cells.keys()},
+        key=lambda i: -co_indication_counter[i],
+    )
     co_in_cells = []
-    for iy, comp in enumerate(top_companies):
-        for ix, ind in enumerate(top_indications):
-            v = sum(1 for r in main if r["company"] == comp and r["primary_indication"] == ind)
-            if v:
-                co_in_cells.append([ix, iy, v])
+    for (comp, ind), v in raw_cells.items():
+        ix = used_indications.index(ind)
+        iy = used_companies.index(comp)
+        co_in_cells.append([ix, iy, v])
 
     return {
         "track_key": tk,
@@ -374,8 +396,8 @@ def per_track_payload(records: list[dict], tk: str) -> dict:
         "material_share": [{"name": n, "value": v} for n, v in material_counter.most_common(12)],
         "timeline": {"years": years, "values": [year_counter[y] for y in years]},
         "company_indication_heatmap": {
-            "companies": top_companies,
-            "indications": top_indications,
+            "companies": used_companies,
+            "indications": used_indications,
             "cells": co_in_cells,
         },
         "records": [{k: v for k, v in r.items() if k != "_raw"} for r in recs],
