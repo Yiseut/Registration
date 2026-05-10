@@ -271,7 +271,9 @@
           <td>${escape(r.origin || '—')}</td>
           <td>${escape(r.primary_indication || '—')}</td>
           <td>${escape(r.approval_date || '—')}</td>
-          <td>${r.verified ? '<span class="tag pos">已核验</span>' : '<span class="tag warn">待核验</span>'}</td>
+          <td>${r.verified
+            ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
+            : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>'}</td>
         </tr>
       `).join('');
       tbody.querySelectorAll('tr').forEach((tr) => {

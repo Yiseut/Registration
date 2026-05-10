@@ -311,11 +311,30 @@ a:hover { color: var(--brand); }
   padding: 2px 9px; border-radius: 999px;
   font-size: 11.5px; font-weight: 500;
   background: var(--bg-mute); color: var(--ink-2);
+  white-space: nowrap;
 }
 .tag.brand { background: var(--brand-soft); color: var(--brand-deep); }
 .tag.pos { background: #E2EEDF; color: var(--pos); }
 .tag.warn { background: #F7E8D4; color: var(--warn); }
 .tag.neg { background: #F4DAD7; color: var(--neg); }
+
+/* Verification badge — NMPA mark with check / dash icon */
+.verify-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 8px 2px 4px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.verify-badge.ok { background: #E2EEDF; color: var(--pos); }
+.verify-badge.pending { background: #F7E8D4; color: var(--warn); }
+.verify-badge .ico {
+  width: 14px; height: 14px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 10px; line-height: 1;
+  color: #FFF; flex-shrink: 0;
+}
+.verify-badge.ok .ico { background: var(--pos); }
+.verify-badge.pending .ico { background: var(--warn); }
 
 /* ===== Drawer (drilldown) ===== */
 

@@ -138,8 +138,8 @@ const Drawer = (() => {
 function renderRecordCard(r) {
   const tags = (r.tags || []).slice(0, 3).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
   const verifiedTag = r.verified
-    ? '<span class="tag pos">已核验</span>'
-    : '<span class="tag warn">待核验</span>';
+    ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
+    : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>';
   const originTag = r.origin ? `<span class="tag">${escape(r.origin)}</span>` : '';
   const url = r.source_url
     ? `<a href="${escape(r.source_url)}" target="_blank" rel="noopener">来源 ↗</a>`
