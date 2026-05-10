@@ -83,7 +83,7 @@ a:hover { color: var(--brand); }
 
 /* ===== Layout shell ===== */
 
-.shell { max-width: 1320px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 48px) 96px; }
+.shell { max-width: 1440px; margin: 0 auto; padding: 36px clamp(20px, 4vw, 48px) 96px; }
 
 .topbar {
   display: flex; align-items: center; justify-content: space-between;
@@ -305,6 +305,21 @@ a:hover { color: var(--brand); }
 .table tbody tr:hover { background: var(--bg-soft); cursor: pointer; }
 .table tbody tr:last-child td { border-bottom: none; }
 .table .num { font-variant-numeric: tabular-nums; text-align: right; }
+.table .nowrap { white-space: nowrap; }
+
+/* Records table: keep narrow categorical columns on a single line */
+#table-records th:nth-child(3),
+#table-records td:nth-child(3),  /* 证号 */
+#table-records th:nth-child(4),
+#table-records td:nth-child(4),  /* 来源 */
+#table-records th:nth-child(6),
+#table-records td:nth-child(6),  /* 批准日 */
+#table-records th:nth-child(7),
+#table-records td:nth-child(7)   /* 核验 */ { white-space: nowrap; }
+#table-records th:nth-child(4),
+#table-records td:nth-child(4) { min-width: 56px; }
+#table-records th:nth-child(6),
+#table-records td:nth-child(6) { min-width: 96px; }
 
 .tag {
   display: inline-flex; align-items: center; gap: 4px;
