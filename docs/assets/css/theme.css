@@ -433,6 +433,108 @@ a:hover { color: var(--brand); }
   border-radius: 8px;
 }
 
+/* ===== Intensity list (indication / material breakdown) ===== */
+
+.intensity-list {
+  display: flex; flex-direction: column; gap: 6px;
+  max-height: 420px; overflow-y: auto; padding-right: 4px;
+}
+.intensity-list::-webkit-scrollbar { width: 6px; }
+.intensity-list::-webkit-scrollbar-thumb { background: var(--hairline-strong); border-radius: 3px; }
+
+.intensity-row {
+  display: grid;
+  grid-template-columns: minmax(96px, 28%) 1fr;
+  align-items: center; gap: 14px;
+  padding: 6px 6px 6px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 160ms var(--ease-out);
+}
+.intensity-row:hover { background: var(--bg-soft); }
+.intensity-label {
+  color: var(--ink-2); font-size: 13px; font-weight: 500;
+  text-align: right; padding-right: 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.intensity-track {
+  position: relative;
+  height: 26px; border-radius: 999px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+.intensity-bar {
+  position: absolute; inset: 0 auto 0 0;
+  border-radius: 999px;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 0 12px;
+  color: #fff; font-weight: 600; font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  transform-origin: left center;
+  animation: bar-grow 700ms var(--ease-soft) both;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.18);
+}
+.intensity-bar.light { color: var(--ink); text-shadow: 0 1px 0 rgba(255,255,255,0.3); }
+@keyframes bar-grow {
+  from { transform: scaleX(0); opacity: 0.4; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* Hover tooltip with bulleted list of records */
+.intensity-tip {
+  position: fixed; z-index: 200; pointer-events: none;
+  background: rgba(255,255,255,0.98);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-3);
+  padding: 14px 16px;
+  min-width: 280px; max-width: 380px;
+  opacity: 0; transition: opacity 140ms var(--ease-out);
+}
+.intensity-tip.visible { opacity: 1; }
+.intensity-tip .t-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 8px; gap: 12px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 8px;
+}
+.intensity-tip .t-head strong { font-size: 14px; color: var(--ink); }
+.intensity-tip .t-count {
+  font-size: 11.5px; color: var(--brand-deep); font-weight: 600;
+  background: var(--brand-soft); padding: 2px 8px; border-radius: 999px;
+  white-space: nowrap;
+}
+.intensity-tip ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.intensity-tip li {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--hairline);
+  font-size: 12.5px;
+}
+.intensity-tip li:last-child { border-bottom: none; }
+.intensity-tip li::before {
+  content: "•"; color: var(--brand);
+  position: absolute; margin-left: -10px; font-weight: 700;
+}
+.intensity-tip li { padding-left: 12px; position: relative; }
+.intensity-tip .t-co { color: var(--ink); font-weight: 600; }
+.intensity-tip .t-prod { color: var(--ink-3); line-height: 1.35; }
+.intensity-tip .t-cert {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--ink-mute); font-size: 11px;
+}
+.intensity-tip .t-more {
+  margin-top: 8px; font-size: 11.5px; color: var(--ink-mute);
+  text-align: center; padding-top: 8px;
+  border-top: 1px solid var(--hairline);
+}
+
+/* Override chart height when used as intensity list container */
+.chart.as-list { height: auto !important; min-height: unset !important; }
+
 /* ===== Footer ===== */
 
 .foot {

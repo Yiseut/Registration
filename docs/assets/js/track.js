@@ -42,14 +42,14 @@
   // Company share — horizontal bar
   renderCompanyShare(data.company_share, data.long_tail_company_count);
 
-  // Indication unit grid (one square per record)
-  renderUnitGrid('chart-indications', data.records, 'primary_indication', '适应症 / 部位');
+  // Indication intensity list (one row per indication, hover shows products)
+  renderIntensityList('chart-indications', data.records, 'primary_indication');
 
   // Origin donut (3 categories — donut is the right shape here)
   renderDonut('chart-origin', data.origin_share, '来源结构');
 
-  // Material unit grid (one square per record)
-  renderUnitGrid('chart-material', data.records, 'material_family', '材料家族');
+  // Material intensity list
+  renderIntensityList('chart-material', data.records, 'material_family');
 
   // Timeline
   renderTimeline(data.timeline);
@@ -111,117 +111,112 @@
     }
   }
 
-  function renderUnitGrid(elId, allRecords, categoryKey, title) {
+  function renderIntensityList(elId, allRecords, categoryKey) {
     const el = document.getElementById(elId);
     if (!el) return;
+    el.classList.add('as-list');
+    el.innerHTML = '';
+
     const records = allRecords.filter((r) => r.main_landscape && r[categoryKey]);
     if (!records.length) {
       el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无该维度数据</div>';
       return;
     }
 
-    // Rank categories by frequency, top 10 get colors, rest fold into 其他
-    const counts = {};
-    records.forEach((r) => { const k = r[categoryKey]; counts[k] = (counts[k] || 0) + 1; });
-    const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-    const TOP = 10;
-    const topNames = ranked.slice(0, TOP).map((x) => x[0]);
-    const catColor = {};
-    topNames.forEach((c, i) => { catColor[c] = SERIES_COLORS[i % SERIES_COLORS.length]; });
-    const OTHER_COLOR = '#D6D2C8';
-
-    // Sort so cells of the same category cluster
-    const ordered = [...records].sort((a, b) => {
-      const ai = topNames.indexOf(a[categoryKey]);
-      const bi = topNames.indexOf(b[categoryKey]);
-      if (ai === -1 && bi === -1) return 0;
-      if (ai === -1) return 1;
-      if (bi === -1) return -1;
-      return ai - bi;
+    const groups = new Map();
+    records.forEach((r) => {
+      const k = r[categoryKey];
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(r);
     });
+    const sorted = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+    const max = sorted[0][1].length;
 
-    // Grid layout — slightly wider than tall reads better in the card
-    const N = ordered.length;
-    const cols = Math.max(6, Math.ceil(Math.sqrt(N * 2.0)));
-    const rows = Math.ceil(N / cols);
+    const list = document.createElement('div');
+    list.className = 'intensity-list';
 
-    const cells = ordered.map((r, i) => {
-      const cat = r[categoryKey];
-      const color = catColor[cat] || OTHER_COLOR;
-      return {
-        value: [i % cols, rows - 1 - Math.floor(i / cols), 1],
-        record: r,
-        category: cat,
-        itemStyle: { color, borderColor: palette.bg, borderWidth: 2, borderRadius: 4 },
-      };
-    });
+    sorted.forEach(([cat, recs], idx) => {
+      const ratio = recs.length / max;
+      const widthPct = Math.max(8, ratio * 100);
+      // Light end (low count) → soft tint of accent; high count → deep accent.
+      const startColor = shade(meta.accent, 28);
+      const endColor = shade(meta.accent, -10 - ratio * 18);
+      const isLight = ratio < 0.18;  // light bars get dark text
 
-    // Build legend entries (top + 其他 if needed)
-    const legendData = topNames.map((c) => ({
-      name: `${c} (${counts[c]})`,
-      itemStyle: { color: catColor[c] }, icon: 'roundRect',
-    }));
-    const otherCount = ranked.slice(TOP).reduce((s, x) => s + x[1], 0);
-    if (otherCount > 0) {
-      legendData.push({ name: `其他 (${otherCount})`, itemStyle: { color: OTHER_COLOR }, icon: 'roundRect' });
-    }
-
-    const inst = ChartFactory.make(el, {
-      grid: { left: 8, right: 8, top: 12, bottom: 70 },
-      tooltip: {
-        position: 'top',
-        formatter: (p) => {
-          const r = p.data.record;
-          const lines = [
-            `<b>${escape(p.data.category || '—')}</b>`,
-            `<span style="color:${palette.ink3}">${escape(r.company || '—')}</span>`,
-          ];
-          if (r.brand && r.brand !== r.company) lines.push(`品牌:${escape(r.brand)}`);
-          lines.push(`<div style="margin-top:4px;max-width:280px;white-space:normal">${escape(r.product_name || '—')}</div>`);
-          if (r.certificate_no) {
-            lines.push(`<div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:${palette.inkMute};margin-top:4px">${escape(r.certificate_no)}</div>`);
-          }
-          if (r.origin) lines.push(`<span style="font-size:11px;color:${palette.inkMute}">${escape(r.origin)} · ${escape(r.approval_date || '')}</span>`);
-          return lines.join('<br/>');
-        },
-      },
-      legend: {
-        bottom: 0, type: 'scroll',
-        textStyle: { fontSize: 11.5, color: palette.ink3 },
-        itemWidth: 12, itemHeight: 12, itemGap: 14,
-        data: legendData,
-      },
-      xAxis: {
-        show: false, type: 'category',
-        data: Array.from({ length: cols }, (_, i) => String(i)),
-        splitArea: { show: false }, axisLine: { show: false }, axisTick: { show: false },
-      },
-      yAxis: {
-        show: false, type: 'category',
-        data: Array.from({ length: rows }, (_, i) => String(i)),
-        splitArea: { show: false }, axisLine: { show: false }, axisTick: { show: false },
-      },
-      series: [{
-        type: 'heatmap',
-        coordinateSystem: 'cartesian2d',
-        data: cells,
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 8, shadowColor: 'rgba(28,22,18,0.20)',
-            borderColor: palette.ink, borderWidth: 1.5,
-          },
-        },
-        animationDuration: 700, animationEasing: 'cubicOut',
-      }],
-    });
-    inst.on('click', (p) => {
-      const r = p.data.record;
-      window.RI.showRecords({
-        title: r.product_name || '产品详情',
-        meta: `${r.certificate_no || ''}`,
-        records: [r],
+      const row = document.createElement('div');
+      row.className = 'intensity-row';
+      row.innerHTML = `
+        <div class="intensity-label" title="${escape(cat)}">${escape(cat)}</div>
+        <div class="intensity-track">
+          <div class="intensity-bar ${isLight ? 'light' : ''}"
+               style="width:${widthPct}%; background: linear-gradient(90deg, ${startColor}, ${endColor}); animation-delay:${idx * 35}ms">
+            ${recs.length}
+          </div>
+        </div>
+      `;
+      attachIntensityTooltip(row, cat, recs);
+      row.addEventListener('click', () => {
+        window.RI.showRecords({
+          title: cat,
+          meta: `${meta.name} · ${categoryKey === 'primary_indication' ? '适应症 / 部位' : '材料家族'}`,
+          records: recs,
+        });
       });
+      list.appendChild(row);
     });
+    el.appendChild(list);
+  }
+
+  // Singleton tooltip element reused across all rows.
+  let _tipEl = null;
+  function getTip() {
+    if (_tipEl) return _tipEl;
+    _tipEl = document.createElement('div');
+    _tipEl.className = 'intensity-tip';
+    document.body.appendChild(_tipEl);
+    return _tipEl;
+  }
+
+  function attachIntensityTooltip(row, cat, recs) {
+    function show() {
+      const tip = getTip();
+      const items = recs.slice(0, 10).map((r) => {
+        const cert = r.certificate_no
+          ? `<span class="t-cert">${escape(r.certificate_no)}</span>` : '';
+        return `<li>
+          <span class="t-co">${escape(r.company || '—')}</span>
+          <span class="t-prod">${escape(r.product_name || '—')}</span>
+          ${cert}
+        </li>`;
+      }).join('');
+      const more = recs.length > 10
+        ? `<div class="t-more">… 另 ${recs.length - 10} 条 (点击查看全部)</div>` : '';
+      tip.innerHTML = `
+        <div class="t-head">
+          <strong>${escape(cat)}</strong>
+          <span class="t-count">${recs.length} 张证</span>
+        </div>
+        <ul>${items}</ul>
+        ${more}
+      `;
+      // Position next to row, flip side if it would overflow viewport
+      const rect = row.getBoundingClientRect();
+      tip.style.visibility = 'hidden';
+      tip.classList.add('visible');
+      const tipRect = tip.getBoundingClientRect();
+      let left = rect.right + 12;
+      if (left + tipRect.width > window.innerWidth - 12) {
+        left = rect.left - tipRect.width - 12;
+      }
+      let top = rect.top + rect.height / 2 - tipRect.height / 2;
+      top = Math.max(12, Math.min(top, window.innerHeight - tipRect.height - 12));
+      tip.style.left = `${Math.max(12, left)}px`;
+      tip.style.top = `${top}px`;
+      tip.style.visibility = '';
+    }
+    function hide() { if (_tipEl) _tipEl.classList.remove('visible'); }
+    row.addEventListener('mouseenter', show);
+    row.addEventListener('mouseleave', hide);
   }
 
   function renderDonut(elId, items, title) {
