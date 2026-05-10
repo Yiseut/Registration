@@ -360,14 +360,16 @@ def per_track_payload(records: list[dict], tk: str) -> dict:
         key = (r["company"], r["primary_indication"])
         raw_cells[key] = raw_cells.get(key, 0) + 1
 
-    # keep only companies / indications that actually appear in the matrix
+    # keep only companies / indications that actually appear in the matrix.
+    # Tie-break by name so the JSON output is stable across runs (otherwise
+    # equal-count entries would shuffle and create spurious git diffs).
     used_companies = sorted(
         {c for (c, _) in raw_cells.keys()},
-        key=lambda c: -co_company_counter[c],
+        key=lambda c: (-co_company_counter[c], c),
     )
     used_indications = sorted(
         {i for (_, i) in raw_cells.keys()},
-        key=lambda i: -co_indication_counter[i],
+        key=lambda i: (-co_indication_counter[i], i),
     )
     co_in_cells = []
     for (comp, ind), v in raw_cells.items():
