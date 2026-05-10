@@ -42,14 +42,14 @@
   // Company share — horizontal bar
   renderCompanyShare(data.company_share, data.long_tail_company_count);
 
-  // Indication donut
-  renderDonut('chart-indications', data.indication_share, '适应症 / 部位');
+  // Indication unit grid (one square per record)
+  renderUnitGrid('chart-indications', data.records, 'primary_indication', '适应症 / 部位');
 
-  // Origin donut
+  // Origin donut (3 categories — donut is the right shape here)
   renderDonut('chart-origin', data.origin_share, '来源结构');
 
-  // Material donut
-  renderDonut('chart-material', data.material_share, '材料结构');
+  // Material unit grid (one square per record)
+  renderUnitGrid('chart-material', data.records, 'material_family', '材料家族');
 
   // Timeline
   renderTimeline(data.timeline);
@@ -109,6 +109,119 @@
     if (longTail > 0) {
       document.getElementById('long-tail-note').textContent = `… 另有 ${longTail} 家长尾注册人未进入 Top 12`;
     }
+  }
+
+  function renderUnitGrid(elId, allRecords, categoryKey, title) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const records = allRecords.filter((r) => r.main_landscape && r[categoryKey]);
+    if (!records.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无该维度数据</div>';
+      return;
+    }
+
+    // Rank categories by frequency, top 10 get colors, rest fold into 其他
+    const counts = {};
+    records.forEach((r) => { const k = r[categoryKey]; counts[k] = (counts[k] || 0) + 1; });
+    const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const TOP = 10;
+    const topNames = ranked.slice(0, TOP).map((x) => x[0]);
+    const catColor = {};
+    topNames.forEach((c, i) => { catColor[c] = SERIES_COLORS[i % SERIES_COLORS.length]; });
+    const OTHER_COLOR = '#D6D2C8';
+
+    // Sort so cells of the same category cluster
+    const ordered = [...records].sort((a, b) => {
+      const ai = topNames.indexOf(a[categoryKey]);
+      const bi = topNames.indexOf(b[categoryKey]);
+      if (ai === -1 && bi === -1) return 0;
+      if (ai === -1) return 1;
+      if (bi === -1) return -1;
+      return ai - bi;
+    });
+
+    // Grid layout — slightly wider than tall reads better in the card
+    const N = ordered.length;
+    const cols = Math.max(6, Math.ceil(Math.sqrt(N * 2.0)));
+    const rows = Math.ceil(N / cols);
+
+    const cells = ordered.map((r, i) => {
+      const cat = r[categoryKey];
+      const color = catColor[cat] || OTHER_COLOR;
+      return {
+        value: [i % cols, rows - 1 - Math.floor(i / cols), 1],
+        record: r,
+        category: cat,
+        itemStyle: { color, borderColor: palette.bg, borderWidth: 2, borderRadius: 4 },
+      };
+    });
+
+    // Build legend entries (top + 其他 if needed)
+    const legendData = topNames.map((c) => ({
+      name: `${c} (${counts[c]})`,
+      itemStyle: { color: catColor[c] }, icon: 'roundRect',
+    }));
+    const otherCount = ranked.slice(TOP).reduce((s, x) => s + x[1], 0);
+    if (otherCount > 0) {
+      legendData.push({ name: `其他 (${otherCount})`, itemStyle: { color: OTHER_COLOR }, icon: 'roundRect' });
+    }
+
+    const inst = ChartFactory.make(el, {
+      grid: { left: 8, right: 8, top: 12, bottom: 70 },
+      tooltip: {
+        position: 'top',
+        formatter: (p) => {
+          const r = p.data.record;
+          const lines = [
+            `<b>${escape(p.data.category || '—')}</b>`,
+            `<span style="color:${palette.ink3}">${escape(r.company || '—')}</span>`,
+          ];
+          if (r.brand && r.brand !== r.company) lines.push(`品牌:${escape(r.brand)}`);
+          lines.push(`<div style="margin-top:4px;max-width:280px;white-space:normal">${escape(r.product_name || '—')}</div>`);
+          if (r.certificate_no) {
+            lines.push(`<div style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:${palette.inkMute};margin-top:4px">${escape(r.certificate_no)}</div>`);
+          }
+          if (r.origin) lines.push(`<span style="font-size:11px;color:${palette.inkMute}">${escape(r.origin)} · ${escape(r.approval_date || '')}</span>`);
+          return lines.join('<br/>');
+        },
+      },
+      legend: {
+        bottom: 0, type: 'scroll',
+        textStyle: { fontSize: 11.5, color: palette.ink3 },
+        itemWidth: 12, itemHeight: 12, itemGap: 14,
+        data: legendData,
+      },
+      xAxis: {
+        show: false, type: 'category',
+        data: Array.from({ length: cols }, (_, i) => String(i)),
+        splitArea: { show: false }, axisLine: { show: false }, axisTick: { show: false },
+      },
+      yAxis: {
+        show: false, type: 'category',
+        data: Array.from({ length: rows }, (_, i) => String(i)),
+        splitArea: { show: false }, axisLine: { show: false }, axisTick: { show: false },
+      },
+      series: [{
+        type: 'heatmap',
+        coordinateSystem: 'cartesian2d',
+        data: cells,
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 8, shadowColor: 'rgba(28,22,18,0.20)',
+            borderColor: palette.ink, borderWidth: 1.5,
+          },
+        },
+        animationDuration: 700, animationEasing: 'cubicOut',
+      }],
+    });
+    inst.on('click', (p) => {
+      const r = p.data.record;
+      window.RI.showRecords({
+        title: r.product_name || '产品详情',
+        meta: `${r.certificate_no || ''}`,
+        records: [r],
+      });
+    });
   }
 
   function renderDonut(elId, items, title) {
