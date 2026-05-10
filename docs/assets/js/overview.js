@@ -17,6 +17,17 @@
   setKpi('kpi-verified', kpi.verified_share, { decimals: 1, suffix: '%' });
   document.getElementById('kpi-total').textContent = kpi.total_records;
   document.getElementById('kpi-mix').textContent = `${kpi.domestic} : ${kpi.imported} : ${kpi.hkmt}`;
+
+  // Material-focused row
+  setKpi('kpi-inj3', kpi.injectable_class3);
+  document.getElementById('kpi-inj3-breakdown').textContent = kpi.injectable_class3_breakdown;
+  setKpi('kpi-drug', kpi.injectable_drug);
+  document.getElementById('kpi-drug-breakdown').textContent = kpi.injectable_drug_breakdown;
+  setKpi('kpi-indications', kpi.indications);
+  setKpi('kpi-recent', kpi.recent_12mo);
+  document.getElementById('kpi-recent-share').textContent = kpi.recent_12mo_share;
+  document.getElementById('kpi-recent-breakdown').textContent = kpi.recent_12mo_breakdown;
+
   watchKpis();
 
   // ---- Segment cards ----

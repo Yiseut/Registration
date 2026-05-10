@@ -145,6 +145,44 @@ def kpi_block(records: list[dict]) -> dict:
     domestic = sum(1 for r in main if r["origin"] == "国产")
     imported = sum(1 for r in main if r["origin"] == "进口")
     hkmt = sum(1 for r in main if r["origin"] == "港澳台")
+
+    # Material-focused breakdowns: industry watches injection assets first
+    injectable_tracks = {"ha", "plla", "pcl", "caha", "collagen"}
+    drug_tracks = {"botulinum"}
+    inj_class3 = [r for r in main if r["track"] in injectable_tracks]
+    inj_drug = [r for r in main if r["track"] in drug_tracks]
+
+    track_label = {"ha": "HA", "collagen": "胶原", "plla": "PLLA", "pcl": "PCL",
+                   "caha": "CaHA", "botulinum": "肉毒"}
+
+    def friendly_bucket(track_code: str) -> str:
+        if track_code in track_label:
+            return track_label[track_code]
+        # all raw_* device codes + laser_ipl + body_contouring_device collapse to EBD
+        return "EBD"
+
+    inj_breakdown = []
+    for tk in ("ha", "collagen", "plla", "pcl", "caha"):
+        n = sum(1 for r in inj_class3 if r["track"] == tk)
+        if n:
+            inj_breakdown.append(f"{track_label[tk]}{n}")
+    drug_breakdown = []
+    for tk in ("botulinum",):
+        n = sum(1 for r in inj_drug if r["track"] == tk)
+        if n:
+            drug_breakdown.append(f"{track_label[tk]}{n}")
+
+    # Last 12 months by approval_date
+    today = date.today()
+    cutoff = date(today.year - 1, today.month, today.day) if not (today.month == 2 and today.day == 29) else date(today.year - 1, 2, 28)
+    recent = []
+    for r in main:
+        d = parse_date(r.get("approval_date") or "")
+        if d and d >= cutoff:
+            recent.append(r)
+    recent_bucket_counter = Counter(friendly_bucket(r["track"]) for r in recent)
+    recent_breakdown = [f"{name}{n}" for name, n in recent_bucket_counter.most_common(4)]
+
     return {
         "total_records": len(records),
         "main_records": len(main),
@@ -155,6 +193,16 @@ def kpi_block(records: list[dict]) -> dict:
         "domestic": domestic,
         "imported": imported,
         "hkmt": hkmt,
+
+        # Material-focused KPIs
+        "injectable_class3": len(inj_class3),
+        "injectable_class3_breakdown": " / ".join(inj_breakdown),
+        "injectable_drug": len(inj_drug),
+        "injectable_drug_breakdown": " / ".join(drug_breakdown),
+        "recent_12mo": len(recent),
+        "recent_12mo_share": round(len(recent) / max(len(main), 1) * 100, 1),
+        "recent_12mo_breakdown": " / ".join(recent_breakdown),
+        "indication_note": "覆盖部位、肤质改善、注射层次等标准化标签",
     }
 
 

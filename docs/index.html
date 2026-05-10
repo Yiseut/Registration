@@ -44,7 +44,7 @@
     </div>
   </section>
 
-  <!-- KPI strip -->
+  <!-- KPI row 1: aggregate -->
   <section class="grid grid-4" style="margin-top:14px">
     <div class="card kpi lift rise rise-1">
       <div class="label">主格局注册证</div>
@@ -65,6 +65,31 @@
       <div class="label">国产 : 进口 : 港澳台</div>
       <div class="value"><span id="kpi-mix">— : — : —</span></div>
       <div class="delta">主格局口径下的来源结构</div>
+    </div>
+  </section>
+
+  <!-- KPI row 2: material focus — what the industry actually watches -->
+  <section class="grid grid-4" style="margin-top:18px">
+    <div class="card kpi lift rise rise-1">
+      <div class="label">注射类三类器械</div>
+      <div class="value"><span data-animate-to="0" id="kpi-inj3">0</span><span class="unit">张</span></div>
+      <div class="delta" id="kpi-inj3-breakdown">—</div>
+    </div>
+    <div class="card kpi lift rise rise-2 tone-ocean">
+      <div class="label">注射用药品</div>
+      <div class="value"><span data-animate-to="0" id="kpi-drug">0</span><span class="unit">张</span></div>
+      <div class="delta" id="kpi-drug-breakdown">—</div>
+    </div>
+    <div class="card kpi lift rise rise-3 tone-plum">
+      <div class="label">适应证 / 部位</div>
+      <div class="value"><span data-animate-to="0" id="kpi-indications">0</span><span class="unit">类</span></div>
+      <div class="delta">覆盖部位、肤质改善、注射层次等标准化标签</div>
+    </div>
+    <div class="card kpi lift rise rise-4 tone-rose">
+      <div class="label">近 12 个月新增</div>
+      <div class="value"><span data-animate-to="0" id="kpi-recent">0</span><span class="unit">张</span></div>
+      <div class="delta">占主格局 <span id="kpi-recent-share">—</span>%
+        · <span id="kpi-recent-breakdown">—</span></div>
     </div>
   </section>
 
