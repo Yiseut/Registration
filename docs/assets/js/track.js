@@ -986,7 +986,10 @@
     ), 1);
     const companyTotals = new Map(hm.companies.map((company) => [
       company,
-      data.records.filter((record) => record.main_landscape && (record.company || '未标注厂家') === company).length,
+      unique(data.records
+        .filter((record) => record.main_landscape && (record.company || '未标注厂家') === company)
+        .flatMap(indicationValues)
+      ).length,
     ]));
     const indicationTotals = new Map(hm.indications.map((indication) => [
       indication,
