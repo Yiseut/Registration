@@ -10,20 +10,20 @@
     "domestic": 99,
     "imported": 71,
     "hkmt": 6,
-    "injectable_class3": 145,
-    "injectable_class3_breakdown": "HA108 / 胶原18 / PLLA12 / PCL5 / CaHA2",
-    "injectable_drug": 8,
-    "injectable_drug_breakdown": "肉毒8",
+    "injectable_class3": 146,
+    "injectable_class3_breakdown": "HA108 / 胶原18 / PLLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_drug": 9,
+    "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
+    "indication_breakdown": "注射填充类 18 类 · 注射用药品 2 类 · EBD 9 类",
     "recent_12mo": 59,
-    "recent_12mo_share": 33.5,
-    "recent_12mo_breakdown": "HA26 / EBD14 / 胶原9 / PLLA6",
-    "indication_note": "覆盖部位、肤质改善、注射层次等标准化标签"
+    "recent_12mo_share": 27.3,
+    "recent_12mo_breakdown": "HA26 / EBD13 / 胶原9 / PLLA6"
   },
   "segments": [
     {
       "key": "ha",
       "name": "玻尿酸 / 透明质酸钠",
-      "tagline": "中国医美注射填充的基础盘",
+      "tagline": "",
       "accent": "#D97757",
       "records": 108,
       "main_records": 108,
@@ -35,7 +35,7 @@
     {
       "key": "collagen",
       "name": "胶原蛋白",
-      "tagline": "国产新势力快速崛起的赛道",
+      "tagline": "",
       "accent": "#B5915A",
       "records": 46,
       "main_records": 18,
@@ -47,7 +47,7 @@
     {
       "key": "plla",
       "name": "童颜针 / PLLA",
-      "tagline": "再生类的旗手,国际品牌主导",
+      "tagline": "",
       "accent": "#8B5A6B",
       "records": 12,
       "main_records": 12,
@@ -59,7 +59,7 @@
     {
       "key": "pcl",
       "name": "少女针 / PCL",
-      "tagline": "再生类小众但溢价高的细分",
+      "tagline": "",
       "accent": "#C15F3C",
       "records": 5,
       "main_records": 5,
@@ -71,7 +71,7 @@
     {
       "key": "caha",
       "name": "羟基磷酸钙 / CaHA",
-      "tagline": "再生类骨相支撑材料",
+      "tagline": "",
       "accent": "#5B7B9A",
       "records": 5,
       "main_records": 2,
@@ -83,7 +83,7 @@
     {
       "key": "botulinum",
       "name": "肉毒毒素",
-      "tagline": "药品监管的医美准入,寡头格局",
+      "tagline": "",
       "accent": "#8B9D7F",
       "records": 8,
       "main_records": 8,
@@ -95,7 +95,7 @@
     {
       "key": "ebd",
       "name": "EBD 设备类",
-      "tagline": "射频/超声/激光/微针的器械准入",
+      "tagline": "",
       "accent": "#6E6A65",
       "records": 29,
       "main_records": 21,
@@ -108,10 +108,10 @@
   "portfolio_matrix": {
     "segments": [
       "EBD 设备类",
-      "再生类",
       "新型材料",
       "玻尿酸",
       "肉毒素",
+      "胶原刺激剂",
       "胶原蛋白"
     ],
     "rows": [
@@ -122,10 +122,10 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 1,
           "新型材料": 0,
           "玻尿酸": 8,
           "肉毒素": 1,
+          "胶原刺激剂": 1,
           "胶原蛋白": 0
         }
       },
@@ -136,10 +136,10 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 1,
           "新型材料": 0,
           "玻尿酸": 6,
           "肉毒素": 1,
+          "胶原刺激剂": 1,
           "胶原蛋白": 0
         }
       },
@@ -150,10 +150,10 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 1,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 1,
+          "胶原刺激剂": 1,
           "胶原蛋白": 0
         }
       },
@@ -164,10 +164,10 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 1,
-          "再生类": 1,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 1,
           "胶原蛋白": 0
         }
       },
@@ -178,10 +178,10 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 11,
           "肉毒素": 1,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -192,10 +192,10 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 1,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 2
         }
       },
@@ -206,10 +206,10 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 2,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 1,
+          "胶原刺激剂": 2,
           "胶原蛋白": 0
         }
       },
@@ -220,10 +220,10 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 2,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 1,
+          "胶原刺激剂": 2,
           "胶原蛋白": 0
         }
       },
@@ -234,10 +234,10 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 1,
           "新型材料": 0,
           "玻尿酸": 1,
           "肉毒素": 0,
+          "胶原刺激剂": 1,
           "胶原蛋白": 0
         }
       },
@@ -248,10 +248,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 11,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -262,10 +262,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 5,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -276,10 +276,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -290,10 +290,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -304,10 +304,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -318,10 +318,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 3,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -332,10 +332,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 3
         }
       },
@@ -346,10 +346,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 3
         }
       },
@@ -360,10 +360,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 3,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -374,10 +374,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -388,10 +388,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -402,10 +402,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -416,10 +416,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -430,10 +430,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       },
@@ -444,10 +444,10 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "再生类": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
+          "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
       }
@@ -785,7 +785,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 20
+        "days_to_expiry": 18
       },
       {
         "id": "HA-国械注进20173135168-鼻唇沟",
@@ -823,13 +823,13 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 44
+        "days_to_expiry": 42
       },
       {
         "id": "PLLA-国械注准20213130460",
         "track": "plla",
         "track_name": "童颜针 / PLLA",
-        "strategic": "再生类",
+        "strategic": "胶原刺激剂",
         "product_name": "含左旋乳酸-乙二醇共聚物微球的交联透明质酸钠凝胶",
         "company": "爱美客",
         "company_key": "imeik",
@@ -850,14 +850,14 @@
         "main_landscape": true,
         "portfolio_segments": [
           "玻尿酸",
-          "再生类",
+          "胶原刺激剂",
           "肉毒素"
         ],
         "source_account": "美圈老卢",
         "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
         "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
         "confidence": "",
-        "days_to_expiry": 44
+        "days_to_expiry": 42
       },
       {
         "id": "COLLAGEN-国械注准20213130488",
@@ -891,7 +891,7 @@
         "source_title": "胶原蛋白汇总文章交叉校准",
         "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
         "confidence": "",
-        "days_to_expiry": 48
+        "days_to_expiry": 46
       },
       {
         "id": "HA-国械注许20163130035-鼻唇沟",
@@ -929,7 +929,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 52
+        "days_to_expiry": 50
       },
       {
         "id": "HA-国械注准20173133254-鼻唇沟",
@@ -967,7 +967,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 65
+        "days_to_expiry": 63
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -1000,14 +1000,14 @@
         "main_landscape": true,
         "portfolio_segments": [
           "玻尿酸",
-          "再生类",
+          "胶原刺激剂",
           "肉毒素"
         ],
         "source_account": "闲话医与美",
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 163
+        "days_to_expiry": 161
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -1042,7 +1042,7 @@
         "source_title": "胶原蛋白汇总文章交叉校准",
         "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
         "confidence": "",
-        "days_to_expiry": 168
+        "days_to_expiry": 166
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1076,7 +1076,7 @@
         "source_title": "UDI 胶原蛋白赛道召回样本",
         "source_url": "https://fiman.com/",
         "confidence": "",
-        "days_to_expiry": 176
+        "days_to_expiry": 174
       },
       {
         "id": "HA-国械注进20213130485-鼻部",
@@ -1116,7 +1116,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 199
+        "days_to_expiry": 197
       },
       {
         "id": "HA-国械注进20213130485-颞部",
@@ -1156,7 +1156,7 @@
         "source_title": "乔雅登丰颜获批新适应证，改善颞部凹陷",
         "source_url": "https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
         "confidence": "high",
-        "days_to_expiry": 199
+        "days_to_expiry": 197
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1194,7 +1194,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 295
+        "days_to_expiry": 293
       },
       {
         "id": "HA-国械注进20223130141-鼻部",
@@ -1234,7 +1234,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 303
+        "days_to_expiry": 301
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1272,7 +1272,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 336
+        "days_to_expiry": 334
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1310,7 +1310,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 336
+        "days_to_expiry": 334
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1348,7 +1348,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 344
+        "days_to_expiry": 342
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1388,7 +1388,7 @@
         "source_title": "射频治疗仪 国械注准20223090571 NMPA 医疗器械注册证",
         "source_url": "https://www.nmpa.gov.cn/",
         "confidence": "official",
-        "days_to_expiry": 353
+        "days_to_expiry": 351
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1426,7 +1426,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 376
+        "days_to_expiry": 374
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -1464,7 +1464,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 416
+        "days_to_expiry": 414
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -1502,7 +1502,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 426
+        "days_to_expiry": 424
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -1536,14 +1536,14 @@
         "main_landscape": true,
         "portfolio_segments": [
           "玻尿酸",
-          "再生类",
+          "胶原刺激剂",
           "肉毒素"
         ],
         "source_account": "闲话医与美",
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 484
+        "days_to_expiry": 482
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -1581,7 +1581,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 532
+        "days_to_expiry": 530
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -1619,7 +1619,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 582
+        "days_to_expiry": 580
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -1652,14 +1652,14 @@
         "main_landscape": true,
         "portfolio_segments": [
           "玻尿酸",
-          "再生类",
+          "胶原刺激剂",
           "肉毒素"
         ],
         "source_account": "闲话医与美",
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 612
+        "days_to_expiry": 610
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -1692,14 +1692,14 @@
         "main_landscape": true,
         "portfolio_segments": [
           "玻尿酸",
-          "再生类",
+          "胶原刺激剂",
           "肉毒素"
         ],
         "source_account": "闲话医与美",
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 612
+        "days_to_expiry": 610
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -1737,7 +1737,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 643
+        "days_to_expiry": 641
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -1775,7 +1775,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 643
+        "days_to_expiry": 641
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -1813,7 +1813,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 666
+        "days_to_expiry": 664
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -1846,14 +1846,14 @@
         "main_landscape": true,
         "portfolio_segments": [
           "玻尿酸",
-          "再生类",
+          "胶原刺激剂",
           "肉毒素"
         ],
         "source_account": "闲话医与美",
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 682
+        "days_to_expiry": 680
       },
       {
         "id": "HA-国械注准20183130109-鼻唇沟",
@@ -1891,7 +1891,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 687
+        "days_to_expiry": 685
       }
     ]
   },

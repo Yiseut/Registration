@@ -3,7 +3,7 @@
   "track_meta": {
     "key": "caha",
     "name": "羟基磷酸钙 / CaHA",
-    "tagline": "再生类骨相支撑材料",
+    "tagline": "",
     "accent": "#5B7B9A"
   },
   "kpi": {
@@ -103,7 +103,7 @@
       "id": "CAHA-国械注准20253130390",
       "track": "caha",
       "track_name": "羟基磷酸钙 / CaHA",
-      "strategic": "再生类",
+      "strategic": "胶原刺激剂",
       "product_name": "注射用羟基磷酸钙微球面部填充剂",
       "company": "摩漾生物",
       "company_key": "摩漾生物",
@@ -131,7 +131,7 @@
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "再生类"
+        "胶原刺激剂"
       ],
       "source_account": "摩漾生物/美通社 + 公众号线索",
       "source_title": "摩漾生物旗下aphranel®优法兰™CC针获NMPA三类医疗器械注册首证",
@@ -142,7 +142,7 @@
       "id": "CAHA-国械注进20253130124",
       "track": "caha",
       "track_name": "羟基磷酸钙 / CaHA",
-      "strategic": "再生类",
+      "strategic": "胶原刺激剂",
       "product_name": "注射用羟基磷酸钙微球面部填充剂",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
@@ -172,7 +172,7 @@
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
-        "再生类",
+        "胶原刺激剂",
         "肉毒素"
       ],
       "source_account": "麦施美学/美通社 + 医美部落公开页",
@@ -184,7 +184,7 @@
       "id": "CAHA-国械注准20173130346",
       "track": "caha",
       "track_name": "羟基磷酸钙 / CaHA",
-      "strategic": "再生类",
+      "strategic": "胶原刺激剂",
       "product_name": "羟基磷灰石生物陶瓷",
       "company": "四川拜阿蒙 / 睿合医药",
       "company_key": "四川拜阿蒙 / 睿合医药",
@@ -226,7 +226,7 @@
       "id": "CAHA-国械注准20183131912",
       "track": "caha",
       "track_name": "羟基磷酸钙 / CaHA",
-      "strategic": "再生类",
+      "strategic": "胶原刺激剂",
       "product_name": "羟基磷灰石生物陶瓷",
       "company": "昊海生科 / 上海倍尔康",
       "company_key": "昊海生科 / 上海倍尔康",
@@ -263,7 +263,7 @@
       "id": "CAHA-国械注准20153131017",
       "track": "caha",
       "track_name": "羟基磷酸钙 / CaHA",
-      "strategic": "再生类",
+      "strategic": "胶原刺激剂",
       "product_name": "复合磷酸钙骨植入材料",
       "company": "上海睿星 / 铭融医药",
       "company_key": "上海睿星 / 铭融医药",

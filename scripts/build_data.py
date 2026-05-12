@@ -18,13 +18,13 @@ OUT_DIR = ROOT / "docs" / "assets" / "data"
 TRACK_DIR = OUT_DIR / "tracks"
 
 TRACK_META = [
-    {"key": "ha",         "name": "玻尿酸 / 透明质酸钠",   "tagline": "中国医美注射填充的基础盘",     "accent": "#D97757"},
-    {"key": "collagen",   "name": "胶原蛋白",            "tagline": "国产新势力快速崛起的赛道",     "accent": "#B5915A"},
-    {"key": "plla",       "name": "童颜针 / PLLA",       "tagline": "再生类的旗手,国际品牌主导",   "accent": "#8B5A6B"},
-    {"key": "pcl",        "name": "少女针 / PCL",        "tagline": "再生类小众但溢价高的细分",     "accent": "#C15F3C"},
-    {"key": "caha",       "name": "羟基磷酸钙 / CaHA",   "tagline": "再生类骨相支撑材料",          "accent": "#5B7B9A"},
-    {"key": "botulinum",  "name": "肉毒毒素",           "tagline": "药品监管的医美准入,寡头格局",  "accent": "#8B9D7F"},
-    {"key": "ebd",        "name": "EBD 设备类",          "tagline": "射频/超声/激光/微针的器械准入", "accent": "#6E6A65"},
+    {"key": "ha",         "name": "玻尿酸 / 透明质酸钠",   "tagline": "", "accent": "#D97757"},
+    {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#B5915A"},
+    {"key": "plla",       "name": "童颜针 / PLLA",       "tagline": "", "accent": "#8B5A6B"},
+    {"key": "pcl",        "name": "少女针 / PCL",        "tagline": "", "accent": "#C15F3C"},
+    {"key": "caha",       "name": "羟基磷酸钙 / CaHA",   "tagline": "", "accent": "#5B7B9A"},
+    {"key": "botulinum",  "name": "肉毒毒素",           "tagline": "", "accent": "#8B9D7F"},
+    {"key": "ebd",        "name": "EBD 设备类",          "tagline": "", "accent": "#6E6A65"},
 ]
 TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 
@@ -71,11 +71,15 @@ def safe_strip(value: str | None) -> str:
     return (value or "").strip()
 
 
+def ui_term(value: str | None) -> str:
+    return safe_strip(value).replace("再生类", "胶原刺激剂").replace("再生材料", "胶原刺激剂")
+
+
 def split_portfolio(value: str) -> list[str]:
     if not value:
         return []
     parts = re.split(r"[/、,，;;]", value)
-    return [p.strip() for p in parts if p.strip()]
+    return [ui_term(p) for p in parts if p.strip()]
 
 
 def split_indications(value: str) -> list[str]:
@@ -108,7 +112,7 @@ def build_record_card(row: dict) -> dict:
         "id": safe_strip(row.get("﻿record_id") or row.get("record_id")),
         "track": safe_strip(row.get("track")),
         "track_name": safe_strip(row.get("track_name")),
-        "strategic": safe_strip(row.get("strategic_segment_name")),
+        "strategic": ui_term(row.get("strategic_segment_name")),
         "product_name": safe_strip(row.get("product_name") or row.get("official_product_name")),
         "company": best_company_label(row),
         "company_key": best_company_key(row),
@@ -123,7 +127,7 @@ def build_record_card(row: dict) -> dict:
         "valid_until": safe_strip(row.get("valid_until")),
         "primary_indication": safe_strip(row.get("primary_indication")),
         "indications": split_indications(row.get("approved_indications")),
-        "tags": split_indications(row.get("product_tags")),
+        "tags": [ui_term(tag) for tag in split_indications(row.get("product_tags"))],
         "official_status": safe_strip(row.get("official_status")),
         "verified": safe_strip(row.get("official_status")) == "verified",
         "main_landscape": safe_strip(row.get("main_landscape_included")) == "是",
@@ -146,14 +150,20 @@ def kpi_block(records: list[dict]) -> dict:
     imported = sum(1 for r in main if r["origin"] == "进口")
     hkmt = sum(1 for r in main if r["origin"] == "港澳台")
 
-    # Material-focused breakdowns: industry watches injection assets first
-    injectable_tracks = {"ha", "plla", "pcl", "caha", "collagen"}
-    drug_tracks = {"botulinum"}
+    # Material-focused breakdowns: industry watches injection assets first.
+    # Injection filling = HA + collagen stimulators + collagen + agarose. Injection drug = botulinum + deoxycholic acid.
+    injectable_tracks = {"ha", "plla", "pcl", "caha", "collagen", "raw_agarose"}
+    drug_tracks = {"botulinum", "raw_lipolysis_injection"}
+    ebd_tracks = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl",
+                  "body_contouring_device", "raw_thermage_rf"}
     inj_class3 = [r for r in main if r["track"] in injectable_tracks]
     inj_drug = [r for r in main if r["track"] in drug_tracks]
 
-    track_label = {"ha": "HA", "collagen": "胶原", "plla": "PLLA", "pcl": "PCL",
-                   "caha": "CaHA", "botulinum": "肉毒"}
+    track_label = {
+        "ha": "HA", "collagen": "胶原", "plla": "PLLA", "pcl": "PCL",
+        "caha": "CaHA", "raw_agarose": "琼脂糖",
+        "botulinum": "肉毒毒素", "raw_lipolysis_injection": "去氧胆酸",
+    }
 
     def friendly_bucket(track_code: str) -> str:
         if track_code in track_label:
@@ -162,15 +172,23 @@ def kpi_block(records: list[dict]) -> dict:
         return "EBD"
 
     inj_breakdown = []
-    for tk in ("ha", "collagen", "plla", "pcl", "caha"):
+    for tk in ("ha", "collagen", "plla", "pcl", "caha", "raw_agarose"):
         n = sum(1 for r in inj_class3 if r["track"] == tk)
         if n:
             inj_breakdown.append(f"{track_label[tk]}{n}")
     drug_breakdown = []
-    for tk in ("botulinum",):
+    for tk in ("botulinum", "raw_lipolysis_injection"):
         n = sum(1 for r in inj_drug if r["track"] == tk)
         if n:
             drug_breakdown.append(f"{track_label[tk]}{n}")
+
+    # Indication breakdown by category bucket (counts may overlap)
+    inj_indications = {r["primary_indication"] for r in main
+                       if r["track"] in injectable_tracks and r["primary_indication"]}
+    drug_indications = {r["primary_indication"] for r in main
+                        if r["track"] in drug_tracks and r["primary_indication"]}
+    ebd_indications = {r["primary_indication"] for r in main
+                       if r["track"] in ebd_tracks and r["primary_indication"]}
 
     # Last 12 months by approval_date
     today = date.today()
@@ -199,10 +217,15 @@ def kpi_block(records: list[dict]) -> dict:
         "injectable_class3_breakdown": " / ".join(inj_breakdown),
         "injectable_drug": len(inj_drug),
         "injectable_drug_breakdown": " / ".join(drug_breakdown),
+        "indication_breakdown": (
+            f"注射填充类 {len(inj_indications)} 类 · "
+            f"注射用药品 {len(drug_indications)} 类 · "
+            f"EBD {len(ebd_indications)} 类"
+        ),
         "recent_12mo": len(recent),
-        "recent_12mo_share": round(len(recent) / max(len(main), 1) * 100, 1),
+        # Percentage against the entire dataset, not the filtered subset.
+        "recent_12mo_share": round(len(recent) / max(len(records), 1) * 100, 1),
         "recent_12mo_breakdown": " / ".join(recent_breakdown),
-        "indication_note": "覆盖部位、肤质改善、注射层次等标准化标签",
     }
 
 

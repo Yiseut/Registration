@@ -3,7 +3,7 @@
   "track_meta": {
     "key": "ebd",
     "name": "EBD 设备类",
-    "tagline": "射频/超声/激光/微针的器械准入",
+    "tagline": "",
     "accent": "#6E6A65"
   },
   "kpi": {
@@ -494,7 +494,7 @@
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
-        "再生类",
+        "胶原刺激剂",
         "EBD 设备类"
       ],
       "source_account": "NMPA 官方查询",

@@ -5,13 +5,28 @@ cd /d "%~dp0"
 set "SRC_CSV=E:\shared\code\registration\output\master\registration_records_master.csv"
 set "DST_CSV=data\registration_records_master.csv"
 set "PAGES_URL=https://yiseut.github.io/Registration/"
+set "REMOTE_URL=https://github.com/Yiseut/Registration.git"
 
-title Registration Insights -- Sync and Publish
+title Registration Landscape -- Refresh and Publish
 echo.
 echo =====================================================
-echo   Registration Insights -- Sync and Publish
+echo   Registration Landscape -- Refresh and Publish
 echo   %date% %time%
 echo =====================================================
+echo.
+echo This will refresh the integrated dashboard, commit webpage/data changes,
+echo and push to:
+echo   %REMOTE_URL%
+echo.
+echo The videos, output, test-results, and Playwright cache folders are excluded.
+echo.
+set /p CONFIRM=Type PUSH to continue, or press Enter to cancel: 
+if /I not "%CONFIRM%"=="PUSH" (
+  echo.
+  echo Cancelled. Nothing was changed or pushed.
+  pause
+  exit /b 0
+)
 echo.
 
 if not exist "%SRC_CSV%" (
@@ -34,26 +49,47 @@ python scripts\build_data.py
 if errorlevel 1 goto error
 echo.
 
-echo [3/5] Staging changes...
-git add data\registration_records_master.csv docs\assets\data
+echo [3/6] Ensuring GitHub publish repo is attached...
+if not exist ".git" (
+  git init || goto error
+  git remote add origin "%REMOTE_URL%" || goto error
+  git fetch origin main || goto error
+  git checkout -B main || goto error
+  git reset --mixed origin/main || goto error
+) else (
+  git remote get-url origin >nul 2>nul
+  if errorlevel 1 git remote add origin "%REMOTE_URL%" || goto error
+  git fetch origin main || goto error
+  git checkout -B main || goto error
+)
 echo.
 
-echo [4/5] Checking for changes...
+echo [4/6] Staging integrated site files...
+git add -A .gitignore README.md PROJECT_HANDOFF.md Open-Dashboard.bat sync-and-publish.bat data docs scripts || goto error
+git diff --cached --name-only | findstr /I /R "\\videos\\ \\output\\ \\test-results\\ \\.playwright-cli\\" >nul
+if not errorlevel 1 (
+  echo [ERROR] A generated or video folder was staged. Aborting before commit.
+  git diff --cached --name-only
+  goto error
+)
+echo.
+
+echo [5/6] Checking for changes...
 git diff --cached --quiet
 if not errorlevel 1 (
-  echo       No data changes since last sync. Nothing to publish.
+  echo       No site changes since last sync. Nothing to publish.
   goto done_no_change
 )
 git status --short
 echo.
 for /f "tokens=1-3 delims=/ " %%a in ("%date%") do set "STAMP=%%c-%%a-%%b"
-git commit -m "Refresh data (%STAMP%)" >nul
+git commit -m "Refresh integrated dashboard (%STAMP%)" >nul
 if errorlevel 1 goto error
 echo       Commit created.
 echo.
 
-echo [5/5] Pushing to GitHub...
-git push
+echo [6/6] Pushing to GitHub...
+git push -u origin main
 if errorlevel 1 goto error
 echo       Pushed. GitHub Pages will rebuild in 1-2 minutes.
 echo.

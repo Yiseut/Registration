@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Track · Registration Insights</title>
-<link rel="stylesheet" href="../assets/css/theme.css" />
-<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>童颜针 / PLLA · Registration Insights</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=20260511-current-refresh-62" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
 
@@ -26,12 +27,12 @@
   </nav>
 </header>
 
-<main class="shell">
+<main class="shell track-shell">
 
   <section class="hero rise">
     <span class="eyebrow" id="track-accent">Track Detail</span>
-    <h1 id="track-h1"><span id="track-name">—</span> · <span class="gradient">赛道情报</span></h1>
-    <p class="lede" id="track-tagline">—</p>
+    <h1 id="track-h1"><span id="track-name">童颜针 / PLLA</span> · <span class="gradient">赛道格局</span></h1>
+    <p class="lede" id="track-tagline">赛道准入结构、注册节奏与厂家布局。</p>
     <div class="meta">
       <a href="../index.html">← 返回总览</a>
     </div>
@@ -41,113 +42,151 @@
     <div class="card kpi lift rise rise-1">
       <div class="label">主格局证</div>
       <div class="value"><span data-animate-to="0" id="kpi-main">0</span><span class="unit">张</span></div>
-      <div class="delta">原始 <span id="kpi-total">0</span> 条</div>
     </div>
     <div class="card kpi lift rise rise-2 tone-ocean">
       <div class="label">注册人/集团</div>
       <div class="value"><span data-animate-to="0" id="kpi-companies">0</span><span class="unit">家</span></div>
     </div>
     <div class="card kpi lift rise rise-3 tone-gold">
-      <div class="label">适应症</div>
+      <div class="label">适应证</div>
       <div class="value"><span data-animate-to="0" id="kpi-indications">0</span><span class="unit">类</span></div>
     </div>
     <div class="card kpi lift rise rise-4 tone-sage">
       <div class="label">国产 : 进口 : 港澳台</div>
-      <div class="value" style="font-size:24px"><span id="kpi-mix">— : — : —</span></div>
-      <div class="delta">已核验 <span id="kpi-verified">0</span> 张</div>
-    </div>
-  </section>
-
-  <div class="section-head rise">
-    <h2>厂家竞争力</h2>
-    <p>注册人 / 集团口径的获批数排序。点击任一行,查看背后注册证。</p>
-  </div>
-  <section class="grid grid-12">
-    <div class="card lift span-7">
-      <div class="card-title">
-        <h3>Top 注册人 / 集团</h3>
-        <span class="sub" id="long-tail-note"></span>
-      </div>
-      <div id="chart-companies" class="chart chart-tall"></div>
-    </div>
-    <div class="card lift span-5">
-      <div class="card-title">
-        <h3>来源结构</h3>
-        <span class="sub">国产 / 进口 / 港澳台</span>
-      </div>
-      <div id="chart-origin" class="chart chart-tall"></div>
-    </div>
-  </section>
-
-  <div class="section-head rise">
-    <h2>布局视角</h2>
-    <p>哪些适应症 / 部位被反复抢占,哪些材料形态拿到了注册。</p>
-  </div>
-  <section class="grid grid-12">
-    <div class="card lift span-6">
-      <div class="card-title">
-        <h3>适应症 / 部位</h3>
-        <span class="sub">主格局口径</span>
-      </div>
-      <div id="chart-indications" class="chart chart-tall"></div>
-    </div>
-    <div class="card lift span-6">
-      <div class="card-title">
-        <h3>材料家族</h3>
-        <span class="sub">主格局口径</span>
-      </div>
-      <div id="chart-material" class="chart chart-tall"></div>
+      <div class="value" style="font-size:24px"><span id="kpi-mix">0 : 0 : 0</span></div>
     </div>
   </section>
 
   <div class="section-head rise">
     <h2>注册时间线</h2>
-    <p>柱图为当年新增,折线为累计存量。点击任一年柱体下钻该年获批清单。</p>
+    <p>把旧版的年度趋势与来源演变放回 Claude 版版式中，先看准入速度，再看国产化节奏。</p>
   </div>
-  <section class="card lift">
-    <div class="card-title">
-      <h3>逐年获批与累计</h3>
-      <span class="sub">基于 approval_year</span>
+  <section class="grid grid-12">
+    <div class="card span-12 rise">
+      <div class="card-title">
+        <h3>逐年获批与累计</h3>
+      </div>
+      <div id="chart-timeline" class="chart chart-mid"></div>
     </div>
-    <div id="chart-timeline" class="chart chart-tall"></div>
+    <div class="card span-12 rise">
+      <div class="card-title">
+        <h3>国产 vs 进口演变</h3>
+      </div>
+      <div id="chart-origin-evolution" class="chart chart-mid"></div>
+    </div>
   </section>
 
   <div class="section-head rise">
-    <h2>厂家 × 适应症 卡位</h2>
-    <p>Top 10 厂家在 Top 8 适应症上的获批密度。点击格子查看注册证清单。</p>
+    <h2>厂家竞争力</h2>
+    <p>注册人/集团口径的获批数量与来源结构。</p>
   </div>
-  <section class="card lift">
-    <div class="card-title">
-      <h3>谁在哪个部位最强势</h3>
-      <span class="sub">全部已收录注册证(含主格局外样本)</span>
+  <section class="grid grid-2">
+    <div class="card rise">
+      <div class="card-title">
+        <h3>Top 注册人 / 集团</h3>
+        <span class="sub" data-company-tail></span>
+      </div>
+      <div id="chart-companies" class="chart chart-mid"></div>
     </div>
-    <div id="chart-co-in" class="chart chart-tall"></div>
+    <div class="card rise">
+      <div class="card-title">
+        <h3>来源结构</h3>
+        <span class="sub">国产 / 进口 / 港澳台</span>
+      </div>
+      <div id="chart-origin" class="chart chart-mid"></div>
+    </div>
+  </section>
+
+  <div class="section-head rise">
+    <h2>来源与产品形态</h2>
+    <p>把产品形态、材料/技术家族与适应证拆开看，避免只靠名称判断赛道位置。</p>
+  </div>
+  <section class="grid grid-2">
+    <div class="card rise">
+      <div class="card-title">
+        <h3>当前产品形态</h3>
+        <span class="sub">主格局口径</span>
+      </div>
+      <div id="chart-product-forms" class="chart as-list"></div>
+    </div>
+    <div class="card rise">
+      <div class="card-title">
+        <h3>材料/技术家族</h3>
+        <span class="sub">主格局口径</span>
+      </div>
+      <div id="chart-material" class="chart as-list"></div>
+    </div>
+    <div class="card span-12 rise">
+      <div class="card-title">
+        <h3>适应证结构</h3>
+        <span class="sub">点击行查看证照</span>
+      </div>
+      <div id="chart-indications" class="chart as-list"></div>
+    </div>
+  </section>
+
+  <div class="section-head rise">
+    <h2>热力图视角</h2>
+    <p>把较小的矩阵并排展示，沿用总览热力图的晶莹格子表达。</p>
+  </div>
+  <section class="grid grid-2">
+    <div class="card rise">
+      <div class="card-title">
+        <h3>产品形态 × 适应证</h3>
+        <span class="sub">点击格子查看证照</span>
+      </div>
+      <div id="chart-form-indication-matrix"></div>
+    </div>
+    <div class="card rise">
+      <div class="card-title">
+        <h3>厂家 × 适应证卡位</h3>
+        <span class="sub">主格局口径</span>
+      </div>
+      <div id="chart-co-in" class="chart chart-tall"></div>
+    </div>
+  </section>
+
+  <div class="section-head rise">
+    <h2>关键获批事件</h2>
+    <p>按批准时间回看具体产品与证号，保留旧版的事件线索。</p>
+  </div>
+  <section class="grid grid-12">
+    <div class="card span-12 rise">
+      <div id="approval-events-list" class="event-list"></div>
+    </div>
+  </section>
+
+  <div class="section-head rise">
+    <h2>业务矩阵</h2>
+    <p>注册人集团组合宽度。</p>
+  </div>
+  <section class="grid grid-12">
+    <div class="card span-12 rise">
+      <div id="company-matrix-list" class="company-matrix-list"></div>
+    </div>
   </section>
 
   <div class="section-head rise">
     <h2>注册证清单</h2>
-    <p>主格局口径全部记录,可按来源、核验状态、关键字筛选。点击行查看完整字段。</p>
+    <p>主格局口径全部记录，可按来源、核验状态、关键词筛选。</p>
   </div>
-  <section class="card lift">
-    <div class="card-title">
-      <h3>记录浏览器</h3>
-      <span class="sub">命中 <span id="records-count">0</span> 条</span>
-    </div>
-    <div class="cluster" style="margin-bottom:14px">
-      <select id="filter-origin" class="tag" style="padding:6px 12px">
+  <section class="card rise">
+    <div class="toolbar" style="margin-bottom:12px">
+      <select id="filter-origin" aria-label="来源筛选">
         <option value="">全部来源</option>
         <option value="国产">国产</option>
         <option value="进口">进口</option>
         <option value="港澳台">港澳台</option>
       </select>
-      <select id="filter-verified" class="tag" style="padding:6px 12px">
-        <option value="">核验状态</option>
+      <select id="filter-verified" aria-label="核验状态">
+        <option value="">全部核验状态</option>
         <option value="verified">已核验</option>
         <option value="pending">待核验</option>
       </select>
-      <input id="search" placeholder="搜索产品名 / 厂家 / 证号 / 适应症..." class="tag" style="padding:6px 12px;min-width:260px;background:var(--surface);border:1px solid var(--hairline)" />
+      <input id="search" type="search" placeholder="搜索产品名 / 厂家 / 证号 / 适应症…" />
+      <span class="muted">命中 <b id="records-count">0</b> 条</span>
     </div>
-    <div style="overflow-x:auto">
+    <div style="overflow:auto">
       <table class="table" id="table-records">
         <thead>
           <tr>
@@ -155,7 +194,7 @@
             <th>注册人</th>
             <th>证号</th>
             <th>来源</th>
-            <th>适应症</th>
+            <th>适应证</th>
             <th>批准日</th>
             <th>核验</th>
           </tr>
@@ -167,13 +206,13 @@
 
   <footer class="foot">
     <div><a href="../index.html">← 返回总览</a></div>
-    <div>Built with Claude Code · ECharts</div>
+    <div></div>
   </footer>
 
 </main>
 
-<script src="../assets/js/core.js"></script>
+<script src="../assets/js/core.js?v=20260511-current-refresh-62"></script>
 <script>window.TRACK_KEY = 'plla';</script>
-<script src="../assets/js/track.js"></script>
+<script src="../assets/js/track.js?v=20260511-current-refresh-62"></script>
 </body>
 </html>

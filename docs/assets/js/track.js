@@ -1,14 +1,37 @@
-/* Per-track page wiring. Reads ?track=<key> or window.TRACK_KEY. */
+﻿/* Per-track page wiring. Reads ?track=<key> or window.TRACK_KEY. */
 
 (async function init() {
-  const { palette, SERIES_COLORS, ChartFactory, showRecords, escape, loadJSON, watchKpis } = window.RI;
+  const {
+    palette,
+    SERIES_COLORS,
+    ChartFactory,
+    showRecords,
+    escape,
+    loadJSON,
+    watchKpis,
+    mixColor,
+    crystalCssHeatVars,
+    crystalEchartHeatItemStyle,
+    crystalHeatLabelColor,
+  } = window.RI;
 
   const key = (new URLSearchParams(location.search).get('track')) || window.TRACK_KEY;
   if (!key) return;
 
   const data = await loadJSON(`../assets/data/tracks/${key}.json`);
   const meta = data.track_meta;
-  document.title = `${meta.name} · Registration Insights`;
+  const trackDisplayName = displayUiLabel(meta.name);
+  const isHaTrack = key === 'ha';
+  const isCollagenTrack = key === 'collagen';
+  const chartBarMaxWidth = 26;
+  const chartBarRadius = [6, 6, 0, 0];
+  const verticalGradient = (topColor, bottomColor) => new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+    { offset: 0, color: topColor },
+    { offset: 1, color: bottomColor },
+  ]);
+  const accent = meta.accent || palette.brand;
+  const mainBarGradient = () => verticalGradient(shade(accent, 18), accent);
+  document.title = `${trackDisplayName} · Registration Landscape`;
 
   // Tint the header dot to track accent
   const dot = document.querySelector('.topbar .brand .dot');
@@ -18,25 +41,41 @@
   }
 
   // Hero
-  document.getElementById('track-name').textContent = meta.name;
-  document.getElementById('track-tagline').textContent = meta.tagline;
+  document.getElementById('track-name').textContent = trackDisplayName;
+  const trackTagline = document.getElementById('track-tagline');
+  if (trackTagline) trackTagline.remove();
   const heroAccent = document.getElementById('track-accent');
-  if (heroAccent) heroAccent.style.background =
-    `linear-gradient(96deg, ${meta.accent} 0%, ${shade(meta.accent, -22)} 100%)`;
+  if (heroAccent) {
+    heroAccent.style.background = `linear-gradient(96deg, ${meta.accent} 0%, ${shade(meta.accent, -22)} 100%)`;
+    heroAccent.style.color = '#fffaf5';
+  }
   const heroH1 = document.getElementById('track-h1');
   if (heroH1) {
     const grad = heroH1.querySelector('.gradient');
-    if (grad) grad.style.background =
-      `linear-gradient(96deg, ${shade(meta.accent, -16)} 0%, ${meta.accent} 100%)`;
+    if (grad) {
+      grad.style.background = `linear-gradient(96deg, ${shade(meta.accent, -16)} 0%, ${meta.accent} 100%)`;
+      grad.style.backgroundClip = 'text';
+      grad.style.webkitBackgroundClip = 'text';
+      grad.style.color = 'transparent';
+      grad.style.webkitTextFillColor = 'transparent';
+    }
   }
 
+  const landscapeRecords = data.records.filter((record) => record.main_landscape);
+  const kpiRecords = landscapeRecords.length ? landscapeRecords : data.records;
+  const originCounts = countBy(kpiRecords, (record) => record.origin);
+
   // KPIs
-  setKpi('kpi-main', data.kpi.main);
-  setKpi('kpi-companies', data.kpi.companies);
-  setKpi('kpi-indications', data.kpi.indications);
-  setKpi('kpi-verified', data.kpi.verified);
-  document.getElementById('kpi-total').textContent = data.kpi.total;
-  document.getElementById('kpi-mix').textContent = `${data.kpi.domestic} : ${data.kpi.imported} : ${data.kpi.hkmt}`;
+  setKpi('kpi-main', kpiRecords.length || data.kpi.total);
+  setKpi('kpi-companies', unique(kpiRecords.map((record) => record.company)).length || data.kpi.companies);
+  setKpi('kpi-indications', unique(kpiRecords.flatMap(indicationValues)).length || data.kpi.indications);
+  setKpi('kpi-forms', unique(kpiRecords.map((record) => isHaTrack ? productShape(record) : record.material_form)).length);
+  setKpi('kpi-verified', kpiRecords.filter((record) => record.verified).length || data.kpi.verified);
+  const totalDelta = document.getElementById('kpi-total')?.closest('.delta');
+  if (totalDelta) totalDelta.remove();
+  const verifiedDelta = document.getElementById('kpi-verified')?.closest('.delta');
+  if (verifiedDelta) verifiedDelta.remove();
+  document.getElementById('kpi-mix').textContent = `${originCounts.get('国产') || 0} : ${originCounts.get('进口') || 0} : ${originCounts.get('港澳台') || 0}`;
   watchKpis();
 
   // Company share — horizontal bar
@@ -46,16 +85,31 @@
   renderIntensityList('chart-indications', data.records, 'primary_indication');
 
   // Origin donut (3 categories — donut is the right shape here)
-  renderDonut('chart-origin', data.origin_share, '来源结构');
+  renderDonut('chart-origin', data.origin_share, '产地结构');
 
   // Material intensity list
   renderIntensityList('chart-material', data.records, 'material_family');
+  renderIntensityList('chart-collagen-source', data.records, 'collagen_source');
+
+  // Fusion modules: Claude layout, Codex analytical content.
+  renderProductShapeList('chart-product-forms', data.records);
+  renderMarketScopeCards(data.records);
 
   // Timeline
   renderTimeline(data.timeline);
+  renderOriginEvolution(data.records);
 
   // Company × indication heatmap
-  renderCompanyHeatmap(data.company_indication_heatmap);
+  renderCompanyHeatmap(buildCompanyIndicationHeatmap(data.records));
+
+  // Product shape × indication matrix
+  renderProductShapeIndicationMatrix(data.records);
+
+  // Company capability matrix
+  renderCompanyMatrixList(data.records);
+
+  // Approval event list
+  renderApprovalEvents(data.records, data.approval_events || data.approvalEvents || []);
 
   // Records list
   renderRecords(data.records);
@@ -70,7 +124,9 @@
   }
 
   function renderCompanyShare(items, longTail) {
-    const inst = ChartFactory.make(document.getElementById('chart-companies'), {
+    const el = document.getElementById('chart-companies');
+    if (!el) return;
+    const inst = ChartFactory.make(el, {
       grid: { left: 130, right: 36, top: 12, bottom: 18 },
       tooltip: {
         formatter: (p) => `<b>${escape(p.name)}</b><br/>${p.value} 张证 (${(p.value / sum(items) * 100).toFixed(1)}%)`,
@@ -89,8 +145,8 @@
           value: i.value, name: i.name,
           itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-              { offset: 0, color: shade(meta.accent, 14) },
-              { offset: 1, color: shade(meta.accent, -10) },
+              { offset: 0, color: shade(accent, 14) },
+              { offset: 1, color: shade(accent, -10) },
             ]),
             borderRadius: [0, 6, 6, 0],
           },
@@ -104,10 +160,11 @@
     });
     inst.on('click', (p) => {
       const matches = data.records.filter((r) => r.main_landscape && r.company === p.name);
-      showRecords({ title: `${p.name} · ${meta.name}`, meta: '主格局口径', records: matches });
+      showRecords({ title: `${p.name} · ${trackDisplayName}`, meta: '主格局口径', records: displayRecords(matches) });
     });
     if (longTail > 0) {
-      document.getElementById('long-tail-note').textContent = `… 另有 ${longTail} 家长尾注册人未进入 Top 12`;
+      const tailNote = document.getElementById('long-tail-note') || document.querySelector('[data-company-tail]');
+      if (tailNote) tailNote.textContent = `… 另有 ${longTail} 家长尾注册企业未进入 Top 12`;
     }
   }
 
@@ -125,9 +182,12 @@
 
     const groups = new Map();
     records.forEach((r) => {
-      const k = r[categoryKey];
-      if (!groups.has(k)) groups.set(k, []);
-      groups.get(k).push(r);
+      const keys = categoryKey === 'primary_indication' ? indicationValues(r) : [r[categoryKey]];
+      unique(keys).forEach((k) => {
+        if (!k) return;
+        if (!groups.has(k)) groups.set(k, []);
+        groups.get(k).push(r);
+      });
     });
     const sorted = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
     const max = sorted[0][1].length;
@@ -139,14 +199,14 @@
       const ratio = recs.length / max;
       const widthPct = Math.max(8, ratio * 100);
       // Light end (low count) → soft tint of accent; high count → deep accent.
-      const startColor = shade(meta.accent, 28);
-      const endColor = shade(meta.accent, -10 - ratio * 18);
+      const startColor = shade(accent, 28);
+      const endColor = shade(accent, -10 - ratio * 18);
       const isLight = ratio < 0.18;  // light bars get dark text
 
       const row = document.createElement('div');
       row.className = 'intensity-row';
       row.innerHTML = `
-        <div class="intensity-label" title="${escape(cat)}">${escape(cat)}</div>
+        <div class="intensity-label" title="${escape(displayUiLabel(cat))}">${escape(displayUiLabel(cat))}</div>
         <div class="intensity-track">
           <div class="intensity-bar ${isLight ? 'light' : ''}"
                style="width:${widthPct}%; background: linear-gradient(90deg, ${startColor}, ${endColor}); animation-delay:${idx * 35}ms">
@@ -157,9 +217,9 @@
       attachIntensityTooltip(row, cat, recs);
       row.addEventListener('click', () => {
         window.RI.showRecords({
-          title: cat,
-          meta: `${meta.name} · ${categoryKey === 'primary_indication' ? '适应症 / 部位' : '材料家族'}`,
-          records: recs,
+          title: displayUiLabel(cat),
+          meta: `${trackDisplayName} · ${categoryKey === 'primary_indication' ? '适应证 / 部位' : '材料家族'}`,
+          records: displayRecords(recs),
         });
       });
       list.appendChild(row);
@@ -193,7 +253,7 @@
         ? `<div class="t-more">… 另 ${recs.length - 10} 条 (点击查看全部)</div>` : '';
       tip.innerHTML = `
         <div class="t-head">
-          <strong>${escape(cat)}</strong>
+          <strong>${escape(displayUiLabel(cat))}</strong>
           <span class="t-count">${recs.length} 张证</span>
         </div>
         <ul>${items}</ul>
@@ -219,9 +279,348 @@
     row.addEventListener('mouseleave', hide);
   }
 
+  function productShape(record) {
+    if (!isHaTrack) return displayUiLabel(record?.material_form || record?.material_family || '未分型');
+    const text = `${record?.material_form || ''} ${record?.product_name || ''} ${record?.material_family || ''}`;
+    if (/复合溶液|水光|肤质|非交联HA溶液|透明质酸钠溶液/.test(text)) return '非交联水光、肤质改善类';
+    return '交联填充类';
+  }
+
+  function productShapeSortValue(name) {
+    const order = ['交联填充类', '非交联水光、肤质改善类'];
+    const index = order.indexOf(name);
+    return index === -1 ? 99 : index;
+  }
+
+  function productShapeScopeLabel(name) {
+    if (name === '交联填充类') return '填充';
+    if (name === '非交联水光、肤质改善类') return '水光/肤质';
+    return name.replace('类', '');
+  }
+
+  function productShapeGroups(source) {
+    const groups = new Map();
+    source.filter((record) => record.main_landscape).forEach((record) => {
+      const shape = productShape(record);
+      if (!groups.has(shape)) groups.set(shape, []);
+      groups.get(shape).push(record);
+    });
+    return [...groups.entries()]
+      .map(([name, records]) => ({ name, records, count: records.length }))
+      .sort((a, b) => productShapeSortValue(a.name) - productShapeSortValue(b.name) || b.count - a.count);
+  }
+
+  function renderProductShapeList(elId, source) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const groups = productShapeGroups(source);
+    if (!groups.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无产品形态数据</div>';
+      return;
+    }
+    const max = Math.max(1, ...groups.map((group) => group.count));
+    el.classList.add('as-list');
+    el.innerHTML = `
+      <div class="product-shape-list">
+        ${groups
+          .map((group, index) => {
+            const width = Math.max(7, (group.count / max) * 100);
+            const forms = unique(group.records.map((record) => record.material_form)).slice(0, 4).map(displayUiLabel).join(' / ');
+            return `
+              <button class="product-shape-row" type="button" data-shape="${escape(group.name)}" style="--bar-width:${width}%;--delay:${index * 50}ms">
+                <span class="shape-main">
+                  <strong>${escape(group.name)}</strong>
+                  <em>${escape(forms)}</em>
+                </span>
+                <span class="shape-count">${group.count}<small>张</small></span>
+                <span class="shape-track"><i></i></span>
+              </button>
+            `;
+          })
+          .join('')}
+      </div>
+    `;
+    el.querySelectorAll('[data-shape]').forEach((row) => {
+      row.addEventListener('click', () => {
+        const group = groups.find((item) => item.name === row.dataset.shape);
+        if (group) showRecords({ title: group.name, meta: `${trackDisplayName} · 产品形态`, records: displayRecords(group.records) });
+      });
+    });
+  }
+
+  function renderMarketScopeCards(source) {
+    const holder = document.getElementById('ha-scope-cards');
+    if (!holder) return;
+    const landscape = source.filter((record) => record.main_landscape);
+    const groups = productShapeGroups(landscape);
+    const lidocaineRecords = landscape.filter(hasLidocaineAdvantage);
+    const cards = [
+      ...groups.map((group) => ({
+        label: productShapeScopeLabel(group.name),
+        title: group.name,
+        count: group.count,
+        records: group.records,
+        copy: shapeScopeCopy(group.name, group.records),
+      })),
+      {
+        label: '优势差异',
+        title: '含利多卡因',
+        count: lidocaineRecords.length,
+        records: lidocaineRecords,
+        copy: '用于麻感管理与舒适度差异，不并入产品形态分类。',
+        kind: 'advantage',
+      },
+    ];
+    holder.innerHTML = cards
+      .map(
+        (card, index) => `
+          <button class="ha-scope-card${card.kind === 'advantage' ? ' advantage' : ''}" type="button" data-index="${index}">
+            <span>${escape(card.label)}</span>
+            <strong>${escape(card.title)}</strong>
+            <b>${card.count}<em>张</em></b>
+            <small>${escape(card.copy)}</small>
+          </button>
+        `
+      )
+      .join('');
+    holder.querySelectorAll('[data-index]').forEach((cardEl) => {
+      cardEl.addEventListener('click', () => {
+        const card = cards[Number(cardEl.dataset.index)];
+        if (card) showRecords({ title: card.title, meta: `${trackDisplayName} · 市场口径`, records: displayRecords(card.records) });
+      });
+    });
+  }
+
+  function shapeScopeCopy(name, records) {
+    const forms = unique(records.map((record) => record.material_form)).slice(0, 3).map(displayUiLabel).join(' / ');
+    if (name === '交联填充类') return `以交联或修饰 HA 凝胶为主，覆盖面部填充核心适应证。`;
+    if (name === '非交联水光、肤质改善类') return `以非交联 HA 溶液与肤质改善口径为主，不纳入 PVA 或胶原载体产品。`;
+    return forms || '按产品注册名称归纳。';
+  }
+
+  function hasLidocaineAdvantage(record) {
+    const tags = Array.isArray(record?.tags) ? record.tags.join(' ') : '';
+    return /含利多卡因/.test(`${tags} ${record?.material_form || ''} ${record?.product_name || ''}`);
+  }
+
+  function renderProductShapeIndicationMatrix(source) {
+    const holder = document.getElementById('chart-form-indication-matrix');
+    if (!holder) return;
+    const landscape = source.filter((record) => record.main_landscape);
+    const rows = productShapeGroups(landscape);
+    const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
+    const columns = [...indicationCounts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
+      .map(([name]) => name);
+    if (!rows.length || !columns.length) {
+      holder.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无足够数据形成热力图</div>';
+      return;
+    }
+    const max = Math.max(
+      1,
+      ...rows.flatMap((row) => columns.map((column) => row.records.filter((record) => indicationValues(record).includes(column)).length))
+    );
+    const minWidth = 160 + columns.length * 82;
+    holder.innerHTML = `
+      <div class="matrix-wrap">
+        <div class="matrix-grid track-form-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(128px, 160px) repeat(${columns.length}, minmax(64px, 1fr))">
+          <div class="matrix-head">产品形态</div>
+          ${columns.map((column) => `<div class="matrix-head" title="${escape(indicationLabel(column))}">${escape(indicationLabel(column))}</div>`).join('')}
+          ${rows
+            .map((row) => {
+              const cells = columns
+                .map((column) => {
+                  const matches = row.records.filter((record) => indicationValues(record).includes(column));
+                  const count = matches.length;
+                  const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
+                  return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" title="${escape(`${row.name} × ${indicationLabel(column)}：${count} 张`)}">${count || ''}</button>`;
+                })
+                .join('');
+              return `<div class="matrix-term">${escape(row.name)}</div>${cells}`;
+            })
+            .join('')}
+        </div>
+      </div>
+    `;
+    holder.querySelectorAll('button.matrix-cell[data-records]').forEach((cell) => {
+      cell.addEventListener('click', () => {
+        const rows = JSON.parse(decodeURIComponent(cell.dataset.records || '[]'));
+        if (rows.length) showRecords({ title: cell.dataset.title || '产品形态 × 适应证', meta: trackDisplayName, records: rows });
+      });
+    });
+  }
+
+  function renderCompanyMatrixList(source) {
+    const holder = document.getElementById('company-matrix-list');
+    if (!holder) return;
+    const paint = () => {
+      const rows = companyRows(source);
+      rows.sort((a, b) => b.diversity - a.diversity || b.records.length - a.records.length);
+      const max = Math.max(1, ...rows.map((row) => row.records.length));
+      holder.innerHTML = rows.slice(0, 16).map((row) => {
+        const width = Math.max(6, (row.records.length / max) * 100);
+        const brands = unique(row.records.map((record) => record.product_name)).slice(0, 6).map(displayUiLabel).join(' / ');
+        const payload = encodeURIComponent(JSON.stringify(displayRecords(row.records)));
+        return `
+          <button class="company-matrix-row" type="button" data-records="${payload}" data-name="${escape(row.name)}">
+            <span class="company-matrix-main">
+              <strong>${escape(row.name)}</strong>
+              <em>${escape(brands)}</em>
+              <span class="company-matrix-bar"><i style="width:${width}%"></i></span>
+            </span>
+            <span class="company-matrix-stat"><b>${row.records.length}</b><small>注册证</small></span>
+            <span class="company-matrix-stat"><b>${row.shapes.length}</b><small>产品形态</small></span>
+            <span class="company-matrix-stat"><b>${row.indications.length}</b><small>适应证</small></span>
+          </button>
+        `;
+      }).join('');
+      holder.querySelectorAll('[data-records]').forEach((row) => {
+        row.addEventListener('click', () => {
+          const records = JSON.parse(decodeURIComponent(row.dataset.records || '[]'));
+          showRecords({ title: row.dataset.name || '注册人', meta: `${trackDisplayName} · 厂家竞争力`, records });
+        });
+      });
+    };
+    paint();
+  }
+
+  function companyRows(source) {
+    const groups = new Map();
+    source.filter((record) => record.main_landscape).forEach((record) => {
+      const company = record.company || '未标注注册人';
+      if (!groups.has(company)) groups.set(company, []);
+      groups.get(company).push(record);
+    });
+    return [...groups.entries()].map(([name, records]) => {
+      const shapes = unique(records.map(productShape));
+      const indications = unique(records.flatMap(indicationValues));
+      return {
+        name,
+        records,
+        shapes,
+        indications,
+        diversity: shapes.length * 2 + indications.length,
+      };
+    });
+  }
+
+  function renderApprovalEvents(source, events = []) {
+    const holder = document.getElementById('approval-events-list');
+    if (!holder) return;
+    if (events.length) {
+      const eventRows = events.slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || ''), 'zh-CN'));
+      holder.innerHTML = eventRows.slice(0, 18).map((event, idx) => {
+        const date = event.date || '';
+        const year = String(date).match(/20\d{2}/)?.[0] || '—';
+        const title = event.brand || event.product_name || '获批事件';
+        const indication = event.indication_short || event.primary_indication || '';
+        const eventType = event.event_type || '获批事件';
+        const payloadRecord = {
+          id: `event-${idx}`,
+          product_name: title,
+          company: event.company || event.registrant || title,
+          certificate_no: event.certificate_no || '',
+          primary_indication: indication,
+          approval_date: date,
+          scope_full: event.scope_full || '',
+          verified: true,
+          tags: [eventType].filter(Boolean),
+        };
+        const payload = encodeURIComponent(JSON.stringify(displayRecords([payloadRecord])));
+        const tags = [eventType, indication, event.region].filter(Boolean).slice(0, 3);
+        return `
+          <button class="event-card" type="button" data-records="${payload}" data-title="${escape(title)}">
+            <span class="event-year">${escape(year)}</span>
+            <span class="event-main">
+              <strong>${escape(title)}</strong>
+              <em>${escape(eventType)}${date ? ` · ${escape(date)}` : ''}</em>
+              <small>${escape(event.certificate_no || '')}</small>
+              ${event.scope_full ? `<small class="event-scope">${escape(event.scope_full)}</small>` : ''}
+              <span class="event-tags">${tags.map((tag) => `<i>${escape(displayUiLabel(tag))}</i>`).join('')}</span>
+            </span>
+          </button>
+        `;
+      }).join('');
+      holder.querySelectorAll('[data-records]').forEach((card) => {
+        card.addEventListener('click', () => {
+          const records = JSON.parse(decodeURIComponent(card.dataset.records || '[]'));
+          showRecords({ title: card.dataset.title || '获批事件', meta: trackDisplayName, records });
+        });
+      });
+      return;
+    }
+    const rows = source
+      .filter((record) => record.main_landscape)
+      .slice()
+      .sort((a, b) => {
+        const yearDelta = recordTimelineYear(b) - recordTimelineYear(a);
+        if (yearDelta) return yearDelta;
+        return String(b.approval_date || '').localeCompare(String(a.approval_date || ''), 'zh-CN');
+      });
+    if (!rows.length) {
+      holder.innerHTML = '<div class="muted" style="text-align:center;padding:24px">暂无获批事件</div>';
+      return;
+    }
+    holder.innerHTML = rows.slice(0, 18).map((record) => {
+      const year = recordTimelineYear(record) || '—';
+      const date = record.approval_date || record.valid_until || '';
+      const payload = encodeURIComponent(JSON.stringify(displayRecords([record])));
+      const tags = [
+        record.origin,
+        productShape(record),
+        formatIndications(record),
+      ].filter(Boolean).slice(0, 3);
+      return `
+        <button class="event-card" type="button" data-records="${payload}" data-title="${escape(record.product_name || '获批事件')}">
+          <span class="event-year">${escape(year)}</span>
+          <span class="event-main">
+            <strong>${escape(record.product_name || record.brand || '未命名产品')}</strong>
+            <em>${escape(record.company || record.registrant || '未标注注册人')}</em>
+            <small>${escape(record.certificate_no || '')}${date ? ` · ${escape(date)}` : ''}</small>
+            <span class="event-tags">${tags.map((tag) => `<i>${escape(displayUiLabel(tag))}</i>`).join('')}</span>
+          </span>
+        </button>
+      `;
+    }).join('');
+    holder.querySelectorAll('[data-records]').forEach((card) => {
+      card.addEventListener('click', () => {
+        const records = JSON.parse(decodeURIComponent(card.dataset.records || '[]'));
+        showRecords({ title: card.dataset.title || '获批事件', meta: trackDisplayName, records });
+      });
+    });
+  }
+
+  function originTonePalette() {
+    const imported = shade(accent, -12);
+    const domestic = mixColor ? mixColor(accent, '#fbdec7', 0.78) : shade(accent, 38);
+    const hkmt = mixColor ? mixColor(shade(accent, -34), '#6E6A65', 0.36) : shade(accent, -34);
+    return {
+      进口: {
+        solid: imported,
+        gradient: verticalGradient(shade(accent, 14), imported),
+        label: '#fffaf5',
+      },
+      国产: {
+        solid: domestic,
+        gradient: verticalGradient(mixColor ? mixColor(accent, '#fff8ef', 0.86) : shade(accent, 48), domestic),
+        label: shade(accent, -34),
+      },
+      港澳台: {
+        solid: hkmt,
+        gradient: verticalGradient(mixColor ? mixColor(accent, '#ffffff', 0.38) : shade(accent, 28), hkmt),
+        label: '#fffaf5',
+      },
+    };
+  }
+
+  function heatVars(value, max) {
+    return crystalCssHeatVars(value, max, { base: accent, fgDark: '#231812' });
+  }
+
   function renderDonut(elId, items, title) {
     const el = document.getElementById(elId);
     if (!el || !items.length) return;
+    const originPalette = originTonePalette();
     const inst = ChartFactory.make(el, {
       tooltip: {
         formatter: (p) => `<b>${escape(p.name)}</b><br/>${p.value} 张 (${p.percent.toFixed(1)}%)`,
@@ -233,7 +632,15 @@
         type: 'pie',
         radius: ['52%', '78%'],
         center: ['50%', '46%'],
-        data: items,
+        data: items.map((item) => ({
+          ...item,
+          itemStyle: {
+            color: originPalette[item.name]?.solid || shade(accent, -4),
+            borderColor: palette.surface,
+            borderWidth: 3,
+            borderRadius: 6,
+          },
+        })),
         itemStyle: { borderColor: palette.surface, borderWidth: 3, borderRadius: 6 },
         label: { show: false },
         labelLine: { show: false },
@@ -251,65 +658,233 @@
       }],
     });
     inst.on('click', (p) => {
-      let key = title.includes('适应症') ? 'primary_indication'
-              : title.includes('来源') ? 'origin'
+      let key = title.includes('适应证') ? 'primary_indication'
+              : title.includes('产地') ? 'origin'
               : 'material_family';
-      const matches = data.records.filter((r) => r.main_landscape && r[key] === p.name);
-      showRecords({ title: `${p.name}`, meta: `${meta.name} · ${title}`, records: matches });
+      const matches = data.records.filter((r) => r.main_landscape && (
+        key === 'primary_indication' ? indicationValues(r).includes(p.name) : r[key] === p.name
+      ));
+      showRecords({ title: `${displayUiLabel(p.name)}`, meta: `${trackDisplayName} · ${title}`, records: displayRecords(matches) });
     });
   }
 
   function renderTimeline(t) {
-    if (!t.years.length) {
+    const yearly = timelineRows(t);
+    if (!yearly.length) {
       document.querySelector('#chart-timeline').innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无时间维度数据</div>';
       return;
     }
-    const cum = []; let acc = 0;
-    t.values.forEach((v) => { acc += v; cum.push(acc); });
+    const years = yearly.map((row) => row.year);
+    const annual = yearly.map((row) => row.count);
+    const cum = yearly.map((row) => row.cumulative);
+    const annualMax = Math.max(1, ...annual);
     const inst = ChartFactory.make(document.getElementById('chart-timeline'), {
-      legend: { bottom: 0 },
-      tooltip: { trigger: 'axis' },
-      grid: { left: 38, right: 38, top: 24, bottom: 44 },
-      xAxis: { type: 'category', data: t.years, boundaryGap: false },
+      legend: { show: false },
+      tooltip: {
+        trigger: 'axis',
+        formatter: (items) => {
+          const index = items[0]?.dataIndex ?? 0;
+          const row = yearly[index];
+          return `<b>${row.year}</b><br/>当年新增: ${row.count} 张<br/>累计获批: ${row.cumulative} 张`;
+        },
+      },
+      grid: { left: 44, right: 44, top: 30, bottom: 32 },
+      xAxis: { type: 'category', data: years, boundaryGap: true },
       yAxis: [
-        { type: 'value', name: '当年新增', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
+        { type: 'value', name: '当年新增', max: Math.ceil(annualMax / 5) * 5, splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
         { type: 'value', name: '累计', splitLine: { show: false } },
       ],
       series: [
         {
-          name: '当年新增', type: 'bar', barMaxWidth: 26,
+          name: '当年新增', type: 'bar', barMaxWidth: chartBarMaxWidth,
           itemStyle: {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              { offset: 0, color: shade(meta.accent, 18) },
-              { offset: 1, color: meta.accent },
-            ]),
-            borderRadius: [6, 6, 0, 0],
+            color: mainBarGradient(),
+            borderRadius: chartBarRadius,
           },
-          data: t.values,
+          label: { show: true, position: 'top', color: palette.ink2, fontSize: 11, fontWeight: 600 },
+          data: annual,
         },
         {
           name: '累计获批', type: 'line', yAxisIndex: 1,
           smooth: 0.3, showSymbol: true, symbolSize: 6,
-          lineStyle: { width: 2.5, color: shade(meta.accent, -22) },
-          areaStyle: { opacity: 0.06, color: meta.accent },
+          lineStyle: { width: 2.5, color: shade(accent, -22) },
+          areaStyle: { opacity: 0.06, color: accent },
+          label: { show: true, position: 'top', color: shade(accent, -22), fontSize: 11, fontWeight: 600 },
           data: cum,
         },
       ],
     });
     inst.on('click', (p) => {
-      const year = t.years[p.dataIndex];
-      const matches = data.records.filter((r) => r.main_landscape && r.approval_year === year);
-      showRecords({ title: `${year} 年新增`, meta: meta.name, records: matches });
+      const year = years[p.dataIndex];
+      const matches = recordsForTimelineYear(data.records, year);
+      showRecords({ title: `${year} 年新增`, meta: trackDisplayName, records: displayRecords(matches) });
     });
   }
 
+  function renderOriginEvolution(source) {
+    const el = document.getElementById('chart-origin-evolution');
+    if (!el) return;
+    const yearly = timelineRows(data.timeline);
+    if (!yearly.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无来源演变数据</div>';
+      return;
+    }
+    const years = yearly.map((row) => row.year);
+    const origins = ['进口', '国产', '港澳台'].filter((origin) => yearly.some((row) => row[origin] > 0));
+    const originPalette = originTonePalette();
+    const originLabelColors = Object.fromEntries(origins.map((origin) => [origin, originPalette[origin]?.label || '#fffaf5']));
+    const originGradients = Object.fromEntries(origins.map((origin) => [origin, originPalette[origin]?.gradient || mainBarGradient()]));
+    const outsideLabelSeries = origins.map((origin, originIndex) => ({
+      name: `${origin}小值标签`,
+      type: 'scatter',
+      silent: true,
+      symbolSize: 0,
+      tooltip: { show: false },
+      data: yearly
+        .map((row, index) => {
+          const value = row[origin] || 0;
+          if (!value || value >= 3) return null;
+          const stackedTop = origins.slice(0, originIndex + 1).reduce((sum, key) => sum + (row[key] || 0), 0);
+          return {
+            value: [index, stackedTop],
+            labelValue: value,
+          };
+        })
+        .filter(Boolean),
+      label: {
+        show: true,
+        position: 'top',
+        distance: 3,
+        color: shade(accent, -28),
+        fontSize: 11,
+        fontWeight: 700,
+        formatter: (p) => p.data.labelValue,
+      },
+    }));
+    const inst = ChartFactory.make(el, {
+      legend: { bottom: 0, data: origins },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        formatter: (items) => {
+          const index = items[0]?.dataIndex ?? 0;
+          const row = yearly[index];
+          const lines = origins.map((origin) => `${origin}: ${row[origin] || 0} 张`).join('<br/>');
+          return `<b>${row.year}</b><br/>${lines}<br/>合计: ${row.count} 张`;
+        },
+      },
+      grid: { left: 44, right: 44, top: 30, bottom: 48 },
+      xAxis: { type: 'category', data: years, boundaryGap: true },
+      yAxis: { type: 'value', name: '证照数', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
+      series: [
+        ...origins.map((origin, index) => ({
+          name: origin,
+          type: 'bar',
+          stack: 'origin',
+          barMaxWidth: chartBarMaxWidth,
+          data: yearly.map((row) => {
+            const value = row[origin] || 0;
+            const hasUpperSegment = origins.slice(index + 1).some((key) => row[key] > 0);
+            return {
+              value,
+              itemStyle: {
+                borderRadius: value && !hasUpperSegment ? chartBarRadius : [0, 0, 0, 0],
+                borderColor: 'transparent',
+                borderWidth: 0,
+              },
+            };
+          }),
+          itemStyle: {
+            color: originGradients[origin],
+            borderColor: 'transparent',
+            borderWidth: 0,
+          },
+          emphasis: { itemStyle: { borderColor: 'transparent', borderWidth: 0 } },
+          label: {
+            show: true,
+            position: 'inside',
+            color: originLabelColors[origin],
+            fontSize: 11,
+            fontWeight: 700,
+            formatter: (p) => (p.value && p.value >= 3 ? p.value : ''),
+          },
+        })),
+        ...outsideLabelSeries,
+      ],
+    });
+    inst.on('click', (p) => {
+      const year = years[p.dataIndex];
+      const matches = recordsForTimelineYear(source, year).filter((record) => record.origin === p.seriesName);
+      showRecords({ title: `${year} 年${p.seriesName}`, meta: `${trackDisplayName} · 国产 vs 进口演变`, records: displayRecords(matches) });
+    });
+  }
+
+  function timelineRows(t) {
+    if (isHaTrack && Array.isArray(data.benchmark?.yearly)) {
+      return data.benchmark.yearly.map((row) => ({
+        year: Number(row.year),
+        count: Number(row.count || 0),
+        cumulative: Number(row.cumulative || 0),
+        进口: Number(row['进口'] || 0),
+        国产: Number(row['国产'] || 0),
+      }));
+    }
+    const years = Array.isArray(t?.years) ? t.years : [];
+    const values = Array.isArray(t?.values) ? t.values : [];
+    const originByYear = new Map();
+    data.records
+      .filter((record) => record.main_landscape)
+      .forEach((record) => {
+        const year = recordTimelineYear(record);
+        if (!year) return;
+        if (!originByYear.has(year)) originByYear.set(year, { 国产: 0, 进口: 0, 港澳台: 0 });
+        const bucket = originByYear.get(year);
+        const origin = record.origin || '国产';
+        if (origin in bucket) bucket[origin] += 1;
+      });
+    let cumulative = 0;
+    return years.map((year, index) => {
+      const count = Number(values[index] || 0);
+      cumulative += count;
+      const origins = originByYear.get(Number(year)) || {};
+      return {
+        year: Number(year),
+        count,
+        cumulative,
+        进口: Number(origins['进口'] || 0),
+        国产: Number(origins['国产'] || 0),
+        港澳台: Number(origins['港澳台'] || 0),
+      };
+    });
+  }
+
+  function recordsForTimelineYear(source, year) {
+    return source.filter((record) => record.main_landscape && recordTimelineYear(record) === Number(year));
+  }
+
+  function recordTimelineYear(record) {
+    if (!isHaTrack && Number(record?.approval_year || 0)) return Number(record.approval_year);
+    if (!isHaTrack && record?.approval_date) {
+      const approvalYearMatch = String(record.approval_date).match(/20\d{2}/);
+      if (approvalYearMatch) return Number(approvalYearMatch[0]);
+    }
+    return certificateYear(record);
+  }
+
+  function certificateYear(record) {
+    const certificateYearMatch = String(record?.certificate_no || '').match(/20\d{2}/);
+    return certificateYearMatch ? Number(certificateYearMatch[0]) : Number(record?.approval_year || 0);
+  }
+
   function renderCompanyHeatmap(hm) {
+    const el = document.getElementById('chart-co-in');
+    if (!el) return;
     if (!hm.companies.length || !hm.indications.length) {
-      document.getElementById('chart-co-in').innerHTML = '<div class="muted" style="text-align:center;padding:40px">数据不足</div>';
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">数据不足</div>';
       return;
     }
     let maxV = 0; hm.cells.forEach((c) => { if (c[2] > maxV) maxV = c[2]; });
-    const inst = ChartFactory.make(document.getElementById('chart-co-in'), {
+    const inst = ChartFactory.make(el, {
       grid: { left: 130, right: 60, top: 30, bottom: 70 },
       tooltip: {
         position: 'top',
@@ -328,28 +903,34 @@
         },
         splitLine: { show: false }, axisLine: { show: false }, axisTick: { show: false },
       },
-      visualMap: {
-        min: 0, max: Math.max(maxV, 1), show: false,
-        inRange: { color: ['#F4F2EA', shade(meta.accent, 35), meta.accent, shade(meta.accent, -25)] },
-      },
       series: [{
-        type: 'heatmap', data: hm.cells,
+        type: 'heatmap',
+        data: hm.cells.map((cell) => ({
+          value: cell,
+          itemStyle: crystalEchartHeatItemStyle(cell[2], maxV, accent),
+        })),
         label: {
           show: true, fontSize: 11, fontWeight: 600,
-          // flip text to white once the cell color gets dark enough
-          color: (p) => p.value[2] >= maxV * 0.55 ? '#FFFFFF' : palette.ink,
+          color: (p) => crystalHeatLabelColor(p.value[2], maxV, palette.ink),
           formatter: (p) => p.value[2] || '',
         },
-        itemStyle: { borderColor: palette.bg, borderWidth: 2, borderRadius: 5 },
-        emphasis: { itemStyle: { shadowBlur: 12, shadowColor: 'rgba(28,22,18,0.15)' } },
+        itemStyle: { borderRadius: 7 },
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 24,
+            shadowColor: 'rgba(28,22,18,0.22)',
+            borderColor: 'rgba(255,255,255,0.92)',
+            borderWidth: 2,
+          },
+        },
         animationDuration: 800,
       }],
     });
     inst.on('click', (p) => {
       const comp = hm.companies[p.value[1]];
       const ind = hm.indications[p.value[0]];
-      const matches = data.records.filter((r) => r.main_landscape && r.company === comp && r.primary_indication === ind);
-      showRecords({ title: `${comp} → ${ind}`, meta: meta.name, records: matches });
+      const matches = data.records.filter((r) => r.main_landscape && r.company === comp && indicationValues(r).includes(ind));
+      showRecords({ title: `${comp} → ${ind}`, meta: trackDisplayName, records: displayRecords(matches) });
     });
   }
 
@@ -358,40 +939,47 @@
     const filterOrigin = document.getElementById('filter-origin');
     const filterVerified = document.getElementById('filter-verified');
     const search = document.getElementById('search');
+    if (!tbody) return;
 
     function paint() {
-      const fo = filterOrigin.value;
-      const fv = filterVerified.value;
-      const fs = (search.value || '').trim().toLowerCase();
+      const fo = filterOrigin?.value || '';
+      const fv = filterVerified?.value || '';
+      const fs = (search?.value || '').trim().toLowerCase();
       const filtered = records.filter((r) => {
         if (!r.main_landscape) return false;
         if (fo && r.origin !== fo) return false;
         if (fv === 'verified' && !r.verified) return false;
         if (fv === 'pending' && r.verified) return false;
         if (fs) {
-          const hay = `${r.product_name} ${r.company} ${r.certificate_no} ${r.primary_indication}`.toLowerCase();
+          const hay = [
+            r.product_name,
+            r.brand,
+            r.commercial_name,
+            r.company,
+            r.registrant,
+            r.certificate_no,
+            formatIndications(r),
+            r.scope_full,
+            r.news_title,
+            r.market_note,
+            ...(r.feature_tags || []),
+            r.indication_description,
+            r.components,
+            r.specification,
+          ].join(' ').toLowerCase();
           if (!hay.includes(fs)) return false;
         }
         return true;
       });
-      document.getElementById('records-count').textContent = filtered.length;
-      tbody.innerHTML = filtered.slice(0, 80).map((r) => `
-        <tr data-id="${escape(r.id)}">
-          <td><b>${escape(r.product_name || '—')}</b><div class="muted" style="font-size:11.5px">${escape(r.material_family || '')}</div></td>
-          <td>${escape(r.company)}</td>
-          <td><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px">${escape(r.certificate_no || '—')}</span></td>
-          <td>${escape(r.origin || '—')}</td>
-          <td>${escape(r.primary_indication || '—')}</td>
-          <td>${escape(r.approval_date || '—')}</td>
-          <td>${r.verified
-            ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
-            : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>'}</td>
-        </tr>
-      `).join('');
+      const countEl = document.getElementById('records-count');
+      if (countEl) countEl.textContent = filtered.length;
+      tbody.innerHTML = filtered.slice(0, 80).map((r) => (
+        isCollagenTrack ? renderCollagenRecordRow(r) : renderDefaultRecordRow(r)
+      )).join('');
       tbody.querySelectorAll('tr').forEach((tr) => {
         tr.addEventListener('click', () => {
           const r = records.find((x) => x.id === tr.dataset.id);
-          if (r) showRecords({ title: r.product_name || '产品详情', meta: r.certificate_no || '', records: [r] });
+          if (r) showRecords({ title: r.product_name || '产品详情', meta: r.certificate_no || '', records: displayRecords([r]) });
         });
       });
       if (filtered.length > 80) {
@@ -400,10 +988,183 @@
         tbody.appendChild(note);
       }
     }
-    [filterOrigin, filterVerified, search].forEach((el) => el.addEventListener('input', paint));
+
+    function renderDefaultRecordRow(r) {
+      return `
+        <tr data-id="${escape(r.id)}">
+          <td>
+            <b>${escape(r.product_name || '—')}</b>
+            <div class="muted" style="font-size:11.5px">${escape(displayUiLabel(r.material_form || r.material_family || ''))}</div>
+            ${isHaTrack ? `<div class="table-tag-row"><span class="tag product-shape-tag">${escape(productShape(r))}</span></div>` : ''}
+          </td>
+          <td>${escape(r.company)}</td>
+          <td><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px">${escape(r.certificate_no || '—')}</span></td>
+          <td>${escape(r.origin || '—')}</td>
+          <td>${escape(formatIndications(r))}</td>
+          <td>${escape(r.approval_date || '—')}</td>
+          <td>${r.verified
+            ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
+            : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>'}</td>
+        </tr>
+      `;
+    }
+
+    function renderCollagenRecordRow(r) {
+      const source = collagenSourceTag(r);
+      const sourceClass = source === '类人源' ? 'human' : 'animal';
+      const scope = r.scope_full || r.indication_description || r.components || '';
+      const primary = formatIndications(r);
+      const scopeLine = scope && scope !== primary
+        ? `<div class="muted table-detail-line">${escape(scope)}</div>` : '';
+      return `
+        <tr data-id="${escape(r.id)}">
+          <td>
+            <b>${escape(r.product_name || r.brand || '—')}</b>
+            <div class="muted" style="font-size:11.5px">${escape(displayUiLabel(r.material_form || r.material_family || ''))}</div>
+            <div class="table-tag-row"><span class="tag source-tag ${sourceClass}">${escape(source)}</span></div>
+          </td>
+          <td>
+            <b>${escape(r.company || '—')}</b>
+            <div class="muted" style="font-size:11.5px">${escape(r.registrant || '')}</div>
+          </td>
+          <td><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px">${escape(r.certificate_no || '—')}</span></td>
+          <td>${escape(r.origin || '—')}</td>
+          <td>
+            ${escape(primary)}
+            ${scopeLine}
+          </td>
+          <td>
+            <span>${escape(r.approval_date || '—')}</span>
+            ${r.valid_until ? `<div class="muted" style="font-size:11.5px">有效至 ${escape(r.valid_until)}</div>` : ''}
+          </td>
+          <td>${r.verified
+            ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
+            : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>'}</td>
+        </tr>
+      `;
+    }
+
+    [filterOrigin, filterVerified, search]
+      .filter(Boolean)
+      .forEach((el) => el.addEventListener('input', paint));
     paint();
   }
+
+  function buildCompanyIndicationHeatmap(source) {
+    const landscape = source.filter((r) => r.main_landscape);
+    const companyCounts = countBy(landscape, (r) => r.company || '未标注厂家');
+    const companies = [...companyCounts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
+      .slice(0, 10)
+      .map(([name]) => name);
+    const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
+    const indications = [...indicationCounts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
+      .slice(0, 8)
+      .map(([name]) => name);
+    const cells = [];
+    indications.forEach((ind, x) => {
+      companies.forEach((company, y) => {
+        const value = landscape.filter((r) => r.company === company && indicationValues(r).includes(ind)).length;
+        if (value) cells.push([x, y, value]);
+      });
+    });
+    return { companies, indications, cells };
+  }
+
+  function indicationValues(record) {
+    const source = record?.approved_indications || record?.approvedIndications || record?.primary_indication || record?.primaryIndication || '';
+    const values = normalizeIndicationValues(source);
+    if (values.length) return unique(values);
+    return record?.primary_indication ? [record.primary_indication] : [];
+  }
+
+  function formatIndications(record) {
+    const values = indicationValues(record).map(indicationLabel);
+    return values.length ? values.join('、') : (record?.primary_indication || '—');
+  }
+
+  function collagenSourceTag(record) {
+    const text = `${record?.collagen_source || ''} ${record?.material_family || ''} ${record?.material_form || ''} ${record?.product_name || ''}`;
+    if (/重组|类人源|人源化/.test(text)) return '类人源';
+    return '动物源';
+  }
+
+  function displayRecords(records) {
+    return records.map((record) => {
+      const mapped = { ...record, primary_indication: formatIndications(record) };
+      if (isCollagenTrack) {
+        mapped.tags = [collagenSourceTag(record)];
+        mapped.hide_origin_tag = true;
+      }
+      return mapped;
+    });
+  }
+
+  function normalizeIndicationValues(value) {
+    return String(value || '')
+      .split(/[、,，;；|]+/)
+      .flatMap(splitIndicationToken)
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  function splitIndicationToken(value) {
+    const text = String(value || '').trim();
+    if (!text) return [];
+    const compact = text.replace(/\s+/g, '');
+    const combined = {
+      '颏下脂肪堆积/双下巴': '颏下脂肪堆积（双下巴）',
+      '双下巴/颏下脂肪堆积': '颏下脂肪堆积（双下巴）',
+      '下颏/下颌部': '下颏/下颌部',
+      '中面部容量/轮廓': '中面部容量/轮廓',
+      '痤疮/术后': '痤疮/术后',
+      '疼痛缓解/非医美核心': '疼痛缓解/非医美核心',
+      '二类边界/历史证照': '二类边界/历史证照',
+    };
+    if (combined[compact]) return [combined[compact]];
+    const explicitSplits = {
+      '鼻唇沟/隆鼻': ['鼻唇沟', '隆鼻'],
+      '中下面部/颏下/颈部皮肤松弛': ['中下面部', '颏下', '颈部皮肤松弛'],
+    };
+    if (explicitSplits[compact]) return explicitSplits[compact];
+    if (/\s+[\/／]\s+/.test(text)) return text.split(/\s+[\/／]\s+/);
+    return [text];
+  }
+
+  function indicationLabel(value) {
+    if (value === '颞部') return '颞部/颞区';
+    return value;
+  }
+
+  function countBy(items, getKey) {
+    const groups = new Map();
+    items.forEach((item) => {
+      const key = getKey(item);
+      if (!key) return;
+      groups.set(key, (groups.get(key) || 0) + 1);
+    });
+    return groups;
+  }
+
+  function unique(values) {
+    return Array.from(new Set(values.filter((value) => value && String(value).trim())));
+  }
 })();
+
+function displayUiLabel(value) {
+  return String(value || '')
+    .replaceAll('再生类', '胶原刺激剂')
+    .replace(/希玛德股份有限公司\s*SYMATESE SAS/g, '思奥美 / SYMATESE SAS')
+    .replace(/希玛德股份有限公司SYMATESE SAS/g, '思奥美 / SYMATESE SAS')
+    .replace(/西马\s*Xeomin/gi, '思奥美 Xeomin')
+    .replace(/西马/g, '思奥美')
+    .replace(/HA\s*\/\s*透明质酸钠/g, 'HA/透明质酸钠')
+    .replace(/透明质酸钠\s*\/\s*玻尿酸/g, 'HA/透明质酸钠')
+    .replace(/玻尿酸\s*\/\s*透明质酸钠/g, 'HA/透明质酸钠')
+    .replace(/^透明质酸钠$/g, 'HA/透明质酸钠')
+    .replace(/^玻尿酸$/g, 'HA/透明质酸钠');
+}
 
 // HSL shade helper
 function shade(hex, amt) {

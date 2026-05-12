@@ -1,4 +1,4 @@
-/* Shared utilities, ECharts theme, and drawer logic. */
+﻿/* Shared utilities, ECharts theme, and drawer logic. */
 
 const palette = {
   brand: '#D97757',
@@ -70,6 +70,88 @@ const ChartFactory = (() => {
   return { make, instances };
 })();
 
+// ---------- Shared crystalline heatmap language ----------
+
+function hexToRgb(color) {
+  const raw = String(color || '').trim().replace('#', '');
+  if (!/^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(raw)) return null;
+  const full = raw.length === 3 ? raw.split('').map((char) => char + char).join('') : raw;
+  return {
+    r: parseInt(full.slice(0, 2), 16),
+    g: parseInt(full.slice(2, 4), 16),
+    b: parseInt(full.slice(4, 6), 16),
+  };
+}
+
+function mixColor(color, target = '#ffffff', amount = 0.35) {
+  const rgb = hexToRgb(color);
+  const targetRgb = hexToRgb(target);
+  if (!rgb || !targetRgb) return color;
+  const clamp = (value) => Math.max(0, Math.min(255, Math.round(value)));
+  return `rgb(${clamp(rgb.r + (targetRgb.r - rgb.r) * amount)}, ${clamp(rgb.g + (targetRgb.g - rgb.g) * amount)}, ${clamp(rgb.b + (targetRgb.b - rgb.b) * amount)})`;
+}
+
+function colorAlpha(color, alpha) {
+  const rgb = hexToRgb(color);
+  if (!rgb) return color;
+  return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+}
+
+function heatRatio(value, max) {
+  if (!value) return 0;
+  return Math.log1p(Number(value) || 0) / Math.log1p(Math.max(Number(max) || 1, 1));
+}
+
+function crystalCssHeatVars(value, max, { base = palette.brand, fgDark = palette.ink } = {}) {
+  if (!value) {
+    return [
+      '--heat-bg:transparent',
+      '--heat-border:transparent',
+      '--heat-fg:transparent',
+      '--heat-shadow:transparent',
+    ].join(';') + ';';
+  }
+  const heat = heatRatio(value, max);
+  const top = mixColor(base, '#fff8ef', Math.max(0.40, 0.76 - heat * 0.22));
+  const mid = mixColor(base, '#ffffff', Math.max(0.16, 0.46 - heat * 0.20));
+  const deep = mixColor(base, '#4a2418', Math.min(0.22, 0.08 + heat * 0.10));
+  const fg = heat > 0.60 ? '#fffaf5' : fgDark;
+  const shadow = (0.10 + heat * 0.24).toFixed(3);
+  return [
+    `--heat-bg:linear-gradient(150deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.16) 34%, rgba(255,255,255,0) 52%), linear-gradient(135deg, ${top} 0%, ${mid} 46%, ${deep} 100%)`,
+    `--heat-border:${colorAlpha(mixColor(base, '#fffaf5', 0.28), 0.56)}`,
+    `--heat-fg:${fg}`,
+    `--heat-shadow:${colorAlpha(base, shadow)}`,
+  ].join(';') + ';';
+}
+
+function crystalEchartHeatItemStyle(value, max, base = palette.brand) {
+  const heat = heatRatio(value, max);
+  const top = mixColor(base, '#fff8ef', Math.max(0.40, 0.76 - heat * 0.22));
+  const mid = mixColor(base, '#ffffff', Math.max(0.16, 0.46 - heat * 0.20));
+  const deep = mixColor(base, '#4a2418', Math.min(0.22, 0.08 + heat * 0.10));
+  const color = typeof echarts !== 'undefined'
+    ? new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+      { offset: 0, color: top },
+      { offset: 0.42, color: mid },
+      { offset: 1, color: deep },
+    ])
+    : deep;
+  return {
+    color,
+    borderColor: 'rgba(255,255,255,0.72)',
+    borderWidth: 2,
+    borderRadius: 7,
+    shadowBlur: 14,
+    shadowColor: colorAlpha(base, (0.12 + heat * 0.24).toFixed(3)),
+    shadowOffsetY: 4,
+  };
+}
+
+function crystalHeatLabelColor(value, max, dark = palette.ink) {
+  return heatRatio(value, max) > 0.60 ? '#fffaf5' : dark;
+}
+
 // ---------- Number animation ----------
 
 function animateNumber(el, to, { duration = 900, suffix = '', decimals = 0 } = {}) {
@@ -137,13 +219,14 @@ const Drawer = (() => {
 
 function renderRecordCard(r) {
   const tags = (r.tags || []).slice(0, 3).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
+  const featureTags = (r.feature_tags || []).slice(0, 4).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
+  const newsSource = r.news_title
+    ? `<div class="row"><b>资讯来源</b> ${r.news_url ? `<a href="${escape(r.news_url)}" target="_blank" rel="noreferrer">${escape(r.news_title)}</a>` : escape(r.news_title)}${r.news_account ? ` · ${escape(r.news_account)}` : ''}</div>`
+    : '';
   const verifiedTag = r.verified
     ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
     : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>';
-  const originTag = r.origin ? `<span class="tag">${escape(r.origin)}</span>` : '';
-  const url = r.source_url
-    ? `<a href="${escape(r.source_url)}" target="_blank" rel="noopener">来源 ↗</a>`
-    : '';
+  const originTag = (!r.hide_origin_tag && r.origin) ? `<span class="tag">${escape(r.origin)}</span>` : '';
   return `
     <div class="record-card">
       <div class="head">
@@ -153,15 +236,19 @@ function renderRecordCard(r) {
         </div>
         <div class="cluster">${verifiedTag}${originTag}</div>
       </div>
-      <div class="row"><b>注册人</b> ${escape(r.company || '—')}</div>
-      ${r.primary_indication ? `<div class="row"><b>适应症</b> ${escape(r.primary_indication)}</div>` : ''}
+      <div class="row"><b>注册企业</b> ${escape(r.company || '—')}</div>
+      ${r.primary_indication ? `<div class="row"><b>适应证</b> ${escape(r.primary_indication)}</div>` : ''}
       ${r.material_family ? `<div class="row"><b>材料</b> ${escape(r.material_family)} · ${escape(r.material_form || '')}</div>` : ''}
+      ${r.scope_full ? `<div class="row"><b>说明</b> ${escape(r.scope_full)}</div>` : ''}
+      ${r.commercial_name ? `<div class="row"><b>市场名</b> ${escape(r.commercial_name)}</div>` : ''}
+      ${r.market_note ? `<div class="row"><b>资讯要点</b> ${escape(r.market_note)}</div>` : ''}
+      ${featureTags ? `<div class="cluster" style="margin-top:8px">${featureTags}</div>` : ''}
+      ${newsSource}
       <div class="row">
         ${r.approval_date ? `<span><b>批准</b> ${escape(r.approval_date)}</span>` : ''}
         ${r.valid_until ? `<span><b>到期</b> ${escape(r.valid_until)}</span>` : ''}
       </div>
       ${tags ? `<div class="cluster" style="margin-top:8px">${tags}</div>` : ''}
-      ${url ? `<div class="row" style="margin-top:8px">${url}</div>` : ''}
     </div>
   `;
 }
@@ -207,4 +294,6 @@ function watchKpis(root = document) {
 }
 
 window.RI = { palette, SERIES_COLORS, ChartFactory, Drawer, showRecords,
-              renderRecordCard, escape, loadJSON, watchKpis, animateNumber };
+              renderRecordCard, escape, loadJSON, watchKpis, animateNumber,
+              mixColor, colorAlpha, crystalCssHeatVars,
+              crystalEchartHeatItemStyle, crystalHeatLabelColor };

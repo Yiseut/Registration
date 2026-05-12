@@ -1,6 +1,10 @@
 # Test screenshots produced during local dev (do not commit)
 overview_test*.png
 track_*_test.png
+.playwright-cli/
+output/
+test-results/
+videos/
 
 # Python
 __pycache__/

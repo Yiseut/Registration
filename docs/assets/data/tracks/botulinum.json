@@ -3,7 +3,7 @@
   "track_meta": {
     "key": "botulinum",
     "name": "肉毒毒素",
-    "tagline": "药品监管的医美准入,寡头格局",
+    "tagline": "",
     "accent": "#8B9D7F"
   },
   "kpi": {
@@ -267,7 +267,7 @@
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
-        "再生类",
+        "胶原刺激剂",
         "肉毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
@@ -306,7 +306,7 @@
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "再生类",
+        "胶原刺激剂",
         "肉毒素",
         "玻尿酸"
       ],
@@ -347,7 +347,7 @@
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
-        "再生类",
+        "胶原刺激剂",
         "肉毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
@@ -423,7 +423,7 @@
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
-        "再生类",
+        "胶原刺激剂",
         "肉毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
@@ -461,7 +461,7 @@
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "再生类",
+        "胶原刺激剂",
         "肉毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",

@@ -4,7 +4,7 @@
     {
       "key": "ha",
       "name": "玻尿酸 / 透明质酸钠",
-      "tagline": "中国医美注射填充的基础盘",
+      "tagline": "",
       "accent": "#D97757",
       "url": "tracks/ha.html",
       "data_url": "assets/data/tracks/ha.json"
@@ -12,7 +12,7 @@
     {
       "key": "collagen",
       "name": "胶原蛋白",
-      "tagline": "国产新势力快速崛起的赛道",
+      "tagline": "",
       "accent": "#B5915A",
       "url": "tracks/collagen.html",
       "data_url": "assets/data/tracks/collagen.json"
@@ -20,7 +20,7 @@
     {
       "key": "plla",
       "name": "童颜针 / PLLA",
-      "tagline": "再生类的旗手,国际品牌主导",
+      "tagline": "",
       "accent": "#8B5A6B",
       "url": "tracks/plla.html",
       "data_url": "assets/data/tracks/plla.json"
@@ -28,7 +28,7 @@
     {
       "key": "pcl",
       "name": "少女针 / PCL",
-      "tagline": "再生类小众但溢价高的细分",
+      "tagline": "",
       "accent": "#C15F3C",
       "url": "tracks/pcl.html",
       "data_url": "assets/data/tracks/pcl.json"
@@ -36,7 +36,7 @@
     {
       "key": "caha",
       "name": "羟基磷酸钙 / CaHA",
-      "tagline": "再生类骨相支撑材料",
+      "tagline": "",
       "accent": "#5B7B9A",
       "url": "tracks/caha.html",
       "data_url": "assets/data/tracks/caha.json"
@@ -44,7 +44,7 @@
     {
       "key": "botulinum",
       "name": "肉毒毒素",
-      "tagline": "药品监管的医美准入,寡头格局",
+      "tagline": "",
       "accent": "#8B9D7F",
       "url": "tracks/botulinum.html",
       "data_url": "assets/data/tracks/botulinum.json"
@@ -52,7 +52,7 @@
     {
       "key": "ebd",
       "name": "EBD 设备类",
-      "tagline": "射频/超声/激光/微针的器械准入",
+      "tagline": "",
       "accent": "#6E6A65",
       "url": "tracks/ebd.html",
       "data_url": "assets/data/tracks/ebd.json"

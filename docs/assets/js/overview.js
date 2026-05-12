@@ -1,7 +1,17 @@
 /* Overview page wiring. */
 
 (async function init() {
-  const { palette, SERIES_COLORS, ChartFactory, showRecords, escape, loadJSON, watchKpis } = window.RI;
+  const {
+    palette,
+    SERIES_COLORS,
+    ChartFactory,
+    showRecords,
+    escape,
+    loadJSON,
+    watchKpis,
+    crystalEchartHeatItemStyle,
+    crystalHeatLabelColor,
+  } = window.RI;
 
   const data = await loadJSON('assets/data/overview.json');
   const tracks = (await loadJSON('assets/data/manifest.json')).tracks;
@@ -120,20 +130,25 @@
         },
         splitLine: { show: false }, axisLine: { show: false }, axisTick: { show: false },
       },
-      visualMap: {
-        min: 0, max: Math.max(maxV, 1),
-        show: false,
-        inRange: { color: ['#FBE7DA', '#F1AC8A', '#D97757', '#A14323'] },
-      },
       series: [{
         type: 'heatmap',
-        data: cells,
+        data: cells.map((cell) => ({
+          value: cell,
+          itemStyle: crystalEchartHeatItemStyle(cell[2], maxV, palette.brand),
+        })),
         label: {
-          show: true, color: '#1F1B17', fontSize: 11.5, fontWeight: 600,
+          show: true, color: (p) => crystalHeatLabelColor(p.value[2], maxV, palette.ink), fontSize: 11.5, fontWeight: 600,
           formatter: (p) => p.value[2] || '',
         },
-        itemStyle: { borderColor: palette.bg, borderWidth: 3, borderRadius: 6 },
-        emphasis: { itemStyle: { shadowBlur: 14, shadowColor: 'rgba(217,119,87,0.4)' } },
+        itemStyle: { borderRadius: 7 },
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 24,
+            shadowColor: 'rgba(28,22,18,0.22)',
+            borderColor: 'rgba(255,255,255,0.92)',
+            borderWidth: 2,
+          },
+        },
         animationDuration: 900,
         animationEasing: 'cubicOut',
       }],
@@ -182,22 +197,25 @@
         axisLabel: { color: palette.ink, fontSize: 12 },
         splitLine: { show: false }, axisLine: { show: false }, axisTick: { show: false },
       },
-      visualMap: {
-        min: 0, max: Math.max(maxV, 1),
-        show: true, orient: 'horizontal', left: 'center', bottom: 0,
-        itemWidth: 14, itemHeight: 8,
-        inRange: { color: ['#F4F2EA', '#F8E3D5', '#F4B393', '#D97757', '#8B3A1E'] },
-        text: ['密集', '稀疏'], textStyle: { color: palette.ink3, fontSize: 11 },
-      },
       series: [{
         type: 'heatmap',
-        data: hm.cells,
+        data: hm.cells.map((cell) => ({
+          value: cell,
+          itemStyle: crystalEchartHeatItemStyle(cell[2], maxV, palette.brand),
+        })),
         label: {
-          show: true, color: palette.ink, fontSize: 11, fontWeight: 600,
+          show: true, color: (p) => crystalHeatLabelColor(p.value[2], maxV, palette.ink), fontSize: 11, fontWeight: 600,
           formatter: (p) => p.value[2],
         },
-        itemStyle: { borderColor: palette.bg, borderWidth: 2, borderRadius: 6 },
-        emphasis: { itemStyle: { shadowBlur: 12, shadowColor: 'rgba(217,119,87,0.4)' } },
+        itemStyle: { borderRadius: 7 },
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 24,
+            shadowColor: 'rgba(28,22,18,0.22)',
+            borderColor: 'rgba(255,255,255,0.92)',
+            borderWidth: 2,
+          },
+        },
         animationDuration: 900,
       }],
     });
