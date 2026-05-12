@@ -517,10 +517,15 @@
       1,
       ...rows.flatMap((row) => columns.map((column) => row.records.filter((record) => indicationValues(record).includes(column)).length))
     );
-    const minWidth = 220 + columns.length * 116;
+    const compact = rows.length <= 5 && columns.length <= 4;
+    const minWidth = compact ? 196 + columns.length * 230 : Math.max(760, 220 + columns.length * 116);
+    const gridSizeStyle = compact ? `width:min(100%, ${minWidth}px);` : `min-width:${minWidth}px;`;
+    const columnTemplate = compact
+      ? `minmax(150px, 196px) repeat(${columns.length}, minmax(150px, 230px))`
+      : `minmax(166px, 196px) repeat(${columns.length}, minmax(92px, 1fr))`;
     holder.innerHTML = `
       <div class="matrix-wrap">
-        <div class="matrix-grid track-form-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(166px, 196px) repeat(${columns.length}, minmax(92px, 1fr))">
+        <div class="matrix-grid track-form-indication-grid" style="${gridSizeStyle}grid-template-columns:${columnTemplate}">
           <div class="matrix-head">产品形态</div>
           ${columns.map((column) => `<div class="matrix-head" title="${escape(indicationLabel(column))}">${matrixAxisLabel(indicationLabel(column), indicationCounts.get(column))}</div>`).join('')}
           ${rows
@@ -995,7 +1000,12 @@
       indication,
       data.records.filter((record) => record.main_landscape && indicationValues(record).includes(indication)).length,
     ]));
-    const minWidth = Math.max(1120, 220 + hm.indications.length * 120);
+    const compact = hm.companies.length <= 6 && hm.indications.length <= 4;
+    const minWidth = compact ? 210 + hm.indications.length * 240 : Math.max(900, 220 + hm.indications.length * 130);
+    const gridSizeStyle = compact ? `width:min(100%, ${minWidth}px);` : `min-width:${minWidth}px;`;
+    const columnTemplate = compact
+      ? `minmax(160px, 210px) repeat(${hm.indications.length}, minmax(160px, 240px))`
+      : `minmax(182px, 220px) repeat(${hm.indications.length}, minmax(108px, 1fr))`;
     const body = hm.companies.map((company) => {
       const cells = hm.indications.map((indication) => {
         const matches = companyIndicationMatches(company, indication);
@@ -1008,7 +1018,7 @@
     el.classList.remove('chart', 'chart-xl', 'chart-tall');
     el.innerHTML = `
       <div class="matrix-wrap">
-        <div class="matrix-grid track-company-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(182px, 220px) repeat(${hm.indications.length}, minmax(108px, 1fr))">
+        <div class="matrix-grid track-company-indication-grid" style="${gridSizeStyle}grid-template-columns:${columnTemplate}">
           <div class="matrix-head">厂家</div>
           ${hm.indications.map((indication) => `<div class="matrix-head" title="${escape(indicationLabel(indication))}">${matrixAxisLabel(indicationLabel(indication), indicationTotals.get(indication))}</div>`).join('')}
           ${body}
