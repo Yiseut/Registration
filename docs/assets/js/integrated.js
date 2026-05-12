@@ -410,26 +410,28 @@
     const holder = document.getElementById('manufacturer-matrix');
     if (!holder) return;
     const rows = manufacturerRows(records);
+    const materialRows = [...rows].sort(sortManufacturerMaterialRows);
+    const indicationRows = [...rows].sort(sortManufacturerIndicationRows);
     const materialColumns = manufacturerMaterialColumns(records);
     const indicationColumns = indicationColumnsAll(records);
-    const materialMax = Math.max(...rows.flatMap((row) => materialColumns.map((column) =>
+    const materialMax = Math.max(...materialRows.flatMap((row) => materialColumns.map((column) =>
       row.owned.filter((record) => heatSegment(record) === column.key).length
     )), 1);
-    const indicationMax = Math.max(...rows.flatMap((row) => indicationColumns.map((column) =>
+    const indicationMax = Math.max(...indicationRows.flatMap((row) => indicationColumns.map((column) =>
       row.owned.filter((record) => indicationValues(record).includes(column.key)).length
     )), 1);
 
     holder.innerHTML = [
       renderManufacturerHeatmap({
         title: '厂家 × 材料布局',
-        rows,
+        rows: materialRows,
         columns: materialColumns,
         kind: 'segment',
         max: materialMax,
       }),
       renderManufacturerHeatmap({
         title: '厂家 × 适应证布局',
-        rows,
+        rows: indicationRows,
         columns: indicationColumns,
         kind: 'indication',
         max: indicationMax,
@@ -1004,8 +1006,24 @@
       ...row,
       count: row.owned.length,
       indications: unique(row.owned.flatMap(indicationValues)).length,
+      symptoms: unique(row.owned.flatMap(symptomValues)).length,
       segments: unique(row.owned.map(heatSegment)).length,
-    })).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'zh-CN'));
+    }));
+  }
+
+  function sortManufacturerMaterialRows(a, b) {
+    return b.segments - a.segments
+      || b.indications - a.indications
+      || b.symptoms - a.symptoms
+      || b.count - a.count
+      || a.name.localeCompare(b.name, 'zh-CN');
+  }
+
+  function sortManufacturerIndicationRows(a, b) {
+    return b.indications - a.indications
+      || b.segments - a.segments
+      || b.count - a.count
+      || a.name.localeCompare(b.name, 'zh-CN');
   }
 
   function manufacturerMaterialColumns(source) {
@@ -1024,6 +1042,10 @@
     const values = normalizeIndicationValues(source);
     if (values.length) return unique(values);
     return record?.primaryIndication ? [record.primaryIndication] : [];
+  }
+
+  function symptomValues(record) {
+    return normalizeIndicationValues(record?.primaryIndication || record?.primary_indication || '');
   }
 
   function formatRecordIndications(record) {

@@ -360,14 +360,12 @@
         title: group.name,
         count: group.count,
         records: group.records,
-        copy: shapeScopeCopy(group.name, group.records),
       })),
       {
         label: '优势差异',
         title: '含利多卡因',
         count: lidocaineRecords.length,
         records: lidocaineRecords,
-        copy: '用于麻感管理与舒适度差异，不并入产品形态分类。',
         kind: 'advantage',
       },
     ];
@@ -378,7 +376,6 @@
             <span>${escape(card.label)}</span>
             <strong>${escape(card.title)}</strong>
             <b>${card.count}<em>张</em></b>
-            <small>${escape(card.copy)}</small>
           </button>
         `
       )
@@ -389,13 +386,6 @@
         if (card) showRecords({ title: card.title, meta: `${trackDisplayName} · 市场口径`, records: displayRecords(card.records) });
       });
     });
-  }
-
-  function shapeScopeCopy(name, records) {
-    const forms = unique(records.map((record) => record.material_form)).slice(0, 3).map(displayUiLabel).join(' / ');
-    if (name === '交联填充类') return `以交联或修饰 HA 凝胶为主，覆盖面部填充核心适应证。`;
-    if (name === '非交联水光、肤质改善类') return `以非交联 HA 溶液与肤质改善口径为主，不纳入 PVA 或胶原载体产品。`;
-    return forms || '按产品注册名称归纳。';
   }
 
   function hasLidocaineAdvantage(record) {
@@ -433,7 +423,8 @@
                   const matches = row.records.filter((record) => indicationValues(record).includes(column));
                   const count = matches.length;
                   const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
-                  return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" title="${escape(`${row.name} × ${indicationLabel(column)}：${count} 张`)}">${count || ''}</button>`;
+                  const tooltip = escape(matrixTooltipFromRecords(matches));
+                  return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${tooltip}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" aria-label="${escape(`${row.name} × ${indicationLabel(column)}：${count} 张`)}">${count || ''}</button>`;
                 })
                 .join('');
               return `<div class="matrix-term">${escape(row.name)}</div>${cells}`;
@@ -442,12 +433,7 @@
         </div>
       </div>
     `;
-    holder.querySelectorAll('button.matrix-cell[data-records]').forEach((cell) => {
-      cell.addEventListener('click', () => {
-        const rows = JSON.parse(decodeURIComponent(cell.dataset.records || '[]'));
-        if (rows.length) showRecords({ title: cell.dataset.title || '产品形态 × 适应证', meta: trackDisplayName, records: rows });
-      });
-    });
+    bindTrackMatrixInteractions(holder, '产品形态 × 适应证');
   }
 
   function renderCompanyMatrixList(source) {
@@ -455,9 +441,14 @@
     if (!holder) return;
     const paint = () => {
       const rows = companyRows(source);
-      rows.sort((a, b) => b.diversity - a.diversity || b.records.length - a.records.length);
+      rows.sort((a, b) =>
+        b.shapes.length - a.shapes.length
+        || b.records.length - a.records.length
+        || b.indications.length - a.indications.length
+        || a.name.localeCompare(b.name, 'zh-CN')
+      );
       const max = Math.max(1, ...rows.map((row) => row.records.length));
-      holder.innerHTML = rows.slice(0, 16).map((row) => {
+      holder.innerHTML = rows.map((row) => {
         const width = Math.max(6, (row.records.length / max) * 100);
         const brands = unique(row.records.map((record) => record.product_name)).slice(0, 6).map(displayUiLabel).join(' / ');
         const payload = encodeURIComponent(JSON.stringify(displayRecords(row.records)));
@@ -883,55 +874,30 @@
       el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">数据不足</div>';
       return;
     }
-    let maxV = 0; hm.cells.forEach((c) => { if (c[2] > maxV) maxV = c[2]; });
-    const inst = ChartFactory.make(el, {
-      grid: { left: 130, right: 60, top: 30, bottom: 70 },
-      tooltip: {
-        position: 'top',
-        formatter: (p) => `<b>${escape(hm.companies[p.value[1]])}</b><br/>${escape(hm.indications[p.value[0]])} · ${p.value[2]} 张`,
-      },
-      xAxis: {
-        type: 'category', data: hm.indications,
-        axisLabel: { rotate: 28, fontSize: 11, color: palette.ink3 },
-        splitLine: { show: false }, axisLine: { show: false }, axisTick: { show: false },
-      },
-      yAxis: {
-        type: 'category', data: hm.companies,
-        axisLabel: {
-          color: palette.ink, fontSize: 12,
-          formatter: (v) => v.length > 14 ? v.slice(0, 14) + '…' : v,
-        },
-        splitLine: { show: false }, axisLine: { show: false }, axisTick: { show: false },
-      },
-      series: [{
-        type: 'heatmap',
-        data: hm.cells.map((cell) => ({
-          value: cell,
-          itemStyle: crystalEchartHeatItemStyle(cell[2], maxV, accent),
-        })),
-        label: {
-          show: true, fontSize: 11, fontWeight: 600,
-          color: (p) => crystalHeatLabelColor(p.value[2], maxV, palette.ink),
-          formatter: (p) => p.value[2] || '',
-        },
-        itemStyle: { borderRadius: 7 },
-        emphasis: {
-          itemStyle: {
-            shadowBlur: 24,
-            shadowColor: 'rgba(28,22,18,0.22)',
-            borderColor: 'rgba(255,255,255,0.92)',
-            borderWidth: 2,
-          },
-        },
-        animationDuration: 800,
-      }],
-    });
-    inst.on('click', (p) => {
-      const comp = hm.companies[p.value[1]];
-      const ind = hm.indications[p.value[0]];
-      const matches = data.records.filter((r) => r.main_landscape && r.company === comp && indicationValues(r).includes(ind));
-      showRecords({ title: `${comp} → ${ind}`, meta: trackDisplayName, records: displayRecords(matches) });
-    });
+    const max = Math.max(...hm.companies.flatMap((company) =>
+      hm.indications.map((indication) => companyIndicationMatches(company, indication).length)
+    ), 1);
+    const minWidth = Math.max(920, 168 + hm.indications.length * 92);
+    const body = hm.companies.map((company) => {
+      const cells = hm.indications.map((indication) => {
+        const matches = companyIndicationMatches(company, indication);
+        const count = matches.length;
+        const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
+        return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${escape(matrixTooltipFromRecords(matches))}" data-title="${escape(`${company} × ${indicationLabel(indication)}`)}" aria-label="${escape(`${company} × ${indicationLabel(indication)}：${count} 张`)}">${count || ''}</button>`;
+      }).join('');
+      return `<div class="matrix-term" title="${escape(company)}">${escape(company)}</div>${cells}`;
+    }).join('');
+    el.classList.remove('chart', 'chart-xl');
+    el.innerHTML = `
+      <div class="matrix-wrap">
+        <div class="matrix-grid track-company-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(142px, 168px) repeat(${hm.indications.length}, minmax(84px, 1fr))">
+          <div class="matrix-head">厂家</div>
+          ${hm.indications.map((indication) => `<div class="matrix-head" title="${escape(indicationLabel(indication))}">${escape(indicationLabel(indication))}</div>`).join('')}
+          ${body}
+        </div>
+      </div>
+    `;
+    bindTrackMatrixInteractions(el, '厂家和适应症卡位');
   }
 
   function renderRecords(records) {
@@ -1052,24 +1018,118 @@
 
   function buildCompanyIndicationHeatmap(source) {
     const landscape = source.filter((r) => r.main_landscape);
-    const companyCounts = countBy(landscape, (r) => r.company || '未标注厂家');
-    const companies = [...companyCounts.entries()]
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
-      .slice(0, 10)
-      .map(([name]) => name);
+    const companyStats = new Map();
+    landscape.forEach((record) => {
+      const company = record.company || '未标注厂家';
+      if (!companyStats.has(company)) {
+        companyStats.set(company, { company, records: [], indications: new Set(), segments: new Set() });
+      }
+      const row = companyStats.get(company);
+      row.records.push(record);
+      indicationValues(record).forEach((item) => row.indications.add(item));
+      row.segments.add(productShape(record));
+    });
+    const companies = [...companyStats.values()]
+      .sort((a, b) =>
+        b.indications.size - a.indications.size
+        || b.segments.size - a.segments.size
+        || b.records.length - a.records.length
+        || a.company.localeCompare(b.company, 'zh-CN')
+      )
+      .map((row) => row.company);
     const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
     const indications = [...indicationCounts.entries()]
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
-      .slice(0, 8)
       .map(([name]) => name);
-    const cells = [];
-    indications.forEach((ind, x) => {
-      companies.forEach((company, y) => {
-        const value = landscape.filter((r) => r.company === company && indicationValues(r).includes(ind)).length;
-        if (value) cells.push([x, y, value]);
+    return { companies, indications };
+  }
+
+  function companyIndicationMatches(company, indication) {
+    return data.records.filter((record) =>
+      record.main_landscape
+      && (record.company || '未标注厂家') === company
+      && indicationValues(record).includes(indication)
+    );
+  }
+
+  function matrixTooltipFromRecords(records) {
+    if (!records?.length) return '';
+    const labels = unique(records.map((record) => {
+      const product = displayUiLabel(record.brand || record.product_name || record.official_product_name || record.certificate_no || '未标注产品');
+      const company = displayUiLabel(record.company || record.registrant || '未标注厂家');
+      return `${product} / ${company}`;
+    }));
+    const shown = labels.slice(0, 8);
+    if (labels.length > shown.length) shown.push(`另 ${labels.length - shown.length} 条`);
+    return JSON.stringify(shown.map((label) => ({ label })));
+  }
+
+  function bindTrackMatrixInteractions(root, meta) {
+    const tooltipNode = matrixTooltipNode();
+    root.querySelectorAll('button.matrix-cell[data-records]').forEach((cell) => {
+      const showTip = (event) => {
+        const html = tooltipHtml(cell.dataset.tooltip || '');
+        if (!html) return;
+        tooltipNode.innerHTML = html;
+        tooltipNode.classList.add('visible');
+        positionMatrixTooltip(tooltipNode, event.clientX, event.clientY);
+      };
+      const hideTip = () => tooltipNode.classList.remove('visible');
+      cell.addEventListener('mouseenter', showTip);
+      cell.addEventListener('mousemove', (event) => {
+        if (tooltipNode.classList.contains('visible')) positionMatrixTooltip(tooltipNode, event.clientX, event.clientY);
+      });
+      cell.addEventListener('mouseleave', hideTip);
+      cell.addEventListener('focus', () => {
+        const html = tooltipHtml(cell.dataset.tooltip || '');
+        if (!html) return;
+        const rect = cell.getBoundingClientRect();
+        tooltipNode.innerHTML = html;
+        tooltipNode.classList.add('visible');
+        positionMatrixTooltip(tooltipNode, rect.left + rect.width / 2, rect.bottom);
+      });
+      cell.addEventListener('blur', hideTip);
+      cell.addEventListener('click', () => {
+        hideTip();
+        const records = JSON.parse(decodeURIComponent(cell.dataset.records || '[]'));
+        if (records.length) showRecords({ title: cell.dataset.title || '热力图记录', meta, records });
       });
     });
-    return { companies, indications, cells };
+  }
+
+  function matrixTooltipNode() {
+    let node = document.querySelector('.matrix-tooltip');
+    if (!node) {
+      node = document.createElement('div');
+      node.className = 'matrix-tooltip';
+      node.setAttribute('role', 'tooltip');
+      document.body.appendChild(node);
+    }
+    return node;
+  }
+
+  function tooltipHtml(raw) {
+    if (!raw) return '';
+    let items = [];
+    try {
+      items = JSON.parse(raw);
+    } catch (error) {
+      items = String(raw).split('\n').filter(Boolean).map((label) => ({ label }));
+    }
+    if (!Array.isArray(items) || !items.length) return '';
+    const rows = items.slice(0, 8)
+      .map((item) => `<li><i></i><span>${escape(item.label || item)}</span></li>`)
+      .join('');
+    return `<ul class="tooltip-list tooltip-coral">${rows}</ul>`;
+  }
+
+  function positionMatrixTooltip(node, x, y) {
+    const margin = 14;
+    const rect = node.getBoundingClientRect();
+    const left = Math.min(Math.max(x + 14, margin), Math.max(window.innerWidth - rect.width - margin, margin));
+    const top = Math.min(Math.max(y + 14, margin), Math.max(window.innerHeight - rect.height - margin, margin));
+    node.style.left = `${left}px`;
+    node.style.top = `${top}px`;
   }
 
   function indicationValues(record) {

@@ -876,6 +876,53 @@ button.matrix-cell:focus-visible {
 .matrix-legend i[data-heat="warm"] { background: hsl(18 66% 64%); }
 .matrix-legend i[data-heat="peak"] { background: hsl(18 70% 48%); }
 
+.matrix-tooltip {
+  position: fixed;
+  z-index: 100;
+  max-width: min(420px, calc(100vw - 28px));
+  padding: 10px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: var(--shadow-hover);
+  font-size: 12px;
+  line-height: 1.55;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 140ms var(--ease-out), transform 140ms var(--ease-out);
+}
+
+.matrix-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tooltip-list li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.tooltip-list i {
+  width: 7px;
+  height: 7px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: var(--brand);
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.10);
+}
+
 .company-matrix-list {
   display: grid;
   gap: 0;
