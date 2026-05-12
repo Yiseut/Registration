@@ -201,6 +201,7 @@ a:hover { color: var(--brand); }
   .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
+  .combined-analysis-grid { grid-template-columns: 1fr; }
   .span-6, .span-5, .span-7, .span-8, .span-4 { grid-column: span 12; }
 }
 
@@ -682,6 +683,26 @@ a:hover { color: var(--brand); }
   gap: 12px;
 }
 
+.combined-analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.inline-panel-title {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .combined-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .product-shape-row {
   appearance: none;
   width: 100%;
@@ -735,7 +756,7 @@ a:hover { color: var(--brand); }
 }
 
 .shape-count {
-  color: var(--brand-deep);
+  color: var(--shape-count-color, var(--brand-deep));
   font-size: 26px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;

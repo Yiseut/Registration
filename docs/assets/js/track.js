@@ -335,13 +335,14 @@
           .map((group, index) => {
             const width = Math.max(7, (group.count / max) * 100);
             const forms = unique(group.records.map((record) => record.material_form)).slice(0, 4).map(displayUiLabel).join(' / ');
+            const detail = forms && forms !== group.name ? `<em>${escape(forms)}</em>` : '';
             const barStart = shade(accent, 28);
             const barEnd = shade(accent, -12);
             return `
-              <button class="product-shape-row" type="button" data-shape="${escape(group.name)}" style="--bar-width:${width}%;--delay:${index * 50}ms;--shape-bar-bg:linear-gradient(90deg, ${barStart}, ${barEnd})">
+              <button class="product-shape-row" type="button" data-shape="${escape(group.name)}" style="--bar-width:${width}%;--delay:${index * 50}ms;--shape-bar-bg:linear-gradient(90deg, ${barStart}, ${barEnd});--shape-count-color:${barEnd}">
                 <span class="shape-main">
                   <strong>${escape(group.name)}</strong>
-                  <em>${escape(forms)}</em>
+                  ${detail}
                 </span>
                 <span class="shape-count">${group.count}<small>张</small></span>
                 <span class="shape-track"><i></i></span>

@@ -6,8 +6,8 @@
 
 - 项目目录：`E:\shared\code\registration-insights-integrated`
 - 本地页面：`http://127.0.0.1:8781/`
-- 当前首页缓存：`20260512-botulinum-collagen-70`
-- 当前子赛道页缓存：`20260512-botulinum-collagen-70`
+- 当前首页缓存：`20260513-botulinum-layout-71`
+- 当前子赛道页缓存：`20260513-botulinum-layout-71`
 - 启动脚本：`Open-Dashboard.bat`
 
 不要直接改：
@@ -74,7 +74,7 @@
 
 - 删除当前 Claude 版中重复的 `厂家竞争力`、`布局视角`、`厂家 × 适应证卡位`展示区。
 - `docs/assets/data/tracks/collagen.json` 已从 46 条历史样本收口到 18 条三类主格局记录。
-- 已补入 `国产 vs 进口/港澳台演变`、`胶原来源结构`、`当前产品形态`、`适应证结构`、`产品形态 × 适应证热力图`、`业务矩阵`。
+- 已补入 `国产 vs 进口/港澳台演变`、`胶原来源结构`、`产品形态`、`适应证结构`、`产品形态 × 适应证热力图`、`业务矩阵`。
 - `docs/assets/js/track.js` 的非 HA 年度拆分改为优先使用 `approval_year / approval_date`，使胶原页年度趋势和来源演变与三类记录一致。
 - 注册证清单补入旧 Codex 版详细字段，包括注册人、规格、适用范围、UDI/校准来源字段。
 - 清单和抽屉标签只保留 `动物源` / `类人源`，不再把国产、三类、二类、利多卡因作为标签展示。
