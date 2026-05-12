@@ -55,7 +55,6 @@
   renderTrend();
   renderInjectableStructure();
   renderActivityRows();
-  renderIndicationMaterialHeatmap(cloudData.indication_heatmap);
   renderManufacturerMatrix();
   renderOpportunityMatrix();
   renderExpiry(cloudData.cert_expiry);
@@ -405,62 +404,6 @@
         document.getElementById('table-records')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-  }
-
-  function renderIndicationMaterialHeatmap(hm) {
-    const holder = document.getElementById('cloud-indication-material-heatmap');
-    if (!holder || !hm) return;
-    const heatmapRecords = cloudMaterialRecords
-      .filter((record) => record.main_landscape && record.material_family)
-      .flatMap((record) => cloudIndicationValues(record).map((indication) => ({
-        ...record,
-        primary_indication: indication,
-        _matrixIndication: indication,
-      })))
-      .filter((record) => record._matrixIndication);
-    const rawColumns = unique(heatmapRecords.map((record) => record._matrixIndication));
-    const rawRows = unique(heatmapRecords.map((record) => record.material_family));
-    const cellMap = new Map();
-    heatmapRecords.forEach((record) => {
-      const x = rawColumns.indexOf(record._matrixIndication);
-      const y = rawRows.indexOf(record.material_family);
-      if (x >= 0 && y >= 0) cellMap.set(`${x}|${y}`, (cellMap.get(`${x}|${y}`) || 0) + 1);
-    });
-    const max = Math.max(...cellMap.values(), 1);
-    const columns = sortedHeatmapAxis(rawColumns, (x) =>
-      rawRows.reduce((sum, _, y) => sum + (cellMap.get(`${x}|${y}`) || 0), 0)
-    );
-    const rows = sortedHeatmapAxis(rawRows, (y) =>
-      rawColumns.reduce((sum, _, x) => sum + (cellMap.get(`${x}|${y}`) || 0), 0)
-    );
-    const minWidth = Math.max(820, 118 + columns.length * 70);
-    const heads = [`<div class="matrix-head">材料家族</div>`]
-      .concat(columns.map((column) => `<div class="matrix-head" title="${escape(displayUiLabel(column.name))}">${escape(displayUiLabel(column.name))}</div>`))
-      .join('');
-    const body = rows.map((row) => {
-      const cells = columns.map((column) => {
-        const value = cellMap.get(`${column.index}|${row.index}`) || 0;
-        const source = value ? heatmapRecords.filter((record) =>
-          record.main_landscape && record.material_family === row.name && record._matrixIndication === column.name
-        ) : [];
-        return renderMatrixCell({
-          value,
-          max,
-          tooltip: tooltipFromRecords(source),
-          label: value || '',
-          onClickRecords: source,
-          theme: 'coral',
-        });
-      }).join('');
-      return `<div class="matrix-term">${escape(displayUiLabel(row.name))}</div>${cells}`;
-    }).join('');
-    holder.innerHTML = `
-      <div class="matrix-grid matrix-grid-indication-material" style="min-width:${minWidth}px;grid-template-columns:minmax(108px, 138px) repeat(${columns.length}, minmax(62px, 82px))">
-        ${heads}${body}
-      </div>
-      ${heatLegend('coral')}
-    `;
-    bindMatrixInteractions(holder, '适应证 × 材料家族热力');
   }
 
   function renderManufacturerMatrix() {
