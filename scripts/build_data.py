@@ -18,14 +18,14 @@ OUT_DIR = ROOT / "docs" / "assets" / "data"
 TRACK_DIR = OUT_DIR / "tracks"
 
 TRACK_META = [
-    {"key": "ha",         "name": "玻尿酸 / 透明质酸钠",   "tagline": "", "accent": "#D97757"},
+    {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#D97757"},
+    {"key": "botulinum",  "name": "肉毒素",              "tagline": "", "accent": "#8B9D7F"},
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#B5915A"},
-    {"key": "plla",       "name": "童颜针 / PLLA",       "tagline": "", "accent": "#8B5A6B"},
-    {"key": "pcl",        "name": "少女针 / PCL",        "tagline": "", "accent": "#C15F3C"},
+    {"key": "plla",       "name": "PLLA",                "tagline": "", "accent": "#8B5A6B"},
+    {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#C15F3C"},
+    {"key": "caha",       "name": "CaHA",                "tagline": "", "accent": "#5B7B9A"},
     {"key": "niche_materials", "name": "小众材料",       "tagline": "", "accent": "#C58B5C"},
-    {"key": "caha",       "name": "羟基磷酸钙 / CaHA",   "tagline": "", "accent": "#5B7B9A"},
-    {"key": "botulinum",  "name": "肉毒毒素",           "tagline": "", "accent": "#8B9D7F"},
-    {"key": "ebd",        "name": "EBD 设备类",          "tagline": "", "accent": "#6E6A65"},
+    {"key": "ebd",        "name": "EBD 设备",             "tagline": "", "accent": "#6E6A65"},
 ]
 TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 
@@ -88,7 +88,19 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def ui_term(value: str | None) -> str:
-    return safe_strip(value).replace("再生类", "胶原刺激剂").replace("再生材料", "胶原刺激剂")
+    return (
+        safe_strip(value)
+        .replace("再生类", "胶原刺激剂")
+        .replace("再生材料", "胶原刺激剂")
+        .replace("HA/透明质酸钠", "透明质酸钠")
+        .replace("玻尿酸 / 透明质酸钠", "透明质酸钠")
+        .replace("玻尿酸/透明质酸钠", "透明质酸钠")
+        .replace("童颜针 / PLLA", "PLLA")
+        .replace("少女针 / PCL", "PCL")
+        .replace("羟基磷酸钙 / CaHA", "CaHA")
+        .replace("肉毒毒素", "肉毒素")
+        .replace("EBD 设备类", "EBD 设备")
+    )
 
 
 def split_portfolio(value: str) -> list[str]:
@@ -127,7 +139,7 @@ def build_record_card(row: dict) -> dict:
     return {
         "id": safe_strip(row.get("﻿record_id") or row.get("record_id")),
         "track": safe_strip(row.get("track")),
-        "track_name": safe_strip(row.get("track_name")),
+        "track_name": ui_term(row.get("track_name")),
         "strategic": ui_term(row.get("strategic_segment_name")),
         "product_name": safe_strip(row.get("product_name") or row.get("official_product_name")),
         "company": best_company_label(row),
@@ -178,7 +190,7 @@ def kpi_block(records: list[dict]) -> dict:
     track_label = {
         "ha": "HA", "collagen": "胶原", "plla": "PLLA", "pcl": "PCL",
         "caha": "CaHA", "raw_pmma": "PMMA", "raw_agarose": "琼脂糖",
-        "botulinum": "肉毒毒素", "raw_lipolysis_injection": "去氧胆酸",
+        "botulinum": "肉毒素", "raw_lipolysis_injection": "去氧胆酸",
     }
 
     def friendly_bucket(track_code: str) -> str:
@@ -358,7 +370,7 @@ def cert_expiry(records: list[dict]) -> dict:
         by_quarter_track[label][track] += 1
         upcoming.append({**{k: v for k, v in r.items() if k != "_raw"}, "days_to_expiry": (d - today).days})
     upcoming.sort(key=lambda r: r["days_to_expiry"])
-    series_keys = ["ha", "collagen", "plla", "pcl", "niche_materials", "caha", "botulinum", "ebd"]
+    series_keys = ["ha", "botulinum", "collagen", "plla", "pcl", "caha", "niche_materials", "ebd"]
     series = []
     for k in series_keys:
         series.append({
@@ -394,7 +406,7 @@ def origin_evolution(records: list[dict]) -> dict:
 def concentration(records: list[dict]) -> dict:
     """Per-track HHI + CR4/CR8 by company group."""
     out = {}
-    for tk in ["ha", "collagen", "plla", "pcl", "niche_materials", "caha", "botulinum", "ebd"]:
+    for tk in ["ha", "botulinum", "collagen", "plla", "pcl", "caha", "niche_materials", "ebd"]:
         recs = [r for r in records if r["main_landscape"] and classify_track(r["_raw"]) == tk]
         total = len(recs)
         if total == 0:

@@ -1,13 +1,21 @@
 {
-  "generated_at": "2026-05-12T18:32:11",
+  "generated_at": "2026-05-12T18:35:29",
   "tracks": [
     {
       "key": "ha",
-      "name": "玻尿酸 / 透明质酸钠",
+      "name": "透明质酸钠",
       "tagline": "",
       "accent": "#D97757",
       "url": "tracks/ha.html",
       "data_url": "assets/data/tracks/ha.json"
+    },
+    {
+      "key": "botulinum",
+      "name": "肉毒素",
+      "tagline": "",
+      "accent": "#8B9D7F",
+      "url": "tracks/botulinum.html",
+      "data_url": "assets/data/tracks/botulinum.json"
     },
     {
       "key": "collagen",
@@ -19,7 +27,7 @@
     },
     {
       "key": "plla",
-      "name": "童颜针 / PLLA",
+      "name": "PLLA",
       "tagline": "",
       "accent": "#8B5A6B",
       "url": "tracks/plla.html",
@@ -27,11 +35,19 @@
     },
     {
       "key": "pcl",
-      "name": "少女针 / PCL",
+      "name": "PCL",
       "tagline": "",
       "accent": "#C15F3C",
       "url": "tracks/pcl.html",
       "data_url": "assets/data/tracks/pcl.json"
+    },
+    {
+      "key": "caha",
+      "name": "CaHA",
+      "tagline": "",
+      "accent": "#5B7B9A",
+      "url": "tracks/caha.html",
+      "data_url": "assets/data/tracks/caha.json"
     },
     {
       "key": "niche_materials",
@@ -42,24 +58,8 @@
       "data_url": "assets/data/tracks/niche_materials.json"
     },
     {
-      "key": "caha",
-      "name": "羟基磷酸钙 / CaHA",
-      "tagline": "",
-      "accent": "#5B7B9A",
-      "url": "tracks/caha.html",
-      "data_url": "assets/data/tracks/caha.json"
-    },
-    {
-      "key": "botulinum",
-      "name": "肉毒毒素",
-      "tagline": "",
-      "accent": "#8B9D7F",
-      "url": "tracks/botulinum.html",
-      "data_url": "assets/data/tracks/botulinum.json"
-    },
-    {
       "key": "ebd",
-      "name": "EBD 设备类",
+      "name": "EBD 设备",
       "tagline": "",
       "accent": "#6E6A65",
       "url": "tracks/ebd.html",

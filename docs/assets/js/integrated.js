@@ -8,14 +8,14 @@
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
   );
   const SEGMENTS = [
-    { code: 'ha', name: 'HA/透明质酸钠', fullName: 'HA/透明质酸钠', color: '#D97757', href: 'tracks/ha.html' },
-    { code: 'collagen', name: '胶原', fullName: '胶原蛋白', color: '#B5915A', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLLA', fullName: '童颜针 / PLLA', color: '#8B5A6B', href: 'tracks/plla.html' },
-    { code: 'pcl', name: 'PCL', fullName: '少女针 / PCL', color: '#C15F3C', href: 'tracks/pcl.html' },
+    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#D97757', href: 'tracks/ha.html' },
+    { code: 'botulinum', name: '肉毒素', fullName: '肉毒素', color: '#8B9D7F', href: 'tracks/botulinum.html' },
+    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#B5915A', href: 'tracks/collagen.html' },
+    { code: 'plla', name: 'PLLA', fullName: 'PLLA', color: '#8B5A6B', href: 'tracks/plla.html' },
+    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#C15F3C', href: 'tracks/pcl.html' },
+    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#5B7B9A', href: 'tracks/caha.html' },
     { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#C58B5C', href: 'tracks/niche_materials.html' },
-    { code: 'caha', name: 'CaHA', fullName: '羟基磷酸钙 / CaHA', color: '#5B7B9A', href: 'tracks/caha.html' },
-    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8B9D7F', href: 'tracks/botulinum.html' },
-    { code: 'ebd', name: 'EBD', fullName: 'EBD 设备类', color: '#6E6A65', href: 'tracks/ebd.html' },
+    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#6E6A65', href: 'tracks/ebd.html' },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
@@ -1316,11 +1316,15 @@
       .replace(/希玛德股份有限公司SYMATESE SAS/g, '思奥美 / SYMATESE SAS')
       .replace(/西马\s*Xeomin/gi, '思奥美 Xeomin')
       .replace(/西马/g, '思奥美')
-      .replace(/HA\s*\/\s*透明质酸钠/g, 'HA/透明质酸钠')
-      .replace(/透明质酸钠\s*\/\s*玻尿酸/g, 'HA/透明质酸钠')
-      .replace(/玻尿酸\s*\/\s*透明质酸钠/g, 'HA/透明质酸钠')
-      .replace(/^透明质酸钠$/g, 'HA/透明质酸钠')
-      .replace(/^玻尿酸$/g, 'HA/透明质酸钠');
+      .replace(/HA\s*\/\s*透明质酸钠/g, '透明质酸钠')
+      .replace(/透明质酸钠\s*\/\s*玻尿酸/g, '透明质酸钠')
+      .replace(/玻尿酸\s*\/\s*透明质酸钠/g, '透明质酸钠')
+      .replace(/^玻尿酸$/g, '透明质酸钠')
+      .replace(/童颜针\s*\/\s*PLLA/g, 'PLLA')
+      .replace(/少女针\s*\/\s*PCL/g, 'PCL')
+      .replace(/羟基磷酸钙\s*\/\s*CaHA/g, 'CaHA')
+      .replace(/肉毒毒素/g, '肉毒素')
+      .replace(/EBD 设备类/g, 'EBD 设备');
   }
 
   function toDrawerRecord(record) {

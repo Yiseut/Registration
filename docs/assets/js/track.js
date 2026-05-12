@@ -1159,11 +1159,15 @@ function displayUiLabel(value) {
     .replace(/希玛德股份有限公司SYMATESE SAS/g, '思奥美 / SYMATESE SAS')
     .replace(/西马\s*Xeomin/gi, '思奥美 Xeomin')
     .replace(/西马/g, '思奥美')
-    .replace(/HA\s*\/\s*透明质酸钠/g, 'HA/透明质酸钠')
-    .replace(/透明质酸钠\s*\/\s*玻尿酸/g, 'HA/透明质酸钠')
-    .replace(/玻尿酸\s*\/\s*透明质酸钠/g, 'HA/透明质酸钠')
-    .replace(/^透明质酸钠$/g, 'HA/透明质酸钠')
-    .replace(/^玻尿酸$/g, 'HA/透明质酸钠');
+    .replace(/HA\s*\/\s*透明质酸钠/g, '透明质酸钠')
+    .replace(/透明质酸钠\s*\/\s*玻尿酸/g, '透明质酸钠')
+    .replace(/玻尿酸\s*\/\s*透明质酸钠/g, '透明质酸钠')
+    .replace(/^玻尿酸$/g, '透明质酸钠')
+    .replace(/童颜针\s*\/\s*PLLA/g, 'PLLA')
+    .replace(/少女针\s*\/\s*PCL/g, 'PCL')
+    .replace(/羟基磷酸钙\s*\/\s*CaHA/g, 'CaHA')
+    .replace(/肉毒毒素/g, '肉毒素')
+    .replace(/EBD 设备类/g, 'EBD 设备');
 }
 
 // HSL shade helper
