@@ -66,19 +66,38 @@
       "麦施美学 / Merz"
     ],
     "indications": [
+      "轮廓",
       "非承重性骨缺损",
+      "面部软组织",
       "鼻唇沟",
+      "增强",
+      "软组织修复",
       "软组织修复/增强"
     ],
     "cells": [
       [
-        1,
+        3,
         2,
         1
       ],
       [
-        1,
+        3,
         4,
+        1
+      ],
+      [
+        5,
+        1,
+        1
+      ],
+      [
+        4,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
         1
       ],
       [
@@ -88,7 +107,37 @@
       ],
       [
         0,
+        1,
+        1
+      ],
+      [
+        6,
+        1,
+        1
+      ],
+      [
+        1,
         3,
+        1
+      ],
+      [
+        2,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
         1
       ],
       [
@@ -104,6 +153,8 @@
       "track": "caha",
       "track_name": "CaHA",
       "strategic": "胶原刺激剂",
+      "brand": "优法兰 CC针",
+      "aliases": "Aphranel / Aphranel®优法兰™",
       "product_name": "注射用羟基磷酸钙微球面部填充剂",
       "company": "摩漾生物",
       "company_key": "摩漾生物",
@@ -128,6 +179,14 @@
         "鼻唇沟"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "注射用羟基磷酸钙微球面部填充剂",
+      "official_registrant": "上海摩漾生物科技有限公司",
+      "official_approval_date": "2025-02-17",
+      "official_valid_until": "2030-02-16",
+      "official_indication": "鼻唇沟",
+      "official_scope": "用于鼻唇沟部位皮下层注射，以纠正中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -143,6 +202,8 @@
       "track": "caha",
       "track_name": "CaHA",
       "strategic": "胶原刺激剂",
+      "brand": "RADIESSE 芮得怡",
+      "aliases": "Radiesse® / 微晶瓷",
       "product_name": "注射用羟基磷酸钙微球面部填充剂",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
@@ -168,12 +229,20 @@
         "芮得怡"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "注射用羟基磷酸钙微球面部填充剂RADIESSE INJECTABLE IMPLANT",
+      "official_registrant": "梅尔茨北美公司Merz North America Inc.",
+      "official_approval_date": "2025-03-07",
+      "official_valid_until": "2030-03-06",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于注射到鼻唇沟部位皮下层，以纠正中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "麦施美学/美通社 + 医美部落公开页",
       "source_title": "麦施美学旗下重要星品XEOMIN®思奥美®和RADIESSE 芮得怡上市会正式召开；Radiesse正式获批",
@@ -185,6 +254,8 @@
       "track": "caha",
       "track_name": "CaHA",
       "strategic": "胶原刺激剂",
+      "brand": "菲林普利",
+      "aliases": "Filorg / 睿合医药CaHA",
       "product_name": "羟基磷灰石生物陶瓷",
       "company": "四川拜阿蒙 / 睿合医药",
       "company_key": "四川拜阿蒙 / 睿合医药",
@@ -214,6 +285,14 @@
         "非面部医美专证"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "羟基磷灰石生物陶瓷",
+      "official_registrant": "四川拜阿蒙生物活性材料有限责任公司",
+      "official_approval_date": "2021-12-02",
+      "official_valid_until": "2027-03-02",
+      "official_indication": "面部软组织/轮廓",
+      "official_scope": "各种原因所致的骨缺损修复或填充；各种原因所致的软组织修复或增强，如眼球摘除或眼内容物剜除后的义眼台植入。",
       "verified": true,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -227,6 +306,8 @@
       "track": "caha",
       "track_name": "CaHA",
       "strategic": "胶原刺激剂",
+      "brand": "海魅·云境",
+      "aliases": "海魅云境 / 昊海生科CaHA",
       "product_name": "羟基磷灰石生物陶瓷",
       "company": "昊海生科 / 上海倍尔康",
       "company_key": "昊海生科 / 上海倍尔康",
@@ -251,6 +332,14 @@
         "非面部医美专证"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "羟基磷灰石生物陶瓷",
+      "official_registrant": "上海倍尔康生物医学科技有限公司",
+      "official_approval_date": "2023-03-20",
+      "official_valid_until": "2028-11-29",
+      "official_indication": "面部软组织/轮廓",
+      "official_scope": "适用于非承重性骨缺损的填充。",
       "verified": true,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -264,6 +353,8 @@
       "track": "caha",
       "track_name": "CaHA",
       "strategic": "胶原刺激剂",
+      "brand": "悦龄塑",
+      "aliases": "DermiraCa / 铭融医药 / 睿星复合磷酸钙",
       "product_name": "复合磷酸钙骨植入材料",
       "company": "上海睿星 / 铭融医药",
       "company_key": "上海睿星 / 铭融医药",
@@ -288,6 +379,14 @@
         "非面部医美专证"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "复合磷酸钙骨植入材料",
+      "official_registrant": "上海睿星医疗器材有限公司",
+      "official_approval_date": "2024-07-25",
+      "official_valid_until": "2030-07-29",
+      "official_indication": "面部软组织/轮廓",
+      "official_scope": "适用于非承重性骨缺损的填充。",
       "verified": true,
       "main_landscape": false,
       "portfolio_segments": [],

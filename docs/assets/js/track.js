@@ -174,7 +174,12 @@
     el.classList.add('as-list');
     el.innerHTML = '';
 
-    const records = allRecords.filter((r) => r.main_landscape && r[categoryKey]);
+    const records = allRecords.filter((r) => {
+      if (!r.main_landscape) return false;
+      if (categoryKey === 'primary_indication') return indicationValues(r).length > 0;
+      if (categoryKey === 'collagen_source') return Boolean(collagenSourceTag(r));
+      return Boolean(r[categoryKey]);
+    });
     if (!records.length) {
       el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无该维度数据</div>';
       return;
@@ -182,7 +187,11 @@
 
     const groups = new Map();
     records.forEach((r) => {
-      const keys = categoryKey === 'primary_indication' ? indicationValues(r) : [r[categoryKey]];
+      const keys = categoryKey === 'primary_indication'
+        ? indicationValues(r)
+        : categoryKey === 'collagen_source'
+          ? [collagenSourceTag(r)]
+          : [r[categoryKey]];
       unique(keys).forEach((k) => {
         if (!k) return;
         if (!groups.has(k)) groups.set(k, []);
@@ -326,8 +335,10 @@
           .map((group, index) => {
             const width = Math.max(7, (group.count / max) * 100);
             const forms = unique(group.records.map((record) => record.material_form)).slice(0, 4).map(displayUiLabel).join(' / ');
+            const barStart = shade(accent, 28);
+            const barEnd = shade(accent, -12);
             return `
-              <button class="product-shape-row" type="button" data-shape="${escape(group.name)}" style="--bar-width:${width}%;--delay:${index * 50}ms">
+              <button class="product-shape-row" type="button" data-shape="${escape(group.name)}" style="--bar-width:${width}%;--delay:${index * 50}ms;--shape-bar-bg:linear-gradient(90deg, ${barStart}, ${barEnd})">
                 <span class="shape-main">
                   <strong>${escape(group.name)}</strong>
                   <em>${escape(forms)}</em>
@@ -918,8 +929,9 @@
         if (fv === 'pending' && r.verified) return false;
         if (fs) {
           const hay = [
-            r.product_name,
             r.brand,
+            r.product_name,
+            r.official_product_name,
             r.commercial_name,
             r.company,
             r.registrant,
@@ -958,6 +970,7 @@
     function renderDefaultRecordRow(r) {
       return `
         <tr data-id="${escape(r.id)}">
+          <td>${escape(productBrandLabel(r))}</td>
           <td>
             <b>${escape(r.product_name || '—')}</b>
             <div class="muted" style="font-size:11.5px">${escape(displayUiLabel(r.material_form || r.material_family || ''))}</div>
@@ -968,9 +981,7 @@
           <td>${escape(r.origin || '—')}</td>
           <td>${escape(formatIndications(r))}</td>
           <td>${escape(r.approval_date || '—')}</td>
-          <td>${r.verified
-            ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
-            : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>'}</td>
+          <td>${verificationBadge(r)}</td>
         </tr>
       `;
     }
@@ -984,6 +995,7 @@
         ? `<div class="muted table-detail-line">${escape(scope)}</div>` : '';
       return `
         <tr data-id="${escape(r.id)}">
+          <td>${escape(productBrandLabel(r))}</td>
           <td>
             <b>${escape(r.product_name || r.brand || '—')}</b>
             <div class="muted" style="font-size:11.5px">${escape(displayUiLabel(r.material_form || r.material_family || ''))}</div>
@@ -1003,9 +1015,7 @@
             <span>${escape(r.approval_date || '—')}</span>
             ${r.valid_until ? `<div class="muted" style="font-size:11.5px">有效至 ${escape(r.valid_until)}</div>` : ''}
           </td>
-          <td>${r.verified
-            ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
-            : '<span class="verify-badge pending" title="尚未通过 NMPA 核验,需复核"><span class="ico">⌛</span>待核</span>'}</td>
+          <td>${verificationBadge(r)}</td>
         </tr>
       `;
     }
@@ -1133,10 +1143,13 @@
   }
 
   function indicationValues(record) {
-    const source = record?.approved_indications || record?.approvedIndications || record?.primary_indication || record?.primaryIndication || '';
-    const values = normalizeIndicationValues(source);
-    if (values.length) return unique(values);
-    return record?.primary_indication ? [record.primary_indication] : [];
+    const values = [
+      ...normalizeIndicationValues(record?.approved_indications || record?.approvedIndications || ''),
+      ...(Array.isArray(record?.indications) ? record.indications.flatMap(normalizeIndicationValues) : []),
+      ...normalizeIndicationValues(record?.official_indication || record?.officialIndication || ''),
+      ...normalizeIndicationValues(record?.primary_indication || record?.primaryIndication || ''),
+    ];
+    return unique(values);
   }
 
   function formatIndications(record) {
@@ -1147,7 +1160,21 @@
   function collagenSourceTag(record) {
     const text = `${record?.collagen_source || ''} ${record?.material_family || ''} ${record?.material_form || ''} ${record?.product_name || ''}`;
     if (/重组|类人源|人源化/.test(text)) return '类人源';
-    return '动物源';
+    if (/动物源|胶原蛋白植入剂|医用胶原蛋白植入剂|面部胶原蛋白植入剂/.test(text)) return '动物源';
+    return '';
+  }
+
+  function productBrandLabel(record) {
+    return displayUiLabel(record?.brand || record?.commercial_name || record?.aliases || '');
+  }
+
+  function verificationBadge(record) {
+    const statusText = record?.official_verification_status || record?.officialVerificationStatus || '';
+    const sourceText = record?.official_source || record?.officialSource || '';
+    const title = escape([statusText, sourceText].filter(Boolean).join(' · ') || (record?.verified ? '已通过 NMPA 核验' : '尚未通过 NMPA 核验，需复核'));
+    return record?.verified
+      ? `<span class="verify-badge ok" title="${title}"><span class="ico">✓</span>已核验</span>`
+      : `<span class="verify-badge pending" title="${title}"><span class="ico">⌛</span>待核验</span>`;
   }
 
   function displayRecords(records) {
@@ -1226,7 +1253,7 @@ function displayUiLabel(value) {
     .replace(/童颜针\s*\/\s*PLLA/g, 'PLLA')
     .replace(/少女针\s*\/\s*PCL/g, 'PCL')
     .replace(/羟基磷酸钙\s*\/\s*CaHA/g, 'CaHA')
-    .replace(/肉毒毒素/g, '肉毒素')
+    .replace(/肉毒素/g, '肉毒毒素')
     .replace(/EBD 设备类/g, 'EBD 设备');
 }
 

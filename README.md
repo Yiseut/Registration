@@ -41,7 +41,7 @@ python -m http.server 8781 --bind 127.0.0.1
 
 1. 总览
 2. 透明质酸钠
-3. 肉毒素
+3. 肉毒毒素
 4. 胶原蛋白
 5. PLLA
 6. PCL
@@ -53,8 +53,8 @@ python -m http.server 8781 --bind 127.0.0.1
 
 ## 当前缓存版本
 
-- 首页脚本：`20260512-matrix-sorting-69`
-- 子赛道页 `track.js`：`20260512-matrix-sorting-69`
+- 首页脚本：`20260512-botulinum-collagen-70`
+- 子赛道页 `track.js`：`20260512-botulinum-collagen-70`
 
 如果修改前台 JS/CSS，继续递增 query string，方便用户直接刷新当前页面看到新版本。
 

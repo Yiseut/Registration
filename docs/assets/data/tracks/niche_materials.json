@@ -10,7 +10,7 @@
     "total": 5,
     "main": 4,
     "companies": 4,
-    "indications": 3,
+    "indications": 5,
     "verified": 4,
     "domestic": 1,
     "imported": 3,
@@ -38,10 +38,18 @@
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 2
+      "value": 3
     },
     {
       "name": "鼻唇沟/隆鼻",
+      "value": 1
+    },
+    {
+      "name": "颏下脂肪堆积",
+      "value": 1
+    },
+    {
+      "name": "双下巴",
       "value": 1
     },
     {
@@ -94,12 +102,19 @@
     ],
     "indications": [
       "鼻唇沟",
+      "双下巴",
+      "颏下脂肪堆积",
       "颏下脂肪堆积/双下巴",
       "鼻唇沟/隆鼻"
     ],
     "cells": [
       [
-        2,
+        0,
+        3,
+        1
+      ],
+      [
+        4,
         3,
         1
       ],
@@ -114,7 +129,17 @@
         1
       ],
       [
+        2,
+        2,
+        1
+      ],
+      [
         1,
+        2,
+        1
+      ],
+      [
+        3,
         2,
         1
       ]
@@ -126,6 +151,8 @@
       "track": "raw_pmma",
       "track_name": "PMMA 注射填充剂",
       "strategic": "小众材料",
+      "brand": "爱贝芙 ArteColl",
+      "aliases": "",
       "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
       "company": "荷兰汉福",
       "company_key": "荷兰汉福",
@@ -145,6 +172,14 @@
         "PMMA复合"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "整形用胶原和PMMA皮下植入物系统ArteColl",
+      "official_registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
+      "official_approval_date": "2021-10-26",
+      "official_valid_until": "2026-10-25",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品用于注射到真皮深层以纠正鼻唇沟纹，或填充到骨膜外层以进行（鼻骨段）隆鼻。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -160,6 +195,8 @@
       "track": "raw_pmma",
       "track_name": "PMMA 注射填充剂",
       "strategic": "小众材料",
+      "brand": "Bellafill",
+      "aliases": "",
       "product_name": "整形用胶原和PMMA皮下植入物系统 Bellafill",
       "company": "Suneva",
       "company_key": "suneva",
@@ -179,6 +216,14 @@
         "PMMA复合"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "整形用胶原和PMMA皮下植入物系统Bellafill",
+      "official_registrant": "圣诺华医疗股份有限公司Suneva Medical, Inc.",
+      "official_approval_date": "2024-01-17",
+      "official_valid_until": "2029-01-16",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品注射到真皮深层以矫正中度至重度的鼻唇沟皱纹，适用于21 岁以上的成年患者。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -194,6 +239,8 @@
       "track": "raw_agarose",
       "track_name": "琼脂糖",
       "strategic": "小众材料",
+      "brand": "Algeness VL",
+      "aliases": "",
       "product_name": "琼脂糖面部注射填充剂ALGENESS VL",
       "company": "兰州生物技术开发有限公司（代理）",
       "company_key": "兰州生物技术开发有限公司（代理）",
@@ -216,6 +263,14 @@
         "面部注射填充剂"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "琼脂糖面部注射填充剂ALGENESS VL",
+      "official_registrant": "集美生股份有限公司GHIMAS S.p.A.",
+      "official_approval_date": "2025-01-20",
+      "official_valid_until": "2030-01-19",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于面部鼻唇沟部位骨膜表面注射以纠正中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -231,6 +286,8 @@
       "track": "raw_ecm",
       "track_name": "ECM/细胞外基质材料",
       "strategic": "小众材料",
+      "brand": "",
+      "aliases": "",
       "product_name": "",
       "company": "未标注厂家",
       "company_key": "未标注厂家",
@@ -247,6 +304,14 @@
       "indications": [],
       "tags": [],
       "official_status": "unsupported_certificate_type",
+      "official_verification_status": "省级器械待省局核验",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [
@@ -262,6 +327,8 @@
       "track": "raw_lipolysis_injection",
       "track_name": "溶脂注射/去氧胆酸",
       "strategic": "小众材料",
+      "brand": "蓉芷",
+      "aliases": "",
       "product_name": "去氧胆酸注射液",
       "company": "南京迈诺威医药科技有限公司",
       "company_key": "南京迈诺威医药科技有限公司",
@@ -286,6 +353,14 @@
         "双下巴"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "去氧胆酸注射液",
+      "official_registrant": "南京迈诺威医药科技有限公司",
+      "official_approval_date": "2025-06-10",
+      "official_valid_until": "",
+      "official_indication": "颏下脂肪堆积/双下巴",
+      "official_scope": "用于改善成人因颏下脂肪堆积导致的中至重度轮廓凸出或过度丰满（双下巴）。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [

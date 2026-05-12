@@ -761,7 +761,7 @@ a:hover { color: var(--brand); }
   width: var(--bar-width);
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--brand-glow), var(--brand-deep));
+  background: var(--shape-bar-bg, linear-gradient(90deg, var(--brand-glow), var(--brand-deep)));
   animation: bar-grow 700ms var(--ease-soft) both;
   animation-delay: var(--delay);
 }

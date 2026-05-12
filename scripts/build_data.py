@@ -19,7 +19,7 @@ TRACK_DIR = OUT_DIR / "tracks"
 
 TRACK_META = [
     {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#D97757"},
-    {"key": "botulinum",  "name": "肉毒素",              "tagline": "", "accent": "#8B9D7F"},
+    {"key": "botulinum",  "name": "肉毒毒素",            "tagline": "", "accent": "#8B9D7F"},
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#B5915A"},
     {"key": "plla",       "name": "PLLA",                "tagline": "", "accent": "#8B5A6B"},
     {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#C15F3C"},
@@ -98,7 +98,7 @@ def ui_term(value: str | None) -> str:
         .replace("童颜针 / PLLA", "PLLA")
         .replace("少女针 / PCL", "PCL")
         .replace("羟基磷酸钙 / CaHA", "CaHA")
-        .replace("肉毒毒素", "肉毒素")
+        .replace("肉毒素", "肉毒毒素")
         .replace("EBD 设备类", "EBD 设备")
     )
 
@@ -115,6 +115,15 @@ def split_indications(value: str) -> list[str]:
         return []
     parts = re.split(r"[/、,，;；]", value)
     return [p.strip() for p in parts if p.strip()]
+
+
+def record_indications(record: dict) -> list[str]:
+    values = []
+    values.extend(record.get("indications") or [])
+    values.extend(split_indications(record.get("official_indication") or ""))
+    if record.get("primary_indication"):
+        values.append(record["primary_indication"])
+    return list(dict.fromkeys(v for v in values if v))
 
 
 def best_company_label(row: dict) -> str:
@@ -141,6 +150,8 @@ def build_record_card(row: dict) -> dict:
         "track": safe_strip(row.get("track")),
         "track_name": ui_term(row.get("track_name")),
         "strategic": ui_term(row.get("strategic_segment_name")),
+        "brand": safe_strip(row.get("brand")),
+        "aliases": safe_strip(row.get("aliases")),
         "product_name": safe_strip(row.get("product_name") or row.get("official_product_name")),
         "company": best_company_label(row),
         "company_key": best_company_key(row),
@@ -157,11 +168,19 @@ def build_record_card(row: dict) -> dict:
         "indications": split_indications(row.get("approved_indications")),
         "tags": [ui_term(tag) for tag in split_indications(row.get("product_tags"))],
         "official_status": safe_strip(row.get("official_status")),
+        "official_verification_status": safe_strip(row.get("official_verification_status")),
+        "official_source": safe_strip(row.get("official_source")),
+        "official_product_name": safe_strip(row.get("official_product_name")),
+        "official_registrant": safe_strip(row.get("official_registrant")),
+        "official_approval_date": safe_strip(row.get("official_approval_date")),
+        "official_valid_until": safe_strip(row.get("official_valid_until")),
+        "official_indication": safe_strip(row.get("official_indication")),
+        "official_scope": safe_strip(row.get("official_scope")),
         "verified": safe_strip(row.get("official_status")) == "verified",
         "main_landscape": safe_strip(row.get("main_landscape_included")) == "是",
         "portfolio_segments": split_portfolio(row.get("portfolio_segments")),
         "source_account": safe_strip(row.get("source_account")),
-        "source_title": safe_strip(row.get("source_title")),
+        "source_title": ui_term(row.get("source_title")),
         "source_url": safe_strip(row.get("source_url")),
         "confidence": safe_strip(row.get("confidence")),
     }
@@ -173,7 +192,7 @@ def kpi_block(records: list[dict]) -> dict:
     main = [r for r in records if r["main_landscape"]]
     verified = [r for r in main if r["verified"]]
     companies = {r["company_key"] for r in main}
-    indications = {r["primary_indication"] for r in main if r["primary_indication"]}
+    indications = {item for r in main for item in record_indications(r)}
     domestic = sum(1 for r in main if r["origin"] == "国产")
     imported = sum(1 for r in main if r["origin"] == "进口")
     hkmt = sum(1 for r in main if r["origin"] == "港澳台")
@@ -188,9 +207,9 @@ def kpi_block(records: list[dict]) -> dict:
     inj_drug = [r for r in main if r["track"] in drug_tracks]
 
     track_label = {
-        "ha": "HA", "collagen": "胶原", "plla": "PLLA", "pcl": "PCL",
+        "ha": "HA", "collagen": "胶原蛋白", "plla": "PLLA", "pcl": "PCL",
         "caha": "CaHA", "raw_pmma": "PMMA", "raw_agarose": "琼脂糖",
-        "botulinum": "肉毒素", "raw_lipolysis_injection": "去氧胆酸",
+        "botulinum": "肉毒毒素", "raw_lipolysis_injection": "去氧胆酸",
     }
 
     def friendly_bucket(track_code: str) -> str:
@@ -211,12 +230,9 @@ def kpi_block(records: list[dict]) -> dict:
             drug_breakdown.append(f"{track_label[tk]}{n}")
 
     # Indication breakdown by category bucket (counts may overlap)
-    inj_indications = {r["primary_indication"] for r in main
-                       if r["track"] in injectable_tracks and r["primary_indication"]}
-    drug_indications = {r["primary_indication"] for r in main
-                        if r["track"] in drug_tracks and r["primary_indication"]}
-    ebd_indications = {r["primary_indication"] for r in main
-                       if r["track"] in ebd_tracks and r["primary_indication"]}
+    inj_indications = {item for r in main if r["track"] in injectable_tracks for item in record_indications(r)}
+    drug_indications = {item for r in main if r["track"] in drug_tracks for item in record_indications(r)}
+    ebd_indications = {item for r in main if r["track"] in ebd_tracks for item in record_indications(r)}
 
     # Last 12 months by approval_date
     today = date.today()
@@ -436,7 +452,7 @@ def per_track_payload(records: list[dict], tk: str) -> dict:
     recs = [r for r in records if classify_track(r["_raw"]) == tk]
     main = [r for r in recs if r["main_landscape"]]
     company_counter = Counter(r["company"] for r in main)
-    indication_counter = Counter(r["primary_indication"] for r in main if r["primary_indication"])
+    indication_counter = Counter(item for r in main for item in record_indications(r))
     origin_counter = Counter(r["origin"] for r in main)
     material_counter = Counter(r["material_family"] for r in main if r["material_family"])
     year_counter = Counter(r["approval_year"] for r in main if r["approval_year"])
@@ -446,18 +462,20 @@ def per_track_payload(records: list[dict], tk: str) -> dict:
     # so adjacent / boundary registrations are visible too. Then prune any
     # row/column that ends up empty after the top-N intersection.
     co_company_counter = Counter(r["company"] for r in recs)
-    co_indication_counter = Counter(r["primary_indication"] for r in recs if r["primary_indication"])
+    co_indication_counter = Counter(item for r in recs for item in record_indications(r))
     candidate_companies = [c for c, _ in co_company_counter.most_common(12)]
     candidate_indications = [i for i, _ in co_indication_counter.most_common(10)]
 
     raw_cells = {}
     for r in recs:
-        if not r["primary_indication"] or r["primary_indication"] not in candidate_indications:
+        indications = [item for item in record_indications(r) if item in candidate_indications]
+        if not indications:
             continue
         if r["company"] not in candidate_companies:
             continue
-        key = (r["company"], r["primary_indication"])
-        raw_cells[key] = raw_cells.get(key, 0) + 1
+        for indication in indications:
+            key = (r["company"], indication)
+            raw_cells[key] = raw_cells.get(key, 0) + 1
 
     # keep only companies / indications that actually appear in the matrix.
     # Tie-break by name so the JSON output is stable across runs (otherwise

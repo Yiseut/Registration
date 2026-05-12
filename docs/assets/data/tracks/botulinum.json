@@ -2,7 +2,7 @@
   "track_key": "botulinum",
   "track_meta": {
     "key": "botulinum",
-    "name": "肉毒素",
+    "name": "肉毒毒素",
     "tagline": "",
     "accent": "#8B9D7F"
   },
@@ -10,7 +10,7 @@
     "total": 8,
     "main": 8,
     "companies": 8,
-    "indications": 1,
+    "indications": 5,
     "verified": 8,
     "domestic": 2,
     "imported": 6,
@@ -55,6 +55,22 @@
     {
       "name": "眉间纹",
       "value": 8
+    },
+    {
+      "name": "腋窝多汗",
+      "value": 1
+    },
+    {
+      "name": "鱼尾纹",
+      "value": 1
+    },
+    {
+      "name": "咬肌突出",
+      "value": 1
+    },
+    {
+      "name": "额纹",
+      "value": 1
     }
   ],
   "origin_share": [
@@ -101,7 +117,11 @@
       "麦施美学 / Merz"
     ],
     "indications": [
-      "眉间纹"
+      "眉间纹",
+      "咬肌突出",
+      "腋窝多汗",
+      "额纹",
+      "鱼尾纹"
     ],
     "cells": [
       [
@@ -110,7 +130,27 @@
         1
       ],
       [
+        2,
+        1,
+        1
+      ],
+      [
         0,
+        5,
+        1
+      ],
+      [
+        4,
+        5,
+        1
+      ],
+      [
+        1,
+        5,
+        1
+      ],
+      [
+        3,
         5,
         1
       ],
@@ -150,8 +190,10 @@
     {
       "id": "BOTULINUM-国药准字S10970037",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "衡力",
+      "aliases": "Lanzhou BTX-A",
       "product_name": "注射用A型肉毒毒素",
       "company": "兰州生物",
       "company_key": "兰州生物",
@@ -179,21 +221,31 @@
         "毒性药品"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "兰州生物技术开发有限公司",
+      "official_approval_date": "2025-01-10",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
-      "source_title": "7证11品肉毒素汇总；衡力新增腋窝多汗症适应症",
+      "source_title": "7证11品肉毒毒素汇总；衡力新增腋窝多汗症适应症",
       "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
       "confidence": "high"
     },
     {
       "id": "BOTULINUM-国药准字SJ20171003SJ20171004SJ20171005",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "保妥适 Botox",
+      "aliases": "BOTOX",
       "product_name": "注射用A型肉毒毒素",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
@@ -224,11 +276,19 @@
         "4个医美适应症"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
@@ -238,8 +298,10 @@
     {
       "id": "BOTULINUM-国药准字S20200016",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "吉适 Dysport",
+      "aliases": "Dysport",
       "product_name": "注射用A型肉毒毒素",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
@@ -263,12 +325,20 @@
         "起效快"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "静注人免疫球蛋白(pH4)",
+      "official_registrant": "新疆德源生物工程有限公司",
+      "official_approval_date": "2025-06-18",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
@@ -278,8 +348,10 @@
     {
       "id": "BOTULINUM-国药准字SJ20200024SJ20210004",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "乐提葆 Letybo",
+      "aliases": "Letybo / 白毒",
       "product_name": "注射用A型肉毒毒素",
       "company": "四环医药 / 渼颜空间",
       "company_key": "sihuan",
@@ -303,11 +375,19 @@
         "年轻用户"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "胶原刺激剂",
-        "肉毒素",
+        "肉毒毒素",
         "玻尿酸"
       ],
       "source_account": "公开资料/NMPA公告口径",
@@ -318,8 +398,10 @@
     {
       "id": "BOTULINUM-国药准字SJ20240010SJ20240011",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "西马 Xeomin",
+      "aliases": "Xeomin / 思奥美",
       "product_name": "注射用A型肉毒毒素",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
@@ -343,12 +425,20 @@
         "多规格"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "Xeomin正式获批；截至2025年7月官方6种清单",
@@ -358,8 +448,10 @@
     {
       "id": "BOTULINUM-国药准字SJ20240041",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "达希斐 Daxxify",
+      "aliases": "DAXXIFY / RT002",
       "product_name": "注射用A型肉毒毒素",
       "company": "复星医药 / 复锐医疗",
       "company_key": "复星医药 / 复锐医疗",
@@ -382,10 +474,18 @@
         "效果持久"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "Fosun Pharma announces NMPA approval for Daxxify",
@@ -395,8 +495,10 @@
     {
       "id": "BOTULINUM-国药准字SJ20260001",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "HUTOX 橙毒",
+      "aliases": "Hutox",
       "product_name": "注射用A型肉毒毒素",
       "company": "爱美客",
       "company_key": "imeik",
@@ -419,12 +521,20 @@
         "高纯度"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "爱美客独家经销韩国Huons BP肉毒毒素产品获中国药监局批准上市",
@@ -434,8 +544,10 @@
     {
       "id": "BOTULINUM-国药准字S20260019",
       "track": "botulinum",
-      "track_name": "肉毒素",
-      "strategic": "肉毒素",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "芮妥欣 Retoxin",
+      "aliases": "Retoxin / YY001",
       "product_name": "注射用重组A型肉毒毒素",
       "company": "Sinclair / 华东医药",
       "company_key": "sinclair",
@@ -458,11 +570,19 @@
         "低免疫原性"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
+      "official_source": "国家政务服务平台 NMPA 国产药品查询",
+      "official_product_name": "注射用重组A型肉毒毒素",
+      "official_registrant": "重庆誉颜制药有限公司",
+      "official_approval_date": "2026-03-25",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
         "胶原刺激剂",
-        "肉毒素"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "两江造全球首款重组A型肉毒毒素新药获批上市",

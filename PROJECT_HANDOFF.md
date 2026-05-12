@@ -6,8 +6,8 @@
 
 - 项目目录：`E:\shared\code\registration-insights-integrated`
 - 本地页面：`http://127.0.0.1:8781/`
-- 当前首页缓存：`20260512-matrix-sorting-69`
-- 当前子赛道页缓存：`20260512-matrix-sorting-69`
+- 当前首页缓存：`20260512-botulinum-collagen-70`
+- 当前子赛道页缓存：`20260512-botulinum-collagen-70`
 - 启动脚本：`Open-Dashboard.bat`
 
 不要直接改：

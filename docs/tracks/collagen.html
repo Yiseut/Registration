@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>胶原蛋白 · Registration Insights</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="../assets/css/theme.css?v=20260512-matrix-sorting-69" />
+<link rel="stylesheet" href="../assets/css/theme.css?v=20260512-botulinum-collagen-70" />
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
   <nav>
     <a href="../index.html">总览</a>
     <a href="ha.html" data-key="ha">透明质酸钠</a>
-    <a href="botulinum.html" data-key="botulinum">肉毒素</a>
+    <a href="botulinum.html" data-key="botulinum">肉毒毒素</a>
     <a href="collagen.html" data-key="collagen">胶原蛋白</a>
     <a href="plla.html" data-key="plla">PLLA</a>
     <a href="pcl.html" data-key="pcl">PCL</a>
@@ -78,53 +78,38 @@
   </section>
 
   <div class="section-head rise">
-    <h2>来源与产品形态</h2>
-    <p>只观察三类主格局记录，区分动物源、类人源，以及填充、非填充、复合溶液等产品形态。</p>
+    <h2>胶原蛋白来源与产品形态</h2>
   </div>
   <section class="grid grid-12">
-    <div class="card lift span-5">
+    <div class="card lift span-4">
       <div class="card-title">
-        <h3>胶原来源结构</h3>
-        <span class="sub">动物源 / 类人源</span>
+        <h3>胶原蛋白来源结构</h3>
       </div>
       <div id="chart-collagen-source" class="chart chart-mid"></div>
     </div>
-    <div class="card lift span-7">
+    <div class="card lift span-4">
       <div class="card-title">
-        <h3>当前产品形态</h3>
-        <span class="sub">按注册产品主形态归纳</span>
+        <h3>产品形态</h3>
       </div>
       <div id="chart-product-forms" class="chart chart-mid"></div>
     </div>
-  </section>
-
-  <div class="section-head rise">
-    <h2>适应证结构</h2>
-    <p>按注册证适用场景归纳，点击任一行查看覆盖的产品、注册人和证号。</p>
-  </div>
-  <section class="card lift">
-    <div class="card-title">
-      <h3>哪些适应证最集中</h3>
-      <span class="sub">三类主格局口径</span>
+    <div class="card lift span-4">
+      <div class="card-title">
+        <h3>适应证结构</h3>
+      </div>
+      <div id="chart-indications" class="chart chart-mid"></div>
     </div>
-    <div id="chart-indications" class="chart chart-tall"></div>
   </section>
 
   <div class="section-head rise">
     <h2>产品形态 × 适应证热力图</h2>
-    <p>观察不同胶原形态在核心适应证上的分布密度，点击格子查看具体注册证。</p>
   </div>
   <section class="card lift">
-    <div class="card-title">
-      <h3>哪类形态占了哪些位置</h3>
-      <span class="sub">三类主格局样本</span>
-    </div>
     <div id="chart-form-indication-matrix" class="chart as-list"></div>
   </section>
 
   <div class="section-head rise">
     <h2>业务矩阵</h2>
-    <p>注册人/集团在证照数量、产品形态与适应证宽度上的组合能力。</p>
   </div>
   <section class="card lift">
     <div id="company-matrix-list" class="company-matrix-list"></div>
@@ -132,13 +117,8 @@
 
   <div class="section-head rise">
     <h2>注册证清单</h2>
-    <p>三类主格局记录，保留旧 Codex 清单的详细字段；标签仅标注胶原来源。</p>
   </div>
   <section class="card lift">
-    <div class="card-title">
-      <h3>记录浏览器</h3>
-      <span class="sub">命中 <span id="records-count">0</span> 条</span>
-    </div>
     <div class="cluster" style="margin-bottom:14px">
       <select id="filter-origin" class="tag" style="padding:6px 12px">
         <option value="">全部来源</option>
@@ -147,23 +127,25 @@
         <option value="港澳台">港澳台</option>
       </select>
       <select id="filter-verified" class="tag" style="padding:6px 12px">
-        <option value="">核验状态</option>
-        <option value="verified">核验通过</option>
+        <option value="">NMPA 核验状态</option>
+        <option value="verified">已核验</option>
         <option value="pending">待核验</option>
       </select>
       <input id="search" placeholder="搜索产品名 / 注册人 / 证号 / 适应证..." class="tag" style="padding:6px 12px;min-width:260px;background:var(--surface);border:1px solid var(--hairline)" />
+      <span class="muted">命中 <b id="records-count">0</b> 条</span>
     </div>
     <div style="overflow-x:auto">
       <table class="table" id="table-records">
         <thead>
           <tr>
+            <th>品牌</th>
             <th>产品 / 材料</th>
             <th>注册人</th>
             <th>证号</th>
             <th>来源</th>
             <th>适应证 / 范围</th>
             <th>批准 / 有效期</th>
-            <th>核验</th>
+            <th>NMPA 核验状态</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -178,8 +160,8 @@
 
 </main>
 
-<script src="../assets/js/core.js?v=20260512-matrix-sorting-69"></script>
+<script src="../assets/js/core.js?v=20260512-botulinum-collagen-70"></script>
 <script>window.TRACK_KEY = 'collagen';</script>
-<script src="../assets/js/track.js?v=20260512-matrix-sorting-69"></script>
+<script src="../assets/js/track.js?v=20260512-botulinum-collagen-70"></script>
 </body>
 </html>

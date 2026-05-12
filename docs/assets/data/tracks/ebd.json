@@ -10,7 +10,7 @@
     "total": 29,
     "main": 21,
     "companies": 18,
-    "indications": 9,
+    "indications": 15,
     "verified": 21,
     "domestic": 18,
     "imported": 3,
@@ -77,6 +77,22 @@
       "value": 3
     },
     {
+      "name": "手部",
+      "value": 3
+    },
+    {
+      "name": "中下面部",
+      "value": 2
+    },
+    {
+      "name": "颏下",
+      "value": 2
+    },
+    {
+      "name": "颈部皮肤松弛",
+      "value": 2
+    },
+    {
       "name": "中下面部/颏下/颈部皮肤松弛",
       "value": 2
     },
@@ -89,19 +105,15 @@
       "value": 1
     },
     {
+      "name": "面部软组织",
+      "value": 1
+    },
+    {
+      "name": "轮廓",
+      "value": 1
+    },
+    {
       "name": "吸脂术前脂肪软化",
-      "value": 1
-    },
-    {
-      "name": "文身祛除",
-      "value": 1
-    },
-    {
-      "name": "手部",
-      "value": 1
-    },
-    {
-      "name": "瘢痕治疗",
       "value": 1
     }
   ],
@@ -191,10 +203,13 @@
     ],
     "indications": [
       "面部轻度皱纹",
+      "手部",
       "面部轻中度皱纹",
+      "中下面部",
       "中下面部/颏下/颈部皮肤松弛",
+      "颈部皮肤松弛",
+      "颏下",
       "中上面部轻中度皱纹",
-      "吸脂术前脂肪软化",
       "面部萎缩性痤疮瘢痕"
     ],
     "cells": [
@@ -209,7 +224,7 @@
         1
       ],
       [
-        3,
+        7,
         2,
         1
       ],
@@ -219,7 +234,7 @@
         1
       ],
       [
-        1,
+        2,
         3,
         1
       ],
@@ -234,7 +249,7 @@
         1
       ],
       [
-        1,
+        2,
         10,
         1
       ],
@@ -244,8 +259,28 @@
         1
       ],
       [
+        2,
+        5,
+        1
+      ],
+      [
         1,
         5,
+        1
+      ],
+      [
+        8,
+        0,
+        1
+      ],
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        6,
+        0,
         1
       ],
       [
@@ -255,11 +290,6 @@
       ],
       [
         4,
-        0,
-        1
-      ],
-      [
-        2,
         0,
         1
       ]
@@ -271,6 +301,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "深圳市宗匠科技有限公司",
       "company_key": "深圳市宗匠科技有限公司",
@@ -295,6 +327,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "深圳市宗匠科技有限公司",
+      "official_approval_date": "2024-10-11",
+      "official_valid_until": "2029-10-10",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "本产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -310,6 +350,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "杭州时光机智能电子科技有限公司",
       "company_key": "杭州时光机智能电子科技有限公司",
@@ -334,6 +376,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "杭州时光机智能电子科技有限公司",
+      "official_approval_date": "2024-12-13",
+      "official_valid_until": "2029-12-12",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "该产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -349,6 +399,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "上海维脉医疗科技有限公司",
       "company_key": "上海维脉医疗科技有限公司",
@@ -373,6 +425,14 @@
         "中上面部轻中度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "上海维脉医疗科技有限公司",
+      "official_approval_date": "2026-03-27",
+      "official_valid_until": "2031-03-26",
+      "official_indication": "中上面部轻中度皱纹",
+      "official_scope": "本产品在医疗机构中，由有资质的医务人员经培训合格后使用，利用射频热效应减轻中上面部轻、中度皮肤皱纹，不可用于眼周、鼻部。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -388,6 +448,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "深圳市宗匠科技有限公司",
       "company_key": "深圳市宗匠科技有限公司",
@@ -412,6 +474,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "深圳市宗匠科技有限公司",
+      "official_approval_date": "2024-12-13",
+      "official_valid_until": "2029-12-12",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "本产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -427,6 +497,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "深圳宇石科技有限公司",
       "company_key": "深圳宇石科技有限公司",
@@ -451,6 +523,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "深圳宇石科技有限公司",
+      "official_approval_date": "2024-10-11",
+      "official_valid_until": "2029-10-10",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "该产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -466,6 +546,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "乐普医疗",
       "company_key": "lepu",
@@ -490,6 +572,14 @@
         "面部轻中度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "四川兴泰普乐医疗科技有限公司",
+      "official_approval_date": "2026-04-27",
+      "official_valid_until": "2031-04-26",
+      "official_indication": "面部轻中度皱纹",
+      "official_scope": "该产品在医疗机构中，由有资质的医务人员经培训合格后使用，通过射频能量对皮肤组织产生的热效应，用于减轻面部轻、中度皮肤皱纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -507,6 +597,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "杭州瑞彼加医疗科技有限公司",
       "company_key": "杭州瑞彼加医疗科技有限公司",
@@ -531,6 +623,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "杭州瑞彼加医疗科技有限公司",
+      "official_approval_date": "2025-06-06",
+      "official_valid_until": "2030-06-05",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "本产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -546,6 +646,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "深圳金茉科技有限公司",
       "company_key": "深圳金茉科技有限公司",
@@ -570,6 +672,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "深圳金茉科技有限公司",
+      "official_approval_date": "2025-07-04",
+      "official_valid_until": "2030-07-03",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "该产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -585,6 +695,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "热芙美（湖南）科技有限公司",
       "company_key": "热芙美（湖南）科技有限公司",
@@ -609,6 +721,14 @@
         "面部轻中度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "热芙美（湖南）科技有限公司",
+      "official_approval_date": "2025-06-06",
+      "official_valid_until": "2030-06-05",
+      "official_indication": "面部轻中度皱纹",
+      "official_scope": "本产品在医疗机构中，由有资质的医务人员经培训合格后使用，利用射频热效应减轻面部轻、中度皮肤皱纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -624,6 +744,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "广东花至美容科技有限公司",
       "company_key": "广东花至美容科技有限公司",
@@ -648,6 +770,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "广东花至美容科技有限公司",
+      "official_approval_date": "2025-06-20",
+      "official_valid_until": "2030-06-19",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "该产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -663,6 +793,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "无锡威脉通医疗科技有限公司",
       "company_key": "无锡威脉通医疗科技有限公司",
@@ -687,6 +819,14 @@
         "面部轻中度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "无锡威脉通医疗科技有限公司",
+      "official_approval_date": "2024-11-21",
+      "official_valid_until": "2029-11-20",
+      "official_indication": "手部",
+      "official_scope": "本产品在医疗机构中，由有资质的医务人员经培训合格后使用，利用射频热效应减轻面部轻、中度皮肤皱纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -702,6 +842,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "普罗米修斯奇迹（深圳）医疗科技有限公司",
       "company_key": "普罗米修斯奇迹（深圳）医疗科技有限公司",
@@ -726,6 +868,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+      "official_approval_date": "2025-09-05",
+      "official_valid_until": "2030-09-04",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "该产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -741,6 +891,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "深圳半岛医疗集团股份有限公司",
       "company_key": "深圳半岛医疗集团股份有限公司",
@@ -765,6 +917,14 @@
         "面部萎缩性痤疮瘢痕"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "深圳半岛医疗集团股份有限公司",
+      "official_approval_date": "2025-10-27",
+      "official_valid_until": "2030-10-26",
+      "official_indication": "面部萎缩性痤疮瘢痕",
+      "official_scope": "该产品在医疗机构中使用，通过射频能量对皮肤组织产生的热效应，用于面部皮肤萎缩性痤疮瘢痕的治疗。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -780,6 +940,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "广东雅思电子有限公司",
       "company_key": "广东雅思电子有限公司",
@@ -804,6 +966,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "广东雅思电子有限公司",
+      "official_approval_date": "2026-03-03",
+      "official_valid_until": "2031-03-02",
+      "official_indication": "面部轻度皱纹",
+      "official_scope": "该产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -819,6 +989,8 @@
       "track": "raw_rf",
       "track_name": "射频设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频皮肤治疗仪",
       "company": "雅萌株式会社ヤーマン株式会社",
       "company_key": "雅萌株式会社ヤーマン株式会社",
@@ -843,6 +1015,14 @@
         "面部轻度皱纹"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "雅萌株式会社ヤーマン株式会社",
+      "official_approval_date": "2025-06-20",
+      "official_valid_until": "2030-06-19",
+      "official_indication": "面部软组织/轮廓",
+      "official_scope": "本产品利用射频能量对人体组织产生的热效应，适用于Fitzpatrick II-V型皮肤的成年人暂时性改善面部的轻度皱纹。由个人用户在家庭环境自行使用。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -858,6 +1038,8 @@
       "track": "body_contouring_device",
       "track_name": "射频塑形设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "射频治疗仪",
       "company": "深圳半岛医疗集团股份有限公司",
       "company_key": "深圳半岛医疗集团股份有限公司",
@@ -882,6 +1064,14 @@
         "吸脂术前脂肪软化"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频治疗仪",
+      "official_registrant": "深圳半岛医疗集团股份有限公司",
+      "official_approval_date": "2022-04-29",
+      "official_valid_until": "2027-04-28",
+      "official_indication": "吸脂术前脂肪软化",
+      "official_scope": "该产品在医疗机构使用，用于在吸脂手术前利用射频能量对脂肪进行软化以辅助后续吸脂过程，适用于身体躯干及四肢近端部位。产品不可连接负压设备用于吸脂。必须由有资质的专业医师使用，使用时需配合无菌水基耦合剂。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -897,6 +1087,8 @@
       "track": "raw_ultrasound",
       "track_name": "超声设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "聚焦超声皮肤治疗仪",
       "company": "深圳普门科技股份有限公司",
       "company_key": "深圳普门科技股份有限公司",
@@ -925,6 +1117,14 @@
         "颈部皮肤松弛"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "聚焦超声皮肤治疗仪",
+      "official_registrant": "深圳普门科技股份有限公司",
+      "official_approval_date": "2026-04-27",
+      "official_valid_until": "2031-04-26",
+      "official_indication": "中下面部/颏下/颈部皮肤松弛",
+      "official_scope": "产品在医疗机构中使用，利用聚焦超声热效应作用于皮下组织，用于改善中下面部和颏下、颈部的皮肤松弛。不可用于眼及眼周、鼻部、口周、耳廓、甲状腺及颈动脉区域。产品须由具有相应资质的专业医师使用，治疗前须使用皮肤超声诊断设备对皮下组织进行测量，以确定所适合的治疗深度。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -940,6 +1140,8 @@
       "track": "raw_ultrasound",
       "track_name": "超声设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "聚焦超声皮肤治疗仪",
       "company": "深圳半岛医疗集团股份有限公司",
       "company_key": "深圳半岛医疗集团股份有限公司",
@@ -968,6 +1170,14 @@
         "颈部皮肤松弛"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "聚焦超声皮肤治疗仪",
+      "official_registrant": "深圳半岛医疗集团股份有限公司",
+      "official_approval_date": "2025-10-30",
+      "official_valid_until": "2030-10-29",
+      "official_indication": "颈部",
+      "official_scope": "产品在医疗机构中使用，利用聚焦超声热效应作用于皮下组织，用于改善中下面部和颏下、颈部的皮肤松弛。不可用于眼及眼周、鼻部、口周、耳廓、甲状腺及颈动脉区域。产品须由具有相应资质的专业医师使用，治疗前须使用皮肤超声诊断设备对皮下组织进行测量，以确定所适合的治疗深度。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -983,6 +1193,8 @@
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "Nd:YAG皮秒激光治疗仪",
       "company": "南京麦澜德医疗科技股份有限公司",
       "company_key": "南京麦澜德医疗科技股份有限公司",
@@ -1008,6 +1220,14 @@
         "文身祛除"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
+      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
+      "official_product_name": "Nd:YAG皮秒激光治疗仪",
+      "official_registrant": "南京麦澜德医疗科技股份有限公司",
+      "official_approval_date": "2025-12-29",
+      "official_valid_until": "2030-12-28",
+      "official_indication": "文身祛除",
+      "official_scope": "在医疗机构中使用，1064nm激光用于祛除蓝色和黑色文身的治疗。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -1023,6 +1243,8 @@
       "track": "raw_thermage_rf",
       "track_name": "热玛吉类/单极射频设备",
       "strategic": "EBD 设备",
+      "brand": "Thermage CPT",
+      "aliases": "",
       "product_name": "射频治疗仪Thermage CPT System",
       "company": "Solta Medical, Inc.",
       "company_key": "solta medical, inc.",
@@ -1046,6 +1268,14 @@
         "射频治疗仪"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频治疗仪Thermage CPT System",
+      "official_registrant": "索塔医疗有限公司Solta Medical, Inc.",
+      "official_approval_date": "2023-03-27",
+      "official_valid_until": "2029-12-25",
+      "official_indication": "手部",
+      "official_scope": "用于对身体、面部及眼周皱纹的非侵入性治疗。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -1061,6 +1291,8 @@
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
       "strategic": "EBD 设备",
+      "brand": "曼迪森半导体激光",
+      "aliases": "",
       "product_name": "半导体激光治疗机",
       "company": "曼迪森光电",
       "company_key": "曼迪森光电",
@@ -1083,6 +1315,14 @@
         "非医美核心适用范围"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "半导体激光治疗机",
+      "official_registrant": "上海曼迪森光电有限公司",
+      "official_approval_date": "2025-10-30",
+      "official_valid_until": "2030-10-29",
+      "official_indication": "手部",
+      "official_scope": "该产品在医疗机构中使用，用于暂时缓解肌肉与关节轻微疼痛。",
       "verified": true,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1096,6 +1336,8 @@
       "track": "raw_ultrasound",
       "track_name": "超声设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "",
       "company": "未标注厂家",
       "company_key": "未标注厂家",
@@ -1116,6 +1358,14 @@
         "超声炮"
       ],
       "official_status": "unsupported_certificate_type",
+      "official_verification_status": "省级器械待省局核验",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1129,6 +1379,8 @@
       "track": "raw_ultrasound",
       "track_name": "超声设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "",
       "company": "未标注厂家",
       "company_key": "未标注厂家",
@@ -1149,6 +1401,14 @@
         "超声炮"
       ],
       "official_status": "unsupported_certificate_type",
+      "official_verification_status": "省级器械待省局核验",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1162,6 +1422,8 @@
       "track": "raw_ultrasound",
       "track_name": "超声设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "",
       "company": "未标注厂家",
       "company_key": "未标注厂家",
@@ -1182,6 +1444,14 @@
         "超声炮"
       ],
       "official_status": "unsupported_certificate_type",
+      "official_verification_status": "省级器械待省局核验",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1195,6 +1465,8 @@
       "track": "raw_ultrasound",
       "track_name": "超声设备",
       "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
       "product_name": "",
       "company": "未标注厂家",
       "company_key": "未标注厂家",
@@ -1215,6 +1487,14 @@
         "超声炮"
       ],
       "official_status": "unsupported_certificate_type",
+      "official_verification_status": "省级器械待省局核验",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1228,6 +1508,8 @@
       "track": "raw_microneedle",
       "track_name": "微针/射频微针设备",
       "strategic": "EBD 设备",
+      "brand": "Jeisys INTRAcel 5D",
+      "aliases": "",
       "product_name": "射频微针治疗仪Electrosurgical Unit",
       "company": "Jeisys / 帝医思",
       "company_key": "jeisys / 帝医思",
@@ -1250,6 +1532,14 @@
         "含治疗头线索"
       ],
       "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "射频微针治疗仪Electrosurgical Unit",
+      "official_registrant": "杰希思医疗公司Jeisys Medical Inc.",
+      "official_approval_date": "2023-04-07",
+      "official_valid_until": "2029-10-21",
+      "official_indication": "手部",
+      "official_scope": "产品在医疗机构使用，与本公司射频微针电极（型号：INTRAcel Tip1011）配合使用，产品用于治疗皮肤萎缩性瘢痕。（应由具有相应资质的专业医护人员使用，严格参照使用说明书中的治疗流程和注意事项，3档以上输出模式需慎用）",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -1265,6 +1555,8 @@
       "track": "raw_microneedle",
       "track_name": "微针/射频微针设备",
       "strategic": "EBD 设备",
+      "brand": "EndyMed 3D",
+      "aliases": "",
       "product_name": "相控射频微针设备",
       "company": "EndyMed / 美迪迈",
       "company_key": "endymed / 美迪迈",
@@ -1285,6 +1577,14 @@
         "微针"
       ],
       "official_status": "not_found",
+      "official_verification_status": "官方未查到/需复核",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1298,6 +1598,8 @@
       "track": "raw_microneedle",
       "track_name": "微针/射频微针设备",
       "strategic": "EBD 设备",
+      "brand": "半岛黄金微针第四代",
+      "aliases": "",
       "product_name": "黄金微针设备",
       "company": "半岛医疗",
       "company_key": "半岛医疗",
@@ -1318,6 +1620,14 @@
         "边界样本"
       ],
       "official_status": "unsupported_certificate_type",
+      "official_verification_status": "省级器械待省局核验",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
@@ -1331,6 +1641,8 @@
       "track": "raw_microneedle",
       "track_name": "微针/射频微针设备",
       "strategic": "EBD 设备",
+      "brand": "Lutronic INFINI",
+      "aliases": "",
       "product_name": "射频微针治疗仪",
       "company": "Lutronic / 路创丽",
       "company_key": "lutronic / 路创丽",
@@ -1351,6 +1663,14 @@
         "微针"
       ],
       "official_status": "not_found",
+      "official_verification_status": "官方未查到/需复核",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
       "verified": false,
       "main_landscape": false,
       "portfolio_segments": [],
