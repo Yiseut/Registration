@@ -22,6 +22,7 @@ TRACK_META = [
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#B5915A"},
     {"key": "plla",       "name": "童颜针 / PLLA",       "tagline": "", "accent": "#8B5A6B"},
     {"key": "pcl",        "name": "少女针 / PCL",        "tagline": "", "accent": "#C15F3C"},
+    {"key": "pmma",       "name": "PMMA 注射填充剂",     "tagline": "", "accent": "#A56A7C"},
     {"key": "caha",       "name": "羟基磷酸钙 / CaHA",   "tagline": "", "accent": "#5B7B9A"},
     {"key": "botulinum",  "name": "肉毒毒素",           "tagline": "", "accent": "#8B9D7F"},
     {"key": "ebd",        "name": "EBD 设备类",          "tagline": "", "accent": "#6E6A65"},
@@ -32,6 +33,7 @@ TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 EBD_TRACKS = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl",
               "body_contouring_device", "raw_thermage_rf"}
 EMERGING_TRACKS = {"raw_agarose", "raw_ecm", "raw_lipolysis_injection"}
+PMMA_TRACKS = {"raw_pmma"}
 
 
 def load_rows() -> list[dict]:
@@ -44,6 +46,8 @@ def classify_track(row: dict) -> str | None:
     t = (row.get("track") or "").strip()
     if t in {"ha", "plla", "pcl", "caha", "collagen", "botulinum"}:
         return t
+    if t in PMMA_TRACKS:
+        return "pmma"
     if t in EBD_TRACKS:
         return "ebd"
     return None
@@ -152,7 +156,7 @@ def kpi_block(records: list[dict]) -> dict:
 
     # Material-focused breakdowns: industry watches injection assets first.
     # Injection filling = HA + collagen stimulators + collagen + agarose. Injection drug = botulinum + deoxycholic acid.
-    injectable_tracks = {"ha", "plla", "pcl", "caha", "collagen", "raw_agarose"}
+    injectable_tracks = {"ha", "plla", "pcl", "caha", "collagen", "raw_pmma", "raw_agarose"}
     drug_tracks = {"botulinum", "raw_lipolysis_injection"}
     ebd_tracks = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl",
                   "body_contouring_device", "raw_thermage_rf"}
@@ -161,7 +165,7 @@ def kpi_block(records: list[dict]) -> dict:
 
     track_label = {
         "ha": "HA", "collagen": "胶原", "plla": "PLLA", "pcl": "PCL",
-        "caha": "CaHA", "raw_agarose": "琼脂糖",
+        "caha": "CaHA", "raw_pmma": "PMMA", "raw_agarose": "琼脂糖",
         "botulinum": "肉毒毒素", "raw_lipolysis_injection": "去氧胆酸",
     }
 
@@ -172,7 +176,7 @@ def kpi_block(records: list[dict]) -> dict:
         return "EBD"
 
     inj_breakdown = []
-    for tk in ("ha", "collagen", "plla", "pcl", "caha", "raw_agarose"):
+    for tk in ("ha", "collagen", "plla", "pcl", "caha", "raw_pmma", "raw_agarose"):
         n = sum(1 for r in inj_class3 if r["track"] == tk)
         if n:
             inj_breakdown.append(f"{track_label[tk]}{n}")
@@ -289,7 +293,7 @@ def portfolio_matrix(records: list[dict]) -> dict:
 def indication_heatmap(records: list[dict]) -> dict:
     """Material family × primary indication, restricted to injectable tracks."""
     main = [r for r in records
-            if r["main_landscape"] and r["track"] in {"ha", "plla", "pcl", "caha", "collagen", "botulinum"}
+            if r["main_landscape"] and r["track"] in {"ha", "plla", "pcl", "caha", "collagen", "raw_pmma", "botulinum"}
             and r["material_family"] and r["primary_indication"]]
     materials_count = Counter(r["material_family"] for r in main)
     indications_count = Counter(r["primary_indication"] for r in main)
@@ -342,7 +346,7 @@ def cert_expiry(records: list[dict]) -> dict:
         by_quarter_track[label][track] += 1
         upcoming.append({**{k: v for k, v in r.items() if k != "_raw"}, "days_to_expiry": (d - today).days})
     upcoming.sort(key=lambda r: r["days_to_expiry"])
-    series_keys = ["ha", "collagen", "plla", "pcl", "caha", "botulinum", "ebd"]
+    series_keys = ["ha", "collagen", "plla", "pcl", "pmma", "caha", "botulinum", "ebd"]
     series = []
     for k in series_keys:
         series.append({
@@ -378,7 +382,7 @@ def origin_evolution(records: list[dict]) -> dict:
 def concentration(records: list[dict]) -> dict:
     """Per-track HHI + CR4/CR8 by company group."""
     out = {}
-    for tk in ["ha", "collagen", "plla", "pcl", "caha", "botulinum", "ebd"]:
+    for tk in ["ha", "collagen", "plla", "pcl", "pmma", "caha", "botulinum", "ebd"]:
         recs = [r for r in records if r["main_landscape"] and classify_track(r["_raw"]) == tk]
         total = len(recs)
         if total == 0:

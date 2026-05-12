@@ -1,0 +1,154 @@
+{
+  "track_key": "pmma",
+  "track_meta": {
+    "key": "pmma",
+    "name": "PMMA 注射填充剂",
+    "tagline": "",
+    "accent": "#A56A7C"
+  },
+  "kpi": {
+    "total": 2,
+    "main": 2,
+    "companies": 2,
+    "indications": 2,
+    "verified": 2,
+    "domestic": 0,
+    "imported": 2,
+    "hkmt": 0
+  },
+  "company_share": [
+    {
+      "name": "荷兰汉福",
+      "value": 1
+    },
+    {
+      "name": "Suneva",
+      "value": 1
+    }
+  ],
+  "long_tail_company_count": 0,
+  "indication_share": [
+    {
+      "name": "鼻唇沟/隆鼻",
+      "value": 1
+    },
+    {
+      "name": "鼻唇沟",
+      "value": 1
+    }
+  ],
+  "origin_share": [
+    {
+      "name": "进口",
+      "value": 2
+    }
+  ],
+  "material_share": [
+    {
+      "name": "PMMA",
+      "value": 2
+    }
+  ],
+  "timeline": {
+    "years": [
+      2021,
+      2024
+    ],
+    "values": [
+      1,
+      1
+    ]
+  },
+  "company_indication_heatmap": {
+    "companies": [
+      "Suneva",
+      "荷兰汉福"
+    ],
+    "indications": [
+      "鼻唇沟",
+      "鼻唇沟/隆鼻"
+    ],
+    "cells": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "records": [
+    {
+      "id": "PMMA-国械注进20163132859",
+      "track": "raw_pmma",
+      "track_name": "PMMA 注射填充剂",
+      "strategic": "PMMA 注射填充剂",
+      "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
+      "company": "荷兰汉福",
+      "company_key": "荷兰汉福",
+      "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
+      "certificate_no": "国械注进20163132859",
+      "origin": "进口",
+      "category": "PMMA 注射填充剂",
+      "material_family": "PMMA",
+      "material_form": "PMMA 微球填充剂",
+      "approval_date": "2021-10-26",
+      "approval_year": 2021,
+      "valid_until": "2026-10-25",
+      "primary_indication": "鼻唇沟/隆鼻",
+      "indications": [],
+      "tags": [
+        "含利多卡因",
+        "PMMA复合"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "PMMA 注射填充剂"
+      ],
+      "source_account": "公众号汇总/NMPA校准",
+      "source_title": "胶原蛋白汇总文章交叉校准",
+      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
+      "confidence": ""
+    },
+    {
+      "id": "PMMA-国械注进20243130041",
+      "track": "raw_pmma",
+      "track_name": "PMMA 注射填充剂",
+      "strategic": "PMMA 注射填充剂",
+      "product_name": "整形用胶原和PMMA皮下植入物系统 Bellafill",
+      "company": "Suneva",
+      "company_key": "suneva",
+      "registrant": "圣诺华医疗股份有限公司Suneva Medical, Inc.",
+      "certificate_no": "国械注进20243130041",
+      "origin": "进口",
+      "category": "PMMA 注射填充剂",
+      "material_family": "PMMA",
+      "material_form": "PMMA 微球填充剂",
+      "approval_date": "2024-01-17",
+      "approval_year": 2024,
+      "valid_until": "2029-01-16",
+      "primary_indication": "鼻唇沟",
+      "indications": [],
+      "tags": [
+        "含利多卡因",
+        "PMMA复合"
+      ],
+      "official_status": "verified",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "PMMA 注射填充剂"
+      ],
+      "source_account": "公众号汇总/NMPA校准",
+      "source_title": "胶原蛋白汇总文章交叉校准",
+      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
+      "confidence": ""
+    }
+  ]
+}

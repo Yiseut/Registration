@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T17:08:52",
+  "generated_at": "2026-05-12T18:02:32",
   "kpi": {
     "total_records": 216,
     "main_records": 176,
@@ -11,7 +11,7 @@
     "imported": 71,
     "hkmt": 6,
     "injectable_class3": 146,
-    "injectable_class3_breakdown": "HA108 / 胶原18 / PLLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3_breakdown": "HA108 / 胶原16 / PLLA12 / PCL5 / CaHA2 / PMMA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 18 类 · 注射用药品 2 类 · EBD 9 类",
@@ -37,10 +37,10 @@
       "name": "胶原蛋白",
       "tagline": "",
       "accent": "#B5915A",
-      "records": 46,
-      "main_records": 18,
-      "companies": 11,
-      "verified": 18,
+      "records": 44,
+      "main_records": 16,
+      "companies": 9,
+      "verified": 16,
       "latest_year": 2026,
       "leading_company": "双美生物"
     },
@@ -67,6 +67,18 @@
       "verified": 5,
       "latest_year": 2026,
       "leading_company": "Sinclair / 华东医药"
+    },
+    {
+      "key": "pmma",
+      "name": "PMMA 注射填充剂",
+      "tagline": "",
+      "accent": "#A56A7C",
+      "records": 2,
+      "main_records": 2,
+      "companies": 2,
+      "verified": 2,
+      "latest_year": 2024,
+      "leading_company": "荷兰汉福"
     },
     {
       "key": "caha",
@@ -108,6 +120,7 @@
   "portfolio_matrix": {
     "segments": [
       "EBD 设备类",
+      "PMMA 注射填充剂",
       "新型材料",
       "玻尿酸",
       "肉毒素",
@@ -122,6 +135,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 8,
           "肉毒素": 1,
@@ -136,6 +150,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 6,
           "肉毒素": 1,
@@ -150,6 +165,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 1,
@@ -164,6 +180,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 1,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -178,6 +195,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 11,
           "肉毒素": 1,
@@ -192,6 +210,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 1,
           "肉毒素": 0,
@@ -206,6 +225,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 1,
@@ -220,6 +240,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 1,
@@ -234,6 +255,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 1,
           "肉毒素": 0,
@@ -248,6 +270,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 11,
           "肉毒素": 0,
@@ -262,6 +285,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 5,
           "肉毒素": 0,
@@ -276,6 +300,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
@@ -290,6 +315,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
@@ -304,6 +330,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
@@ -318,6 +345,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 3,
           "肉毒素": 0,
@@ -332,6 +360,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
@@ -346,6 +375,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
@@ -360,6 +390,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 3,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
@@ -374,6 +405,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -388,6 +420,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -402,6 +435,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -416,6 +450,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -430,6 +465,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -444,6 +480,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
+          "PMMA 注射填充剂": 0,
           "新型材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
@@ -461,7 +498,8 @@
       "A型肉毒毒素",
       "重组/类人源胶原",
       "PCL",
-      "CaHA"
+      "CaHA",
+      "PMMA"
     ],
     "indications": [
       "鼻唇沟",
@@ -548,7 +586,7 @@
       [
         0,
         2,
-        5
+        4
       ],
       [
         4,
@@ -594,6 +632,11 @@
         0,
         6,
         2
+      ],
+      [
+        0,
+        7,
+        1
       ]
     ]
   },
@@ -639,7 +682,7 @@
         "data": [
           1,
           0,
-          2,
+          1,
           0,
           0,
           0,
@@ -648,7 +691,7 @@
           0,
           1,
           0,
-          1,
+          0,
           2
         ]
       },
@@ -687,6 +730,25 @@
           0,
           0,
           0,
+          0
+        ]
+      },
+      {
+        "key": "pmma",
+        "name": "PMMA 注射填充剂",
+        "data": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
           0
         ]
       },
@@ -1010,19 +1072,19 @@
         "days_to_expiry": 161
       },
       {
-        "id": "COLLAGEN-国械注进20163132859",
-        "track": "collagen",
-        "track_name": "胶原蛋白",
-        "strategic": "胶原蛋白",
+        "id": "PMMA-国械注进20163132859",
+        "track": "raw_pmma",
+        "track_name": "PMMA 注射填充剂",
+        "strategic": "PMMA 注射填充剂",
         "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
         "company": "荷兰汉福",
         "company_key": "荷兰汉福",
         "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
         "certificate_no": "国械注进20163132859",
         "origin": "进口",
-        "category": "胶原蛋白",
-        "material_family": "动物源胶原",
-        "material_form": "动物源胶原+PMMA填充剂",
+        "category": "PMMA 注射填充剂",
+        "material_family": "PMMA",
+        "material_form": "PMMA 微球填充剂",
         "approval_date": "2021-10-26",
         "approval_year": 2021,
         "valid_until": "2026-10-25",
@@ -1036,7 +1098,7 @@
         "verified": true,
         "main_landscape": true,
         "portfolio_segments": [
-          "胶原蛋白"
+          "PMMA 注射填充剂"
         ],
         "source_account": "公众号汇总/NMPA校准",
         "source_title": "胶原蛋白汇总文章交叉校准",
@@ -2019,51 +2081,51 @@
     },
     "collagen": {
       "track_name": "胶原蛋白",
-      "total_certs": 18,
-      "company_count": 11,
-      "hhi": 1111.0,
-      "cr4": 55.6,
-      "cr8": 83.3,
+      "total_certs": 16,
+      "company_count": 9,
+      "hhi": 1328.0,
+      "cr4": 62.5,
+      "cr8": 93.8,
       "top": [
         {
           "company": "双美生物",
           "certs": 3,
-          "share": 16.7
+          "share": 18.8
         },
         {
           "company": "锦波生物",
           "certs": 3,
-          "share": 16.7
+          "share": 18.8
         },
         {
           "company": "崇山生物",
           "certs": 2,
-          "share": 11.1
+          "share": 12.5
         },
         {
           "company": "珂瑞康",
           "certs": 2,
-          "share": 11.1
+          "share": 12.5
         },
         {
           "company": "巨子生物",
           "certs": 2,
-          "share": 11.1
+          "share": 12.5
         },
         {
           "company": "艾佰瑞",
           "certs": 1,
-          "share": 5.6
+          "share": 6.2
         },
         {
           "company": "奇璞生物",
           "certs": 1,
-          "share": 5.6
+          "share": 6.2
         },
         {
           "company": "斐缦生物",
           "certs": 1,
-          "share": 5.6
+          "share": 6.2
         }
       ]
     },
@@ -2139,6 +2201,26 @@
           "company": "四环医药 / 渼颜空间",
           "certs": 1,
           "share": 20.0
+        }
+      ]
+    },
+    "pmma": {
+      "track_name": "PMMA 注射填充剂",
+      "total_certs": 2,
+      "company_count": 2,
+      "hhi": 5000.0,
+      "cr4": 100.0,
+      "cr8": 100.0,
+      "top": [
+        {
+          "company": "荷兰汉福",
+          "certs": 1,
+          "share": 50.0
+        },
+        {
+          "company": "Suneva",
+          "certs": 1,
+          "share": 50.0
         }
       ]
     },

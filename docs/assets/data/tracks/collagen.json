@@ -7,13 +7,13 @@
     "accent": "#B5915A"
   },
   "kpi": {
-    "total": 46,
-    "main": 18,
-    "companies": 11,
-    "indications": 7,
-    "verified": 18,
+    "total": 44,
+    "main": 16,
+    "companies": 9,
+    "indications": 6,
+    "verified": 16,
     "domestic": 13,
-    "imported": 2,
+    "imported": 0,
     "hkmt": 3
   },
   "company_share": [
@@ -50,14 +50,6 @@
       "value": 1
     },
     {
-      "name": "荷兰汉福",
-      "value": 1
-    },
-    {
-      "name": "Suneva",
-      "value": 1
-    },
-    {
       "name": "创健医疗",
       "value": 1
     }
@@ -70,7 +62,7 @@
     },
     {
       "name": "鼻唇沟",
-      "value": 5
+      "value": 4
     },
     {
       "name": "面颊部平滑度",
@@ -82,10 +74,6 @@
     },
     {
       "name": "中面部容量/轮廓",
-      "value": 1
-    },
-    {
-      "name": "鼻唇沟/隆鼻",
       "value": 1
     },
     {
@@ -101,16 +89,12 @@
     {
       "name": "港澳台",
       "value": 3
-    },
-    {
-      "name": "进口",
-      "value": 2
     }
   ],
   "material_share": [
     {
       "name": "动物源胶原",
-      "value": 12
+      "value": 10
     },
     {
       "name": "重组/类人源胶原",
@@ -126,9 +110,9 @@
       2026
     ],
     "values": [
-      3,
-      3,
       2,
+      3,
+      1,
       8,
       2
     ]
@@ -1402,74 +1386,6 @@
       "source_account": "UDI/NMPA UDI",
       "source_title": "UDI 胶原蛋白赛道召回样本",
       "source_url": "https://fiman.com/",
-      "confidence": ""
-    },
-    {
-      "id": "COLLAGEN-国械注进20163132859",
-      "track": "collagen",
-      "track_name": "胶原蛋白",
-      "strategic": "胶原蛋白",
-      "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
-      "company": "荷兰汉福",
-      "company_key": "荷兰汉福",
-      "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
-      "certificate_no": "国械注进20163132859",
-      "origin": "进口",
-      "category": "胶原蛋白",
-      "material_family": "动物源胶原",
-      "material_form": "动物源胶原+PMMA填充剂",
-      "approval_date": "2021-10-26",
-      "approval_year": 2021,
-      "valid_until": "2026-10-25",
-      "primary_indication": "鼻唇沟/隆鼻",
-      "indications": [],
-      "tags": [
-        "含利多卡因",
-        "PMMA复合"
-      ],
-      "official_status": "verified",
-      "verified": true,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "胶原蛋白"
-      ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": ""
-    },
-    {
-      "id": "COLLAGEN-国械注进20243130041",
-      "track": "collagen",
-      "track_name": "胶原蛋白",
-      "strategic": "胶原蛋白",
-      "product_name": "整形用胶原和PMMA皮下植入物系统 Bellafill",
-      "company": "Suneva",
-      "company_key": "suneva",
-      "registrant": "圣诺华医疗股份有限公司Suneva Medical, Inc.",
-      "certificate_no": "国械注进20243130041",
-      "origin": "进口",
-      "category": "胶原蛋白",
-      "material_family": "动物源胶原",
-      "material_form": "动物源胶原+PMMA填充剂",
-      "approval_date": "2024-01-17",
-      "approval_year": 2024,
-      "valid_until": "2029-01-16",
-      "primary_indication": "鼻唇沟",
-      "indications": [],
-      "tags": [
-        "含利多卡因",
-        "PMMA复合"
-      ],
-      "official_status": "verified",
-      "verified": true,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "胶原蛋白"
-      ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
       "confidence": ""
     },
     {
