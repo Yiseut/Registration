@@ -1,4 +1,4 @@
-﻿# Registration Insights Integrated
+# Registration Insights Integrated
 
 中国医美市场准入格局 Dashboard，本目录是 Cloud/Claude 版与 Codex 版的本地整合工作区。
 
@@ -53,8 +53,8 @@ python -m http.server 8781 --bind 127.0.0.1
 
 ## 当前缓存版本
 
-- 首页脚本：`20260513-small-tracks-layout-74`
-- 子赛道页 `track.js`：`20260513-small-tracks-layout-74`
+- 首页脚本：`20260513-plla-taxonomy-75`
+- 子赛道页 `track.js`：`20260513-plla-taxonomy-75`
 
 如果修改前台 JS/CSS，继续递增 query string，方便用户直接刷新当前页面看到新版本。
 

@@ -683,6 +683,16 @@ a:hover { color: var(--brand); }
   gap: 12px;
 }
 
+.pla-taxonomy-list {
+  display: grid;
+  gap: 16px;
+}
+
+.pla-taxonomy-group {
+  display: grid;
+  gap: 8px;
+}
+
 .combined-analysis-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -721,6 +731,51 @@ a:hover { color: var(--brand); }
   text-align: left;
   cursor: pointer;
   transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+
+.pla-family-row {
+  min-height: 72px;
+  background:
+    radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 35%),
+    rgba(255, 255, 255, 0.9);
+}
+
+.pla-subshape-list {
+  display: grid;
+  gap: 8px;
+  margin-left: clamp(18px, 3vw, 38px);
+  padding-left: 14px;
+  border-left: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+}
+
+.pla-subshape-row {
+  appearance: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 14px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.68);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out), border-color 180ms var(--ease-out);
+}
+
+.pla-subshape-row .shape-count {
+  font-size: 22px;
+}
+
+.pla-subshape-row:hover,
+.pla-subshape-row:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--hairline-strong);
+  box-shadow: var(--shadow-2);
+  outline: none;
 }
 
 .product-shape-row:hover,

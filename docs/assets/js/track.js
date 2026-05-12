@@ -322,6 +322,10 @@
   function renderProductShapeList(elId, source) {
     const el = document.getElementById(elId);
     if (!el) return;
+    if (key === 'plla') {
+      renderPlaProductShapeList(el, source);
+      return;
+    }
     const groups = productShapeGroups(source);
     if (!groups.length) {
       el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无产品形态数据</div>';
@@ -356,6 +360,93 @@
       row.addEventListener('click', () => {
         const group = groups.find((item) => item.name === row.dataset.shape);
         if (group) showRecords({ title: group.name, meta: `${trackDisplayName} · 产品形态`, records: displayRecords(group.records) });
+      });
+    });
+  }
+
+  function renderPlaProductShapeList(el, source) {
+    const records = source.filter((record) => record.main_landscape);
+    if (!records.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无产品形态数据</div>';
+      return;
+    }
+
+    const familyMap = new Map();
+    records.forEach((record) => {
+      const family = displayUiLabel(record.material_family || '未分型');
+      const form = displayUiLabel(record.material_form || family);
+      if (!familyMap.has(family)) familyMap.set(family, { family, records: [], forms: new Map() });
+      const familyGroup = familyMap.get(family);
+      familyGroup.records.push(record);
+      if (!familyGroup.forms.has(form)) familyGroup.forms.set(form, []);
+      familyGroup.forms.get(form).push(record);
+    });
+
+    const familyOrder = ['PLLA', 'PDLLA'];
+    const groups = [...familyMap.values()]
+      .map((group) => ({
+        ...group,
+        forms: [...group.forms.entries()]
+          .map(([name, formRecords]) => ({ name, records: formRecords }))
+          .sort((a, b) => b.records.length - a.records.length || a.name.localeCompare(b.name, 'zh-CN')),
+      }))
+      .sort((a, b) => {
+        const ai = familyOrder.indexOf(a.family);
+        const bi = familyOrder.indexOf(b.family);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi)
+          || b.records.length - a.records.length
+          || a.family.localeCompare(b.family, 'zh-CN');
+      });
+
+    const max = Math.max(1, ...groups.map((group) => group.records.length));
+    const barStart = shade(accent, 30);
+    const barEnd = shade(accent, -12);
+    el.classList.add('as-list');
+    el.innerHTML = `
+      <div class="pla-taxonomy-list">
+        ${groups.map((group, groupIndex) => {
+          const familyWidth = Math.max(8, (group.records.length / max) * 100);
+          return `
+            <div class="pla-taxonomy-group" style="--delay:${groupIndex * 45}ms">
+              <button class="product-shape-row pla-family-row" type="button" data-family="${escape(group.family)}" style="--bar-width:${familyWidth}%;--shape-bar-bg:linear-gradient(90deg, ${barStart}, ${barEnd});--shape-count-color:${barEnd}">
+                <span class="shape-main">
+                  <strong>${escape(group.family)}</strong>
+                  <em>${group.forms.length} 个产品形态小类</em>
+                </span>
+                <span class="shape-count">${group.records.length}<small>张</small></span>
+                <span class="shape-track"><i></i></span>
+              </button>
+              <div class="pla-subshape-list">
+                ${group.forms.map((form, formIndex) => {
+                  const formWidth = Math.max(10, (form.records.length / group.records.length) * 100);
+                  const formStart = shade(accent, 42);
+                  const formEnd = shade(accent, -4);
+                  return `
+                    <button class="pla-subshape-row" type="button" data-family="${escape(group.family)}" data-form="${escape(form.name)}" style="--bar-width:${formWidth}%;--delay:${groupIndex * 45 + formIndex * 28}ms;--shape-bar-bg:linear-gradient(90deg, ${formStart}, ${formEnd});--shape-count-color:${formEnd}">
+                      <span class="shape-main">
+                        <strong>${escape(form.name)}</strong>
+                      </span>
+                      <span class="shape-count">${form.records.length}<small>张</small></span>
+                      <span class="shape-track"><i></i></span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+
+    el.querySelectorAll('[data-family]').forEach((row) => {
+      row.addEventListener('click', () => {
+        const group = groups.find((item) => item.family === row.dataset.family);
+        if (!group) return;
+        const formName = row.dataset.form;
+        const form = formName ? group.forms.find((item) => item.name === formName) : null;
+        const title = form ? form.name : group.family;
+        const recordsForRow = form ? form.records : group.records;
+        showRecords({ title, meta: `${trackDisplayName} · 产品形态分类`, records: displayRecords(recordsForRow) });
       });
     });
   }
@@ -911,7 +1002,7 @@
       }).join('');
       return `<div class="matrix-term" title="${escape(company)}">${matrixAxisLabel(company, companyTotals.get(company))}</div>${cells}`;
     }).join('');
-    el.classList.remove('chart', 'chart-xl');
+    el.classList.remove('chart', 'chart-xl', 'chart-tall');
     el.innerHTML = `
       <div class="matrix-wrap">
         <div class="matrix-grid track-company-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(182px, 220px) repeat(${hm.indications.length}, minmax(108px, 1fr))">
