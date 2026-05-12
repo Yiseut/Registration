@@ -6,8 +6,8 @@
 
 - 项目目录：`E:\shared\code\registration-insights-integrated`
 - 本地页面：`http://127.0.0.1:8781/`
-- 当前首页缓存：`20260513-plla-taxonomy-75`
-- 当前子赛道页缓存：`20260513-plla-taxonomy-75`
+- 当前首页缓存：`20260513-plla-origin-76`
+- 当前子赛道页缓存：`20260513-plla-origin-76`
 - 启动脚本：`Open-Dashboard.bat`
 
 不要直接改：
