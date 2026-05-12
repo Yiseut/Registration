@@ -21,7 +21,7 @@ TRACK_META = [
     {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#D97757"},
     {"key": "botulinum",  "name": "肉毒毒素",            "tagline": "", "accent": "#8B9D7F"},
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#B5915A"},
-    {"key": "plla",       "name": "PLLA",                "tagline": "", "accent": "#8B5A6B"},
+    {"key": "plla",       "name": "PLA",                "tagline": "", "accent": "#8B5A6B"},
     {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#C15F3C"},
     {"key": "caha",       "name": "CaHA",                "tagline": "", "accent": "#5B7B9A"},
     {"key": "niche_materials", "name": "小众材料",       "tagline": "", "accent": "#C58B5C"},
@@ -95,7 +95,7 @@ def ui_term(value: str | None) -> str:
         .replace("HA/透明质酸钠", "透明质酸钠")
         .replace("玻尿酸 / 透明质酸钠", "透明质酸钠")
         .replace("玻尿酸/透明质酸钠", "透明质酸钠")
-        .replace("童颜针 / PLLA", "PLLA")
+        .replace("童颜针 / PLLA", "PLA")
         .replace("少女针 / PCL", "PCL")
         .replace("羟基磷酸钙 / CaHA", "CaHA")
         .replace("肉毒素", "肉毒毒素")
@@ -207,7 +207,7 @@ def kpi_block(records: list[dict]) -> dict:
     inj_drug = [r for r in main if r["track"] in drug_tracks]
 
     track_label = {
-        "ha": "HA", "collagen": "胶原蛋白", "plla": "PLLA", "pcl": "PCL",
+        "ha": "HA", "collagen": "胶原蛋白", "plla": "PLA", "pcl": "PCL",
         "caha": "CaHA", "raw_pmma": "PMMA", "raw_agarose": "琼脂糖",
         "botulinum": "肉毒毒素", "raw_lipolysis_injection": "去氧胆酸",
     }

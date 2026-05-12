@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T18:35:29",
+  "generated_at": "2026-05-13T00:46:19",
   "kpi": {
     "total_records": 216,
     "main_records": 176,
@@ -11,13 +11,13 @@
     "imported": 71,
     "hkmt": 6,
     "injectable_class3": 146,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白16 / PLLA12 / PCL5 / CaHA2 / PMMA2 / 琼脂糖1",
+    "injectable_class3_breakdown": "HA108 / 胶原蛋白16 / PLA12 / PCL5 / CaHA2 / PMMA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 15 类",
     "recent_12mo": 59,
     "recent_12mo_share": 27.3,
-    "recent_12mo_breakdown": "HA26 / EBD13 / 胶原蛋白9 / PLLA6"
+    "recent_12mo_breakdown": "HA26 / EBD13 / 胶原蛋白9 / PLA6"
   },
   "segments": [
     {
@@ -58,7 +58,7 @@
     },
     {
       "key": "plla",
-      "name": "PLLA",
+      "name": "PLA",
       "tagline": "",
       "accent": "#8B5A6B",
       "records": 12,
@@ -475,6 +475,7 @@
       "PCL",
       "CaHA",
       "PMMA",
+      "PDLLA",
       "琼脂糖 / Algeness VL / 面部注射填充剂",
       "溶脂针 / 注射溶脂 / 去氧胆酸 / 双下巴"
     ],
@@ -548,7 +549,7 @@
       [
         0,
         1,
-        10
+        9
       ],
       [
         3,
@@ -618,6 +619,11 @@
       [
         0,
         8,
+        1
+      ],
+      [
+        0,
+        9,
         1
       ]
     ]
@@ -698,7 +704,7 @@
       },
       {
         "key": "plla",
-        "name": "PLLA",
+        "name": "PLA",
         "data": [
           1,
           0,
@@ -892,7 +898,7 @@
       {
         "id": "PLLA-国械注准20213130460",
         "track": "plla",
-        "track_name": "PLLA",
+        "track_name": "PLA",
         "strategic": "胶原刺激剂",
         "brand": "濡白天使",
         "aliases": "",
@@ -902,7 +908,7 @@
         "registrant": "爱美客技术发展股份有限公司",
         "certificate_no": "国械注准20213130460",
         "origin": "国产",
-        "category": "PLLA童颜针",
+        "category": "PLA聚乳酸类",
         "material_family": "PLLA",
         "material_form": "PLLA/HA复合凝胶",
         "approval_date": "2021-06-24",
@@ -2462,7 +2468,7 @@
       ]
     },
     "plla": {
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "total_certs": 12,
       "company_count": 12,
       "hhi": 833.0,

@@ -2,7 +2,7 @@
   "track_key": "plla",
   "track_meta": {
     "key": "plla",
-    "name": "PLLA",
+    "name": "PLA",
     "tagline": "",
     "accent": "#8B5A6B"
   },
@@ -94,7 +94,11 @@
   "material_share": [
     {
       "name": "PLLA",
-      "value": 12
+      "value": 11
+    },
+    {
+      "name": "PDLLA",
+      "value": 1
     }
   ],
   "timeline": {
@@ -198,7 +202,7 @@
     {
       "id": "PLLA-国械注准20213130276",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "艾维岚",
       "aliases": "",
@@ -208,7 +212,7 @@
       "registrant": "长春圣博玛生物材料有限公司",
       "certificate_no": "国械注准20213130276",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA微球冻干粉",
       "approval_date": "2024-05-31",
@@ -239,7 +243,7 @@
     {
       "id": "PLLA-国械注准20213130460",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "濡白天使",
       "aliases": "",
@@ -249,7 +253,7 @@
       "registrant": "爱美客技术发展股份有限公司",
       "certificate_no": "国械注准20213130460",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA/HA复合凝胶",
       "approval_date": "2021-06-24",
@@ -282,7 +286,7 @@
     {
       "id": "PLLA-国械注进20243130043",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "臻爱塑菲",
       "aliases": "艾塑菲 / AestheFill",
@@ -292,8 +296,8 @@
       "registrant": "（株）丽臻生物科技股份有限公司REGEN Biotech, Inc.",
       "certificate_no": "国械注进20243130043",
       "origin": "进口",
-      "category": "PLLA童颜针",
-      "material_family": "PLLA",
+      "category": "PLA聚乳酸类",
+      "material_family": "PDLLA",
       "material_form": "PDLLA冻干粉",
       "approval_date": "2024-01-17",
       "approval_year": 2024,
@@ -323,7 +327,7 @@
     {
       "id": "PLLA-国械注进20243130557",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "塑妍萃",
       "aliases": "Sculptra",
@@ -333,7 +337,7 @@
       "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20243130557",
       "origin": "进口",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA冻干粉",
       "approval_date": "2024-09-30",
@@ -366,7 +370,7 @@
     {
       "id": "PLLA-国械注准20243132279",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "普丽妍",
       "aliases": "",
@@ -376,7 +380,7 @@
       "registrant": "普丽妍（南京）医疗科技有限公司",
       "certificate_no": "国械注准20243132279",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA微球冻干粉",
       "approval_date": "2024-11-21",
@@ -407,7 +411,7 @@
     {
       "id": "PLLA-国械注准20253130831",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "斯弗妍",
       "aliases": "回颜臻",
@@ -417,7 +421,7 @@
       "registrant": "渼颜空间生物科技（吉林）有限公司",
       "certificate_no": "国械注准20253130831",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA微球冻干粉",
       "approval_date": "2025-04-23",
@@ -450,7 +454,7 @@
     {
       "id": "PLLA-国械注准20253131101",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "悦雅颜",
       "aliases": "",
@@ -460,7 +464,7 @@
       "registrant": "乐普（北京）医疗器械股份有限公司",
       "certificate_no": "国械注准20253131101",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA冻干粉",
       "approval_date": "2025-05-30",
@@ -493,7 +497,7 @@
     {
       "id": "PLLA-国械注准20253131356",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "丽真然",
       "aliases": "",
@@ -503,7 +507,7 @@
       "registrant": "江苏西宏生物医药有限公司",
       "certificate_no": "国械注准20253131356",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA微球冻干粉",
       "approval_date": "2025-09-11",
@@ -535,7 +539,7 @@
     {
       "id": "PLLA-国械注进20253130300",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "爱唯缇",
       "aliases": "Olidia",
@@ -545,7 +549,7 @@
       "registrant": "PRP SCIENCE Co.,Ltd.(주)피알피사이언스",
       "certificate_no": "国械注进20253130300",
       "origin": "进口",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA冻干粉",
       "approval_date": "2025-07-10",
@@ -576,7 +580,7 @@
     {
       "id": "PLLA-国械注准20253132268",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "奥芮佳",
       "aliases": "微度",
@@ -586,7 +590,7 @@
       "registrant": "浙江微度医疗器械有限公司",
       "certificate_no": "国械注准20253132268",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA+HA复配冻干粉",
       "approval_date": "2025-11-05",
@@ -617,7 +621,7 @@
     {
       "id": "PLLA-国械注准20263130095",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "伊臻",
       "aliases": "",
@@ -627,7 +631,7 @@
       "registrant": "成都伊臻生物科技有限公司",
       "certificate_no": "国械注准20263130095",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA微球冻干粉",
       "approval_date": "2026-02-12",
@@ -658,7 +662,7 @@
     {
       "id": "PLLA-国械注准20263130388",
       "track": "plla",
-      "track_name": "PLLA",
+      "track_name": "PLA",
       "strategic": "胶原刺激剂",
       "brand": "汇悦妍",
       "aliases": "和妍医疗",
@@ -668,7 +672,7 @@
       "registrant": "和妍（上海）医疗器械有限公司",
       "certificate_no": "国械注准20263130388",
       "origin": "国产",
-      "category": "PLLA童颜针",
+      "category": "PLA聚乳酸类",
       "material_family": "PLLA",
       "material_form": "PLLA微球冻干粉",
       "approval_date": "2026-02-13",

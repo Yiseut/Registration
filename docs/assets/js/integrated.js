@@ -11,7 +11,7 @@
     { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#D97757', href: 'tracks/ha.html' },
     { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8B9D7F', href: 'tracks/botulinum.html' },
     { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#B5915A', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLLA', fullName: 'PLLA', color: '#8B5A6B', href: 'tracks/plla.html' },
+    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#8B5A6B', href: 'tracks/plla.html' },
     { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#C15F3C', href: 'tracks/pcl.html' },
     { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#5B7B9A', href: 'tracks/caha.html' },
     { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#C58B5C', href: 'tracks/niche_materials.html' },
@@ -1342,7 +1342,7 @@
       .replace(/透明质酸钠\s*\/\s*玻尿酸/g, '透明质酸钠')
       .replace(/玻尿酸\s*\/\s*透明质酸钠/g, '透明质酸钠')
       .replace(/^玻尿酸$/g, '透明质酸钠')
-      .replace(/童颜针\s*\/\s*PLLA/g, 'PLLA')
+      .replace(/童颜针\s*\/\s*PLLA/g, 'PLA')
       .replace(/少女针\s*\/\s*PCL/g, 'PCL')
       .replace(/羟基磷酸钙\s*\/\s*CaHA/g, 'CaHA')
       .replace(/肉毒素/g, '肉毒毒素')
