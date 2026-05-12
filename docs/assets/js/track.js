@@ -405,6 +405,10 @@
     return /含利多卡因/.test(`${tags} ${record?.material_form || ''} ${record?.product_name || ''}`);
   }
 
+  function matrixAxisLabel(label, count) {
+    return `${escape(label)}<span class="matrix-axis-count">${Number(count || 0)}</span>`;
+  }
+
   function renderProductShapeIndicationMatrix(source) {
     const holder = document.getElementById('chart-form-indication-matrix');
     if (!holder) return;
@@ -422,12 +426,12 @@
       1,
       ...rows.flatMap((row) => columns.map((column) => row.records.filter((record) => indicationValues(record).includes(column)).length))
     );
-    const minWidth = 160 + columns.length * 82;
+    const minWidth = 220 + columns.length * 116;
     holder.innerHTML = `
       <div class="matrix-wrap">
-        <div class="matrix-grid track-form-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(128px, 160px) repeat(${columns.length}, minmax(64px, 1fr))">
+        <div class="matrix-grid track-form-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(166px, 196px) repeat(${columns.length}, minmax(92px, 1fr))">
           <div class="matrix-head">产品形态</div>
-          ${columns.map((column) => `<div class="matrix-head" title="${escape(indicationLabel(column))}">${escape(indicationLabel(column))}</div>`).join('')}
+          ${columns.map((column) => `<div class="matrix-head" title="${escape(indicationLabel(column))}">${matrixAxisLabel(indicationLabel(column), indicationCounts.get(column))}</div>`).join('')}
           ${rows
             .map((row) => {
               const cells = columns
@@ -439,7 +443,7 @@
                   return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${tooltip}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" aria-label="${escape(`${row.name} × ${indicationLabel(column)}：${count} 张`)}">${count || ''}</button>`;
                 })
                 .join('');
-              return `<div class="matrix-term">${escape(row.name)}</div>${cells}`;
+              return `<div class="matrix-term">${matrixAxisLabel(row.name, row.records.length)}</div>${cells}`;
             })
             .join('')}
         </div>
@@ -889,7 +893,15 @@
     const max = Math.max(...hm.companies.flatMap((company) =>
       hm.indications.map((indication) => companyIndicationMatches(company, indication).length)
     ), 1);
-    const minWidth = Math.max(920, 168 + hm.indications.length * 92);
+    const companyTotals = new Map(hm.companies.map((company) => [
+      company,
+      data.records.filter((record) => record.main_landscape && (record.company || '未标注厂家') === company).length,
+    ]));
+    const indicationTotals = new Map(hm.indications.map((indication) => [
+      indication,
+      data.records.filter((record) => record.main_landscape && indicationValues(record).includes(indication)).length,
+    ]));
+    const minWidth = Math.max(1120, 220 + hm.indications.length * 120);
     const body = hm.companies.map((company) => {
       const cells = hm.indications.map((indication) => {
         const matches = companyIndicationMatches(company, indication);
@@ -897,14 +909,14 @@
         const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
         return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${escape(matrixTooltipFromRecords(matches))}" data-title="${escape(`${company} × ${indicationLabel(indication)}`)}" aria-label="${escape(`${company} × ${indicationLabel(indication)}：${count} 张`)}">${count || ''}</button>`;
       }).join('');
-      return `<div class="matrix-term" title="${escape(company)}">${escape(company)}</div>${cells}`;
+      return `<div class="matrix-term" title="${escape(company)}">${matrixAxisLabel(company, companyTotals.get(company))}</div>${cells}`;
     }).join('');
     el.classList.remove('chart', 'chart-xl');
     el.innerHTML = `
       <div class="matrix-wrap">
-        <div class="matrix-grid track-company-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(142px, 168px) repeat(${hm.indications.length}, minmax(84px, 1fr))">
+        <div class="matrix-grid track-company-indication-grid" style="min-width:${minWidth}px;grid-template-columns:minmax(182px, 220px) repeat(${hm.indications.length}, minmax(108px, 1fr))">
           <div class="matrix-head">厂家</div>
-          ${hm.indications.map((indication) => `<div class="matrix-head" title="${escape(indicationLabel(indication))}">${escape(indicationLabel(indication))}</div>`).join('')}
+          ${hm.indications.map((indication) => `<div class="matrix-head" title="${escape(indicationLabel(indication))}">${matrixAxisLabel(indicationLabel(indication), indicationTotals.get(indication))}</div>`).join('')}
           ${body}
         </div>
       </div>
