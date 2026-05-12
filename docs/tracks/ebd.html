@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>EBD 设备 · Registration Insights</title>
   <link rel="icon" href="data:," />
-  <link rel="stylesheet" href="../assets/css/theme.css?v=20260513-ebd-trim-product-form-83" />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=20260513-ebd-energy-redesign-84" />
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
@@ -99,23 +99,39 @@
   </section>
 
   <div class="section-head rise">
-    <h2>热力图视角</h2>
-    <p>把较小的矩阵并排展示，沿用总览热力图的晶莹格子表达。</p>
+    <h2>能量源与设备类型</h2>
   </div>
-  <section class="grid grid-2">
+  <section class="grid grid-2 ebd-taxonomy-grid">
     <div class="card rise">
       <div class="card-title">
-        <h3>产品形态 × 适应证</h3>
+        <h3>能量源结构</h3>
+      </div>
+      <div id="chart-ebd-energy-types" class="chart as-list"></div>
+    </div>
+    <div class="card rise">
+      <div class="card-title">
+        <h3>二级设备类型</h3>
+      </div>
+      <div id="chart-product-forms" class="chart as-list"></div>
+    </div>
+  </section>
+
+  <div class="section-head rise">
+    <h2>EBD 设备矩阵</h2>
+  </div>
+  <section class="grid grid-12 ebd-matrix-grid">
+    <div class="card span-12 rise">
+      <div class="card-title">
+        <h3>二级设备类型 × 适应证</h3>
         <span class="sub">点击格子查看证照</span>
       </div>
       <div id="chart-form-indication-matrix"></div>
     </div>
-    <div class="card rise">
+    <div class="card span-12 rise">
       <div class="card-title">
-        <h3>厂家 × 适应证卡位</h3>
-        <span class="sub">主格局口径</span>
+        <h3>厂家 × 能量类型布局</h3>
       </div>
-      <div id="chart-co-in" class="chart chart-tall"></div>
+      <div id="chart-co-in"></div>
     </div>
   </section>
 
@@ -175,8 +191,8 @@
 
 </main>
 
-<script src="../assets/js/core.js?v=20260513-ebd-trim-product-form-83"></script>
+<script src="../assets/js/core.js?v=20260513-ebd-energy-redesign-84"></script>
 <script>window.TRACK_KEY = 'ebd';</script>
-<script src="../assets/js/track.js?v=20260513-ebd-trim-product-form-83"></script>
+<script src="../assets/js/track.js?v=20260513-ebd-energy-redesign-84"></script>
 </body>
 </html>

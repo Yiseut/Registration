@@ -928,6 +928,52 @@ a:hover { color: var(--brand); }
   min-height: 42px;
 }
 
+.ebd-matrix-wrap {
+  overflow-x: visible;
+  padding-bottom: 2px;
+}
+
+.ebd-device-indication-grid,
+.ebd-company-energy-grid {
+  width: 100%;
+}
+
+.ebd-device-indication-grid .matrix-head,
+.ebd-device-indication-grid .matrix-term,
+.ebd-company-energy-grid .matrix-head,
+.ebd-company-energy-grid .matrix-term {
+  min-width: 0;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.ebd-device-indication-grid .matrix-head {
+  flex-direction: column;
+  gap: 2px;
+  min-height: 48px;
+  padding: 5px 3px;
+  font-size: 11px;
+}
+
+.ebd-device-indication-grid .matrix-head .matrix-axis-count {
+  margin-left: 0;
+}
+
+.ebd-device-indication-grid .matrix-term {
+  padding-right: 8px;
+  font-size: 11.5px;
+}
+
+.ebd-device-indication-grid .matrix-cell {
+  min-height: 38px;
+  border-radius: 7px;
+}
+
+.ebd-company-energy-grid .matrix-cell {
+  min-height: 44px;
+}
+
 .matrix-cell[data-heat="empty"] {
   cursor: default;
   color: transparent;

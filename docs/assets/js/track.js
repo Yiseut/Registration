@@ -23,6 +23,9 @@
   const trackDisplayName = displayUiLabel(meta.name);
   const isHaTrack = key === 'ha';
   const isCollagenTrack = key === 'collagen';
+  const isEbdTrack = key === 'ebd';
+  const ebdEnergyOrder = ['射频', '超声', '激光 / IPL', '其他能量'];
+  const ebdSubtypeOrder = ['射频皮肤治疗', '射频塑形', '单极射频', '射频微针', '聚焦超声', '皮秒激光', '其他设备'];
   const chartBarMaxWidth = 26;
   const chartBarRadius = [6, 6, 0, 0];
   const verticalGradient = (topColor, bottomColor) => new echarts.graphic.LinearGradient(0, 0, 0, 1, [
@@ -69,7 +72,7 @@
   setKpi('kpi-main', kpiRecords.length || data.kpi.total);
   setKpi('kpi-companies', unique(kpiRecords.map((record) => record.company)).length || data.kpi.companies);
   setKpi('kpi-indications', unique(kpiRecords.flatMap(indicationValues)).length || data.kpi.indications);
-  setKpi('kpi-forms', unique(kpiRecords.map((record) => isHaTrack ? productShape(record) : record.material_form)).length);
+  setKpi('kpi-forms', unique(kpiRecords.map((record) => (isHaTrack || isEbdTrack) ? productShape(record) : record.material_form)).length);
   setKpi('kpi-verified', kpiRecords.filter((record) => record.verified).length || data.kpi.verified);
   const totalDelta = document.getElementById('kpi-total')?.closest('.delta');
   if (totalDelta) totalDelta.remove();
@@ -90,6 +93,7 @@
   // Material intensity list
   renderIntensityList('chart-material', data.records, 'material_family');
   renderIntensityList('chart-collagen-source', data.records, 'collagen_source');
+  renderEbdEnergyList('chart-ebd-energy-types', data.records);
 
   // Fusion modules: Claude layout, Codex analytical content.
   renderProductShapeList('chart-product-forms', data.records);
@@ -288,7 +292,47 @@
     row.addEventListener('mouseleave', hide);
   }
 
+  function ebdText(record) {
+    return [
+      record?.product_name,
+      record?.official_product_name,
+      record?.category,
+      record?.track_name,
+      record?.material_family,
+      record?.material_form,
+      ...(Array.isArray(record?.tags) ? record.tags : []),
+    ].filter(Boolean).join(' ');
+  }
+
+  function ebdEnergyType(record) {
+    const text = ebdText(record);
+    if (/超声|HIFU|聚焦/.test(text)) return '超声';
+    if (/激光|IPL|皮秒|Nd:YAG|光子/.test(text)) return '激光 / IPL';
+    if (/射频|Thermage|热玛吉|微针|黄金微针/.test(text)) return '射频';
+    return '其他能量';
+  }
+
+  function ebdDeviceSubtype(record) {
+    const text = ebdText(record);
+    if (/射频微针|黄金微针|Electrosurgical Unit|微针治疗仪/.test(text)) return '射频微针';
+    if (/Thermage|热玛吉|单极射频/.test(text)) return '单极射频';
+    if (/射频塑形|吸脂术前脂肪软化/.test(text)) return '射频塑形';
+    if (/聚焦超声|超声皮肤治疗/.test(text)) return '聚焦超声';
+    if (/皮秒|Nd:YAG|文身祛除/.test(text)) return '皮秒激光';
+    if (/射频皮肤治疗|射频设备|射频治疗仪/.test(text)) return '射频皮肤治疗';
+    return displayUiLabel(record?.category || record?.track_name || '其他设备');
+  }
+
+  function ebdSubtypeLabel(record) {
+    return `${ebdEnergyType(record)}｜${ebdDeviceSubtype(record)}`;
+  }
+
+  function ebdCleanMaterialLabel(record) {
+    return ebdSubtypeLabel(record);
+  }
+
   function productShape(record) {
+    if (isEbdTrack) return ebdSubtypeLabel(record);
     if (!isHaTrack) return displayUiLabel(record?.material_form || record?.material_family || '未分型');
     const text = `${record?.material_form || ''} ${record?.product_name || ''} ${record?.material_family || ''}`;
     if (/复合溶液|水光|肤质|非交联HA溶液|透明质酸钠溶液/.test(text)) return '非交联水光、肤质改善类';
@@ -296,6 +340,11 @@
   }
 
   function productShapeSortValue(name) {
+    if (isEbdTrack) {
+      const subtype = String(name || '').split('｜').pop();
+      const index = ebdSubtypeOrder.indexOf(subtype);
+      return index === -1 ? 99 : index;
+    }
     const order = ['交联填充类', '非交联水光、肤质改善类'];
     const index = order.indexOf(name);
     return index === -1 ? 99 : index;
@@ -317,6 +366,63 @@
     return [...groups.entries()]
       .map(([name, records]) => ({ name, records, count: records.length }))
       .sort((a, b) => productShapeSortValue(a.name) - productShapeSortValue(b.name) || b.count - a.count);
+  }
+
+  function renderEbdEnergyList(elId, source) {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    const landscape = source.filter((record) => record.main_landscape);
+    const groups = new Map();
+    landscape.forEach((record) => {
+      const energy = ebdEnergyType(record);
+      if (!groups.has(energy)) groups.set(energy, []);
+      groups.get(energy).push(record);
+    });
+    const rows = [...groups.entries()]
+      .map(([name, records]) => ({
+        name,
+        records,
+        count: records.length,
+        subtypes: unique(records.map(ebdDeviceSubtype)),
+      }))
+      .sort((a, b) =>
+        ebdEnergyOrder.indexOf(a.name) - ebdEnergyOrder.indexOf(b.name)
+        || b.count - a.count
+        || a.name.localeCompare(b.name, 'zh-CN')
+      );
+    if (!rows.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无能量源数据</div>';
+      return;
+    }
+    const max = Math.max(1, ...rows.map((row) => row.count));
+    el.classList.add('as-list');
+    el.innerHTML = `
+      <div class="product-shape-list ebd-energy-list">
+        ${rows.map((row, index) => {
+          const width = Math.max(8, (row.count / max) * 100);
+          const detail = row.subtypes.join(' / ');
+          const barStart = shade(accent, 30);
+          const barEnd = shade(accent, -18);
+          const payload = encodeURIComponent(JSON.stringify(displayRecords(row.records)));
+          return `
+            <button class="product-shape-row" type="button" data-records="${payload}" data-shape="${escape(row.name)}" style="--bar-width:${width}%;--delay:${index * 50}ms;--shape-bar-bg:linear-gradient(90deg, ${barStart}, ${barEnd});--shape-count-color:${barEnd}">
+              <span class="shape-main">
+                <strong>${escape(row.name)}</strong>
+                <em>${escape(detail)}</em>
+              </span>
+              <span class="shape-count"><b>${row.count}</b><small>张</small></span>
+              <span class="shape-track"><i></i></span>
+            </button>
+          `;
+        }).join('')}
+      </div>
+    `;
+    el.querySelectorAll('[data-records]').forEach((row) => {
+      row.addEventListener('click', () => {
+        const records = JSON.parse(decodeURIComponent(row.dataset.records || '[]'));
+        showRecords({ title: row.dataset.shape || '能量源', meta: `${trackDisplayName} · 能量源结构`, records });
+      });
+    });
   }
 
   function renderProductShapeList(elId, source) {
@@ -503,6 +609,10 @@
   function renderProductShapeIndicationMatrix(source) {
     const holder = document.getElementById('chart-form-indication-matrix');
     if (!holder) return;
+    if (isEbdTrack) {
+      renderEbdDeviceIndicationMatrix(holder, source);
+      return;
+    }
     const landscape = source.filter((record) => record.main_landscape);
     const rows = productShapeGroups(landscape);
     const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
@@ -546,6 +656,46 @@
       </div>
     `;
     bindTrackMatrixInteractions(holder, '产品形态 × 适应证');
+  }
+
+  function renderEbdDeviceIndicationMatrix(holder, source) {
+    const landscape = source.filter((record) => record.main_landscape);
+    const rows = productShapeGroups(landscape);
+    const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
+    const columns = [...indicationCounts.entries()]
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
+      .map(([name]) => name);
+    if (!rows.length || !columns.length) {
+      holder.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无足够数据形成热力图</div>';
+      return;
+    }
+    const max = Math.max(
+      1,
+      ...rows.flatMap((row) => columns.map((column) => row.records.filter((record) => indicationValues(record).includes(column)).length))
+    );
+    holder.innerHTML = `
+      <div class="matrix-wrap ebd-matrix-wrap">
+        <div class="matrix-grid track-form-indication-grid ebd-device-indication-grid" style="grid-template-columns:minmax(168px, 220px) repeat(${columns.length}, minmax(0, 1fr))">
+          <div class="matrix-head">二级设备类型</div>
+          ${columns.map((column) => `<div class="matrix-head" title="${escape(indicationLabel(column))}">${matrixAxisLabel(indicationLabel(column), indicationCounts.get(column))}</div>`).join('')}
+          ${rows
+            .map((row) => {
+              const cells = columns
+                .map((column) => {
+                  const matches = row.records.filter((record) => indicationValues(record).includes(column));
+                  const count = matches.length;
+                  const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
+                  const tooltip = escape(matrixTooltipFromRecords(matches));
+                  return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${tooltip}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" aria-label="${escape(`${row.name} × ${indicationLabel(column)}：${count} 张`)}">${count || ''}</button>`;
+                })
+                .join('');
+              return `<div class="matrix-term">${matrixAxisLabel(row.name, row.records.length)}</div>${cells}`;
+            })
+            .join('')}
+        </div>
+      </div>
+    `;
+    bindTrackMatrixInteractions(holder, '二级设备类型 × 适应证');
   }
 
   function renderCompanyMatrixList(source) {
@@ -982,6 +1132,10 @@
   function renderCompanyHeatmap(hm) {
     const el = document.getElementById('chart-co-in');
     if (!el) return;
+    if (isEbdTrack) {
+      renderEbdCompanyEnergyHeatmap(el);
+      return;
+    }
     if (!hm.companies.length || !hm.indications.length) {
       el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">数据不足</div>';
       return;
@@ -1026,6 +1180,65 @@
       </div>
     `;
     bindTrackMatrixInteractions(el, '厂家和适应症卡位');
+  }
+
+  function renderEbdCompanyEnergyHeatmap(el) {
+    const landscape = data.records.filter((record) => record.main_landscape);
+    const energyCounts = countBy(landscape.map(ebdEnergyType), (name) => name);
+    const energyTypes = [...energyCounts.entries()]
+      .sort((a, b) =>
+        ebdEnergyOrder.indexOf(a[0]) - ebdEnergyOrder.indexOf(b[0])
+        || b[1] - a[1]
+        || a[0].localeCompare(b[0], 'zh-CN')
+      )
+      .map(([name]) => name);
+    const companyGroups = new Map();
+    landscape.forEach((record) => {
+      const company = record.company || '未标注厂家';
+      if (!companyGroups.has(company)) companyGroups.set(company, []);
+      companyGroups.get(company).push(record);
+    });
+    const rows = [...companyGroups.entries()]
+      .map(([company, records]) => ({
+        company,
+        records,
+        energyTypes: unique(records.map(ebdEnergyType)),
+        subtypes: unique(records.map(ebdDeviceSubtype)),
+      }))
+      .sort((a, b) =>
+        b.energyTypes.length - a.energyTypes.length
+        || b.subtypes.length - a.subtypes.length
+        || b.records.length - a.records.length
+        || a.company.localeCompare(b.company, 'zh-CN')
+      );
+    if (!rows.length || !energyTypes.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">数据不足</div>';
+      return;
+    }
+    const max = Math.max(
+      1,
+      ...rows.flatMap((row) => energyTypes.map((energy) => row.records.filter((record) => ebdEnergyType(record) === energy).length))
+    );
+    el.classList.remove('chart', 'chart-xl', 'chart-tall');
+    el.innerHTML = `
+      <div class="matrix-wrap ebd-matrix-wrap">
+        <div class="matrix-grid track-company-indication-grid ebd-company-energy-grid" style="grid-template-columns:minmax(198px, 260px) repeat(${energyTypes.length}, minmax(118px, 1fr))">
+          <div class="matrix-head">厂家</div>
+          ${energyTypes.map((energy) => `<div class="matrix-head" title="${escape(energy)}">${matrixAxisLabel(energy, energyCounts.get(energy))}</div>`).join('')}
+          ${rows.map((row) => {
+            const cells = energyTypes.map((energy) => {
+              const matches = row.records.filter((record) => ebdEnergyType(record) === energy);
+              const count = matches.length;
+              const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
+              const tooltip = escape(matrixTooltipFromRecords(matches));
+              return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${tooltip}" data-title="${escape(`${row.company} × ${energy}`)}" aria-label="${escape(`${row.company} × ${energy}：${count} 张`)}">${count || ''}</button>`;
+            }).join('');
+            return `<div class="matrix-term" title="${escape(row.company)}">${matrixAxisLabel(row.company, row.energyTypes.length)}</div>${cells}`;
+          }).join('')}
+        </div>
+      </div>
+    `;
+    bindTrackMatrixInteractions(el, '厂家 × 能量类型布局');
   }
 
   function renderRecords(records) {
@@ -1085,12 +1298,15 @@
     }
 
     function renderDefaultRecordRow(r) {
+      const materialLabel = isEbdTrack
+        ? ebdCleanMaterialLabel(r)
+        : displayUiLabel(r.material_form || r.material_family || '');
       return `
         <tr data-id="${escape(r.id)}">
           <td>${escape(productBrandLabel(r))}</td>
           <td>
             <b>${escape(r.product_name || '—')}</b>
-            <div class="muted" style="font-size:11.5px">${escape(displayUiLabel(r.material_form || r.material_family || ''))}</div>
+            <div class="muted" style="font-size:11.5px">${escape(materialLabel)}</div>
             ${isHaTrack ? `<div class="table-tag-row"><span class="tag product-shape-tag">${escape(productShape(r))}</span></div>` : ''}
           </td>
           <td>${escape(r.company)}</td>
@@ -1300,6 +1516,11 @@
       if (isCollagenTrack) {
         mapped.tags = [collagenSourceTag(record)];
         mapped.hide_origin_tag = true;
+      }
+      if (isEbdTrack) {
+        mapped.material_family = ebdCleanMaterialLabel(record);
+        mapped.material_form = ebdDeviceSubtype(record);
+        mapped.tags = [ebdEnergyType(record), ebdDeviceSubtype(record)].filter(Boolean);
       }
       return mapped;
     });
