@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T18:02:32",
+  "generated_at": "2026-05-12T18:32:11",
   "kpi": {
     "total_records": 216,
     "main_records": 176,
@@ -69,15 +69,15 @@
       "leading_company": "Sinclair / 华东医药"
     },
     {
-      "key": "pmma",
-      "name": "PMMA 注射填充剂",
+      "key": "niche_materials",
+      "name": "小众材料",
       "tagline": "",
-      "accent": "#A56A7C",
-      "records": 2,
-      "main_records": 2,
-      "companies": 2,
-      "verified": 2,
-      "latest_year": 2024,
+      "accent": "#C58B5C",
+      "records": 5,
+      "main_records": 4,
+      "companies": 4,
+      "verified": 4,
+      "latest_year": 2025,
       "leading_company": "荷兰汉福"
     },
     {
@@ -120,8 +120,7 @@
   "portfolio_matrix": {
     "segments": [
       "EBD 设备类",
-      "PMMA 注射填充剂",
-      "新型材料",
+      "小众材料",
       "玻尿酸",
       "肉毒素",
       "胶原刺激剂",
@@ -135,8 +134,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 8,
           "肉毒素": 1,
           "胶原刺激剂": 1,
@@ -150,8 +148,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 6,
           "肉毒素": 1,
           "胶原刺激剂": 1,
@@ -165,8 +162,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 1,
           "胶原刺激剂": 1,
@@ -180,8 +176,7 @@
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备类": 1,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 1,
@@ -195,8 +190,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 11,
           "肉毒素": 1,
           "胶原刺激剂": 0,
@@ -210,8 +204,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 1,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -225,8 +218,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 0,
           "肉毒素": 1,
           "胶原刺激剂": 2,
@@ -240,8 +232,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 0,
           "肉毒素": 1,
           "胶原刺激剂": 2,
@@ -255,8 +246,7 @@
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 1,
           "肉毒素": 0,
           "胶原刺激剂": 1,
@@ -270,8 +260,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 11,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -285,8 +274,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 5,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -300,8 +288,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -315,8 +302,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -330,8 +316,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 4,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -345,8 +330,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 3,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -360,8 +344,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -375,8 +358,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -390,8 +372,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 3,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 0,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -405,8 +386,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -420,8 +400,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -435,8 +414,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -450,8 +428,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -465,8 +442,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -480,8 +456,7 @@
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备类": 0,
-          "PMMA 注射填充剂": 0,
-          "新型材料": 0,
+          "小众材料": 0,
           "玻尿酸": 2,
           "肉毒素": 0,
           "胶原刺激剂": 0,
@@ -499,7 +474,9 @@
       "重组/类人源胶原",
       "PCL",
       "CaHA",
-      "PMMA"
+      "PMMA",
+      "琼脂糖 / Algeness VL / 面部注射填充剂",
+      "溶脂针 / 注射溶脂 / 去氧胆酸 / 双下巴"
     ],
     "indications": [
       "鼻唇沟",
@@ -637,6 +614,11 @@
         0,
         7,
         1
+      ],
+      [
+        0,
+        8,
+        1
       ]
     ]
   },
@@ -734,8 +716,8 @@
         ]
       },
       {
-        "key": "pmma",
-        "name": "PMMA 注射填充剂",
+        "key": "niche_materials",
+        "name": "小众材料",
         "data": [
           0,
           0,
@@ -1075,7 +1057,7 @@
         "id": "PMMA-国械注进20163132859",
         "track": "raw_pmma",
         "track_name": "PMMA 注射填充剂",
-        "strategic": "PMMA 注射填充剂",
+        "strategic": "小众材料",
         "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
         "company": "荷兰汉福",
         "company_key": "荷兰汉福",
@@ -1098,7 +1080,7 @@
         "verified": true,
         "main_landscape": true,
         "portfolio_segments": [
-          "PMMA 注射填充剂"
+          "小众材料"
         ],
         "source_account": "公众号汇总/NMPA校准",
         "source_title": "胶原蛋白汇总文章交叉校准",
@@ -2204,23 +2186,33 @@
         }
       ]
     },
-    "pmma": {
-      "track_name": "PMMA 注射填充剂",
-      "total_certs": 2,
-      "company_count": 2,
-      "hhi": 5000.0,
+    "niche_materials": {
+      "track_name": "小众材料",
+      "total_certs": 4,
+      "company_count": 4,
+      "hhi": 2500.0,
       "cr4": 100.0,
       "cr8": 100.0,
       "top": [
         {
           "company": "荷兰汉福",
           "certs": 1,
-          "share": 50.0
+          "share": 25.0
         },
         {
           "company": "Suneva",
           "certs": 1,
-          "share": 50.0
+          "share": 25.0
+        },
+        {
+          "company": "兰州生物技术开发有限公司（代理）",
+          "certs": 1,
+          "share": 25.0
+        },
+        {
+          "company": "南京迈诺威医药科技有限公司",
+          "certs": 1,
+          "share": 25.0
         }
       ]
     },

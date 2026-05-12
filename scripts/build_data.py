@@ -22,18 +22,24 @@ TRACK_META = [
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#B5915A"},
     {"key": "plla",       "name": "童颜针 / PLLA",       "tagline": "", "accent": "#8B5A6B"},
     {"key": "pcl",        "name": "少女针 / PCL",        "tagline": "", "accent": "#C15F3C"},
-    {"key": "pmma",       "name": "PMMA 注射填充剂",     "tagline": "", "accent": "#A56A7C"},
+    {"key": "niche_materials", "name": "小众材料",       "tagline": "", "accent": "#C58B5C"},
     {"key": "caha",       "name": "羟基磷酸钙 / CaHA",   "tagline": "", "accent": "#5B7B9A"},
     {"key": "botulinum",  "name": "肉毒毒素",           "tagline": "", "accent": "#8B9D7F"},
     {"key": "ebd",        "name": "EBD 设备类",          "tagline": "", "accent": "#6E6A65"},
 ]
 TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 
-# How CSV `track` codes map onto the seven strategic tracks above.
+# How CSV `track` codes map onto the surfaced strategic tracks above.
 EBD_TRACKS = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl",
               "body_contouring_device", "raw_thermage_rf"}
-EMERGING_TRACKS = {"raw_agarose", "raw_ecm", "raw_lipolysis_injection"}
-PMMA_TRACKS = {"raw_pmma"}
+NICHE_MATERIAL_TRACKS = {
+    "raw_pmma",
+    "raw_agarose",
+    "raw_ecm",
+    "raw_lipolysis_injection",
+    "raw_silk",
+    "silk_protein",
+}
 
 
 def load_rows() -> list[dict]:
@@ -42,12 +48,12 @@ def load_rows() -> list[dict]:
 
 
 def classify_track(row: dict) -> str | None:
-    """Return one of the 7 surfaced track keys, or None for emerging-only rows."""
+    """Return one of the surfaced track keys, or None for background-only rows."""
     t = (row.get("track") or "").strip()
     if t in {"ha", "plla", "pcl", "caha", "collagen", "botulinum"}:
         return t
-    if t in PMMA_TRACKS:
-        return "pmma"
+    if t in NICHE_MATERIAL_TRACKS:
+        return "niche_materials"
     if t in EBD_TRACKS:
         return "ebd"
     return None
@@ -73,6 +79,12 @@ def parse_date(value: str) -> date | None:
 
 def safe_strip(value: str | None) -> str:
     return (value or "").strip()
+
+
+def write_json(path: Path, payload: dict) -> None:
+    with path.open("w", encoding="utf-8", newline="\r\n") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+        f.write("\n")
 
 
 def ui_term(value: str | None) -> str:
@@ -293,7 +305,7 @@ def portfolio_matrix(records: list[dict]) -> dict:
 def indication_heatmap(records: list[dict]) -> dict:
     """Material family × primary indication, restricted to injectable tracks."""
     main = [r for r in records
-            if r["main_landscape"] and r["track"] in {"ha", "plla", "pcl", "caha", "collagen", "raw_pmma", "botulinum"}
+            if r["main_landscape"] and r["track"] in {"ha", "plla", "pcl", "caha", "collagen", "raw_pmma", "raw_agarose", "raw_lipolysis_injection", "botulinum"}
             and r["material_family"] and r["primary_indication"]]
     materials_count = Counter(r["material_family"] for r in main)
     indications_count = Counter(r["primary_indication"] for r in main)
@@ -346,7 +358,7 @@ def cert_expiry(records: list[dict]) -> dict:
         by_quarter_track[label][track] += 1
         upcoming.append({**{k: v for k, v in r.items() if k != "_raw"}, "days_to_expiry": (d - today).days})
     upcoming.sort(key=lambda r: r["days_to_expiry"])
-    series_keys = ["ha", "collagen", "plla", "pcl", "pmma", "caha", "botulinum", "ebd"]
+    series_keys = ["ha", "collagen", "plla", "pcl", "niche_materials", "caha", "botulinum", "ebd"]
     series = []
     for k in series_keys:
         series.append({
@@ -382,7 +394,7 @@ def origin_evolution(records: list[dict]) -> dict:
 def concentration(records: list[dict]) -> dict:
     """Per-track HHI + CR4/CR8 by company group."""
     out = {}
-    for tk in ["ha", "collagen", "plla", "pcl", "pmma", "caha", "botulinum", "ebd"]:
+    for tk in ["ha", "collagen", "plla", "pcl", "niche_materials", "caha", "botulinum", "ebd"]:
         recs = [r for r in records if r["main_landscape"] and classify_track(r["_raw"]) == tk]
         total = len(recs)
         if total == 0:
@@ -506,8 +518,7 @@ def main() -> None:
         "origin_evolution": origin_evolution(records),
         "concentration": concentration(records),
     }
-    (OUT_DIR / "overview.json").write_text(
-        json.dumps(overview, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_json(OUT_DIR / "overview.json", overview)
 
     manifest = {
         "generated_at": csv_mtime.isoformat(timespec="seconds"),
@@ -518,13 +529,11 @@ def main() -> None:
             for meta in TRACK_META
         ],
     }
-    (OUT_DIR / "manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_json(OUT_DIR / "manifest.json", manifest)
 
     for meta in TRACK_META:
         payload = per_track_payload(records, meta["key"])
-        (TRACK_DIR / f"{meta['key']}.json").write_text(
-            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        write_json(TRACK_DIR / f"{meta['key']}.json", payload)
 
     print(f"wrote overview ({len(records)} records, {overview['kpi']['main_records']} in main)")
     for meta in TRACK_META:

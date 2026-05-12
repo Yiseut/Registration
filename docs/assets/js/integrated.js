@@ -12,17 +12,15 @@
     { code: 'collagen', name: '胶原', fullName: '胶原蛋白', color: '#B5915A', href: 'tracks/collagen.html' },
     { code: 'plla', name: 'PLLA', fullName: '童颜针 / PLLA', color: '#8B5A6B', href: 'tracks/plla.html' },
     { code: 'pcl', name: 'PCL', fullName: '少女针 / PCL', color: '#C15F3C', href: 'tracks/pcl.html' },
-    { code: 'pmma', name: 'PMMA', fullName: 'PMMA 注射填充剂', color: '#A56A7C', href: 'tracks/pmma.html' },
+    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#C58B5C', href: 'tracks/niche_materials.html' },
     { code: 'caha', name: 'CaHA', fullName: '羟基磷酸钙 / CaHA', color: '#5B7B9A', href: 'tracks/caha.html' },
     { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8B9D7F', href: 'tracks/botulinum.html' },
     { code: 'ebd', name: 'EBD', fullName: 'EBD 设备类', color: '#6E6A65', href: 'tracks/ebd.html' },
-    { code: 'new_materials', name: '新型材料', fullName: '新型材料', color: '#C58B5C', href: null },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
   const EBD_TRACKS = new Set(['raw_rf', 'raw_thermage_rf', 'raw_ultrasound', 'raw_microneedle', 'rf', 'ultrasound', 'laser_ipl', 'body_contouring_device']);
-  const PMMA_TRACKS = new Set(['raw_pmma']);
-  const NEW_MATERIAL_TRACKS = new Set(['raw_agarose', 'raw_lipolysis_injection', 'raw_ecm', 'raw_silk', 'silk_protein']);
+  const NICHE_MATERIAL_TRACKS = new Set(['raw_pmma', 'raw_agarose', 'raw_lipolysis_injection', 'raw_ecm', 'raw_silk', 'silk_protein']);
   const cloudRecords = cloudTrackPayloads.flatMap((payload) => payload.records || []).filter(includeCloudInLandscape);
   const cloudMaterialRecords = cloudRecords.filter((record) => !isDeviceRecord(record));
   const legacyData = window.REGISTRATION_OVERVIEW_DATA || { records: [], pipelineSignals: [] };
@@ -986,9 +984,8 @@
     if (SEGMENT_BY_CODE[raw]) return raw;
     const track = (record.track || '').trim();
     if (SEGMENT_BY_CODE[track]) return track;
-    if (PMMA_TRACKS.has(track)) return 'pmma';
     if (EBD_TRACKS.has(track) || record.board === 'device') return 'ebd';
-    if (NEW_MATERIAL_TRACKS.has(track)) return 'new_materials';
+    if (NICHE_MATERIAL_TRACKS.has(track)) return 'niche_materials';
     return 'other';
   }
 

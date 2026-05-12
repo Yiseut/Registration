@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T18:02:32",
+  "generated_at": "2026-05-12T18:32:11",
   "tracks": [
     {
       "key": "ha",
@@ -34,12 +34,12 @@
       "data_url": "assets/data/tracks/pcl.json"
     },
     {
-      "key": "pmma",
-      "name": "PMMA 注射填充剂",
+      "key": "niche_materials",
+      "name": "小众材料",
       "tagline": "",
-      "accent": "#A56A7C",
-      "url": "tracks/pmma.html",
-      "data_url": "assets/data/tracks/pmma.json"
+      "accent": "#C58B5C",
+      "url": "tracks/niche_materials.html",
+      "data_url": "assets/data/tracks/niche_materials.json"
     },
     {
       "key": "caha",
