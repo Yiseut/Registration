@@ -6,8 +6,8 @@
 
 - 项目目录：`E:\shared\code\registration-insights-integrated`
 - 本地页面：`http://127.0.0.1:8781/`
-- 当前首页缓存：`20260513-remove-botulinum-business-78`
-- 当前子赛道页缓存：`20260513-remove-botulinum-business-78`
+- 当前首页缓存：`20260513-caha-trim-low-info-79`
+- 当前子赛道页缓存：`20260513-caha-trim-low-info-79`
 - 启动脚本：`Open-Dashboard.bat`
 
 不要直接改：

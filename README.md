@@ -53,8 +53,8 @@ python -m http.server 8781 --bind 127.0.0.1
 
 ## 当前缓存版本
 
-- 首页脚本：`20260513-remove-botulinum-business-78`
-- 子赛道页 `track.js`：`20260513-remove-botulinum-business-78`
+- 首页脚本：`20260513-caha-trim-low-info-79`
+- 子赛道页 `track.js`：`20260513-caha-trim-low-info-79`
 
 如果修改前台 JS/CSS，继续递增 query string，方便用户直接刷新当前页面看到新版本。
 
