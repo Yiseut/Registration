@@ -7,16 +7,19 @@ set "DST_CSV=data\registration_records_master.csv"
 set "PAGES_URL=https://yiseut.github.io/Registration/"
 set "REMOTE_URL=https://github.com/Yiseut/Registration.git"
 
-title Registration Landscape -- Refresh and Publish
+title Registration Landscape -- Publish Webpage
 echo.
 echo =====================================================
-echo   Registration Landscape -- Refresh and Publish
+echo   Registration Landscape -- Publish Webpage
 echo   %date% %time%
 echo =====================================================
 echo.
-echo This will refresh the integrated dashboard, commit webpage/data changes,
+echo This will publish the integrated dashboard from the current master CSV,
+echo commit webpage/data changes,
 echo and push to:
 echo   %REMOTE_URL%
+echo.
+echo It does NOT crawl WeChat, extract new leads, or run official verification.
 echo.
 echo The videos, output, test-results, and Playwright cache folders are excluded.
 echo.
