@@ -23,11 +23,16 @@ echo It does NOT crawl WeChat, extract new leads, or run official verification.
 echo.
 echo The videos, output, test-results, and Playwright cache folders are excluded.
 echo.
-set /p CONFIRM=Type PUSH to continue, or press Enter to cancel: 
+if /I "%AUTO_CONFIRM_PUSH%"=="1" (
+  set "CONFIRM=PUSH"
+  echo Auto-confirming publish because AUTO_CONFIRM_PUSH=1.
+) else (
+  set /p CONFIRM=Type PUSH to continue, or press Enter to cancel: 
+)
 if /I not "%CONFIRM%"=="PUSH" (
   echo.
   echo Cancelled. Nothing was changed or pushed.
-  pause
+  if /I not "%AUTO_PUBLISH_QUIET%"=="1" pause
   exit /b 0
 )
 echo.
@@ -98,6 +103,10 @@ echo       Pushed. GitHub Pages will rebuild in 1-2 minutes.
 echo.
 
 :done_open
+if /I "%AUTO_PUBLISH_QUIET%"=="1" (
+  echo Done. Pages may take ~90s to reflect the new data.
+  exit /b 0
+)
 echo Opening %PAGES_URL% in your default browser...
 start "" "%PAGES_URL%"
 echo.
@@ -108,6 +117,10 @@ exit /b 0
 
 :done_no_change
 echo.
+if /I "%AUTO_PUBLISH_QUIET%"=="1" (
+  echo No site changes since last sync. Nothing to publish.
+  exit /b 0
+)
 echo Opening %PAGES_URL% in your default browser...
 start "" "%PAGES_URL%"
 echo.
@@ -119,5 +132,5 @@ exit /b 0
 echo.
 echo *** SYNC FAILED at the previous step. ***
 echo.
-pause
+if /I not "%AUTO_PUBLISH_QUIET%"=="1" pause
 exit /b 1
