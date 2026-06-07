@@ -7,9 +7,12 @@
 <link rel="icon" href="data:," />
 <meta name="description" content="中国医美市场准入市场格局 Dashboard，覆盖材料赛道、厂家竞争、适应证布局和注册趋势。" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<link rel="stylesheet" href="assets/css/theme.css?v=20260513-ebd-energy-redesign-84" />
-<link rel="stylesheet" href="assets/css/integrated.css?v=20260513-ebd-energy-redesign-84" />
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
+<link rel="stylesheet" href="assets/css/theme.css?v=20260607-china-map" />
+<link rel="stylesheet" href="assets/css/integrated.css?v=20260607-china-map" />
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
 </head>
 <body>
 
@@ -43,6 +46,32 @@
     <div class="meta">
       <span>● 数据截至 <span id="meta-generated">—</span></span>
       <span>● <span id="meta-records">—</span> 条注册记录</span>
+    </div>
+  </section>
+
+  <section class="card lift china-map-card rise rise-1" id="china-enterprise-map-section">
+    <div class="china-map-head">
+      <div>
+        <span class="map-kicker">China atlas · 注册主体城市</span>
+        <h2>中国医美注册企业分布</h2>
+        <p>按国产/中国注册主体聚合注册证所在地城市，进口注册人不计入中国企业分布。</p>
+      </div>
+      <div class="china-map-metrics" aria-label="地图核心指标">
+        <div><b id="china-map-cities">—</b><span>城市</span></div>
+        <div><b id="china-map-companies">—</b><span>注册主体</span></div>
+        <div><b id="china-map-records">—</b><span>注册证</span></div>
+      </div>
+    </div>
+    <div class="china-map-layout">
+      <div id="china-enterprise-map" class="china-enterprise-map" aria-label="中国医美注册企业城市分布地图"></div>
+      <aside class="china-city-rank" aria-label="企业城市排行">
+        <div class="rank-title">城市集群 Top 8</div>
+        <div id="china-city-rank-list"></div>
+      </aside>
+    </div>
+    <div class="china-map-foot">
+      <span>圆点大小 = 注册证数</span>
+      <span>城市来源：注册人名称识别 + 维护映射 + 省级推断</span>
     </div>
   </section>
 
@@ -272,6 +301,6 @@
 
 <script src="assets/js/core.js?v=20260513-ebd-energy-redesign-84"></script>
 <script src="assets/js/codex-data.js?v=20260513-ebd-energy-redesign-84"></script>
-<script src="assets/js/integrated.js?v=20260513-ebd-energy-redesign-84"></script>
+<script src="assets/js/integrated.js?v=20260607-china-map"></script>
 </body>
 </html>

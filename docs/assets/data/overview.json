@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-06-02T20:36:14",
+  "generated_at": "2026-06-04T19:36:20",
   "kpi": {
-    "total_records": 217,
-    "main_records": 176,
+    "total_records": 221,
+    "main_records": 180,
     "excluded": 41,
-    "companies": 93,
-    "indications": 39,
+    "companies": 97,
+    "indications": 49,
     "verified_share": 98.9,
     "domestic": 99,
-    "imported": 71,
+    "imported": 75,
     "hkmt": 6,
     "injectable_class3": 146,
     "injectable_class3_breakdown": "HA108 / 胶原蛋白18 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
-    "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 15 类",
-    "recent_12mo": 56,
-    "recent_12mo_share": 25.8,
-    "recent_12mo_breakdown": "HA25 / EBD13 / 胶原蛋白8 / PLA5"
+    "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 25 类",
+    "recent_12mo": 53,
+    "recent_12mo_share": 24.0,
+    "recent_12mo_breakdown": "HA25 / EBD11 / 胶原蛋白7 / PLA5"
   },
   "segments": [
     {
@@ -109,10 +109,10 @@
       "name": "EBD 设备",
       "tagline": "",
       "accent": "#6E6A65",
-      "records": 29,
-      "main_records": 21,
-      "companies": 18,
-      "verified": 21,
+      "records": 33,
+      "main_records": 25,
+      "companies": 22,
+      "verified": 25,
       "latest_year": 2026,
       "leading_company": "深圳半岛医疗集团股份有限公司"
     }
@@ -777,8 +777,8 @@
           1,
           0,
           0,
-          0,
-          0,
+          1,
+          1,
           0,
           0,
           0,
@@ -833,7 +833,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 21
+        "days_to_expiry": 16
       },
       {
         "id": "PLLA-国械注准20213130460",
@@ -877,7 +877,7 @@
         "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
         "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
         "confidence": "",
-        "days_to_expiry": 21
+        "days_to_expiry": 16
       },
       {
         "id": "COLLAGEN-国械注准20213130488",
@@ -921,7 +921,7 @@
         "source_title": "胶原蛋白汇总文章交叉校准",
         "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
         "confidence": "",
-        "days_to_expiry": 25
+        "days_to_expiry": 20
       },
       {
         "id": "HA-国械注许20163130035-鼻唇沟",
@@ -969,7 +969,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 29
+        "days_to_expiry": 24
       },
       {
         "id": "HA-国械注准20173133254-鼻唇沟",
@@ -1017,7 +1017,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 42
+        "days_to_expiry": 37
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -1067,7 +1067,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 140
+        "days_to_expiry": 135
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -1112,7 +1112,7 @@
         "source_title": "胶原蛋白汇总文章交叉校准",
         "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
         "confidence": "",
-        "days_to_expiry": 145
+        "days_to_expiry": 140
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1156,7 +1156,7 @@
         "source_title": "UDI 胶原蛋白赛道召回样本",
         "source_url": "https://fiman.com/",
         "confidence": "",
-        "days_to_expiry": 153
+        "days_to_expiry": 148
       },
       {
         "id": "HA-国械注进20213130485-鼻部",
@@ -1206,7 +1206,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 176
+        "days_to_expiry": 171
       },
       {
         "id": "HA-国械注进20213130485-颞部",
@@ -1256,7 +1256,7 @@
         "source_title": "乔雅登丰颜获批新适应证，改善颞部凹陷",
         "source_url": "https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
         "confidence": "high",
-        "days_to_expiry": 176
+        "days_to_expiry": 171
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1304,7 +1304,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 272
+        "days_to_expiry": 267
       },
       {
         "id": "HA-国械注进20223130141-鼻部",
@@ -1354,7 +1354,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 280
+        "days_to_expiry": 275
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1402,7 +1402,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 313
+        "days_to_expiry": 308
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1450,7 +1450,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 313
+        "days_to_expiry": 308
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1498,7 +1498,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 321
+        "days_to_expiry": 316
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1548,7 +1548,7 @@
         "source_title": "射频治疗仪 国械注准20223090571 NMPA 医疗器械注册证",
         "source_url": "https://www.nmpa.gov.cn/",
         "confidence": "official",
-        "days_to_expiry": 330
+        "days_to_expiry": 325
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1596,7 +1596,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 353
+        "days_to_expiry": 348
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -1644,7 +1644,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 393
+        "days_to_expiry": 388
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -1692,7 +1692,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 403
+        "days_to_expiry": 398
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -1743,7 +1743,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 461
+        "days_to_expiry": 456
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -1791,7 +1791,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 509
+        "days_to_expiry": 504
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -1839,7 +1839,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 559
+        "days_to_expiry": 554
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -1889,7 +1889,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 589
+        "days_to_expiry": 584
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -1939,7 +1939,58 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 589
+        "days_to_expiry": 584
+      },
+      {
+        "id": "RAW-LASER_IPL-国械注进20183011604",
+        "track": "laser_ipl",
+        "track_name": "激光/IPL设备",
+        "strategic": "EBD 设备",
+        "brand": "Lavieen / 焕颜光",
+        "aliases": "",
+        "product_name": "掺铥光纤激光治疗仪Thulium Laser Device",
+        "company": "韩国元泰株式会社WON TECH Co.,Ltd.",
+        "company_key": "韩国元泰株式会社won tech co.,ltd.",
+        "registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
+        "certificate_no": "国械注进20183011604",
+        "origin": "进口",
+        "category": "激光/IPL设备",
+        "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性皮肤色素性病变",
+        "material_form": "",
+        "approval_date": "2022-09-30",
+        "approval_year": 2018,
+        "valid_until": "2028-01-31",
+        "primary_indication": "良性皮肤色素性病变",
+        "indications": [
+          "良性皮肤色素性病变"
+        ],
+        "tags": [
+          "激光",
+          "IPL设备",
+          "三类医疗器械",
+          "进口",
+          "NMPA官方核验",
+          "良性皮肤色素性病变"
+        ],
+        "official_status": "verified",
+        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+        "official_product_name": "掺铥光纤激光治疗仪Thulium Laser Device",
+        "official_registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
+        "official_approval_date": "2022-09-30",
+        "official_valid_until": "2028-01-31",
+        "official_indication": "手部",
+        "official_scope": "该产品用于皮肤组织的汽化、凝固、照射，临床用于良性皮肤色素性病变。",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "EBD 设备"
+        ],
+        "source_account": "NMPA 官方查询",
+        "source_title": "掺铥光纤激光治疗仪Thulium Laser Device 国械注进20183011604 NMPA 医疗器械注册证",
+        "source_url": "https://www.nmpa.gov.cn/",
+        "confidence": "official",
+        "days_to_expiry": 603
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -1987,7 +2038,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 620
+        "days_to_expiry": 615
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -2035,7 +2086,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 620
+        "days_to_expiry": 615
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -2083,7 +2134,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 643
+        "days_to_expiry": 638
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -2133,7 +2184,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 659
+        "days_to_expiry": 654
       },
       {
         "id": "HA-国械注准20183130109-鼻唇沟",
@@ -2181,55 +2232,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 664
-      },
-      {
-        "id": "HA-国械注进20233130150-鼻唇沟",
-        "track": "ha",
-        "track_name": "透明质酸钠",
-        "strategic": "玻尿酸",
-        "brand": "注射用交联透明质酸钠凝胶 A-Viearchee",
-        "aliases": "",
-        "product_name": "注射用交联透明质酸钠凝胶 A-Viearchee",
-        "company": "（株）爱思尔有限公司 SCL CO., LTD.",
-        "company_key": "（株）爱思尔有限公司 scl co., ltd.",
-        "registrant": "（株）爱思尔有限公司 SCL CO., LTD.",
-        "certificate_no": "国械注进20233130150",
-        "origin": "进口",
-        "category": "透明质酸钠",
-        "material_family": "透明质酸钠 / 玻尿酸",
-        "material_form": "交联HA填充凝胶",
-        "approval_date": "2024-04-29",
-        "approval_year": 2024,
-        "valid_until": "2028-04-18",
-        "primary_indication": "鼻唇沟",
-        "indications": [
-          "鼻唇沟"
-        ],
-        "tags": [
-          "注射填充类",
-          "进口",
-          "交联"
-        ],
-        "official_status": "verified",
-        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-        "official_product_name": "注射用交联透明质酸钠凝胶A-Viearchee",
-        "official_registrant": "（株）爱思尔有限公司SCL CO.,LTD.",
-        "official_approval_date": "2024-04-29",
-        "official_valid_until": "2028-04-18",
-        "official_indication": "鼻唇沟",
-        "official_scope": "该产品用于面部真皮组织中层注射以纠正中重度鼻唇沟皱纹。",
-        "verified": true,
-        "main_landscape": true,
-        "portfolio_segments": [
-          "玻尿酸"
-        ],
-        "source_account": "闲话医与美",
-        "source_title": "玻尿酸的2025：医美再无械3神话",
-        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
-        "confidence": "high",
-        "days_to_expiry": 686
+        "days_to_expiry": 659
       }
     ]
   },
@@ -2237,6 +2240,8 @@
     "years": [
       2014,
       2015,
+      2017,
+      2018,
       2020,
       2021,
       2022,
@@ -2249,6 +2254,8 @@
       {
         "name": "国产",
         "data": [
+          0,
+          0,
           0,
           0,
           0,
@@ -2265,11 +2272,13 @@
         "data": [
           1,
           1,
-          2,
+          1,
+          1,
+          3,
           8,
           5,
           11,
-          22,
+          23,
           17,
           3
         ]
@@ -2277,6 +2286,8 @@
       {
         "name": "港澳台",
         "data": [
+          0,
+          0,
           0,
           0,
           0,
@@ -2291,6 +2302,8 @@
       {
         "name": "未标注",
         "data": [
+          0,
+          0,
           0,
           0,
           0,
@@ -2572,51 +2585,51 @@
     },
     "ebd": {
       "track_name": "EBD 设备",
-      "total_certs": 21,
-      "company_count": 18,
-      "hhi": 658.0,
-      "cr4": 33.3,
-      "cr8": 52.4,
+      "total_certs": 25,
+      "company_count": 22,
+      "hhi": 528.0,
+      "cr4": 28.0,
+      "cr8": 44.0,
       "top": [
         {
           "company": "深圳半岛医疗集团股份有限公司",
           "certs": 3,
-          "share": 14.3
+          "share": 12.0
         },
         {
           "company": "深圳市宗匠科技有限公司",
           "certs": 2,
-          "share": 9.5
+          "share": 8.0
         },
         {
           "company": "杭州时光机智能电子科技有限公司",
           "certs": 1,
-          "share": 4.8
+          "share": 4.0
         },
         {
           "company": "上海维脉医疗科技有限公司",
           "certs": 1,
-          "share": 4.8
+          "share": 4.0
         },
         {
           "company": "深圳宇石科技有限公司",
           "certs": 1,
-          "share": 4.8
+          "share": 4.0
         },
         {
           "company": "乐普医疗",
           "certs": 1,
-          "share": 4.8
+          "share": 4.0
         },
         {
           "company": "杭州瑞彼加医疗科技有限公司",
           "certs": 1,
-          "share": 4.8
+          "share": 4.0
         },
         {
           "company": "深圳金茉科技有限公司",
           "certs": 1,
-          "share": 4.8
+          "share": 4.0
         }
       ]
     }

@@ -3,6 +3,7 @@
 (async function initIntegratedDashboard() {
   const { palette, SERIES_COLORS, showRecords, escape, loadJSON, watchKpis, crystalCssHeatVars } = window.RI;
   const cloudData = await loadJSON('assets/data/overview.json');
+  const chinaMapData = await loadJSON('assets/data/china_enterprise_map.json');
   const manifest = await loadJSON('assets/data/manifest.json');
   const cloudTrackPayloads = await Promise.all(
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
@@ -51,6 +52,7 @@
 
   renderMeta();
   renderKpis();
+  renderChinaEnterpriseMap(chinaMapData);
   renderSegments();
   renderTrend();
   renderInjectableStructure();
@@ -163,6 +165,134 @@
     setKpi('kpi-recent', kpi.recent_12mo);
     setText('kpi-recent-share', kpi.recent_12mo_share ?? '—');
     setText('kpi-recent-breakdown', formatRecentBreakdown(kpi.recent_12mo_breakdown));
+  }
+
+  function renderChinaEnterpriseMap(mapData) {
+    const holder = document.getElementById('china-enterprise-map');
+    const rankRoot = document.getElementById('china-city-rank-list');
+    const cities = (mapData?.cities || [])
+      .filter((city) => Number.isFinite(Number(city.lat)) && Number.isFinite(Number(city.lng)));
+    const metrics = mapData?.metrics || {};
+    setText('china-map-cities', metrics.mapped_cities ?? cities.length);
+    setText('china-map-companies', metrics.mapped_companies ?? cities.reduce((sum, city) => sum + Number(city.companies || 0), 0));
+    setText('china-map-records', metrics.mapped_records ?? cities.reduce((sum, city) => sum + Number(city.registrations || 0), 0));
+
+    if (rankRoot) {
+      rankRoot.innerHTML = cities.slice(0, 8).map((city, index) => `
+        <button type="button" class="china-rank-row" data-city="${escape(city.city)}">
+          <span class="rank-index">${index + 1}</span>
+          <span class="rank-city">
+            <b>${escape(city.city)}</b>
+            <em>${escape(city.province || '')} · ${escape(city.leading_track || '未标注')}</em>
+          </span>
+          <span class="rank-count">
+            <b>${Number(city.companies || 0).toLocaleString()}</b>
+            <em>家</em>
+          </span>
+        </button>
+      `).join('');
+    }
+
+    if (!holder) return;
+    if (!cities.length || typeof L === 'undefined') {
+      holder.innerHTML = '<div class="china-map-empty">地图数据待生成</div>';
+      return;
+    }
+
+    const map = L.map(holder, {
+      center: [35.4, 103.8],
+      zoom: 4,
+      minZoom: 3,
+      maxZoom: 8,
+      zoomControl: false,
+      scrollWheelZoom: false,
+      attributionControl: true,
+    });
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 10,
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+    }).addTo(map);
+
+    const maxRegistrations = Math.max(...cities.map((city) => Number(city.registrations || 0)), 1);
+    const markerByCity = new Map();
+    const bounds = L.latLngBounds([]);
+
+    cities.forEach((city) => {
+      const registrations = Number(city.registrations || 0);
+      const color = cityTrackColor(city.leading_track);
+      const radius = Math.max(7, Math.min(26, 7 + Math.sqrt(registrations / maxRegistrations) * 21));
+      const marker = L.circleMarker([Number(city.lat), Number(city.lng)], {
+        radius,
+        color: '#fffaf3',
+        weight: 1.8,
+        fillColor: color,
+        fillOpacity: 0.72,
+        opacity: 1,
+        className: 'china-city-marker',
+      })
+        .bindTooltip(`${city.city} · ${city.companies} 家企业 · ${city.registrations} 张注册证`, {
+          direction: 'top',
+          opacity: 0.95,
+        })
+        .bindPopup(cityPopupHtml(city), {
+          closeButton: false,
+          maxWidth: 300,
+          className: 'china-map-popup-shell',
+        })
+        .addTo(map);
+      markerByCity.set(city.city, marker);
+      bounds.extend([Number(city.lat), Number(city.lng)]);
+    });
+
+    if (bounds.isValid()) {
+      map.fitBounds(bounds.pad(0.18), { maxZoom: 5, animate: false });
+    }
+    setTimeout(() => map.invalidateSize(), 0);
+    window.addEventListener('resize', () => map.invalidateSize());
+
+    rankRoot?.querySelectorAll('.china-rank-row').forEach((row) => {
+      row.addEventListener('click', () => {
+        const marker = markerByCity.get(row.dataset.city);
+        if (!marker) return;
+        const latLng = marker.getLatLng();
+        map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
+        marker.openPopup();
+      });
+    });
+  }
+
+  function cityPopupHtml(city) {
+    const companyRows = (city.companies_sample || []).slice(0, 5).map((company) => `
+      <li>
+        <span>${escape(company.name || '未公开')}</span>
+        <b>${Number(company.records || 0).toLocaleString()}</b>
+      </li>
+    `).join('');
+    const trackRows = (city.tracks || []).slice(0, 4).map((track) => `
+      <span>${escape(track.name)} ${Number(track.records || 0).toLocaleString()}</span>
+    `).join('');
+    return `
+      <div class="china-map-popup">
+        <div class="popup-title">${escape(city.city)} · ${escape(city.province || '')}</div>
+        <div class="popup-meta">${Number(city.companies || 0).toLocaleString()} 家注册主体 · ${Number(city.registrations || 0).toLocaleString()} 张注册证</div>
+        <div class="popup-tags">${trackRows}</div>
+        <ul>${companyRows || '<li><span>暂无企业样本</span><b>—</b></li>'}</ul>
+      </div>
+    `;
+  }
+
+  function cityTrackColor(trackName) {
+    const label = String(trackName || '');
+    if (/玻尿酸|透明质酸/.test(label)) return SEGMENT_BY_CODE.ha.color;
+    if (/肉毒/.test(label)) return SEGMENT_BY_CODE.botulinum.color;
+    if (/胶原蛋白/.test(label)) return SEGMENT_BY_CODE.collagen.color;
+    if (/胶原刺激剂|PLA/.test(label)) return SEGMENT_BY_CODE.plla.color;
+    if (/PCL/.test(label)) return SEGMENT_BY_CODE.pcl.color;
+    if (/CaHA|羟基磷酸钙/.test(label)) return SEGMENT_BY_CODE.caha.color;
+    if (/EBD|设备|光电/.test(label)) return SEGMENT_BY_CODE.ebd.color;
+    const segment = SEGMENTS.find((item) => item.name === trackName || item.fullName === trackName);
+    return segment?.color || '#8B5A6B';
   }
 
   function renderSegments() {

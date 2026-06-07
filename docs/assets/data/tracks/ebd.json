@@ -7,13 +7,13 @@
     "accent": "#6E6A65"
   },
   "kpi": {
-    "total": 29,
-    "main": 21,
-    "companies": 18,
-    "indications": 15,
-    "verified": 21,
+    "total": 33,
+    "main": 25,
+    "companies": 22,
+    "indications": 25,
+    "verified": 25,
     "domestic": 18,
-    "imported": 3,
+    "imported": 7,
     "hkmt": 0
   },
   "company_share": [
@@ -66,18 +66,18 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 6,
+  "long_tail_company_count": 10,
   "indication_share": [
     {
       "name": "面部轻度皱纹",
       "value": 10
     },
     {
-      "name": "面部轻中度皱纹",
-      "value": 3
+      "name": "手部",
+      "value": 7
     },
     {
-      "name": "手部",
+      "name": "面部轻中度皱纹",
       "value": 3
     },
     {
@@ -97,6 +97,10 @@
       "value": 2
     },
     {
+      "name": "文身祛除",
+      "value": 2
+    },
+    {
       "name": "中上面部轻中度皱纹",
       "value": 1
     },
@@ -111,10 +115,6 @@
     {
       "name": "轮廓",
       "value": 1
-    },
-    {
-      "name": "吸脂术前脂肪软化",
-      "value": 1
     }
   ],
   "origin_share": [
@@ -124,7 +124,7 @@
     },
     {
       "name": "进口",
-      "value": 3
+      "value": 7
     }
   ],
   "material_share": [
@@ -161,11 +161,19 @@
       "value": 1
     },
     {
-      "name": "热玛吉 / Thermage CPT / 单极射频 / 射频治疗仪",
+      "name": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 黑色文身祛除/黄褐斑辅助改善",
       "value": 1
     },
     {
-      "name": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
+      "name": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 日光性黑子/文身/黄褐斑",
+      "value": 1
+    },
+    {
+      "name": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性皮肤色素性病变",
+      "value": 1
+    },
+    {
+      "name": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性色素性病变/文身祛除",
       "value": 1
     }
   ],
@@ -173,6 +181,9 @@
     "years": [
       2014,
       2015,
+      2017,
+      2018,
+      2020,
       2022,
       2024,
       2025,
@@ -182,7 +193,10 @@
       1,
       1,
       1,
-      5,
+      1,
+      1,
+      1,
+      6,
       9,
       4
     ]
@@ -209,8 +223,7 @@
       "中下面部/颏下/颈部皮肤松弛",
       "颈部皮肤松弛",
       "颏下",
-      "中上面部轻中度皱纹",
-      "面部萎缩性痤疮瘢痕"
+      "中上面部轻中度皱纹"
     ],
     "cells": [
       [
@@ -266,11 +279,6 @@
       [
         1,
         5,
-        1
-      ],
-      [
-        8,
-        0,
         1
       ],
       [
@@ -1235,6 +1243,214 @@
       ],
       "source_account": "NMPA 官方查询",
       "source_title": "Nd:YAG皮秒激光治疗仪 国械注准20253092690 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注进20243090658",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "strategic": "EBD 设备",
+      "brand": "Picocare Majesty / 冰皮",
+      "aliases": "",
+      "product_name": "皮秒Nd:YAG激光治疗仪Q-Switched Nd:YAG Laser System",
+      "company": "韩国元泰株式会社원텍(주)",
+      "company_key": "韩国元泰株式会社원텍(주)",
+      "registrant": "韩国元泰株式会社원텍(주)",
+      "certificate_no": "国械注进20243090658",
+      "origin": "进口",
+      "category": "激光/IPL设备",
+      "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 黑色文身祛除/黄褐斑辅助改善",
+      "material_form": "",
+      "approval_date": "2024-12-13",
+      "approval_year": 2024,
+      "valid_until": "2029-12-12",
+      "primary_indication": "黑色文身祛除/黄褐斑辅助改善",
+      "indications": [
+        "黑色文身祛除",
+        "黄褐斑辅助改善"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "三类医疗器械",
+        "进口",
+        "NMPA官方核验",
+        "黑色文身祛除",
+        "黄褐斑辅助改善"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "皮秒Nd:YAG激光治疗仪Q-Switched Nd:YAG Laser System",
+      "official_registrant": "韩国元泰株式会社원텍(주)",
+      "official_approval_date": "2024-12-13",
+      "official_valid_until": "2029-12-12",
+      "official_indication": "手部",
+      "official_scope": "在医疗机构使用，利用1064nm波长激光对色素的选择性吸收，用于祛除黑色文身，辅助改善黄褐斑。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "皮秒Nd:YAG激光治疗仪Q-Switched Nd:YAG Laser System 国械注进20243090658 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注进20203090265",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "strategic": "EBD 设备",
+      "brand": "Picocare 450 / 极光皮秒",
+      "aliases": "",
+      "product_name": "Q-开关Nd: YAG皮秒激光治疗仪Q-Switched Nd:YAG Laser System",
+      "company": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
+      "company_key": "韩国元泰株式会社won tech co., ltd. (원텍(주))",
+      "registrant": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
+      "certificate_no": "国械注进20203090265",
+      "origin": "进口",
+      "category": "激光/IPL设备",
+      "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 日光性黑子/文身/黄褐斑",
+      "material_form": "",
+      "approval_date": "2023-05-11",
+      "approval_year": 2020,
+      "valid_until": "2030-05-10",
+      "primary_indication": "日光性黑子/文身/黄褐斑",
+      "indications": [
+        "日光性黑子",
+        "文身",
+        "黄褐斑"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "三类医疗器械",
+        "进口",
+        "NMPA官方核验",
+        "日光性黑子",
+        "文身",
+        "黄褐斑"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "Q-开关Nd: YAG皮秒激光治疗仪Q-Switched Nd:YAG Laser System",
+      "official_registrant": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
+      "official_approval_date": "2023-05-11",
+      "official_valid_until": "2030-05-10",
+      "official_indication": "手部",
+      "official_scope": "532nm波长用于治疗日光性黑子，1064nm波长用于治疗文身和黄褐斑，在医疗机构使用。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "Q-开关Nd: YAG皮秒激光治疗仪Q-Switched Nd:YAG Laser System 国械注进20203090265 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注进20183011604",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "strategic": "EBD 设备",
+      "brand": "Lavieen / 焕颜光",
+      "aliases": "",
+      "product_name": "掺铥光纤激光治疗仪Thulium Laser Device",
+      "company": "韩国元泰株式会社WON TECH Co.,Ltd.",
+      "company_key": "韩国元泰株式会社won tech co.,ltd.",
+      "registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
+      "certificate_no": "国械注进20183011604",
+      "origin": "进口",
+      "category": "激光/IPL设备",
+      "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性皮肤色素性病变",
+      "material_form": "",
+      "approval_date": "2022-09-30",
+      "approval_year": 2018,
+      "valid_until": "2028-01-31",
+      "primary_indication": "良性皮肤色素性病变",
+      "indications": [
+        "良性皮肤色素性病变"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "三类医疗器械",
+        "进口",
+        "NMPA官方核验",
+        "良性皮肤色素性病变"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "掺铥光纤激光治疗仪Thulium Laser Device",
+      "official_registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
+      "official_approval_date": "2022-09-30",
+      "official_valid_until": "2028-01-31",
+      "official_indication": "手部",
+      "official_scope": "该产品用于皮肤组织的汽化、凝固、照射，临床用于良性皮肤色素性病变。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "掺铥光纤激光治疗仪Thulium Laser Device 国械注进20183011604 NMPA 医疗器械注册证",
+      "source_url": "https://www.nmpa.gov.cn/",
+      "confidence": "official"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注进20173096244",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "strategic": "EBD 设备",
+      "brand": "Pastelle / 帕斯特",
+      "aliases": "",
+      "product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
+      "company": "韩国元泰株式会社WON TECH Co., Ltd.",
+      "company_key": "韩国元泰株式会社won tech co., ltd.",
+      "registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+      "certificate_no": "国械注进20173096244",
+      "origin": "进口",
+      "category": "激光/IPL设备",
+      "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性色素性病变/文身祛除",
+      "material_form": "",
+      "approval_date": "2023-04-07",
+      "approval_year": 2017,
+      "valid_until": "2028-04-06",
+      "primary_indication": "良性色素性病变/文身祛除",
+      "indications": [
+        "良性色素性病变",
+        "文身祛除"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "三类医疗器械",
+        "进口",
+        "NMPA官方核验",
+        "良性色素性病变",
+        "文身祛除"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
+      "official_registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+      "official_approval_date": "2023-04-07",
+      "official_valid_until": "2028-04-06",
+      "official_indication": "手部",
+      "official_scope": "该产品用于皮肤组织的汽化和照射，临床用于在医疗机构中进行良性色素性病变的治疗和去除文身。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "NMPA 官方查询",
+      "source_title": "Nd:YAG激光治疗仪Nd:YAG Laser Device 国械注进20173096244 NMPA 医疗器械注册证",
       "source_url": "https://www.nmpa.gov.cn/",
       "confidence": "official"
     },

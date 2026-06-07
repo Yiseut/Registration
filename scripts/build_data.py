@@ -29,6 +29,92 @@ TRACK_META = [
 ]
 TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 
+CITY_COORDS = {
+    "北京": {"province": "北京", "lat": 39.9042, "lng": 116.4074},
+    "上海": {"province": "上海", "lat": 31.2304, "lng": 121.4737},
+    "天津": {"province": "天津", "lat": 39.3434, "lng": 117.3616},
+    "重庆": {"province": "重庆", "lat": 29.5630, "lng": 106.5516},
+    "杭州": {"province": "浙江", "lat": 30.2741, "lng": 120.1551},
+    "宁波": {"province": "浙江", "lat": 29.8683, "lng": 121.5440},
+    "绍兴": {"province": "浙江", "lat": 30.0303, "lng": 120.5802},
+    "南京": {"province": "江苏", "lat": 32.0603, "lng": 118.7969},
+    "苏州": {"province": "江苏", "lat": 31.2989, "lng": 120.5853},
+    "常州": {"province": "江苏", "lat": 31.8107, "lng": 119.9741},
+    "无锡": {"province": "江苏", "lat": 31.4912, "lng": 120.3119},
+    "深圳": {"province": "广东", "lat": 22.5431, "lng": 114.0579},
+    "广州": {"province": "广东", "lat": 23.1291, "lng": 113.2644},
+    "珠海": {"province": "广东", "lat": 22.2707, "lng": 113.5767},
+    "成都": {"province": "四川", "lat": 30.5728, "lng": 104.0668},
+    "武汉": {"province": "湖北", "lat": 30.5928, "lng": 114.3055},
+    "济南": {"province": "山东", "lat": 36.6512, "lng": 117.1201},
+    "青岛": {"province": "山东", "lat": 36.0671, "lng": 120.3826},
+    "济宁": {"province": "山东", "lat": 35.4149, "lng": 116.5872},
+    "长春": {"province": "吉林", "lat": 43.8171, "lng": 125.3235},
+    "大连": {"province": "辽宁", "lat": 38.9140, "lng": 121.6147},
+    "沈阳": {"province": "辽宁", "lat": 41.8057, "lng": 123.4315},
+    "兰州": {"province": "甘肃", "lat": 36.0611, "lng": 103.8343},
+    "西安": {"province": "陕西", "lat": 34.3416, "lng": 108.9398},
+    "太原": {"province": "山西", "lat": 37.8706, "lng": 112.5489},
+    "海口": {"province": "海南", "lat": 20.0440, "lng": 110.1999},
+    "长沙": {"province": "湖南", "lat": 28.2282, "lng": 112.9388},
+    "合肥": {"province": "安徽", "lat": 31.8206, "lng": 117.2272},
+    "福州": {"province": "福建", "lat": 26.0745, "lng": 119.2965},
+    "南昌": {"province": "江西", "lat": 28.6820, "lng": 115.8579},
+    "郑州": {"province": "河南", "lat": 34.7466, "lng": 113.6254},
+    "石家庄": {"province": "河北", "lat": 38.0428, "lng": 114.5149},
+    "南宁": {"province": "广西", "lat": 22.8170, "lng": 108.3669},
+    "银川": {"province": "宁夏", "lat": 38.4872, "lng": 106.2309},
+}
+
+CITY_NAME_ORDER = sorted(CITY_COORDS, key=len, reverse=True)
+
+REGISTRANT_LOCATION_OVERRIDES = [
+    (r"华熙生物", "济南"),
+    (r"爱美客", "北京"),
+    (r"山东凯乐普", "济宁"),
+    (r"山东采采|谷雨春", "济南"),
+    (r"崇山生物|珂瑞康|浙江景嘉|浙江微度", "杭州"),
+    (r"西宏生物|江苏天莱雅|江苏创健|创健医疗", "常州"),
+    (r"巨子生物|佰傲再生", "西安"),
+    (r"锦波生物", "太原"),
+    (r"渼颜空间|漠颐空间", "长春"),
+    (r"希睿达", "海口"),
+    (r"圣博玛", "长春"),
+    (r"乐普医疗|乐普（北京）|乐普\\(北京\\)", "北京"),
+    (r"热芙美", "长沙"),
+    (r"广东花至|广东雅思", "广州"),
+    (r"普罗米修斯奇迹", "深圳"),
+    (r"南京迈诺威|南京麦澜德|麦澜德", "南京"),
+]
+
+PROVINCE_FALLBACK_CITY = {
+    "山东": "济南",
+    "浙江": "杭州",
+    "江苏": "南京",
+    "广东": "广州",
+    "四川": "成都",
+    "陕西": "西安",
+    "山西": "太原",
+    "吉林": "长春",
+    "海南": "海口",
+    "湖南": "长沙",
+    "湖北": "武汉",
+    "辽宁": "沈阳",
+    "甘肃": "兰州",
+    "安徽": "合肥",
+    "福建": "福州",
+    "江西": "南昌",
+    "河南": "郑州",
+    "河北": "石家庄",
+    "广西": "南宁",
+    "宁夏": "银川",
+}
+
+FOREIGN_REGISTRANT_RE = re.compile(
+    r"Allergan|Ipsen|Hugel|Merz|Galderma|Sinclair|Revance|Huons|WON TECH|韩国|Ireland|GmbH|Limited|Inc\.|Corporation|株式会社|원텍",
+    re.I,
+)
+
 # How CSV `track` codes map onto the surfaced strategic tracks above.
 EBD_TRACKS = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl",
               "body_contouring_device", "raw_thermage_rf"}
@@ -446,6 +532,146 @@ def concentration(records: list[dict]) -> dict:
     return out
 
 
+def china_map_candidate(record: dict) -> bool:
+    """Records that represent a mainland Chinese registration subject."""
+    cert = safe_strip(record.get("certificate_no"))
+    registrant = safe_strip(record.get("registrant") or record.get("company"))
+    if not record.get("main_landscape"):
+        return False
+    if cert.startswith("国械注进"):
+        return False
+    if FOREIGN_REGISTRANT_RE.search(registrant):
+        return False
+    if not re.search(r"[\u4e00-\u9fff]", registrant):
+        return False
+    return (
+        record.get("origin") == "国产"
+        or cert.startswith("国械注准")
+        or cert.startswith("国药准字")
+        or re.match(r"^[\u4e00-\u9fa5]械注准", cert or "")
+    )
+
+
+def locate_china_record(record: dict) -> tuple[str | None, str]:
+    """Infer registered city from public registration fields plus a small maintained map."""
+    raw = record.get("_raw") or {}
+    text = " ".join(
+        safe_strip(record.get(k) or raw.get(k))
+        for k in (
+            "registrant",
+            "company",
+            "company_key",
+            "brand",
+            "product_name",
+            "manufacturer_group",
+            "company_short",
+            "official_registrant",
+        )
+    )
+    for city in CITY_NAME_ORDER:
+        if city in text:
+            return city, "注册人名称含城市"
+    for pattern, city in REGISTRANT_LOCATION_OVERRIDES:
+        if re.search(pattern, text):
+            return city, "维护映射"
+    for province, city in PROVINCE_FALLBACK_CITY.items():
+        if province in text:
+            return city, "省级名称推断"
+    return None, "未识别"
+
+
+def china_enterprise_map(records: list[dict], generated_at: str) -> dict:
+    """City-level distribution of domestic medical-aesthetic registration subjects."""
+    buckets = {}
+    unmapped = []
+    candidates = [record for record in records if china_map_candidate(record)]
+
+    for record in candidates:
+        city, location_source = locate_china_record(record)
+        company = safe_strip(record.get("registrant") or record.get("company"))
+        if not city or city not in CITY_COORDS:
+            unmapped.append({
+                "company": company,
+                "certificate_no": record.get("certificate_no"),
+                "track": record.get("strategic") or record.get("track_name"),
+                "reason": location_source,
+            })
+            continue
+
+        coord = CITY_COORDS[city]
+        bucket = buckets.setdefault(city, {
+            "city": city,
+            "province": coord["province"],
+            "lat": coord["lat"],
+            "lng": coord["lng"],
+            "companies": {},
+            "records": [],
+            "tracks": Counter(),
+            "location_sources": Counter(),
+        })
+        company_key = safe_strip(record.get("registrant") or record.get("company_key") or company)
+        company_row = bucket["companies"].setdefault(company_key, {
+            "name": company,
+            "records": 0,
+            "tracks": Counter(),
+        })
+        company_row["records"] += 1
+        company_row["tracks"][record.get("strategic") or record.get("track_name") or "未标注"] += 1
+        bucket["records"].append({
+            "certificate_no": record.get("certificate_no"),
+            "brand": record.get("brand"),
+            "product_name": record.get("product_name"),
+            "company": company,
+            "track": record.get("strategic") or record.get("track_name"),
+            "approval_date": record.get("approval_date"),
+        })
+        bucket["tracks"][record.get("strategic") or record.get("track_name") or "未标注"] += 1
+        bucket["location_sources"][location_source] += 1
+
+    cities = []
+    for city, bucket in buckets.items():
+        company_rows = sorted(
+            (
+                {
+                    "name": value["name"],
+                    "records": value["records"],
+                    "top_track": value["tracks"].most_common(1)[0][0] if value["tracks"] else "未标注",
+                }
+                for value in bucket["companies"].values()
+            ),
+            key=lambda item: (-item["records"], item["name"]),
+        )
+        tracks = [{"name": name, "records": count} for name, count in bucket["tracks"].most_common()]
+        cities.append({
+            "city": city,
+            "province": bucket["province"],
+            "lat": bucket["lat"],
+            "lng": bucket["lng"],
+            "companies": len(bucket["companies"]),
+            "registrations": len(bucket["records"]),
+            "tracks": tracks,
+            "leading_track": tracks[0]["name"] if tracks else "未标注",
+            "companies_sample": company_rows[:8],
+            "records_sample": bucket["records"][:12],
+            "location_sources": dict(bucket["location_sources"]),
+        })
+    cities.sort(key=lambda item: (-item["companies"], -item["registrations"], item["city"]))
+
+    return {
+        "generated_at": generated_at,
+        "scope": "国产/中国注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
+        "metrics": {
+            "candidate_records": len(candidates),
+            "mapped_records": sum(item["registrations"] for item in cities),
+            "mapped_companies": sum(item["companies"] for item in cities),
+            "mapped_cities": len(cities),
+            "unmapped_companies": len({item["company"] for item in unmapped if item.get("company")}),
+        },
+        "cities": cities,
+        "unmapped": unmapped,
+    }
+
+
 # ---------- per-track payloads ----------
 
 def per_track_payload(records: list[dict], tk: str) -> dict:
@@ -549,6 +775,8 @@ def main() -> None:
         "concentration": concentration(records),
     }
     write_json(OUT_DIR / "overview.json", overview)
+    china_map = china_enterprise_map(records, csv_mtime.isoformat(timespec="seconds"))
+    write_json(OUT_DIR / "china_enterprise_map.json", china_map)
 
     manifest = {
         "generated_at": csv_mtime.isoformat(timespec="seconds"),
