@@ -179,10 +179,43 @@
   background: var(--surface-2);
 }
 
+.rank-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .rank-title {
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
+}
+
+.rank-more-button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--ink-2);
+  background: var(--surface);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 180ms var(--ease-out), border-color 180ms var(--ease-out), color 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+}
+
+.rank-more-button:hover,
+.rank-more-button:focus-visible,
+.rank-more-button.active {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--brand) 30%, var(--hairline));
+  color: var(--brand-deep);
+  box-shadow: var(--shadow-2);
+  outline: none;
 }
 
 #china-city-rank-list {

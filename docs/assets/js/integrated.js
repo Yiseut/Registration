@@ -171,6 +171,7 @@
     const holder = document.getElementById('china-enterprise-map');
     const rankRoot = document.getElementById('china-city-rank-list');
     const rankTitle = document.getElementById('china-city-rank-title');
+    const rankMoreButton = document.getElementById('china-city-rank-more');
     const cities = (mapData?.cities || [])
       .filter((city) => Number.isFinite(Number(city.lat)) && Number.isFinite(Number(city.lng)));
     const metrics = mapData?.metrics || {};
@@ -206,6 +207,8 @@
     const markerByCity = new Map();
     const cityByName = new Map(cities.map((city) => [city.city, city]));
     const bounds = L.latLngBounds([]);
+    let activeMetric = activeMetricDefault;
+    let rankExpanded = false;
 
     cities.forEach((city) => {
       const marker = L.marker([Number(city.lat), Number(city.lng)], {
@@ -243,13 +246,19 @@
         || Number(b.registrations || 0) - Number(a.registrations || 0)
         || String(a.city).localeCompare(String(b.city), 'zh-Hans-CN')
       ));
-      if (rankTitle) rankTitle.textContent = '城市集群 Top 8';
-      rankRoot.innerHTML = rankedCities.slice(0, 8).map((city, index) => `
+      const visibleCities = rankExpanded ? rankedCities : rankedCities.slice(0, 8);
+      if (rankTitle) rankTitle.textContent = rankExpanded ? '城市集群排名' : '城市集群 Top 8';
+      if (rankMoreButton) {
+        rankMoreButton.classList.toggle('active', rankExpanded);
+        rankMoreButton.setAttribute('aria-label', rankExpanded ? '收起城市排名' : '查看全部城市排名');
+        rankMoreButton.setAttribute('title', rankExpanded ? '收起城市排名' : '查看全部城市排名');
+      }
+      rankRoot.innerHTML = visibleCities.map((city, index) => `
         <button type="button" class="china-rank-row" data-city="${escape(city.city)}">
           <span class="rank-index">${index + 1}</span>
           <span class="rank-city">
             <b>${escape(city.city)}</b>
-            <em>${escape(city.province || '')} · ${escape(city.leading_track || '未标注')}</em>
+            <em>${escape(city.province || '')}</em>
           </span>
           <span class="rank-count">
             <b>${cityMetricValue(city, metric).toLocaleString()}</b>
@@ -269,7 +278,7 @@
     }
 
     function updateMapMetric(metric) {
-      const activeMetric = metric === 'registrations' ? 'registrations' : 'companies';
+      activeMetric = metric === 'registrations' ? 'registrations' : 'companies';
       document.querySelectorAll('[data-map-metric]').forEach((button) => {
         button.classList.toggle('active', button.dataset.mapMetric === activeMetric);
       });
@@ -284,6 +293,10 @@
 
     document.querySelectorAll('[data-map-metric]').forEach((button) => {
       button.addEventListener('click', () => updateMapMetric(button.dataset.mapMetric));
+    });
+    rankMoreButton?.addEventListener('click', () => {
+      rankExpanded = !rankExpanded;
+      renderRank(activeMetric);
     });
     updateMapMetric(activeMetricDefault);
   }
