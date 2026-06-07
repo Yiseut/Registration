@@ -104,15 +104,7 @@
 
 .china-map-legend-wrap {
   display: grid;
-  gap: 8px;
   min-width: 0;
-}
-
-.legend-title,
-.china-map-size-control > span {
-  color: var(--ink-2);
-  font-size: 12px;
-  font-weight: 700;
 }
 
 .china-map-legend {
@@ -145,7 +137,6 @@
 .china-map-size-control {
   display: grid;
   justify-items: end;
-  gap: 8px;
   flex: 0 0 auto;
 }
 
@@ -276,15 +267,6 @@
   color: var(--ink);
   font-size: 16px;
   font-variant-numeric: tabular-nums;
-}
-
-.china-map-foot {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  margin-top: 12px;
-  color: var(--ink-3);
-  font-size: 12px;
 }
 
 .china-enterprise-map.leaflet-container,

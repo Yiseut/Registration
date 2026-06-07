@@ -243,7 +243,7 @@
         || Number(b.registrations || 0) - Number(a.registrations || 0)
         || String(a.city).localeCompare(String(b.city), 'zh-Hans-CN')
       ));
-      if (rankTitle) rankTitle.textContent = `城市集群 Top 8 · 按${mapMetricLabel(metric)}排序`;
+      if (rankTitle) rankTitle.textContent = '城市集群 Top 8';
       rankRoot.innerHTML = rankedCities.slice(0, 8).map((city, index) => `
         <button type="button" class="china-rank-row" data-city="${escape(city.city)}">
           <span class="rank-index">${index + 1}</span>
@@ -273,7 +273,6 @@
       document.querySelectorAll('[data-map-metric]').forEach((button) => {
         button.classList.toggle('active', button.dataset.mapMetric === activeMetric);
       });
-      setText('china-map-size-note', `点数 = ${mapMetricLabel(activeMetric)}`);
       markerByCity.forEach((marker, cityName) => {
         const city = cityByName.get(cityName);
         if (!city) return;
