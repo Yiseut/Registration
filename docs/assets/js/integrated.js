@@ -170,28 +170,14 @@
   function renderChinaEnterpriseMap(mapData) {
     const holder = document.getElementById('china-enterprise-map');
     const rankRoot = document.getElementById('china-city-rank-list');
+    const rankTitle = document.getElementById('china-city-rank-title');
     const cities = (mapData?.cities || [])
       .filter((city) => Number.isFinite(Number(city.lat)) && Number.isFinite(Number(city.lng)));
     const metrics = mapData?.metrics || {};
     setText('china-map-cities', metrics.mapped_cities ?? cities.length);
     setText('china-map-companies', metrics.mapped_companies ?? cities.reduce((sum, city) => sum + Number(city.companies || 0), 0));
     setText('china-map-records', metrics.mapped_records ?? cities.reduce((sum, city) => sum + Number(city.registrations || 0), 0));
-
-    if (rankRoot) {
-      rankRoot.innerHTML = cities.slice(0, 8).map((city, index) => `
-        <button type="button" class="china-rank-row" data-city="${escape(city.city)}">
-          <span class="rank-index">${index + 1}</span>
-          <span class="rank-city">
-            <b>${escape(city.city)}</b>
-            <em>${escape(city.province || '')} · ${escape(city.leading_track || '未标注')}</em>
-          </span>
-          <span class="rank-count">
-            <b>${Number(city.companies || 0).toLocaleString()}</b>
-            <em>家</em>
-          </span>
-        </button>
-      `).join('');
-    }
+    renderChinaMapLegend();
 
     if (!holder) return;
     if (!cities.length || typeof L === 'undefined') {
@@ -204,6 +190,8 @@
       zoom: 4,
       minZoom: 3,
       maxZoom: 8,
+      zoomSnap: 0.25,
+      zoomDelta: 0.5,
       zoomControl: false,
       scrollWheelZoom: false,
       attributionControl: true,
@@ -214,16 +202,19 @@
       attribution: '&copy; OpenStreetMap &copy; CARTO',
     }).addTo(map);
 
-    const maxRegistrations = Math.max(...cities.map((city) => Number(city.registrations || 0)), 1);
+    const activeMetricDefault = 'companies';
+    const maxByMetric = {
+      companies: Math.max(...cities.map((city) => cityMetricValue(city, 'companies')), 1),
+      registrations: Math.max(...cities.map((city) => cityMetricValue(city, 'registrations')), 1),
+    };
     const markerByCity = new Map();
+    const cityByName = new Map(cities.map((city) => [city.city, city]));
     const bounds = L.latLngBounds([]);
 
     cities.forEach((city) => {
-      const registrations = Number(city.registrations || 0);
       const color = cityTrackColor(city.leading_track);
-      const radius = Math.max(7, Math.min(26, 7 + Math.sqrt(registrations / maxRegistrations) * 21));
       const marker = L.circleMarker([Number(city.lat), Number(city.lng)], {
-        radius,
+        radius: cityRadius(city, activeMetricDefault, maxByMetric),
         color: '#fffaf3',
         weight: 1.8,
         fillColor: color,
@@ -231,7 +222,7 @@
         opacity: 1,
         className: 'china-city-marker',
       })
-        .bindTooltip(`${city.city} · ${city.companies} 家企业 · ${city.registrations} 张注册证`, {
+        .bindTooltip(cityTooltipText(city, activeMetricDefault), {
           direction: 'top',
           opacity: 0.95,
         })
@@ -246,20 +237,96 @@
     });
 
     if (bounds.isValid()) {
-      map.fitBounds(bounds.pad(0.18), { maxZoom: 5, animate: false });
+      map.fitBounds(bounds.pad(0.18), { maxZoom: 5.25, animate: false });
+      if (window.innerWidth >= 900 && map.getZoom() < 4) {
+        map.setZoom(4, { animate: false });
+      }
     }
     setTimeout(() => map.invalidateSize(), 0);
     window.addEventListener('resize', () => map.invalidateSize());
 
-    rankRoot?.querySelectorAll('.china-rank-row').forEach((row) => {
-      row.addEventListener('click', () => {
-        const marker = markerByCity.get(row.dataset.city);
-        if (!marker) return;
-        const latLng = marker.getLatLng();
-        map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
-        marker.openPopup();
+    function renderRank(metric) {
+      if (!rankRoot) return;
+      const rankedCities = [...cities].sort((a, b) => (
+        cityMetricValue(b, metric) - cityMetricValue(a, metric)
+        || Number(b.registrations || 0) - Number(a.registrations || 0)
+        || String(a.city).localeCompare(String(b.city), 'zh-Hans-CN')
+      ));
+      if (rankTitle) rankTitle.textContent = `城市集群 Top 8 · 按${mapMetricLabel(metric)}排序`;
+      rankRoot.innerHTML = rankedCities.slice(0, 8).map((city, index) => `
+        <button type="button" class="china-rank-row" data-city="${escape(city.city)}">
+          <span class="rank-index">${index + 1}</span>
+          <span class="rank-city">
+            <b>${escape(city.city)}</b>
+            <em>${escape(city.province || '')} · ${escape(city.leading_track || '未标注')}</em>
+          </span>
+          <span class="rank-count">
+            <b>${cityMetricValue(city, metric).toLocaleString()}</b>
+            <em>${escape(mapMetricUnit(metric))}</em>
+          </span>
+        </button>
+      `).join('');
+      rankRoot.querySelectorAll('.china-rank-row').forEach((row) => {
+        row.addEventListener('click', () => {
+          const marker = markerByCity.get(row.dataset.city);
+          if (!marker) return;
+          const latLng = marker.getLatLng();
+          map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
+          marker.openPopup();
+        });
       });
+    }
+
+    function updateMapMetric(metric) {
+      const activeMetric = metric === 'registrations' ? 'registrations' : 'companies';
+      document.querySelectorAll('[data-map-metric]').forEach((button) => {
+        button.classList.toggle('active', button.dataset.mapMetric === activeMetric);
+      });
+      setText('china-map-size-note', `圆点大小 = ${mapMetricLabel(activeMetric)}`);
+      markerByCity.forEach((marker, cityName) => {
+        const city = cityByName.get(cityName);
+        if (!city) return;
+        marker.setRadius(cityRadius(city, activeMetric, maxByMetric));
+        marker.setTooltipContent(cityTooltipText(city, activeMetric));
+      });
+      renderRank(activeMetric);
+    }
+
+    document.querySelectorAll('[data-map-metric]').forEach((button) => {
+      button.addEventListener('click', () => updateMapMetric(button.dataset.mapMetric));
     });
+    updateMapMetric(activeMetricDefault);
+  }
+
+  function renderChinaMapLegend() {
+    const legend = document.getElementById('china-map-legend');
+    if (!legend) return;
+    legend.innerHTML = SEGMENTS.map((segment) => `
+      <span><i style="--legend-color:${segment.color}"></i>${escape(segment.name)}</span>
+    `).join('');
+  }
+
+  function cityMetricValue(city, metric) {
+    return Number(metric === 'registrations' ? city.registrations : city.companies) || 0;
+  }
+
+  function mapMetricLabel(metric) {
+    return metric === 'registrations' ? '注册证数' : '企业数';
+  }
+
+  function mapMetricUnit(metric) {
+    return metric === 'registrations' ? '张' : '家';
+  }
+
+  function cityRadius(city, metric, maxByMetric) {
+    const value = cityMetricValue(city, metric);
+    const max = Math.max(maxByMetric[metric] || 1, 1);
+    return Math.max(7, Math.min(26, 7 + Math.sqrt(value / max) * 21));
+  }
+
+  function cityTooltipText(city, metric) {
+    const metricValue = cityMetricValue(city, metric).toLocaleString();
+    return `${city.city} · ${mapMetricLabel(metric)} ${metricValue}${mapMetricUnit(metric)} · ${city.companies} 家企业 / ${city.registrations} 张注册证`;
   }
 
   function cityPopupHtml(city) {

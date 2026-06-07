@@ -62,15 +62,29 @@
         <div><b id="china-map-records">—</b><span>注册证</span></div>
       </div>
     </div>
+    <div class="china-map-toolbar">
+      <div class="china-map-legend-wrap">
+        <span class="legend-title">颜色 = 城市主导赛道</span>
+        <div class="china-map-legend" id="china-map-legend" aria-label="地图赛道颜色说明"></div>
+      </div>
+      <div class="china-map-size-control">
+        <span>圆点大小</span>
+        <div class="segmented-control map-metric-toggle" aria-label="圆点大小指标">
+          <button type="button" class="active" data-map-metric="companies">企业数</button>
+          <button type="button" data-map-metric="registrations">注册证数</button>
+        </div>
+      </div>
+    </div>
     <div class="china-map-layout">
       <div id="china-enterprise-map" class="china-enterprise-map" aria-label="中国医美注册企业城市分布地图"></div>
       <aside class="china-city-rank" aria-label="企业城市排行">
-        <div class="rank-title">城市集群 Top 8</div>
+        <div class="rank-title" id="china-city-rank-title">城市集群 Top 8</div>
         <div id="china-city-rank-list"></div>
       </aside>
     </div>
     <div class="china-map-foot">
-      <span>圆点大小 = 注册证数</span>
+      <span id="china-map-size-note">圆点大小 = 企业数</span>
+      <span>颜色口径：城市内注册证数量最多的赛道</span>
       <span>城市来源：注册人名称识别 + 维护映射 + 省级推断</span>
     </div>
   </section>
