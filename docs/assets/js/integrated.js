@@ -187,7 +187,7 @@
     }
 
     const map = L.map(holder, {
-      center: [35.4, 103.8],
+      center: mapLatLng(35.4, 103.8),
       zoom: 4,
       minZoom: 3,
       maxZoom: 8,
@@ -200,9 +200,10 @@
       attributionControl: true,
     });
     L.control.zoom({ position: 'bottomright' }).addTo(map);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=7&x={x}&y={y}&z={z}', {
+      subdomains: ['1', '2', '3', '4'],
       maxZoom: 10,
-      attribution: '&copy; OpenStreetMap &copy; CARTO',
+      attribution: '&copy; 高德地图',
     }).addTo(map);
 
     const activeMetricDefault = 'companies';
@@ -219,7 +220,7 @@
     cities.forEach((city) => {
       const color = cityTrackColor(city.leading_track);
       const radius = cityRadius(city, activeMetricDefault, maxByMetric);
-      const latLng = [Number(city.lat), Number(city.lng)];
+      const latLng = cityMapLatLng(city);
       const marker = L.circleMarker(latLng, {
         radius,
         color: '#fffaf3',
@@ -331,6 +332,42 @@
       renderRank(activeMetric);
     });
     updateMapMetric(activeMetricDefault);
+  }
+
+  function cityMapLatLng(city) {
+    return mapLatLng(Number(city.lat), Number(city.lng));
+  }
+
+  function mapLatLng(lat, lng) {
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return [lat, lng];
+    if (lng < 72.004 || lng > 137.8347 || lat < 0.8293 || lat > 55.8271) return [lat, lng];
+    const a = 6378245.0;
+    const ee = 0.00669342162296594323;
+    const dLat = transformChinaLat(lng - 105.0, lat - 35.0);
+    const dLng = transformChinaLng(lng - 105.0, lat - 35.0);
+    const radLat = lat / 180.0 * Math.PI;
+    let magic = Math.sin(radLat);
+    magic = 1 - ee * magic * magic;
+    const sqrtMagic = Math.sqrt(magic);
+    const mgLat = lat + (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * Math.PI);
+    const mgLng = lng + (dLng * 180.0) / (a / sqrtMagic * Math.cos(radLat) * Math.PI);
+    return [mgLat, mgLng];
+  }
+
+  function transformChinaLat(x, y) {
+    let ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+    ret += (20.0 * Math.sin(6.0 * x * Math.PI) + 20.0 * Math.sin(2.0 * x * Math.PI)) * 2.0 / 3.0;
+    ret += (20.0 * Math.sin(y * Math.PI) + 40.0 * Math.sin(y / 3.0 * Math.PI)) * 2.0 / 3.0;
+    ret += (160.0 * Math.sin(y / 12.0 * Math.PI) + 320 * Math.sin(y * Math.PI / 30.0)) * 2.0 / 3.0;
+    return ret;
+  }
+
+  function transformChinaLng(x, y) {
+    let ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+    ret += (20.0 * Math.sin(6.0 * x * Math.PI) + 20.0 * Math.sin(2.0 * x * Math.PI)) * 2.0 / 3.0;
+    ret += (20.0 * Math.sin(x * Math.PI) + 40.0 * Math.sin(x / 3.0 * Math.PI)) * 2.0 / 3.0;
+    ret += (150.0 * Math.sin(x / 12.0 * Math.PI) + 300.0 * Math.sin(x / 30.0 * Math.PI)) * 2.0 / 3.0;
+    return ret;
   }
 
   function renderChinaMapLegend() {
