@@ -44,6 +44,14 @@ CITY_COORDS = {
     "深圳": {"province": "广东", "lat": 22.5431, "lng": 114.0579},
     "广州": {"province": "广东", "lat": 23.1291, "lng": 113.2644},
     "珠海": {"province": "广东", "lat": 22.2707, "lng": 113.5767},
+    "香港": {"province": "香港", "lat": 22.3193, "lng": 114.1694},
+    "澳门": {"province": "澳门", "lat": 22.1987, "lng": 113.5439},
+    "台北": {"province": "台湾", "lat": 25.0330, "lng": 121.5654},
+    "新北": {"province": "台湾", "lat": 25.0169, "lng": 121.4628},
+    "桃园": {"province": "台湾", "lat": 24.9937, "lng": 121.3009},
+    "台中": {"province": "台湾", "lat": 24.1477, "lng": 120.6736},
+    "台南": {"province": "台湾", "lat": 22.9999, "lng": 120.2270},
+    "高雄": {"province": "台湾", "lat": 22.6273, "lng": 120.3014},
     "成都": {"province": "四川", "lat": 30.5728, "lng": 104.0668},
     "武汉": {"province": "湖北", "lat": 30.5928, "lng": 114.3055},
     "济南": {"province": "山东", "lat": 36.6512, "lng": 117.1201},
@@ -85,6 +93,9 @@ REGISTRANT_LOCATION_OVERRIDES = [
     (r"广东花至|广东雅思", "广州"),
     (r"普罗米修斯奇迹", "深圳"),
     (r"南京迈诺威|南京麦澜德|麦澜德", "南京"),
+    (r"双美生物|雙美生物", "台南"),
+    (r"和康生物", "桃园"),
+    (r"科妍生物", "高雄"),
 ]
 
 PROVINCE_FALLBACK_CITY = {
@@ -108,6 +119,11 @@ PROVINCE_FALLBACK_CITY = {
     "河北": "石家庄",
     "广西": "南宁",
     "宁夏": "银川",
+    "台湾": "台北",
+    "臺灣": "台北",
+    "香港": "香港",
+    "澳门": "澳门",
+    "澳門": "澳门",
 }
 
 FOREIGN_REGISTRANT_RE = re.compile(
@@ -545,8 +561,9 @@ def china_map_candidate(record: dict) -> bool:
     if not re.search(r"[\u4e00-\u9fff]", registrant):
         return False
     return (
-        record.get("origin") == "国产"
+        record.get("origin") in {"国产", "港澳台"}
         or cert.startswith("国械注准")
+        or cert.startswith("国械注许")
         or cert.startswith("国药准字")
         or re.match(r"^[\u4e00-\u9fa5]械注准", cert or "")
     )
@@ -659,7 +676,7 @@ def china_enterprise_map(records: list[dict], generated_at: str) -> dict:
 
     return {
         "generated_at": generated_at,
-        "scope": "国产/中国注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
+        "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
         "metrics": {
             "candidate_records": len(candidates),
             "mapped_records": sum(item["registrations"] for item in cities),
