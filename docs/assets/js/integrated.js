@@ -216,6 +216,8 @@
     const bounds = L.latLngBounds([]);
     let activeMetric = activeMetricDefault;
     let rankExpanded = false;
+    let pendingPopupTimer = null;
+    let pendingPopupMoveHandler = null;
 
     cities.forEach((city) => {
       const color = cityTrackColor(city.leading_track);
@@ -236,23 +238,13 @@
         weight: 0,
         fillColor: '#000',
         fillOpacity: 0.01,
-        opacity: 0,
+        opacity: 0.01,
         className: 'china-city-hit-marker',
       }).addTo(map);
       bindCityMarker(marker, city, activeMetricDefault, true);
       bindCityMarker(hitMarker, city, activeMetricDefault, false);
-      marker.on('click', () => {
-        map.closePopup();
-        marker.bringToFront();
-        hitMarker.bringToFront();
-        marker.openPopup();
-      });
-      hitMarker.on('click', () => {
-        map.closePopup();
-        marker.bringToFront();
-        hitMarker.bringToFront();
-        marker.openPopup();
-      });
+      marker.on('click', () => openCityPopup(city.city));
+      hitMarker.on('click', () => openCityPopup(city.city));
       markerByCity.set(city.city, { marker, hitMarker });
       bounds.extend(latLng);
     });
@@ -265,6 +257,40 @@
     }
     setTimeout(() => map.invalidateSize(), 0);
     window.addEventListener('resize', () => map.invalidateSize());
+
+    function clearPendingPopup() {
+      if (pendingPopupMoveHandler) {
+        map.off('moveend', pendingPopupMoveHandler);
+        pendingPopupMoveHandler = null;
+      }
+      if (pendingPopupTimer) {
+        clearTimeout(pendingPopupTimer);
+        pendingPopupTimer = null;
+      }
+    }
+
+    function openCityPopup(cityName, focusMap = false) {
+      const cityMarker = markerByCity.get(cityName);
+      if (!cityMarker) return;
+      const latLng = cityMarker.marker.getLatLng();
+      const showPopup = () => {
+        clearPendingPopup();
+        map.closePopup();
+        cityMarker.marker.bringToFront();
+        cityMarker.hitMarker.bringToFront();
+        cityMarker.marker.openPopup();
+      };
+      clearPendingPopup();
+      map.closePopup();
+      if (!focusMap) {
+        showPopup();
+        return;
+      }
+      pendingPopupMoveHandler = showPopup;
+      map.once('moveend', pendingPopupMoveHandler);
+      map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
+      pendingPopupTimer = setTimeout(showPopup, 900);
+    }
 
     function renderRank(metric) {
       if (!rankRoot) return;
@@ -295,14 +321,7 @@
       `).join('');
       rankRoot.querySelectorAll('.china-rank-row').forEach((row) => {
         row.addEventListener('click', () => {
-          const cityMarker = markerByCity.get(row.dataset.city);
-          if (!cityMarker) return;
-          const latLng = cityMarker.marker.getLatLng();
-          map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
-          map.closePopup();
-          cityMarker.marker.bringToFront();
-          cityMarker.hitMarker.bringToFront();
-          cityMarker.marker.openPopup();
+          openCityPopup(row.dataset.city, true);
         });
       });
     }

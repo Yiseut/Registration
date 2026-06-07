@@ -316,6 +316,11 @@
   font-size: 10px;
 }
 
+.china-enterprise-map .leaflet-tile-pane {
+  filter: grayscale(0.22) saturate(0.34) contrast(0.82) brightness(1.12);
+  opacity: 0.66;
+}
+
 .china-city-marker {
   filter: drop-shadow(0 5px 9px rgba(95, 61, 62, 0.24));
 }
