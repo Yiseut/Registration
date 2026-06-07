@@ -218,27 +218,42 @@
 
     cities.forEach((city) => {
       const color = cityTrackColor(city.leading_track);
-      const marker = L.circleMarker([Number(city.lat), Number(city.lng)], {
-        radius: cityRadius(city, activeMetricDefault, maxByMetric),
+      const radius = cityRadius(city, activeMetricDefault, maxByMetric);
+      const latLng = [Number(city.lat), Number(city.lng)];
+      const marker = L.circleMarker(latLng, {
+        radius,
         color: '#fffaf3',
         weight: 1.6,
         fillColor: color,
         fillOpacity: 0.76,
         opacity: 1,
         className: 'china-city-marker',
-      })
-        .bindTooltip(cityTooltipText(city, activeMetricDefault), {
-          direction: 'top',
-          opacity: 0.95,
-        })
-        .bindPopup(cityPopupHtml(city), {
-          closeButton: false,
-          maxWidth: 300,
-          className: 'china-map-popup-shell',
-        })
-        .addTo(map);
-      markerByCity.set(city.city, marker);
-      bounds.extend([Number(city.lat), Number(city.lng)]);
+      }).addTo(map);
+      const hitMarker = L.circleMarker(latLng, {
+        radius: cityHitRadius(radius),
+        color: 'transparent',
+        weight: 0,
+        fillColor: '#000',
+        fillOpacity: 0.01,
+        opacity: 0,
+        className: 'china-city-hit-marker',
+      }).addTo(map);
+      bindCityMarker(marker, city, activeMetricDefault, true);
+      bindCityMarker(hitMarker, city, activeMetricDefault, false);
+      marker.on('click', () => {
+        map.closePopup();
+        marker.bringToFront();
+        hitMarker.bringToFront();
+        marker.openPopup();
+      });
+      hitMarker.on('click', () => {
+        map.closePopup();
+        marker.bringToFront();
+        hitMarker.bringToFront();
+        marker.openPopup();
+      });
+      markerByCity.set(city.city, { marker, hitMarker });
+      bounds.extend(latLng);
     });
 
     if (bounds.isValid()) {
@@ -279,12 +294,14 @@
       `).join('');
       rankRoot.querySelectorAll('.china-rank-row').forEach((row) => {
         row.addEventListener('click', () => {
-          const marker = markerByCity.get(row.dataset.city);
-          if (!marker) return;
-          const latLng = marker.getLatLng();
+          const cityMarker = markerByCity.get(row.dataset.city);
+          if (!cityMarker) return;
+          const latLng = cityMarker.marker.getLatLng();
           map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
-          marker.bringToFront?.();
-          marker.openPopup();
+          map.closePopup();
+          cityMarker.marker.bringToFront();
+          cityMarker.hitMarker.bringToFront();
+          cityMarker.marker.openPopup();
         });
       });
     }
@@ -294,11 +311,14 @@
       document.querySelectorAll('[data-map-metric]').forEach((button) => {
         button.classList.toggle('active', button.dataset.mapMetric === activeMetric);
       });
-      markerByCity.forEach((marker, cityName) => {
+      markerByCity.forEach((cityMarker, cityName) => {
         const city = cityByName.get(cityName);
         if (!city) return;
-        marker.setRadius(cityRadius(city, activeMetric, maxByMetric));
-        marker.setTooltipContent(cityTooltipText(city, activeMetric));
+        const radius = cityRadius(city, activeMetric, maxByMetric);
+        cityMarker.marker.setRadius(radius);
+        cityMarker.hitMarker.setRadius(cityHitRadius(radius));
+        cityMarker.marker.setTooltipContent(cityTooltipText(city, activeMetric));
+        cityMarker.hitMarker.setTooltipContent(cityTooltipText(city, activeMetric));
       });
       renderRank(activeMetric);
     }
@@ -333,10 +353,28 @@
     return metric === 'registrations' ? '张' : '家';
   }
 
+  function bindCityMarker(marker, city, metric, withPopup = true) {
+    marker
+      .bindTooltip(cityTooltipText(city, metric), {
+        direction: 'top',
+        opacity: 0.95,
+      });
+    if (!withPopup) return;
+    marker.bindPopup(cityPopupHtml(city), {
+      closeButton: false,
+      maxWidth: 300,
+      className: 'china-map-popup-shell',
+    });
+  }
+
   function cityRadius(city, metric, maxByMetric) {
     const value = cityMetricValue(city, metric);
     const max = Math.max(maxByMetric[metric] || 1, 1);
     return Math.max(4.5, Math.min(11, 4 + Math.sqrt(value / max) * 7));
+  }
+
+  function cityHitRadius(radius) {
+    return Math.max(14, radius + 7);
   }
 
   function cityTooltipText(city, metric) {

@@ -320,6 +320,10 @@
   filter: drop-shadow(0 5px 9px rgba(95, 61, 62, 0.24));
 }
 
+.china-city-hit-marker {
+  cursor: pointer;
+}
+
 .china-map-popup-shell .leaflet-popup-content-wrapper {
   border-radius: 8px;
   background: rgba(255, 252, 246, 0.98);
