@@ -204,6 +204,10 @@
     }).addTo(map);
 
     const activeMetricDefault = 'companies';
+    const maxByMetric = {
+      companies: Math.max(...cities.map((city) => cityMetricValue(city, 'companies')), 1),
+      registrations: Math.max(...cities.map((city) => cityMetricValue(city, 'registrations')), 1),
+    };
     const markerByCity = new Map();
     const cityByName = new Map(cities.map((city) => [city.city, city]));
     const bounds = L.latLngBounds([]);
@@ -211,10 +215,15 @@
     let rankExpanded = false;
 
     cities.forEach((city) => {
-      const marker = L.marker([Number(city.lat), Number(city.lng)], {
-        icon: cityDotIcon(city, activeMetricDefault),
-        keyboard: true,
-        title: city.city,
+      const color = cityTrackColor(city.leading_track);
+      const marker = L.circleMarker([Number(city.lat), Number(city.lng)], {
+        radius: cityRadius(city, activeMetricDefault, maxByMetric),
+        color: '#fffaf3',
+        weight: 1.6,
+        fillColor: color,
+        fillOpacity: 0.76,
+        opacity: 1,
+        className: 'china-city-marker',
       })
         .bindTooltip(cityTooltipText(city, activeMetricDefault), {
           direction: 'top',
@@ -272,6 +281,7 @@
           if (!marker) return;
           const latLng = marker.getLatLng();
           map.setView(latLng, Math.max(map.getZoom(), 6), { animate: true });
+          marker.bringToFront?.();
           marker.openPopup();
         });
       });
@@ -285,7 +295,7 @@
       markerByCity.forEach((marker, cityName) => {
         const city = cityByName.get(cityName);
         if (!city) return;
-        marker.setIcon(cityDotIcon(city, activeMetric));
+        marker.setRadius(cityRadius(city, activeMetric, maxByMetric));
         marker.setTooltipContent(cityTooltipText(city, activeMetric));
       });
       renderRank(activeMetric);
@@ -321,30 +331,10 @@
     return metric === 'registrations' ? '张' : '家';
   }
 
-  function cityDotIcon(city, metric) {
+  function cityRadius(city, metric, maxByMetric) {
     const value = cityMetricValue(city, metric);
-    const dotCount = Math.max(value, 1);
-    const cols = Math.max(1, Math.ceil(Math.sqrt(dotCount)));
-    const rows = Math.max(1, Math.ceil(dotCount / cols));
-    const dot = dotCount > 36 ? 4 : 5;
-    const gap = dotCount > 36 ? 1 : 2;
-    const padding = 4;
-    const width = cols * dot + Math.max(cols - 1, 0) * gap + padding * 2;
-    const height = rows * dot + Math.max(rows - 1, 0) * gap + padding * 2;
-    const color = cityTrackColor(city.leading_track);
-    const dots = Array.from({ length: dotCount }, () => '<i></i>').join('');
-    return L.divIcon({
-      className: 'china-dot-swarm-icon',
-      html: `
-        <span class="dot-swarm" data-count="${dotCount}" style="--dot-color:${color};--cols:${cols};--dot:${dot}px;--gap:${gap}px">
-          ${dots}
-        </span>
-      `,
-      iconSize: [width, height],
-      iconAnchor: [width / 2, height / 2],
-      popupAnchor: [0, -height / 2],
-      tooltipAnchor: [0, -height / 2],
-    });
+    const max = Math.max(maxByMetric[metric] || 1, 1);
+    return Math.max(4.5, Math.min(11, 4 + Math.sqrt(value / max) * 7));
   }
 
   function cityTooltipText(city, metric) {

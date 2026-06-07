@@ -316,45 +316,8 @@
   font-size: 10px;
 }
 
-.china-dot-swarm-icon {
-  border: 0;
-  background: transparent;
-}
-
-.dot-swarm {
-  display: grid;
-  grid-template-columns: repeat(var(--cols, 1), var(--dot, 5px));
-  gap: var(--gap, 2px);
-  place-content: center;
-  padding: 4px;
-  border: 1px solid rgba(255, 250, 243, 0.78);
-  border-radius: 8px;
-  background: rgba(255, 250, 243, 0.58);
-  box-shadow: 0 6px 14px rgba(95, 61, 62, 0.20);
-  transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out), background 160ms var(--ease-out);
-}
-
-.dot-swarm i {
-  width: var(--dot, 5px);
-  height: var(--dot, 5px);
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  border-radius: 999px;
-  background: var(--dot-color, var(--brand));
-  box-shadow: 0 1px 3px color-mix(in srgb, var(--dot-color, var(--brand)) 34%, transparent);
-}
-
-.dot-swarm[data-count="1"] {
-  padding: 2px;
-  border-color: transparent;
-  background: transparent;
-  box-shadow: none;
-}
-
-.china-dot-swarm-icon:hover .dot-swarm,
-.china-dot-swarm-icon:focus-visible .dot-swarm {
-  transform: translateY(-1px);
-  background: rgba(255, 250, 243, 0.84);
-  box-shadow: 0 10px 20px rgba(95, 61, 62, 0.24);
+.china-city-marker {
+  filter: drop-shadow(0 5px 9px rgba(95, 61, 62, 0.24));
 }
 
 .china-map-popup-shell .leaflet-popup-content-wrapper {
