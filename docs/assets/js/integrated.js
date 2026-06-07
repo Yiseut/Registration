@@ -434,8 +434,7 @@
   }
 
   function cityTooltipText(city, metric) {
-    const metricValue = cityMetricValue(city, metric).toLocaleString();
-    return `${city.city} · ${mapMetricLabel(metric)} ${metricValue}${mapMetricUnit(metric)} · ${city.companies} 家企业 / ${city.registrations} 张注册证`;
+    return `${city.city} · ${Number(city.companies || 0).toLocaleString()} 家企业 / ${Number(city.registrations || 0).toLocaleString()} 张注册证`;
   }
 
   function cityPopupHtml(city) {
