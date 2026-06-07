@@ -194,7 +194,9 @@
       zoomSnap: 0.25,
       zoomDelta: 0.5,
       zoomControl: false,
-      scrollWheelZoom: false,
+      scrollWheelZoom: true,
+      wheelDebounceTime: 50,
+      wheelPxPerZoomLevel: 90,
       attributionControl: true,
     });
     L.control.zoom({ position: 'bottomright' }).addTo(map);
