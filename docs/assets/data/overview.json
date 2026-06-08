@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-08T11:08:39",
+  "generated_at": "2026-06-08T11:16:11",
   "kpi": {
-    "total_records": 221,
+    "total_records": 187,
     "main_records": 181,
-    "excluded": 40,
+    "excluded": 6,
     "companies": 98,
     "indications": 49,
     "verified_share": 98.9,
@@ -16,7 +16,7 @@
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 25 类",
     "recent_12mo": 54,
-    "recent_12mo_share": 24.4,
+    "recent_12mo_share": 28.9,
     "recent_12mo_breakdown": "HA25 / EBD11 / 胶原蛋白8 / PLA5"
   },
   "segments": [
@@ -49,7 +49,7 @@
       "name": "胶原蛋白",
       "tagline": "",
       "accent": "#B5915A",
-      "records": 47,
+      "records": 19,
       "main_records": 19,
       "companies": 12,
       "verified": 19,
@@ -97,7 +97,7 @@
       "name": "小众材料",
       "tagline": "",
       "accent": "#C58B5C",
-      "records": 3,
+      "records": 2,
       "main_records": 2,
       "companies": 2,
       "verified": 2,
@@ -109,7 +109,7 @@
       "name": "EBD 设备",
       "tagline": "",
       "accent": "#6E6A65",
-      "records": 33,
+      "records": 28,
       "main_records": 25,
       "companies": 22,
       "verified": 25,
