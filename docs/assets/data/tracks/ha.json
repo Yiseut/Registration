@@ -5555,9 +5555,9 @@
         "国产",
         "非交联"
       ],
-      "official_status": "",
-      "official_verification_status": "待官方核验",
-      "official_source": "",
+      "official_status": "not_found",
+      "official_verification_status": "官方未查到/需复核",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "",
       "official_registrant": "",
       "official_approval_date": "",
