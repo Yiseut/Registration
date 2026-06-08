@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-08T11:16:11",
+  "generated_at": "2026-06-08T17:15:33",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 106,
-    "mapped_records": 106,
+    "candidate_records": 107,
+    "mapped_records": 107,
     "mapped_companies": 61,
     "mapped_cities": 25,
     "unmapped_companies": 0
@@ -603,11 +603,11 @@
       "lat": 31.8107,
       "lng": 119.9741,
       "companies": 4,
-      "registrations": 6,
+      "registrations": 7,
       "tracks": [
         {
           "name": "玻尿酸",
-          "records": 4
+          "records": 5
         },
         {
           "name": "胶原刺激剂",
@@ -622,7 +622,7 @@
       "companies_sample": [
         {
           "name": "常州药物研究所有限公司",
-          "records": 2,
+          "records": 3,
           "top_track": "玻尿酸"
         },
         {
@@ -675,6 +675,14 @@
           "approval_date": "2025-12-10"
         },
         {
+          "certificate_no": "国械注准20263131179",
+          "brand": "注射用透明质酸钠溶液",
+          "product_name": "注射用透明质酸钠溶液",
+          "company": "常州药物研究所有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2026-06-08"
+        },
+        {
           "certificate_no": "国械注准20253131356",
           "brand": "丽真然",
           "product_name": "注射用聚左旋乳酸微球填充剂",
@@ -692,7 +700,7 @@
         }
       ],
       "location_sources": {
-        "注册人名称含城市": 2,
+        "注册人名称含城市": 3,
         "维护映射": 4
       }
     },

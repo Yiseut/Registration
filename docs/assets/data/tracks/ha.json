@@ -7,12 +7,12 @@
     "accent": "#D97757"
   },
   "kpi": {
-    "total": 108,
-    "main": 108,
+    "total": 109,
+    "main": 109,
     "companies": 52,
     "indications": 13,
     "verified": 106,
-    "domestic": 52,
+    "domestic": 53,
     "imported": 53,
     "hkmt": 3
   },
@@ -50,6 +50,10 @@
       "value": 4
     },
     {
+      "name": "常州药研所",
+      "value": 3
+    },
+    {
       "name": "杭州协合",
       "value": 3
     },
@@ -59,10 +63,6 @@
     },
     {
       "name": "和康生物科技股份有限公司",
-      "value": 2
-    },
-    {
-      "name": "麦施美学 / Merz",
       "value": 2
     }
   ],
@@ -78,7 +78,7 @@
     },
     {
       "name": "肤质改善",
-      "value": 10
+      "value": 11
     },
     {
       "name": "下颌部",
@@ -120,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 52
+      "value": 53
     },
     {
       "name": "港澳台",
@@ -134,7 +134,7 @@
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
-      "value": 108
+      "value": 109
     }
   ],
   "timeline": {
@@ -152,7 +152,7 @@
       17,
       29,
       31,
-      6
+      7
     ]
   },
   "company_indication_heatmap": {
@@ -165,10 +165,10 @@
       "BNC",
       "LG化学 LG Chem, Ltd.",
       "海雅美",
+      "常州药研所",
       "杭州协合",
       "和康生物科技股份有限公司",
-      "山东凯乐普生物工程有限公司",
-      "麦施美学 / Merz"
+      "山东凯乐普生物工程有限公司"
     ],
     "indications": [
       "鼻唇沟",
@@ -215,35 +215,30 @@
       ],
       [
         0,
-        10,
-        2
-      ],
-      [
-        0,
-        9,
-        2
-      ],
-      [
-        3,
-        2,
-        1
-      ],
-      [
-        0,
-        2,
-        5
-      ],
-      [
-        7,
-        1,
-        1
-      ],
-      [
-        0,
         11,
         2
       ],
       [
+        0,
+        10,
+        2
+      ],
+      [
+        3,
+        2,
+        1
+      ],
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        7,
+        1,
+        1
+      ],
+      [
         1,
         1,
         3
@@ -252,6 +247,16 @@
         0,
         4,
         5
+      ],
+      [
+        0,
+        8,
+        1
+      ],
+      [
+        1,
+        8,
+        1
       ],
       [
         4,
@@ -290,12 +295,12 @@
       ],
       [
         0,
-        8,
+        9,
         2
       ],
       [
         1,
-        8,
+        9,
         1
       ],
       [
@@ -376,6 +381,11 @@
       [
         5,
         7,
+        1
+      ],
+      [
+        5,
+        8,
         1
       ],
       [
@@ -386,6 +396,11 @@
       [
         4,
         6,
+        1
+      ],
+      [
+        2,
+        9,
         1
       ],
       [
@@ -5509,6 +5524,54 @@
       "source_account": "闲话医与美",
       "source_title": "2026年以后公开获批补充",
       "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+      "confidence": "high"
+    },
+    {
+      "id": "HA-国械注准20263131179-肤质改善",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "strategic": "玻尿酸",
+      "brand": "注射用透明质酸钠溶液",
+      "aliases": "",
+      "product_name": "注射用透明质酸钠溶液",
+      "company": "常州药研所",
+      "company_key": "常州药研所",
+      "registrant": "常州药物研究所有限公司",
+      "certificate_no": "国械注准20263131179",
+      "origin": "国产",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 玻尿酸",
+      "material_form": "非交联HA溶液",
+      "approval_date": "2026-06-08",
+      "approval_year": 2026,
+      "valid_until": "",
+      "primary_indication": "肤质改善",
+      "indications": [
+        "肤质改善"
+      ],
+      "tags": [
+        "水光",
+        "肤质类",
+        "国产",
+        "非交联"
+      ],
+      "official_status": "",
+      "official_verification_status": "待官方核验",
+      "official_source": "",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
+      "verified": false,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
+      "source_account": "医美慢谈",
+      "source_title": "新品下证 | 常州药物水光针获批上市！",
+      "source_url": "https://mp.weixin.qq.com/s/3LmqSnCOVM_HThRznclZIw",
       "confidence": "high"
     },
     {

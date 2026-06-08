@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-06-08T11:16:11",
+  "generated_at": "2026-06-08T17:15:33",
   "kpi": {
-    "total_records": 187,
-    "main_records": 181,
+    "total_records": 188,
+    "main_records": 182,
     "excluded": 6,
     "companies": 98,
     "indications": 49,
-    "verified_share": 98.9,
-    "domestic": 100,
+    "verified_share": 98.4,
+    "domestic": 101,
     "imported": 75,
     "hkmt": 6,
-    "injectable_class3": 147,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 148,
+    "injectable_class3_breakdown": "HA109 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 25 类",
-    "recent_12mo": 54,
-    "recent_12mo_share": 28.9,
-    "recent_12mo_breakdown": "HA25 / EBD11 / 胶原蛋白8 / PLA5"
+    "recent_12mo": 55,
+    "recent_12mo_share": 29.3,
+    "recent_12mo_breakdown": "HA26 / EBD11 / 胶原蛋白8 / PLA5"
   },
   "segments": [
     {
@@ -25,8 +25,8 @@
       "name": "透明质酸钠",
       "tagline": "",
       "accent": "#D97757",
-      "records": 108,
-      "main_records": 108,
+      "records": 109,
+      "main_records": 109,
       "companies": 51,
       "verified": 106,
       "latest_year": 2026,
@@ -324,6 +324,20 @@
         }
       },
       {
+        "company_key": "常州药研所",
+        "company": "常州药研所",
+        "total": 3,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备": 0,
+          "新型材料": 0,
+          "玻尿酸": 3,
+          "肉毒毒素": 0,
+          "胶原刺激剂": 0,
+          "胶原蛋白": 0
+        }
+      },
+      {
         "company_key": "杭州协合",
         "company": "杭州协合",
         "total": 3,
@@ -396,20 +410,6 @@
       {
         "company_key": "和康生物科技股份有限公司",
         "company": "和康生物科技股份有限公司",
-        "total": 2,
-        "segments_covered": 1,
-        "by_segment": {
-          "EBD 设备": 0,
-          "新型材料": 0,
-          "玻尿酸": 2,
-          "肉毒毒素": 0,
-          "胶原刺激剂": 0,
-          "胶原蛋白": 0
-        }
-      },
-      {
-        "company_key": "常州药研所",
-        "company": "常州药研所",
         "total": 2,
         "segments_covered": 1,
         "by_segment": {
@@ -502,7 +502,7 @@
       [
         1,
         0,
-        10
+        11
       ],
       [
         4,
@@ -2264,7 +2264,7 @@
           6,
           21,
           40,
-          15
+          16
         ]
       },
       {
@@ -2320,31 +2320,31 @@
   "concentration": {
     "ha": {
       "track_name": "透明质酸钠",
-      "total_certs": 108,
+      "total_certs": 109,
       "company_count": 52,
-      "hhi": 424.0,
-      "cr4": 33.3,
-      "cr8": 49.1,
+      "hhi": 420.0,
+      "cr4": 33.0,
+      "cr8": 48.6,
       "top": [
         {
           "company": "华熙生物",
           "certs": 11,
-          "share": 10.2
+          "share": 10.1
         },
         {
           "company": "艾尔建 / AbbVie",
           "certs": 11,
-          "share": 10.2
+          "share": 10.1
         },
         {
           "company": "高德美 / Galderma",
           "certs": 8,
-          "share": 7.4
+          "share": 7.3
         },
         {
           "company": "爱美客",
           "certs": 6,
-          "share": 5.6
+          "share": 5.5
         },
         {
           "company": "其胜生物",
