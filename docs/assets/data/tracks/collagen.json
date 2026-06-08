@@ -8,11 +8,11 @@
   },
   "kpi": {
     "total": 47,
-    "main": 18,
-    "companies": 11,
+    "main": 19,
+    "companies": 12,
     "indications": 8,
-    "verified": 18,
-    "domestic": 13,
+    "verified": 19,
+    "domestic": 14,
     "imported": 2,
     "hkmt": 3
   },
@@ -60,20 +60,24 @@
     {
       "name": "创健医疗",
       "value": 1
+    },
+    {
+      "name": "无锡贝迪生物工程股份有限公司",
+      "value": 1
     }
   ],
   "long_tail_company_count": 0,
   "indication_share": [
     {
       "name": "鱼尾纹",
-      "value": 8
-    },
-    {
-      "name": "鼻唇沟",
-      "value": 6
+      "value": 9
     },
     {
       "name": "额部动力纹",
+      "value": 7
+    },
+    {
+      "name": "鼻唇沟",
       "value": 6
     },
     {
@@ -100,7 +104,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 13
+      "value": 14
     },
     {
       "name": "港澳台",
@@ -114,7 +118,7 @@
   "material_share": [
     {
       "name": "动物源胶原",
-      "value": 12
+      "value": 13
     },
     {
       "name": "重组/类人源胶原",
@@ -134,7 +138,7 @@
       3,
       2,
       8,
-      2
+      3
     ]
   },
   "company_indication_heatmap": {
@@ -2095,18 +2099,20 @@
       "tags": [
         "未见利多卡因"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "官方未查到/需复核",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
       "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
-      "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
-      "verified": false,
-      "main_landscape": false,
-      "portfolio_segments": [],
+      "official_product_name": "胶原蛋白植入剂",
+      "official_registrant": "无锡贝迪生物工程股份有限公司",
+      "official_approval_date": "2026-06-01",
+      "official_valid_until": "2031-05-31",
+      "official_indication": "鱼尾纹",
+      "official_scope": "该产品适用于面部真皮组织填充以纠正额部中重度动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "胶原蛋白"
+      ],
       "source_account": "医美慢谈",
       "source_title": "新品| 又一款胶原蛋白植入剂获批上市！",
       "source_url": "https://mp.weixin.qq.com/s/oUH_pnM7uct0l9MUFznqLg",

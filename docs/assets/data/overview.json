@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-06-04T19:36:20",
+  "generated_at": "2026-06-08T11:08:39",
   "kpi": {
     "total_records": 221,
-    "main_records": 180,
-    "excluded": 41,
-    "companies": 97,
+    "main_records": 181,
+    "excluded": 40,
+    "companies": 98,
     "indications": 49,
     "verified_share": 98.9,
-    "domestic": 99,
+    "domestic": 100,
     "imported": 75,
     "hkmt": 6,
-    "injectable_class3": 146,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白18 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 147,
+    "injectable_class3_breakdown": "HA108 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 25 类",
-    "recent_12mo": 53,
-    "recent_12mo_share": 24.0,
-    "recent_12mo_breakdown": "HA25 / EBD11 / 胶原蛋白7 / PLA5"
+    "recent_12mo": 54,
+    "recent_12mo_share": 24.4,
+    "recent_12mo_breakdown": "HA25 / EBD11 / 胶原蛋白8 / PLA5"
   },
   "segments": [
     {
@@ -50,9 +50,9 @@
       "tagline": "",
       "accent": "#B5915A",
       "records": 47,
-      "main_records": 18,
-      "companies": 11,
-      "verified": 18,
+      "main_records": 19,
+      "companies": 12,
+      "verified": 19,
       "latest_year": 2026,
       "leading_company": "双美生物"
     },
@@ -468,8 +468,8 @@
   "indication_heatmap": {
     "materials": [
       "透明质酸钠 / 玻尿酸",
-      "PLLA",
       "动物源胶原",
+      "PLLA",
       "A型肉毒毒素",
       "重组/类人源胶原",
       "PCL",
@@ -481,8 +481,8 @@
       "鼻唇沟",
       "肤质改善",
       "眉间纹",
-      "中面部",
       "额部动力纹",
+      "中面部",
       "下颌部",
       "颈部",
       "额部",
@@ -505,7 +505,7 @@
         10
       ],
       [
-        3,
+        4,
         0,
         5
       ],
@@ -547,37 +547,37 @@
       [
         0,
         1,
-        10
+        5
       ],
       [
         3,
         1,
-        1
+        3
       ],
       [
-        11,
+        12,
         1,
         1
       ],
       [
+        13,
+        1,
+        2
+      ],
+      [
         0,
         2,
-        5
+        10
       ],
       [
         4,
         2,
-        2
-      ],
-      [
-        12,
-        2,
         1
       ],
       [
-        13,
+        11,
         2,
-        2
+        1
       ],
       [
         2,
@@ -585,7 +585,7 @@
         8
       ],
       [
-        4,
+        3,
         4,
         4
       ],
@@ -833,7 +833,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 16
+        "days_to_expiry": 15
       },
       {
         "id": "PLLA-国械注准20213130460",
@@ -877,7 +877,7 @@
         "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
         "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
         "confidence": "",
-        "days_to_expiry": 16
+        "days_to_expiry": 15
       },
       {
         "id": "COLLAGEN-国械注准20213130488",
@@ -921,7 +921,7 @@
         "source_title": "胶原蛋白汇总文章交叉校准",
         "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
         "confidence": "",
-        "days_to_expiry": 20
+        "days_to_expiry": 19
       },
       {
         "id": "HA-国械注许20163130035-鼻唇沟",
@@ -969,7 +969,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 24
+        "days_to_expiry": 23
       },
       {
         "id": "HA-国械注准20173133254-鼻唇沟",
@@ -1017,7 +1017,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 37
+        "days_to_expiry": 36
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -1067,7 +1067,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 135
+        "days_to_expiry": 134
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -1112,7 +1112,7 @@
         "source_title": "胶原蛋白汇总文章交叉校准",
         "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
         "confidence": "",
-        "days_to_expiry": 140
+        "days_to_expiry": 139
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1156,7 +1156,7 @@
         "source_title": "UDI 胶原蛋白赛道召回样本",
         "source_url": "https://fiman.com/",
         "confidence": "",
-        "days_to_expiry": 148
+        "days_to_expiry": 147
       },
       {
         "id": "HA-国械注进20213130485-鼻部",
@@ -1206,7 +1206,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 171
+        "days_to_expiry": 170
       },
       {
         "id": "HA-国械注进20213130485-颞部",
@@ -1256,7 +1256,7 @@
         "source_title": "乔雅登丰颜获批新适应证，改善颞部凹陷",
         "source_url": "https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
         "confidence": "high",
-        "days_to_expiry": 171
+        "days_to_expiry": 170
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1304,7 +1304,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 267
+        "days_to_expiry": 266
       },
       {
         "id": "HA-国械注进20223130141-鼻部",
@@ -1354,7 +1354,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 275
+        "days_to_expiry": 274
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1402,7 +1402,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 308
+        "days_to_expiry": 307
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1450,7 +1450,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 308
+        "days_to_expiry": 307
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1498,7 +1498,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 316
+        "days_to_expiry": 315
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1548,7 +1548,7 @@
         "source_title": "射频治疗仪 国械注准20223090571 NMPA 医疗器械注册证",
         "source_url": "https://www.nmpa.gov.cn/",
         "confidence": "official",
-        "days_to_expiry": 325
+        "days_to_expiry": 324
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1596,7 +1596,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 348
+        "days_to_expiry": 347
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -1644,7 +1644,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 388
+        "days_to_expiry": 387
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -1692,7 +1692,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 398
+        "days_to_expiry": 397
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -1743,7 +1743,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 456
+        "days_to_expiry": 455
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -1791,7 +1791,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 504
+        "days_to_expiry": 503
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -1839,7 +1839,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 554
+        "days_to_expiry": 553
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -1889,7 +1889,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 584
+        "days_to_expiry": 583
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -1939,7 +1939,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 584
+        "days_to_expiry": 583
       },
       {
         "id": "RAW-LASER_IPL-国械注进20183011604",
@@ -1990,7 +1990,7 @@
         "source_title": "掺铥光纤激光治疗仪Thulium Laser Device 国械注进20183011604 NMPA 医疗器械注册证",
         "source_url": "https://www.nmpa.gov.cn/",
         "confidence": "official",
-        "days_to_expiry": 603
+        "days_to_expiry": 602
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -2038,7 +2038,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 615
+        "days_to_expiry": 614
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -2086,7 +2086,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 615
+        "days_to_expiry": 614
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -2134,7 +2134,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 638
+        "days_to_expiry": 637
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -2184,7 +2184,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 654
+        "days_to_expiry": 653
       },
       {
         "id": "HA-国械注准20183130109-鼻唇沟",
@@ -2232,7 +2232,7 @@
         "source_title": "玻尿酸的2025：医美再无械3神话",
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
-        "days_to_expiry": 659
+        "days_to_expiry": 658
       }
     ]
   },
@@ -2264,7 +2264,7 @@
           6,
           21,
           40,
-          14
+          15
         ]
       },
       {
@@ -2420,51 +2420,51 @@
     },
     "collagen": {
       "track_name": "胶原蛋白",
-      "total_certs": 18,
-      "company_count": 11,
-      "hhi": 1111.0,
-      "cr4": 55.6,
-      "cr8": 83.3,
+      "total_certs": 19,
+      "company_count": 12,
+      "hhi": 1025.0,
+      "cr4": 52.6,
+      "cr8": 78.9,
       "top": [
         {
           "company": "双美生物",
           "certs": 3,
-          "share": 16.7
+          "share": 15.8
         },
         {
           "company": "锦波生物",
           "certs": 3,
-          "share": 16.7
+          "share": 15.8
         },
         {
           "company": "崇山生物",
           "certs": 2,
-          "share": 11.1
+          "share": 10.5
         },
         {
           "company": "珂瑞康",
           "certs": 2,
-          "share": 11.1
+          "share": 10.5
         },
         {
           "company": "巨子生物",
           "certs": 2,
-          "share": 11.1
+          "share": 10.5
         },
         {
           "company": "艾佰瑞",
           "certs": 1,
-          "share": 5.6
+          "share": 5.3
         },
         {
           "company": "奇璞生物",
           "certs": 1,
-          "share": 5.6
+          "share": 5.3
         },
         {
           "company": "斐缦生物",
           "certs": 1,
-          "share": 5.6
+          "share": 5.3
         }
       ]
     },
