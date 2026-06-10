@@ -2,6 +2,7 @@
 overview_test*.png
 track_*_test.png
 .playwright-cli/
+.wrangler/
 output/
 test-results/
 videos/
