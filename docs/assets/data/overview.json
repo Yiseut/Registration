@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-14T14:45:50",
+  "generated_at": "2026-06-14T15:02:21",
   "kpi": {
     "total_records": 189,
-    "main_records": 177,
-    "excluded": 12,
+    "main_records": 176,
+    "excluded": 13,
     "companies": 98,
     "indications": 50,
     "verified_share": 100.0,
     "domestic": 96,
-    "imported": 75,
+    "imported": 74,
     "hkmt": 6,
-    "injectable_class3": 142,
-    "injectable_class3_breakdown": "HA103 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 141,
+    "injectable_class3_breakdown": "HA102 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 26 类",
@@ -26,11 +26,11 @@
       "tagline": "",
       "accent": "#D97757",
       "records": 110,
-      "main_records": 103,
+      "main_records": 102,
       "companies": 50,
-      "verified": 103,
+      "verified": 102,
       "latest_year": 2026,
-      "leading_company": "艾尔建 / AbbVie"
+      "leading_company": "华熙生物"
     },
     {
       "key": "botulinum",
@@ -186,12 +186,12 @@
       {
         "company_key": "abbvie_allergan",
         "company": "艾尔建 / AbbVie",
-        "total": 11,
+        "total": 10,
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备": 0,
           "新型材料": 0,
-          "玻尿酸": 10,
+          "玻尿酸": 9,
           "肉毒毒素": 1,
           "胶原刺激剂": 0,
           "胶原蛋白": 0
@@ -483,8 +483,8 @@
       "眉间纹",
       "额部动力纹",
       "中面部",
-      "鼻部",
       "下颌部",
+      "鼻部",
       "颈部",
       "手部",
       "颞部",
@@ -517,7 +517,7 @@
       [
         6,
         0,
-        4
+        3
       ],
       [
         7,
@@ -640,7 +640,7 @@
           1,
           2,
           3,
-          2,
+          1,
           5,
           2,
           2,
@@ -1305,56 +1305,6 @@
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
         "days_to_expiry": 260
-      },
-      {
-        "id": "HA-国械注进20223130141-鼻部",
-        "track": "ha",
-        "track_name": "透明质酸钠",
-        "strategic": "玻尿酸",
-        "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
-        "aliases": "",
-        "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
-        "company": "艾尔建 / AbbVie",
-        "company_key": "abbvie_allergan",
-        "registrant": "艾尔建 / AbbVie",
-        "certificate_no": "国械注进20223130141",
-        "origin": "进口",
-        "category": "透明质酸钠",
-        "material_family": "透明质酸钠 / 玻尿酸",
-        "material_form": "交联HA填充凝胶",
-        "approval_date": "2022-03-10",
-        "approval_year": 2022,
-        "valid_until": "2027-03-09",
-        "primary_indication": "鼻部",
-        "indications": [
-          "鼻部"
-        ],
-        "tags": [
-          "注射填充类",
-          "进口",
-          "交联",
-          "含利多卡因"
-        ],
-        "official_status": "verified",
-        "official_verification_status": "已官方核验/国家药监局NMPA医疗器械注册历史数据",
-        "official_source": "国家药监局 NMPA 医疗器械注册历史数据",
-        "official_product_name": "含利多卡因注射用交联透明质酸钠凝胶Juvéderm VOLUMA with Lidocaine",
-        "official_registrant": "艾尔建 Allergan",
-        "official_approval_date": "2022-03-10",
-        "official_valid_until": "2027-03-09",
-        "official_indication": "鼻部",
-        "official_scope": "产品适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
-        "verified": true,
-        "main_landscape": true,
-        "portfolio_segments": [
-          "玻尿酸",
-          "肉毒毒素"
-        ],
-        "source_account": "闲话医与美",
-        "source_title": "玻尿酸的2025：医美再无械3神话",
-        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
-        "confidence": "high",
-        "days_to_expiry": 268
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -2233,6 +2183,59 @@
         "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
         "confidence": "high",
         "days_to_expiry": 652
+      },
+      {
+        "id": "RAW-LASER_IPL-国械注进20173096244",
+        "track": "laser_ipl",
+        "track_name": "激光/IPL设备",
+        "strategic": "EBD 设备",
+        "brand": "Pastelle / 帕斯特",
+        "aliases": "",
+        "product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
+        "company": "韩国元泰株式会社WON TECH Co., Ltd.",
+        "company_key": "韩国元泰株式会社won tech co., ltd.",
+        "registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+        "certificate_no": "国械注进20173096244",
+        "origin": "进口",
+        "category": "激光/IPL设备",
+        "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性色素性病变/文身祛除",
+        "material_form": "",
+        "approval_date": "2023-04-07",
+        "approval_year": 2017,
+        "valid_until": "2028-04-06",
+        "primary_indication": "良性色素性病变/文身祛除",
+        "indications": [
+          "良性色素性病变",
+          "文身祛除"
+        ],
+        "tags": [
+          "激光",
+          "IPL设备",
+          "三类医疗器械",
+          "进口",
+          "NMPA官方核验",
+          "良性色素性病变",
+          "文身祛除"
+        ],
+        "official_status": "verified",
+        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+        "official_product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
+        "official_registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+        "official_approval_date": "2023-04-07",
+        "official_valid_until": "2028-04-06",
+        "official_indication": "手部",
+        "official_scope": "该产品用于皮肤组织的汽化和照射，临床用于在医疗机构中进行良性色素性病变的治疗和去除文身。",
+        "verified": true,
+        "main_landscape": true,
+        "portfolio_segments": [
+          "EBD 设备"
+        ],
+        "source_account": "NMPA 官方查询",
+        "source_title": "Nd:YAG激光治疗仪Nd:YAG Laser Device 国械注进20173096244 NMPA 医疗器械注册证",
+        "source_url": "https://www.nmpa.gov.cn/",
+        "confidence": "official",
+        "days_to_expiry": 662
       }
     ]
   },
@@ -2276,7 +2279,7 @@
           2,
           3,
           5,
-          5,
+          4,
           11,
           23,
           18,
@@ -2320,26 +2323,26 @@
   "concentration": {
     "ha": {
       "track_name": "透明质酸钠",
-      "total_certs": 103,
+      "total_certs": 102,
       "company_count": 51,
-      "hhi": 399.0,
-      "cr4": 31.1,
-      "cr8": 46.6,
+      "hhi": 388.0,
+      "cr4": 30.4,
+      "cr8": 46.1,
       "top": [
-        {
-          "company": "艾尔建 / AbbVie",
-          "certs": 10,
-          "share": 9.7
-        },
         {
           "company": "华熙生物",
           "certs": 10,
-          "share": 9.7
+          "share": 9.8
+        },
+        {
+          "company": "艾尔建 / AbbVie",
+          "certs": 9,
+          "share": 8.8
         },
         {
           "company": "高德美 / Galderma",
           "certs": 7,
-          "share": 6.8
+          "share": 6.9
         },
         {
           "company": "其胜生物",

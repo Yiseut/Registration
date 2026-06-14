@@ -8,22 +8,22 @@
   },
   "kpi": {
     "total": 110,
-    "main": 103,
+    "main": 102,
     "companies": 51,
     "indications": 13,
-    "verified": 103,
+    "verified": 102,
     "domestic": 48,
-    "imported": 52,
+    "imported": 51,
     "hkmt": 3
   },
   "company_share": [
     {
-      "name": "艾尔建 / AbbVie",
+      "name": "华熙生物",
       "value": 10
     },
     {
-      "name": "华熙生物",
-      "value": 10
+      "name": "艾尔建 / AbbVie",
+      "value": 9
     },
     {
       "name": "高德美 / Galderma",
@@ -74,7 +74,7 @@
     },
     {
       "name": "鼻部",
-      "value": 15
+      "value": 14
     },
     {
       "name": "肤质改善",
@@ -128,13 +128,13 @@
     },
     {
       "name": "进口",
-      "value": 52
+      "value": 51
     }
   ],
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
-      "value": 103
+      "value": 102
     }
   ],
   "timeline": {
@@ -148,7 +148,7 @@
     ],
     "values": [
       5,
-      12,
+      11,
       17,
       29,
       32,
@@ -1502,7 +1502,7 @@
       "official_indication": "鼻部",
       "official_scope": "产品适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸",
         "肉毒毒素"
