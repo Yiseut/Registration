@@ -161,9 +161,9 @@
       "艾尔建 / AbbVie",
       "高德美 / Galderma",
       "爱美客",
+      "LG化学 LG Chem, Ltd.",
       "其胜生物",
       "BNC",
-      "LG化学 LG Chem, Ltd.",
       "海雅美",
       "常州药研所",
       "杭州协合",
@@ -224,6 +224,11 @@
         2
       ],
       [
+        0,
+        4,
+        4
+      ],
+      [
         3,
         2,
         1
@@ -245,7 +250,7 @@
       ],
       [
         0,
-        4,
+        5,
         5
       ],
       [
@@ -264,13 +269,8 @@
         1
       ],
       [
-        0,
-        6,
-        3
-      ],
-      [
         1,
-        6,
+        4,
         1
       ],
       [
@@ -365,7 +365,7 @@
       ],
       [
         7,
-        4,
+        5,
         1
       ],
       [
@@ -390,12 +390,12 @@
       ],
       [
         0,
-        5,
+        6,
         4
       ],
       [
         4,
-        6,
+        4,
         1
       ],
       [
@@ -748,17 +748,17 @@
       "confidence": "high"
     },
     {
-      "id": "HA-国械注进20163130114-鼻唇沟",
+      "id": "HA-国械注进20163131014-鼻唇沟",
       "track": "ha",
       "track_name": "透明质酸钠",
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
       "product_name": "注射用修饰透明质酸钠凝胶",
-      "company": "LG Chem, Ltd.",
-      "company_key": "lg chem, ltd.",
-      "registrant": "LG Chem, Ltd.",
-      "certificate_no": "国械注进20163130114",
+      "company": "LG化学 LG Chem, Ltd.",
+      "company_key": "lg化学 lg chem, ltd.",
+      "registrant": "LG化学 LG Chem, Ltd.",
+      "certificate_no": "国械注进20163131014",
       "origin": "进口",
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
@@ -775,18 +775,20 @@
         "进口",
         "非交联"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "官方未查到/需复核",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
       "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
-      "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
-      "verified": false,
+      "official_product_name": "注射用修饰透明质酸钠凝胶",
+      "official_registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
+      "official_approval_date": "2025-12-30",
+      "official_valid_until": "2031-02-17",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于面部真皮组织中层到深层注射，以纠正中度鼻唇沟。",
+      "verified": true,
       "main_landscape": false,
-      "portfolio_segments": [],
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
       "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
