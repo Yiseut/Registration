@@ -8,12 +8,12 @@
   },
   "kpi": {
     "total": 28,
-    "main": 25,
-    "companies": 22,
-    "indications": 25,
-    "verified": 25,
+    "main": 26,
+    "companies": 23,
+    "indications": 26,
+    "verified": 26,
     "domestic": 18,
-    "imported": 7,
+    "imported": 8,
     "hkmt": 0
   },
   "company_share": [
@@ -66,7 +66,7 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 10,
+  "long_tail_company_count": 11,
   "indication_share": [
     {
       "name": "面部轻度皱纹",
@@ -74,7 +74,7 @@
     },
     {
       "name": "手部",
-      "value": 7
+      "value": 8
     },
     {
       "name": "面部轻中度皱纹",
@@ -124,7 +124,7 @@
     },
     {
       "name": "进口",
-      "value": 7
+      "value": 8
     }
   ],
   "material_share": [
@@ -138,6 +138,10 @@
     },
     {
       "name": "超声设备 / 三类医疗器械 / 国产 / NMPA官方核验 / 中下面部/颏下/颈部皮肤松弛",
+      "value": 2
+    },
+    {
+      "name": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
       "value": 2
     },
     {
@@ -171,10 +175,6 @@
     {
       "name": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性皮肤色素性病变",
       "value": 1
-    },
-    {
-      "name": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性色素性病变/文身祛除",
-      "value": 1
     }
   ],
   "timeline": {
@@ -193,7 +193,7 @@
       1,
       1,
       1,
-      1,
+      2,
       1,
       1,
       6,
@@ -1606,38 +1606,42 @@
       "track_name": "微针/射频微针设备",
       "strategic": "EBD 设备",
       "brand": "EndyMed 3D",
-      "aliases": "",
-      "product_name": "相控射频微针设备",
+      "aliases": "国械注进20183251955",
+      "product_name": "高频皮肤治疗仪Skin Treatment System",
       "company": "EndyMed / 美迪迈",
       "company_key": "endymed / 美迪迈",
-      "registrant": "EndyMed Medical Ltd.",
-      "certificate_no": "国械注进20183251955",
+      "registrant": "美迪迈医疗激光公司EndyMed Medical Ltd.",
+      "certificate_no": "国械注进20183091955",
       "origin": "进口",
       "category": "微针/射频微针设备",
       "material_family": "微针 / 射频微针 / 黄金微针 / 微针治疗仪",
       "material_form": "",
-      "approval_date": "",
+      "approval_date": "2023-01-16",
       "approval_year": 2018,
-      "valid_until": "",
+      "valid_until": "2028-04-19",
       "primary_indication": "射频微针治疗",
-      "indications": [],
+      "indications": [
+        "手部"
+      ],
       "tags": [
         "进口",
         "相控点阵",
         "微针"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "官方未查到/需复核",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
       "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
-      "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
-      "verified": false,
-      "main_landscape": false,
-      "portfolio_segments": [],
+      "official_product_name": "高频皮肤治疗仪Skin Treatment System",
+      "official_registrant": "美迪迈医疗激光公司EndyMed Medical Ltd.",
+      "official_approval_date": "2023-01-16",
+      "official_valid_until": "2028-04-19",
+      "official_indication": "手部",
+      "official_scope": "本产品在医疗机构的皮肤科中使用，用于减轻皮肤皱纹。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
       "source_account": "采美阿积",
       "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
       "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",

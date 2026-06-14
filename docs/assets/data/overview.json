@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-06-14T14:06:48",
+  "generated_at": "2026-06-14T14:15:59",
   "kpi": {
     "total_records": 188,
-    "main_records": 182,
-    "excluded": 6,
-    "companies": 98,
-    "indications": 49,
+    "main_records": 183,
+    "excluded": 5,
+    "companies": 99,
+    "indications": 50,
     "verified_share": 98.9,
     "domestic": 101,
-    "imported": 75,
+    "imported": 76,
     "hkmt": 6,
     "injectable_class3": 148,
     "injectable_class3_breakdown": "HA109 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
-    "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 25 类",
+    "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 26 类",
     "recent_12mo": 54,
     "recent_12mo_share": 28.7,
     "recent_12mo_breakdown": "HA26 / EBD11 / 胶原蛋白8 / PLA5"
@@ -110,9 +110,9 @@
       "tagline": "",
       "accent": "#6E6A65",
       "records": 28,
-      "main_records": 25,
-      "companies": 22,
-      "verified": 25,
+      "main_records": 26,
+      "companies": 23,
+      "verified": 26,
       "latest_year": 2026,
       "leading_company": "深圳半岛医疗集团股份有限公司"
     }
@@ -778,7 +778,7 @@
           0,
           0,
           1,
-          1,
+          2,
           0,
           0,
           0,
@@ -2273,7 +2273,7 @@
           1,
           1,
           1,
-          1,
+          2,
           3,
           8,
           5,
@@ -2585,51 +2585,51 @@
     },
     "ebd": {
       "track_name": "EBD 设备",
-      "total_certs": 25,
-      "company_count": 22,
-      "hhi": 528.0,
-      "cr4": 28.0,
-      "cr8": 44.0,
+      "total_certs": 26,
+      "company_count": 23,
+      "hhi": 503.0,
+      "cr4": 26.9,
+      "cr8": 42.3,
       "top": [
         {
           "company": "深圳半岛医疗集团股份有限公司",
           "certs": 3,
-          "share": 12.0
+          "share": 11.5
         },
         {
           "company": "深圳市宗匠科技有限公司",
           "certs": 2,
-          "share": 8.0
+          "share": 7.7
         },
         {
           "company": "杭州时光机智能电子科技有限公司",
           "certs": 1,
-          "share": 4.0
+          "share": 3.8
         },
         {
           "company": "上海维脉医疗科技有限公司",
           "certs": 1,
-          "share": 4.0
+          "share": 3.8
         },
         {
           "company": "深圳宇石科技有限公司",
           "certs": 1,
-          "share": 4.0
+          "share": 3.8
         },
         {
           "company": "乐普医疗",
           "certs": 1,
-          "share": 4.0
+          "share": 3.8
         },
         {
           "company": "杭州瑞彼加医疗科技有限公司",
           "certs": 1,
-          "share": 4.0
+          "share": 3.8
         },
         {
           "company": "深圳金茉科技有限公司",
           "certs": 1,
-          "share": 4.0
+          "share": 3.8
         }
       ]
     }
