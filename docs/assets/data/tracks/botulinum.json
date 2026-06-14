@@ -10,7 +10,7 @@
     "total": 8,
     "main": 8,
     "companies": 8,
-    "indications": 5,
+    "indications": 6,
     "verified": 8,
     "domestic": 2,
     "imported": 6,
@@ -71,6 +71,10 @@
     {
       "name": "额纹",
       "value": 1
+    },
+    {
+      "name": "额部",
+      "value": 1
     }
   ],
   "origin_share": [
@@ -121,6 +125,7 @@
       "咬肌突出",
       "腋窝多汗",
       "额纹",
+      "额部",
       "鱼尾纹"
     ],
     "cells": [
@@ -140,7 +145,7 @@
         1
       ],
       [
-        4,
+        5,
         5,
         1
       ],
@@ -151,6 +156,11 @@
       ],
       [
         3,
+        5,
+        1
+      ],
+      [
+        4,
         5,
         1
       ],
@@ -282,7 +292,7 @@
       "official_registrant": "",
       "official_approval_date": "",
       "official_valid_until": "",
-      "official_indication": "",
+      "official_indication": "额部",
       "official_scope": "",
       "verified": true,
       "main_landscape": true,

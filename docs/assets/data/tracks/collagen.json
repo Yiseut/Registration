@@ -10,7 +10,7 @@
     "total": 19,
     "main": 19,
     "companies": 12,
-    "indications": 8,
+    "indications": 10,
     "verified": 19,
     "domestic": 14,
     "imported": 2,
@@ -69,8 +69,8 @@
   "long_tail_company_count": 0,
   "indication_share": [
     {
-      "name": "鱼尾纹",
-      "value": 9
+      "name": "额部",
+      "value": 7
     },
     {
       "name": "额部动力纹",
@@ -81,7 +81,15 @@
       "value": 6
     },
     {
+      "name": "面颊部",
+      "value": 2
+    },
+    {
       "name": "面颊部平滑度",
+      "value": 2
+    },
+    {
+      "name": "鱼尾纹",
       "value": 2
     },
     {
@@ -157,10 +165,12 @@
       "荷兰汉福"
     ],
     "indications": [
-      "鱼尾纹",
+      "额部",
       "额部动力纹",
       "鼻唇沟",
+      "面颊部",
       "面颊部平滑度",
+      "鱼尾纹",
       "中面部",
       "中面部容量/轮廓",
       "激光术后创面",
@@ -169,6 +179,11 @@
     "cells": [
       [
         3,
+        10,
+        1
+      ],
+      [
+        4,
         10,
         1
       ],
@@ -188,27 +203,27 @@
         1
       ],
       [
-        4,
+        6,
         1,
         1
+      ],
+      [
+        7,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        2
       ],
       [
         5,
-        1,
-        1
-      ],
-      [
-        0,
-        1,
-        2
-      ],
-      [
-        1,
-        1,
-        2
-      ],
-      [
-        0,
         7,
         1
       ],
@@ -220,10 +235,15 @@
       [
         0,
         4,
-        2
+        1
       ],
       [
         1,
+        4,
+        1
+      ],
+      [
+        5,
         4,
         1
       ],
@@ -238,7 +258,7 @@
         1
       ],
       [
-        7,
+        9,
         11,
         1
       ],
@@ -273,6 +293,11 @@
         1
       ],
       [
+        4,
+        3,
+        1
+      ],
+      [
         0,
         9,
         1
@@ -283,7 +308,7 @@
         1
       ],
       [
-        6,
+        8,
         2,
         1
       ]
@@ -321,7 +346,7 @@
       "official_registrant": "北京艾佰瑞生物技术有限公司",
       "official_approval_date": "2025-12-10",
       "official_valid_until": "2030-12-09",
-      "official_indication": "",
+      "official_indication": "面颊部",
       "official_scope": "该产品适用于面颊部真皮层注射，以改善面颊部平滑度。",
       "verified": true,
       "main_landscape": true,
@@ -407,7 +432,7 @@
       "official_registrant": "双美生物科技股份有限公司",
       "official_approval_date": "2023-04-07",
       "official_valid_until": "2029-04-14",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "该产品用于面部真皮组织填充以纠正额部动力性皱纹(如眉间纹、额头纹和鱼尾纹等)。",
       "verified": true,
       "main_landscape": true,
@@ -493,7 +518,7 @@
       "official_registrant": "山西锦波生物医药股份有限公司",
       "official_approval_date": "2023-08-28",
       "official_valid_until": "2028-08-27",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "该产品用于面部真皮组织填充以纠正额部动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
       "verified": true,
       "main_landscape": true,
@@ -622,7 +647,7 @@
       "official_registrant": "浙江珂瑞康生物医疗科技有限公司",
       "official_approval_date": "2025-05-27",
       "official_valid_until": "2030-05-26",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "适用于面部真皮组织填充以纠正额部动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
       "verified": true,
       "main_landscape": true,
@@ -839,7 +864,7 @@
       "official_registrant": "江苏创健医疗科技股份有限公司",
       "official_approval_date": "2025-12-23",
       "official_valid_until": "2030-12-22",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "适用于满足该产品说明书所列条件下，面部真皮组织填充以纠正额部中重度动力性皱纹，包括眉间纹、额头纹和鱼尾纹。",
       "verified": true,
       "main_landscape": true,
@@ -882,7 +907,7 @@
       "official_registrant": "山西锦波生物医药股份有限公司",
       "official_approval_date": "2021-06-28",
       "official_valid_until": "2026-06-27",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "用于面部真皮组织填充以纠正额部动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
       "verified": true,
       "main_landscape": true,
@@ -925,7 +950,7 @@
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2025-10-21",
       "official_valid_until": "2030-10-20",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "适用于满足该产品说明书中所列条件下，用于面部真皮组织填充以纠正额部动力性皱纹，包括眉间纹、额头纹和鱼尾纹。",
       "verified": true,
       "main_landscape": true,
@@ -969,7 +994,7 @@
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2026-01-14",
       "official_valid_until": "2031-01-13",
-      "official_indication": "",
+      "official_indication": "面颊部",
       "official_scope": "该产品适用于满足该产品说明书中所列条件下，用于真皮层的注射，以改善面颊部平滑度。",
       "verified": true,
       "main_landscape": true,
@@ -1013,7 +1038,7 @@
       "official_registrant": "无锡贝迪生物工程股份有限公司",
       "official_approval_date": "2026-06-01",
       "official_valid_until": "2031-05-31",
-      "official_indication": "鱼尾纹",
+      "official_indication": "额部",
       "official_scope": "该产品适用于面部真皮组织填充以纠正额部中重度动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
       "verified": true,
       "main_landscape": true,

@@ -70,31 +70,31 @@
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 70
+      "value": 61
     },
     {
-      "name": "鼻部",
-      "value": 14
+      "name": "唇部",
+      "value": 12
     },
     {
       "name": "肤质改善",
       "value": 11
     },
     {
+      "name": "面颊部",
+      "value": 5
+    },
+    {
       "name": "中面部",
       "value": 5
     },
     {
-      "name": "下颌部",
+      "name": "鼻部",
       "value": 4
     },
     {
-      "name": "面部软组织",
-      "value": 3
-    },
-    {
-      "name": "轮廓",
-      "value": 3
+      "name": "下颌部",
+      "value": 4
     },
     {
       "name": "颈部",
@@ -109,11 +109,11 @@
       "value": 2
     },
     {
-      "name": "唇部",
-      "value": 2
+      "name": "面部软组织",
+      "value": 1
     },
     {
-      "name": "面颊部",
+      "name": "轮廓",
       "value": 1
     }
   ],
@@ -172,34 +172,29 @@
     ],
     "indications": [
       "鼻唇沟",
-      "鼻部",
+      "唇部",
       "肤质改善",
       "下颌部",
       "中面部",
+      "面颊部",
+      "鼻部",
       "颈部",
       "额部",
-      "唇部",
-      "轮廓",
-      "面部软组织"
+      "手部"
     ],
     "cells": [
       [
-        0,
-        0,
-        5
-      ],
-      [
         1,
         0,
-        5
+        6
       ],
       [
-        5,
+        7,
         3,
         1
       ],
       [
-        6,
+        8,
         3,
         3
       ],
@@ -224,22 +219,32 @@
         2
       ],
       [
-        3,
-        2,
-        1
-      ],
-      [
         0,
         2,
         5
       ],
       [
-        7,
+        3,
+        2,
+        1
+      ],
+      [
+        2,
         1,
         1
       ],
       [
         1,
+        1,
+        1
+      ],
+      [
+        5,
+        1,
+        3
+      ],
+      [
+        6,
         1,
         3
       ],
@@ -249,11 +254,6 @@
         5
       ],
       [
-        0,
-        8,
-        1
-      ],
-      [
         1,
         8,
         1
@@ -264,19 +264,14 @@
         1
       ],
       [
-        0,
-        4,
-        4
-      ],
-      [
         1,
         4,
         1
       ],
       [
-        7,
         0,
-        1
+        4,
+        3
       ],
       [
         0,
@@ -284,79 +279,49 @@
         5
       ],
       [
-        1,
-        2,
-        2
-      ],
-      [
-        4,
-        2,
-        1
-      ],
-      [
-        0,
-        9,
-        2
-      ],
-      [
-        1,
-        9,
-        1
-      ],
-      [
         6,
-        0,
-        1
-      ],
-      [
-        9,
-        0,
-        1
-      ],
-      [
-        8,
-        0,
-        1
-      ],
-      [
-        5,
-        0,
-        1
-      ],
-      [
-        3,
-        3,
-        1
-      ],
-      [
-        9,
-        3,
-        1
-      ],
-      [
-        8,
-        3,
-        1
-      ],
-      [
-        3,
-        7,
-        1
+        2,
+        2
       ],
       [
         4,
-        1,
+        2,
+        2
+      ],
+      [
+        0,
+        9,
         1
       ],
       [
-        9,
         1,
+        9,
         1
       ],
       [
         8,
-        1,
+        0,
         1
+      ],
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        3,
+        3,
+        1
+      ],
+      [
+        3,
+        7,
+        1
+      ],
+      [
+        9,
+        2,
+        2
       ],
       [
         3,
@@ -364,7 +329,7 @@
         1
       ],
       [
-        7,
+        1,
         5,
         1
       ],
@@ -379,12 +344,12 @@
         1
       ],
       [
-        5,
+        7,
         7,
         1
       ],
       [
-        5,
+        7,
         8,
         1
       ],
@@ -401,6 +366,11 @@
       [
         2,
         9,
+        1
+      ],
+      [
+        9,
+        7,
         1
       ],
       [
@@ -430,9 +400,9 @@
       "approval_date": "2021-05-31",
       "approval_year": 2021,
       "valid_until": "2026-05-30",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -446,7 +416,7 @@
       "official_registrant": "华熙生物科技股份有限公司",
       "official_approval_date": "2021-05-31",
       "official_valid_until": "2026-05-30",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": false,
@@ -530,7 +500,8 @@
       "valid_until": "2026-02-25",
       "primary_indication": "额部",
       "indications": [
-        "额部"
+        "额部",
+        "鼻唇沟"
       ],
       "tags": [
         "注射填充类",
@@ -544,7 +515,7 @@
       "official_registrant": "爱美客技术发展股份有限公司",
       "official_approval_date": "2025-05-19",
       "official_valid_until": "2031-02-25",
-      "official_indication": "鼻唇沟",
+      "official_indication": "额部 / 鼻唇沟",
       "official_scope": "该产品用于皮肤皮下浅层至深层之间的填充,以纠正中重度额部皱纹和中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": false,
@@ -579,7 +550,8 @@
       "valid_until": "2026-03-16",
       "primary_indication": "额部",
       "indications": [
-        "额部"
+        "额部",
+        "唇部"
       ],
       "tags": [
         "复合材料类",
@@ -594,7 +566,7 @@
       "official_registrant": "爱美客技术发展股份有限公司",
       "official_approval_date": "2025-04-30",
       "official_valid_until": "2031-03-16",
-      "official_indication": "鼻部",
+      "official_indication": "额部 / 唇部",
       "official_scope": "该产品用于皮肤真皮深层及皮下浅层之间注射填充，以纠正中重度额部皱纹和中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": false,
@@ -813,8 +785,9 @@
       "approval_date": "2021-03-03",
       "approval_year": 2021,
       "valid_until": "2026-03-02",
-      "primary_indication": "下颌部",
+      "primary_indication": "鼻唇沟",
       "indications": [
+        "鼻唇沟",
         "下颌部"
       ],
       "tags": [
@@ -829,7 +802,7 @@
       "official_registrant": "科医有限公司Q-Med AB",
       "official_approval_date": "2024-07-26",
       "official_valid_until": "2031-03-02",
-      "official_indication": "鼻唇沟",
+      "official_indication": "鼻唇沟 / 下颌部",
       "official_scope": "本产品适用于面部真皮组织中层至深层填充以纠正中度至重度鼻唇沟皱纹。适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
       "main_landscape": false,
@@ -862,8 +835,9 @@
       "approval_date": "2021-04-19",
       "approval_year": 2021,
       "valid_until": "2026-04-18",
-      "primary_indication": "唇部",
+      "primary_indication": "肤质改善",
       "indications": [
+        "肤质改善",
         "唇部"
       ],
       "tags": [
@@ -879,7 +853,7 @@
       "official_registrant": "艾尔建ALLERGAN",
       "official_approval_date": "2025-06-09",
       "official_valid_until": "2031-04-18",
-      "official_indication": "唇部",
+      "official_indication": "肤质改善 / 唇部",
       "official_scope": "该产品通过注射至唇红体和唇红缘的唇粘膜、真皮浅层或中层，以矫正唇部不对称、轮廓畸形和容积缺损等结构缺陷。利多卡因可减轻治疗过程中患者的疼痛。",
       "verified": true,
       "main_landscape": false,
@@ -942,12 +916,12 @@
       "confidence": "high"
     },
     {
-      "id": "HA-国械注进20213130485-鼻部",
+      "id": "HA-国械注进20213130485-面颊部",
       "track": "ha",
       "track_name": "透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
-      "aliases": "",
+      "brand": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine",
+      "aliases": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine",
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
@@ -960,8 +934,9 @@
       "approval_date": "2021-11-26",
       "approval_year": 2021,
       "valid_until": "2026-11-25",
-      "primary_indication": "鼻部",
+      "primary_indication": "面颊部",
       "indications": [
+        "面颊部",
         "鼻部"
       ],
       "tags": [
@@ -977,7 +952,7 @@
       "official_registrant": "艾尔建 Allergan",
       "official_approval_date": "2021-11-26",
       "official_valid_until": "2026-11-25",
-      "official_indication": "鼻部",
+      "official_indication": "面颊部 / 鼻部",
       "official_scope": "产品适用于面颊部深层（皮下和/或骨膜上）注射，以重塑面部容积；适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
       "verified": true,
       "main_landscape": true,
@@ -1058,7 +1033,8 @@
       "valid_until": "2027-09-06",
       "primary_indication": "额部",
       "indications": [
-        "额部"
+        "额部",
+        "唇部"
       ],
       "tags": [
         "水光",
@@ -1073,7 +1049,7 @@
       "official_registrant": "爱美客技术发展股份有限公司",
       "official_approval_date": "2022-09-02",
       "official_valid_until": "2027-09-06",
-      "official_indication": "鼻部",
+      "official_indication": "额部 / 唇部",
       "official_scope": "该产品用于皮肤真皮深层至皮下浅层之间注射填充，以纠正额部皱纹和中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1106,9 +1082,9 @@
       "approval_date": "2022-04-29",
       "approval_year": 2022,
       "valid_until": "2028-03-27",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -1122,7 +1098,7 @@
       "official_registrant": "常州药物研究所有限公司",
       "official_approval_date": "2022-04-29",
       "official_valid_until": "2028-03-27",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品用于面部真皮组织中层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1341,9 +1317,9 @@
       "approval_date": "2022-07-01",
       "approval_year": 2022,
       "valid_until": "2027-06-30",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -1357,7 +1333,7 @@
       "official_registrant": "俪维美学有限公司 LYV Sciences Co.,Ltd",
       "official_approval_date": "2022-07-01",
       "official_valid_until": "2027-06-30",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品用于面部真皮组织中层至深层注射，以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1435,9 +1411,9 @@
       "approval_date": "2022-03-02",
       "approval_year": 2022,
       "valid_until": "2027-03-01",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -1451,7 +1427,7 @@
       "official_registrant": "株式会社东方医疗 Dong Bang Medical Co.,Ltd.",
       "official_approval_date": "2022-03-02",
       "official_valid_until": "2027-03-01",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品适用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1578,9 +1554,9 @@
       "approval_date": "2023-08-23",
       "approval_year": 2023,
       "valid_until": "2029-09-01",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -1594,7 +1570,7 @@
       "official_registrant": "华熙生物科技股份有限公司",
       "official_approval_date": "2023-08-23",
       "official_valid_until": "2029-09-01",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品适用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1672,9 +1648,9 @@
       "approval_date": "2023-09-01",
       "approval_year": 2023,
       "valid_until": "2029-04-27",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -1688,7 +1664,7 @@
       "official_registrant": "华熙生物科技股份有限公司",
       "official_approval_date": "2023-09-01",
       "official_valid_until": "2029-04-27",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1766,9 +1742,9 @@
       "approval_date": "2023-10-23",
       "approval_year": 2023,
       "valid_until": "2028-10-22",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -1782,7 +1758,7 @@
       "official_registrant": "陕西佰傲再生医学有限公司",
       "official_approval_date": "2023-10-23",
       "official_valid_until": "2028-10-22",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品适用于面部真皮组织中层至深层注射填充以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -1957,8 +1933,9 @@
       "approval_date": "2023-04-12",
       "approval_year": 2023,
       "valid_until": "2028-06-24",
-      "primary_indication": "鼻部",
+      "primary_indication": "鼻唇沟",
       "indications": [
+        "鼻唇沟",
         "鼻部"
       ],
       "tags": [
@@ -1973,7 +1950,7 @@
       "official_registrant": "科医有限公司Q-Med AB",
       "official_approval_date": "2023-04-12",
       "official_valid_until": "2028-06-24",
-      "official_indication": "鼻唇沟",
+      "official_indication": "鼻唇沟 / 鼻部",
       "official_scope": "该产品适用于纠正中到重度鼻唇沟皱纹以及鼻背和/或鼻根塑形。纠正中到重度鼻唇沟皱纹时，应注射入面部真皮组织深层和/或皮下组织浅层。用于鼻背和/或鼻根塑形时，应注射入骨膜上层。",
       "verified": true,
       "main_landscape": true,
@@ -2292,8 +2269,9 @@
       "approval_date": "2023-11-16",
       "approval_year": 2023,
       "valid_until": "2028-11-15",
-      "primary_indication": "中面部",
+      "primary_indication": "面颊部",
       "indications": [
+        "面颊部",
         "中面部"
       ],
       "tags": [
@@ -2308,7 +2286,7 @@
       "official_registrant": "菲欧曼实验室公司Laboratoires Fill-Med Manufacturing S.A.",
       "official_approval_date": "2023-11-16",
       "official_valid_until": "2028-11-15",
-      "official_indication": "中面部",
+      "official_indication": "面颊部 / 中面部",
       "official_scope": "产品用于面颊部皮下到骨膜上注射，以矫正中面部容量缺失和/或中面部轮廓缺陷。",
       "verified": true,
       "main_landscape": true,
@@ -2482,9 +2460,9 @@
       "approval_date": "2024-09-27",
       "approval_year": 2024,
       "valid_until": "2030-01-22",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -2498,7 +2476,7 @@
       "official_registrant": "杭州协合医疗用品有限公司",
       "official_approval_date": "2024-09-27",
       "official_valid_until": "2030-01-22",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "本产品用于面部真皮组织中层至深层注射，以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -2545,7 +2523,7 @@
       "official_registrant": "华熙生物科技股份有限公司",
       "official_approval_date": "2024-08-05",
       "official_valid_until": "2030-03-19",
-      "official_indication": "面部软组织/轮廓",
+      "official_indication": "额部",
       "official_scope": "该产品用于面部真皮组织浅层到中层注射以纠正静态额部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -2623,9 +2601,9 @@
       "approval_date": "2024-09-03",
       "approval_year": 2024,
       "valid_until": "2030-06-18",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -2639,7 +2617,7 @@
       "official_registrant": "华熙生物科技股份有限公司",
       "official_approval_date": "2024-09-03",
       "official_valid_until": "2030-06-18",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -3052,9 +3030,9 @@
       "approval_date": "2024-03-15",
       "approval_year": 2024,
       "valid_until": "2029-08-18",
-      "primary_indication": "中面部",
+      "primary_indication": "面颊部",
       "indications": [
-        "中面部"
+        "面颊部"
       ],
       "tags": [
         "注射填充类",
@@ -3068,7 +3046,7 @@
       "official_registrant": "艾尔建Allergan",
       "official_approval_date": "2024-03-15",
       "official_valid_until": "2029-08-18",
-      "official_indication": "面部软组织/轮廓",
+      "official_indication": "面颊部",
       "official_scope": "本产品适用于面颊部深层（皮下和/或骨膜上）注射，以重塑面部体积。",
       "verified": true,
       "main_landscape": true,
@@ -3292,8 +3270,10 @@
       "approval_date": "2024-03-26",
       "approval_year": 2024,
       "valid_until": "2030-02-27",
-      "primary_indication": "鼻部",
+      "primary_indication": "鼻唇沟",
       "indications": [
+        "鼻唇沟",
+        "中面部",
         "鼻部"
       ],
       "tags": [
@@ -3308,7 +3288,7 @@
       "official_registrant": "科医有限公司Q-Med AB",
       "official_approval_date": "2024-03-26",
       "official_valid_until": "2030-02-27",
-      "official_indication": "鼻唇沟",
+      "official_indication": "鼻唇沟 / 中面部 / 鼻部",
       "official_scope": "本品适用于注射到真皮组织深层和/或皮下组织浅层以纠正中重度鼻唇沟皱纹；注射到皮下至骨膜上层用于矫正中面部容量缺失和/或中面部轮廓缺陷；注射入骨膜上层用于鼻背和/或鼻根塑形。该产品适用于18岁以上的患者。",
       "verified": true,
       "main_landscape": true,
@@ -3772,8 +3752,9 @@
       "approval_date": "2025-06-24",
       "approval_year": 2025,
       "valid_until": "2030-11-15",
-      "primary_indication": "唇部",
+      "primary_indication": "鼻唇沟",
       "indications": [
+        "鼻唇沟",
         "唇部"
       ],
       "tags": [
@@ -3788,7 +3769,7 @@
       "official_registrant": "上海其胜生物制剂有限公司",
       "official_approval_date": "2025-06-24",
       "official_valid_until": "2030-11-15",
-      "official_indication": "鼻唇沟",
+      "official_indication": "鼻唇沟 / 唇部",
       "official_scope": "1.该产品适用于面部真皮组织中层至深层注射以纠正中重度鼻唇沟皱纹。2.用于唇红体和唇红缘的皮下（或粘膜下）注射填充唇部以达到增加唇部组织容积的目的",
       "verified": true,
       "main_landscape": true,
@@ -3819,9 +3800,9 @@
       "approval_date": "2025-01-24",
       "approval_year": 2025,
       "valid_until": "2030-06-18",
-      "primary_indication": "鼻唇沟",
+      "primary_indication": "唇部",
       "indications": [
-        "鼻唇沟"
+        "唇部"
       ],
       "tags": [
         "注射填充类",
@@ -3835,7 +3816,7 @@
       "official_registrant": "华熙生物科技股份有限公司",
       "official_approval_date": "2025-01-24",
       "official_valid_until": "2030-06-18",
-      "official_indication": "鼻部",
+      "official_indication": "唇部",
       "official_scope": "本产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
       "main_landscape": true,
@@ -5417,7 +5398,7 @@
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2026-01-14",
       "official_valid_until": "2031-01-13",
-      "official_indication": "",
+      "official_indication": "面颊部",
       "official_scope": "该产品适用于满足该产品说明书中所列条件下，用于真皮层的注射，以改善面颊部平滑度。",
       "verified": true,
       "main_landscape": true,
@@ -5608,7 +5589,7 @@
       "official_registrant": "艾尔建 Allergan",
       "official_approval_date": "2021-11-26",
       "official_valid_until": "2026-11-25",
-      "official_indication": "鼻部",
+      "official_indication": "面颊部 / 鼻部",
       "official_scope": "产品适用于面颊部深层（皮下和/或骨膜上）注射，以重塑面部容积；适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
       "verified": true,
       "main_landscape": true,
