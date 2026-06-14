@@ -8,30 +8,26 @@
   },
   "kpi": {
     "total": 109,
-    "main": 109,
-    "companies": 52,
+    "main": 101,
+    "companies": 50,
     "indications": 13,
-    "verified": 108,
-    "domestic": 53,
-    "imported": 53,
+    "verified": 101,
+    "domestic": 48,
+    "imported": 50,
     "hkmt": 3
   },
   "company_share": [
     {
-      "name": "华熙生物",
-      "value": 11
+      "name": "艾尔建 / AbbVie",
+      "value": 10
     },
     {
-      "name": "艾尔建 / AbbVie",
-      "value": 11
+      "name": "华熙生物",
+      "value": 10
     },
     {
       "name": "高德美 / Galderma",
-      "value": 8
-    },
-    {
-      "name": "爱美客",
-      "value": 6
+      "value": 7
     },
     {
       "name": "其胜生物",
@@ -50,6 +46,10 @@
       "value": 4
     },
     {
+      "name": "爱美客",
+      "value": 3
+    },
+    {
       "name": "常州药研所",
       "value": 3
     },
@@ -66,39 +66,27 @@
       "value": 2
     }
   ],
-  "long_tail_company_count": 40,
+  "long_tail_company_count": 38,
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 73
+      "value": 68
     },
     {
       "name": "鼻部",
-      "value": 17
+      "value": 15
     },
     {
       "name": "肤质改善",
       "value": 11
     },
     {
-      "name": "下颌部",
-      "value": 5
-    },
-    {
       "name": "中面部",
       "value": 5
     },
     {
-      "name": "颈部",
+      "name": "下颌部",
       "value": 4
-    },
-    {
-      "name": "额部",
-      "value": 4
-    },
-    {
-      "name": "唇部",
-      "value": 3
     },
     {
       "name": "面部软组织",
@@ -109,8 +97,20 @@
       "value": 3
     },
     {
+      "name": "颈部",
+      "value": 3
+    },
+    {
       "name": "手部",
       "value": 3
+    },
+    {
+      "name": "额部",
+      "value": 2
+    },
+    {
+      "name": "唇部",
+      "value": 2
     },
     {
       "name": "面颊部",
@@ -120,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 53
+      "value": 48
     },
     {
       "name": "港澳台",
@@ -128,13 +128,13 @@
     },
     {
       "name": "进口",
-      "value": 53
+      "value": 50
     }
   ],
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
-      "value": 109
+      "value": 101
     }
   ],
   "timeline": {
@@ -147,7 +147,7 @@
       2026
     ],
     "values": [
-      13,
+      5,
       12,
       17,
       29,
@@ -449,7 +449,7 @@
       "official_indication": "鼻部",
       "official_scope": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸"
       ],
@@ -498,7 +498,7 @@
       "official_indication": "颈部",
       "official_scope": "该产品用于皮内真皮层注射填充，以纠正颈部中重度皱纹。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -547,7 +547,7 @@
       "official_indication": "鼻唇沟",
       "official_scope": "该产品用于皮肤皮下浅层至深层之间的填充,以纠正中重度额部皱纹和中重度鼻唇沟皱纹。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -597,7 +597,7 @@
       "official_indication": "鼻部",
       "official_scope": "该产品用于皮肤真皮深层及皮下浅层之间注射填充，以纠正中重度额部皱纹和中重度鼻唇部皱纹。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -693,10 +693,8 @@
       "official_indication": "鼻唇沟",
       "official_scope": "适用于面部皮肤真皮组织中层至深层注射，以纠正中重度鼻唇沟。",
       "verified": true,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "玻尿酸"
-      ],
+      "main_landscape": false,
+      "portfolio_segments": [],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
       "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
@@ -787,10 +785,8 @@
       "official_indication": "",
       "official_scope": "",
       "verified": false,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "玻尿酸"
-      ],
+      "main_landscape": false,
+      "portfolio_segments": [],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
       "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
@@ -881,7 +877,7 @@
       "official_indication": "鼻唇沟",
       "official_scope": "本产品适用于面部真皮组织中层至深层填充以纠正中度至重度鼻唇沟皱纹。适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -931,7 +927,7 @@
       "official_indication": "唇部",
       "official_scope": "该产品通过注射至唇红体和唇红缘的唇粘膜、真皮浅层或中层，以矫正唇部不对称、轮廓畸形和容积缺损等结构缺陷。利多卡因可减轻治疗过程中患者的疼痛。",
       "verified": true,
-      "main_landscape": true,
+      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸",
         "肉毒毒素"

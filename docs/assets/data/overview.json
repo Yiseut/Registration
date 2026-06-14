@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-14T14:21:39",
+  "generated_at": "2026-06-14T14:25:18",
   "kpi": {
     "total_records": 188,
-    "main_records": 183,
-    "excluded": 5,
-    "companies": 99,
+    "main_records": 175,
+    "excluded": 13,
+    "companies": 97,
     "indications": 50,
-    "verified_share": 99.5,
-    "domestic": 101,
-    "imported": 76,
+    "verified_share": 100.0,
+    "domestic": 96,
+    "imported": 73,
     "hkmt": 6,
-    "injectable_class3": 148,
-    "injectable_class3_breakdown": "HA109 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 140,
+    "injectable_class3_breakdown": "HA101 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 26 类",
@@ -26,11 +26,11 @@
       "tagline": "",
       "accent": "#D97757",
       "records": 109,
-      "main_records": 109,
-      "companies": 51,
-      "verified": 108,
+      "main_records": 101,
+      "companies": 49,
+      "verified": 101,
       "latest_year": 2026,
-      "leading_company": "华熙生物"
+      "leading_company": "艾尔建 / AbbVie"
     },
     {
       "key": "botulinum",
@@ -130,12 +130,12 @@
       {
         "company_key": "galderma",
         "company": "高德美 / Galderma",
-        "total": 10,
+        "total": 9,
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备": 0,
           "新型材料": 0,
-          "玻尿酸": 8,
+          "玻尿酸": 7,
           "肉毒毒素": 1,
           "胶原刺激剂": 1,
           "胶原蛋白": 0
@@ -144,12 +144,12 @@
       {
         "company_key": "imeik",
         "company": "爱美客",
-        "total": 8,
+        "total": 5,
         "segments_covered": 3,
         "by_segment": {
           "EBD 设备": 0,
           "新型材料": 0,
-          "玻尿酸": 6,
+          "玻尿酸": 3,
           "肉毒毒素": 1,
           "胶原刺激剂": 1,
           "胶原蛋白": 0
@@ -186,12 +186,12 @@
       {
         "company_key": "abbvie_allergan",
         "company": "艾尔建 / AbbVie",
-        "total": 12,
+        "total": 11,
         "segments_covered": 2,
         "by_segment": {
           "EBD 设备": 0,
           "新型材料": 0,
-          "玻尿酸": 11,
+          "玻尿酸": 10,
           "肉毒毒素": 1,
           "胶原刺激剂": 0,
           "胶原蛋白": 0
@@ -256,12 +256,12 @@
       {
         "company_key": "bloomage",
         "company": "华熙生物",
-        "total": 11,
+        "total": 10,
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备": 0,
           "新型材料": 0,
-          "玻尿酸": 11,
+          "玻尿酸": 10,
           "肉毒毒素": 0,
           "胶原刺激剂": 0,
           "胶原蛋白": 0
@@ -483,13 +483,13 @@
       "眉间纹",
       "额部动力纹",
       "中面部",
+      "鼻部",
       "下颌部",
       "颈部",
-      "额部",
-      "鼻部",
-      "唇部",
       "手部",
       "颞部",
+      "额部",
+      "唇部",
       "面颊部平滑度",
       "鱼尾纹"
     ],
@@ -497,7 +497,7 @@
       [
         0,
         0,
-        68
+        65
       ],
       [
         1,
@@ -512,7 +512,7 @@
       [
         5,
         0,
-        5
+        4
       ],
       [
         6,
@@ -522,27 +522,27 @@
       [
         7,
         0,
-        4
+        3
       ],
       [
         8,
         0,
-        4
+        3
       ],
       [
         9,
         0,
-        3
+        1
       ],
       [
         10,
         0,
-        3
+        2
       ],
       [
         11,
         0,
-        1
+        2
       ],
       [
         0,
@@ -575,7 +575,7 @@
         1
       ],
       [
-        11,
+        9,
         2,
         1
       ],
@@ -600,7 +600,7 @@
         3
       ],
       [
-        11,
+        9,
         5,
         1
       ],
@@ -2259,7 +2259,7 @@
           0,
           0,
           0,
-          9,
+          4,
           8,
           6,
           21,
@@ -2275,7 +2275,7 @@
           1,
           2,
           3,
-          8,
+          5,
           5,
           11,
           23,
@@ -2320,51 +2320,51 @@
   "concentration": {
     "ha": {
       "track_name": "透明质酸钠",
-      "total_certs": 109,
-      "company_count": 52,
-      "hhi": 420.0,
-      "cr4": 33.0,
-      "cr8": 48.6,
+      "total_certs": 101,
+      "company_count": 50,
+      "hhi": 405.0,
+      "cr4": 31.7,
+      "cr8": 46.5,
       "top": [
         {
-          "company": "华熙生物",
-          "certs": 11,
-          "share": 10.1
+          "company": "艾尔建 / AbbVie",
+          "certs": 10,
+          "share": 9.9
         },
         {
-          "company": "艾尔建 / AbbVie",
-          "certs": 11,
-          "share": 10.1
+          "company": "华熙生物",
+          "certs": 10,
+          "share": 9.9
         },
         {
           "company": "高德美 / Galderma",
-          "certs": 8,
-          "share": 7.3
-        },
-        {
-          "company": "爱美客",
-          "certs": 6,
-          "share": 5.5
+          "certs": 7,
+          "share": 6.9
         },
         {
           "company": "其胜生物",
           "certs": 5,
-          "share": 4.6
+          "share": 5.0
         },
         {
           "company": "LG化学 LG Chem, Ltd.",
           "certs": 4,
-          "share": 3.7
+          "share": 4.0
         },
         {
           "company": "海雅美",
           "certs": 4,
-          "share": 3.7
+          "share": 4.0
         },
         {
           "company": "BNC",
           "certs": 4,
-          "share": 3.7
+          "share": 4.0
+        },
+        {
+          "company": "爱美客",
+          "certs": 3,
+          "share": 3.0
         }
       ]
     },
