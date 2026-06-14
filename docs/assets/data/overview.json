@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-06-14T14:39:34",
+  "generated_at": "2026-06-14T14:45:50",
   "kpi": {
-    "total_records": 188,
-    "main_records": 175,
-    "excluded": 13,
-    "companies": 97,
+    "total_records": 189,
+    "main_records": 177,
+    "excluded": 12,
+    "companies": 98,
     "indications": 50,
     "verified_share": 100.0,
     "domestic": 96,
-    "imported": 73,
+    "imported": 75,
     "hkmt": 6,
-    "injectable_class3": 140,
-    "injectable_class3_breakdown": "HA101 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 142,
+    "injectable_class3_breakdown": "HA103 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 21 类 · 注射用药品 8 类 · EBD 26 类",
-    "recent_12mo": 54,
-    "recent_12mo_share": 28.7,
-    "recent_12mo_breakdown": "HA26 / EBD11 / 胶原蛋白8 / PLA5"
+    "recent_12mo": 56,
+    "recent_12mo_share": 29.6,
+    "recent_12mo_breakdown": "HA28 / EBD11 / 胶原蛋白8 / PLA5"
   },
   "segments": [
     {
@@ -25,10 +25,10 @@
       "name": "透明质酸钠",
       "tagline": "",
       "accent": "#D97757",
-      "records": 109,
-      "main_records": 101,
-      "companies": 49,
-      "verified": 101,
+      "records": 110,
+      "main_records": 103,
+      "companies": 50,
+      "verified": 103,
       "latest_year": 2026,
       "leading_company": "艾尔建 / AbbVie"
     },
@@ -284,12 +284,12 @@
       {
         "company_key": "lg化学 lg chem, ltd.",
         "company": "LG化学 LG Chem, Ltd.",
-        "total": 4,
+        "total": 5,
         "segments_covered": 1,
         "by_segment": {
           "EBD 设备": 0,
           "新型材料": 0,
-          "玻尿酸": 4,
+          "玻尿酸": 5,
           "肉毒毒素": 0,
           "胶原刺激剂": 0,
           "胶原蛋白": 0
@@ -497,7 +497,7 @@
       [
         0,
         0,
-        65
+        67
       ],
       [
         1,
@@ -2279,8 +2279,8 @@
           5,
           11,
           23,
-          17,
-          3
+          18,
+          4
         ]
       },
       {
@@ -2320,51 +2320,51 @@
   "concentration": {
     "ha": {
       "track_name": "透明质酸钠",
-      "total_certs": 101,
-      "company_count": 50,
-      "hhi": 405.0,
-      "cr4": 31.7,
-      "cr8": 46.5,
+      "total_certs": 103,
+      "company_count": 51,
+      "hhi": 399.0,
+      "cr4": 31.1,
+      "cr8": 46.6,
       "top": [
         {
           "company": "艾尔建 / AbbVie",
           "certs": 10,
-          "share": 9.9
+          "share": 9.7
         },
         {
           "company": "华熙生物",
           "certs": 10,
-          "share": 9.9
+          "share": 9.7
         },
         {
           "company": "高德美 / Galderma",
           "certs": 7,
-          "share": 6.9
+          "share": 6.8
         },
         {
           "company": "其胜生物",
           "certs": 5,
-          "share": 5.0
+          "share": 4.9
         },
         {
           "company": "LG化学 LG Chem, Ltd.",
-          "certs": 4,
-          "share": 4.0
+          "certs": 5,
+          "share": 4.9
         },
         {
           "company": "海雅美",
           "certs": 4,
-          "share": 4.0
+          "share": 3.9
         },
         {
           "company": "BNC",
           "certs": 4,
-          "share": 4.0
+          "share": 3.9
         },
         {
           "company": "爱美客",
           "certs": 3,
-          "share": 3.0
+          "share": 2.9
         }
       ]
     },

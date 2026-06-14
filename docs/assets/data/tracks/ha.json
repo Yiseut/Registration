@@ -7,13 +7,13 @@
     "accent": "#D97757"
   },
   "kpi": {
-    "total": 109,
-    "main": 101,
-    "companies": 50,
+    "total": 110,
+    "main": 103,
+    "companies": 51,
     "indications": 13,
-    "verified": 101,
+    "verified": 103,
     "domestic": 48,
-    "imported": 50,
+    "imported": 52,
     "hkmt": 3
   },
   "company_share": [
@@ -35,7 +35,7 @@
     },
     {
       "name": "LG化学 LG Chem, Ltd.",
-      "value": 4
+      "value": 5
     },
     {
       "name": "海雅美",
@@ -66,11 +66,11 @@
       "value": 2
     }
   ],
-  "long_tail_company_count": 38,
+  "long_tail_company_count": 39,
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 68
+      "value": 70
     },
     {
       "name": "鼻部",
@@ -128,13 +128,13 @@
     },
     {
       "name": "进口",
-      "value": 50
+      "value": 52
     }
   ],
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
-      "value": 101
+      "value": 103
     }
   ],
   "timeline": {
@@ -151,8 +151,8 @@
       12,
       17,
       29,
-      31,
-      7
+      32,
+      8
     ]
   },
   "company_indication_heatmap": {
@@ -224,11 +224,6 @@
         2
       ],
       [
-        0,
-        4,
-        4
-      ],
-      [
         3,
         2,
         1
@@ -267,6 +262,11 @@
         4,
         0,
         1
+      ],
+      [
+        0,
+        4,
+        4
       ],
       [
         1,
@@ -739,53 +739,6 @@
       "official_scope": "适用于面部真皮组织中层注射以纠正中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
-      "portfolio_segments": [
-        "玻尿酸"
-      ],
-      "source_account": "闲话医与美",
-      "source_title": "玻尿酸的2025：医美再无械3神话",
-      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
-      "confidence": "high"
-    },
-    {
-      "id": "HA-国械注进20163131014-鼻唇沟",
-      "track": "ha",
-      "track_name": "透明质酸钠",
-      "strategic": "玻尿酸",
-      "brand": "注射用修饰透明质酸钠凝胶",
-      "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
-      "company": "LG化学 LG Chem, Ltd.",
-      "company_key": "lg化学 lg chem, ltd.",
-      "registrant": "LG化学 LG Chem, Ltd.",
-      "certificate_no": "国械注进20163131014",
-      "origin": "进口",
-      "category": "透明质酸钠",
-      "material_family": "透明质酸钠 / 玻尿酸",
-      "material_form": "修饰HA填充凝胶",
-      "approval_date": "2021-02-18",
-      "approval_year": 2021,
-      "valid_until": "2026-02-17",
-      "primary_indication": "鼻唇沟",
-      "indications": [
-        "鼻唇沟"
-      ],
-      "tags": [
-        "注射填充类",
-        "进口",
-        "非交联"
-      ],
-      "official_status": "verified",
-      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "注射用修饰透明质酸钠凝胶",
-      "official_registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
-      "official_approval_date": "2025-12-30",
-      "official_valid_until": "2031-02-17",
-      "official_indication": "鼻唇沟",
-      "official_scope": "该产品适用于面部真皮组织中层到深层注射，以纠正中度鼻唇沟。",
-      "verified": true,
-      "main_landscape": false,
       "portfolio_segments": [
         "玻尿酸"
       ],
@@ -4715,6 +4668,53 @@
       "confidence": "high"
     },
     {
+      "id": "HA-国械注进20163131014-鼻唇沟",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "strategic": "玻尿酸",
+      "brand": "注射用修饰透明质酸钠凝胶",
+      "aliases": "",
+      "product_name": "注射用修饰透明质酸钠凝胶",
+      "company": "LG化学 LG Chem, Ltd.",
+      "company_key": "lg化学 lg chem, ltd.",
+      "registrant": "LG化学 LG Chem, Ltd.",
+      "certificate_no": "国械注进20163131014",
+      "origin": "进口",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 玻尿酸",
+      "material_form": "修饰HA填充凝胶",
+      "approval_date": "2025-12-30",
+      "approval_year": 2025,
+      "valid_until": "2031-02-17",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "注射填充类",
+        "进口",
+        "非交联"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "注射用修饰透明质酸钠凝胶",
+      "official_registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
+      "official_approval_date": "2025-12-30",
+      "official_valid_until": "2031-02-17",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于面部真皮组织中层到深层注射，以纠正中度鼻唇沟。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
+      "source_account": "闲话医与美",
+      "source_title": "玻尿酸的2025：医美再无械3神话",
+      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+      "confidence": "high"
+    },
+    {
       "id": "HA-国械注进20253130026-下颌部",
       "track": "ha",
       "track_name": "透明质酸钠",
@@ -5619,6 +5619,54 @@
       "source_account": "公众号原文",
       "source_title": "乔雅登丰颜获批新适应证，改善颞部凹陷",
       "source_url": "https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
+      "confidence": "high"
+    },
+    {
+      "id": "HA-国械注进20263130029-鼻唇沟",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "strategic": "玻尿酸",
+      "brand": "YVOIRE Y-Solution 540",
+      "aliases": "YVOIRE Y-Solution 540",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶",
+      "company": "俪维美学有限公司 LYV Sciences Co., Ltd",
+      "company_key": "俪维美学有限公司 lyv sciences co., ltd",
+      "registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
+      "certificate_no": "国械注进20263130029",
+      "origin": "进口",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 玻尿酸",
+      "material_form": "交联HA填充凝胶",
+      "approval_date": "2026-01-28",
+      "approval_year": 2026,
+      "valid_until": "2031-01-27",
+      "primary_indication": "鼻唇沟",
+      "indications": [
+        "鼻唇沟"
+      ],
+      "tags": [
+        "注射填充类",
+        "进口",
+        "交联",
+        "含利多卡因"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "含利多卡因注射用交联透明质酸钠凝胶",
+      "official_registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
+      "official_approval_date": "2026-01-28",
+      "official_valid_until": "2031-01-27",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于注射到鼻唇沟部位的真皮深层和/或皮下，用于纠正中重度鼻唇沟皱纹。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
+      "source_account": "国家药监局 NMPA",
+      "source_title": "进口医疗器械（注册）国械注进20263130029 基本信息",
+      "source_url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9ZDI5NzhlMWJjMDY1NGVmOWJjYTVlMGY1NzE5OTg2OTImaXRlbUlkPWZmODA4MDgxODMwYjEwMzUwMTgzOGQ0ODcxYjUzNTQz",
       "confidence": "high"
     }
   ]
