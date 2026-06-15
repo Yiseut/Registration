@@ -1,4 +1,4 @@
-﻿/* Integrated overview page wiring. */
+/* Integrated overview page wiring. */
 
 (async function initIntegratedDashboard() {
   const { palette, SERIES_COLORS, showRecords, escape, loadJSON, watchKpis, crystalCssHeatVars } = window.RI;
@@ -9,14 +9,14 @@
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
   );
   const SEGMENTS = [
-    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#2b5a6c', soft: '#a4abd9', deep: '#2b5a6c', href: 'tracks/ha.html' },
-    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#737697', soft: '#a4abd9', deep: '#737697', href: 'tracks/botulinum.html' },
-    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#44493d', soft: '#90a090', deep: '#44493d', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#a4abd9', soft: '#e5d4c8', deep: '#737697', href: 'tracks/plla.html' },
-    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#e5d4c8', soft: '#f2e3c6', deep: '#786868', href: 'tracks/pcl.html' },
-    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#90a090', soft: '#f2e3c6', deep: '#44493d', href: 'tracks/caha.html' },
-    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#c09090', soft: '#f2e3c6', deep: '#9d7b7b', href: 'tracks/niche_materials.html' },
-    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#8898a0', soft: '#ded8d8', deep: '#2b5a6c', href: 'tracks/ebd.html' },
+    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#9ecfe3', soft: '#e1f2f8', deep: '#7fb8d2', href: 'tracks/ha.html' },
+    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#a7abd8', soft: '#e3e5f6', deep: '#858cc6', href: 'tracks/botulinum.html' },
+    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#d7a5ad', soft: '#f1dfe2', deep: '#be8791', href: 'tracks/collagen.html' },
+    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#b9c2ee', soft: '#e8ebfb', deep: '#96a3dc', href: 'tracks/plla.html' },
+    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#ead7c9', soft: '#f7eee8', deep: '#d8bda9', href: 'tracks/pcl.html' },
+    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#c4b4d7', soft: '#eee6f4', deep: '#aa95c3', href: 'tracks/caha.html' },
+    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#d9a0b1', soft: '#f2dce3', deep: '#c68198', href: 'tracks/niche_materials.html' },
+    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#b7c4d8', soft: '#e7edf5', deep: '#92a3bb', href: 'tracks/ebd.html' },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
@@ -30,10 +30,10 @@
   const allRecords = legacyData.records || [];
   const records = allRecords.filter(includeInLandscape);
   const HEAT_THEMES = {
-    coral: { base: '#2b5a6c', hue: 197, saturation: 18, lightHigh: 96, lightLow: 66, fg: '#786868' },
-    ocean: { base: '#737697', hue: 236, saturation: 22, lightHigh: 96, lightLow: 66, fg: '#786868' },
-    sage: { base: '#44493d', hue: 84, saturation: 14, lightHigh: 96, lightLow: 66, fg: '#786868' },
-    plum: { base: '#a4abd9', hue: 232, saturation: 18, lightHigh: 96, lightLow: 64, fg: '#786868' },
+    coral: { base: '#9ecfe3', hue: 200, saturation: 34, lightHigh: 96, lightLow: 72, fg: '#786868' },
+    ocean: { base: '#a7abd8', hue: 235, saturation: 32, lightHigh: 96, lightLow: 72, fg: '#786868' },
+    sage: { base: '#d7a5ad', hue: 350, saturation: 34, lightHigh: 96, lightLow: 73, fg: '#786868' },
+    plum: { base: '#b9c2ee', hue: 228, saturation: 34, lightHigh: 96, lightLow: 74, fg: '#786868' },
   };
 
   const state = {
@@ -469,7 +469,7 @@
     if (/CaHA|羟基磷酸钙/.test(label)) return SEGMENT_BY_CODE.caha.color;
     if (/EBD|设备|光电/.test(label)) return SEGMENT_BY_CODE.ebd.color;
     const segment = SEGMENTS.find((item) => item.name === trackName || item.fullName === trackName);
-    return segment?.color || '#737697';
+    return segment?.color || '#a7abd8';
   }
 
   function renderSegments() {
@@ -569,7 +569,7 @@
           const active = items.filter((item) => Number(item.value) > 0);
           const lines = active.map((item) => {
             const matched = segmentSeries.find((segment) => segment.name === item.seriesName);
-            const color = escape(String(matched?.color || '#737697'));
+            const color = escape(String(matched?.color || '#a7abd8'));
             return `<span class="echart-tip-dot" style="background:${color}"></span>${escape(item.seriesName)}：${item.value} 条`;
           }).join('<br/>');
           const total = active.reduce((sum, item) => sum + Number(item.value || 0), 0);
@@ -671,6 +671,12 @@
   function renderActivityRows() {
     const holder = document.getElementById('activity-rows');
     if (!holder) return;
+    const activityColors = {
+      cumulative: '#9ecfe3',
+      cumulativeSoft: '#e1f2f8',
+      recent: '#a7abd8',
+      recentSoft: '#e3e5f6',
+    };
     const activitySource = records.filter((record) => record.board !== 'device');
     const rows = [
       ...MATERIAL_SEGMENTS,
@@ -689,7 +695,7 @@
     holder.innerHTML = `
       <div class="activity-chart">
         ${rows.map((row) => `
-          <button class="activity-row" type="button" data-activity-segment="${escape(row.code)}" style="--activity:${escape(row.color)};--activity-soft:${escape(row.soft || row.color)}">
+          <button class="activity-row" type="button" data-activity-segment="${escape(row.code)}" style="--activity:${activityColors.cumulative};--activity-soft:${activityColors.cumulativeSoft};--activity-recent:${activityColors.recent};--activity-recent-soft:${activityColors.recentSoft}">
             <span class="activity-label">${escape(row.fullName || row.name)}</span>
             <span class="activity-bars" aria-label="累计记录 ${row.count}，近两年新增 ${row.recent}">
               <span class="activity-line activity-line-merged">
@@ -702,8 +708,8 @@
         `).join('')}
       </div>
       <div class="matrix-legend">
-        <span><i style="background:#2b5a6c"></i>累计记录</span>
-        <span><i style="background:#737697"></i>近两年新增</span>
+        <span><i style="background:${activityColors.cumulative}"></i>累计记录</span>
+        <span><i style="background:${activityColors.recent}"></i>近两年新增</span>
       </div>
     `;
     holder.querySelectorAll('[data-activity-segment]').forEach((button) => {
@@ -855,7 +861,7 @@
       .map((item, index) => ({
         ...item,
         label: SEGMENT_BY_CODE[item.key]?.fullName || displayUiLabel(item.name),
-        color: SEGMENT_BY_CODE[item.key]?.color || SERIES_COLORS[index % SERIES_COLORS.length] || '#737697',
+        color: SEGMENT_BY_CODE[item.key]?.color || SERIES_COLORS[index % SERIES_COLORS.length] || '#a7abd8',
       }));
     const topSeriesIdx = ex.quarters.map((_, qi) => {
       for (let i = visibleExpirySeries.length - 1; i >= 0; i -= 1) {
@@ -864,7 +870,7 @@
       return -1;
     });
     const series = visibleExpirySeries.map((s, i) => {
-      const color = s.color || SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#737697';
+      const color = s.color || SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#a7abd8';
       return {
         name: s.label,
         type: 'bar',
@@ -892,7 +898,7 @@
           const quarter = escape(quarterRaw);
           const lines = active.map((item) => {
             const matched = visibleExpirySeries.find((row) => row.label === item.seriesName);
-            const color = matched?.color || '#737697';
+            const color = matched?.color || '#a7abd8';
             const details = expiryRecordsForQuarter(quarterRaw, matched)
               .map((record) => {
                 const company = manufacturerDisplayName(record) || record.company || record.registrant || '未标注厂家';
@@ -955,7 +961,7 @@
     if (!quarterly.labels.length && (!ev || !ev.years?.length)) return;
     const labels = quarterly.labels.length ? quarterly.labels : ev.years;
     const sourceSeries = quarterly.series.length ? quarterly.series : ev.series;
-    const originColors = ['#2b5a6c', '#c09090', '#e5d4c8'];
+    const originColors = ['#9ecfe3', '#d9a0b1', '#ead7c9'];
     const series = sourceSeries
       .filter((s) => s.data.some((v) => v > 0))
       .map((s, index) => {

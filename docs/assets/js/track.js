@@ -1,4 +1,4 @@
-﻿/* Per-track page wiring. Reads ?track=<key> or window.TRACK_KEY. */
+/* Per-track page wiring. Reads ?track=<key> or window.TRACK_KEY. */
 
 (async function init() {
   const {
@@ -35,24 +35,24 @@
     { offset: 1, color: bottomColor },
   ]);
   const TRACK_ACCENTS = {
-    ha: '#2b5a6c',
-    botulinum: '#737697',
-    collagen: '#44493d',
-    plla: '#a4abd9',
-    pcl: '#e5d4c8',
-    caha: '#90a090',
-    niche_materials: '#c09090',
-    ebd: '#8898a0',
+    ha: '#9ecfe3',
+    botulinum: '#a7abd8',
+    collagen: '#d7a5ad',
+    plla: '#b9c2ee',
+    pcl: '#ead7c9',
+    caha: '#c4b4d7',
+    niche_materials: '#d9a0b1',
+    ebd: '#b7c4d8',
   };
   const TRACK_ACCENT_DEEP = {
-    ha: '#2b5a6c',
-    botulinum: '#737697',
-    collagen: '#44493d',
-    plla: '#737697',
-    pcl: '#786868',
-    caha: '#44493d',
-    niche_materials: '#9d7b7b',
-    ebd: '#2b5a6c',
+    ha: '#7fb8d2',
+    botulinum: '#858cc6',
+    collagen: '#be8791',
+    plla: '#96a3dc',
+    pcl: '#d8bda9',
+    caha: '#aa95c3',
+    niche_materials: '#c68198',
+    ebd: '#92a3bb',
   };
   const accent = TRACK_ACCENTS[key] || meta.accent || palette.brand;
   const accentDeep = TRACK_ACCENT_DEEP[key] || palette.ink3;
@@ -869,7 +869,7 @@
   function originTonePalette() {
     const imported = shade(accent, -12);
     const domestic = mixColor ? mixColor(accent, '#ede0e0', 0.78) : shade(accent, 38);
-    const hkmt = mixColor ? mixColor(shade(accent, -18), '#8898a0', 0.36) : shade(accent, -18);
+    const hkmt = mixColor ? mixColor(shade(accent, -18), '#b7c4d8', 0.36) : shade(accent, -18);
     return {
       进口: {
         solid: imported,

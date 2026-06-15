@@ -1,4 +1,4 @@
-﻿/* Shared utilities, ECharts theme, and drawer logic. */
+/* Shared utilities, ECharts theme, and drawer logic. */
 
 const palette = {
   brand: '#c09090',
@@ -7,20 +7,20 @@ const palette = {
   brandSoft: '#ede0e0',
   ink: '#786868',
   ink3: '#9d7b7b',
-  inkMute: '#90a090',
-  hairline: 'rgba(144,160,144,0.26)',
+  inkMute: '#b7c4d8',
+  hairline: 'rgba(183,196,216,0.26)',
   bg: '#f3f1f1',
   surface: '#f8f4f4',
-  rose: '#c09090', plum: '#9d7b7b', gold: '#f2e3c6',
-  sage: '#44493d', ocean: '#2b5a6c', slate: '#737697', clay: '#e5d4c8',
-  periwinkle: '#a4abd9', cream: '#f2e3c6',
+  rose: '#d9a0b1', plum: '#c4b4d7', gold: '#ead7c9',
+  sage: '#d7a5ad', ocean: '#9ecfe3', slate: '#a7abd8', clay: '#ead7c9',
+  periwinkle: '#b9c2ee', cream: '#f7eee8',
 };
 
 // Ordered palette used for series colors
 const SERIES_COLORS = [
-  '#2b5a6c', '#c09090', '#44493d', '#737697',
-  '#e5d4c8', '#90a090', '#a4abd9', '#f2e3c6',
-  '#8898a0', '#9d7b7b', '#786868', '#b3b3b3',
+  '#9ecfe3', '#a7abd8', '#d7a5ad', '#b9c2ee',
+  '#ead7c9', '#c4b4d7', '#d9a0b1', '#b7c4d8',
+  '#f2dce3', '#e1f2f8', '#786868', '#b3b3b3',
 ];
 
 const echartsTheme = {
@@ -107,17 +107,33 @@ function heatHue(base) {
   const normalized = String(base || '').trim().toUpperCase();
   const hues = {
     '#C09090': 0,
-    '#8898A0': 202,
-    '#90A090': 120,
     '#786868': 0,
     '#B3B3B3': 0,
     '#9D7B7B': 0,
-    '#737697': 236,
-    '#A4ABD9': 232,
-    '#E5D4C8': 24,
-    '#44493D': 84,
-    '#2B5A6C': 197,
-    '#F2E3C6': 39,
+    '#9ECFE3': 200,
+    '#E1F2F8': 200,
+    '#7FB8D2': 200,
+    '#A7ABD8': 235,
+    '#E3E5F6': 235,
+    '#858CC6': 235,
+    '#D7A5AD': 350,
+    '#F1DFE2': 350,
+    '#BE8791': 350,
+    '#B9C2EE': 228,
+    '#E8EBFB': 228,
+    '#96A3DC': 228,
+    '#EAD7C9': 25,
+    '#F7EEE8': 25,
+    '#D8BDA9': 25,
+    '#C4B4D7': 270,
+    '#EEE6F4': 270,
+    '#AA95C3': 270,
+    '#D9A0B1': 340,
+    '#F2DCE3': 340,
+    '#C68198': 340,
+    '#B7C4D8': 220,
+    '#E7EDF5': 220,
+    '#92A3BB': 220,
   };
   return hues[normalized] || 0;
 }
