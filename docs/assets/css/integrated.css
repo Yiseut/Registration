@@ -906,7 +906,7 @@ button.manufacturer-heat-cell:focus-visible {
 .matrix-legend i[data-heat="low"] { background: #f4ebef; }
 .matrix-legend i[data-heat="mid"] { background: #e6ddef; }
 .matrix-legend i[data-heat="warm"] { background: #c5ddea; }
-.matrix-legend i[data-heat="peak"] { background: #9ecfe3; }
+.matrix-legend i[data-heat="peak"] { background: #58bfd7; }
 
 .matrix-tooltip {
   position: fixed;
@@ -958,19 +958,19 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .tooltip-coral {
-  --tip-dot: #9ecfe3;
+  --tip-dot: #58bfd7;
 }
 
 .tooltip-ocean {
-  --tip-dot: #a7abd8;
+  --tip-dot: #737ed0;
 }
 
 .tooltip-sage {
-  --tip-dot: #d7a5ad;
+  --tip-dot: #dd7b8b;
 }
 
 .tooltip-plum {
-  --tip-dot: #b9c2ee;
+  --tip-dot: #9daaf0;
 }
 
 .manufacturer-heatmap-stack {

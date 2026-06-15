@@ -9,14 +9,14 @@
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
   );
   const SEGMENTS = [
-    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#9ecfe3', soft: '#e1f2f8', deep: '#7fb8d2', href: 'tracks/ha.html' },
-    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#a7abd8', soft: '#e3e5f6', deep: '#858cc6', href: 'tracks/botulinum.html' },
-    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#d7a5ad', soft: '#f1dfe2', deep: '#be8791', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#b9c2ee', soft: '#e8ebfb', deep: '#96a3dc', href: 'tracks/plla.html' },
-    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#ead7c9', soft: '#f7eee8', deep: '#d8bda9', href: 'tracks/pcl.html' },
-    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#c4b4d7', soft: '#eee6f4', deep: '#aa95c3', href: 'tracks/caha.html' },
-    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#d9a0b1', soft: '#f2dce3', deep: '#c68198', href: 'tracks/niche_materials.html' },
-    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#b7c4d8', soft: '#e7edf5', deep: '#92a3bb', href: 'tracks/ebd.html' },
+    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#58bfd7', soft: '#dff4f8', deep: '#409fbb', href: 'tracks/ha.html' },
+    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#737ed0', soft: '#e5e8fa', deep: '#5d65b8', href: 'tracks/botulinum.html' },
+    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#dd7b8b', soft: '#f6dfe4', deep: '#c25f71', href: 'tracks/collagen.html' },
+    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#9daaf0', soft: '#e8ecff', deep: '#7d8fe0', href: 'tracks/plla.html' },
+    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#e5b574', soft: '#f8ead7', deep: '#c8944d', href: 'tracks/pcl.html' },
+    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#b486d4', soft: '#efe2f7', deep: '#9566b9', href: 'tracks/caha.html' },
+    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#cf6a9d', soft: '#f4dbe8', deep: '#b94d84', href: 'tracks/niche_materials.html' },
+    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#8fa8c8', soft: '#e6edf6', deep: '#6f8bad', href: 'tracks/ebd.html' },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
@@ -30,10 +30,10 @@
   const allRecords = legacyData.records || [];
   const records = allRecords.filter(includeInLandscape);
   const HEAT_THEMES = {
-    coral: { base: '#9ecfe3', hue: 200, saturation: 34, lightHigh: 96, lightLow: 72, fg: '#786868' },
-    ocean: { base: '#a7abd8', hue: 235, saturation: 32, lightHigh: 96, lightLow: 72, fg: '#786868' },
-    sage: { base: '#d7a5ad', hue: 350, saturation: 34, lightHigh: 96, lightLow: 73, fg: '#786868' },
-    plum: { base: '#b9c2ee', hue: 228, saturation: 34, lightHigh: 96, lightLow: 74, fg: '#786868' },
+    coral: { base: '#58bfd7', hue: 193, saturation: 42, lightHigh: 96, lightLow: 69, fg: '#786868' },
+    ocean: { base: '#737ed0', hue: 233, saturation: 38, lightHigh: 96, lightLow: 69, fg: '#786868' },
+    sage: { base: '#dd7b8b', hue: 350, saturation: 40, lightHigh: 96, lightLow: 70, fg: '#786868' },
+    plum: { base: '#9daaf0', hue: 231, saturation: 38, lightHigh: 96, lightLow: 71, fg: '#786868' },
   };
 
   const state = {
@@ -117,9 +117,9 @@
 
   function crystalLinear(color, direction = 'vertical', softness = 0) {
     const axis = direction === 'horizontal' ? [0, 0, 1, 0] : [0, 0, 0, 1];
-    const light = mixColor(color, '#fff8f8', 0.52 + softness);
-    const mid = mixColor(color, '#ffffff', 0.08 + softness * 0.3);
-    const deep = mixColor(color, '#786868', 0.16);
+    const light = mixColor(color, '#fff8f8', 0.34 + softness);
+    const mid = mixColor(color, '#ffffff', 0.02 + softness * 0.2);
+    const deep = mixColor(color, '#786868', 0.10);
     return new echarts.graphic.LinearGradient(...axis, [
       { offset: 0, color: light },
       { offset: 0.42, color: mid },
@@ -139,8 +139,8 @@
     return {
       color: crystalLinear(color),
       borderRadius: radius,
-      borderColor: 'rgba(255, 255, 255, 0.55)',
-      borderWidth: 0.8,
+      borderColor: 'rgba(255, 255, 255, 0.78)',
+      borderWidth: 1.2,
       shadowBlur: 12,
       shadowColor: colorAlpha(color, 0.26),
       shadowOffsetY: 4,
@@ -559,7 +559,7 @@
 
     const chart = makeChart(document.getElementById('chart-trend'), {
       color: segmentSeries.map((segment) => segment.color),
-      legend: { bottom: 0, type: 'scroll' },
+      legend: { bottom: 0, type: 'scroll', itemWidth: 18, itemHeight: 10 },
       grid: { left: 36, right: 24, top: 30, bottom: 50, containLabel: true },
       tooltip: {
         trigger: 'axis',
@@ -961,7 +961,7 @@
     if (!quarterly.labels.length && (!ev || !ev.years?.length)) return;
     const labels = quarterly.labels.length ? quarterly.labels : ev.years;
     const sourceSeries = quarterly.series.length ? quarterly.series : ev.series;
-    const originColors = ['#9ecfe3', '#d9a0b1', '#ead7c9'];
+    const originColors = ['#58bfd7', '#cf6a9d', '#e5b574'];
     const series = sourceSeries
       .filter((s) => s.data.some((v) => v > 0))
       .map((s, index) => {
