@@ -4,16 +4,16 @@
     "key": "ha",
     "name": "透明质酸钠",
     "tagline": "",
-    "accent": "#D97757"
+    "accent": "#58bfd7"
   },
   "kpi": {
-    "total": 110,
-    "main": 102,
+    "total": 108,
+    "main": 106,
     "companies": 51,
-    "indications": 11,
-    "verified": 102,
-    "domestic": 48,
-    "imported": 51,
+    "indications": 10,
+    "verified": 106,
+    "domestic": 51,
+    "imported": 52,
     "hkmt": 3
   },
   "company_share": [
@@ -27,7 +27,11 @@
     },
     {
       "name": "高德美 / Galderma",
-      "value": 7
+      "value": 8
+    },
+    {
+      "name": "爱美客",
+      "value": 6
     },
     {
       "name": "其胜生物",
@@ -44,10 +48,6 @@
     {
       "name": "BNC",
       "value": 4
-    },
-    {
-      "name": "爱美客",
-      "value": 3
     },
     {
       "name": "常州药研所",
@@ -70,18 +70,18 @@
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 61
+      "value": 64
     },
     {
       "name": "唇部",
-      "value": 12
+      "value": 14
     },
     {
       "name": "肤质改善",
-      "value": 11
+      "value": 12
     },
     {
-      "name": "面颊部",
+      "name": "下颌及颏部轮廓改善（填充）",
       "value": 5
     },
     {
@@ -89,34 +89,30 @@
       "value": 5
     },
     {
-      "name": "鼻部",
-      "value": 4
-    },
-    {
-      "name": "下颌及颏部轮廓改善（填充）",
-      "value": 4
-    },
-    {
       "name": "颈部",
+      "value": 4
+    },
+    {
+      "name": "额部",
+      "value": 4
+    },
+    {
+      "name": "面颊部",
+      "value": 3
+    },
+    {
+      "name": "鼻部",
       "value": 3
     },
     {
       "name": "手部",
       "value": 3
-    },
-    {
-      "name": "额部",
-      "value": 2
-    },
-    {
-      "name": "颞部",
-      "value": 1
     }
   ],
   "origin_share": [
     {
       "name": "国产",
-      "value": 48
+      "value": 51
     },
     {
       "name": "港澳台",
@@ -124,13 +120,13 @@
     },
     {
       "name": "进口",
-      "value": 51
+      "value": 52
     }
   ],
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
-      "value": 102
+      "value": 106
     }
   ],
   "timeline": {
@@ -143,12 +139,12 @@
       2026
     ],
     "values": [
-      5,
+      11,
       11,
       17,
       29,
       32,
-      8
+      6
     ]
   },
   "company_indication_heatmap": {
@@ -172,11 +168,11 @@
       "肤质改善",
       "下颌及颏部轮廓改善（填充）",
       "中面部",
-      "面颊部",
-      "鼻部",
       "颈部",
       "额部",
-      "手部"
+      "鼻部",
+      "手部",
+      "面颊部"
     ],
     "cells": [
       [
@@ -185,12 +181,12 @@
         6
       ],
       [
-        7,
+        5,
         3,
         1
       ],
       [
-        8,
+        6,
         3,
         3
       ],
@@ -215,16 +211,16 @@
         2
       ],
       [
-        0,
-        2,
-        5
-      ],
-      [
         3,
         2,
         1
       ],
       [
+        0,
+        2,
+        5
+      ],
+      [
         2,
         1,
         1
@@ -235,14 +231,14 @@
         1
       ],
       [
-        5,
+        9,
         1,
-        3
+        2
       ],
       [
-        6,
+        7,
         1,
-        3
+        2
       ],
       [
         0,
@@ -275,7 +271,7 @@
         5
       ],
       [
-        6,
+        7,
         2,
         2
       ],
@@ -295,27 +291,27 @@
         1
       ],
       [
+        6,
+        0,
+        1
+      ],
+      [
+        5,
+        0,
+        1
+      ],
+      [
+        3,
+        3,
+        1
+      ],
+      [
+        3,
+        7,
+        1
+      ],
+      [
         8,
-        0,
-        1
-      ],
-      [
-        7,
-        0,
-        1
-      ],
-      [
-        3,
-        3,
-        1
-      ],
-      [
-        3,
-        7,
-        1
-      ],
-      [
-        9,
         2,
         2
       ],
@@ -340,12 +336,12 @@
         1
       ],
       [
-        7,
+        5,
         7,
         1
       ],
       [
-        7,
+        5,
         8,
         1
       ],
@@ -365,7 +361,7 @@
         1
       ],
       [
-        9,
+        8,
         7,
         1
       ],
@@ -440,9 +436,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "HA复合溶液",
-      "approval_date": "2021-03-19",
+      "approval_date": "2025-04-14",
       "approval_year": 2021,
-      "valid_until": "2026-03-18",
+      "valid_until": "2031-03-18",
       "primary_indication": "颈部",
       "indications": [
         "颈部"
@@ -464,7 +460,7 @@
       "official_indication": "颈部",
       "official_scope": "该产品用于皮内真皮层注射填充，以纠正颈部中重度皱纹。",
       "verified": true,
-      "main_landscape": false,
+      "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -491,9 +487,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "HA填充凝胶",
-      "approval_date": "2021-02-26",
+      "approval_date": "2025-05-19",
       "approval_year": 2021,
-      "valid_until": "2026-02-25",
+      "valid_until": "2031-02-25",
       "primary_indication": "额部",
       "indications": [
         "额部",
@@ -514,7 +510,7 @@
       "official_indication": "额部 / 鼻唇沟",
       "official_scope": "该产品用于皮肤皮下浅层至深层之间的填充,以纠正中重度额部皱纹和中重度鼻唇沟皱纹。",
       "verified": true,
-      "main_landscape": false,
+      "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -541,9 +537,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "HA+PVA微球复合填充",
-      "approval_date": "2021-03-17",
+      "approval_date": "2025-04-30",
       "approval_year": 2021,
-      "valid_until": "2026-03-16",
+      "valid_until": "2031-03-16",
       "primary_indication": "额部",
       "indications": [
         "额部",
@@ -565,7 +561,7 @@
       "official_indication": "额部 / 唇部",
       "official_scope": "该产品用于皮肤真皮深层及皮下浅层之间注射填充，以纠正中重度额部皱纹和中重度鼻唇部皱纹。",
       "verified": true,
-      "main_landscape": false,
+      "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -583,7 +579,7 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶",
       "company": "山东凯乐普生物工程有限公司",
       "company_key": "山东凯乐普生物工程有限公司",
       "registrant": "山东凯乐普生物工程有限公司",
@@ -639,9 +635,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "交联HA填充凝胶",
-      "approval_date": "2021-03-18",
+      "approval_date": "2025-12-15",
       "approval_year": 2021,
-      "valid_until": "2026-03-17",
+      "valid_until": "2031-03-17",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -661,8 +657,10 @@
       "official_indication": "鼻唇沟",
       "official_scope": "适用于面部皮肤真皮组织中层至深层注射，以纠正中重度鼻唇沟。",
       "verified": true,
-      "main_landscape": false,
-      "portfolio_segments": [],
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
       "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
@@ -675,7 +673,7 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Formaderm Dermal Filler Injection",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Formaderm Dermal Filler Injection",
+      "product_name": "注射用交联透明质酸钠凝胶Formaderm Dermal Filler Injection",
       "company": "和康生物科技股份有限公司",
       "company_key": "和康生物科技股份有限公司",
       "registrant": "和康生物科技股份有限公司",
@@ -722,10 +720,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶 Princess Volume",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶 Princess Volume",
+      "product_name": "注射用修饰透明质酸钠凝胶Princess Volume",
       "company": "克罗玛医药有限公司 CROMA-PHARMA",
       "company_key": "克罗玛医药有限公司 croma-pharma",
-      "registrant": "克罗玛医药有限公司 CROMA-PHARMA",
+      "registrant": "克罗玛医药有限公司CROMA-PHARMA GmbH",
       "certificate_no": "国械注进20173135168",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -769,22 +767,22 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Cross-linked Sodium Hyaluronate Gel for Injection",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Cross-linked Sodium Hyaluronate Gel for Injection",
+      "product_name": "注射用交联透明质酸钠凝胶Cross-linked Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20213130059",
       "origin": "进口",
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "交联HA填充凝胶",
-      "approval_date": "2021-03-03",
+      "approval_date": "2024-07-26",
       "approval_year": 2021,
-      "valid_until": "2026-03-02",
-      "primary_indication": "鼻唇沟",
+      "valid_until": "2031-03-02",
+      "primary_indication": "下颌及颏部轮廓改善（填充）",
       "indications": [
-        "鼻唇沟",
-        "下颌及颏部轮廓改善（填充）"
+        "下颌及颏部轮廓改善（填充）",
+        "鼻唇沟"
       ],
       "tags": [
         "注射填充类",
@@ -798,10 +796,10 @@
       "official_registrant": "科医有限公司Q-Med AB",
       "official_approval_date": "2024-07-26",
       "official_valid_until": "2031-03-02",
-      "official_indication": "鼻唇沟 / 下颌及颏部轮廓改善（填充）",
+      "official_indication": "下颌及颏部轮廓改善（填充） / 鼻唇沟",
       "official_scope": "本产品适用于面部真皮组织中层至深层填充以纠正中度至重度鼻唇沟皱纹。适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
-      "main_landscape": false,
+      "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -819,18 +817,18 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLBELLA with Lidocaine",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLBELLA with Lidocaine",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Juvéderm VOLBELLA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建ALLERGAN",
       "certificate_no": "国械注进20213130109",
       "origin": "进口",
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "交联HA填充凝胶",
-      "approval_date": "2021-04-19",
+      "approval_date": "2025-06-09",
       "approval_year": 2021,
-      "valid_until": "2026-04-18",
+      "valid_until": "2031-04-18",
       "primary_indication": "肤质改善",
       "indications": [
         "肤质改善",
@@ -852,7 +850,7 @@
       "official_indication": "肤质改善 / 唇部",
       "official_scope": "该产品通过注射至唇红体和唇红缘的唇粘膜、真皮浅层或中层，以矫正唇部不对称、轮廓畸形和容积缺损等结构缺陷。利多卡因可减轻治疗过程中患者的疼痛。",
       "verified": true,
-      "main_landscape": false,
+      "main_landscape": true,
       "portfolio_segments": [
         "玻尿酸",
         "肉毒毒素"
@@ -869,7 +867,7 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Belotero Balance Lidocaine",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Belotero Balance Lidocaine",
+      "product_name": "注射用交联透明质酸钠凝胶Belotero Balance Lidocaine",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
       "registrant": "安缇思股份公司 Anteis SA",
@@ -917,11 +915,11 @@
       "track_name": "透明质酸钠",
       "strategic": "玻尿酸",
       "brand": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine",
-      "aliases": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine",
+      "aliases": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine / 透明质酸钠:颞部",
       "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建 Allergan",
       "certificate_no": "国械注进20213130485",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -956,9 +954,9 @@
         "玻尿酸",
         "肉毒毒素"
       ],
-      "source_account": "闲话医与美",
-      "source_title": "玻尿酸的2025：医美再无械3神话",
-      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+      "source_account": "闲话医与美 || 公众号原文",
+      "source_title": "玻尿酸的2025：医美再无械3神话 || 乔雅登丰颜获批新适应证，改善颞部凹陷",
+      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw || https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
       "confidence": "high"
     },
     {
@@ -1301,10 +1299,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "LG化学 LG Chem, Ltd.",
       "company_key": "lg化学 lg chem, ltd.",
-      "registrant": "LG化学 LG Chem, Ltd.",
+      "registrant": "俪维美学有限公司 LYV Sciences Co.,Ltd",
       "certificate_no": "国械注进20173132005",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1348,10 +1346,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶 YVOIRE volume s",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶 YVOIRE volume s",
+      "product_name": "注射用修饰透明质酸钠凝胶YVOIRE volume s",
       "company": "LG化学 LG Chem, Ltd.",
       "company_key": "lg化学 lg chem, ltd.",
-      "registrant": "LG化学 LG Chem, Ltd.",
+      "registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
       "certificate_no": "国械注进20183131717",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1395,10 +1393,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶조직수복용생체재료",
       "company": "东邦医疗 Dong Bang Medical Co., Ltd.",
       "company_key": "东邦医疗 dong bang medical co., ltd.",
-      "registrant": "东邦医疗 Dong Bang Medical Co., Ltd.",
+      "registrant": "株式会社东方医疗 Dong Bang Medical Co.,Ltd.",
       "certificate_no": "国械注进20223130127",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1442,10 +1440,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Juvéderm VOLUMA with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建 Allergan",
       "certificate_no": "国械注进20223130141",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1491,10 +1489,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶 Dermax Deep",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶 Dermax Deep",
+      "product_name": "注射用修饰透明质酸钠凝胶Dermalax Deep",
       "company": "北京爱思特医疗美容有限公司 / ACROSS CO., LTD.",
       "company_key": "北京爱思特医疗美容有限公司 / across co., ltd.",
-      "registrant": "北京爱思特医疗美容有限公司 / ACROSS CO., LTD.",
+      "registrant": "亚可罗思有限责任公司ACROSS CO., LTD.",
       "certificate_no": "国械注进20223130181",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1773,7 +1771,7 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "科妍生物科技股份有限公司",
       "company_key": "科妍生物科技股份有限公司",
       "registrant": "科妍生物科技股份有限公司",
@@ -1820,10 +1818,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Juvéderm ULTRA",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Juvéderm ULTRA",
+      "product_name": "注射用交联透明质酸钠凝胶Juvéderm ULTRA",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建Allergan",
       "certificate_no": "国械注进20153131709",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1868,10 +1866,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20173136998",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1917,10 +1915,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶 Modified Sodium Hyaluronate Gel for Injection",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶 Modified Sodium Hyaluronate Gel for Injection",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20183130227",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -1967,10 +1965,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶Cross-linked sodium hyaluronate Gel for Injection",
       "company": "细基生物株式会社 CG Bio Co., Ltd.",
       "company_key": "细基生物株式会社 cg bio co., ltd.",
-      "registrant": "细基生物株式会社 CG Bio Co., Ltd.",
+      "registrant": "细基生物株式会社CG Bio Co., Ltd.",
       "certificate_no": "国械注进20193130095",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2017,13 +2015,13 @@
       "product_name": "注射用修饰透明质酸钠凝胶 MONALISA Lidocaine Filler",
       "company": "吉诺斯株式会社 Genoss Co., Ltd.",
       "company_key": "吉诺斯株式会社 genoss co., ltd.",
-      "registrant": "吉诺斯株式会社 Genoss Co., Ltd.",
+      "registrant": "吉诺斯株式会社Genoss Co., Ltd.",
       "certificate_no": "国械注进20193130627",
       "origin": "进口",
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "修饰HA填充凝胶",
-      "approval_date": "2023-12-26",
+      "approval_date": "2026-03-09",
       "approval_year": 2023,
       "valid_until": "2029-12-11",
       "primary_indication": "鼻唇沟",
@@ -2061,10 +2059,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶Cross-linked Sodium Hyaluronate Gel for Injection",
       "company": "细基生物株式会社 CG Bio Co., Ltd.",
       "company_key": "细基生物株式会社 cg bio co., ltd.",
-      "registrant": "细基生物株式会社 CG Bio Co., Ltd.",
+      "registrant": "细基生物株式会社CG Bio Co., Ltd.",
       "certificate_no": "国械注进20223130501",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2108,10 +2106,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Belotero Volume Lidocaine",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Belotero Volume Lidocaine",
+      "product_name": "注射用交联透明质酸钠凝胶Belotero Volume Lidocaine",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
-      "registrant": "安缇思股份公司 Anteis SA",
+      "registrant": "安缇思股份公司Anteis SA",
       "certificate_no": "国械注进20233130009",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2157,10 +2155,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Restylane Volume",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Restylane Volume",
+      "product_name": "注射用交联透明质酸钠凝胶Restylane Volyme",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20233130011",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2206,10 +2204,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 MONALISA Lidocaine Filler",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 MONALISA Lidocaine Filler",
+      "product_name": "注射用交联透明质酸钠凝胶MONALISA Lidocaine Filler(조직수복용생체재료)",
       "company": "吉诺斯株式会社 GENOSS Co., Ltd.",
       "company_key": "吉诺斯株式会社 genoss co., ltd.",
-      "registrant": "吉诺斯株式会社 GENOSS Co., Ltd.",
+      "registrant": "吉诺斯株式会社GENOSS Co., Ltd.",
       "certificate_no": "国械注进20233130068",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2253,10 +2251,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Soft Tissue Implants Visco-elastic gel of hyaluronic acid - with lidocaine",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Soft Tissue Implants Visco-elastic gel of hyaluronic acid - with lidocaine",
+      "product_name": "注射用交联透明质酸钠凝胶Soft Tissue Implants Visco-elastic gel of hyaluronic acid - with lidocaine",
       "company": "菲欧曼实验室公司 Laboratoires Fill-Med Manufacturing S.A.",
       "company_key": "菲欧曼实验室公司 laboratoires fill-med manufacturing s.a.",
-      "registrant": "菲欧曼实验室公司 Laboratoires Fill-Med Manufacturing S.A.",
+      "registrant": "菲欧曼实验室公司Laboratoires Fill-Med Manufacturing S.A.",
       "certificate_no": "国械注进20233130519",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2301,10 +2299,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection with Lidocaine",
       "company": "株式会社柳英制药 YooYoung",
       "company_key": "株式会社柳英制药 yooyoung",
-      "registrant": "株式会社柳英制药 YooYoung",
+      "registrant": "株式会社柳英制药YooYoung Pharmaceutical Co., Ltd.",
       "certificate_no": "国械注进20233130573",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2919,10 +2917,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Juvéderm ULTRA Plus",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Juvéderm ULTRA Plus",
+      "product_name": "注射用交联透明质酸钠凝胶Juvéderm ULTRA Plus",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建Allergan",
       "certificate_no": "国械注进20153131708",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -2967,10 +2965,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection with Lidocaine",
       "company": "LG化学 LG Chem, Ltd.",
       "company_key": "lg化学 lg chem, ltd.",
-      "registrant": "LG化学 LG Chem, Ltd.",
+      "registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
       "certificate_no": "国械注进20153133933",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3014,10 +3012,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Juvéderm Voluma",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Juvéderm Voluma",
+      "product_name": "注射用交联透明质酸钠凝胶Juvéderm Voluma",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建Allergan",
       "certificate_no": "国械注进20193130410",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3062,10 +3060,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶Soft tissue implants visco-elastic gel of hyaluronic acid-with lidocaine",
       "company": "菲欧曼实验室公司 Laboratoires Fill-Med",
       "company_key": "菲欧曼实验室公司 laboratoires fill-med",
-      "registrant": "菲欧曼实验室公司 Laboratoires Fill-Med",
+      "registrant": "法国菲欧曼实验室 Laboratoires Fill-Med",
       "certificate_no": "国械注进20193130526",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3109,10 +3107,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Pre-filled Sodium Hyaluronate Syringe",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Pre-filled Sodium Hyaluronate Syringe",
+      "product_name": "注射用交联透明质酸钠凝胶Pre-filled Sodium Hyaluronate Syringe",
       "company": "汇美迪斯株式会社 Humedix Co., Ltd.",
       "company_key": "汇美迪斯株式会社 humedix co., ltd.",
-      "registrant": "汇美迪斯株式会社 Humedix Co., Ltd.",
+      "registrant": "汇美迪斯株式会社Humedix Co., Ltd.",
       "certificate_no": "国械注进20193130565",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3156,10 +3154,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Crosslinked Sodium Hyaluronate Gel for Injection",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Crosslinked Sodium Hyaluronate Gel for Injection",
+      "product_name": "注射用交联透明质酸钠凝胶Crosslinked Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20193130625",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3205,10 +3203,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20203130045",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3254,10 +3252,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用修饰透明质酸钠凝胶 Modified Sodium Hyaluronate Gel for Injection",
       "aliases": "",
-      "product_name": "注射用修饰透明质酸钠凝胶 Modified Sodium Hyaluronate Gel for Injection",
+      "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20203130098",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3305,10 +3303,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Juvéderm VOLIFT with Lidocaine",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Juvéderm VOLIFT with Lidocaine",
+      "product_name": "注射用交联透明质酸钠凝胶Juvéderm VOLIFT with Lidocaine",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建Allergan",
       "certificate_no": "国械注进20203130165",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3353,10 +3351,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 A-Viearchee",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 A-Viearchee",
+      "product_name": "注射用交联透明质酸钠凝胶A-Viearchee",
       "company": "（株）爱思尔有限公司 SCL CO., LTD.",
       "company_key": "（株）爱思尔有限公司 scl co., ltd.",
-      "registrant": "（株）爱思尔有限公司 SCL CO., LTD.",
+      "registrant": "（株）爱思尔有限公司SCL CO.,LTD.",
       "certificate_no": "国械注进20233130150",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3400,10 +3398,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶조직수복용생체재료",
       "company": "Foreest Hills Lab Korea",
       "company_key": "foreest hills lab korea",
-      "registrant": "Foreest Hills Lab Korea",
+      "registrant": "福丽丝特韩国有限公司 Forest Hills Lab Korea Co., Ltd.",
       "certificate_no": "国械注进20243130001",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3447,10 +3445,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Princess VOLUME Lidocaine",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Princess VOLUME Lidocaine",
+      "product_name": "含利多卡因注射用修饰透明质酸钠凝胶Princess VOLUME Lidocaine",
       "company": "克罗玛医药有限公司 CROMA-PHARMA GmbH",
       "company_key": "克罗玛医药有限公司 croma-pharma gmbh",
-      "registrant": "克罗玛医药有限公司 CROMA-PHARMA GmbH",
+      "registrant": "克罗玛医药有限公司CROMA-PHARMA GmbH",
       "certificate_no": "国械注进20243130119",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3458,7 +3456,7 @@
       "material_form": "交联HA填充凝胶",
       "approval_date": "2024-05-16",
       "approval_year": 2024,
-      "valid_until": "2030-03-03",
+      "valid_until": "2029-03-03",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -3495,10 +3493,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUX",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUX",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Juvéderm VOLUX",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建ALLERGAN",
       "certificate_no": "国械注进20243130405",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3544,10 +3542,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm ULTRA PLUS XC",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm ULTRA PLUS XC",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Juvéderm ULTRA PLUS XC",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建ALLERGAN",
       "certificate_no": "国械注进20243130412",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3593,10 +3591,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm ULTRA XC",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm ULTRA XC",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Juvéderm ULTRA XC",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
+      "registrant": "艾尔建ALLERGAN",
       "certificate_no": "国械注进20243130436",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3642,10 +3640,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 HyaFilia Classic 1.0",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 HyaFilia Classic 1.0",
+      "product_name": "注射用交联透明质酸钠凝胶HyaFilia Classic 1.0",
       "company": "CHA生物科技株式会社 CHA Meditech Co., Ltd.",
       "company_key": "cha生物科技株式会社 cha meditech co., ltd.",
-      "registrant": "CHA生物科技株式会社 CHA Meditech Co., Ltd.",
+      "registrant": "CHA生物科技株式会社CHA Meditech Co., Ltd",
       "certificate_no": "国械注进20243130501",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3689,10 +3687,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Dermal Implants SF line",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Dermal Implants SF line",
+      "product_name": "注射用交联透明质酸钠凝胶Dermal Implants „SF“ line",
       "company": "S&V Technologies GmbH",
       "company_key": "s&v technologies gmbh",
-      "registrant": "S&V Technologies GmbH",
+      "registrant": "S&amp;V科技有限公司S＆V Technologies GmbH",
       "certificate_no": "国械注进20243130663",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -3831,7 +3829,7 @@
       "strategic": "玻尿酸",
       "brand": "注射用透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶",
       "company": "瑞莱思（北京）医疗器械有限公司",
       "company_key": "瑞莱思（北京）医疗器械有限公司",
       "registrant": "瑞莱思（北京）医疗器械有限公司",
@@ -4411,9 +4409,9 @@
       "brand": "注射用透明质酸钠复合溶液",
       "aliases": "",
       "product_name": "注射用透明质酸钠复合溶液",
-      "company": "漠颐空间生物科技（吉林）有限公司",
-      "company_key": "漠颐空间生物科技（吉林）有限公司",
-      "registrant": "漠颐空间生物科技（吉林）有限公司",
+      "company": "四环医药 / 渼颜空间",
+      "company_key": "sihuan",
+      "registrant": "渼颜空间生物科技（吉林）有限公司",
       "certificate_no": "国械注准20253132016",
       "origin": "国产",
       "category": "透明质酸钠",
@@ -4445,7 +4443,9 @@
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "玻尿酸"
+        "玻尿酸",
+        "胶原刺激剂",
+        "肉毒毒素"
       ],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
@@ -4468,7 +4468,7 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "HA复合溶液",
-      "approval_date": "2025-12-10",
+      "approval_date": "2026-01-27",
       "approval_year": 2025,
       "valid_until": "2030-12-09",
       "primary_indication": "肤质改善",
@@ -4557,10 +4557,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶 Formaderm Young Dermal Filler Injection",
       "company": "和康生物科技股份有限公司",
       "company_key": "和康生物科技股份有限公司",
-      "registrant": "和康生物科技股份有限公司",
+      "registrant": "和康生物科技股份有限公司 和康生物科技股份有限公司",
       "certificate_no": "国械注许20253130002",
       "origin": "港澳台",
       "category": "透明质酸钠",
@@ -4604,10 +4604,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Pre-filled Sodium Hyaluronate Syringe",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Pre-filled Sodium Hyaluronate Syringe",
+      "product_name": "注射用交联透明质酸钠凝胶Pre-filled Sodium Hyaluronate Syringe",
       "company": "汇美迪斯株式会社 Humedix Co., Ltd.",
       "company_key": "汇美迪斯株式会社 humedix co., ltd.",
-      "registrant": "汇美迪斯株式会社 Humedix Co., Ltd.",
+      "registrant": "汇美迪斯株式会社Humedix Co., Ltd.",
       "certificate_no": "国械注进20153130263",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4654,7 +4654,7 @@
       "product_name": "注射用修饰透明质酸钠凝胶",
       "company": "LG化学 LG Chem, Ltd.",
       "company_key": "lg化学 lg chem, ltd.",
-      "registrant": "LG化学 LG Chem, Ltd.",
+      "registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
       "certificate_no": "国械注进20163131014",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4698,10 +4698,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Crosslinked Hyaluronan(HA) injectable gel with Lidocaine",
       "company": "基兰实验室股份公司 Kylane Laboratoires SA",
       "company_key": "基兰实验室股份公司 kylane laboratoires sa",
-      "registrant": "基兰实验室股份公司 Kylane Laboratoires SA",
+      "registrant": "基兰实验室股份公司Kylane Laboratoires SA",
       "certificate_no": "国械注进20253130026",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4746,10 +4746,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶조직수복용생체재료",
       "company": "东邦医疗 Dong Bang Medical Co., Ltd.",
       "company_key": "东邦医疗 dong bang medical co., ltd.",
-      "registrant": "东邦医疗 Dong Bang Medical Co., Ltd.",
+      "registrant": "株式会社东方医疗Dong Bang Medical Co.,Ltd.",
       "certificate_no": "国械注进20253130189",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4793,10 +4793,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶Cross-linked sodium hyaluronate Gel for Injection",
       "company": "捷特玛株式会社 JETEMA Co., Ltd.",
       "company_key": "捷特玛株式会社 jetema co., ltd.",
-      "registrant": "捷特玛株式会社 JETEMA Co., Ltd.",
+      "registrant": "捷特玛株式会社JETEMA Co., Ltd.",
       "certificate_no": "国械注进20253130192",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4840,10 +4840,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用含利多卡因交联透明质酸钠凝胶 Cutegel Lidocaine",
       "aliases": "",
-      "product_name": "注射用含利多卡因交联透明质酸钠凝胶 Cutegel Lidocaine",
+      "product_name": "注射用含利多卡因交联透明质酸钠凝胶Cutegel Lidocaine",
       "company": "BNC",
       "company_key": "bnc",
-      "registrant": "韩国BNC株式会社",
+      "registrant": "韩国BNC株式会社韩国BNC株式会社",
       "certificate_no": "国械注进20253130216",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4888,10 +4888,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Cross-linked Sodium Hyaluronate Gel for Injection with Lidocaine",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Cross-linked Sodium Hyaluronate Gel for Injection with Lidocaine",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Cross-linked Sodium Hyaluronate Gel for Injection with Lidocaine",
       "company": "LG化学 LG Chem, Ltd.",
       "company_key": "lg化学 lg chem, ltd.",
-      "registrant": "LG化学 LG Chem, Ltd.",
+      "registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
       "certificate_no": "国械注进20253130269",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4936,10 +4936,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Crosslinked Sodium Hyaluronate Gel for Injection",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Crosslinked Sodium Hyaluronate Gel for Injection",
+      "product_name": "注射用交联透明质酸钠凝胶Crosslinked Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
       "company_key": "galderma",
-      "registrant": "科医有限公司 Q-Med AB",
+      "registrant": "科医有限公司Q-Med AB",
       "certificate_no": "国械注进20253130284",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -4985,10 +4985,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Cutegel",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Cutegel",
+      "product_name": "注射用交联透明质酸钠凝胶Cutegel",
       "company": "BNC",
       "company_key": "bnc",
-      "registrant": "韩国BNC株式会社",
+      "registrant": "韩国BNC株式会社韩国BNC株式会社",
       "certificate_no": "国械注进20253130317",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -5032,10 +5032,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Cutegel",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Cutegel",
+      "product_name": "注射用交联透明质酸钠凝胶Cutegel",
       "company": "BNC",
       "company_key": "bnc",
-      "registrant": "韩国BNC株式会社",
+      "registrant": "韩国BNC株式会社韩国BNC株式会社",
       "certificate_no": "国械注进20253130357",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -5079,10 +5079,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联含药透明质酸钠凝胶 Cutegel Lidocaine",
       "aliases": "",
-      "product_name": "注射用交联含药透明质酸钠凝胶 Cutegel Lidocaine",
+      "product_name": "注射用交联含药透明质酸钠凝胶Cutegel Lidocaine",
       "company": "BNC",
       "company_key": "bnc",
-      "registrant": "韩国BNC株式会社",
+      "registrant": "韩国BNC株式会社韩国BNC株式会社",
       "certificate_no": "国械注进20253130358",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -5126,10 +5126,10 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 Sodium Hyaluronate Gel for Injection",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 Sodium Hyaluronate Gel for Injection",
+      "product_name": "注射用交联透明质酸钠凝胶Sodium Hyaluronate Gel for Injection",
       "company": "维瓦希 Laboratoires VIVACY",
       "company_key": "维瓦希 laboratoires vivacy",
-      "registrant": "维瓦希 Laboratoires VIVACY",
+      "registrant": "维瓦希Laboratoires VIVACY",
       "certificate_no": "国械注进20253130360",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -5173,10 +5173,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 PRECISE-HA FILLER LIFT",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 PRECISE-HA FILLER LIFT",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶PRECISE-HA Filler FORM",
       "company": "希玛德股份有限公司 SYMATESE SAS",
       "company_key": "希玛德股份有限公司 symatese sas",
-      "registrant": "希玛德股份有限公司 SYMATESE SAS",
+      "registrant": "希玛德股份有限公司SYMATESE SAS",
       "certificate_no": "国械注进20253130421",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -5221,10 +5221,10 @@
       "strategic": "玻尿酸",
       "brand": "含利多卡因注射用交联透明质酸钠凝胶 Hyabell Ultra",
       "aliases": "",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Hyabell Ultra",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶Hyabell Ultra",
       "company": "艾多德姆股份有限公司 Adoderm GmbH",
       "company_key": "艾多德姆股份有限公司 adoderm gmbh",
-      "registrant": "艾多德姆股份有限公司 Adoderm GmbH",
+      "registrant": "艾多德姆股份有限公司Adoderm GmbH",
       "certificate_no": "国械注进20253130577",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -5278,9 +5278,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "非交联HA溶液",
-      "approval_date": "2026-01-08",
+      "approval_date": "2026-01-07",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-01-06",
       "primary_indication": "肤质改善",
       "indications": [
         "肤质改善"
@@ -5326,9 +5326,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "非交联HA溶液",
-      "approval_date": "2026-01-08",
+      "approval_date": "2026-01-07",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-01-06",
       "primary_indication": "肤质改善",
       "indications": [
         "肤质改善"
@@ -5359,55 +5359,6 @@
       "confidence": "high"
     },
     {
-      "id": "HA-国械注准20263130044-面颊部",
-      "track": "ha",
-      "track_name": "透明质酸钠",
-      "strategic": "玻尿酸",
-      "brand": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
-      "aliases": "",
-      "product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
-      "company": "巨子生物",
-      "company_key": "巨子生物",
-      "registrant": "陕西巨子生物技术有限公司",
-      "certificate_no": "国械注准20263130044",
-      "origin": "国产",
-      "category": "透明质酸钠",
-      "material_family": "透明质酸钠 / 玻尿酸",
-      "material_form": "HA+胶原复合溶液",
-      "approval_date": "2026-01-14",
-      "approval_year": 2026,
-      "valid_until": "",
-      "primary_indication": "面颊部",
-      "indications": [
-        "面颊部"
-      ],
-      "tags": [
-        "复合材料类",
-        "国产",
-        "非交联",
-        "复合溶液"
-      ],
-      "official_status": "verified",
-      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
-      "official_registrant": "陕西巨子生物技术有限公司",
-      "official_approval_date": "2026-01-14",
-      "official_valid_until": "2031-01-13",
-      "official_indication": "面颊部",
-      "official_scope": "该产品适用于满足该产品说明书中所列条件下，用于真皮层的注射，以改善面颊部平滑度。",
-      "verified": true,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "玻尿酸",
-        "胶原蛋白"
-      ],
-      "source_account": "闲话医与美",
-      "source_title": "2026年以后公开获批补充",
-      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
-      "confidence": "high"
-    },
-    {
       "id": "HA-国械注准20263130055-鼻唇沟",
       "track": "ha",
       "track_name": "透明质酸钠",
@@ -5425,7 +5376,7 @@
       "material_form": "交联HA填充凝胶",
       "approval_date": "2026-01-14",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-01-13",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -5461,7 +5412,7 @@
       "strategic": "玻尿酸",
       "brand": "注射用交联透明质酸钠凝胶 海维纳斯・瑅派",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶 海维纳斯・瑅派",
+      "product_name": "注射用交联透明质酸钠凝胶",
       "company": "海雅美",
       "company_key": "海雅美",
       "registrant": "海雅美生物技术（珠海）有限公司",
@@ -5472,7 +5423,7 @@
       "material_form": "交联HA填充凝胶",
       "approval_date": "2026-04-01",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-03-31",
       "primary_indication": "手部",
       "indications": [
         "手部"
@@ -5517,9 +5468,9 @@
       "category": "透明质酸钠",
       "material_family": "透明质酸钠 / 玻尿酸",
       "material_form": "非交联HA溶液",
-      "approval_date": "2026-06-08",
+      "approval_date": "2026-06-05",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-06-04",
       "primary_indication": "肤质改善",
       "indications": [
         "肤质改善"
@@ -5547,55 +5498,6 @@
       "source_account": "医美慢谈",
       "source_title": "新品下证 | 常州药物水光针获批上市！",
       "source_url": "https://mp.weixin.qq.com/s/3LmqSnCOVM_HThRznclZIw",
-      "confidence": "high"
-    },
-    {
-      "id": "HA-国械注进20213130485-颞部",
-      "track": "ha",
-      "track_name": "透明质酸钠",
-      "strategic": "玻尿酸",
-      "brand": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine",
-      "aliases": "乔雅登丰颜 / Juvéderm VOLUMA with Lidocaine",
-      "product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
-      "company": "艾尔建 / AbbVie",
-      "company_key": "abbvie_allergan",
-      "registrant": "艾尔建 / AbbVie",
-      "certificate_no": "国械注进20213130485",
-      "origin": "进口",
-      "category": "透明质酸钠",
-      "material_family": "透明质酸钠 / 玻尿酸",
-      "material_form": "交联HA填充凝胶",
-      "approval_date": "2026-05-08",
-      "approval_year": 2026,
-      "valid_until": "2026-11-25",
-      "primary_indication": "颞部",
-      "indications": [
-        "颞部"
-      ],
-      "tags": [
-        "注射填充类",
-        "进口",
-        "交联",
-        "含利多卡因"
-      ],
-      "official_status": "verified",
-      "official_verification_status": "证号已官方核验/适应症待官方变更核验",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
-      "official_registrant": "艾尔建 Allergan",
-      "official_approval_date": "2021-11-26",
-      "official_valid_until": "2026-11-25",
-      "official_indication": "面颊部 / 鼻部",
-      "official_scope": "产品适用于面颊部深层（皮下和/或骨膜上）注射，以重塑面部容积；适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
-      "verified": true,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "玻尿酸",
-        "肉毒毒素"
-      ],
-      "source_account": "公众号原文",
-      "source_title": "乔雅登丰颜获批新适应证，改善颞部凹陷",
-      "source_url": "https://mp.weixin.qq.com/s/s7EPbpQUNzUzj-_oOY2hFw",
       "confidence": "high"
     },
     {

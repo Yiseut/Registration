@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-15T18:20:40",
+  "generated_at": "2026-06-15T23:55:08",
   "tracks": [
     {
       "key": "ha",
       "name": "透明质酸钠",
       "tagline": "",
-      "accent": "#D97757",
+      "accent": "#58bfd7",
       "url": "tracks/ha.html",
       "data_url": "assets/data/tracks/ha.json"
     },
@@ -13,7 +13,7 @@
       "key": "botulinum",
       "name": "肉毒毒素",
       "tagline": "",
-      "accent": "#8B9D7F",
+      "accent": "#737ed0",
       "url": "tracks/botulinum.html",
       "data_url": "assets/data/tracks/botulinum.json"
     },
@@ -21,7 +21,7 @@
       "key": "collagen",
       "name": "胶原蛋白",
       "tagline": "",
-      "accent": "#B5915A",
+      "accent": "#dd7b8b",
       "url": "tracks/collagen.html",
       "data_url": "assets/data/tracks/collagen.json"
     },
@@ -29,7 +29,7 @@
       "key": "plla",
       "name": "PLA",
       "tagline": "",
-      "accent": "#8B5A6B",
+      "accent": "#9daaf0",
       "url": "tracks/plla.html",
       "data_url": "assets/data/tracks/plla.json"
     },
@@ -37,7 +37,7 @@
       "key": "pcl",
       "name": "PCL",
       "tagline": "",
-      "accent": "#C15F3C",
+      "accent": "#e5b574",
       "url": "tracks/pcl.html",
       "data_url": "assets/data/tracks/pcl.json"
     },
@@ -45,7 +45,7 @@
       "key": "caha",
       "name": "CaHA",
       "tagline": "",
-      "accent": "#5B7B9A",
+      "accent": "#b486d4",
       "url": "tracks/caha.html",
       "data_url": "assets/data/tracks/caha.json"
     },
@@ -53,7 +53,7 @@
       "key": "niche_materials",
       "name": "小众材料",
       "tagline": "",
-      "accent": "#C58B5C",
+      "accent": "#cf6a9d",
       "url": "tracks/niche_materials.html",
       "data_url": "assets/data/tracks/niche_materials.json"
     },
@@ -61,7 +61,7 @@
       "key": "ebd",
       "name": "EBD 设备",
       "tagline": "",
-      "accent": "#6E6A65",
+      "accent": "#8fa8c8",
       "url": "tracks/ebd.html",
       "data_url": "assets/data/tracks/ebd.json"
     }

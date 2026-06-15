@@ -4,7 +4,7 @@
     "key": "pcl",
     "name": "PCL",
     "tagline": "",
-    "accent": "#C15F3C"
+    "accent": "#e5b574"
   },
   "kpi": {
     "total": 5,
@@ -122,18 +122,18 @@
       "strategic": "胶原刺激剂",
       "brand": "伊妍仕 Ellansé",
       "aliases": "少女针 / Ellansé-S",
-      "product_name": "注射用聚己内酯微球面部填充剂",
+      "product_name": "注射用聚己内酯微球面部填充剂Polycaprolactone Gel for Injection",
       "company": "Sinclair / 华东医药",
       "company_key": "sinclair",
-      "registrant": "Sinclair Pharma Limited",
+      "registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
       "certificate_no": "国械注进20213130100",
       "origin": "进口",
       "category": "PCL少女针",
       "material_family": "PCL",
       "material_form": "PCL+CMC凝胶",
-      "approval_date": "2021-04-13",
+      "approval_date": "2025-12-30",
       "approval_year": 2021,
-      "valid_until": "",
+      "valid_until": "2031-04-07",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -183,7 +183,7 @@
       "material_form": "PCL微球凝胶悬液",
       "approval_date": "2024-08-27",
       "approval_year": 2024,
-      "valid_until": "",
+      "valid_until": "2029-08-26",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -231,7 +231,7 @@
       "material_form": "PCL微球凝胶悬液",
       "approval_date": "2025-03-31",
       "approval_year": 2025,
-      "valid_until": "",
+      "valid_until": "2030-03-30",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -256,9 +256,9 @@
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
+        "玻尿酸",
         "胶原刺激剂",
-        "肉毒毒素",
-        "玻尿酸"
+        "肉毒毒素"
       ],
       "source_account": "四环医药中期报告 / 医美部落公开页 / 兔灵产品库交叉",
       "source_title": "四环医药中期报告；四环医药旗下「PCL面部微球」获批",
@@ -283,7 +283,7 @@
       "material_form": "PCL微球凝胶悬液",
       "approval_date": "2025-11-28",
       "approval_year": 2025,
-      "valid_until": "",
+      "valid_until": "2030-11-27",
       "primary_indication": "下颌及颏部轮廓改善（填充）",
       "indications": [
         "下颌及颏部轮廓改善（填充）"
@@ -320,7 +320,7 @@
       "strategic": "胶原刺激剂",
       "brand": "伊妍仕恒耀™ / Ellansé-M",
       "aliases": "伊妍仕®M型 / Ellansé-M / 少女针",
-      "product_name": "注射用聚己内酯微球面部填充剂",
+      "product_name": "注射用聚己内酯微球面部填充剂Polycaprolactone Gel for Injection",
       "company": "Sinclair / 华东医药",
       "company_key": "sinclair",
       "registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
@@ -331,7 +331,7 @@
       "material_form": "PCL+CMC凝胶",
       "approval_date": "2026-04-21",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-04-20",
       "primary_indication": "颞部",
       "indications": [
         "颞部"

@@ -4,37 +4,37 @@
     "key": "botulinum",
     "name": "肉毒毒素",
     "tagline": "",
-    "accent": "#8B9D7F"
+    "accent": "#737ed0"
   },
   "kpi": {
-    "total": 8,
-    "main": 8,
+    "total": 12,
+    "main": 12,
     "companies": 8,
-    "indications": 6,
-    "verified": 8,
+    "indications": 5,
+    "verified": 12,
     "domestic": 2,
-    "imported": 6,
+    "imported": 10,
     "hkmt": 0
   },
   "company_share": [
+    {
+      "name": "艾尔建 / AbbVie",
+      "value": 3
+    },
+    {
+      "name": "四环医药 / 渼颜空间",
+      "value": 2
+    },
+    {
+      "name": "麦施美学 / Merz",
+      "value": 2
+    },
     {
       "name": "兰州生物",
       "value": 1
     },
     {
-      "name": "艾尔建 / AbbVie",
-      "value": 1
-    },
-    {
       "name": "高德美 / Galderma",
-      "value": 1
-    },
-    {
-      "name": "四环医药 / 渼颜空间",
-      "value": 1
-    },
-    {
-      "name": "麦施美学 / Merz",
       "value": 1
     },
     {
@@ -54,26 +54,22 @@
   "indication_share": [
     {
       "name": "眉间纹",
-      "value": 8
-    },
-    {
-      "name": "腋窝多汗",
-      "value": 1
+      "value": 12
     },
     {
       "name": "鱼尾纹",
-      "value": 1
+      "value": 3
     },
     {
       "name": "咬肌突出",
-      "value": 1
+      "value": 3
     },
     {
       "name": "额纹",
-      "value": 1
+      "value": 3
     },
     {
-      "name": "额部",
+      "name": "腋窝多汗",
       "value": 1
     }
   ],
@@ -84,13 +80,13 @@
     },
     {
       "name": "进口",
-      "value": 6
+      "value": 10
     }
   ],
   "material_share": [
     {
       "name": "A型肉毒毒素",
-      "value": 8
+      "value": 12
     }
   ],
   "timeline": {
@@ -102,65 +98,79 @@
       2026
     ],
     "values": [
+      3,
       1,
-      1,
-      2,
-      2,
+      3,
+      3,
       2
     ]
   },
   "company_indication_heatmap": {
     "companies": [
+      "艾尔建 / AbbVie",
+      "四环医药 / 渼颜空间",
+      "麦施美学 / Merz",
       "Sinclair / 华东医药",
       "兰州生物",
-      "四环医药 / 渼颜空间",
       "复星医药 / 复锐医疗",
       "爱美客",
-      "艾尔建 / AbbVie",
-      "高德美 / Galderma",
-      "麦施美学 / Merz"
+      "高德美 / Galderma"
     ],
     "indications": [
       "眉间纹",
       "咬肌突出",
-      "腋窝多汗",
       "额纹",
-      "额部",
-      "鱼尾纹"
+      "鱼尾纹",
+      "腋窝多汗"
     ],
     "cells": [
       [
         0,
-        1,
-        1
-      ],
-      [
-        2,
-        1,
-        1
-      ],
-      [
-        0,
-        5,
-        1
-      ],
-      [
-        5,
-        5,
-        1
-      ],
-      [
-        1,
-        5,
-        1
-      ],
-      [
-        3,
-        5,
+        4,
         1
       ],
       [
         4,
+        4,
+        1
+      ],
+      [
+        0,
+        0,
+        3
+      ],
+      [
+        3,
+        0,
+        3
+      ],
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        0,
+        3
+      ],
+      [
+        0,
+        7,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        0,
         5,
         1
       ],
@@ -171,27 +181,7 @@
       ],
       [
         0,
-        2,
-        1
-      ],
-      [
-        0,
-        7,
-        1
-      ],
-      [
-        0,
         3,
-        1
-      ],
-      [
-        0,
-        4,
-        1
-      ],
-      [
-        0,
-        0,
         1
       ]
     ]
@@ -213,7 +203,7 @@
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
       "material_form": "传统天然A型",
-      "approval_date": "2012",
+      "approval_date": "2025-01-10",
       "approval_year": 2012,
       "valid_until": "",
       "primary_indication": "眉间纹",
@@ -237,8 +227,8 @@
       "official_registrant": "兰州生物技术开发有限公司",
       "official_approval_date": "2025-01-10",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹 / 腋窝多汗",
+      "official_scope": "医美核心使用围绕动态皱纹；2024年新增原发性腋窝多汗症适应症。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -250,17 +240,17 @@
       "confidence": "high"
     },
     {
-      "id": "BOTULINUM-国药准字SJ20171003SJ20171004SJ20171005",
+      "id": "BOTULINUM-国药准字SJ20171003",
       "track": "botulinum",
       "track_name": "肉毒毒素",
       "strategic": "肉毒毒素",
       "brand": "保妥适 Botox",
-      "aliases": "BOTOX",
+      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / SJ20171004 / SJ20171005",
       "product_name": "注射用A型肉毒毒素",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
       "registrant": "Allergan Pharmaceuticals Ireland",
-      "certificate_no": "国药准字SJ20171003 / SJ20171004 / SJ20171005",
+      "certificate_no": "国药准字SJ20171003",
       "origin": "进口",
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
@@ -287,13 +277,13 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
-      "official_source": "国家政务服务平台 NMPA 国产药品查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
+      "official_source": "国家政务服务平台 NMPA 药品查询",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Allergan Pharmaceuticals Ireland",
+      "official_approval_date": "2009",
       "official_valid_until": "",
-      "official_indication": "额部",
-      "official_scope": "",
+      "official_indication": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
+      "official_scope": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -306,7 +296,119 @@
       "confidence": "high"
     },
     {
-      "id": "BOTULINUM-国药准字S20200016",
+      "id": "BOTULINUM-SJ20171004",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "保妥适 Botox",
+      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / SJ20171004 / SJ20171005",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "艾尔建 / AbbVie",
+      "company_key": "abbvie_allergan",
+      "registrant": "Allergan Pharmaceuticals Ireland",
+      "certificate_no": "SJ20171004",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2009",
+      "approval_year": 2009,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [
+        "眉间纹",
+        "鱼尾纹",
+        "咬肌突出",
+        "额纹"
+      ],
+      "tags": [
+        "进口",
+        "高端品牌",
+        "传统天然A型",
+        "人血白蛋白",
+        "精准弥散",
+        "精细皱纹",
+        "多规格",
+        "4个医美适应症"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA进口药品注册历史数据",
+      "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Allergan Pharmaceuticals Ireland",
+      "official_approval_date": "2009",
+      "official_valid_until": "",
+      "official_indication": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
+      "official_scope": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "肉毒毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": "high"
+    },
+    {
+      "id": "BOTULINUM-SJ20171005",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "保妥适 Botox",
+      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / SJ20171004 / SJ20171005",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "艾尔建 / AbbVie",
+      "company_key": "abbvie_allergan",
+      "registrant": "Allergan Pharmaceuticals Ireland",
+      "certificate_no": "SJ20171005",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2009",
+      "approval_year": 2009,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [
+        "眉间纹",
+        "鱼尾纹",
+        "咬肌突出",
+        "额纹"
+      ],
+      "tags": [
+        "进口",
+        "高端品牌",
+        "传统天然A型",
+        "人血白蛋白",
+        "精准弥散",
+        "精细皱纹",
+        "多规格",
+        "4个医美适应症"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA进口药品注册历史数据",
+      "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Allergan Pharmaceuticals Ireland",
+      "official_approval_date": "2009",
+      "official_valid_until": "",
+      "official_indication": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
+      "official_scope": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "肉毒毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": "high"
+    },
+    {
+      "id": "BOTULINUM-S20200016",
       "track": "botulinum",
       "track_name": "肉毒毒素",
       "strategic": "肉毒毒素",
@@ -316,7 +418,7 @@
       "company": "高德美 / Galderma",
       "company_key": "galderma",
       "registrant": "Ipsen Biopharm Limited",
-      "certificate_no": "国药准字S20200016",
+      "certificate_no": "S20200016",
       "origin": "进口",
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
@@ -335,14 +437,14 @@
         "起效快"
       ],
       "official_status": "verified",
-      "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
-      "official_source": "国家政务服务平台 NMPA 国产药品查询",
-      "official_product_name": "静注人免疫球蛋白(pH4)",
-      "official_registrant": "新疆德源生物工程有限公司",
-      "official_approval_date": "2025-06-18",
+      "official_verification_status": "已官方核验/国家药监局NMPA进口药品注册历史数据",
+      "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Ipsen Biopharm Limited",
+      "official_approval_date": "2020-06-17",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹",
+      "official_scope": "公开资料显示其在中国获批医美核心适应症为眉间纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -356,17 +458,17 @@
       "confidence": "high"
     },
     {
-      "id": "BOTULINUM-国药准字SJ20200024SJ20210004",
+      "id": "BOTULINUM-国药准字SJ20200024",
       "track": "botulinum",
       "track_name": "肉毒毒素",
       "strategic": "肉毒毒素",
       "brand": "乐提葆 Letybo",
-      "aliases": "Letybo / 白毒",
+      "aliases": "Letybo / 白毒 / 批准文号组：国药准字SJ20200024 / SJ20210004",
       "product_name": "注射用A型肉毒毒素",
       "company": "四环医药 / 渼颜空间",
       "company_key": "sihuan",
       "registrant": "Hugel, Inc.",
-      "certificate_no": "国药准字SJ20200024 / SJ20210004",
+      "certificate_no": "国药准字SJ20200024",
       "origin": "进口",
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
@@ -386,19 +488,19 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
-      "official_source": "国家政务服务平台 NMPA 国产药品查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
+      "official_source": "国家政务服务平台 NMPA 药品查询",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Hugel, Inc.",
+      "official_approval_date": "2020-10",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹",
+      "official_scope": "公开资料显示其在中国获批医美核心适应症为眉间纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
+        "玻尿酸",
         "胶原刺激剂",
-        "肉毒毒素",
-        "玻尿酸"
+        "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
       "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
@@ -406,17 +508,67 @@
       "confidence": "high"
     },
     {
-      "id": "BOTULINUM-国药准字SJ20240010SJ20240011",
+      "id": "BOTULINUM-SJ20210004",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "乐提葆 Letybo",
+      "aliases": "Letybo / 白毒 / 批准文号组：国药准字SJ20200024 / SJ20210004",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "四环医药 / 渼颜空间",
+      "company_key": "sihuan",
+      "registrant": "Hugel, Inc.",
+      "certificate_no": "SJ20210004",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2020-10",
+      "approval_year": 2020,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "韩系",
+        "传统天然A型",
+        "人血白蛋白",
+        "精准弥散",
+        "年轻用户"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA进口药品注册历史数据",
+      "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Hugel, Inc.",
+      "official_approval_date": "2020-10",
+      "official_valid_until": "",
+      "official_indication": "眉间纹",
+      "official_scope": "公开资料显示其在中国获批医美核心适应症为眉间纹。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "胶原刺激剂",
+        "肉毒毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": "high"
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20240010",
       "track": "botulinum",
       "track_name": "肉毒毒素",
       "strategic": "肉毒毒素",
       "brand": "西马 Xeomin",
-      "aliases": "Xeomin / 思奥美",
+      "aliases": "Xeomin / 思奥美 / 批准文号组：国药准字SJ20240010 / SJ20240011",
       "product_name": "注射用A型肉毒毒素",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
       "registrant": "Merz Pharmaceuticals GmbH",
-      "certificate_no": "国药准字SJ20240010 / SJ20240011",
+      "certificate_no": "国药准字SJ20240010",
       "origin": "进口",
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
@@ -436,13 +588,63 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
-      "official_source": "国家政务服务平台 NMPA 国产药品查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
+      "official_source": "国家政务服务平台 NMPA 药品查询",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Merz Pharmaceuticals GmbH",
+      "official_approval_date": "2024-02-23",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹",
+      "official_scope": "公开资料显示其于2024年2月获批，主打不含复合蛋白的纯化特征。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "玻尿酸",
+        "胶原刺激剂",
+        "肉毒毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "Xeomin正式获批；截至2025年7月官方6种清单",
+      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "confidence": "high"
+    },
+    {
+      "id": "BOTULINUM-SJ20240011",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "strategic": "肉毒毒素",
+      "brand": "西马 Xeomin",
+      "aliases": "Xeomin / 思奥美 / 批准文号组：国药准字SJ20240010 / SJ20240011",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "麦施美学 / Merz",
+      "company_key": "merz",
+      "registrant": "Merz Pharmaceuticals GmbH",
+      "certificate_no": "SJ20240011",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "纯化天然A型",
+      "approval_date": "2024-02-23",
+      "approval_year": 2024,
+      "valid_until": "",
+      "primary_indication": "眉间纹",
+      "indications": [],
+      "tags": [
+        "进口",
+        "纯化",
+        "无复合蛋白",
+        "无动物源",
+        "室温稳定",
+        "多规格"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA进口药品注册历史数据",
+      "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Merz Pharmaceuticals GmbH",
+      "official_approval_date": "2024-02-23",
+      "official_valid_until": "",
+      "official_indication": "眉间纹",
+      "official_scope": "公开资料显示其于2024年2月获批，主打不含复合蛋白的纯化特征。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -486,12 +688,12 @@
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
       "official_source": "国家政务服务平台 NMPA 国产药品查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Revance Therapeutics, Inc.",
+      "official_approval_date": "2024-09-09",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹",
+      "official_scope": "用于暂时性改善成人因皱眉肌或降眉间肌活动引起的中度至重度眉间纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -533,12 +735,12 @@
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
       "official_source": "国家政务服务平台 NMPA 国产药品查询",
-      "official_product_name": "",
-      "official_registrant": "",
-      "official_approval_date": "",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Huons BioPharma Co., Ltd.",
+      "official_approval_date": "2026-01-05",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹",
+      "official_scope": "获批规格为100U/瓶，注册分类为治疗用生物制品，处方药。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
@@ -586,8 +788,8 @@
       "official_registrant": "重庆誉颜制药有限公司",
       "official_approval_date": "2026-03-25",
       "official_valid_until": "",
-      "official_indication": "",
-      "official_scope": "",
+      "official_indication": "眉间纹",
+      "official_scope": "用于暂时性改善65岁及65岁以下成人因皱眉肌和/或降眉间肌活动引起的中度至重度眉间纹。",
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [

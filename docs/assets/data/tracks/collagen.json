@@ -4,7 +4,7 @@
     "key": "collagen",
     "name": "胶原蛋白",
     "tagline": "",
-    "accent": "#B5915A"
+    "accent": "#dd7b8b"
   },
   "kpi": {
     "total": 19,
@@ -26,15 +26,15 @@
       "value": 3
     },
     {
+      "name": "巨子生物",
+      "value": 2
+    },
+    {
       "name": "崇山生物",
       "value": 2
     },
     {
       "name": "珂瑞康",
-      "value": 2
-    },
-    {
-      "name": "巨子生物",
       "value": 2
     },
     {
@@ -179,6 +179,16 @@
     "cells": [
       [
         3,
+        3,
+        1
+      ],
+      [
+        4,
+        3,
+        1
+      ],
+      [
+        3,
         10,
         1
       ],
@@ -284,16 +294,6 @@
       ],
       [
         1,
-        3,
-        1
-      ],
-      [
-        3,
-        3,
-        1
-      ],
-      [
-        4,
         3,
         1
       ],
@@ -315,6 +315,56 @@
     ]
   },
   "records": [
+    {
+      "id": "COLLAGEN-国械注准20263130044",
+      "track": "collagen",
+      "track_name": "胶原蛋白",
+      "strategic": "胶原蛋白",
+      "brand": "巨子重组胶原+HA复合溶液",
+      "aliases": "透明质酸钠:面颊部",
+      "product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
+      "company": "巨子生物",
+      "company_key": "巨子生物",
+      "registrant": "陕西巨子生物技术有限公司",
+      "certificate_no": "国械注准20263130044",
+      "origin": "国产",
+      "category": "胶原蛋白",
+      "material_family": "重组/类人源胶原",
+      "material_form": "重组胶原+HA复合溶液",
+      "approval_date": "2026-01-14",
+      "approval_year": 2026,
+      "valid_until": "2031-01-13",
+      "primary_indication": "面颊部",
+      "indications": [
+        "面颊部",
+        "面颊部平滑度"
+      ],
+      "tags": [
+        "复合材料类",
+        "国产",
+        "非交联",
+        "复合溶液",
+        "HA复合"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
+      "official_registrant": "陕西巨子生物技术有限公司",
+      "official_approval_date": "2026-01-14",
+      "official_valid_until": "2031-01-13",
+      "official_indication": "面颊部",
+      "official_scope": "该产品适用于满足该产品说明书中所列条件下，用于真皮层的注射，以改善面颊部平滑度。",
+      "verified": true,
+      "main_landscape": true,
+      "portfolio_segments": [
+        "胶原蛋白"
+      ],
+      "source_account": "闲话医与美 || 公众号汇总/NMPA校准",
+      "source_title": "2026年以后公开获批补充 || 胶原蛋白汇总文章交叉校准",
+      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw || https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
+      "confidence": ""
+    },
     {
       "id": "COLLAGEN-国械注准20253132517",
       "track": "collagen",
@@ -365,7 +415,7 @@
       "strategic": "胶原蛋白",
       "brand": "肤丽美",
       "aliases": "",
-      "product_name": "胶原蛋白植入剂 Sunmax Collagen Implant I-Plus",
+      "product_name": "胶原蛋白植入剂Sunmax Collagen Implant I-Plus",
       "company": "双美生物",
       "company_key": "双美生物",
       "registrant": "双美生物科技股份有限公司",
@@ -408,7 +458,7 @@
       "strategic": "胶原蛋白",
       "brand": "肤柔美",
       "aliases": "",
-      "product_name": "胶原蛋白植入剂 Sunmax Collagen Implant I",
+      "product_name": "胶原蛋白植入剂“Sunmax”Collagen Implant I",
       "company": "双美生物",
       "company_key": "双美生物",
       "registrant": "双美生物科技股份有限公司",
@@ -675,9 +725,9 @@
       "category": "胶原蛋白",
       "material_family": "动物源胶原",
       "material_form": "动物源填充植入剂",
-      "approval_date": "2025-08-25",
+      "approval_date": "2025-08-22",
       "approval_year": 2025,
-      "valid_until": "",
+      "valid_until": "2030-08-21",
       "primary_indication": "鱼尾纹",
       "indications": [],
       "tags": [
@@ -752,7 +802,7 @@
       "strategic": "胶原蛋白",
       "brand": "爱贝芙 ArteColl",
       "aliases": "",
-      "product_name": "整形用胶原和PMMA皮下植入物系统 ArteColl",
+      "product_name": "整形用胶原和PMMA皮下植入物系统ArteColl",
       "company": "荷兰汉福",
       "company_key": "荷兰汉福",
       "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
@@ -796,7 +846,7 @@
       "strategic": "胶原蛋白",
       "brand": "Bellafill",
       "aliases": "",
-      "product_name": "整形用胶原和PMMA皮下植入物系统 Bellafill",
+      "product_name": "整形用胶原和PMMA皮下植入物系统Bellafill",
       "company": "Suneva",
       "company_key": "suneva",
       "registrant": "圣诺华医疗股份有限公司Suneva Medical, Inc.",
@@ -955,51 +1005,6 @@
       "verified": true,
       "main_landscape": true,
       "portfolio_segments": [
-        "玻尿酸",
-        "胶原蛋白"
-      ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": ""
-    },
-    {
-      "id": "COLLAGEN-国械注准20263130044",
-      "track": "collagen",
-      "track_name": "胶原蛋白",
-      "strategic": "胶原蛋白",
-      "brand": "巨子重组胶原+HA复合溶液",
-      "aliases": "",
-      "product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
-      "company": "巨子生物",
-      "company_key": "巨子生物",
-      "registrant": "陕西巨子生物技术有限公司",
-      "certificate_no": "国械注准20263130044",
-      "origin": "国产",
-      "category": "胶原蛋白",
-      "material_family": "重组/类人源胶原",
-      "material_form": "重组胶原+HA复合溶液",
-      "approval_date": "2026-01-14",
-      "approval_year": 2026,
-      "valid_until": "2031-01-13",
-      "primary_indication": "面颊部平滑度",
-      "indications": [],
-      "tags": [
-        "HA复合"
-      ],
-      "official_status": "verified",
-      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "official_product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
-      "official_registrant": "陕西巨子生物技术有限公司",
-      "official_approval_date": "2026-01-14",
-      "official_valid_until": "2031-01-13",
-      "official_indication": "面颊部",
-      "official_scope": "该产品适用于满足该产品说明书中所列条件下，用于真皮层的注射，以改善面颊部平滑度。",
-      "verified": true,
-      "main_landscape": true,
-      "portfolio_segments": [
-        "玻尿酸",
         "胶原蛋白"
       ],
       "source_account": "公众号汇总/NMPA校准",
@@ -1023,9 +1028,9 @@
       "category": "胶原蛋白",
       "material_family": "动物源胶原",
       "material_form": "动物源填充植入剂",
-      "approval_date": "2026-06-02",
+      "approval_date": "2026-06-01",
       "approval_year": 2026,
-      "valid_until": "",
+      "valid_until": "2031-05-31",
       "primary_indication": "额部动力纹",
       "indications": [],
       "tags": [
@@ -1098,7 +1103,7 @@
       "strategic": "胶原蛋白",
       "brand": "肤力原 / FACIALGAIN",
       "aliases": "",
-      "product_name": "含利多卡因胶原蛋白植入剂 Sunmax FACIALGAIN",
+      "product_name": "含利多卡因胶原蛋白植入剂Sunmax FACIALGAIN Collagen Implant with Lidocaine",
       "company": "双美生物",
       "company_key": "双美生物",
       "registrant": "双美生物科技股份有限公司",
@@ -1131,7 +1136,7 @@
       ],
       "source_account": "UDI/NMPA UDI",
       "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "",
+      "source_url": "https://www.nmpa.gov.cn/",
       "confidence": ""
     }
   ]

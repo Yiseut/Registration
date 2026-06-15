@@ -4,7 +4,7 @@
     "key": "caha",
     "name": "CaHA",
     "tagline": "",
-    "accent": "#5B7B9A"
+    "accent": "#b486d4"
   },
   "kpi": {
     "total": 5,
@@ -166,7 +166,7 @@
       "material_form": "CaHA+CMC微球凝胶",
       "approval_date": "2025-02-17",
       "approval_year": 2025,
-      "valid_until": "",
+      "valid_until": "2030-02-16",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -204,10 +204,10 @@
       "strategic": "胶原刺激剂",
       "brand": "RADIESSE 芮得怡",
       "aliases": "Radiesse® / 微晶瓷",
-      "product_name": "注射用羟基磷酸钙微球面部填充剂",
+      "product_name": "注射用羟基磷酸钙微球面部填充剂RADIESSE INJECTABLE IMPLANT",
       "company": "麦施美学 / Merz",
       "company_key": "merz",
-      "registrant": "Merz North America, Inc.",
+      "registrant": "梅尔茨北美公司Merz North America Inc.",
       "certificate_no": "国械注进20253130124",
       "origin": "进口",
       "category": "CaHA羟基磷酸钙微球",
@@ -215,7 +215,7 @@
       "material_form": "CaHA+CMC微球凝胶",
       "approval_date": "2025-03-07",
       "approval_year": 2025,
-      "valid_until": "",
+      "valid_until": "2030-03-06",
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟"
@@ -317,9 +317,9 @@
       "category": "CaHA边界市场",
       "material_family": "CaHA",
       "material_form": "羟基磷灰石生物陶瓷",
-      "approval_date": "2018",
+      "approval_date": "2023-03-20",
       "approval_year": 2018,
-      "valid_until": "2028",
+      "valid_until": "2028-11-29",
       "primary_indication": "非承重性骨缺损",
       "indications": [
         "非承重性骨缺损"
@@ -364,9 +364,9 @@
       "category": "CaHA边界市场",
       "material_family": "CaHA/β-TCP",
       "material_form": "复合磷酸钙骨植入材料",
-      "approval_date": "2015",
+      "approval_date": "2024-07-25",
       "approval_year": 2015,
-      "valid_until": "",
+      "valid_until": "2030-07-29",
       "primary_indication": "非承重性骨缺损",
       "indications": [
         "非承重性骨缺损"
