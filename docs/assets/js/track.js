@@ -34,15 +34,36 @@
     { offset: 0, color: topColor },
     { offset: 1, color: bottomColor },
   ]);
-  const accent = meta.accent || palette.brand;
+  const TRACK_ACCENTS = {
+    ha: '#c09090',
+    botulinum: '#8898a0',
+    collagen: '#90a090',
+    plla: '#c09090',
+    pcl: '#8898a0',
+    caha: '#90a090',
+    niche_materials: '#c09090',
+    ebd: '#8898a0',
+  };
+  const TRACK_ACCENT_DEEP = {
+    ha: '#9d7b7b',
+    botulinum: '#8898a0',
+    collagen: '#90a090',
+    plla: '#9d7b7b',
+    pcl: '#8898a0',
+    caha: '#90a090',
+    niche_materials: '#9d7b7b',
+    ebd: '#8898a0',
+  };
+  const accent = TRACK_ACCENTS[key] || meta.accent || palette.brand;
+  const accentDeep = TRACK_ACCENT_DEEP[key] || palette.ink3;
   const mainBarGradient = () => verticalGradient(shade(accent, 18), accent);
   document.title = `${trackDisplayName} · Registration Landscape`;
 
   // Tint the header dot to track accent
   const dot = document.querySelector('.topbar .brand .dot');
-  if (dot && meta.accent) {
-    dot.style.background = `linear-gradient(135deg, ${meta.accent} 0%, ${shade(meta.accent, -18)} 100%)`;
-    dot.style.boxShadow = `0 4px 12px ${meta.accent}55`;
+  if (dot && accent) {
+    dot.style.background = `linear-gradient(135deg, ${accent} 0%, ${accentDeep} 100%)`;
+    dot.style.boxShadow = `0 4px 12px ${accent}55`;
   }
 
   // Hero
@@ -51,14 +72,14 @@
   if (trackTagline) trackTagline.remove();
   const heroAccent = document.getElementById('track-accent');
   if (heroAccent) {
-    heroAccent.style.background = `linear-gradient(96deg, ${meta.accent} 0%, ${shade(meta.accent, -22)} 100%)`;
+    heroAccent.style.background = `linear-gradient(96deg, ${accent} 0%, ${accentDeep} 100%)`;
     heroAccent.style.color = '#fffaf5';
   }
   const heroH1 = document.getElementById('track-h1');
   if (heroH1) {
     const grad = heroH1.querySelector('.gradient');
     if (grad) {
-      grad.style.background = `linear-gradient(96deg, ${shade(meta.accent, -16)} 0%, ${meta.accent} 100%)`;
+      grad.style.background = `linear-gradient(96deg, ${accentDeep} 0%, ${accent} 100%)`;
       grad.style.backgroundClip = 'text';
       grad.style.webkitBackgroundClip = 'text';
       grad.style.color = 'transparent';
@@ -847,8 +868,8 @@
 
   function originTonePalette() {
     const imported = shade(accent, -12);
-    const domestic = mixColor ? mixColor(accent, '#fbdec7', 0.78) : shade(accent, 38);
-    const hkmt = mixColor ? mixColor(shade(accent, -34), '#6E6A65', 0.36) : shade(accent, -34);
+    const domestic = mixColor ? mixColor(accent, '#ede0e0', 0.78) : shade(accent, 38);
+    const hkmt = mixColor ? mixColor(shade(accent, -18), '#8898a0', 0.36) : shade(accent, -18);
     return {
       进口: {
         solid: imported,
@@ -857,7 +878,7 @@
       },
       国产: {
         solid: domestic,
-        gradient: verticalGradient(mixColor ? mixColor(accent, '#fff8ef', 0.86) : shade(accent, 48), domestic),
+        gradient: verticalGradient(mixColor ? mixColor(accent, '#fff8f8', 0.86) : shade(accent, 48), domestic),
         label: shade(accent, -34),
       },
       港澳台: {
@@ -869,7 +890,7 @@
   }
 
   function heatVars(value, max) {
-    return crystalCssHeatVars(value, max, { base: accent, fgDark: '#231812' });
+    return crystalCssHeatVars(value, max, { base: accent, fgDark: '#786868' });
   }
 
   function renderDonut(elId, items, title) {
@@ -901,7 +922,7 @@
         labelLine: { show: false },
         emphasis: {
           scaleSize: 6,
-          itemStyle: { shadowBlur: 18, shadowColor: 'rgba(28,22,18,0.15)' },
+          itemStyle: { shadowBlur: 18, shadowColor: 'rgba(120,104,104,0.13)' },
           label: { show: true, position: 'center', formatter: (p) => `{n|${p.name}}\n{v|${p.value}}\n{p|${p.percent.toFixed(1)}%}`,
                    rich: {
                      n: { fontSize: 13, color: palette.ink3, padding: [0, 0, 6, 0] },

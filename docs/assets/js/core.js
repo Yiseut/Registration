@@ -1,25 +1,25 @@
 ﻿/* Shared utilities, ECharts theme, and drawer logic. */
 
 const palette = {
-  brand: '#166B65',
-  brandDeep: '#0F5A55',
-  brandGlow: '#7BC9C1',
-  brandSoft: '#E2F1EF',
-  ink: '#1F1B17',
-  ink3: '#6E6760',
-  inkMute: '#9D958C',
-  hairline: 'rgba(34,28,22,0.08)',
-  bg: '#FAF9F5',
-  surface: '#FFFFFF',
-  rose: '#A93D35', plum: '#8F5E56', gold: '#8A5D20',
-  sage: '#356E64', ocean: '#3D6F99', slate: '#7A6458', clay: '#A85135',
+  brand: '#c09090',
+  brandDeep: '#786868',
+  brandGlow: '#ede0e0',
+  brandSoft: '#ede0e0',
+  ink: '#786868',
+  ink3: '#9d7b7b',
+  inkMute: '#90a090',
+  hairline: 'rgba(144,160,144,0.26)',
+  bg: '#f3f1f1',
+  surface: '#f8f4f4',
+  rose: '#c09090', plum: '#9d7b7b', gold: '#b3b3b3',
+  sage: '#90a090', ocean: '#8898a0', slate: '#786868', clay: '#c09090',
 };
 
 // Ordered palette used for series colors
 const SERIES_COLORS = [
-  '#1F8A82', '#A85135', '#3D6F99', '#8A5D20',
-  '#8F5E56', '#356E64', '#7A6458', '#2E7A51',
-  '#A93D35', '#6D584F', '#9B7467', '#496E92',
+  '#c09090', '#8898a0', '#90a090', '#786868',
+  '#b3b3b3', '#9d7b7b', '#ded8d8', '#ede0e0',
+  '#a98a8a', '#7f9298', '#829282', '#8f8080',
 ];
 
 const echartsTheme = {
@@ -32,11 +32,11 @@ const echartsTheme = {
   title: { textStyle: { color: palette.ink, fontWeight: 600 }, subtextStyle: { color: palette.ink3 } },
   legend: { textStyle: { color: palette.ink3 }, itemWidth: 14, itemHeight: 8, icon: 'roundRect' },
   tooltip: {
-    backgroundColor: 'rgba(255,255,255,0.96)',
+    backgroundColor: 'rgba(248,244,244,0.96)',
     borderColor: palette.hairline,
     borderWidth: 1,
     textStyle: { color: palette.ink, fontSize: 12.5 },
-    extraCssText: 'box-shadow: 0 12px 32px rgba(28,22,18,0.12); border-radius: 12px; padding: 10px 14px;',
+    extraCssText: 'box-shadow: 0 12px 32px rgba(120,104,104,0.10); border-radius: 12px; padding: 10px 14px;',
   },
   grid: { left: 36, right: 24, top: 36, bottom: 28, containLabel: true },
   categoryAxis: {
@@ -105,18 +105,14 @@ function heatRatio(value, max) {
 function heatHue(base) {
   const normalized = String(base || '').trim().toUpperCase();
   const hues = {
-    '#1F8A82': 178,
-    '#166B65': 178,
-    '#3D6F99': 205,
-    '#8A5D20': 36,
-    '#A85135': 16,
-    '#8F5E56': 8,
-    '#4E8577': 166,
-    '#356E64': 166,
-    '#2E7A51': 144,
-    '#A93D35': 4,
+    '#C09090': 0,
+    '#8898A0': 202,
+    '#90A090': 120,
+    '#786868': 0,
+    '#B3B3B3': 0,
+    '#9D7B7B': 0,
   };
-  return hues[normalized] || 178;
+  return hues[normalized] || 0;
 }
 
 function crystalCssHeatVars(value, max, { base = palette.brand, fgDark = palette.ink } = {}) {
@@ -129,18 +125,18 @@ function crystalCssHeatVars(value, max, { base = palette.brand, fgDark = palette
     ].join(';') + ';';
   }
   const heat = heatRatio(value, max);
-  const high = heat >= 0.72;
-  const highProgress = high ? (heat - 0.72) / 0.28 : 0;
+  const high = heat >= 0.74;
+  const highProgress = high ? Math.max(0, Math.min(1, (heat - 0.74) / 0.26)) : 0;
   const hue = heatHue(base);
   const lightness = high
-    ? Math.round(32 - highProgress * 6)
-    : Math.round(98 - heat * 20);
+    ? Math.round(72 - highProgress * 6)
+    : Math.round(96 - heat * 14);
   const saturation = high
-    ? Math.round(44 + highProgress * 6)
-    : Math.round(18 + heat * 20);
-  const borderLightness = high ? Math.max(20, lightness - 7) : Math.max(44, lightness - 14);
-  const fg = high ? '#F8FEFD' : fgDark;
-  const shadow = (0.08 + heat * 0.18).toFixed(3);
+    ? Math.round(20 + highProgress * 12)
+    : Math.round(10 + heat * 16);
+  const borderLightness = high ? Math.max(58, lightness - 10) : Math.max(64, lightness - 10);
+  const fg = fgDark;
+  const shadow = (0.04 + heat * 0.07).toFixed(3);
   return [
     `--heat-bg:hsl(${hue} ${saturation}% ${lightness}%)`,
     `--heat-border:hsl(${hue} ${saturation}% ${borderLightness}%)`,
@@ -152,21 +148,21 @@ function crystalCssHeatVars(value, max, { base = palette.brand, fgDark = palette
 function crystalEchartHeatItemStyle(value, max, base = palette.brand) {
   const heat = heatRatio(value, max);
   const hue = heatHue(base);
-  const high = heat >= 0.72;
-  const highProgress = high ? (heat - 0.72) / 0.28 : 0;
-  const lightness = high ? Math.round(32 - highProgress * 6) : Math.round(98 - heat * 20);
-  const saturation = high ? Math.round(44 + highProgress * 6) : Math.round(18 + heat * 20);
+  const high = heat >= 0.74;
+  const highProgress = high ? Math.max(0, Math.min(1, (heat - 0.74) / 0.26)) : 0;
+  const lightness = high ? Math.round(72 - highProgress * 6) : Math.round(96 - heat * 14);
+  const saturation = high ? Math.round(20 + highProgress * 12) : Math.round(10 + heat * 16);
   const colorStop = `hsl(${hue} ${saturation}% ${lightness}%)`;
   const color = typeof echarts !== 'undefined'
     ? new echarts.graphic.LinearGradient(0, 0, 1, 1, [
       { offset: 0, color: `hsl(${hue} ${Math.max(14, saturation - 8)}% ${Math.min(98, lightness + 10)}%)` },
       { offset: 0.52, color: colorStop },
-      { offset: 1, color: `hsl(${hue} ${saturation}% ${Math.max(22, lightness - 8)}%)` },
+      { offset: 1, color: `hsl(${hue} ${saturation}% ${Math.max(58, lightness - 8)}%)` },
     ])
     : colorStop;
   return {
     color,
-    borderColor: 'rgba(255,255,255,0.72)',
+    borderColor: 'rgba(248,244,244,0.78)',
     borderWidth: 2,
     borderRadius: 7,
     shadowBlur: 14,
@@ -176,7 +172,7 @@ function crystalEchartHeatItemStyle(value, max, base = palette.brand) {
 }
 
 function crystalHeatLabelColor(value, max, dark = palette.ink) {
-  return heatRatio(value, max) >= 0.72 ? '#F8FEFD' : dark;
+  return dark;
 }
 
 // ---------- Number animation ----------

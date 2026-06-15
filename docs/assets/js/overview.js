@@ -144,7 +144,7 @@
         emphasis: {
           itemStyle: {
             shadowBlur: 24,
-            shadowColor: 'rgba(28,22,18,0.22)',
+            shadowColor: 'rgba(120,104,104,0.16)',
             borderColor: 'rgba(255,255,255,0.92)',
             borderWidth: 2,
           },
@@ -211,7 +211,7 @@
         emphasis: {
           itemStyle: {
             shadowBlur: 24,
-            shadowColor: 'rgba(28,22,18,0.22)',
+            shadowColor: 'rgba(120,104,104,0.16)',
             borderColor: 'rgba(255,255,255,0.92)',
             borderWidth: 2,
           },

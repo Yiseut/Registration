@@ -872,7 +872,7 @@ button.manufacturer-heat-cell:hover,
 button.manufacturer-heat-cell:focus-visible {
   transform: translateY(-1px) scale(1.015);
   box-shadow:
-    0 16px 28px var(--heat-shadow, rgba(22, 107, 101, 0.16)),
+    0 16px 28px var(--heat-shadow, rgba(120, 104, 104, 0.14)),
     0 0 0 2px color-mix(in srgb, var(--heat-border, var(--brand)) 22%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.52);
   filter: saturate(1.06);
@@ -958,19 +958,19 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .tooltip-coral {
-  --tip-dot: #A95786;
+  --tip-dot: #c09090;
 }
 
 .tooltip-ocean {
-  --tip-dot: #5B7B9A;
+  --tip-dot: #8898a0;
 }
 
 .tooltip-sage {
-  --tip-dot: #7F9A73;
+  --tip-dot: #90a090;
 }
 
 .tooltip-plum {
-  --tip-dot: #9B5E8D;
+  --tip-dot: #9d7b7b;
 }
 
 .manufacturer-heatmap-stack {
@@ -1171,25 +1171,25 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .activity-line i {
-  color: #fffaf6;
+  color: #786868;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.08) 42%, rgba(82, 42, 24, 0.08)),
-    linear-gradient(90deg, color-mix(in srgb, var(--brand) 44%, #fff3df), var(--brand));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.08) 42%, rgba(120, 104, 104, 0.06)),
+    linear-gradient(90deg, color-mix(in srgb, var(--brand) 44%, #ede0e0), var(--brand));
   box-shadow:
     0 7px 15px color-mix(in srgb, var(--brand) 25%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    inset 0 -1px 0 rgba(72, 42, 24, 0.12);
+    inset 0 -1px 0 rgba(120, 104, 104, 0.12);
 }
 
 .activity-line b {
-  color: #fffaf6;
+  color: #786868;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.08) 42%, rgba(82, 42, 24, 0.08)),
-    linear-gradient(90deg, #F2D19B, #B5915A);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.08) 42%, rgba(120, 104, 104, 0.06)),
+    linear-gradient(90deg, #ede0e0, #b3b3b3);
   box-shadow:
-    0 7px 15px rgba(181, 145, 90, 0.23),
+    0 7px 15px rgba(120, 104, 104, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    inset 0 -1px 0 rgba(72, 42, 24, 0.12);
+    inset 0 -1px 0 rgba(120, 104, 104, 0.12);
 }
 
 .activity-line-merged i {
@@ -1214,7 +1214,7 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .activity-line b em {
-  color: #fffaf6;
+  color: #786868;
 }
 
 .activity-count {

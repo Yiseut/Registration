@@ -9,14 +9,14 @@
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
   );
   const SEGMENTS = [
-    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#166B65', href: 'tracks/ha.html' },
-    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8A5D20', href: 'tracks/botulinum.html' },
-    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#8F5E56', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#A85135', href: 'tracks/plla.html' },
-    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#A85135', href: 'tracks/pcl.html' },
-    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#A85135', href: 'tracks/caha.html' },
-    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#356E64', href: 'tracks/niche_materials.html' },
-    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#3D6F99', href: 'tracks/ebd.html' },
+    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#c09090', href: 'tracks/ha.html' },
+    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8898a0', href: 'tracks/botulinum.html' },
+    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#90a090', href: 'tracks/collagen.html' },
+    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#c09090', href: 'tracks/plla.html' },
+    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#8898a0', href: 'tracks/pcl.html' },
+    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#90a090', href: 'tracks/caha.html' },
+    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#c09090', href: 'tracks/niche_materials.html' },
+    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#8898a0', href: 'tracks/ebd.html' },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
@@ -30,10 +30,10 @@
   const allRecords = legacyData.records || [];
   const records = allRecords.filter(includeInLandscape);
   const HEAT_THEMES = {
-    coral: { base: '#166B65', hue: 178, saturation: 38, lightHigh: 98, lightLow: 26, fg: '#143B38' },
-    ocean: { base: '#3D6F99', hue: 205, saturation: 40, lightHigh: 98, lightLow: 29, fg: '#122C42' },
-    sage: { base: '#356E64', hue: 166, saturation: 32, lightHigh: 98, lightLow: 30, fg: '#173A32' },
-    plum: { base: '#8F5E56', hue: 8, saturation: 34, lightHigh: 98, lightLow: 31, fg: '#3C201C' },
+    coral: { base: '#c09090', hue: 0, saturation: 22, lightHigh: 96, lightLow: 66, fg: '#786868' },
+    ocean: { base: '#8898a0', hue: 202, saturation: 16, lightHigh: 96, lightLow: 66, fg: '#786868' },
+    sage: { base: '#90a090', hue: 120, saturation: 12, lightHigh: 96, lightLow: 66, fg: '#786868' },
+    plum: { base: '#9d7b7b', hue: 0, saturation: 18, lightHigh: 96, lightLow: 64, fg: '#786868' },
   };
 
   const state = {
@@ -117,9 +117,9 @@
 
   function crystalLinear(color, direction = 'vertical', softness = 0) {
     const axis = direction === 'horizontal' ? [0, 0, 1, 0] : [0, 0, 0, 1];
-    const light = mixColor(color, '#fff8ef', 0.52 + softness);
+    const light = mixColor(color, '#fff8f8', 0.52 + softness);
     const mid = mixColor(color, '#ffffff', 0.08 + softness * 0.3);
-    const deep = mixColor(color, '#4a281d', 0.16);
+    const deep = mixColor(color, '#786868', 0.16);
     return new echarts.graphic.LinearGradient(...axis, [
       { offset: 0, color: light },
       { offset: 0.42, color: mid },
@@ -129,9 +129,9 @@
 
   function crystalRadial(color) {
     return new echarts.graphic.RadialGradient(0.32, 0.28, 0.88, [
-      { offset: 0, color: mixColor(color, '#fffaf1', 0.68) },
+      { offset: 0, color: mixColor(color, '#fffafa', 0.68) },
       { offset: 0.52, color: mixColor(color, '#ffffff', 0.10) },
-      { offset: 1, color: mixColor(color, '#4a281d', 0.14) },
+      { offset: 1, color: mixColor(color, '#786868', 0.14) },
     ]);
   }
 
@@ -469,7 +469,7 @@
     if (/CaHA|羟基磷酸钙/.test(label)) return SEGMENT_BY_CODE.caha.color;
     if (/EBD|设备|光电/.test(label)) return SEGMENT_BY_CODE.ebd.color;
     const segment = SEGMENTS.find((item) => item.name === trackName || item.fullName === trackName);
-    return segment?.color || '#8B5A6B';
+    return segment?.color || '#c09090';
   }
 
   function renderSegments() {
@@ -566,7 +566,7 @@
           const active = items.filter((item) => Number(item.value) > 0);
           const lines = active.map((item) => {
             const matched = segmentSeries.find((segment) => segment.name === item.seriesName);
-            const color = escape(String(matched?.color || '#1F8A82'));
+            const color = escape(String(matched?.color || '#c09090'));
             return `<span class="echart-tip-dot" style="background:${color}"></span>${escape(item.seriesName)}：${item.value} 条`;
           }).join('<br/>');
           const total = active.reduce((sum, item) => sum + Number(item.value || 0), 0);
@@ -860,7 +860,7 @@
       return -1;
     });
     const series = visibleExpirySeries.map((s, i) => {
-      const color = SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#1F8A82';
+      const color = SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#c09090';
       return {
         name: s.label,
         type: 'bar',
@@ -886,7 +886,7 @@
           const quarter = escape(quarterRaw);
           const lines = active.map((item) => {
             const matched = visibleExpirySeries.find((row) => row.label === item.seriesName);
-            const color = SERIES_COLORS[visibleExpirySeries.indexOf(matched) % SERIES_COLORS.length] || '#1F8A82';
+            const color = SERIES_COLORS[visibleExpirySeries.indexOf(matched) % SERIES_COLORS.length] || '#c09090';
             const details = expiryRecordsForQuarter(quarterRaw, matched)
               .map((record) => {
                 const company = manufacturerDisplayName(record) || record.company || record.registrant || '未标注厂家';
@@ -949,7 +949,7 @@
     if (!quarterly.labels.length && (!ev || !ev.years?.length)) return;
     const labels = quarterly.labels.length ? quarterly.labels : ev.years;
     const sourceSeries = quarterly.series.length ? quarterly.series : ev.series;
-    const originColors = ['#1F8A82', '#3D6F99', '#8A5D20'];
+    const originColors = ['#c09090', '#8898a0', '#90a090'];
     const series = sourceSeries
       .filter((s) => s.data.some((v) => v > 0))
       .map((s, index) => {
