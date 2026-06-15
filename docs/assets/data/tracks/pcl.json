@@ -119,6 +119,9 @@
       "id": "PCL-国械注进20213130100",
       "track": "pcl",
       "track_name": "PCL",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PCL",
       "strategic": "胶原刺激剂",
       "brand": "伊妍仕 Ellansé",
       "aliases": "少女针 / Ellansé-S",
@@ -134,7 +137,19 @@
       "approval_date": "2025-12-30",
       "approval_year": 2021,
       "valid_until": "2031-04-07",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
       "primary_indication": "鼻唇沟",
+      "approved_indications": "鼻唇沟",
+      "indication_description": "用于皮下层植入，以纠正中到重度鼻唇沟皱纹。",
+      "scope_full": "用于皮下层植入，以纠正中到重度鼻唇沟皱纹。",
+      "specification": "Ellansé-S，1mL/支",
+      "components": "PCL聚己内酯微球、甘油、CMC羧甲基纤维素、磷酸盐缓冲溶液；公开资料称30% PCL微球 + 70% CMC凝胶。",
+      "lidocaine_status": "",
+      "product_tags": "进口首证 / PCL+CMC / 30% PCL微球 / 12个月型 / 鼻唇沟",
+      "market_claim": "进口少女针先发产品，市场卖点集中在即时填充与胶原再生双重功效。",
+      "boundary_reason": "",
       "indications": [
         "鼻唇沟"
       ],
@@ -156,6 +171,7 @@
       "official_scope": "用于皮下层植入，以纠正中到重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "胶原刺激剂",
         "肉毒毒素"
@@ -163,12 +179,17 @@
       "source_account": "中国整形美容协会三正规平台 / 公众号交叉",
       "source_title": "注射用聚己内酯微球面部填充剂价格对比；“少女针”来了！美容美到了鼻唇沟",
       "source_url": "https://www.caparz.cn/index/product/detail/id/210.html",
-      "confidence": "high"
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "pcl_dashboard_data.json"
     },
     {
       "id": "PCL-国械注准20243131626",
       "track": "pcl",
       "track_name": "PCL",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PCL",
       "strategic": "胶原刺激剂",
       "brand": "塑妍真",
       "aliases": "谷雨春PCL / 采采PCL",
@@ -184,7 +205,19 @@
       "approval_date": "2024-08-27",
       "approval_year": 2024,
       "valid_until": "2029-08-26",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
       "primary_indication": "鼻唇沟",
+      "approved_indications": "鼻唇沟",
+      "indication_description": "该产品用于皮下组织注射填充，以纠正中重度鼻唇沟皱纹。",
+      "scope_full": "该产品用于皮下组织注射填充，以纠正中重度鼻唇沟皱纹。",
+      "specification": "预灌封玻璃注射器；公开报道未披露完整规格。",
+      "components": "聚己内酯微球、甘油、羧甲纤维素、磷酸盐缓冲体系；聚己内酯微球质量百分比为30%。",
+      "lidocaine_status": "",
+      "product_tags": "国产首款PCL / 30% PCL微球 / PCL+CMC / 鼻唇沟",
+      "market_claim": "国内首款全自主研发的注射用聚己内酯微球面部填充剂。",
+      "boundary_reason": "",
       "indications": [
         "鼻唇沟"
       ],
@@ -205,18 +238,24 @@
       "official_scope": "该产品用于皮下组织注射填充，以纠正中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "胶原刺激剂"
       ],
       "source_account": "国家生物材料创新合作平台 / 华龙证券交叉",
       "source_title": "喜报 | 热烈祝贺我院在孵项目获批第三类医疗器械注册证！",
       "source_url": "https://mp.weixin.qq.com/s/oe8cKFLQIFHTjUZpgoXpdA",
-      "confidence": "high"
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "pcl_dashboard_data.json"
     },
     {
       "id": "PCL-国械注准20253130671",
       "track": "pcl",
       "track_name": "PCL",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PCL",
       "strategic": "胶原刺激剂",
       "brand": "倾研",
       "aliases": "倾研® / 四环医药PCL / 渼颜空间PCL / 少女针",
@@ -232,7 +271,19 @@
       "approval_date": "2025-03-31",
       "approval_year": 2025,
       "valid_until": "2030-03-30",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
       "primary_indication": "鼻唇沟",
+      "approved_indications": "鼻唇沟",
+      "indication_description": "该产品适用于注射到鼻唇沟部位皮下层，以纠正中到重度鼻唇沟皱纹。",
+      "scope_full": "该产品适用于注射到鼻唇沟部位皮下层，以纠正中到重度鼻唇沟皱纹。",
+      "specification": "2.0mL/支",
+      "components": "聚己内酯微球、甘油、羧甲纤维素钠及磷酸盐缓冲溶液；预灌封注射器与一次性无菌注射针。",
+      "lidocaine_status": "",
+      "product_tags": "国产PCL / 2.0mL / PCL+CMC / 鼻唇沟 / 四环医药 / 倾研",
+      "market_claim": "第二款国产PCL少女针，商品名倾研，四环医药再生材料III类医疗器械产品线的重要补位。",
+      "boundary_reason": "",
       "indications": [
         "鼻唇沟"
       ],
@@ -255,6 +306,7 @@
       "official_scope": "该产品适用于注射到鼻唇沟部位皮下层，以纠正中到重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
         "胶原刺激剂",
@@ -263,12 +315,17 @@
       "source_account": "四环医药中期报告 / 医美部落公开页 / 兔灵产品库交叉",
       "source_title": "四环医药中期报告；四环医药旗下「PCL面部微球」获批",
       "source_url": "https://ir.sihuanpharm.com/media/rw2a3vqo/hkex-eps_20250915_11841228_0.pdf",
-      "confidence": "high"
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "pcl_dashboard_data.json"
     },
     {
       "id": "PCL-国械注准20253132404",
       "track": "pcl",
       "track_name": "PCL",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PCL",
       "strategic": "胶原刺激剂",
       "brand": "塑妍真（下颏适应证）",
       "aliases": "谷雨春PCL / 采采PCL",
@@ -284,7 +341,19 @@
       "approval_date": "2025-11-28",
       "approval_year": 2025,
       "valid_until": "2030-11-27",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
       "primary_indication": "下颌及颏部轮廓改善（填充）",
+      "approved_indications": "下颏/下颌部",
+      "indication_description": "该产品适用于注射到皮下组织，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
+      "scope_full": "该产品适用于注射到皮下组织，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
+      "specification": "公开报道未披露完整规格。",
+      "components": "聚己内酯微球凝胶颗粒悬液；企业平台覆盖PCL、PLA、PLLA、PLGA等可降解材料。",
+      "lidocaine_status": "",
+      "product_tags": "同产品新增适应证 / 下颏/下颌部 / 可降解微球 / 国产PCL",
+      "market_claim": "国内首个“可降解微球类”+“下颏部位”专属适应症填充剂。",
+      "boundary_reason": "",
       "indications": [
         "下颌及颏部轮廓改善（填充）"
       ],
@@ -305,18 +374,24 @@
       "official_scope": "该产品适用于注射到皮下组织，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "胶原刺激剂"
       ],
       "source_account": "丽和康",
       "source_title": "医美快讯 | 国内首个“可降解微球类”+“下颏部位”填充剂横空出世！",
       "source_url": "https://mp.weixin.qq.com/s/Yfc9O14pXJmRAfsUnLJBfQ",
-      "confidence": "high"
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "pcl_dashboard_data.json"
     },
     {
       "id": "PCL-国械注进20263130151",
       "track": "pcl",
       "track_name": "PCL",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PCL",
       "strategic": "胶原刺激剂",
       "brand": "伊妍仕恒耀™ / Ellansé-M",
       "aliases": "伊妍仕®M型 / Ellansé-M / 少女针",
@@ -332,7 +407,19 @@
       "approval_date": "2026-04-21",
       "approval_year": 2026,
       "valid_until": "2031-04-20",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
       "primary_indication": "颞部",
+      "approved_indications": "颞部",
+      "indication_description": "该产品适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷，在医疗机构使用。",
+      "scope_full": "该产品适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷，在医疗机构使用。",
+      "specification": "Ellansé-M、1mL/支",
+      "components": "凝胶部分由人工合成的聚己内酯(PCL)微球、甘油、羧甲基纤维素、磷酸盐缓冲溶液组成；PCL微球标示含量为33.1%。",
+      "lidocaine_status": "",
+      "product_tags": "进口PCL / Ellansé-M / 33.1% PCL微球 / 颞部 / 伊妍仕恒耀",
+      "market_claim": "进口PCL再生填充新增颞部适应证，补齐伊妍仕系列从鼻唇沟到颞部的长效支撑布局。",
+      "boundary_reason": "",
       "indications": [
         "颞部"
       ],
@@ -354,6 +441,7 @@
       "official_scope": "该产品适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷，在医疗机构使用。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "胶原刺激剂",
         "肉毒毒素"
@@ -361,7 +449,9 @@
       "source_account": "华东医药公告 / NMPA官方查询",
       "source_title": "华东医药：关于全资子公司获得医疗器械注册证的公告",
       "source_url": "http://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12171420&stockid=000963",
-      "confidence": "high"
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "pcl_dashboard_data.json"
     }
   ]
 }

@@ -263,9 +263,17 @@ const Drawer = (() => {
 
 // ---------- Record card renderer ----------
 
+function normalizeTags(value) {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  return String(value || '')
+    .split(/[\/,，;；|、]+/)
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
+
 function renderRecordCard(r) {
-  const tags = (r.tags || []).slice(0, 3).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
-  const featureTags = (r.feature_tags || []).slice(0, 4).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
+  const tags = normalizeTags(r.tags).slice(0, 3).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
+  const featureTags = normalizeTags(r.feature_tags).slice(0, 4).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
   const newsSource = r.news_title
     ? `<div class="row"><b>资讯来源</b> ${r.news_url ? `<a href="${escape(r.news_url)}" target="_blank" rel="noreferrer">${escape(r.news_title)}</a>` : escape(r.news_title)}${r.news_account ? ` · ${escape(r.news_account)}` : ''}</div>`
     : '';

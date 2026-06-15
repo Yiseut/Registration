@@ -24,10 +24,12 @@
   const NICHE_MATERIAL_TRACKS = new Set(['raw_pmma', 'raw_agarose', 'raw_lipolysis_injection', 'raw_ecm', 'raw_silk', 'silk_protein']);
   const SUBMENTAL_LIPOLYSIS_INDICATION = '颏下脂肪堆积（双下巴）';
   const JAW_CHIN_CONTOUR_FILLING_INDICATION = '下颌及颏部轮廓改善（填充）';
-  const cloudRecords = cloudTrackPayloads.flatMap((payload) => payload.records || []).filter(includeCloudInLandscape);
-  const cloudMaterialRecords = cloudRecords.filter((record) => !isDeviceRecord(record));
   const legacyData = window.REGISTRATION_OVERVIEW_DATA || { records: [], pipelineSignals: [] };
-  const allRecords = legacyData.records || [];
+  const cloudDetailRecords = cloudTrackPayloads
+    .flatMap((payload) => payload.records || [])
+    .map(normalizeDashboardRecord)
+    .filter((record) => record.certificateNo);
+  const allRecords = cloudDetailRecords.length ? cloudDetailRecords : (legacyData.records || []);
   const records = allRecords.filter(includeInLandscape);
   const HEAT_THEMES = {
     coral: { base: '#58bfd7', hue: 193, saturation: 42, lightHigh: 96, lightLow: 69, fg: '#786868' },
@@ -61,6 +63,7 @@
   renderActivityRows();
   renderManufacturerMatrix();
   renderOpportunityMatrix();
+  renderConcentration(cloudData.concentration, manifest.tracks || []);
   renderExpiry(cloudData.cert_expiry);
   renderOriginEvolution(cloudData.origin_evolution);
   initRecordFilters();
@@ -1609,6 +1612,93 @@
     if (node) node.textContent = value;
   }
 
+  function normalizeDashboardRecord(record) {
+    if (!record) return {};
+    if ('certificateNo' in record || 'productName' in record) return record;
+    const track = String(record.track || '').trim();
+    const cert = String(record.certificate_no || '').trim();
+    const regClass = String(record.regulatory_class || '').trim();
+    const origin = String(record.origin || '').trim();
+    const tags = Array.isArray(record.tags) ? record.tags.join(' / ') : String(record.product_tags || record.tags || '');
+    const indications = Array.isArray(record.indications) && record.indications.length
+      ? record.indications.join(' / ')
+      : String(record.approved_indications || record.primary_indication || '');
+    const board = isDeviceRecord(record) ? 'device' : 'injectable';
+    const isDrug = /药品|国药准字|^(?:S|SJ|H|Z|B)\d{8}$/.test(`${record.record_type || ''} ${regClass} ${cert}`);
+    return {
+      id: record.id || cert,
+      board,
+      boardLabel: board === 'device' ? 'EBD 设备板块' : '注射/药品板块',
+      track,
+      trackName: displayUiLabel(record.track_name || record.material_family || ''),
+      strategicSegment: segmentCodeForRecord(record),
+      recordType: record.record_type || regClass,
+      regulatoryClass: regClass,
+      deviceType: record.device_type || '',
+      category: record.category || '',
+      materialFamily: displayUiLabel(record.material_family || record.track_name || ''),
+      materialForm: displayUiLabel(record.material_form || ''),
+      brand: record.brand || '',
+      aliases: record.aliases || '',
+      productName: record.product_name || record.official_product_name || '',
+      registrant: record.registrant || record.official_registrant || '',
+      companyShort: record.company || record.registrant || '',
+      manufacturerGroupKey: record.company_key || '',
+      manufacturerGroupName: record.company || '',
+      certificateNo: cert,
+      origin,
+      approvalDate: record.approval_date || record.official_approval_date || '',
+      approvalYear: Number(record.approval_year || 0) || Number(String(record.approval_date || '').match(/20\d{2}/)?.[0] || 0),
+      validUntil: record.valid_until || '',
+      validityStatus: record.validity_status || '',
+      marketScope: record.market_scope || '',
+      applicationSegment: record.application_segment || '',
+      primaryIndication: record.primary_indication || record.official_indication || '',
+      approvedIndications: indications,
+      indicationDescription: record.indication_description || '',
+      scopeFull: record.scope_full || record.official_scope || '',
+      specification: record.specification || '',
+      components: record.components || '',
+      lidocaineStatus: record.lidocaine_status || '',
+      productTags: tags,
+      marketClaim: record.market_claim || '',
+      boundaryReason: record.boundary_reason || '',
+      sourceAccount: record.source_account || '',
+      sourceTitle: record.source_title || '',
+      sourceUrl: record.source_url || '',
+      evidenceText: record.evidence_text || '',
+      confidence: record.confidence || '',
+      officialVerificationStatus: record.official_verification_status || '',
+      officialSource: record.official_source || '',
+      officialStatus: record.official_status || '',
+      officialProductName: record.official_product_name || '',
+      officialRegistrant: record.official_registrant || '',
+      officialApprovalDate: record.official_approval_date || '',
+      officialValidUntil: record.official_valid_until || '',
+      officialIndication: record.official_indication || '',
+      officialScope: record.official_scope || '',
+      dataStatus: record.data_status || '',
+      sourceDataset: record.source_dataset || '',
+      mainLandscapeIncluded: record.main_landscape === true || record.main_landscape_included === '是' ? '是' : '否',
+      portfolioSegments: Array.isArray(record.portfolio_segments) ? record.portfolio_segments.join(' / ') : String(record.portfolio_segments || ''),
+      isDrug,
+      isClass3: /三类/.test(regClass),
+      isClass2: /二类/.test(regClass),
+      isImported: origin === '进口',
+      isDomestic: origin === '国产',
+    };
+  }
+
+  function segmentCodeForRecord(record) {
+    const track = String(record?.track || '').trim();
+    if (SEGMENT_BY_CODE[track]) return track;
+    if (EBD_TRACKS.has(track) || track === 'ebd') return 'ebd';
+    if (NICHE_MATERIAL_TRACKS.has(track)) return 'niche_materials';
+    const strategic = String(record?.strategic || '').trim();
+    const byName = SEGMENTS.find((segment) => segment.name === strategic || segment.fullName === strategic);
+    return byName?.code || track || '';
+  }
+
   function formatRecentBreakdown(value) {
     if (!value) return '—';
     const parts = String(value)
@@ -1738,6 +1828,14 @@
       .replace(/EBD 设备类/g, 'EBD 设备');
   }
 
+  function tagArray(value) {
+    if (Array.isArray(value)) return value.map(sanitizeUiText).filter(Boolean);
+    return String(value || '')
+      .split(/[\/,，;；|、]+/)
+      .map((tag) => sanitizeUiText(tag).trim())
+      .filter(Boolean);
+  }
+
   function toDrawerRecord(record) {
     if ('certificate_no' in record || 'product_name' in record) return record;
     return {
@@ -1754,10 +1852,10 @@
       valid_until: record.validUntil,
       commercial_name: record.commercialName,
       market_note: record.marketClaim,
-      news_account: record.newsAccount,
-      news_title: record.newsTitle,
-      news_url: record.newsUrl,
-      feature_tags: record.featureTags,
+      news_account: record.newsAccount || record.sourceAccount,
+      news_title: record.newsTitle || record.sourceTitle,
+      news_url: record.newsUrl || record.sourceUrl,
+      feature_tags: tagArray(record.featureTags || record.productTags),
       scope_full: record.scopeFull || record.indicationDescription,
       verified: record.officialStatus === 'verified' || /已官方核验|NMPA/.test(record.officialVerificationStatus || ''),
       tags: [

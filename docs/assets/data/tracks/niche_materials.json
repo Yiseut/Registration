@@ -92,6 +92,9 @@
       "id": "RAW-AGAROSE-国械注进20253130037",
       "track": "raw_agarose",
       "track_name": "琼脂糖",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "injectable_material",
       "strategic": "新型材料",
       "brand": "Algeness VL",
       "aliases": "",
@@ -107,7 +110,19 @@
       "approval_date": "2025-01-20",
       "approval_year": 2025,
       "valid_until": "2030-01-19",
+      "validity_status": "有效",
+      "market_scope": "原始保留",
+      "application_segment": "injectable_material",
       "primary_indication": "鼻唇沟",
+      "approved_indications": "鼻唇沟",
+      "indication_description": "该产品适用于面部鼻唇沟部位骨膜表面注射以纠正中重度鼻唇沟皱纹。",
+      "scope_full": "该产品适用于面部鼻唇沟部位骨膜表面注射以纠正中重度鼻唇沟皱纹。",
+      "specification": "",
+      "components": "",
+      "lidocaine_status": "",
+      "product_tags": "琼脂糖 / Algeness VL / 面部注射填充剂",
+      "market_claim": "",
+      "boundary_reason": "",
       "indications": [
         "鼻唇沟"
       ],
@@ -127,18 +142,24 @@
       "official_scope": "该产品适用于面部鼻唇沟部位骨膜表面注射以纠正中重度鼻唇沟皱纹。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "新型材料"
       ],
       "source_account": "丽和康",
       "source_title": "行业快讯 | 首个「琼脂糖」面部填充剂获批，国产医美材料迎来新突破！",
       "source_url": "https://www.bioray-med.com/hyrd/337.html",
-      "confidence": "high"
+      "confidence": "high",
+      "data_status": "原始保留",
+      "source_dataset": "manual_raw_cert_leads"
     },
     {
       "id": "RAW-LIPOLYSIS_INJECTION-国药准字H20254519",
       "track": "raw_lipolysis_injection",
       "track_name": "溶脂注射/去氧胆酸",
+      "record_type": "药品批准文号",
+      "regulatory_class": "药品批准文号",
+      "device_type": "injectable_drug_device_adjacent",
       "strategic": "新型材料",
       "brand": "蓉芷",
       "aliases": "",
@@ -154,7 +175,19 @@
       "approval_date": "2025-06-10",
       "approval_year": 2025,
       "valid_until": "",
+      "validity_status": "",
+      "market_scope": "原始保留",
+      "application_segment": "injectable_drug_device_adjacent",
       "primary_indication": "颏下脂肪堆积（双下巴）",
+      "approved_indications": "颏下脂肪堆积（双下巴）",
+      "indication_description": "用于改善成人因颏下脂肪堆积导致的中至重度轮廓凸出或过度丰满（双下巴）。",
+      "scope_full": "用于改善成人因颏下脂肪堆积导致的中至重度轮廓凸出或过度丰满（双下巴）。",
+      "specification": "",
+      "components": "",
+      "lidocaine_status": "",
+      "product_tags": "溶脂针 / 注射溶脂 / 去氧胆酸 / 双下巴",
+      "market_claim": "",
+      "boundary_reason": "",
       "indications": [
         "颏下脂肪堆积（双下巴）"
       ],
@@ -175,13 +208,16 @@
       "official_scope": "用于改善成人因颏下脂肪堆积导致的中至重度轮廓凸出或过度丰满（双下巴）。",
       "verified": true,
       "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "新型材料"
       ],
       "source_account": "",
       "source_title": "重磅！首批合规溶脂针正式出货，领启中国注射溶脂合规新纪元！",
       "source_url": "https://mp.weixin.qq.com/s/6_gF__DaCgXu4v1nnNt4YQ",
-      "confidence": "medium"
+      "confidence": "medium",
+      "data_status": "原始保留",
+      "source_dataset": "emerging_device_scout_20260505_emerging_material_leads.csv"
     }
   ]
 }
