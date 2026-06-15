@@ -22,6 +22,7 @@
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
   const EBD_TRACKS = new Set(['raw_rf', 'raw_thermage_rf', 'raw_ultrasound', 'raw_microneedle', 'rf', 'ultrasound', 'laser_ipl', 'body_contouring_device']);
   const NICHE_MATERIAL_TRACKS = new Set(['raw_pmma', 'raw_agarose', 'raw_lipolysis_injection', 'raw_ecm', 'raw_silk', 'silk_protein']);
+  const SUBMENTAL_LIPOLYSIS_INDICATION = '颏下脂肪堆积（双下巴）';
   const cloudRecords = cloudTrackPayloads.flatMap((payload) => payload.records || []).filter(includeCloudInLandscape);
   const cloudMaterialRecords = cloudRecords.filter((record) => !isDeviceRecord(record));
   const legacyData = window.REGISTRATION_OVERVIEW_DATA || { records: [], pipelineSignals: [] };
@@ -1342,11 +1343,39 @@
       .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'zh-CN'));
   }
 
+  function isSubmentalLipolysisRecord(record) {
+    const text = [
+      record?.track,
+      record?.track_name,
+      record?.category,
+      record?.material_family,
+      record?.materialFamily,
+      record?.brand,
+      record?.product_name,
+      record?.productName,
+      record?.certificate_no,
+      record?.certificateNo,
+      record?.primary_indication,
+      record?.primaryIndication,
+      record?.approved_indications,
+      record?.approvedIndications,
+      record?.official_indication,
+      record?.officialIndication,
+      record?.official_scope,
+      record?.officialScope,
+      record?.scope_full,
+      record?.scopeFull,
+    ].filter(Boolean).join(' ');
+    return /(raw_lipolysis_injection|去氧胆酸|溶脂|H20254519)/.test(text)
+      && /(颏下脂肪|双下巴|H20254519)/.test(text);
+  }
+
   function indicationValues(record) {
-    const source = record?.approvedIndications || record?.primaryIndication || '';
+    if (isSubmentalLipolysisRecord(record)) return [SUBMENTAL_LIPOLYSIS_INDICATION];
+    const source = record?.approvedIndications || record?.approved_indications || record?.primaryIndication || record?.primary_indication || '';
     const values = normalizeIndicationValues(source);
     if (values.length) return unique(values);
-    return record?.primaryIndication ? [record.primaryIndication] : [];
+    return record?.primaryIndication || record?.primary_indication ? [record.primaryIndication || record.primary_indication] : [];
   }
 
   function symptomValues(record) {
@@ -1382,7 +1411,10 @@
   function splitIndicationToken(value) {
     const text = String(value || '').trim();
     if (!text) return [];
-    const compact = text.replace(/\s+/g, '');
+    const compact = text.replace(/\s+/g, '').replace(/[()]/g, (char) => (char === '(' ? '（' : '）')).replace(/／/g, '/');
+    if ((compact.includes('颏下脂肪堆积') && compact.includes('双下巴')) || compact === SUBMENTAL_LIPOLYSIS_INDICATION) {
+      return [SUBMENTAL_LIPOLYSIS_INDICATION];
+    }
     const combined = {
       '颏下脂肪堆积/双下巴': '颏下脂肪堆积（双下巴）',
       '双下巴/颏下脂肪堆积': '颏下脂肪堆积（双下巴）',

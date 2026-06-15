@@ -29,6 +29,8 @@ TRACK_META = [
 ]
 TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 
+SUBMENTAL_LIPOLYSIS_INDICATION = "颏下脂肪堆积（双下巴）"
+
 CITY_COORDS = {
     "北京": {"province": "北京", "lat": 39.9042, "lng": 116.4074},
     "上海": {"province": "上海", "lat": 31.2304, "lng": 121.4737},
@@ -183,6 +185,10 @@ def safe_strip(value: str | None) -> str:
     return (value or "").strip()
 
 
+def compact_text(value: str | None) -> str:
+    return safe_strip(value).replace("(", "（").replace(")", "）").replace("／", "/").replace(" ", "")
+
+
 def write_json(path: Path, payload: dict) -> None:
     with path.open("w", encoding="utf-8", newline="\r\n") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -215,11 +221,73 @@ def split_portfolio(value: str) -> list[str]:
 def split_indications(value: str) -> list[str]:
     if not value:
         return []
+    compact = compact_text(value)
+    if (
+        compact in {"颏下脂肪堆积/双下巴", "双下巴/颏下脂肪堆积", "颏下脂肪堆积（双下巴）"}
+        or ("颏下脂肪堆积" in compact and "双下巴" in compact)
+    ):
+        return [SUBMENTAL_LIPOLYSIS_INDICATION]
     parts = re.split(r"[/、,，;；]", value)
-    return [p.strip() for p in parts if p.strip()]
+    out = []
+    for part in parts:
+        text = safe_strip(part)
+        if not text:
+            continue
+        if compact_text(text) in {"颏下脂肪堆积（双下巴）", "颏下脂肪堆积/双下巴", "双下巴/颏下脂肪堆积"}:
+            out.append(SUBMENTAL_LIPOLYSIS_INDICATION)
+        else:
+            out.append(text)
+    return list(dict.fromkeys(out))
+
+
+def is_submental_lipolysis_row(row: dict) -> bool:
+    text = " ".join(
+        safe_strip(row.get(key))
+        for key in (
+            "track",
+            "track_name",
+            "category",
+            "material_family",
+            "brand",
+            "product_name",
+            "certificate_no",
+            "primary_indication",
+            "approved_indications",
+            "indication_description",
+            "scope_full",
+            "official_product_name",
+            "official_indication",
+            "official_scope",
+            "product_tags",
+        )
+    )
+    return (
+        "raw_lipolysis_injection" in text
+        or "去氧胆酸" in text
+        or "溶脂" in text
+        or "H20254519" in text
+    ) and (
+        "颏下脂肪" in text
+        or "双下巴" in text
+        or "H20254519" in text
+    )
+
+
+def canonical_primary_indication(row: dict) -> str:
+    if is_submental_lipolysis_row(row):
+        return SUBMENTAL_LIPOLYSIS_INDICATION
+    return safe_strip(row.get("primary_indication"))
+
+
+def canonical_official_indication(row: dict) -> str:
+    if is_submental_lipolysis_row(row):
+        return SUBMENTAL_LIPOLYSIS_INDICATION
+    return safe_strip(row.get("official_indication"))
 
 
 def record_indications(record: dict) -> list[str]:
+    if is_submental_lipolysis_row(record.get("_raw") or record):
+        return [SUBMENTAL_LIPOLYSIS_INDICATION]
     values = []
     values.extend(record.get("indications") or [])
     values.extend(split_indications(record.get("official_indication") or ""))
@@ -247,6 +315,8 @@ def best_company_key(row: dict) -> str:
 
 def build_record_card(row: dict) -> dict:
     """Light-weight payload used on cards/lists/drilldowns."""
+    primary_indication = canonical_primary_indication(row)
+    official_indication = canonical_official_indication(row)
     return {
         "id": safe_strip(row.get("﻿record_id") or row.get("record_id")),
         "track": safe_strip(row.get("track")),
@@ -266,7 +336,7 @@ def build_record_card(row: dict) -> dict:
         "approval_date": safe_strip(row.get("approval_date")),
         "approval_year": parse_year(row.get("approval_year") or row.get("approval_date")),
         "valid_until": safe_strip(row.get("valid_until")),
-        "primary_indication": safe_strip(row.get("primary_indication")),
+        "primary_indication": primary_indication,
         "indications": split_indications(row.get("approved_indications")),
         "tags": [ui_term(tag) for tag in split_indications(row.get("product_tags"))],
         "official_status": safe_strip(row.get("official_status")),
@@ -276,7 +346,7 @@ def build_record_card(row: dict) -> dict:
         "official_registrant": safe_strip(row.get("official_registrant")),
         "official_approval_date": safe_strip(row.get("official_approval_date")),
         "official_valid_until": safe_strip(row.get("official_valid_until")),
-        "official_indication": safe_strip(row.get("official_indication")),
+        "official_indication": official_indication,
         "official_scope": safe_strip(row.get("official_scope")),
         "verified": safe_strip(row.get("official_status")) == "verified",
         "main_landscape": safe_strip(row.get("main_landscape_included")) == "是",

@@ -24,6 +24,7 @@
   const isHaTrack = key === 'ha';
   const isCollagenTrack = key === 'collagen';
   const isEbdTrack = key === 'ebd';
+  const SUBMENTAL_LIPOLYSIS_INDICATION = '颏下脂肪堆积（双下巴）';
   const ebdEnergyOrder = ['射频', '超声', '激光 / IPL', '其他能量'];
   const ebdSubtypeOrder = ['射频皮肤治疗', '射频塑形', '单极射频', '射频微针', '聚焦超声', '皮秒激光', '其他设备'];
   const chartBarMaxWidth = 26;
@@ -1475,7 +1476,35 @@
     node.style.top = `${top}px`;
   }
 
+  function isSubmentalLipolysisRecord(record) {
+    const text = [
+      record?.track,
+      record?.track_name,
+      record?.category,
+      record?.material_family,
+      record?.materialFamily,
+      record?.brand,
+      record?.product_name,
+      record?.productName,
+      record?.certificate_no,
+      record?.certificateNo,
+      record?.primary_indication,
+      record?.primaryIndication,
+      record?.approved_indications,
+      record?.approvedIndications,
+      record?.official_indication,
+      record?.officialIndication,
+      record?.official_scope,
+      record?.officialScope,
+      record?.scope_full,
+      record?.scopeFull,
+    ].filter(Boolean).join(' ');
+    return /(raw_lipolysis_injection|去氧胆酸|溶脂|H20254519)/.test(text)
+      && /(颏下脂肪|双下巴|H20254519)/.test(text);
+  }
+
   function indicationValues(record) {
+    if (isSubmentalLipolysisRecord(record)) return [SUBMENTAL_LIPOLYSIS_INDICATION];
     const values = [
       ...normalizeIndicationValues(record?.approved_indications || record?.approvedIndications || ''),
       ...(Array.isArray(record?.indications) ? record.indications.flatMap(normalizeIndicationValues) : []),
@@ -1537,7 +1566,10 @@
   function splitIndicationToken(value) {
     const text = String(value || '').trim();
     if (!text) return [];
-    const compact = text.replace(/\s+/g, '');
+    const compact = text.replace(/\s+/g, '').replace(/[()]/g, (char) => (char === '(' ? '（' : '）')).replace(/／/g, '/');
+    if ((compact.includes('颏下脂肪堆积') && compact.includes('双下巴')) || compact === SUBMENTAL_LIPOLYSIS_INDICATION) {
+      return [SUBMENTAL_LIPOLYSIS_INDICATION];
+    }
     const combined = {
       '颏下脂肪堆积/双下巴': '颏下脂肪堆积（双下巴）',
       '双下巴/颏下脂肪堆积': '颏下脂肪堆积（双下巴）',
