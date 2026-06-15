@@ -25,6 +25,7 @@
   const isCollagenTrack = key === 'collagen';
   const isEbdTrack = key === 'ebd';
   const SUBMENTAL_LIPOLYSIS_INDICATION = '颏下脂肪堆积（双下巴）';
+  const JAW_CHIN_CONTOUR_FILLING_INDICATION = '下颌及颏部轮廓改善（填充）';
   const ebdEnergyOrder = ['射频', '超声', '激光 / IPL', '其他能量'];
   const ebdSubtypeOrder = ['射频皮肤治疗', '射频塑形', '单极射频', '射频微针', '聚焦超声', '皮秒激光', '其他设备'];
   const chartBarMaxWidth = 26;
@@ -1503,13 +1504,43 @@
       && /(颏下脂肪|双下巴|H20254519)/.test(text);
   }
 
+  function isJawChinContourFillingRecord(record) {
+    if (!record || isSubmentalLipolysisRecord(record)) return false;
+    const text = [
+      record?.track,
+      record?.track_name,
+      record?.category,
+      record?.material_family,
+      record?.materialFamily,
+      record?.material_form,
+      record?.materialForm,
+      record?.product_name,
+      record?.productName,
+      record?.primary_indication,
+      record?.primaryIndication,
+      record?.approved_indications,
+      record?.approvedIndications,
+      record?.official_indication,
+      record?.officialIndication,
+      record?.indication_description,
+      record?.indicationDescription,
+      record?.official_scope,
+      record?.officialScope,
+      record?.scope_full,
+      record?.scopeFull,
+    ].filter(Boolean).join(' ');
+    const compact = text.replace(/\s+/g, '');
+    if (/(皮肤松弛|热效应|脂肪堆积|双下巴)/.test(compact)) return false;
+    return /(下颌|下颏|颏部)/.test(compact) && /(填充|后缩|轮廓|骨膜|皮下组织)/.test(compact);
+  }
+
   function indicationValues(record) {
     if (isSubmentalLipolysisRecord(record)) return [SUBMENTAL_LIPOLYSIS_INDICATION];
     const values = [
-      ...normalizeIndicationValues(record?.approved_indications || record?.approvedIndications || ''),
-      ...(Array.isArray(record?.indications) ? record.indications.flatMap(normalizeIndicationValues) : []),
-      ...normalizeIndicationValues(record?.official_indication || record?.officialIndication || ''),
-      ...normalizeIndicationValues(record?.primary_indication || record?.primaryIndication || ''),
+      ...normalizeIndicationValues(record?.approved_indications || record?.approvedIndications || '', record),
+      ...(Array.isArray(record?.indications) ? record.indications.flatMap((value) => normalizeIndicationValues(value, record)) : []),
+      ...normalizeIndicationValues(record?.official_indication || record?.officialIndication || '', record),
+      ...normalizeIndicationValues(record?.primary_indication || record?.primaryIndication || '', record),
     ];
     return unique(values);
   }
@@ -1555,25 +1586,28 @@
     });
   }
 
-  function normalizeIndicationValues(value) {
+  function normalizeIndicationValues(value, record) {
     return String(value || '')
       .split(/[、,，;；|]+/)
-      .flatMap(splitIndicationToken)
+      .flatMap((token) => splitIndicationToken(token, record))
       .map((item) => item.trim())
       .filter(Boolean);
   }
 
-  function splitIndicationToken(value) {
+  function splitIndicationToken(value, record) {
     const text = String(value || '').trim();
     if (!text) return [];
     const compact = text.replace(/\s+/g, '').replace(/[()]/g, (char) => (char === '(' ? '（' : '）')).replace(/／/g, '/');
     if ((compact.includes('颏下脂肪堆积') && compact.includes('双下巴')) || compact === SUBMENTAL_LIPOLYSIS_INDICATION) {
       return [SUBMENTAL_LIPOLYSIS_INDICATION];
     }
+    const jawChinTokens = new Set(['下颌部', '下颌', '下颏', '颏部', '下颏/下颌部', '下颌/下颏', '面部软组织/轮廓', JAW_CHIN_CONTOUR_FILLING_INDICATION]);
+    if (jawChinTokens.has(compact) && (!record || isJawChinContourFillingRecord(record))) {
+      return [JAW_CHIN_CONTOUR_FILLING_INDICATION];
+    }
     const combined = {
       '颏下脂肪堆积/双下巴': '颏下脂肪堆积（双下巴）',
       '双下巴/颏下脂肪堆积': '颏下脂肪堆积（双下巴）',
-      '下颏/下颌部': '下颏/下颌部',
       '中面部容量/轮廓': '中面部容量/轮廓',
       '痤疮/术后': '痤疮/术后',
       '疼痛缓解/非医美核心': '疼痛缓解/非医美核心',
@@ -1585,6 +1619,11 @@
       '中下面部/颏下/颈部皮肤松弛': ['中下面部', '颏下', '颈部皮肤松弛'],
     };
     if (explicitSplits[compact]) return explicitSplits[compact];
+    if (/[\/／]/.test(text)) return text.split(/[\/／]/).flatMap((part) => splitIndicationToken(part, record));
+    const jawChinToken = /(下颌|下颏|颏部)/.test(compact) && /(填充|后缩|轮廓|骨膜|皮下组织)/.test(compact);
+    if (jawChinToken && (!record || isJawChinContourFillingRecord(record))) {
+      return [JAW_CHIN_CONTOUR_FILLING_INDICATION];
+    }
     if (/\s+[\/／]\s+/.test(text)) return text.split(/\s+[\/／]\s+/);
     return [text];
   }

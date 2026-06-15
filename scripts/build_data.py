@@ -30,6 +30,17 @@ TRACK_META = [
 TRACK_BY_KEY = {t["key"]: t for t in TRACK_META}
 
 SUBMENTAL_LIPOLYSIS_INDICATION = "颏下脂肪堆积（双下巴）"
+JAW_CHIN_CONTOUR_FILLING_INDICATION = "下颌及颏部轮廓改善（填充）"
+JAW_CHIN_EXACT_INDICATION_LABELS = {
+    "下颌部",
+    "下颌",
+    "下颏",
+    "颏部",
+    "下颏/下颌部",
+    "下颌/下颏",
+    "面部软组织/轮廓",
+    "下颌及颏部轮廓改善（填充）",
+}
 
 CITY_COORDS = {
     "北京": {"province": "北京", "lat": 39.9042, "lng": 116.4074},
@@ -218,7 +229,51 @@ def split_portfolio(value: str) -> list[str]:
     return [ui_term(p) for p in parts if p.strip()]
 
 
-def split_indications(value: str) -> list[str]:
+def is_jaw_chin_contour_filling_text(text: str) -> bool:
+    if not text:
+        return False
+    compact = compact_text(text)
+    if "去氧胆酸" in compact or "溶脂" in compact or "脂肪堆积" in compact or "双下巴" in compact:
+        return False
+    if "皮肤松弛" in compact or "热效应" in compact:
+        return False
+    has_jaw_chin_area = any(term in compact for term in ("下颌", "下颏", "颏部"))
+    has_filling_purpose = any(term in compact for term in ("填充", "后缩", "轮廓", "骨膜", "皮下组织"))
+    return has_jaw_chin_area and has_filling_purpose
+
+
+def is_jaw_chin_contour_filling_row(row: dict) -> bool:
+    text = " ".join(
+        safe_strip(row.get(key))
+        for key in (
+            "track",
+            "track_name",
+            "category",
+            "material_family",
+            "material_form",
+            "product_name",
+            "primary_indication",
+            "approved_indications",
+            "indication_description",
+            "scope_full",
+            "official_indication",
+            "official_scope",
+            "product_tags",
+        )
+    )
+    return is_jaw_chin_contour_filling_text(text)
+
+
+def is_jaw_chin_indication_label(value: str | None) -> bool:
+    compact = compact_text(value)
+    if compact in JAW_CHIN_EXACT_INDICATION_LABELS:
+        return True
+    if re.search(r"[/、,，;；]", safe_strip(value)):
+        return False
+    return is_jaw_chin_contour_filling_text(compact)
+
+
+def split_indications(value: str, row: dict | None = None) -> list[str]:
     if not value:
         return []
     compact = compact_text(value)
@@ -227,6 +282,8 @@ def split_indications(value: str) -> list[str]:
         or ("颏下脂肪堆积" in compact and "双下巴" in compact)
     ):
         return [SUBMENTAL_LIPOLYSIS_INDICATION]
+    if is_jaw_chin_indication_label(value) and (row is None or is_jaw_chin_contour_filling_row(row)):
+        return [JAW_CHIN_CONTOUR_FILLING_INDICATION]
     parts = re.split(r"[/、,，;；]", value)
     out = []
     for part in parts:
@@ -235,6 +292,8 @@ def split_indications(value: str) -> list[str]:
             continue
         if compact_text(text) in {"颏下脂肪堆积（双下巴）", "颏下脂肪堆积/双下巴", "双下巴/颏下脂肪堆积"}:
             out.append(SUBMENTAL_LIPOLYSIS_INDICATION)
+        elif is_jaw_chin_indication_label(text) and (row is None or is_jaw_chin_contour_filling_row(row)):
+            out.append(JAW_CHIN_CONTOUR_FILLING_INDICATION)
         else:
             out.append(text)
     return list(dict.fromkeys(out))
@@ -276,12 +335,19 @@ def is_submental_lipolysis_row(row: dict) -> bool:
 def canonical_primary_indication(row: dict) -> str:
     if is_submental_lipolysis_row(row):
         return SUBMENTAL_LIPOLYSIS_INDICATION
+    value = safe_strip(row.get("primary_indication"))
+    if is_jaw_chin_contour_filling_row(row) and is_jaw_chin_indication_label(value):
+        return JAW_CHIN_CONTOUR_FILLING_INDICATION
     return safe_strip(row.get("primary_indication"))
 
 
 def canonical_official_indication(row: dict) -> str:
     if is_submental_lipolysis_row(row):
         return SUBMENTAL_LIPOLYSIS_INDICATION
+    if is_jaw_chin_contour_filling_row(row):
+        values = split_indications(row.get("official_indication"), row)
+        if values:
+            return " / ".join(values)
     return safe_strip(row.get("official_indication"))
 
 
@@ -290,7 +356,8 @@ def record_indications(record: dict) -> list[str]:
         return [SUBMENTAL_LIPOLYSIS_INDICATION]
     values = []
     values.extend(record.get("indications") or [])
-    values.extend(split_indications(record.get("official_indication") or ""))
+    row = record.get("_raw") or record
+    values.extend(split_indications(record.get("official_indication") or "", row))
     if record.get("primary_indication"):
         values.append(record["primary_indication"])
     return list(dict.fromkeys(v for v in values if v))
@@ -337,7 +404,7 @@ def build_record_card(row: dict) -> dict:
         "approval_year": parse_year(row.get("approval_year") or row.get("approval_date")),
         "valid_until": safe_strip(row.get("valid_until")),
         "primary_indication": primary_indication,
-        "indications": split_indications(row.get("approved_indications")),
+        "indications": split_indications(row.get("approved_indications"), row),
         "tags": [ui_term(tag) for tag in split_indications(row.get("product_tags"))],
         "official_status": safe_strip(row.get("official_status")),
         "official_verification_status": safe_strip(row.get("official_verification_status")),

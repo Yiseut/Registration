@@ -10,7 +10,7 @@
     "total": 110,
     "main": 102,
     "companies": 51,
-    "indications": 13,
+    "indications": 11,
     "verified": 102,
     "domestic": 48,
     "imported": 51,
@@ -93,7 +93,7 @@
       "value": 4
     },
     {
-      "name": "下颌部",
+      "name": "下颌及颏部轮廓改善（填充）",
       "value": 4
     },
     {
@@ -109,11 +109,7 @@
       "value": 2
     },
     {
-      "name": "面部软组织",
-      "value": 1
-    },
-    {
-      "name": "轮廓",
+      "name": "颞部",
       "value": 1
     }
   ],
@@ -174,7 +170,7 @@
       "鼻唇沟",
       "唇部",
       "肤质改善",
-      "下颌部",
+      "下颌及颏部轮廓改善（填充）",
       "中面部",
       "面颊部",
       "鼻部",
@@ -788,7 +784,7 @@
       "primary_indication": "鼻唇沟",
       "indications": [
         "鼻唇沟",
-        "下颌部"
+        "下颌及颏部轮廓改善（填充）"
       ],
       "tags": [
         "注射填充类",
@@ -802,7 +798,7 @@
       "official_registrant": "科医有限公司Q-Med AB",
       "official_approval_date": "2024-07-26",
       "official_valid_until": "2031-03-02",
-      "official_indication": "鼻唇沟 / 下颌部",
+      "official_indication": "鼻唇沟 / 下颌及颏部轮廓改善（填充）",
       "official_scope": "本产品适用于面部真皮组织中层至深层填充以纠正中度至重度鼻唇沟皱纹。适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
       "main_landscape": false,
@@ -2838,9 +2834,9 @@
       "approval_date": "2024-09-30",
       "approval_year": 2024,
       "valid_until": "2029-09-29",
-      "primary_indication": "下颌部",
+      "primary_indication": "下颌及颏部轮廓改善（填充）",
       "indications": [
-        "下颌部"
+        "下颌及颏部轮廓改善（填充）"
       ],
       "tags": [
         "复合材料类",
@@ -2855,7 +2851,7 @@
       "official_registrant": "爱美客技术发展股份有限公司",
       "official_approval_date": "2024-09-30",
       "official_valid_until": "2029-09-29",
-      "official_indication": "面部软组织/轮廓",
+      "official_indication": "下颌及颏部轮廓改善（填充）",
       "official_scope": "本产品适用于成人骨膜上层注射填充以改善轻中度的颏部后缩。",
       "verified": true,
       "main_landscape": true,
@@ -2888,9 +2884,9 @@
       "approval_date": "2024-09-30",
       "approval_year": 2024,
       "valid_until": "2029-09-29",
-      "primary_indication": "下颌部",
+      "primary_indication": "下颌及颏部轮廓改善（填充）",
       "indications": [
-        "下颌部"
+        "下颌及颏部轮廓改善（填充）"
       ],
       "tags": [
         "注射填充类",
@@ -2904,7 +2900,7 @@
       "official_registrant": "海雅美生物技术（珠海）有限公司",
       "official_approval_date": "2024-09-30",
       "official_valid_until": "2029-09-29",
-      "official_indication": "下颌部",
+      "official_indication": "下颌及颏部轮廓改善（填充）",
       "official_scope": "适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
       "main_landscape": true,
@@ -3511,9 +3507,9 @@
       "approval_date": "2024-07-24",
       "approval_year": 2024,
       "valid_until": "2029-07-23",
-      "primary_indication": "下颌部",
+      "primary_indication": "下颌及颏部轮廓改善（填充）",
       "indications": [
-        "下颌部"
+        "下颌及颏部轮廓改善（填充）"
       ],
       "tags": [
         "注射填充类",
@@ -3528,7 +3524,7 @@
       "official_registrant": "艾尔建ALLERGAN",
       "official_approval_date": "2024-07-24",
       "official_valid_until": "2029-07-23",
-      "official_indication": "下颌部",
+      "official_indication": "下颌及颏部轮廓改善（填充）",
       "official_scope": "该产品用于面部骨膜上注射，以改善中度下颌后缩患者的下颌轮廓。",
       "verified": true,
       "main_landscape": true,
@@ -4714,9 +4710,9 @@
       "approval_date": "2025-01-20",
       "approval_year": 2025,
       "valid_until": "2030-01-19",
-      "primary_indication": "下颌部",
+      "primary_indication": "下颌及颏部轮廓改善（填充）",
       "indications": [
-        "下颌部"
+        "下颌及颏部轮廓改善（填充）"
       ],
       "tags": [
         "注射填充类",
@@ -4731,7 +4727,7 @@
       "official_registrant": "基兰实验室股份公司Kylane Laboratoires SA",
       "official_approval_date": "2025-01-20",
       "official_valid_until": "2030-01-19",
-      "official_indication": "下颌部",
+      "official_indication": "下颌及颏部轮廓改善（填充）",
       "official_scope": "该产品适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "verified": true,
       "main_landscape": true,

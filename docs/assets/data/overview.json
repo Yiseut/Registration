@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-15T18:01:39",
+  "generated_at": "2026-06-15T18:20:40",
   "kpi": {
     "total_records": 189,
     "main_records": 176,
     "excluded": 13,
     "companies": 98,
-    "indications": 48,
+    "indications": 46,
     "verified_share": 100.0,
     "domestic": 96,
     "imported": 74,
@@ -14,7 +14,7 @@
     "injectable_class3_breakdown": "HA102 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 9,
     "injectable_drug_breakdown": "肉毒毒素8 / 去氧胆酸1",
-    "indication_breakdown": "注射填充类 21 类 · 注射用药品 7 类 · EBD 27 类",
+    "indication_breakdown": "注射填充类 17 类 · 注射用药品 7 类 · EBD 27 类",
     "recent_12mo": 56,
     "recent_12mo_share": 29.6,
     "recent_12mo_breakdown": "HA28 / EBD11 / 胶原蛋白8 / PLA5"
@@ -483,9 +483,9 @@
       "唇部",
       "眉间纹",
       "额部动力纹",
+      "下颌及颏部轮廓改善（填充）",
       "面颊部",
       "中面部",
-      "下颌部",
       "颈部",
       "手部",
       "颞部",
@@ -517,12 +517,12 @@
       [
         6,
         0,
-        3
+        4
       ],
       [
         7,
         0,
-        4
+        3
       ],
       [
         8,
@@ -570,7 +570,7 @@
         10
       ],
       [
-        6,
+        7,
         2,
         1
       ],
@@ -598,6 +598,11 @@
         0,
         5,
         3
+      ],
+      [
+        5,
+        5,
+        1
       ],
       [
         10,
