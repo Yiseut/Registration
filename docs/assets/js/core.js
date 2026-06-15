@@ -11,15 +11,16 @@ const palette = {
   hairline: 'rgba(144,160,144,0.26)',
   bg: '#f3f1f1',
   surface: '#f8f4f4',
-  rose: '#c09090', plum: '#9d7b7b', gold: '#b3b3b3',
-  sage: '#90a090', ocean: '#8898a0', slate: '#786868', clay: '#c09090',
+  rose: '#c09090', plum: '#9d7b7b', gold: '#f2e3c6',
+  sage: '#44493d', ocean: '#2b5a6c', slate: '#737697', clay: '#e5d4c8',
+  periwinkle: '#a4abd9', cream: '#f2e3c6',
 };
 
 // Ordered palette used for series colors
 const SERIES_COLORS = [
-  '#c09090', '#8898a0', '#90a090', '#786868',
-  '#b3b3b3', '#9d7b7b', '#ded8d8', '#ede0e0',
-  '#a98a8a', '#7f9298', '#829282', '#8f8080',
+  '#737697', '#2b5a6c', '#44493d', '#a4abd9',
+  '#e5d4c8', '#90a090', '#f2e3c6', '#c09090',
+  '#8898a0', '#9d7b7b', '#786868', '#b3b3b3',
 ];
 
 const echartsTheme = {
@@ -111,6 +112,12 @@ function heatHue(base) {
     '#786868': 0,
     '#B3B3B3': 0,
     '#9D7B7B': 0,
+    '#737697': 236,
+    '#A4ABD9': 232,
+    '#E5D4C8': 24,
+    '#44493D': 84,
+    '#2B5A6C': 197,
+    '#F2E3C6': 39,
   };
   return hues[normalized] || 0;
 }

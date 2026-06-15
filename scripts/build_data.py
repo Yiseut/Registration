@@ -18,11 +18,11 @@ OUT_DIR = ROOT / "docs" / "assets" / "data"
 TRACK_DIR = OUT_DIR / "tracks"
 
 TRACK_META = [
-    {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#c09090"},
-    {"key": "botulinum",  "name": "肉毒毒素",            "tagline": "", "accent": "#8898a0"},
-    {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#90a090"},
-    {"key": "plla",       "name": "PLA",                "tagline": "", "accent": "#c09090"},
-    {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#8898a0"},
+    {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#737697"},
+    {"key": "botulinum",  "name": "肉毒毒素",            "tagline": "", "accent": "#2b5a6c"},
+    {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#44493d"},
+    {"key": "plla",       "name": "PLA",                "tagline": "", "accent": "#a4abd9"},
+    {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#e5d4c8"},
     {"key": "caha",       "name": "CaHA",                "tagline": "", "accent": "#90a090"},
     {"key": "niche_materials", "name": "小众材料",       "tagline": "", "accent": "#c09090"},
     {"key": "ebd",        "name": "EBD 设备",             "tagline": "", "accent": "#8898a0"},

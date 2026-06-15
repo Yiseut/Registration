@@ -958,19 +958,19 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .tooltip-coral {
-  --tip-dot: #c09090;
+  --tip-dot: #737697;
 }
 
 .tooltip-ocean {
-  --tip-dot: #8898a0;
+  --tip-dot: #2b5a6c;
 }
 
 .tooltip-sage {
-  --tip-dot: #90a090;
+  --tip-dot: #44493d;
 }
 
 .tooltip-plum {
-  --tip-dot: #9d7b7b;
+  --tip-dot: #a4abd9;
 }
 
 .manufacturer-heatmap-stack {
@@ -1173,10 +1173,10 @@ button.manufacturer-heat-cell:focus-visible {
 .activity-line i {
   color: #786868;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.08) 42%, rgba(120, 104, 104, 0.06)),
-    linear-gradient(90deg, color-mix(in srgb, var(--brand) 44%, #ede0e0), var(--brand));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.06) 44%, rgba(120, 104, 104, 0.08)),
+    linear-gradient(90deg, color-mix(in srgb, var(--activity-soft, var(--activity, var(--brand))) 46%, #f8f4f4), var(--activity, var(--brand)));
   box-shadow:
-    0 7px 15px color-mix(in srgb, var(--brand) 25%, transparent),
+    0 7px 15px color-mix(in srgb, var(--activity, var(--brand)) 24%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
     inset 0 -1px 0 rgba(120, 104, 104, 0.12);
 }
@@ -1184,10 +1184,11 @@ button.manufacturer-heat-cell:focus-visible {
 .activity-line b {
   color: #786868;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.08) 42%, rgba(120, 104, 104, 0.06)),
-    linear-gradient(90deg, #ede0e0, #b3b3b3);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.10) 42%, rgba(120, 104, 104, 0.08)),
+    linear-gradient(90deg, color-mix(in srgb, var(--activity-recent, #f2e3c6) 58%, #f8f4f4), var(--activity-recent, #f2e3c6));
   box-shadow:
-    0 7px 15px rgba(120, 104, 104, 0.13),
+    0 7px 15px color-mix(in srgb, var(--activity-recent, #737697) 20%, transparent),
+    0 0 0 1px rgba(248, 244, 244, 0.72),
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
     inset 0 -1px 0 rgba(120, 104, 104, 0.12);
 }

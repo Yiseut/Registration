@@ -35,24 +35,24 @@
     { offset: 1, color: bottomColor },
   ]);
   const TRACK_ACCENTS = {
-    ha: '#c09090',
-    botulinum: '#8898a0',
-    collagen: '#90a090',
-    plla: '#c09090',
-    pcl: '#8898a0',
+    ha: '#737697',
+    botulinum: '#2b5a6c',
+    collagen: '#44493d',
+    plla: '#a4abd9',
+    pcl: '#e5d4c8',
     caha: '#90a090',
     niche_materials: '#c09090',
     ebd: '#8898a0',
   };
   const TRACK_ACCENT_DEEP = {
-    ha: '#9d7b7b',
-    botulinum: '#8898a0',
-    collagen: '#90a090',
-    plla: '#9d7b7b',
-    pcl: '#8898a0',
-    caha: '#90a090',
+    ha: '#737697',
+    botulinum: '#2b5a6c',
+    collagen: '#44493d',
+    plla: '#737697',
+    pcl: '#786868',
+    caha: '#44493d',
     niche_materials: '#9d7b7b',
-    ebd: '#8898a0',
+    ebd: '#2b5a6c',
   };
   const accent = TRACK_ACCENTS[key] || meta.accent || palette.brand;
   const accentDeep = TRACK_ACCENT_DEEP[key] || palette.ink3;
