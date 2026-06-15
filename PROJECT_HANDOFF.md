@@ -1,21 +1,36 @@
 # Project Handoff
 
-更新日期：2026-05-11
+更新日期：2026-06-16
 
 ## 接手入口
 
 - 项目目录：`E:\shared\code\registration-insights-integrated`
 - 本地页面：`http://127.0.0.1:8781/`
-- 当前首页缓存：`20260513-ebd-energy-redesign-84`
-- 当前子赛道页缓存：`20260513-ebd-energy-redesign-84`
+- 线上页面：`https://yiseut.github.io/Registration/`
+- GitHub 仓库：`https://github.com/Yiseut/Registration`
 - 启动脚本：`Open-Dashboard.bat`
 
-不要直接改：
+原数据库源头是 `E:\shared\code\registration`。本项目负责前台发布，不负责公众号抓取、NMPA 首次核验或原数据库事实判断。
 
-- `E:\shared\code\registration`
-- `E:\shared\code\registration-insights`
+## 2026-06-16 当前真实状态
 
-本项目是整合工作区，确认后再决定是否覆盖 GitHub 版本。
+今天完成了一轮前台可靠性修复和 QA 固化：
+
+- 总览页已移除旧 `docs/assets/js/codex-data.js` 加载，不再允许旧数据 fallback。
+- 总览页事实源为 `docs/assets/data/overview.json`、`docs/assets/data/manifest.json` 和 `docs/assets/data/tracks/*.json`。
+- `scripts/build_data.py` 已补齐前台详情需要的主表字段，包括监管类型、适应证、适用范围、规格、成分、产品标签、来源标题和官方核验状态。
+- 页面新增口径说明：更新时间、统计口径、非销售份额声明、核心记录覆盖范围。
+- 筛选状态可通过 URL 分享：`segment`、`company`、`class`、`origin`、`q`、`grain`、`map`。
+- 移动端长矩阵默认折叠，注册官方信息筛选区为 sticky。
+- 新增 `scripts/dashboard_smoke_test.mjs` 和 GitHub Actions `Dashboard QA`。
+- GitHub Actions 在提交 `02888f3` 上已通过。
+
+关键教训：
+
+- 如果前台总览页同时混用新版 JSON 和旧 `codex-data.js`，会出现 KPI 正确但明细表、搜索、详情抽屉仍读旧数据的问题。
+- GitHub Pages 资源刷新可能有短暂缓存延迟，验证时使用 `?v=<commit>`。
+- 仪表盘的 CR4、HHI、国产/进口结构均是注册准入口径，不代表销量、收入或商业市占率。
+- 药品批准文号按官方字段原样显示，例如 Dysport 为 `S20200016`。
 
 ## 用户已经明确的展示原则
 
@@ -42,7 +57,7 @@
 7. 业务矩阵
 8. 注册官方信息
 
-`七赛道集中度` 卡片目前已从可见页面移除。
+`七赛道集中度` 卡片当前已恢复可见，并由 smoke test 检查应渲染 7 行。
 
 ## 最近完成的关键修改
 
@@ -161,6 +176,8 @@ cd E:\shared\code\registration-insights-integrated
 & 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\integrated.js
 & 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\track.js
 & 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\core.js
+npm run test:dashboard -- http://127.0.0.1:8781/
+npm run test:dashboard -- https://yiseut.github.io/Registration/?v=<commit>
 ```
 
 重点页面：

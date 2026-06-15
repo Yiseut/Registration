@@ -8,7 +8,7 @@
 - 本地预览地址：`http://127.0.0.1:8781/`
 - 原始 Codex 数据/页面目录：`E:\shared\code\registration`
 - 原始 Cloud/Claude 页面目录：`E:\shared\code\registration-insights`
-- 重要原则：不要直接改动上面两个原始目录，先在本整合目录完成本地打磨。
+- 重要原则：本目录是线上 GitHub Pages 的前台发布仓库；原数据库仍以 `E:\shared\code\registration` 为源头。
 
 ## 打开方式
 
@@ -51,20 +51,25 @@ python -m http.server 8781 --bind 127.0.0.1
 
 总览页以 Cloud/Claude 的浅色咨询风格为基础，保留 Codex 的分析视角和热力图表达。
 
-## 当前缓存版本
+## 缓存与公开验证
 
-- 首页脚本：`20260513-ebd-energy-redesign-84`
-- 子赛道页 `track.js`：`20260513-ebd-energy-redesign-84`
+线上验证优先使用提交号做页面级 cache busting：
 
-如果修改前台 JS/CSS，继续递增 query string，方便用户直接刷新当前页面看到新版本。
+```text
+https://yiseut.github.io/Registration/?v=<commit>
+```
+
+如果修改前台 JS/CSS 后遇到 GitHub Pages 或浏览器缓存延迟，先用 `?v=<commit>` 验证公开页，再判断是否需要递增静态资源 query string。
 
 ## 数据和规则
 
 主要数据来自：
 
-- 官方主工作簿：`E:\shared\code\registration\output\master\registration_master_workbook.xlsx`
-- 前台整合数据：`docs/assets/js/codex-data.js`
-- Cloud/Claude JSON 数据：`docs/assets/data/overview.json` 和 `docs/assets/data/tracks/*.json`
+- 原数据库主表：`E:\shared\code\registration\output\master\registration_records_master.csv`
+- 发布仓库同步副本：`data/registration_records_master.csv`
+- 前台事实源：`docs/assets/data/overview.json`、`docs/assets/data/manifest.json`、`docs/assets/data/tracks/*.json`
+
+`docs/assets/js/codex-data.js` 是历史文件，不再作为总览页默认数据源，也不能作为 fallback。总览页如无法读取新版 JSON，应直接暴露初始化失败，不能悄悄回退到旧数据。
 
 当前分析口径：
 
@@ -99,6 +104,52 @@ python -m http.server 8781 --bind 127.0.0.1
 - 子赛道页 KPI、适应证列表、厂家 × 适应证热力图、表格和搜索
 
 后续如果重新生成 JSON，建议把同一套适应证规则下沉到数据生成脚本里，前台规则保留为兜底。
+
+## 日常同步与发布
+
+从原数据库同步并发布：
+
+```powershell
+cd E:\shared\code\registration-insights-integrated
+.\sync-and-publish.bat
+```
+
+这一步会复制：
+
+```text
+E:\shared\code\registration\output\master\registration_records_master.csv
+  -> data\registration_records_master.csv
+```
+
+然后运行 `scripts/build_data.py` 生成 `docs/assets/data/*.json`，提交并推送到 `https://github.com/Yiseut/Registration`。
+
+本地重建 JSON：
+
+```powershell
+python .\scripts\build_data.py
+```
+
+本地前台 smoke test：
+
+```powershell
+npm run test:dashboard -- http://127.0.0.1:8781/
+```
+
+公网 smoke test：
+
+```powershell
+npm run test:dashboard -- https://yiseut.github.io/Registration/?v=<commit>
+```
+
+GitHub Actions 已配置 `Dashboard QA`，push 到 `main` 后会重建数据、启动静态服务并运行 Playwright smoke test。
+
+## 2026-06-16 前台可靠性规则
+
+- 总览页必须显示口径说明：更新时间、统计口径、非销售份额声明、核心记录覆盖范围。
+- CR4、HHI、国产/进口结构都是注册准入口径，不代表销量、收入或商业市占率。
+- 筛选状态通过 URL 参数分享：`segment`、`company`、`class`、`origin`、`q`、`grain`、`map`。
+- 移动端长矩阵默认折叠，注册官方信息筛选区为 sticky。
+- smoke test 必须检查主表行数、集中度表、Dysport `S20200016`、详情抽屉、无旧 `codex-data.js`、移动端无横向溢出和 8 个赛道页加载。
 
 ## 最近一次交接
 
