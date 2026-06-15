@@ -1,32 +1,32 @@
 ﻿/* Shared utilities, ECharts theme, and drawer logic. */
 
 const palette = {
-  brand: '#D97757',
-  brandDeep: '#C15F3C',
-  brandGlow: '#F4B393',
-  brandSoft: '#F8E3D5',
+  brand: '#166B65',
+  brandDeep: '#0F5A55',
+  brandGlow: '#7BC9C1',
+  brandSoft: '#E2F1EF',
   ink: '#1F1B17',
   ink3: '#6E6760',
   inkMute: '#9D958C',
   hairline: 'rgba(34,28,22,0.08)',
   bg: '#FAF9F5',
   surface: '#FFFFFF',
-  rose: '#B95E6E', plum: '#8B5A6B', gold: '#B5915A',
-  sage: '#8B9D7F', ocean: '#5B7B9A', slate: '#6E6A65', clay: '#C58B5C',
+  rose: '#A93D35', plum: '#8F5E56', gold: '#8A5D20',
+  sage: '#356E64', ocean: '#3D6F99', slate: '#7A6458', clay: '#A85135',
 };
 
 // Ordered palette used for series colors
 const SERIES_COLORS = [
-  '#D97757', '#5B7B9A', '#B5915A', '#8B9D7F',
-  '#8B5A6B', '#C15F3C', '#6E6A65', '#B95E6E',
-  '#C58B5C', '#7B8B7E', '#9C7F8F', '#A8866B',
+  '#1F8A82', '#A85135', '#3D6F99', '#8A5D20',
+  '#8F5E56', '#356E64', '#7A6458', '#2E7A51',
+  '#A93D35', '#6D584F', '#9B7467', '#496E92',
 ];
 
 const echartsTheme = {
   color: SERIES_COLORS,
   backgroundColor: 'transparent',
   textStyle: {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", sans-serif',
+    fontFamily: '"Source Han Sans SC", "思源黑体", "Alibaba PuHuiTi", "阿里巴巴普惠体", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif',
     color: palette.ink,
   },
   title: { textStyle: { color: palette.ink, fontWeight: 600 }, subtextStyle: { color: palette.ink3 } },
@@ -54,14 +54,14 @@ const echartsTheme = {
 };
 
 if (typeof echarts !== 'undefined') {
-  echarts.registerTheme('claude', echartsTheme);
+  echarts.registerTheme('registration', echartsTheme);
 }
 
 const ChartFactory = (() => {
   const instances = [];
   function make(el, opt) {
     if (!el) return null;
-    const inst = echarts.init(el, 'claude', { renderer: 'canvas' });
+    const inst = echarts.init(el, 'registration', { renderer: 'canvas' });
     inst.setOption(opt);
     instances.push(inst);
     return inst;
@@ -102,6 +102,23 @@ function heatRatio(value, max) {
   return Math.log1p(Number(value) || 0) / Math.log1p(Math.max(Number(max) || 1, 1));
 }
 
+function heatHue(base) {
+  const normalized = String(base || '').trim().toUpperCase();
+  const hues = {
+    '#1F8A82': 178,
+    '#166B65': 178,
+    '#3D6F99': 205,
+    '#8A5D20': 36,
+    '#A85135': 16,
+    '#8F5E56': 8,
+    '#4E8577': 166,
+    '#356E64': 166,
+    '#2E7A51': 144,
+    '#A93D35': 4,
+  };
+  return hues[normalized] || 178;
+}
+
 function crystalCssHeatVars(value, max, { base = palette.brand, fgDark = palette.ink } = {}) {
   if (!value) {
     return [
@@ -112,44 +129,54 @@ function crystalCssHeatVars(value, max, { base = palette.brand, fgDark = palette
     ].join(';') + ';';
   }
   const heat = heatRatio(value, max);
-  const top = mixColor(base, '#fff8ef', Math.max(0.40, 0.76 - heat * 0.22));
-  const mid = mixColor(base, '#ffffff', Math.max(0.16, 0.46 - heat * 0.20));
-  const deep = mixColor(base, '#4a2418', Math.min(0.22, 0.08 + heat * 0.10));
-  const fg = heat > 0.60 ? '#fffaf5' : fgDark;
-  const shadow = (0.10 + heat * 0.24).toFixed(3);
+  const high = heat >= 0.72;
+  const highProgress = high ? (heat - 0.72) / 0.28 : 0;
+  const hue = heatHue(base);
+  const lightness = high
+    ? Math.round(32 - highProgress * 6)
+    : Math.round(98 - heat * 20);
+  const saturation = high
+    ? Math.round(44 + highProgress * 6)
+    : Math.round(18 + heat * 20);
+  const borderLightness = high ? Math.max(20, lightness - 7) : Math.max(44, lightness - 14);
+  const fg = high ? '#F8FEFD' : fgDark;
+  const shadow = (0.08 + heat * 0.18).toFixed(3);
   return [
-    `--heat-bg:linear-gradient(150deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.16) 34%, rgba(255,255,255,0) 52%), linear-gradient(135deg, ${top} 0%, ${mid} 46%, ${deep} 100%)`,
-    `--heat-border:${colorAlpha(mixColor(base, '#fffaf5', 0.28), 0.56)}`,
+    `--heat-bg:hsl(${hue} ${saturation}% ${lightness}%)`,
+    `--heat-border:hsl(${hue} ${saturation}% ${borderLightness}%)`,
     `--heat-fg:${fg}`,
-    `--heat-shadow:${colorAlpha(base, shadow)}`,
+    `--heat-shadow:hsla(${hue}, ${saturation}%, ${Math.max(18, lightness - 12)}%, ${shadow})`,
   ].join(';') + ';';
 }
 
 function crystalEchartHeatItemStyle(value, max, base = palette.brand) {
   const heat = heatRatio(value, max);
-  const top = mixColor(base, '#fff8ef', Math.max(0.40, 0.76 - heat * 0.22));
-  const mid = mixColor(base, '#ffffff', Math.max(0.16, 0.46 - heat * 0.20));
-  const deep = mixColor(base, '#4a2418', Math.min(0.22, 0.08 + heat * 0.10));
+  const hue = heatHue(base);
+  const high = heat >= 0.72;
+  const highProgress = high ? (heat - 0.72) / 0.28 : 0;
+  const lightness = high ? Math.round(32 - highProgress * 6) : Math.round(98 - heat * 20);
+  const saturation = high ? Math.round(44 + highProgress * 6) : Math.round(18 + heat * 20);
+  const colorStop = `hsl(${hue} ${saturation}% ${lightness}%)`;
   const color = typeof echarts !== 'undefined'
     ? new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-      { offset: 0, color: top },
-      { offset: 0.42, color: mid },
-      { offset: 1, color: deep },
+      { offset: 0, color: `hsl(${hue} ${Math.max(14, saturation - 8)}% ${Math.min(98, lightness + 10)}%)` },
+      { offset: 0.52, color: colorStop },
+      { offset: 1, color: `hsl(${hue} ${saturation}% ${Math.max(22, lightness - 8)}%)` },
     ])
-    : deep;
+    : colorStop;
   return {
     color,
     borderColor: 'rgba(255,255,255,0.72)',
     borderWidth: 2,
     borderRadius: 7,
     shadowBlur: 14,
-    shadowColor: colorAlpha(base, (0.12 + heat * 0.24).toFixed(3)),
+    shadowColor: `hsla(${hue}, ${saturation}%, ${Math.max(18, lightness - 12)}%, ${(0.10 + heat * 0.18).toFixed(3)})`,
     shadowOffsetY: 4,
   };
 }
 
 function crystalHeatLabelColor(value, max, dark = palette.ink) {
-  return heatRatio(value, max) > 0.60 ? '#fffaf5' : dark;
+  return heatRatio(value, max) >= 0.72 ? '#F8FEFD' : dark;
 }
 
 // ---------- Number animation ----------

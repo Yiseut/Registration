@@ -872,7 +872,7 @@ button.manufacturer-heat-cell:hover,
 button.manufacturer-heat-cell:focus-visible {
   transform: translateY(-1px) scale(1.015);
   box-shadow:
-    0 16px 28px var(--heat-shadow, rgba(217, 119, 87, 0.18)),
+    0 16px 28px var(--heat-shadow, rgba(22, 107, 101, 0.16)),
     0 0 0 2px color-mix(in srgb, var(--heat-border, var(--brand)) 22%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.52);
   filter: saturate(1.06);
@@ -903,10 +903,10 @@ button.manufacturer-heat-cell:focus-visible {
   display: inline-block;
 }
 
-.matrix-legend i[data-heat="low"] { background: hsl(18 58% 86%); }
-.matrix-legend i[data-heat="mid"] { background: hsl(18 62% 76%); }
-.matrix-legend i[data-heat="warm"] { background: hsl(18 66% 64%); }
-.matrix-legend i[data-heat="peak"] { background: hsl(18 70% 48%); }
+.matrix-legend i[data-heat="low"] { background: hsl(178 24% 88%); }
+.matrix-legend i[data-heat="mid"] { background: hsl(178 32% 78%); }
+.matrix-legend i[data-heat="warm"] { background: hsl(178 45% 32%); }
+.matrix-legend i[data-heat="peak"] { background: hsl(178 50% 26%); }
 
 .matrix-tooltip {
   position: fixed;
@@ -1344,7 +1344,7 @@ button.manufacturer-heat-cell:focus-visible {
 
 .records-toolbar select:focus-visible,
 .records-toolbar input:focus-visible {
-  outline: 2px solid rgba(217, 119, 87, 0.25);
+  outline: 2px solid color-mix(in srgb, var(--brand) 28%, transparent);
   outline-offset: 2px;
 }
 
@@ -1363,7 +1363,7 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .text-button {
-  min-height: 32px;
+  min-height: 36px;
   border: 1px solid var(--hairline);
   border-radius: 999px;
   padding: 0 13px;
@@ -1566,6 +1566,40 @@ button.manufacturer-heat-cell:focus-visible {
 
   .china-rank-row {
     grid-template-columns: 22px minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .segmented-control button,
+  .matrix-cell,
+  .manufacturer-heat-name,
+  .manufacturer-heat-cell,
+  .activity-row,
+  .china-rank-row,
+  .rank-more-button,
+  .records-toolbar select,
+  .records-toolbar input,
+  .text-button,
+  .topbar nav a,
+  .leaflet-bar a,
+  .leaflet-control-attribution a {
+    min-height: 44px;
+  }
+
+  .text-button,
+  .rank-more-button,
+  .leaflet-control-attribution a,
+  .leaflet-bar a {
+    min-width: 44px;
+  }
+
+  .leaflet-bar a {
+    line-height: 44px;
+  }
+
+  .leaflet-control-attribution a {
+    display: inline-flex;
+    align-items: center;
   }
 }
 

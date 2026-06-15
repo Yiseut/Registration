@@ -9,14 +9,14 @@
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
   );
   const SEGMENTS = [
-    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#D97757', href: 'tracks/ha.html' },
-    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8B9D7F', href: 'tracks/botulinum.html' },
-    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#B5915A', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#8B5A6B', href: 'tracks/plla.html' },
-    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#C15F3C', href: 'tracks/pcl.html' },
-    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#5B7B9A', href: 'tracks/caha.html' },
-    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#C58B5C', href: 'tracks/niche_materials.html' },
-    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#6E6A65', href: 'tracks/ebd.html' },
+    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#166B65', href: 'tracks/ha.html' },
+    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#8A5D20', href: 'tracks/botulinum.html' },
+    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#8F5E56', href: 'tracks/collagen.html' },
+    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#A85135', href: 'tracks/plla.html' },
+    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#A85135', href: 'tracks/pcl.html' },
+    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#A85135', href: 'tracks/caha.html' },
+    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#356E64', href: 'tracks/niche_materials.html' },
+    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#3D6F99', href: 'tracks/ebd.html' },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
@@ -28,10 +28,10 @@
   const allRecords = legacyData.records || [];
   const records = allRecords.filter(includeInLandscape);
   const HEAT_THEMES = {
-    coral: { base: '#D97757', hue: 18, saturation: 66, lightHigh: 91, lightLow: 47, fg: '#2c1810' },
-    ocean: { base: '#5B7B9A', hue: 205, saturation: 42, lightHigh: 91, lightLow: 44, fg: '#101e2b' },
-    sage: { base: '#8B9D7F', hue: 123, saturation: 27, lightHigh: 90, lightLow: 42, fg: '#142317' },
-    plum: { base: '#8B5A6B', hue: 330, saturation: 34, lightHigh: 91, lightLow: 43, fg: '#291622' },
+    coral: { base: '#166B65', hue: 178, saturation: 38, lightHigh: 98, lightLow: 26, fg: '#143B38' },
+    ocean: { base: '#3D6F99', hue: 205, saturation: 40, lightHigh: 98, lightLow: 29, fg: '#122C42' },
+    sage: { base: '#356E64', hue: 166, saturation: 32, lightHigh: 98, lightLow: 30, fg: '#173A32' },
+    plum: { base: '#8F5E56', hue: 8, saturation: 34, lightHigh: 98, lightLow: 31, fg: '#3C201C' },
   };
 
   const state = {
@@ -82,7 +82,7 @@
       chartInstances.delete(previous);
       previous.dispose();
     }
-    const chart = echarts.init(el, 'claude', { renderer: 'canvas' });
+    const chart = echarts.init(el, 'registration', { renderer: 'canvas' });
     chart.setOption(option);
     chartInstances.add(chart);
     return chart;
@@ -564,7 +564,7 @@
           const active = items.filter((item) => Number(item.value) > 0);
           const lines = active.map((item) => {
             const matched = segmentSeries.find((segment) => segment.name === item.seriesName);
-            const color = escape(String(matched?.color || '#D97757'));
+            const color = escape(String(matched?.color || '#1F8A82'));
             return `<span class="echart-tip-dot" style="background:${color}"></span>${escape(item.seriesName)}：${item.value} 条`;
           }).join('<br/>');
           const total = active.reduce((sum, item) => sum + Number(item.value || 0), 0);
@@ -858,7 +858,7 @@
       return -1;
     });
     const series = visibleExpirySeries.map((s, i) => {
-      const color = SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#D97757';
+      const color = SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#1F8A82';
       return {
         name: s.label,
         type: 'bar',
@@ -884,7 +884,7 @@
           const quarter = escape(quarterRaw);
           const lines = active.map((item) => {
             const matched = visibleExpirySeries.find((row) => row.label === item.seriesName);
-            const color = SERIES_COLORS[visibleExpirySeries.indexOf(matched) % SERIES_COLORS.length] || '#D97757';
+            const color = SERIES_COLORS[visibleExpirySeries.indexOf(matched) % SERIES_COLORS.length] || '#1F8A82';
             const details = expiryRecordsForQuarter(quarterRaw, matched)
               .map((record) => {
                 const company = manufacturerDisplayName(record) || record.company || record.registrant || '未标注厂家';
@@ -947,7 +947,7 @@
     if (!quarterly.labels.length && (!ev || !ev.years?.length)) return;
     const labels = quarterly.labels.length ? quarterly.labels : ev.years;
     const sourceSeries = quarterly.series.length ? quarterly.series : ev.series;
-    const originColors = ['#D97757', '#5B7B9A', '#B5915A'];
+    const originColors = ['#1F8A82', '#3D6F99', '#8A5D20'];
     const series = sourceSeries
       .filter((s) => s.data.some((v) => v > 0))
       .map((s, index) => {

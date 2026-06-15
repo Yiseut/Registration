@@ -1,7 +1,7 @@
-/* Registration Insights — light theme, Claude palette, Apple-card surfaces. */
+/* Registration Insights — light theme, regulatory intelligence palette. */
 
 :root {
-  /* Claude core palette */
+  /* Core product palette */
   --bg:           #FAF9F5;
   --bg-soft:      #F4F2EA;
   --bg-mute:      #EDEAE0;
@@ -13,21 +13,21 @@
   --ink:          #1F1B17;
   --ink-2:        #3D3631;
   --ink-3:        #6E6760;
-  --ink-mute:     #9D958C;
+  --ink-mute:     #6D584F;
 
   /* Brand + extended palette */
-  --brand:        #D97757;   /* Claude orange */
-  --brand-deep:   #C15F3C;
-  --brand-glow:   #F4B393;
-  --brand-soft:   #F8E3D5;
+  --brand:        #166B65;
+  --brand-deep:   #0F5A55;
+  --brand-glow:   #7BC9C1;
+  --brand-soft:   #E2F1EF;
 
-  --c-rose:       #B95E6E;
-  --c-plum:       #8B5A6B;
-  --c-gold:       #B5915A;
-  --c-sage:       #8B9D7F;
-  --c-ocean:      #5B7B9A;
-  --c-slate:      #6E6A65;
-  --c-clay:       #C58B5C;
+  --c-rose:       #A93D35;
+  --c-plum:       #8F5E56;
+  --c-gold:       #8A5D20;
+  --c-sage:       #356E64;
+  --c-ocean:      #3D6F99;
+  --c-slate:      #7A6458;
+  --c-clay:       #A85135;
 
   /* Semantic accents */
   --pos:          #5E8A6F;
@@ -58,8 +58,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
-               "Microsoft Yahei", "Segoe UI", Roboto, sans-serif;
+  font-family: "Source Han Sans SC", "思源黑体", "Alibaba PuHuiTi", "阿里巴巴普惠体",
+               "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -68,9 +68,9 @@ html, body {
 
 body {
   background:
-    radial-gradient(60% 40% at 12% -5%, rgba(217, 119, 87, 0.10) 0%, transparent 60%),
-    radial-gradient(45% 35% at 95% 5%, rgba(91, 123, 154, 0.08) 0%, transparent 65%),
-    radial-gradient(50% 35% at 85% 95%, rgba(181, 145, 90, 0.07) 0%, transparent 70%),
+    radial-gradient(60% 40% at 12% -5%, rgba(31, 138, 130, 0.10) 0%, transparent 60%),
+    radial-gradient(45% 35% at 95% 5%, rgba(61, 111, 153, 0.08) 0%, transparent 65%),
+    radial-gradient(50% 35% at 85% 95%, rgba(138, 93, 32, 0.07) 0%, transparent 70%),
     var(--bg);
   background-attachment: fixed;
   min-height: 100vh;
@@ -101,7 +101,7 @@ a:hover { color: var(--brand); }
 .topbar .brand .dot {
   width: 22px; height: 22px; border-radius: 7px;
   background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
-  box-shadow: 0 4px 12px rgba(217, 119, 87, 0.35);
+  box-shadow: 0 4px 12px rgba(22, 107, 101, 0.24);
   position: relative;
 }
 .topbar .brand .dot::after {
@@ -322,8 +322,8 @@ a:hover { color: var(--brand); }
 }
 .toolbar select:focus,
 .toolbar input:focus {
-  border-color: rgba(217, 119, 87, 0.42);
-  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.10);
+  border-color: color-mix(in srgb, var(--brand) 42%, var(--hairline));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 12%, transparent);
 }
 .table thead th {
   text-align: left; padding: 10px 12px;
@@ -604,7 +604,7 @@ a:hover { color: var(--brand); }
   border-radius: 16px;
   color: inherit;
   background:
-    radial-gradient(circle at 88% 16%, rgba(217, 119, 87, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--brand) 12%, transparent), transparent 34%),
     rgba(255, 255, 255, 0.86);
   box-shadow: var(--shadow-1);
   text-align: left;
@@ -616,7 +616,7 @@ a:hover { color: var(--brand); }
 .ha-scope-card:focus-visible,
 .ha-scope-card.active {
   transform: translateY(-2px);
-  border-color: rgba(217, 119, 87, 0.34);
+  border-color: color-mix(in srgb, var(--brand) 34%, var(--hairline));
   box-shadow: var(--shadow-2);
   outline: none;
 }
@@ -726,7 +726,7 @@ a:hover { color: var(--brand); }
   border-radius: 16px;
   color: inherit;
   background:
-    radial-gradient(circle at 92% 12%, rgba(217, 119, 87, 0.10), transparent 35%),
+    radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 35%),
     var(--surface-2);
   text-align: left;
   cursor: pointer;
@@ -987,7 +987,7 @@ button.matrix-cell:hover,
 button.matrix-cell:focus-visible {
   transform: translateY(-1px) scale(1.015);
   box-shadow:
-    0 16px 28px var(--heat-shadow, rgba(217, 119, 87, 0.18)),
+    0 16px 28px var(--heat-shadow, rgba(22, 107, 101, 0.16)),
     0 0 0 2px color-mix(in srgb, var(--heat-border, var(--brand)) 22%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.52);
   filter: saturate(1.06);
@@ -1017,10 +1017,10 @@ button.matrix-cell:focus-visible {
   border-radius: 999px;
 }
 
-.matrix-legend i[data-heat="low"] { background: hsl(18 58% 86%); }
-.matrix-legend i[data-heat="mid"] { background: hsl(18 62% 76%); }
-.matrix-legend i[data-heat="warm"] { background: hsl(18 66% 64%); }
-.matrix-legend i[data-heat="peak"] { background: hsl(18 70% 48%); }
+.matrix-legend i[data-heat="low"] { background: hsl(178 24% 88%); }
+.matrix-legend i[data-heat="mid"] { background: hsl(178 32% 78%); }
+.matrix-legend i[data-heat="warm"] { background: hsl(178 45% 32%); }
+.matrix-legend i[data-heat="peak"] { background: hsl(178 50% 26%); }
 
 .matrix-tooltip {
   position: fixed;
@@ -1066,7 +1066,7 @@ button.matrix-cell:focus-visible {
   margin-top: 6px;
   border-radius: 999px;
   background: var(--brand);
-  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.10);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 12%, transparent);
 }
 
 .company-matrix-list {
@@ -1281,6 +1281,22 @@ button.matrix-cell:focus-visible {
   }
 }
 
+@media (max-width: 640px) {
+  .topbar nav a,
+  .toolbar select,
+  .toolbar input,
+  .matrix-cell,
+  .chip,
+  .tag,
+  .verify-badge {
+    min-height: 44px;
+  }
+
+  .matrix-cell {
+    min-width: 44px;
+  }
+}
+
 /* ===== Footer ===== */
 
 .foot {
@@ -1306,7 +1322,7 @@ button.matrix-cell:focus-visible {
 .muted { color: var(--ink-mute); }
 .callout {
   padding: 14px 16px; border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, rgba(217,119,87,0.08), rgba(181,145,90,0.06));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 8%, transparent), color-mix(in srgb, var(--c-gold) 6%, transparent));
   font-size: 13.5px; color: var(--ink-2);
 }
 .divider { height: 1px; background: var(--hairline); margin: 18px 0; }
