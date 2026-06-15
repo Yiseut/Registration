@@ -35,8 +35,8 @@
     { offset: 1, color: bottomColor },
   ]);
   const TRACK_ACCENTS = {
-    ha: '#737697',
-    botulinum: '#2b5a6c',
+    ha: '#2b5a6c',
+    botulinum: '#737697',
     collagen: '#44493d',
     plla: '#a4abd9',
     pcl: '#e5d4c8',
@@ -45,8 +45,8 @@
     ebd: '#8898a0',
   };
   const TRACK_ACCENT_DEEP = {
-    ha: '#737697',
-    botulinum: '#2b5a6c',
+    ha: '#2b5a6c',
+    botulinum: '#737697',
     collagen: '#44493d',
     plla: '#737697',
     pcl: '#786868',

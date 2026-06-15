@@ -9,14 +9,14 @@
     manifest.tracks.map((track) => loadJSON(`assets/data/tracks/${track.key}.json`))
   );
   const SEGMENTS = [
-    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#737697', soft: '#e5d4c8', recentColor: '#f2e3c6', deep: '#737697', href: 'tracks/ha.html' },
-    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#2b5a6c', soft: '#a4abd9', recentColor: '#f2e3c6', deep: '#2b5a6c', href: 'tracks/botulinum.html' },
-    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#44493d', soft: '#90a090', recentColor: '#e5d4c8', deep: '#44493d', href: 'tracks/collagen.html' },
-    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#a4abd9', soft: '#e5d4c8', recentColor: '#44493d', deep: '#737697', href: 'tracks/plla.html' },
-    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#e5d4c8', soft: '#f2e3c6', recentColor: '#2b5a6c', deep: '#786868', href: 'tracks/pcl.html' },
-    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#90a090', soft: '#f2e3c6', recentColor: '#737697', deep: '#44493d', href: 'tracks/caha.html' },
-    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#c09090', soft: '#f2e3c6', recentColor: '#737697', deep: '#9d7b7b', href: 'tracks/niche_materials.html' },
-    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#8898a0', soft: '#ded8d8', recentColor: '#2b5a6c', deep: '#2b5a6c', href: 'tracks/ebd.html' },
+    { code: 'ha', name: '透明质酸钠', fullName: '透明质酸钠', color: '#2b5a6c', soft: '#a4abd9', deep: '#2b5a6c', href: 'tracks/ha.html' },
+    { code: 'botulinum', name: '肉毒毒素', fullName: '肉毒毒素', color: '#737697', soft: '#a4abd9', deep: '#737697', href: 'tracks/botulinum.html' },
+    { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#44493d', soft: '#90a090', deep: '#44493d', href: 'tracks/collagen.html' },
+    { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#a4abd9', soft: '#e5d4c8', deep: '#737697', href: 'tracks/plla.html' },
+    { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#e5d4c8', soft: '#f2e3c6', deep: '#786868', href: 'tracks/pcl.html' },
+    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#90a090', soft: '#f2e3c6', deep: '#44493d', href: 'tracks/caha.html' },
+    { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#c09090', soft: '#f2e3c6', deep: '#9d7b7b', href: 'tracks/niche_materials.html' },
+    { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#8898a0', soft: '#ded8d8', deep: '#2b5a6c', href: 'tracks/ebd.html' },
   ];
   const SEGMENT_BY_CODE = Object.fromEntries(SEGMENTS.map((segment) => [segment.code, segment]));
   const MATERIAL_SEGMENTS = SEGMENTS.filter((segment) => segment.code !== 'ebd');
@@ -30,8 +30,8 @@
   const allRecords = legacyData.records || [];
   const records = allRecords.filter(includeInLandscape);
   const HEAT_THEMES = {
-    coral: { base: '#737697', hue: 236, saturation: 22, lightHigh: 96, lightLow: 66, fg: '#786868' },
-    ocean: { base: '#2b5a6c', hue: 197, saturation: 18, lightHigh: 96, lightLow: 66, fg: '#786868' },
+    coral: { base: '#2b5a6c', hue: 197, saturation: 18, lightHigh: 96, lightLow: 66, fg: '#786868' },
+    ocean: { base: '#737697', hue: 236, saturation: 22, lightHigh: 96, lightLow: 66, fg: '#786868' },
     sage: { base: '#44493d', hue: 84, saturation: 14, lightHigh: 96, lightLow: 66, fg: '#786868' },
     plum: { base: '#a4abd9', hue: 232, saturation: 18, lightHigh: 96, lightLow: 64, fg: '#786868' },
   };
@@ -550,6 +550,7 @@
       stack: 'approval',
       barMaxWidth: 28,
       emphasis: { focus: 'series' },
+      itemStyle: { color: segment.color },
       data: segment.data.map((value, periodIndex) => ({
         value,
         itemStyle: crystalBarStyle(segment.color, topSeriesIdx[periodIndex] === seriesIndex ? [6, 6, 0, 0] : 0),
@@ -557,6 +558,7 @@
     }));
 
     const chart = makeChart(document.getElementById('chart-trend'), {
+      color: segmentSeries.map((segment) => segment.color),
       legend: { bottom: 0, type: 'scroll' },
       grid: { left: 36, right: 24, top: 30, bottom: 50, containLabel: true },
       tooltip: {
@@ -687,7 +689,7 @@
     holder.innerHTML = `
       <div class="activity-chart">
         ${rows.map((row) => `
-          <button class="activity-row" type="button" data-activity-segment="${escape(row.code)}" style="--activity:${escape(row.color)};--activity-soft:${escape(row.soft || row.color)};--activity-recent:${escape(row.recentColor || '#f2e3c6')}">
+          <button class="activity-row" type="button" data-activity-segment="${escape(row.code)}" style="--activity:${escape(row.color)};--activity-soft:${escape(row.soft || row.color)}">
             <span class="activity-label">${escape(row.fullName || row.name)}</span>
             <span class="activity-bars" aria-label="累计记录 ${row.count}，近两年新增 ${row.recent}">
               <span class="activity-line activity-line-merged">
@@ -700,8 +702,8 @@
         `).join('')}
       </div>
       <div class="matrix-legend">
-        <span><i style="background:linear-gradient(90deg,#737697,#2b5a6c,#44493d,#a4abd9,#e5d4c8,#90a090,#c09090)"></i>累计记录</span>
-        <span><i style="background:linear-gradient(90deg,#f2e3c6,#737697)"></i>近两年新增</span>
+        <span><i style="background:#2b5a6c"></i>累计记录</span>
+        <span><i style="background:#737697"></i>近两年新增</span>
       </div>
     `;
     holder.querySelectorAll('[data-activity-segment]').forEach((button) => {
@@ -850,9 +852,10 @@
     if (!ex) return;
     const visibleExpirySeries = ex.series
       .filter((item) => item.data.some((value) => Number(value) > 0))
-      .map((item) => ({
+      .map((item, index) => ({
         ...item,
         label: SEGMENT_BY_CODE[item.key]?.fullName || displayUiLabel(item.name),
+        color: SEGMENT_BY_CODE[item.key]?.color || SERIES_COLORS[index % SERIES_COLORS.length] || '#737697',
       }));
     const topSeriesIdx = ex.quarters.map((_, qi) => {
       for (let i = visibleExpirySeries.length - 1; i >= 0; i -= 1) {
@@ -861,12 +864,13 @@
       return -1;
     });
     const series = visibleExpirySeries.map((s, i) => {
-      const color = SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#737697';
+      const color = s.color || SERIES_COLORS[i % SERIES_COLORS.length] || SEGMENTS[i % SEGMENTS.length]?.color || '#737697';
       return {
         name: s.label,
         type: 'bar',
         stack: 'expiry',
         barMaxWidth: 28,
+        itemStyle: { color },
         data: s.data.map((v, qi) => ({
           value: v,
           itemStyle: crystalBarStyle(color, topSeriesIdx[qi] === i ? [6, 6, 0, 0] : 0),
@@ -875,6 +879,7 @@
       };
     });
     const chart = makeChart(document.getElementById('chart-expiry'), {
+      color: visibleExpirySeries.map((seriesItem) => seriesItem.color),
       legend: { bottom: 0, type: 'scroll' },
       grid: { left: 36, right: 24, top: 30, bottom: 50, containLabel: true },
       tooltip: {
@@ -887,7 +892,7 @@
           const quarter = escape(quarterRaw);
           const lines = active.map((item) => {
             const matched = visibleExpirySeries.find((row) => row.label === item.seriesName);
-            const color = SERIES_COLORS[visibleExpirySeries.indexOf(matched) % SERIES_COLORS.length] || '#737697';
+            const color = matched?.color || '#737697';
             const details = expiryRecordsForQuarter(quarterRaw, matched)
               .map((record) => {
                 const company = manufacturerDisplayName(record) || record.company || record.registrant || '未标注厂家';
@@ -950,7 +955,7 @@
     if (!quarterly.labels.length && (!ev || !ev.years?.length)) return;
     const labels = quarterly.labels.length ? quarterly.labels : ev.years;
     const sourceSeries = quarterly.series.length ? quarterly.series : ev.series;
-    const originColors = ['#737697', '#2b5a6c', '#e5d4c8'];
+    const originColors = ['#2b5a6c', '#c09090', '#e5d4c8'];
     const series = sourceSeries
       .filter((s) => s.data.some((v) => v > 0))
       .map((s, index) => {
@@ -987,6 +992,7 @@
         };
       });
     makeChart(document.getElementById('chart-origin'), {
+      color: originColors,
       legend: { bottom: 0 },
       grid: { left: 32, right: 18, top: 30, bottom: 48, containLabel: true },
       tooltip: { trigger: 'axis' },

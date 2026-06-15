@@ -18,8 +18,8 @@ OUT_DIR = ROOT / "docs" / "assets" / "data"
 TRACK_DIR = OUT_DIR / "tracks"
 
 TRACK_META = [
-    {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#737697"},
-    {"key": "botulinum",  "name": "肉毒毒素",            "tagline": "", "accent": "#2b5a6c"},
+    {"key": "ha",         "name": "透明质酸钠",           "tagline": "", "accent": "#2b5a6c"},
+    {"key": "botulinum",  "name": "肉毒毒素",            "tagline": "", "accent": "#737697"},
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#44493d"},
     {"key": "plla",       "name": "PLA",                "tagline": "", "accent": "#a4abd9"},
     {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#e5d4c8"},

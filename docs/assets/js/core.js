@@ -18,8 +18,8 @@ const palette = {
 
 // Ordered palette used for series colors
 const SERIES_COLORS = [
-  '#737697', '#2b5a6c', '#44493d', '#a4abd9',
-  '#e5d4c8', '#90a090', '#f2e3c6', '#c09090',
+  '#2b5a6c', '#c09090', '#44493d', '#737697',
+  '#e5d4c8', '#90a090', '#a4abd9', '#f2e3c6',
   '#8898a0', '#9d7b7b', '#786868', '#b3b3b3',
 ];
 

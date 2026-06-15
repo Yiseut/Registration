@@ -958,11 +958,11 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 .tooltip-coral {
-  --tip-dot: #737697;
+  --tip-dot: #2b5a6c;
 }
 
 .tooltip-ocean {
-  --tip-dot: #2b5a6c;
+  --tip-dot: #737697;
 }
 
 .tooltip-sage {
@@ -1185,9 +1185,9 @@ button.manufacturer-heat-cell:focus-visible {
   color: #786868;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.10) 42%, rgba(120, 104, 104, 0.08)),
-    linear-gradient(90deg, color-mix(in srgb, var(--activity-recent, #f2e3c6) 58%, #f8f4f4), var(--activity-recent, #f2e3c6));
+    linear-gradient(90deg, #a4abd9, #737697);
   box-shadow:
-    0 7px 15px color-mix(in srgb, var(--activity-recent, #737697) 20%, transparent),
+    0 7px 15px rgba(115, 118, 151, 0.18),
     0 0 0 1px rgba(248, 244, 244, 0.72),
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
     inset 0 -1px 0 rgba(120, 104, 104, 0.12);
