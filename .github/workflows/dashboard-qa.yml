@@ -1,0 +1,50 @@
+name: Dashboard QA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dashboard test dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Rebuild dashboard data
+        run: python scripts/build_data.py
+
+      - name: Start static dashboard server
+        run: |
+          python -m http.server 8780 --bind 127.0.0.1 --directory docs > /tmp/registration-dashboard.log 2>&1 &
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:8780/index.html > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/registration-dashboard.log
+          exit 1
+
+      - name: Run dashboard smoke test
+        run: npm run test:dashboard -- http://127.0.0.1:8780/

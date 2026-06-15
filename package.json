@@ -1,0 +1,11 @@
+{
+  "name": "registration-landscape-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:dashboard": "node scripts/dashboard_smoke_test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.60.0"
+  }
+}

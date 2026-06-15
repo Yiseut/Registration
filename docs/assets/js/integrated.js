@@ -24,13 +24,14 @@
   const NICHE_MATERIAL_TRACKS = new Set(['raw_pmma', 'raw_agarose', 'raw_lipolysis_injection', 'raw_ecm', 'raw_silk', 'silk_protein']);
   const SUBMENTAL_LIPOLYSIS_INDICATION = '颏下脂肪堆积（双下巴）';
   const JAW_CHIN_CONTOUR_FILLING_INDICATION = '下颌及颏部轮廓改善（填充）';
-  const legacyData = window.REGISTRATION_OVERVIEW_DATA || { records: [], pipelineSignals: [] };
   const cloudDetailRecords = cloudTrackPayloads
     .flatMap((payload) => payload.records || [])
     .map(normalizeDashboardRecord)
     .filter((record) => record.certificateNo);
-  const allRecords = cloudDetailRecords.length ? cloudDetailRecords : (legacyData.records || []);
-  const records = allRecords.filter(includeInLandscape);
+  const records = cloudDetailRecords.filter(includeInLandscape);
+  if (!records.length) {
+    throw new Error('新版仪表盘明细数据为空，请检查 assets/data/tracks/*.json 生成结果。');
+  }
   const HEAT_THEMES = {
     coral: { base: '#58bfd7', hue: 193, saturation: 42, lightHigh: 96, lightLow: 69, fg: '#786868' },
     ocean: { base: '#737ed0', hue: 233, saturation: 38, lightHigh: 96, lightLow: 69, fg: '#786868' },
@@ -45,7 +46,9 @@
     classKey: 'all',
     origin: 'all',
     query: '',
+    mapMetric: 'companies',
   };
+  applyUrlState();
 
   const chartInstances = new Set();
   window.addEventListener('resize', () => {
@@ -58,6 +61,7 @@
   renderKpis();
   renderChinaEnterpriseMap(chinaMapData);
   renderSegments();
+  syncTrendControls();
   renderTrend();
   renderInjectableStructure();
   renderActivityRows();
@@ -68,6 +72,7 @@
   renderOriginEvolution(cloudData.origin_evolution);
   initRecordFilters();
   renderRecordsTable();
+  initMobileCollapses();
   watchKpis();
 
   document.querySelectorAll('[data-trend-grain]').forEach((button) => {
@@ -77,6 +82,7 @@
         item.classList.toggle('active', item === button);
       });
       renderTrend();
+      updateUrlState();
     });
   });
 
@@ -151,8 +157,11 @@
   }
 
   function renderMeta() {
-    setText('meta-generated', (cloudData.generated_at || '').slice(0, 10) || '—');
+    const generated = formatGeneratedAt(cloudData.generated_at);
+    setText('meta-generated', generated.date);
     setText('meta-records', records.length);
+    setText('method-updated', generated.datetime);
+    setText('method-main-records', records.length);
   }
 
   function renderKpis() {
@@ -211,7 +220,7 @@
       attribution: '&copy; 高德地图',
     }).addTo(map);
 
-    const activeMetricDefault = 'companies';
+    const activeMetricDefault = state.mapMetric === 'registrations' ? 'registrations' : 'companies';
     const maxByMetric = {
       companies: Math.max(...cities.map((city) => cityMetricValue(city, 'companies')), 1),
       registrations: Math.max(...cities.map((city) => cityMetricValue(city, 'registrations')), 1),
@@ -333,6 +342,7 @@
 
     function updateMapMetric(metric) {
       activeMetric = metric === 'registrations' ? 'registrations' : 'companies';
+      state.mapMetric = activeMetric;
       document.querySelectorAll('[data-map-metric]').forEach((button) => {
         button.classList.toggle('active', button.dataset.mapMetric === activeMetric);
       });
@@ -346,6 +356,7 @@
         cityMarker.hitMarker.setTooltipContent(cityTooltipText(city, activeMetric));
       });
       renderRank(activeMetric);
+      updateUrlState();
     }
 
     document.querySelectorAll('[data-map-metric]').forEach((button) => {
@@ -720,6 +731,7 @@
         state.segment = button.dataset.activitySegment || 'all';
         syncFilters();
         renderRecordsTable();
+        updateUrlState();
         document.getElementById('table-records')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
@@ -1091,6 +1103,11 @@
       ['hkmt', '港澳台'],
       ['unknown', '未标注'],
     ]);
+    ensureSelectValue('filter-segment', 'segment');
+    ensureSelectValue('filter-company', 'company');
+    ensureSelectValue('filter-class', 'classKey');
+    ensureSelectValue('filter-origin', 'origin');
+    syncFilters();
 
     [
       ['filter-segment', 'segment'],
@@ -1103,11 +1120,13 @@
       node.addEventListener('change', () => {
         state[key] = node.value || 'all';
         renderRecordsTable();
+        updateUrlState();
       });
     });
     document.getElementById('filter-query')?.addEventListener('input', (event) => {
       state.query = event.target.value || '';
       renderRecordsTable();
+      updateUrlState();
     });
     document.getElementById('reset-filters')?.addEventListener('click', () => {
       state.segment = 'all';
@@ -1117,6 +1136,7 @@
       state.query = '';
       syncFilters();
       renderRecordsTable();
+      updateUrlState();
     });
   }
 
@@ -1588,10 +1608,23 @@
     if (query) query.value = state.query;
   }
 
+  function syncTrendControls() {
+    document.querySelectorAll('[data-trend-grain]').forEach((button) => {
+      button.classList.toggle('active', button.dataset.trendGrain === state.trendGrain);
+    });
+  }
+
   function fillSelect(id, pairs) {
     const node = document.getElementById(id);
     if (!node) return;
     node.innerHTML = pairs.map(([value, label]) => `<option value="${escape(value)}">${escape(label)}</option>`).join('');
+  }
+
+  function ensureSelectValue(id, stateKey) {
+    const node = document.getElementById(id);
+    if (!node) return;
+    const values = new Set(Array.from(node.options).map((option) => option.value));
+    if (!values.has(state[stateKey])) state[stateKey] = 'all';
   }
 
   function setSelectValue(id, value) {
@@ -1610,6 +1643,103 @@
   function setText(id, value) {
     const node = document.getElementById(id);
     if (node) node.textContent = value;
+  }
+
+  function applyUrlState() {
+    const params = new URLSearchParams(window.location.search);
+    const segment = params.get('segment');
+    const company = params.get('company');
+    const classKey = params.get('class');
+    const origin = params.get('origin');
+    const grain = params.get('grain');
+    const mapMetric = params.get('map');
+    if (segment) state.segment = segment;
+    if (company) state.company = company;
+    if (classKey) state.classKey = classKey;
+    if (origin) state.origin = origin;
+    if (grain === 'year' || grain === 'month') state.trendGrain = grain;
+    if (mapMetric === 'registrations' || mapMetric === 'companies') state.mapMetric = mapMetric;
+    state.query = params.get('q') || '';
+  }
+
+  function updateUrlState() {
+    if (!window.history?.replaceState) return;
+    const url = new URL(window.location.href);
+    setUrlParam(url, 'segment', state.segment, 'all');
+    setUrlParam(url, 'company', state.company, 'all');
+    setUrlParam(url, 'class', state.classKey, 'all');
+    setUrlParam(url, 'origin', state.origin, 'all');
+    setUrlParam(url, 'q', state.query, '');
+    setUrlParam(url, 'grain', state.trendGrain, 'month');
+    setUrlParam(url, 'map', state.mapMetric, 'companies');
+    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+  }
+
+  function setUrlParam(url, key, value, defaultValue) {
+    const normalized = String(value || defaultValue || '').trim();
+    if (!normalized || normalized === defaultValue) {
+      url.searchParams.delete(key);
+      return;
+    }
+    url.searchParams.set(key, normalized);
+  }
+
+  function initMobileCollapses() {
+    const media = window.matchMedia('(max-width: 760px)');
+    const cards = Array.from(document.querySelectorAll('[data-mobile-collapse]'));
+    cards.forEach((card) => {
+      const title = card.querySelector('.card-title');
+      if (!title || title.querySelector('.mobile-collapse-toggle')) return;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'mobile-collapse-toggle';
+      button.addEventListener('click', () => {
+        card.dataset.mobileUserToggled = 'true';
+        card.classList.toggle('is-mobile-collapsed');
+        syncMobileCollapseButton(card);
+      });
+      title.appendChild(button);
+    });
+
+    const applyDefaultState = () => {
+      cards.forEach((card) => {
+        if (media.matches && card.dataset.mobileUserToggled !== 'true') {
+          card.classList.add('is-mobile-collapsed');
+        } else if (!media.matches) {
+          card.classList.remove('is-mobile-collapsed');
+          delete card.dataset.mobileUserToggled;
+        }
+        syncMobileCollapseButton(card);
+      });
+    };
+
+    applyDefaultState();
+    if (media.addEventListener) {
+      media.addEventListener('change', applyDefaultState);
+    } else {
+      media.addListener(applyDefaultState);
+    }
+  }
+
+  function syncMobileCollapseButton(card) {
+    const button = card.querySelector('.mobile-collapse-toggle');
+    if (!button) return;
+    const collapsed = card.classList.contains('is-mobile-collapsed');
+    button.textContent = collapsed ? '+' : '-';
+    button.setAttribute('aria-expanded', String(!collapsed));
+    button.setAttribute('aria-label', collapsed ? '展开内容' : '收起内容');
+    button.setAttribute('title', collapsed ? '展开内容' : '收起内容');
+  }
+
+  function formatGeneratedAt(value) {
+    const raw = String(value || '').replace('T', ' ').replace(/\//g, '-').trim();
+    if (!raw) return { date: '—', datetime: '—' };
+    const date = raw.slice(0, 10);
+    const time = raw.slice(11, 16);
+    return {
+      date,
+      datetime: time ? `${date} ${time}` : date,
+    };
   }
 
   function normalizeDashboardRecord(record) {
