@@ -86,6 +86,36 @@ async function main() {
   assert(await filteredPage.locator('.drawer.open').count() === 1, 'Record drawer did not open from filtered table');
   await filteredPage.close();
 
+  const haPositionUrl = `tracks/ha.html?shape=${encodeURIComponent('交联填充类')}&position=${encodeURIComponent('韩国进口')}&lidocaine=candidate`;
+  const haPositionPage = await openCheckedPage(context, haPositionUrl);
+  const haPositionState = await haPositionPage.evaluate(() => ({
+    positionCards: Array.from(document.querySelectorAll('.ha-position-card b')).map((node) => Number((node.textContent || '').replace(/\D/g, ''))),
+    note: document.querySelector('#ha-position-note')?.textContent || '',
+    regionCharts: document.querySelectorAll('#chart-ha-region-mix canvas, #chart-ha-lidocaine-breakdown canvas').length,
+    rows: document.querySelectorAll('#table-records tbody tr').length,
+    count: document.querySelector('#records-count')?.textContent?.trim() || '',
+    shape: document.querySelector('#filter-ha-shape')?.value || '',
+    position: document.querySelector('#filter-ha-position')?.value || '',
+    lidocaine: document.querySelector('#filter-lidocaine')?.value || '',
+    koreanTags: Array.from(document.querySelectorAll('#table-records tbody .ha-position-tag')).map((node) => node.textContent?.trim() || ''),
+    lidocaineTags: Array.from(document.querySelectorAll('#table-records tbody .lidocaine-tag')).map((node) => node.textContent?.trim() || ''),
+    urlPosition: new URL(location.href).searchParams.get('position') || '',
+  }));
+  assert(haPositionState.positionCards[0] === 91, 'HA crosslinked filler card should use the 91-record scope', String(haPositionState.positionCards[0]));
+  assert(haPositionState.positionCards[2] === 14, 'HA strict lidocaine card should show 14 records', String(haPositionState.positionCards[2]));
+  assert(haPositionState.positionCards[3] === 24, 'HA candidate lidocaine card should show 24 records', String(haPositionState.positionCards[3]));
+  assert(haPositionState.note.includes('不代表销量'), 'HA positioning note should include non-sales-share wording');
+  assert(haPositionState.regionCharts >= 2, 'HA positioning charts did not render');
+  assert(haPositionState.rows === 7, 'HA Korean lidocaine candidate filter should show seven rows', String(haPositionState.rows));
+  assert(haPositionState.count === '7', 'HA filtered record count label is wrong', haPositionState.count);
+  assert(haPositionState.shape === '交联填充类', 'HA shape filter was not restored', haPositionState.shape);
+  assert(haPositionState.position === '韩国进口', 'HA position filter was not restored', haPositionState.position);
+  assert(haPositionState.lidocaine === 'candidate', 'HA lidocaine filter was not restored', haPositionState.lidocaine);
+  assert(haPositionState.urlPosition === '韩国进口', 'HA filter state should remain shareable in the URL', haPositionState.urlPosition);
+  assert(haPositionState.koreanTags.length === 7 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
+  assert(haPositionState.lidocaineTags.length === 7, 'HA filtered rows should all carry lidocaine candidate tags', String(haPositionState.lidocaineTags.length));
+  await haPositionPage.close();
+
   const mobilePage = await openCheckedPage(context, 'index.html', { width: 390, height: 900 });
   const mobileState = await mobilePage.evaluate(() => ({
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,

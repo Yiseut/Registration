@@ -121,6 +121,7 @@
   // Fusion modules: Claude layout, Codex analytical content.
   renderProductShapeList('chart-product-forms', data.records);
   renderMarketScopeCards(data.records);
+  renderHaPositioning(data.records);
 
   // Timeline
   renderTimeline(data.timeline);
@@ -594,8 +595,8 @@
         records: group.records,
       })),
       {
-        label: '优势差异',
-        title: '含利多卡因',
+        label: '线索口径',
+        title: '含麻候选',
         count: lidocaineRecords.length,
         records: lidocaineRecords,
         kind: 'advantage',
@@ -621,8 +622,282 @@
   }
 
   function hasLidocaineAdvantage(record) {
-    const tags = Array.isArray(record?.tags) ? record.tags.join(' ') : '';
-    return /含利多卡因/.test(`${tags} ${record?.material_form || ''} ${record?.product_name || ''}`);
+    return haLidocaineSignal(record).candidate;
+  }
+
+  function haCrosslinkedFillerRecords(source) {
+    if (!isHaTrack) return [];
+    return source.filter((record) => record.main_landscape && productShape(record) === '交联填充类');
+  }
+
+  function haRecordText(record) {
+    return [
+      record?.company,
+      record?.registrant,
+      record?.official_registrant,
+      record?.manufacturer_group,
+      record?.brand,
+      record?.aliases,
+      record?.product_name,
+      record?.official_product_name,
+      Array.isArray(record?.tags) ? record.tags.join(' ') : record?.tags,
+      Array.isArray(record?.product_tags) ? record.product_tags.join(' ') : record?.product_tags,
+    ].filter(Boolean).join(' ');
+  }
+
+  function haPositionOrder() {
+    return ['国产', '欧美进口', '韩国进口', '港澳台', '其他进口'];
+  }
+
+  function haPositionLabel(record) {
+    const origin = record?.origin || '';
+    const text = haRecordText(record);
+    if (origin === '国产') return '国产';
+    if (origin === '港澳台') return '港澳台';
+    if (/(韩国|Korea|Korean|LG Chem|CHA Meditech|Forest Hills|Dong Bang|ACROSS|GENOSS|JETEMA|Humedix|CG Bio|YooYoung|SCL|BNC|Cutegel|HyaFilia|Dermalax|MONALISA|A-Viearchee|东方医疗|东邦医疗|吉诺斯|汇美迪斯|细基生物|柳英|捷特玛|爱思尔|亚可罗思)/i.test(text)) {
+      return '韩国进口';
+    }
+    if (/(AbbVie|Allergan|Juv[eé]derm|Galderma|Q-Med|Restylane|Merz|Belotero|Anteis|CROMA|Princess|Kylane|SYMATESE|PRECISE|Adoderm|Hyabell|VIVACY|Laboratoires|Fill-Med|S&V|GmbH|SA|SAS|瑞士|法国|德国|奥地利|美国|高德美|艾尔建|麦施美学|安缇思|克罗玛|基兰|希玛德|艾多德姆|菲欧曼|维瓦希)/i.test(text)) {
+      return '欧美进口';
+    }
+    return origin === '进口' ? '其他进口' : (origin || '未标注');
+  }
+
+  function haRegionLabel(record) {
+    const position = haPositionLabel(record);
+    if (position === '国产') return '中国大陆';
+    if (position === '韩国进口') return '韩国';
+    if (position === '欧美进口') return '欧美';
+    if (position === '港澳台') return '中国台湾/港澳台';
+    return position;
+  }
+
+  function haPositionColor(name) {
+    return {
+      国产: '#58bfd7',
+      欧美进口: '#737ed0',
+      韩国进口: '#e5b574',
+      港澳台: '#cf6a9d',
+      其他进口: '#9d7b7b',
+      未见含麻线索: '#d8cfca',
+      含麻候选: '#58bfd7',
+      已标注含麻: '#737ed0',
+      'Lidocaine 待复核': '#e5b574',
+    }[name] || accent;
+  }
+
+  function haLidocaineSignal(record) {
+    const text = [
+      record?.lidocaine_status,
+      record?.material_form,
+      record?.product_name,
+      record?.official_product_name,
+      Array.isArray(record?.tags) ? record.tags.join(' ') : record?.tags,
+      Array.isArray(record?.product_tags) ? record.product_tags.join(' ') : record?.product_tags,
+    ].filter(Boolean).join(' ');
+    const strict = record?.lidocaine_status === '含利多卡因' || /(含利多卡因|盐酸利多卡因)/.test(text);
+    const english = /lidocaine/i.test(text);
+    const medicineHint = /含药/.test(record?.material_form || '');
+    const candidate = strict || english || medicineHint;
+    const pending = candidate && !strict;
+    return {
+      strict,
+      english,
+      candidate,
+      pending,
+      label: strict ? '已标注含麻' : pending ? 'Lidocaine 待复核' : '未见含麻线索',
+    };
+  }
+
+  function renderHaPositioning(source) {
+    const cardsHolder = document.getElementById('ha-position-cards');
+    const regionEl = document.getElementById('chart-ha-region-mix');
+    const lidocaineEl = document.getElementById('chart-ha-lidocaine-breakdown');
+    const noteEl = document.getElementById('ha-position-note');
+    if (!cardsHolder && !regionEl && !lidocaineEl && !noteEl) return;
+
+    const crosslinked = haCrosslinkedFillerRecords(source);
+    const strict = crosslinked.filter((record) => haLidocaineSignal(record).strict);
+    const candidate = crosslinked.filter((record) => haLidocaineSignal(record).candidate);
+    const english = crosslinked.filter((record) => haLidocaineSignal(record).english);
+    const imported = crosslinked.filter((record) => record.origin !== '国产');
+    const byPosition = groupRecords(crosslinked, haPositionLabel);
+    const order = haPositionOrder().filter((name) => (byPosition.get(name) || []).length);
+
+    if (noteEl) {
+      noteEl.innerHTML = `
+        <b>口径说明</b>
+        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，属于注册证数量口径，不代表销量或真实销售份额。含麻严格口径采用字段/中文品名，候选口径进一步纳入英文 Lidocaine 或“含药”线索，待后续官方字段复核。</span>
+      `;
+    }
+
+    if (cardsHolder) {
+      const positionSummary = order
+        .filter((name) => name !== '国产')
+        .map((name) => `${name}${(byPosition.get(name) || []).length}`)
+        .join(' / ');
+      const cards = [
+        {
+          label: '核心赛道',
+          title: '交联填充剂',
+          count: crosslinked.length,
+          sub: `从 ${source.filter((record) => record.main_landscape).length} 张主格局证中筛出`,
+          records: crosslinked,
+        },
+        {
+          label: '进口细分',
+          title: '非国产交联填充剂',
+          count: imported.length,
+          sub: positionSummary,
+          records: imported,
+        },
+        {
+          label: '含麻严格口径',
+          title: '已标注含利多卡因',
+          count: strict.length,
+          sub: '字段或中文品名明确含利多卡因',
+          records: strict,
+        },
+        {
+          label: '含麻候选口径',
+          title: '含麻候选',
+          count: candidate.length,
+          sub: `其中英文品名含 Lidocaine ${english.length} 张`,
+          records: candidate,
+          kind: 'candidate',
+        },
+      ];
+      cardsHolder.innerHTML = cards.map((card, index) => `
+        <button class="ha-position-card${card.kind ? ` ${card.kind}` : ''}" type="button" data-index="${index}">
+          <span>${escape(card.label)}</span>
+          <strong>${escape(card.title)}</strong>
+          <b>${card.count}<em>张</em></b>
+          <small>${escape(card.sub)}</small>
+        </button>
+      `).join('');
+      cardsHolder.querySelectorAll('[data-index]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const card = cards[Number(button.dataset.index)];
+          if (card) showRecords({ title: card.title, meta: '透明质酸钠 · 交联填充剂定位', records: displayRecords(card.records) });
+        });
+      });
+    }
+
+    renderHaRegionMixChart(regionEl, order, byPosition);
+    renderHaLidocaineBreakdownChart(lidocaineEl, order, byPosition);
+  }
+
+  function renderHaRegionMixChart(el, order, byPosition) {
+    if (!el) return;
+    if (!order.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无交联填充剂定位数据</div>';
+      return;
+    }
+    const rows = order.map((name) => {
+      const records = byPosition.get(name) || [];
+      const candidateRecords = records.filter((record) => haLidocaineSignal(record).candidate);
+      const nonCandidateRecords = records.filter((record) => !haLidocaineSignal(record).candidate);
+      return { name, records, candidateRecords, nonCandidateRecords };
+    });
+    const inst = ChartFactory.make(el, {
+      legend: { bottom: 0, data: ['未见含麻线索', '含麻候选'] },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        formatter: (items) => {
+          const row = rows[items[0]?.dataIndex || 0];
+          return `<b>${escape(row.name)}</b><br/>交联填充剂: ${row.records.length} 张<br/>含麻候选: ${row.candidateRecords.length} 张<br/>未见含麻线索: ${row.nonCandidateRecords.length} 张`;
+        },
+      },
+      grid: { left: 60, right: 28, top: 24, bottom: 48 },
+      xAxis: { type: 'category', data: rows.map((row) => row.name) },
+      yAxis: { type: 'value', name: '证照数', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
+      series: [
+        {
+          name: '未见含麻线索',
+          type: 'bar',
+          stack: 'lidocaine',
+          barMaxWidth: chartBarMaxWidth,
+          itemStyle: { color: haPositionColor('未见含麻线索') },
+          data: rows.map((row) => row.nonCandidateRecords.length),
+        },
+        {
+          name: '含麻候选',
+          type: 'bar',
+          stack: 'lidocaine',
+          barMaxWidth: chartBarMaxWidth,
+          itemStyle: {
+            color: verticalGradient(shade(haPositionColor('含麻候选'), 24), haPositionColor('含麻候选')),
+            borderRadius: chartBarRadius,
+          },
+          label: { show: true, position: 'top', color: palette.ink2, fontSize: 11, fontWeight: 700, formatter: (p) => p.value || '' },
+          data: rows.map((row) => row.candidateRecords.length),
+        },
+      ],
+    });
+    inst.on('click', (p) => {
+      const row = rows[p.dataIndex];
+      const records = p.seriesName === '含麻候选' ? row.candidateRecords : row.nonCandidateRecords;
+      showRecords({ title: `${row.name} · ${p.seriesName}`, meta: '透明质酸钠 · 交联填充剂定位', records: displayRecords(records) });
+    });
+  }
+
+  function renderHaLidocaineBreakdownChart(el, order, byPosition) {
+    if (!el) return;
+    const rows = order
+      .map((name) => {
+        const records = byPosition.get(name) || [];
+        const strictRecords = records.filter((record) => haLidocaineSignal(record).strict);
+        const pendingRecords = records.filter((record) => haLidocaineSignal(record).pending);
+        return { name, strictRecords, pendingRecords };
+      })
+      .filter((row) => row.strictRecords.length || row.pendingRecords.length);
+    if (!rows.length) {
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无含利多卡因交联填充剂数据</div>';
+      return;
+    }
+    const inst = ChartFactory.make(el, {
+      legend: { bottom: 0, data: ['已标注含麻', 'Lidocaine 待复核'] },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        formatter: (items) => {
+          const row = rows[items[0]?.dataIndex || 0];
+          return `<b>${escape(row.name)}</b><br/>已标注含麻: ${row.strictRecords.length} 张<br/>Lidocaine 待复核: ${row.pendingRecords.length} 张<br/>候选合计: ${row.strictRecords.length + row.pendingRecords.length} 张`;
+        },
+      },
+      grid: { left: 60, right: 28, top: 24, bottom: 48 },
+      xAxis: { type: 'category', data: rows.map((row) => row.name) },
+      yAxis: { type: 'value', name: '证照数', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
+      series: [
+        {
+          name: '已标注含麻',
+          type: 'bar',
+          stack: 'lidocaine',
+          barMaxWidth: chartBarMaxWidth,
+          itemStyle: { color: verticalGradient(shade(haPositionColor('已标注含麻'), 18), haPositionColor('已标注含麻')) },
+          label: { show: true, position: 'inside', color: '#fffaf5', fontSize: 11, fontWeight: 700, formatter: (p) => p.value || '' },
+          data: rows.map((row) => row.strictRecords.length),
+        },
+        {
+          name: 'Lidocaine 待复核',
+          type: 'bar',
+          stack: 'lidocaine',
+          barMaxWidth: chartBarMaxWidth,
+          itemStyle: {
+            color: verticalGradient(shade(haPositionColor('Lidocaine 待复核'), 22), haPositionColor('Lidocaine 待复核')),
+            borderRadius: chartBarRadius,
+          },
+          label: { show: true, position: 'top', color: palette.ink2, fontSize: 11, fontWeight: 700, formatter: (p) => p.value || '' },
+          data: rows.map((row) => row.pendingRecords.length),
+        },
+      ],
+    });
+    inst.on('click', (p) => {
+      const row = rows[p.dataIndex];
+      const records = p.seriesName === 'Lidocaine 待复核' ? row.pendingRecords : row.strictRecords;
+      showRecords({ title: `${row.name} · ${p.seriesName}`, meta: '透明质酸钠 · 含利多卡因拆分', records: displayRecords(records) });
+    });
   }
 
   function matrixAxisLabel(label, count) {
@@ -1267,20 +1542,33 @@
   function renderRecords(records) {
     const tbody = document.querySelector('#table-records tbody');
     const filterOrigin = document.getElementById('filter-origin');
+    const filterHaShape = document.getElementById('filter-ha-shape');
+    const filterHaPosition = document.getElementById('filter-ha-position');
+    const filterLidocaine = document.getElementById('filter-lidocaine');
     const filterVerified = document.getElementById('filter-verified');
     const search = document.getElementById('search');
     if (!tbody) return;
+    restoreRecordFiltersFromUrl();
 
     function paint() {
       const fo = filterOrigin?.value || '';
+      const fshape = filterHaShape?.value || '';
+      const fposition = filterHaPosition?.value || '';
+      const flidocaine = filterLidocaine?.value || '';
       const fv = filterVerified?.value || '';
-      const fs = (search?.value || '').trim().toLowerCase();
+      const rawSearch = (search?.value || '').trim();
+      const fs = rawSearch.toLowerCase();
+      updateRecordFilterUrl({ fo, fshape, fposition, flidocaine, fv, search: rawSearch });
       const filtered = records.filter((r) => {
         if (!r.main_landscape) return false;
         if (fo && r.origin !== fo) return false;
+        if (isHaTrack && fshape && productShape(r) !== fshape) return false;
+        if (isHaTrack && fposition && haPositionLabel(r) !== fposition) return false;
+        if (isHaTrack && flidocaine && !matchesHaLidocaineFilter(r, flidocaine)) return false;
         if (fv === 'verified' && !r.verified) return false;
         if (fv === 'pending' && r.verified) return false;
         if (fs) {
+          const lidocaineSignal = haLidocaineSignal(r);
           const hay = [
             r.brand,
             r.product_name,
@@ -1297,6 +1585,10 @@
             r.indication_description,
             r.components,
             r.specification,
+            isHaTrack ? productShape(r) : '',
+            isHaTrack ? haPositionLabel(r) : '',
+            isHaTrack ? haRegionLabel(r) : '',
+            isHaTrack ? lidocaineSignal.label : '',
           ].join(' ').toLowerCase();
           if (!hay.includes(fs)) return false;
         }
@@ -1315,9 +1607,53 @@
       });
       if (filtered.length > 80) {
         const note = document.createElement('tr');
-        note.innerHTML = `<td colspan="7" class="muted" style="text-align:center">仅显示前 80 条,共 ${filtered.length} 条匹配</td>`;
+        note.innerHTML = `<td colspan="8" class="muted" style="text-align:center">仅显示前 80 条,共 ${filtered.length} 条匹配</td>`;
         tbody.appendChild(note);
       }
+    }
+
+    function restoreRecordFiltersFromUrl() {
+      const params = new URLSearchParams(location.search);
+      setControlValue(filterOrigin, params.get('origin'));
+      setControlValue(filterHaShape, params.get('shape'));
+      setControlValue(filterHaPosition, params.get('position'));
+      setControlValue(filterLidocaine, params.get('lidocaine'));
+      setControlValue(filterVerified, params.get('verified'));
+      if (search && params.has('q')) search.value = params.get('q') || '';
+    }
+
+    function setControlValue(control, value) {
+      if (!control || value === null) return;
+      const option = Array.from(control.options || []).find((item) => item.value === value);
+      if (option) control.value = value;
+    }
+
+    function updateRecordFilterUrl(values) {
+      const params = new URLSearchParams(location.search);
+      setParam(params, 'origin', values.fo);
+      setParam(params, 'shape', values.fshape);
+      setParam(params, 'position', values.fposition);
+      setParam(params, 'lidocaine', values.flidocaine);
+      setParam(params, 'verified', values.fv);
+      setParam(params, 'q', values.search);
+      const next = `${location.pathname}${params.toString() ? `?${params.toString()}` : ''}${location.hash}`;
+      if (next !== `${location.pathname}${location.search}${location.hash}`) {
+        history.replaceState(null, '', next);
+      }
+    }
+
+    function setParam(params, key, value) {
+      if (value) params.set(key, value);
+      else params.delete(key);
+    }
+
+    function matchesHaLidocaineFilter(record, filterValue) {
+      const signal = haLidocaineSignal(record);
+      if (filterValue === 'strict') return signal.strict;
+      if (filterValue === 'pending') return signal.pending;
+      if (filterValue === 'candidate') return signal.candidate;
+      if (filterValue === 'none') return !signal.candidate;
+      return true;
     }
 
     function renderDefaultRecordRow(r) {
@@ -1330,7 +1666,7 @@
           <td>
             <b>${escape(r.product_name || '—')}</b>
             <div class="muted" style="font-size:11.5px">${escape(materialLabel)}</div>
-            ${isHaTrack ? `<div class="table-tag-row"><span class="tag product-shape-tag">${escape(productShape(r))}</span></div>` : ''}
+            ${isHaTrack ? renderHaRecordTags(r) : ''}
           </td>
           <td>${escape(r.company)}</td>
           <td><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px">${escape(r.certificate_no || '—')}</span></td>
@@ -1339,6 +1675,20 @@
           <td>${escape(r.approval_date || '—')}</td>
           <td>${verificationBadge(r)}</td>
         </tr>
+      `;
+    }
+
+    function renderHaRecordTags(record) {
+      const signal = haLidocaineSignal(record);
+      const lidocaineTag = signal.candidate
+        ? `<span class="tag lidocaine-tag ${signal.strict ? 'strict' : 'pending'}">${escape(signal.label)}</span>`
+        : '';
+      return `
+        <div class="table-tag-row">
+          <span class="tag product-shape-tag">${escape(productShape(record))}</span>
+          <span class="tag ha-position-tag">${escape(haPositionLabel(record))}</span>
+          ${lidocaineTag}
+        </div>
       `;
     }
 
@@ -1376,9 +1726,12 @@
       `;
     }
 
-    [filterOrigin, filterVerified, search]
+    [filterOrigin, filterHaShape, filterHaPosition, filterLidocaine, filterVerified, search]
       .filter(Boolean)
-      .forEach((el) => el.addEventListener('input', paint));
+      .forEach((el) => {
+        el.addEventListener('input', paint);
+        el.addEventListener('change', paint);
+      });
     paint();
   }
 
@@ -1594,6 +1947,17 @@
   function displayRecords(records) {
     return records.map((record) => {
       const mapped = { ...record, primary_indication: formatIndications(record) };
+      if (isHaTrack) {
+        const signal = haLidocaineSignal(record);
+        mapped.material_family = displayUiLabel(record.material_family || '透明质酸钠');
+        mapped.material_form = productShape(record);
+        mapped.tags = [
+          productShape(record),
+          haPositionLabel(record),
+          haRegionLabel(record),
+          signal.candidate ? signal.label : '',
+        ].filter(Boolean);
+      }
       if (isCollagenTrack) {
         mapped.tags = [collagenSourceTag(record)];
         mapped.hide_origin_tag = true;
@@ -1660,6 +2024,17 @@
       const key = getKey(item);
       if (!key) return;
       groups.set(key, (groups.get(key) || 0) + 1);
+    });
+    return groups;
+  }
+
+  function groupRecords(items, getKey) {
+    const groups = new Map();
+    items.forEach((item) => {
+      const key = getKey(item);
+      if (!key) return;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
     });
     return groups;
   }

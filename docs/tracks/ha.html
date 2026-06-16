@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0" />
 <title>透明质酸钠 · Registration Insights</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="../assets/css/theme.css?v=20260615-categorical-pastel-1" />
+<link rel="stylesheet" href="../assets/css/theme.css?v=20260616-ha-position-1" />
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
@@ -71,6 +71,35 @@
   </section>
 
   <div class="section-head rise">
+    <h2>交联填充剂定位拆分</h2>
+    <p>在 91 张交联填充剂口径下，按国产、欧美进口、韩国进口、港澳台和含麻线索继续拆分。</p>
+  </div>
+  <section class="grid grid-12 ha-position-section">
+    <div class="card lift span-12 ha-position-note" id="ha-position-note"></div>
+    <div class="card lift span-5">
+      <div class="card-title">
+        <h3>交联填充剂定位总览</h3>
+        <span class="sub">注册证口径</span>
+      </div>
+      <div id="ha-position-cards" class="ha-position-cards"></div>
+    </div>
+    <div class="card lift span-7">
+      <div class="card-title">
+        <h3>地区定位 × 含麻候选</h3>
+        <span class="sub">点击柱体查看明细</span>
+      </div>
+      <div id="chart-ha-region-mix" class="chart chart-mid"></div>
+    </div>
+    <div class="card lift span-12">
+      <div class="card-title">
+        <h3>含利多卡因交联填充剂拆分</h3>
+        <span class="sub">严格字段与待复核候选分开显示</span>
+      </div>
+      <div id="chart-ha-lidocaine-breakdown" class="chart chart-mid"></div>
+    </div>
+  </section>
+
+  <div class="section-head rise">
     <h2>注册时间线</h2>
   </div>
   <section class="track-chart-stack">
@@ -118,12 +147,32 @@
       <h3>记录浏览器</h3>
       <span class="sub">命中 <span id="records-count">0</span> 条</span>
     </div>
-    <div class="cluster" style="margin-bottom:14px">
+    <div class="cluster track-records-toolbar" style="margin-bottom:14px">
       <select id="filter-origin" class="tag" style="padding:6px 12px">
         <option value="">全部来源</option>
         <option value="国产">国产</option>
         <option value="进口">进口</option>
         <option value="港澳台">港澳台</option>
+      </select>
+      <select id="filter-ha-shape" class="tag" style="padding:6px 12px">
+        <option value="">全部形态</option>
+        <option value="交联填充类">交联填充类</option>
+        <option value="非交联水光、肤质改善类">非交联/水光</option>
+      </select>
+      <select id="filter-ha-position" class="tag" style="padding:6px 12px">
+        <option value="">全部定位</option>
+        <option value="国产">国产</option>
+        <option value="欧美进口">欧美进口</option>
+        <option value="韩国进口">韩国进口</option>
+        <option value="港澳台">港澳台</option>
+        <option value="其他进口">其他进口</option>
+      </select>
+      <select id="filter-lidocaine" class="tag" style="padding:6px 12px">
+        <option value="">全部含麻状态</option>
+        <option value="strict">已标注含麻</option>
+        <option value="pending">Lidocaine 待复核</option>
+        <option value="candidate">含麻候选</option>
+        <option value="none">未见含麻线索</option>
       </select>
       <select id="filter-verified" class="tag" style="padding:6px 12px">
         <option value="">NMPA 核验状态</option>
@@ -160,6 +209,6 @@
 
 <script src="../assets/js/core.js?v=20260615-categorical-pastel-1"></script>
 <script>window.TRACK_KEY = 'ha';</script>
-<script src="../assets/js/track.js?v=20260615-categorical-pastel-1"></script>
+<script src="../assets/js/track.js?v=20260616-ha-position-1"></script>
 </body>
 </html>
