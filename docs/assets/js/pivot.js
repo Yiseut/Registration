@@ -487,8 +487,8 @@
       record.commercial_name,
       record.product_name,
       record.official_product_name,
-      Array.isArray(record.tags) ? record.tags.join(' ') : record.tags,
-      Array.isArray(record.product_tags) ? record.product_tags.join(' ') : record.product_tags,
+      record.specification,
+      record.components,
     ].filter(Boolean).join(' ');
     const hasLidocaine = record.lidocaine_status === '含利多卡因' || /(利多卡因|lidocaine)/i.test(titleText);
     return {

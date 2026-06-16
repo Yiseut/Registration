@@ -51,6 +51,7 @@ LIP_FILLING_SCOPE_TERMS = (
     "唇部组织容积",
     "容积缺损",
 )
+LIDOCAINE_RE = re.compile(r"(利多卡因|lidocaine)", re.I)
 
 CITY_COORDS = {
     "北京": {"province": "北京", "lat": 39.9042, "lng": 116.4074},
@@ -204,6 +205,25 @@ def parse_date(value: str) -> date | None:
 
 def safe_strip(value: str | None) -> str:
     return (value or "").strip()
+
+
+def official_lidocaine_text(row: dict) -> str:
+    fields = (
+        "brand",
+        "aliases",
+        "product_name",
+        "official_product_name",
+        "specification",
+        "components",
+    )
+    return " ".join(safe_strip(row.get(field)) for field in fields)
+
+
+def canonical_lidocaine_status(row: dict) -> str:
+    current = safe_strip(row.get("lidocaine_status"))
+    if current == "含利多卡因" or LIDOCAINE_RE.search(official_lidocaine_text(row)):
+        return "含利多卡因"
+    return current
 
 
 def compact_text(value: str | None) -> str:
@@ -456,7 +476,7 @@ def build_record_card(row: dict) -> dict:
         "scope_full": safe_strip(row.get("scope_full")),
         "specification": safe_strip(row.get("specification")),
         "components": safe_strip(row.get("components")),
-        "lidocaine_status": safe_strip(row.get("lidocaine_status")),
+        "lidocaine_status": canonical_lidocaine_status(row),
         "product_tags": safe_strip(row.get("product_tags")),
         "market_claim": safe_strip(row.get("market_claim")),
         "boundary_reason": safe_strip(row.get("boundary_reason")),

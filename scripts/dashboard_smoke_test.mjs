@@ -34,6 +34,24 @@ async function main() {
   const haData = await fetch(urlFor('assets/data/tracks/ha.json')).then((res) => res.json());
   const expectedRecords = Number(overview?.kpi?.main_records || 0);
   const volbella = (haData.records || []).find((record) => record.certificate_no === '国械注进20213130109');
+  const qMedLidocaineRecords = ['国械注进20213130059', '国械注进20253130284'].map((cert) => (
+    (haData.records || []).find((record) => record.certificate_no === cert)
+  ));
+  const officialComponentLidocaineRecords = [
+    '国械注进20213130059',
+    '国械注进20253130284',
+    '国械注准20243131967',
+    '国械注准20203130295',
+    '国械注准20233131478',
+    '国械注准20193130257',
+    '国械注准20203130569',
+    '国械注准20203130096',
+    '国械注进20193130565',
+    '国械注准20203130568',
+    '国械注准20163130861',
+  ].map((cert) => (
+    (haData.records || []).find((record) => record.certificate_no === cert)
+  ));
   const lipScopeSkinQualityAnomalies = (haData.records || []).filter((record) => {
     const scope = [record.official_scope, record.scope_full, record.indication_description].filter(Boolean).join(' ');
     return /唇红体|唇红缘|唇粘膜|唇黏膜|唇部不对称|唇部组织容积|容积缺损/.test(scope)
@@ -41,6 +59,13 @@ async function main() {
   });
   assert(volbella?.primary_indication === '唇部', 'VOLBELLA with Lidocaine should be classified as lip indication', volbella?.primary_indication || 'missing');
   assert(volbella?.approved_indications === '唇部', 'VOLBELLA approved indications should not include skin quality', volbella?.approved_indications || 'missing');
+  for (const record of qMedLidocaineRecords) {
+    assert(Boolean(record?.specification), 'Q-Med/Galderma records should keep official specification text', record?.certificate_no || 'missing');
+  }
+  for (const record of officialComponentLidocaineRecords) {
+    assert(record?.lidocaine_status === '含利多卡因', 'Official component lidocaine records should be classified as lidocaine', record?.certificate_no || 'missing');
+    assert(/利多卡因|lidocaine/i.test(record?.components || ''), 'Official component lidocaine records should keep component lidocaine text', record?.certificate_no || 'missing');
+  }
   assert(!lipScopeSkinQualityAnomalies.length, 'Lip-scope HA records should not be classified as skin quality', lipScopeSkinQualityAnomalies.map((record) => record.certificate_no).join(', '));
 
   const launchOptions = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
@@ -112,19 +137,19 @@ async function main() {
     urlPosition: new URL(location.href).searchParams.get('position') || '',
   }));
   assert(haPositionState.positionCards[0] === 91, 'HA crosslinked filler card should use the 91-record scope', String(haPositionState.positionCards[0]));
-  assert(haPositionState.positionCards[2] === 24, 'HA lidocaine card should show 24 records under the unified official-title scope', String(haPositionState.positionCards[2]));
-  assert(haPositionState.positionCards[3] === 67, 'HA non-lidocaine card should show the remaining 67 records', String(haPositionState.positionCards[3]));
+  assert(haPositionState.positionCards[2] === 37, 'HA lidocaine card should show 37 records under the official registration scope', String(haPositionState.positionCards[2]));
+  assert(haPositionState.positionCards[3] === 54, 'HA non-lidocaine card should show the remaining 54 records', String(haPositionState.positionCards[3]));
   assert(haPositionState.note.includes('不代表销量'), 'HA positioning note should include non-sales-share wording');
-  assert(haPositionState.note.includes('英文“Lidocaine”均计入'), 'HA positioning note should explain the unified Lidocaine scope');
+  assert(haPositionState.note.includes('型号规格和结构组成为准'), 'HA positioning note should explain the official registration component scope');
   assert(haPositionState.regionCharts >= 2, 'HA positioning charts did not render');
-  assert(haPositionState.rows === 8, 'HA Korean lidocaine filter should show eight rows after LG/LYV verification', String(haPositionState.rows));
-  assert(haPositionState.count === '8', 'HA filtered record count label is wrong', haPositionState.count);
+  assert(haPositionState.rows === 9, 'HA Korean lidocaine filter should show nine rows after official component verification', String(haPositionState.rows));
+  assert(haPositionState.count === '9', 'HA filtered record count label is wrong', haPositionState.count);
   assert(haPositionState.shape === '交联填充类', 'HA shape filter was not restored', haPositionState.shape);
   assert(haPositionState.position === '韩国进口', 'HA position filter was not restored', haPositionState.position);
   assert(haPositionState.lidocaine === 'yes', 'HA lidocaine filter was not restored', haPositionState.lidocaine);
   assert(haPositionState.urlPosition === '韩国进口', 'HA filter state should remain shareable in the URL', haPositionState.urlPosition);
-  assert(haPositionState.koreanTags.length === 8 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
-  assert(haPositionState.lidocaineTags.length === 8 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
+  assert(haPositionState.koreanTags.length === 9 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
+  assert(haPositionState.lidocaineTags.length === 9 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
   await haPositionPage.close();
 
   const pivotPage = await openCheckedPage(context, 'pivot.html');
@@ -144,7 +169,7 @@ async function main() {
   assert(pivotState.columnChips.includes('定位层级'), 'Pivot default column dimension should be positioning tier', pivotState.columnChips.join(', '));
   assert(pivotState.filters.includes('透明质酸钠') && pivotState.filters.includes('交联填充类'), 'Pivot default filters should target HA crosslinked fillers', pivotState.filters.join(', '));
   assert(pivotState.chartCanvases >= 1, 'Pivot chart did not render');
-  assert(pivotState.cellTitles.some((title) => title.includes('含利多卡因 × 韩国进口：8')), 'Pivot should show eight Korean lidocaine records after LG/LYV verification', pivotState.cellTitles.join(' | '));
+  assert(pivotState.cellTitles.some((title) => title.includes('含利多卡因 × 韩国进口：9')), 'Pivot should show nine Korean lidocaine records after official component verification', pivotState.cellTitles.join(' | '));
   assert(pivotState.overflowX <= 1, 'Pivot page has horizontal overflow', String(pivotState.overflowX));
 
   const lipPivotParams = new URLSearchParams({
@@ -159,10 +184,23 @@ async function main() {
     records: document.querySelector('#pivot-kpi-records')?.textContent?.trim() || '',
     cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
   }));
-  assert(lipPivotState.records === '24', 'Lip indication pivot should stay within HA lidocaine crosslinked records', lipPivotState.records);
+  assert(lipPivotState.records === '37', 'Lip indication pivot should stay within HA lidocaine crosslinked records', lipPivotState.records);
   assert(lipPivotState.cellTitles.some((title) => title.includes('美国 × 唇部：1')), 'VOLBELLA should appear under US x lip indication', lipPivotState.cellTitles.join(' | '));
   assert(!lipPivotState.cellTitles.some((title) => title.includes('美国 × 肤质改善')), 'US x skin quality should not contain VOLBELLA', lipPivotState.cellTitles.join(' | '));
   await lipPivotPage.close();
+
+  const qMedPivotParams = new URLSearchParams({
+    rows: 'country_region',
+    cols: 'lidocaine_signal',
+    f_track_name: '透明质酸钠',
+    f_product_shape: '交联填充类',
+  });
+  const qMedPivotPage = await openCheckedPage(context, `pivot.html?${qMedPivotParams.toString()}`);
+  const qMedPivotState = await qMedPivotPage.evaluate(() => ({
+    cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
+  }));
+  assert(qMedPivotState.cellTitles.some((title) => title.includes('瑞典/瑞士 × 含利多卡因：5')), 'Galderma/Q-Med lidocaine records should land under Sweden/Switzerland x lidocaine', qMedPivotState.cellTitles.join(' | '));
+  await qMedPivotPage.close();
 
   await pivotPage.locator('[data-field-id="country_region"]').dragTo(pivotPage.locator('[data-zone="columns"] .pivot-zone-drop'));
   await pivotPage.waitForTimeout(500);

@@ -691,8 +691,8 @@
       record?.commercial_name,
       record?.product_name,
       record?.official_product_name,
-      Array.isArray(record?.tags) ? record.tags.join(' ') : record?.tags,
-      Array.isArray(record?.product_tags) ? record.product_tags.join(' ') : record?.product_tags,
+      record?.specification,
+      record?.components,
     ].filter(Boolean).join(' ');
     const hasLidocaine = record?.lidocaine_status === '含利多卡因' || /(利多卡因|lidocaine)/i.test(titleText);
     return {
@@ -718,7 +718,7 @@
     if (noteEl) {
       noteEl.innerHTML = `
         <b>口径说明</b>
-        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，并吸收已核实的公开资料，属于注册证数量口径，不代表销量或真实销售份额；若仍出现其他进口，可作为优先复核队列。含利多卡因以官方注册证名称/产品名为准，中文“利多卡因”或英文“Lidocaine”均计入。</span>
+        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，并吸收已核实的公开资料，属于注册证数量口径，不代表销量或真实销售份额；若仍出现其他进口，可作为优先复核队列。含利多卡因以官方注册证名称、产品名、型号规格和结构组成为准，中文“利多卡因”或英文“Lidocaine”均计入。</span>
       `;
     }
 
@@ -746,7 +746,7 @@
           label: '利多卡因口径',
           title: '含利多卡因',
           count: lidocaineRecords.length,
-          sub: '中文利多卡因或英文 Lidocaine 均计入',
+          sub: '名称、规格或结构组成出现均计入',
           records: lidocaineRecords,
           kind: 'lidocaine',
         },
