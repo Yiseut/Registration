@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>自定义透视 · Registration Insights</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="assets/css/theme.css?v=20260616-pivot-1" />
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <span>Registration <strong>Insights</strong></span>
+  </div>
+  <nav>
+    <a href="index.html">总览</a>
+    <a href="tracks/ha.html">透明质酸钠</a>
+    <a href="tracks/botulinum.html">肉毒毒素</a>
+    <a href="tracks/collagen.html">胶原蛋白</a>
+    <a href="tracks/plla.html">PLA</a>
+    <a href="tracks/pcl.html">PCL</a>
+    <a href="tracks/caha.html">CaHA</a>
+    <a href="tracks/niche_materials.html">小众材料</a>
+    <a href="tracks/ebd.html">EBD 设备</a>
+    <a href="pivot.html" class="active">自定义透视</a>
+  </nav>
+</header>
+
+<main class="shell pivot-shell">
+  <section class="hero rise">
+    <span class="eyebrow">Analytical Workspace</span>
+    <h1>自定义透视</h1>
+    <div class="meta">
+      <a href="index.html">← 返回总览</a>
+      <span>注册证数量口径，不代表销量或商业份额</span>
+    </div>
+  </section>
+
+  <section class="methodology-strip pivot-methodology rise rise-1" aria-label="口径说明">
+    <div>
+      <span>默认视图</span>
+      <p>透明质酸钠 · 交联填充剂 · 含麻状态 × 地区定位。</p>
+    </div>
+    <div>
+      <span>当前结构</span>
+      <p>行维度、列维度、筛选维度独立组合，表格与图表同步计算。</p>
+    </div>
+    <div>
+      <span>含麻口径</span>
+      <p>严格字段与英文 Lidocaine/含药候选分开，待复核线索单独显示。</p>
+    </div>
+  </section>
+
+  <section class="pivot-workbench">
+    <aside class="card lift pivot-sidebar rise rise-1" aria-label="变量池">
+      <div class="card-title">
+        <h3>变量池</h3>
+        <span class="sub">拖动变量</span>
+      </div>
+      <div id="pivot-field-pool" class="pivot-field-pool"></div>
+    </aside>
+
+    <section class="pivot-main rise rise-2">
+      <div class="card lift pivot-builder">
+        <div class="pivot-builder-head">
+          <div>
+            <h2>透视配置</h2>
+          </div>
+          <div class="pivot-presets" aria-label="常用视图">
+            <button type="button" data-preset="ha-position">含麻 × 定位</button>
+            <button type="button" data-preset="ha-country">含麻 × 国家/地区</button>
+            <button type="button" data-preset="origin-track">来源 × 赛道</button>
+          </div>
+        </div>
+
+        <div class="pivot-control-grid">
+          <label>
+            <span>度量</span>
+            <select id="pivot-metric">
+              <option value="records">注册证数</option>
+              <option value="companies">注册人/集团数</option>
+              <option value="indications">适应证数</option>
+            </select>
+          </label>
+          <label>
+            <span>记录范围</span>
+            <select id="pivot-scope">
+              <option value="main">主格局记录</option>
+              <option value="all">全部记录</option>
+            </select>
+          </label>
+          <label class="pivot-search">
+            <span>搜索</span>
+            <input id="pivot-search" type="search" placeholder="产品 / 厂家 / 证号" />
+          </label>
+        </div>
+
+        <div class="pivot-zones">
+          <div class="pivot-zone" data-zone="rows">
+            <div class="pivot-zone-label">行</div>
+            <div class="pivot-zone-drop" id="pivot-rows"></div>
+          </div>
+          <div class="pivot-zone" data-zone="columns">
+            <div class="pivot-zone-label">列</div>
+            <div class="pivot-zone-drop" id="pivot-columns"></div>
+          </div>
+          <div class="pivot-zone pivot-filter-zone" data-zone="filters">
+            <div class="pivot-zone-label">筛选</div>
+            <div class="pivot-zone-drop" id="pivot-filters"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="grid grid-4 pivot-kpis" aria-label="透视指标">
+        <div class="card kpi lift">
+          <div class="label">当前记录</div>
+          <div class="value"><span id="pivot-kpi-records">0</span><span class="unit">张</span></div>
+        </div>
+        <div class="card kpi lift tone-ocean">
+          <div class="label">行组合</div>
+          <div class="value"><span id="pivot-kpi-rows">0</span><span class="unit">组</span></div>
+        </div>
+        <div class="card kpi lift tone-gold">
+          <div class="label">列组合</div>
+          <div class="value"><span id="pivot-kpi-cols">0</span><span class="unit">组</span></div>
+        </div>
+        <div class="card kpi lift tone-sage">
+          <div class="label">单元格</div>
+          <div class="value"><span id="pivot-kpi-cells">0</span><span class="unit">格</span></div>
+        </div>
+      </section>
+
+      <section class="card lift">
+        <div class="card-title">
+          <h3>透视图</h3>
+          <span class="sub" id="pivot-chart-subtitle">—</span>
+        </div>
+        <div id="pivot-chart" class="chart chart-mid"></div>
+      </section>
+
+      <section class="card lift pivot-table-card">
+        <div class="card-title">
+          <h3>透视表</h3>
+          <span class="sub">点击数值查看明细</span>
+        </div>
+        <div class="pivot-table-scroll">
+          <table class="table pivot-table" id="pivot-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <footer class="foot">
+    <div><a href="index.html">← 返回总览</a></div>
+    <div>透视页读取当前发布 JSON，随数据重建自动更新。</div>
+  </footer>
+</main>
+
+<script src="assets/js/core.js?v=20260615-categorical-pastel-1"></script>
+<script src="assets/js/pivot.js?v=20260616-pivot-1"></script>
+</body>
+</html>

@@ -26,6 +26,7 @@
 - GitHub Actions 在提交 `02888f3` 上已通过。
 - HA 子页新增交联填充剂定位拆分：在 106 张主格局证中筛出 91 张交联填充剂，并按 `国产 / 欧美进口 / 韩国进口 / 港澳台 / 其他进口` 展示。
 - HA 含麻口径拆成两层：严格字段/中文品名口径 14 张；纳入英文 `Lidocaine` 或“含药”线索后的候选口径 24 张，其中英文品名含 `Lidocaine` 16 张。
+- 新增 `docs/pivot.html` 自定义透视工作台：读取当前发布 JSON，支持把变量拖到行、列、筛选区，默认视图为 HA 交联填充剂 `含麻状态 × 定位层级`。
 
 关键教训：
 
@@ -58,6 +59,7 @@
 6. 交叉热力图区域
 7. 业务矩阵
 8. 注册官方信息
+9. 自定义透视
 
 `七赛道集中度` 卡片当前已恢复可见，并由 smoke test 检查应渲染 7 行。
 
@@ -90,6 +92,17 @@
 - 时间线后新增 `产品形态 × 适应证热力图`，HA 口径只保留交联填充与非交联水光/肤质改善两类。
 - `厂家竞争力矩阵` 改为 `业务矩阵`，内部卡片标题和右上筛选框均已移除。
 - 注册证清单的产品列增加产品形态标签，保留 `NMPA / 待核` 核验列。
+
+### 自定义透视页
+
+`docs/pivot.html` 是跨赛道自助拆分页面，核心逻辑在 `docs/assets/js/pivot.js`。
+
+- 直接读取 `docs/assets/data/manifest.json` 和各赛道 `tracks/*.json`，不依赖旧 `codex-data.js`。
+- 默认筛选：赛道 `透明质酸钠`、产品形态 `交联填充类`，默认行维度 `含麻状态`，列维度 `定位层级`。
+- 默认结果应为 91 张记录；其中 `已标注含麻 × 韩国进口` 为 2，`Lidocaine 待复核 × 韩国进口` 为 5。
+- 可选维度包括赛道、产品形态、国产/进口、定位层级、国家/地区、含麻状态、含麻候选、材料/剂型、适应证、注册人/集团、批准年份和核验状态。
+- URL 参数：`rows`、`cols`、`metric`、`scope`、`q` 和 `f_<field>`；拖拽后状态应可分享。
+- smoke test 已覆盖默认透视、图表渲染、关键 HA 单元格和拖动 `国家/地区` 到列区域。
 
 ### 胶原蛋白子赛道整合
 
@@ -184,6 +197,7 @@ cd E:\shared\code\registration-insights-integrated
 
 & 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\integrated.js
 & 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\track.js
+& 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\pivot.js
 & 'C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' --check docs\assets\js\core.js
 npm run test:dashboard -- http://127.0.0.1:8781/
 npm run test:dashboard -- https://yiseut.github.io/Registration/?v=<commit>
@@ -193,3 +207,4 @@ npm run test:dashboard -- https://yiseut.github.io/Registration/?v=<commit>
 
 - `http://127.0.0.1:8781/index.html?v=20260511-current-refresh-55`
 - `http://127.0.0.1:8781/tracks/ha.html?v=20260511-current-refresh-55`
+- `http://127.0.0.1:8781/pivot.html?v=20260616-pivot-1`

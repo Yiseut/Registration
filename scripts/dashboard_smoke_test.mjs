@@ -116,6 +116,36 @@ async function main() {
   assert(haPositionState.lidocaineTags.length === 7, 'HA filtered rows should all carry lidocaine candidate tags', String(haPositionState.lidocaineTags.length));
   await haPositionPage.close();
 
+  const pivotPage = await openCheckedPage(context, 'pivot.html');
+  const pivotState = await pivotPage.evaluate(() => ({
+    h1: document.querySelector('h1')?.textContent?.trim() || '',
+    records: document.querySelector('#pivot-kpi-records')?.textContent?.trim() || '',
+    rowChips: Array.from(document.querySelectorAll('#pivot-rows .pivot-assigned-chip')).map((node) => node.textContent?.replace('×', '').trim() || ''),
+    columnChips: Array.from(document.querySelectorAll('#pivot-columns .pivot-assigned-chip')).map((node) => node.textContent?.replace('×', '').trim() || ''),
+    filters: Array.from(document.querySelectorAll('#pivot-filters select')).map((node) => node.value),
+    chartCanvases: document.querySelectorAll('#pivot-chart canvas').length,
+    cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(pivotState.h1 === '自定义透视', 'Pivot heading is missing', pivotState.h1);
+  assert(pivotState.records === '91', 'Pivot default scope should show 91 HA crosslinked records', pivotState.records);
+  assert(pivotState.rowChips.includes('含麻状态'), 'Pivot default row dimension should be lidocaine status', pivotState.rowChips.join(', '));
+  assert(pivotState.columnChips.includes('定位层级'), 'Pivot default column dimension should be positioning tier', pivotState.columnChips.join(', '));
+  assert(pivotState.filters.includes('透明质酸钠') && pivotState.filters.includes('交联填充类'), 'Pivot default filters should target HA crosslinked fillers', pivotState.filters.join(', '));
+  assert(pivotState.chartCanvases >= 1, 'Pivot chart did not render');
+  assert(pivotState.cellTitles.some((title) => title.includes('已标注含麻 × 韩国进口：2')), 'Pivot should show two strict Korean lidocaine records', pivotState.cellTitles.join(' | '));
+  assert(pivotState.cellTitles.some((title) => title.includes('Lidocaine 待复核 × 韩国进口：5')), 'Pivot should show five pending Korean lidocaine records', pivotState.cellTitles.join(' | '));
+  assert(pivotState.overflowX <= 1, 'Pivot page has horizontal overflow', String(pivotState.overflowX));
+  await pivotPage.locator('[data-field-id="country_region"]').dragTo(pivotPage.locator('[data-zone="columns"] .pivot-zone-drop'));
+  await pivotPage.waitForTimeout(500);
+  const pivotDragState = await pivotPage.evaluate(() => ({
+    columnChips: Array.from(document.querySelectorAll('#pivot-columns .pivot-assigned-chip')).map((node) => node.textContent?.replace('×', '').trim() || ''),
+    urlCols: new URL(location.href).searchParams.get('cols') || '',
+  }));
+  assert(pivotDragState.columnChips.includes('国家/地区'), 'Dragging country/region into columns should add the dimension', pivotDragState.columnChips.join(', '));
+  assert(pivotDragState.urlCols.includes('country_region'), 'Pivot drag state should be shareable in the URL', pivotDragState.urlCols);
+  await pivotPage.close();
+
   const mobilePage = await openCheckedPage(context, 'index.html', { width: 390, height: 900 });
   const mobileState = await mobilePage.evaluate(() => ({
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
