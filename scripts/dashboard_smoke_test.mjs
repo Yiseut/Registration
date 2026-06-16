@@ -31,7 +31,17 @@ async function openCheckedPage(context, path, viewport = { width: 1360, height: 
 async function main() {
   const overview = await fetch(urlFor('assets/data/overview.json')).then((res) => res.json());
   const manifest = await fetch(urlFor('assets/data/manifest.json')).then((res) => res.json());
+  const haData = await fetch(urlFor('assets/data/tracks/ha.json')).then((res) => res.json());
   const expectedRecords = Number(overview?.kpi?.main_records || 0);
+  const volbella = (haData.records || []).find((record) => record.certificate_no === '国械注进20213130109');
+  const lipScopeSkinQualityAnomalies = (haData.records || []).filter((record) => {
+    const scope = [record.official_scope, record.scope_full, record.indication_description].filter(Boolean).join(' ');
+    return /唇红体|唇红缘|唇粘膜|唇黏膜|唇部不对称|唇部组织容积|容积缺损/.test(scope)
+      && record.primary_indication === '肤质改善';
+  });
+  assert(volbella?.primary_indication === '唇部', 'VOLBELLA with Lidocaine should be classified as lip indication', volbella?.primary_indication || 'missing');
+  assert(volbella?.approved_indications === '唇部', 'VOLBELLA approved indications should not include skin quality', volbella?.approved_indications || 'missing');
+  assert(!lipScopeSkinQualityAnomalies.length, 'Lip-scope HA records should not be classified as skin quality', lipScopeSkinQualityAnomalies.map((record) => record.certificate_no).join(', '));
 
   const launchOptions = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
     ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH }
@@ -136,6 +146,24 @@ async function main() {
   assert(pivotState.chartCanvases >= 1, 'Pivot chart did not render');
   assert(pivotState.cellTitles.some((title) => title.includes('含利多卡因 × 韩国进口：8')), 'Pivot should show eight Korean lidocaine records after LG/LYV verification', pivotState.cellTitles.join(' | '));
   assert(pivotState.overflowX <= 1, 'Pivot page has horizontal overflow', String(pivotState.overflowX));
+
+  const lipPivotParams = new URLSearchParams({
+    rows: 'country_region',
+    cols: 'primary_indication',
+    f_track_name: '透明质酸钠',
+    f_product_shape: '交联填充类',
+    f_lidocaine_signal: '含利多卡因',
+  });
+  const lipPivotPage = await openCheckedPage(context, `pivot.html?${lipPivotParams.toString()}`);
+  const lipPivotState = await lipPivotPage.evaluate(() => ({
+    records: document.querySelector('#pivot-kpi-records')?.textContent?.trim() || '',
+    cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
+  }));
+  assert(lipPivotState.records === '24', 'Lip indication pivot should stay within HA lidocaine crosslinked records', lipPivotState.records);
+  assert(lipPivotState.cellTitles.some((title) => title.includes('美国 × 唇部：1')), 'VOLBELLA should appear under US x lip indication', lipPivotState.cellTitles.join(' | '));
+  assert(!lipPivotState.cellTitles.some((title) => title.includes('美国 × 肤质改善')), 'US x skin quality should not contain VOLBELLA', lipPivotState.cellTitles.join(' | '));
+  await lipPivotPage.close();
+
   await pivotPage.locator('[data-field-id="country_region"]').dragTo(pivotPage.locator('[data-zone="columns"] .pivot-zone-drop'));
   await pivotPage.waitForTimeout(500);
   const pivotDragState = await pivotPage.evaluate(() => ({

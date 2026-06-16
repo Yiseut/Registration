@@ -41,6 +41,16 @@ JAW_CHIN_EXACT_INDICATION_LABELS = {
     "面部软组织/轮廓",
     "下颌及颏部轮廓改善（填充）",
 }
+LIP_FILLING_INDICATION = "唇部"
+LIP_FILLING_SCOPE_TERMS = (
+    "唇红体",
+    "唇红缘",
+    "唇粘膜",
+    "唇黏膜",
+    "唇部不对称",
+    "唇部组织容积",
+    "容积缺损",
+)
 
 CITY_COORDS = {
     "北京": {"province": "北京", "lat": 39.9042, "lng": 116.4074},
@@ -273,9 +283,30 @@ def is_jaw_chin_indication_label(value: str | None) -> bool:
     return is_jaw_chin_contour_filling_text(compact)
 
 
+def is_lip_filling_row(row: dict) -> bool:
+    text = " ".join(
+        safe_strip(row.get(key))
+        for key in (
+            "product_name",
+            "primary_indication",
+            "approved_indications",
+            "indication_description",
+            "scope_full",
+            "official_product_name",
+            "official_indication",
+            "official_scope",
+            "product_tags",
+        )
+    )
+    compact = compact_text(text)
+    return any(term in compact for term in LIP_FILLING_SCOPE_TERMS)
+
+
 def split_indications(value: str, row: dict | None = None) -> list[str]:
     if not value:
-        return []
+        return [LIP_FILLING_INDICATION] if row is not None and is_lip_filling_row(row) else []
+    if row is not None and is_lip_filling_row(row) and "肤质改善" in value:
+        return [LIP_FILLING_INDICATION]
     compact = compact_text(value)
     if (
         compact in {"颏下脂肪堆积/双下巴", "双下巴/颏下脂肪堆积", "颏下脂肪堆积（双下巴）"}
@@ -335,6 +366,8 @@ def is_submental_lipolysis_row(row: dict) -> bool:
 def canonical_primary_indication(row: dict) -> str:
     if is_submental_lipolysis_row(row):
         return SUBMENTAL_LIPOLYSIS_INDICATION
+    if is_lip_filling_row(row) and compact_text(row.get("primary_indication")) == compact_text("肤质改善"):
+        return LIP_FILLING_INDICATION
     value = safe_strip(row.get("primary_indication"))
     if is_jaw_chin_contour_filling_row(row) and is_jaw_chin_indication_label(value):
         return JAW_CHIN_CONTOUR_FILLING_INDICATION
@@ -344,11 +377,19 @@ def canonical_primary_indication(row: dict) -> str:
 def canonical_official_indication(row: dict) -> str:
     if is_submental_lipolysis_row(row):
         return SUBMENTAL_LIPOLYSIS_INDICATION
+    if is_lip_filling_row(row) and "肤质改善" in safe_strip(row.get("official_indication")):
+        return LIP_FILLING_INDICATION
     if is_jaw_chin_contour_filling_row(row):
         values = split_indications(row.get("official_indication"), row)
         if values:
             return " / ".join(values)
     return safe_strip(row.get("official_indication"))
+
+
+def canonical_approved_indications(row: dict) -> str:
+    if is_lip_filling_row(row) and "肤质改善" in safe_strip(row.get("approved_indications")):
+        return LIP_FILLING_INDICATION
+    return safe_strip(row.get("approved_indications"))
 
 
 def record_indications(record: dict) -> list[str]:
@@ -410,7 +451,7 @@ def build_record_card(row: dict) -> dict:
         "market_scope": safe_strip(row.get("market_scope")),
         "application_segment": safe_strip(row.get("application_segment")),
         "primary_indication": primary_indication,
-        "approved_indications": safe_strip(row.get("approved_indications")),
+        "approved_indications": canonical_approved_indications(row),
         "indication_description": safe_strip(row.get("indication_description")),
         "scope_full": safe_strip(row.get("scope_full")),
         "specification": safe_strip(row.get("specification")),

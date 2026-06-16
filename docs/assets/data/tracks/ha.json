@@ -78,7 +78,7 @@
     },
     {
       "name": "肤质改善",
-      "value": 12
+      "value": 11
     },
     {
       "name": "下颌及颏部轮廓改善（填充）",
@@ -219,11 +219,6 @@
         0,
         2,
         5
-      ],
-      [
-        2,
-        1,
-        1
       ],
       [
         1,
@@ -997,8 +992,8 @@
       "validity_status": "有效",
       "market_scope": "注射填充类",
       "application_segment": "注射填充类",
-      "primary_indication": "肤质改善",
-      "approved_indications": "肤质改善 / 唇部",
+      "primary_indication": "唇部",
+      "approved_indications": "唇部",
       "indication_description": "该产品通过注射至唇红体和唇红缘的唇粘膜、真皮浅层或中层，以矫正唇部不对称、轮廓畸形和容积缺损等结构缺陷。利多卡因可减轻治疗过程中患者的疼痛。",
       "scope_full": "该产品通过注射至唇红体和唇红缘的唇粘膜、真皮浅层或中层，以矫正唇部不对称、轮廓畸形和容积缺损等结构缺陷。利多卡因可减轻治疗过程中患者的疼痛。",
       "specification": "",
@@ -1008,7 +1003,6 @@
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
-        "肤质改善",
         "唇部"
       ],
       "tags": [
@@ -1024,7 +1018,7 @@
       "official_registrant": "艾尔建ALLERGAN",
       "official_approval_date": "2025-06-09",
       "official_valid_until": "2031-04-18",
-      "official_indication": "肤质改善 / 唇部",
+      "official_indication": "唇部",
       "official_scope": "该产品通过注射至唇红体和唇红缘的唇粘膜、真皮浅层或中层，以矫正唇部不对称、轮廓畸形和容积缺损等结构缺陷。利多卡因可减轻治疗过程中患者的疼痛。",
       "verified": true,
       "main_landscape": true,
