@@ -107,14 +107,14 @@ async function main() {
   assert(haPositionState.note.includes('不代表销量'), 'HA positioning note should include non-sales-share wording');
   assert(haPositionState.note.includes('英文“Lidocaine”均计入'), 'HA positioning note should explain the unified Lidocaine scope');
   assert(haPositionState.regionCharts >= 2, 'HA positioning charts did not render');
-  assert(haPositionState.rows === 7, 'HA Korean lidocaine filter should show seven rows', String(haPositionState.rows));
-  assert(haPositionState.count === '7', 'HA filtered record count label is wrong', haPositionState.count);
+  assert(haPositionState.rows === 8, 'HA Korean lidocaine filter should show eight rows after LG/LYV verification', String(haPositionState.rows));
+  assert(haPositionState.count === '8', 'HA filtered record count label is wrong', haPositionState.count);
   assert(haPositionState.shape === '交联填充类', 'HA shape filter was not restored', haPositionState.shape);
   assert(haPositionState.position === '韩国进口', 'HA position filter was not restored', haPositionState.position);
   assert(haPositionState.lidocaine === 'yes', 'HA lidocaine filter was not restored', haPositionState.lidocaine);
   assert(haPositionState.urlPosition === '韩国进口', 'HA filter state should remain shareable in the URL', haPositionState.urlPosition);
-  assert(haPositionState.koreanTags.length === 7 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
-  assert(haPositionState.lidocaineTags.length === 7 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
+  assert(haPositionState.koreanTags.length === 8 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
+  assert(haPositionState.lidocaineTags.length === 8 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
   await haPositionPage.close();
 
   const pivotPage = await openCheckedPage(context, 'pivot.html');
@@ -134,7 +134,7 @@ async function main() {
   assert(pivotState.columnChips.includes('定位层级'), 'Pivot default column dimension should be positioning tier', pivotState.columnChips.join(', '));
   assert(pivotState.filters.includes('透明质酸钠') && pivotState.filters.includes('交联填充类'), 'Pivot default filters should target HA crosslinked fillers', pivotState.filters.join(', '));
   assert(pivotState.chartCanvases >= 1, 'Pivot chart did not render');
-  assert(pivotState.cellTitles.some((title) => title.includes('含利多卡因 × 韩国进口：7')), 'Pivot should show seven Korean lidocaine records under the unified scope', pivotState.cellTitles.join(' | '));
+  assert(pivotState.cellTitles.some((title) => title.includes('含利多卡因 × 韩国进口：8')), 'Pivot should show eight Korean lidocaine records after LG/LYV verification', pivotState.cellTitles.join(' | '));
   assert(pivotState.overflowX <= 1, 'Pivot page has horizontal overflow', String(pivotState.overflowX));
   await pivotPage.locator('[data-field-id="country_region"]').dragTo(pivotPage.locator('[data-zone="columns"] .pivot-zone-drop'));
   await pivotPage.waitForTimeout(500);

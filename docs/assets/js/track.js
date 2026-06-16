@@ -654,7 +654,7 @@
     const text = haRecordText(record);
     if (origin === '国产') return '国产';
     if (origin === '港澳台') return '港澳台';
-    if (/(韩国|Korea|Korean|LG Chem|CHA Meditech|Forest Hills|Dong Bang|ACROSS|GENOSS|JETEMA|Humedix|CG Bio|YooYoung|SCL|BNC|Cutegel|HyaFilia|Dermalax|MONALISA|A-Viearchee|东方医疗|东邦医疗|吉诺斯|汇美迪斯|细基生物|柳英|捷特玛|爱思尔|亚可罗思)/i.test(text)) {
+    if (/(韩国|Korea|Korean|LG Chem|LG Life Sciences|YVOIRE|Y-Solution|LYV Sciences|俪维美学|爱尔集健|乐金科技|CHA Meditech|Forest Hills|Dong Bang|ACROSS|GENOSS|JETEMA|Humedix|CG Bio|YooYoung|SCL|BNC|Cutegel|HyaFilia|Dermalax|MONALISA|A-Viearchee|东方医疗|东邦医疗|吉诺斯|汇美迪斯|细基生物|柳英|捷特玛|爱思尔|亚可罗思)/i.test(text)) {
       return '韩国进口';
     }
     if (/(AbbVie|Allergan|Juv[eé]derm|Galderma|Q-Med|Restylane|Merz|Belotero|Anteis|CROMA|Princess|Kylane|SYMATESE|PRECISE|Adoderm|Hyabell|VIVACY|Laboratoires|Fill-Med|S&V|GmbH|SA|SAS|瑞士|法国|德国|奥地利|美国|高德美|艾尔建|麦施美学|安缇思|克罗玛|基兰|希玛德|艾多德姆|菲欧曼|维瓦希)/i.test(text)) {
@@ -718,7 +718,7 @@
     if (noteEl) {
       noteEl.innerHTML = `
         <b>口径说明</b>
-        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，属于注册证数量口径，不代表销量或真实销售份额。含利多卡因以官方注册证名称/产品名为准，中文“利多卡因”或英文“Lidocaine”均计入。</span>
+        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，并吸收已核实的公开资料，属于注册证数量口径，不代表销量或真实销售份额；若仍出现其他进口，可作为优先复核队列。含利多卡因以官方注册证名称/产品名为准，中文“利多卡因”或英文“Lidocaine”均计入。</span>
       `;
     }
 
