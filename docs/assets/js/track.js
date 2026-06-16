@@ -595,8 +595,8 @@
         records: group.records,
       })),
       {
-        label: '线索口径',
-        title: '含麻候选',
+        label: '主格局口径',
+        title: '含利多卡因',
         count: lidocaineRecords.length,
         records: lidocaineRecords,
         kind: 'advantage',
@@ -622,7 +622,7 @@
   }
 
   function hasLidocaineAdvantage(record) {
-    return haLidocaineSignal(record).candidate;
+    return haLidocaineSignal(record).hasLidocaine;
   }
 
   function haCrosslinkedFillerRecords(source) {
@@ -679,33 +679,25 @@
       韩国进口: '#e5b574',
       港澳台: '#cf6a9d',
       其他进口: '#9d7b7b',
-      未见含麻线索: '#d8cfca',
-      含麻候选: '#58bfd7',
-      已标注含麻: '#737ed0',
-      'Lidocaine 待复核': '#e5b574',
+      未见利多卡因: '#d8cfca',
+      含利多卡因: '#58bfd7',
     }[name] || accent;
   }
 
   function haLidocaineSignal(record) {
-    const text = [
-      record?.lidocaine_status,
-      record?.material_form,
+    const titleText = [
+      record?.brand,
+      record?.aliases,
+      record?.commercial_name,
       record?.product_name,
       record?.official_product_name,
       Array.isArray(record?.tags) ? record.tags.join(' ') : record?.tags,
       Array.isArray(record?.product_tags) ? record.product_tags.join(' ') : record?.product_tags,
     ].filter(Boolean).join(' ');
-    const strict = record?.lidocaine_status === '含利多卡因' || /(含利多卡因|盐酸利多卡因)/.test(text);
-    const english = /lidocaine/i.test(text);
-    const medicineHint = /含药/.test(record?.material_form || '');
-    const candidate = strict || english || medicineHint;
-    const pending = candidate && !strict;
+    const hasLidocaine = record?.lidocaine_status === '含利多卡因' || /(利多卡因|lidocaine)/i.test(titleText);
     return {
-      strict,
-      english,
-      candidate,
-      pending,
-      label: strict ? '已标注含麻' : pending ? 'Lidocaine 待复核' : '未见含麻线索',
+      hasLidocaine,
+      label: hasLidocaine ? '含利多卡因' : '未见利多卡因',
     };
   }
 
@@ -717,9 +709,8 @@
     if (!cardsHolder && !regionEl && !lidocaineEl && !noteEl) return;
 
     const crosslinked = haCrosslinkedFillerRecords(source);
-    const strict = crosslinked.filter((record) => haLidocaineSignal(record).strict);
-    const candidate = crosslinked.filter((record) => haLidocaineSignal(record).candidate);
-    const english = crosslinked.filter((record) => haLidocaineSignal(record).english);
+    const lidocaineRecords = crosslinked.filter((record) => haLidocaineSignal(record).hasLidocaine);
+    const nonLidocaineRecords = crosslinked.filter((record) => !haLidocaineSignal(record).hasLidocaine);
     const imported = crosslinked.filter((record) => record.origin !== '国产');
     const byPosition = groupRecords(crosslinked, haPositionLabel);
     const order = haPositionOrder().filter((name) => (byPosition.get(name) || []).length);
@@ -727,7 +718,7 @@
     if (noteEl) {
       noteEl.innerHTML = `
         <b>口径说明</b>
-        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，属于注册证数量口径，不代表销量或真实销售份额。含麻严格口径采用字段/中文品名，候选口径进一步纳入英文 Lidocaine 或“含药”线索，待后续官方字段复核。</span>
+        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，属于注册证数量口径，不代表销量或真实销售份额。含利多卡因以官方注册证名称/产品名为准，中文“利多卡因”或英文“Lidocaine”均计入。</span>
       `;
     }
 
@@ -752,19 +743,19 @@
           records: imported,
         },
         {
-          label: '含麻严格口径',
-          title: '已标注含利多卡因',
-          count: strict.length,
-          sub: '字段或中文品名明确含利多卡因',
-          records: strict,
+          label: '利多卡因口径',
+          title: '含利多卡因',
+          count: lidocaineRecords.length,
+          sub: '中文利多卡因或英文 Lidocaine 均计入',
+          records: lidocaineRecords,
+          kind: 'lidocaine',
         },
         {
-          label: '含麻候选口径',
-          title: '含麻候选',
-          count: candidate.length,
-          sub: `其中英文品名含 Lidocaine ${english.length} 张`,
-          records: candidate,
-          kind: 'candidate',
+          label: '对照口径',
+          title: '未见利多卡因',
+          count: nonLidocaineRecords.length,
+          sub: '注册证名称/产品名未见相关字样',
+          records: nonLidocaineRecords,
         },
       ];
       cardsHolder.innerHTML = cards.map((card, index) => `
@@ -795,18 +786,18 @@
     }
     const rows = order.map((name) => {
       const records = byPosition.get(name) || [];
-      const candidateRecords = records.filter((record) => haLidocaineSignal(record).candidate);
-      const nonCandidateRecords = records.filter((record) => !haLidocaineSignal(record).candidate);
-      return { name, records, candidateRecords, nonCandidateRecords };
+      const lidocaineRecords = records.filter((record) => haLidocaineSignal(record).hasLidocaine);
+      const nonLidocaineRecords = records.filter((record) => !haLidocaineSignal(record).hasLidocaine);
+      return { name, records, lidocaineRecords, nonLidocaineRecords };
     });
     const inst = ChartFactory.make(el, {
-      legend: { bottom: 0, data: ['未见含麻线索', '含麻候选'] },
+      legend: { bottom: 0, data: ['未见利多卡因', '含利多卡因'] },
       tooltip: {
         trigger: 'axis',
         axisPointer: { type: 'shadow' },
         formatter: (items) => {
           const row = rows[items[0]?.dataIndex || 0];
-          return `<b>${escape(row.name)}</b><br/>交联填充剂: ${row.records.length} 张<br/>含麻候选: ${row.candidateRecords.length} 张<br/>未见含麻线索: ${row.nonCandidateRecords.length} 张`;
+          return `<b>${escape(row.name)}</b><br/>交联填充剂: ${row.records.length} 张<br/>含利多卡因: ${row.lidocaineRecords.length} 张<br/>未见利多卡因: ${row.nonLidocaineRecords.length} 张`;
         },
       },
       grid: { left: 60, right: 28, top: 24, bottom: 48 },
@@ -814,30 +805,30 @@
       yAxis: { type: 'value', name: '证照数', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
       series: [
         {
-          name: '未见含麻线索',
+          name: '未见利多卡因',
           type: 'bar',
           stack: 'lidocaine',
           barMaxWidth: chartBarMaxWidth,
-          itemStyle: { color: haPositionColor('未见含麻线索') },
-          data: rows.map((row) => row.nonCandidateRecords.length),
+          itemStyle: { color: haPositionColor('未见利多卡因') },
+          data: rows.map((row) => row.nonLidocaineRecords.length),
         },
         {
-          name: '含麻候选',
+          name: '含利多卡因',
           type: 'bar',
           stack: 'lidocaine',
           barMaxWidth: chartBarMaxWidth,
           itemStyle: {
-            color: verticalGradient(shade(haPositionColor('含麻候选'), 24), haPositionColor('含麻候选')),
+            color: verticalGradient(shade(haPositionColor('含利多卡因'), 24), haPositionColor('含利多卡因')),
             borderRadius: chartBarRadius,
           },
           label: { show: true, position: 'top', color: palette.ink2, fontSize: 11, fontWeight: 700, formatter: (p) => p.value || '' },
-          data: rows.map((row) => row.candidateRecords.length),
+          data: rows.map((row) => row.lidocaineRecords.length),
         },
       ],
     });
     inst.on('click', (p) => {
       const row = rows[p.dataIndex];
-      const records = p.seriesName === '含麻候选' ? row.candidateRecords : row.nonCandidateRecords;
+      const records = p.seriesName === '含利多卡因' ? row.lidocaineRecords : row.nonLidocaineRecords;
       showRecords({ title: `${row.name} · ${p.seriesName}`, meta: '透明质酸钠 · 交联填充剂定位', records: displayRecords(records) });
     });
   }
@@ -847,23 +838,22 @@
     const rows = order
       .map((name) => {
         const records = byPosition.get(name) || [];
-        const strictRecords = records.filter((record) => haLidocaineSignal(record).strict);
-        const pendingRecords = records.filter((record) => haLidocaineSignal(record).pending);
-        return { name, strictRecords, pendingRecords };
+        const lidocaineRecords = records.filter((record) => haLidocaineSignal(record).hasLidocaine);
+        return { name, lidocaineRecords };
       })
-      .filter((row) => row.strictRecords.length || row.pendingRecords.length);
+      .filter((row) => row.lidocaineRecords.length);
     if (!rows.length) {
       el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无含利多卡因交联填充剂数据</div>';
       return;
     }
     const inst = ChartFactory.make(el, {
-      legend: { bottom: 0, data: ['已标注含麻', 'Lidocaine 待复核'] },
+      legend: { bottom: 0, data: ['含利多卡因'] },
       tooltip: {
         trigger: 'axis',
         axisPointer: { type: 'shadow' },
         formatter: (items) => {
           const row = rows[items[0]?.dataIndex || 0];
-          return `<b>${escape(row.name)}</b><br/>已标注含麻: ${row.strictRecords.length} 张<br/>Lidocaine 待复核: ${row.pendingRecords.length} 张<br/>候选合计: ${row.strictRecords.length + row.pendingRecords.length} 张`;
+          return `<b>${escape(row.name)}</b><br/>含利多卡因: ${row.lidocaineRecords.length} 张`;
         },
       },
       grid: { left: 60, right: 28, top: 24, bottom: 48 },
@@ -871,32 +861,21 @@
       yAxis: { type: 'value', name: '证照数', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
       series: [
         {
-          name: '已标注含麻',
+          name: '含利多卡因',
           type: 'bar',
-          stack: 'lidocaine',
-          barMaxWidth: chartBarMaxWidth,
-          itemStyle: { color: verticalGradient(shade(haPositionColor('已标注含麻'), 18), haPositionColor('已标注含麻')) },
-          label: { show: true, position: 'inside', color: '#fffaf5', fontSize: 11, fontWeight: 700, formatter: (p) => p.value || '' },
-          data: rows.map((row) => row.strictRecords.length),
-        },
-        {
-          name: 'Lidocaine 待复核',
-          type: 'bar',
-          stack: 'lidocaine',
           barMaxWidth: chartBarMaxWidth,
           itemStyle: {
-            color: verticalGradient(shade(haPositionColor('Lidocaine 待复核'), 22), haPositionColor('Lidocaine 待复核')),
+            color: verticalGradient(shade(haPositionColor('含利多卡因'), 24), haPositionColor('含利多卡因')),
             borderRadius: chartBarRadius,
           },
           label: { show: true, position: 'top', color: palette.ink2, fontSize: 11, fontWeight: 700, formatter: (p) => p.value || '' },
-          data: rows.map((row) => row.pendingRecords.length),
+          data: rows.map((row) => row.lidocaineRecords.length),
         },
       ],
     });
     inst.on('click', (p) => {
       const row = rows[p.dataIndex];
-      const records = p.seriesName === 'Lidocaine 待复核' ? row.pendingRecords : row.strictRecords;
-      showRecords({ title: `${row.name} · ${p.seriesName}`, meta: '透明质酸钠 · 含利多卡因拆分', records: displayRecords(records) });
+      showRecords({ title: `${row.name} · 含利多卡因`, meta: '透明质酸钠 · 含利多卡因分布', records: displayRecords(row.lidocaineRecords) });
     });
   }
 
@@ -1649,10 +1628,8 @@
 
     function matchesHaLidocaineFilter(record, filterValue) {
       const signal = haLidocaineSignal(record);
-      if (filterValue === 'strict') return signal.strict;
-      if (filterValue === 'pending') return signal.pending;
-      if (filterValue === 'candidate') return signal.candidate;
-      if (filterValue === 'none') return !signal.candidate;
+      if (filterValue === 'yes') return signal.hasLidocaine;
+      if (filterValue === 'no') return !signal.hasLidocaine;
       return true;
     }
 
@@ -1680,8 +1657,8 @@
 
     function renderHaRecordTags(record) {
       const signal = haLidocaineSignal(record);
-      const lidocaineTag = signal.candidate
-        ? `<span class="tag lidocaine-tag ${signal.strict ? 'strict' : 'pending'}">${escape(signal.label)}</span>`
+      const lidocaineTag = signal.hasLidocaine
+        ? `<span class="tag lidocaine-tag yes">${escape(signal.label)}</span>`
         : '';
       return `
         <div class="table-tag-row">
@@ -1955,7 +1932,7 @@
           productShape(record),
           haPositionLabel(record),
           haRegionLabel(record),
-          signal.candidate ? signal.label : '',
+          signal.hasLidocaine ? signal.label : '',
         ].filter(Boolean);
       }
       if (isCollagenTrack) {

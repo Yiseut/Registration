@@ -16,8 +16,8 @@
     { id: 'origin', label: '国产/进口' },
     { id: 'position_tier', label: '定位层级' },
     { id: 'country_region', label: '国家/地区' },
-    { id: 'lidocaine_signal', label: '含麻状态' },
-    { id: 'lidocaine_candidate', label: '含麻候选' },
+    { id: 'lidocaine_signal', label: '利多卡因状态' },
+    { id: 'lidocaine_candidate', label: '是否含利多卡因' },
     { id: 'material_form', label: '材料/剂型' },
     { id: 'primary_indication', label: '适应证' },
     { id: 'company', label: '注册人/集团' },
@@ -82,7 +82,7 @@
         position_tier: positionTier,
         country_region: countryRegion,
         lidocaine_signal: lidocaine.label,
-        lidocaine_candidate: lidocaine.candidate ? '含麻候选' : '未见含麻线索',
+        lidocaine_candidate: lidocaine.hasLidocaine ? '含利多卡因' : '未见利多卡因',
         material_form: displayUiLabel(record.material_form || record.material_family || '未标注'),
         primary_indication: primaryIndication,
         company: displayUiLabel(record.company || record.registrant || '未标注'),
@@ -93,7 +93,7 @@
         productShapeValue,
         positionTier,
         countryRegion,
-        lidocaine.candidate ? lidocaine.label : '',
+        lidocaine.hasLidocaine ? lidocaine.label : '',
       ].filter(Boolean),
     };
   }
@@ -481,23 +481,19 @@
   }
 
   function lidocaineSignal(record) {
-    const text = [
-      record.lidocaine_status,
-      record.material_form,
+    const titleText = [
+      record.brand,
+      record.aliases,
+      record.commercial_name,
       record.product_name,
       record.official_product_name,
       Array.isArray(record.tags) ? record.tags.join(' ') : record.tags,
       Array.isArray(record.product_tags) ? record.product_tags.join(' ') : record.product_tags,
     ].filter(Boolean).join(' ');
-    const strict = record.lidocaine_status === '含利多卡因' || /(含利多卡因|盐酸利多卡因)/.test(text);
-    const english = /lidocaine/i.test(text);
-    const medicineHint = /含药/.test(record.material_form || '');
-    const candidate = strict || english || medicineHint;
+    const hasLidocaine = record.lidocaine_status === '含利多卡因' || /(利多卡因|lidocaine)/i.test(titleText);
     return {
-      strict,
-      candidate,
-      pending: candidate && !strict,
-      label: strict ? '已标注含麻' : candidate ? 'Lidocaine 待复核' : '未见含麻线索',
+      hasLidocaine,
+      label: hasLidocaine ? '含利多卡因' : '未见利多卡因',
     };
   }
 

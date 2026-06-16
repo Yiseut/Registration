@@ -778,7 +778,7 @@ a:hover { color: var(--brand); }
   outline: none;
 }
 
-.ha-position-card.candidate {
+.ha-position-card.lidocaine {
   background:
     radial-gradient(circle at 90% 16%, rgba(229, 181, 116, 0.18), transparent 34%),
     rgba(255, 255, 255, 0.86);
@@ -812,7 +812,7 @@ a:hover { color: var(--brand); }
   font-variant-numeric: tabular-nums;
 }
 
-.ha-position-card.candidate b {
+.ha-position-card.lidocaine b {
   color: var(--c-gold);
 }
 
@@ -1411,14 +1411,9 @@ button.matrix-cell:focus-visible {
   color: var(--ink-2);
 }
 
-.lidocaine-tag.strict {
+.lidocaine-tag.yes {
   background: #e6ddef;
   color: #737ed0;
-}
-
-.lidocaine-tag.pending {
-  background: #f4eadb;
-  color: #9b6a2a;
 }
 
 .track-records-toolbar select,
