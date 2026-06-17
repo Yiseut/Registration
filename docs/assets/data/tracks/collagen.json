@@ -7,16 +7,20 @@
     "accent": "#dd7b8b"
   },
   "kpi": {
-    "total": 20,
-    "main": 20,
+    "total": 21,
+    "main": 21,
     "companies": 13,
-    "indications": 12,
-    "verified": 20,
-    "domestic": 15,
+    "indications": 14,
+    "verified": 21,
+    "domestic": 16,
     "imported": 2,
     "hkmt": 3
   },
   "company_share": [
+    {
+      "name": "巨子生物",
+      "value": 3
+    },
     {
       "name": "双美生物",
       "value": 3
@@ -24,10 +28,6 @@
     {
       "name": "锦波生物",
       "value": 3
-    },
-    {
-      "name": "巨子生物",
-      "value": 2
     },
     {
       "name": "崇山生物",
@@ -93,6 +93,10 @@
       "value": 2
     },
     {
+      "name": "面部填充",
+      "value": 2
+    },
+    {
       "name": "中面部",
       "value": 1
     },
@@ -105,22 +109,18 @@
       "value": 1
     },
     {
-      "name": "完整适用范围待官方注册证详情回填",
+      "name": "颈部",
       "value": 1
     },
     {
-      "name": "面部填充",
-      "value": 1
-    },
-    {
-      "name": "激光术后创面",
+      "name": "颈部中重度横纹",
       "value": 1
     }
   ],
   "origin_share": [
     {
       "name": "国产",
-      "value": 15
+      "value": 16
     },
     {
       "name": "港澳台",
@@ -138,7 +138,7 @@
     },
     {
       "name": "重组/类人源胶原",
-      "value": 6
+      "value": 7
     }
   ],
   "timeline": {
@@ -154,15 +154,15 @@
       3,
       2,
       8,
-      4
+      5
     ]
   },
   "company_indication_heatmap": {
     "companies": [
       "双美生物",
+      "巨子生物",
       "锦波生物",
       "崇山生物",
-      "巨子生物",
       "珂瑞康",
       "Suneva",
       "创健医疗",
@@ -176,6 +176,7 @@
       "额部",
       "额部动力纹",
       "鼻唇沟",
+      "面部填充",
       "面颊部",
       "面颊部平滑度",
       "鱼尾纹",
@@ -185,22 +186,22 @@
     ],
     "cells": [
       [
-        3,
-        3,
+        4,
+        1,
+        1
+      ],
+      [
+        5,
+        1,
         1
       ],
       [
         4,
-        3,
-        1
-      ],
-      [
-        3,
         10,
         1
       ],
       [
-        4,
+        5,
         10,
         1
       ],
@@ -217,50 +218,50 @@
       [
         1,
         0,
+        1
+      ],
+      [
+        7,
+        2,
+        1
+      ],
+      [
+        8,
+        2,
+        1
+      ],
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        1,
+        2,
+        2
+      ],
+      [
+        6,
+        7,
+        1
+      ],
+      [
+        2,
+        3,
+        1
+      ],
+      [
+        0,
+        4,
+        1
+      ],
+      [
+        1,
+        4,
         1
       ],
       [
         6,
-        1,
-        1
-      ],
-      [
-        7,
-        1,
-        1
-      ],
-      [
-        0,
-        1,
-        2
-      ],
-      [
-        1,
-        1,
-        2
-      ],
-      [
-        5,
-        7,
-        1
-      ],
-      [
-        2,
-        2,
-        1
-      ],
-      [
-        0,
-        4,
-        1
-      ],
-      [
-        1,
-        4,
-        1
-      ],
-      [
-        5,
         4,
         1
       ],
@@ -275,7 +276,7 @@
         1
       ],
       [
-        8,
+        9,
         11,
         1
       ],
@@ -296,12 +297,12 @@
       ],
       [
         0,
-        3,
+        1,
         1
       ],
       [
         1,
-        3,
+        1,
         1
       ],
       [
@@ -312,6 +313,11 @@
       [
         1,
         9,
+        1
+      ],
+      [
+        3,
+        1,
         1
       ]
     ]
@@ -1359,6 +1365,67 @@
       "source_account": "医美慢谈",
       "source_title": "新品| 又一款胶原蛋白植入剂获批上市！",
       "source_url": "https://mp.weixin.qq.com/s/oUH_pnM7uct0l9MUFznqLg",
+      "confidence": "",
+      "data_status": "已结构化",
+      "source_dataset": "collagen_dashboard_data.json"
+    },
+    {
+      "id": "COLLAGEN-国械注准20263131219",
+      "track": "collagen",
+      "track_name": "胶原蛋白",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "三类医疗器械",
+      "strategic": "胶原蛋白",
+      "brand": "巨子生物交联重组胶原蛋白植入剂",
+      "aliases": "",
+      "product_name": "交联重组胶原蛋白植入剂",
+      "company": "巨子生物",
+      "company_key": "巨子生物",
+      "registrant": "陕西巨子生物技术有限公司",
+      "certificate_no": "国械注准20263131219",
+      "origin": "国产",
+      "category": "胶原蛋白",
+      "material_family": "重组/类人源胶原",
+      "material_form": "重组/类人源填充剂",
+      "approval_date": "2026-06-16",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "未标注有效期",
+      "market_scope": "三类合规准入",
+      "application_segment": "",
+      "primary_indication": "面部填充",
+      "approved_indications": "",
+      "indication_description": "胶原蛋白植入或注射类产品，重点看面部容量、轮廓或皱纹修饰。",
+      "scope_full": "国家药品监督管理局2026年06月17日医疗器械批准证明文件送达信息显示，该产品于2026-06-16获批；公开公告称用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹；完整注册证详情待同步回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "国家药品监督管理局2026年06月17日医疗器械批准证明文件送达信息显示，该产品于2026-06-16获批；公开公告称用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹；完整注册证详情待同步回填。",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "未见利多卡因",
+      "market_claim": "",
+      "boundary_reason": "已见NMPA批准证明文件送达信息，注册证详情字段待官方注册证库同步后回填。",
+      "indications": [],
+      "tags": [
+        "未见利多卡因"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
+      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
+      "official_product_name": "交联重组胶原蛋白植入剂",
+      "official_registrant": "陕西巨子生物技术有限公司",
+      "official_approval_date": "2026-06-16",
+      "official_valid_until": "",
+      "official_indication": "颈部 / 颈部中重度横纹",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "胶原蛋白"
+      ],
+      "source_account": "国家药品监督管理局",
+      "source_title": "2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "confidence": "",
       "data_status": "已结构化",
       "source_dataset": "collagen_dashboard_data.json"

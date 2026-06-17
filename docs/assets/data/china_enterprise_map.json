@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-17T18:50:40",
+  "generated_at": "2026-06-17T20:20:59",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 106,
-    "mapped_records": 106,
+    "candidate_records": 108,
+    "mapped_records": 108,
     "mapped_companies": 62,
     "mapped_cities": 25,
     "unmapped_companies": 0
@@ -15,11 +15,11 @@
       "lat": 30.2741,
       "lng": 120.1551,
       "companies": 8,
-      "registrations": 12,
+      "registrations": 13,
       "tracks": [
         {
           "name": "玻尿酸",
-          "records": 5
+          "records": 6
         },
         {
           "name": "胶原蛋白",
@@ -47,6 +47,11 @@
           "top_track": "胶原蛋白"
         },
         {
+          "name": "浙江景嘉医疗科技有限公司",
+          "records": 2,
+          "top_track": "玻尿酸"
+        },
+        {
           "name": "浙江珂瑞康生物医疗科技有限公司",
           "records": 2,
           "top_track": "胶原蛋白"
@@ -70,11 +75,6 @@
           "name": "浙江微度医疗器械有限公司",
           "records": 1,
           "top_track": "胶原刺激剂"
-        },
-        {
-          "name": "浙江景嘉医疗科技有限公司",
-          "records": 1,
-          "top_track": "玻尿酸"
         }
       ],
       "records_sample": [
@@ -177,7 +177,7 @@
       ],
       "location_sources": {
         "注册人名称含城市": 6,
-        "维护映射": 6
+        "维护映射": 7
       }
     },
     {
@@ -1003,11 +1003,11 @@
       "lat": 34.3416,
       "lng": 108.9398,
       "companies": 2,
-      "registrations": 3,
+      "registrations": 4,
       "tracks": [
         {
           "name": "胶原蛋白",
-          "records": 2
+          "records": 3
         },
         {
           "name": "玻尿酸",
@@ -1018,7 +1018,7 @@
       "companies_sample": [
         {
           "name": "陕西巨子生物技术有限公司",
-          "records": 2,
+          "records": 3,
           "top_track": "胶原蛋白"
         },
         {
@@ -1051,10 +1051,18 @@
           "company": "陕西巨子生物技术有限公司",
           "track": "胶原蛋白",
           "approval_date": "2025-10-21"
+        },
+        {
+          "certificate_no": "国械注准20263131219",
+          "brand": "巨子生物交联重组胶原蛋白植入剂",
+          "product_name": "交联重组胶原蛋白植入剂",
+          "company": "陕西巨子生物技术有限公司",
+          "track": "胶原蛋白",
+          "approval_date": "2026-06-16"
         }
       ],
       "location_sources": {
-        "维护映射": 3
+        "维护映射": 4
       }
     },
     {

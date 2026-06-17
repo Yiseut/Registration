@@ -136,9 +136,9 @@ async function main() {
     lidocaineTags: Array.from(document.querySelectorAll('#table-records tbody .lidocaine-tag')).map((node) => node.textContent?.trim() || ''),
     urlPosition: new URL(location.href).searchParams.get('position') || '',
   }));
-  assert(haPositionState.positionCards[0] === 91, 'HA crosslinked filler card should use the 91-record scope', String(haPositionState.positionCards[0]));
+  assert(haPositionState.positionCards[0] === 92, 'HA crosslinked filler card should use the 92-record scope', String(haPositionState.positionCards[0]));
   assert(haPositionState.positionCards[2] === 50, 'HA lidocaine card should show 50 records under the official registration scope', String(haPositionState.positionCards[2]));
-  assert(haPositionState.positionCards[3] === 41, 'HA non-lidocaine card should show the remaining 41 records', String(haPositionState.positionCards[3]));
+  assert(haPositionState.positionCards[3] === 42, 'HA non-lidocaine card should show the remaining 42 records', String(haPositionState.positionCards[3]));
   assert(haPositionState.note.includes('不代表销量'), 'HA positioning note should include non-sales-share wording');
   assert(haPositionState.note.includes('型号规格和结构组成为准'), 'HA positioning note should explain the official registration component scope');
   assert(haPositionState.regionCharts >= 2, 'HA positioning charts did not render');
@@ -164,7 +164,7 @@ async function main() {
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(pivotState.h1 === '自定义透视', 'Pivot heading is missing', pivotState.h1);
-  assert(pivotState.records === '91', 'Pivot default scope should show 91 HA crosslinked records', pivotState.records);
+  assert(pivotState.records === '92', 'Pivot default scope should show 92 HA crosslinked records', pivotState.records);
   assert(pivotState.rowChips.includes('利多卡因状态'), 'Pivot default row dimension should be lidocaine status', pivotState.rowChips.join(', '));
   assert(pivotState.columnChips.includes('定位层级'), 'Pivot default column dimension should be positioning tier', pivotState.columnChips.join(', '));
   assert(pivotState.filters.includes('透明质酸钠') && pivotState.filters.includes('交联填充类'), 'Pivot default filters should target HA crosslinked fillers', pivotState.filters.join(', '));
