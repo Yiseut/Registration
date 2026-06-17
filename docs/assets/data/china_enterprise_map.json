@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-16T20:45:49",
+  "generated_at": "2026-06-17T18:43:59",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 105,
-    "mapped_records": 105,
-    "mapped_companies": 61,
+    "candidate_records": 106,
+    "mapped_records": 106,
+    "mapped_companies": 62,
     "mapped_cities": 25,
     "unmapped_companies": 0
   },
@@ -1258,6 +1258,58 @@
       }
     },
     {
+      "city": "重庆",
+      "province": "重庆",
+      "lat": 29.563,
+      "lng": 106.5516,
+      "companies": 2,
+      "registrations": 2,
+      "tracks": [
+        {
+          "name": "胶原蛋白",
+          "records": 1
+        },
+        {
+          "name": "肉毒毒素",
+          "records": 1
+        }
+      ],
+      "leading_track": "胶原蛋白",
+      "companies_sample": [
+        {
+          "name": "重庆芳禾生物科技有限公司",
+          "records": 1,
+          "top_track": "胶原蛋白"
+        },
+        {
+          "name": "重庆誉颜制药有限公司",
+          "records": 1,
+          "top_track": "肉毒毒素"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20263131252",
+          "brand": "芳禾生物胶原蛋白植入剂",
+          "product_name": "胶原蛋白植入剂",
+          "company": "重庆芳禾生物科技有限公司",
+          "track": "胶原蛋白",
+          "approval_date": "2026-06-16"
+        },
+        {
+          "certificate_no": "国药准字S20260019",
+          "brand": "芮妥欣 Retoxin",
+          "product_name": "注射用重组A型肉毒毒素",
+          "company": "重庆誉颜制药有限公司",
+          "track": "肉毒毒素",
+          "approval_date": "2026-03-25"
+        }
+      ],
+      "location_sources": {
+        "注册人名称含城市": 2
+      }
+    },
+    {
       "city": "珠海",
       "province": "广东",
       "lat": 22.2707,
@@ -1634,41 +1686,6 @@
       ],
       "location_sources": {
         "维护映射": 1
-      }
-    },
-    {
-      "city": "重庆",
-      "province": "重庆",
-      "lat": 29.563,
-      "lng": 106.5516,
-      "companies": 1,
-      "registrations": 1,
-      "tracks": [
-        {
-          "name": "肉毒毒素",
-          "records": 1
-        }
-      ],
-      "leading_track": "肉毒毒素",
-      "companies_sample": [
-        {
-          "name": "重庆誉颜制药有限公司",
-          "records": 1,
-          "top_track": "肉毒毒素"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国药准字S20260019",
-          "brand": "芮妥欣 Retoxin",
-          "product_name": "注射用重组A型肉毒毒素",
-          "company": "重庆誉颜制药有限公司",
-          "track": "肉毒毒素",
-          "approval_date": "2026-03-25"
-        }
-      ],
-      "location_sources": {
-        "注册人名称含城市": 1
       }
     },
     {

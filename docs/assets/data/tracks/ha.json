@@ -397,10 +397,10 @@
       "approved_indications": "唇部",
       "indication_description": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "scope_full": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
-      "specification": "1.0mL:20mg",
-      "components": "该产品由预灌封玻璃注射器、不锈钢注射针和封装在注射器中的凝胶颗粒悬液组成。凝胶颗粒悬液由部分经修饰的透明质酸钠、盐酸利多卡因、氯化钠、磷酸盐缓冲液以及注射用水组成，其中透明质酸钠由微生物发酵法制备，标示浓度为20mg/mL，盐酸利多卡因标识浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用修饰透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -409,8 +409,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -908,7 +907,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "注射用交联透明质酸钠凝胶 Restylane Defyne",
+      "brand": "注射用交联透明质酸钠凝胶 Cross-linked Sodium Hyaluronate Gel for Injection",
       "aliases": "",
       "product_name": "注射用交联透明质酸钠凝胶Cross-linked Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
@@ -929,10 +928,10 @@
       "approved_indications": "下颌及颏部轮廓改善（填充） / 鼻唇沟 / 下颌部",
       "indication_description": "本产品适用于面部真皮组织中层至深层填充以纠正中度至重度鼻唇沟皱纹。适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
       "scope_full": "本产品适用于面部真皮组织中层至深层填充以纠正中度至重度鼻唇沟皱纹。适用于注射到骨膜上，填充下颌区域，以改善轻度至中度下颌后缩患者的下颌轮廓。",
-      "specification": "型号：Restylane Defyne 规格：1mL/支",
-      "components": "该产品由预灌封塑料注射器、不锈钢注射针和封装在注射器中的凝胶颗粒悬液组成。凝胶颗粒悬液由经交联的透明质酸钠、氯化钠、盐酸利多卡因、磷酸盐缓冲体系以及注射用水组成，其中透明质酸钠由微生物发酵法制备，标示浓度为20mg/mL。注射针材质为不锈钢，规格为27G X 1/2''超薄壁。封装了凝胶颗粒悬液的注射器由湿热灭菌，注射针由伽马射线辐射灭菌。本产品一次性使用，货架有效期24个月。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用交联透明质酸钠凝胶 Cross-linked Sodium Hyaluronate Gel for Injection",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -942,8 +941,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -1068,7 +1066,7 @@
       "specification": "",
       "components": "注射用交联透明质酸钠凝胶 Belotero Balance Lidocaine",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -1077,8 +1075,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2118,9 +2115,9 @@
       "indication_description": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "scope_full": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "specification": "",
-      "components": "凝胶由交联透明质酸钠、盐酸利多卡因、氯化钠、磷酸盐缓冲液以及注射用水组成。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "components": "注射用修饰透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2129,8 +2126,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2183,10 +2179,10 @@
       "approved_indications": "唇部",
       "indication_description": "该产品通过注射于唇红缘及唇红体的皮下（或粘膜下）至口轮匝肌层，以增加唇部组织容积。",
       "scope_full": "该产品通过注射于唇红缘及唇红体的皮下（或粘膜下）至口轮匝肌层，以增加唇部组织容积。",
-      "specification": "型号：L型 规格：0.5mL:7.5mg、0.75mL:11.25mg、1.0mL:15mg、1.5mL:22.5mg、2.0mL:30mg",
-      "components": "该产品由预灌封玻璃注射器、不锈钢注射针和封装在注射器中的无色、透明凝胶组成。凝胶由交联透明质酸钠、盐酸利多卡因、磷酸盐缓冲液以及注射用水组成，其中透明质酸钠由微生物发酵法制备，标示浓度为15mg/mL，盐酸利多卡因标示浓度为3mg/mL。注射针材质为304不锈钢，规格为27G和/或30G。该产品一次性使用，货架有效期为36个月。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用交联透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2195,8 +2191,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2648,7 +2643,7 @@
       "specification": "",
       "components": "注射用修饰透明质酸钠凝胶 MONALISA Lidocaine Filler",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 非交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2657,8 +2652,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "非交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2779,7 +2773,7 @@
       "specification": "",
       "components": "注射用交联透明质酸钠凝胶 Belotero Volume Lidocaine",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2788,8 +2782,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2823,7 +2816,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "注射用交联透明质酸钠凝胶 Restylane Volyme",
+      "brand": "注射用交联透明质酸钠凝胶 Restylane Volume",
       "aliases": "",
       "product_name": "注射用交联透明质酸钠凝胶Restylane Volyme",
       "company": "高德美 / Galderma",
@@ -2844,10 +2837,10 @@
       "approved_indications": "中面部",
       "indication_description": "本产品用于矫正中面部容量缺失和/或中面部轮廓缺陷，注射层次为皮下、骨膜上层。",
       "scope_full": "本产品用于矫正中面部容量缺失和/或中面部轮廓缺陷，注射层次为皮下、骨膜上层。",
-      "specification": "型号：Restylane Volyme 规格：1mL/支",
-      "components": "该产品由预灌封塑料注射器、不锈钢注射针和封装在注射器中的凝胶颗粒悬液组成。凝胶颗粒悬液由经交联的透明质酸钠、氯化钠、盐酸利多卡因、磷酸盐缓冲体系以及注射用水组成，其中透明质酸钠由微生物发酵法制备，经交联的透明质酸钠标示浓度为20mg/mL。包装配附2支注射针，材质为不锈钢，规格为27G x 1/2\"超薄壁。封装了凝胶颗粒悬液的注射器由湿热灭菌，注射针由伽马射线辐照灭菌。本产品一次性使用，产品有效期24个月。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用交联透明质酸钠凝胶 Restylane Volume",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2856,8 +2849,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2915,7 +2907,7 @@
       "specification": "",
       "components": "注射用交联透明质酸钠凝胶 MONALISA Lidocaine Filler",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2924,8 +2916,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -2981,7 +2972,7 @@
       "specification": "",
       "components": "注射用交联透明质酸钠凝胶 Soft Tissue Implants Visco-elastic gel of hyaluronic acid - with lidocaine",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -2991,8 +2982,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -3048,7 +3038,7 @@
       "specification": "",
       "components": "注射用修饰透明质酸钠凝胶",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 非交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -3057,8 +3047,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "非交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -3244,9 +3233,9 @@
       "indication_description": "本产品用于面部真皮组织中层至深层注射，以纠正中重度鼻唇部皱纹。",
       "scope_full": "本产品用于面部真皮组织中层至深层注射，以纠正中重度鼻唇部皱纹。",
       "specification": "",
-      "components": "该产品由预灌封注射器、注射针和封装在注射器中的凝胶组成。凝胶由经交联的透明质酸钠、未经交联的透明质酸钠、盐酸利多卡因、氯化钠、磷酸盐缓冲体系以及注射用水组成，透明质酸钠由微生物发酵法制备，标示浓度为24mg/mL；该产品含有0.3%利多卡因。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "components": "注射用修饰透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -3255,8 +3244,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -3310,9 +3298,9 @@
       "indication_description": "该产品用于面部真皮组织浅层到中层注射以纠正静态额部皱纹。",
       "scope_full": "该产品用于面部真皮组织浅层到中层注射以纠正静态额部皱纹。",
       "specification": "",
-      "components": "该产品由预灌封玻璃注射器、不锈钢注射针和封装在注射器中的凝胶颗粒悬液组成。凝胶颗粒悬液由部分经修饰的透明质酸钠、盐酸利多卡因、氯化钠、磷酸盐缓冲液以及注射用水组成，其中透明质酸钠由微生物发酵法制备，盐酸利多卡因的浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "components": "注射用修饰透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -3321,8 +3309,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -3441,9 +3428,9 @@
       "indication_description": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "scope_full": "该产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "specification": "",
-      "components": "凝胶颗粒悬液由交联和未交联的透明质酸钠、盐酸利多卡因、氯化钠、磷酸盐缓冲液以及注射用水组成，其中盐酸利多卡因标示浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "components": "注射用交联透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -3452,8 +3439,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -3768,10 +3754,10 @@
       "approved_indications": "下颌及颏部轮廓改善（填充）",
       "indication_description": "本产品适用于成人骨膜上层注射填充以改善轻中度的颏部后缩。",
       "scope_full": "本产品适用于成人骨膜上层注射填充以改善轻中度的颏部后缩。",
-      "specification": "0.5ml、0.75ml、1.0ml、2×0.5ml、2×0.75ml、2×1.0ml、4×0.5ml、4×0.75ml、4×1.0ml",
-      "components": "该产品由预灌封注射器、注射针和封装在注射器中的凝胶组成。凝胶主要由交联透明质酸钠、交联聚乙烯醇凝胶微球、盐酸利多卡因、平衡盐溶液及注射用水组成。其中透明质酸钠由微生物发酵法制备，标示含量为10mg/ml，聚乙烯醇凝胶微球的标示含量（干重）为30mg/ml，盐酸利多卡因的标示含量为3mg/ml。注射针经环氧乙烷灭菌，封装了凝胶的注射器经高压蒸汽灭菌。该产品为一次性使用，货架有效期为2年。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "复合材料类 / 国产 / 交联 / PVA微球 / 含利多卡因",
+      "specification": "",
+      "components": "医用含聚乙烯醇凝胶微球的交联透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "复合材料类 / 国产 / 交联 / PVA微球",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -3781,8 +3767,7 @@
         "复合材料类",
         "国产",
         "交联",
-        "PVA微球",
-        "含利多卡因"
+        "PVA微球"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -3971,7 +3956,7 @@
       "specification": "",
       "components": "注射用修饰透明质酸钠凝胶",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 非交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -3980,8 +3965,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "非交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -4103,7 +4087,7 @@
       "specification": "",
       "components": "注射用交联透明质酸钠凝胶",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -4112,8 +4096,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -4166,10 +4149,10 @@
       "approved_indications": "鼻唇沟",
       "indication_description": "该产品用于面部真皮组织中层至深层注射，以纠正中重度鼻唇沟皱纹。",
       "scope_full": "该产品用于面部真皮组织中层至深层注射，以纠正中重度鼻唇沟皱纹。",
-      "specification": "1mL/支，23G/27G",
-      "components": "凝胶由交联的透明质酸钠、盐酸利多卡因、氯化钠、磷酸二氢钠、磷酸氢二钠以及注射用水组成，其中透明质酸钠标示浓度为23mg/mL，盐酸利多卡因标示浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用交联透明质酸钠凝胶 Pre-filled Sodium Hyaluronate Syringe",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -4178,8 +4161,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -4278,7 +4260,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "注射用修饰透明质酸钠凝胶 Restylane Lidocaine",
+      "brand": "注射用修饰透明质酸钠凝胶",
       "aliases": "",
       "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
@@ -4299,10 +4281,10 @@
       "approved_indications": "鼻唇沟",
       "indication_description": "该产品适用于面部真皮组织中层填充以纠正中重度鼻唇沟皱纹。",
       "scope_full": "该产品适用于面部真皮组织中层填充以纠正中重度鼻唇沟皱纹。",
-      "specification": "型号：Restylane Lidocaine 规格：0.5mL/支、1.0mL/支",
-      "components": "Restylane Lidocaine为一种添加了0.3%的盐酸利多卡因的无菌、透明、可生物降解、非动物源性修饰透明质酸钠凝胶。凝胶由BDDE交联的透明质酸钠、盐酸利多卡因、氯化钠、磷酸二氢钠、磷酸氢二钠及注射用水组成，盐酸利多卡因标示浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用修饰透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 进口 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -4311,8 +4293,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -4346,7 +4327,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "注射用修饰透明质酸钠凝胶 Restylane Perlane Lidocaine",
+      "brand": "注射用修饰透明质酸钠凝胶 Modified Sodium Hyaluronate Gel for Injection",
       "aliases": "",
       "product_name": "注射用修饰透明质酸钠凝胶Modified Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
@@ -4367,10 +4348,10 @@
       "approved_indications": "鼻唇沟 / 中面部 / 鼻部",
       "indication_description": "本品适用于注射到真皮组织深层和/或皮下组织浅层以纠正中重度鼻唇沟皱纹；注射到皮下至骨膜上层用于矫正中面部容量缺失和/或中面部轮廓缺陷；注射入骨膜上层用于鼻背和/或鼻根塑形。该产品适用于18岁以上的患者。",
       "scope_full": "本品适用于注射到真皮组织深层和/或皮下组织浅层以纠正中重度鼻唇沟皱纹；注射到皮下至骨膜上层用于矫正中面部容量缺失和/或中面部轮廓缺陷；注射入骨膜上层用于鼻背和/或鼻根塑形。该产品适用于18岁以上的患者。",
-      "specification": "型号：Restylane Perlane Lidocaine 规格：1mL/支",
-      "components": "Restylane Perlane Lidocaine为一种添加了0.3%的盐酸利多卡因的无菌、透明、可生物降解、非动物源性修饰透明质酸钠凝胶。凝胶由交联透明质酸钠、0.3%盐酸利多卡因和磷酸盐缓冲液组成，盐酸利多卡因标示浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用修饰透明质酸钠凝胶 Modified Sodium Hyaluronate Gel for Injection",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 进口 / 非交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -4381,8 +4362,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "非交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -4440,7 +4420,7 @@
       "specification": "",
       "components": "注射用交联透明质酸钠凝胶 Juvéderm VOLIFT with Lidocaine",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -4449,8 +4429,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -5098,9 +5077,9 @@
       "indication_description": "本产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "scope_full": "本产品用于面部真皮组织中层至深层注射以纠正中重度鼻唇部皱纹。",
       "specification": "",
-      "components": "凝胶颗粒悬液由交联和未交联的透明质酸钠、盐酸利多卡因、氯化钠、磷酸盐缓冲液以及注射用水组成，其中盐酸利多卡因标示浓度为3mg/mL。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 国产 / 交联 / 含利多卡因",
+      "components": "注射用交联透明质酸钠凝胶",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 国产 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -5109,8 +5088,7 @@
       "tags": [
         "注射填充类",
         "国产",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -6663,7 +6641,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "注射用交联透明质酸钠凝胶 Restylane Skinboosters Vital Lidocaine",
+      "brand": "注射用交联透明质酸钠凝胶 Crosslinked Sodium Hyaluronate Gel for Injection",
       "aliases": "",
       "product_name": "注射用交联透明质酸钠凝胶Crosslinked Sodium Hyaluronate Gel for Injection",
       "company": "高德美 / Galderma",
@@ -6684,10 +6662,10 @@
       "approved_indications": "手部",
       "indication_description": "产品适用于18岁以上手背部需要增加组织容量的人群，用于手背部真皮层，最佳为真皮深层的注射，以改善手部皮肤外观。",
       "scope_full": "产品适用于18岁以上手背部需要增加组织容量的人群，用于手背部真皮层，最佳为真皮深层的注射，以改善手部皮肤外观。",
-      "specification": "型号：Restylane Skinboosters Vital Lidocaine 规格：1mL/支",
-      "components": "该产品是一种非动物源交联透明质酸钠凝胶，装在预灌封玻璃注射器中。透明质酸钠由微生物发酵产生，凝胶混悬液经BDDE化学交联，悬浮于磷酸盐缓冲盐水中，浓度为20mg/mL，并添加3mg/mL盐酸利多卡因。封装了凝胶的注射器经过高压蒸汽灭菌。带三支经过环氧乙烷灭菌的29G x 1/2\"薄壁（TW）一次性不锈钢针头。该产品一次性使用。产品有效期为36个月。",
-      "lidocaine_status": "含利多卡因",
-      "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
+      "specification": "",
+      "components": "注射用交联透明质酸钠凝胶 Crosslinked Sodium Hyaluronate Gel for Injection",
+      "lidocaine_status": "未见利多卡因",
+      "product_tags": "注射填充类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -6696,8 +6674,7 @@
       "tags": [
         "注射填充类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
@@ -6885,7 +6862,7 @@
       "specification": "",
       "components": "注射用交联含药透明质酸钠凝胶 Cutegel Lidocaine",
       "lidocaine_status": "含利多卡因",
-      "product_tags": "复合材料类 / 进口 / 交联 / 含利多卡因",
+      "product_tags": "复合材料类 / 进口 / 交联",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
@@ -6894,8 +6871,7 @@
       "tags": [
         "复合材料类",
         "进口",
-        "交联",
-        "含利多卡因"
+        "交联"
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
