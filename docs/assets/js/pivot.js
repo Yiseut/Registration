@@ -25,6 +25,10 @@
     { id: 'verified_status', label: '核验状态' },
   ];
   const fieldMap = new Map(fields.map((field) => [field.id, field]));
+  const columnWidthStorageKey = 'registration-pivot-column-widths-v1';
+  const minColumnWidth = 96;
+  const minRowColumnWidth = 160;
+  const maxColumnWidth = 420;
   const defaultState = {
     rows: ['lidocaine_signal'],
     columns: ['position_tier'],
@@ -36,11 +40,14 @@
     metric: 'records',
     scope: 'main',
     search: '',
+    title: '',
   };
   const state = restoreStateFromUrl(defaultState);
+  let columnWidths = readStoredColumnWidths();
   let allRecords = [];
   let pivotResult = null;
   let chart = null;
+  let activeColumnResize = false;
 
   try {
     allRecords = await loadRecords();
@@ -143,6 +150,11 @@
       state.search = event.target.value.trim();
       render();
     });
+    document.getElementById('pivot-title-input')?.addEventListener('input', (event) => {
+      state.title = event.target.value.trim();
+      renderPivotTitle();
+      writeStateToUrl();
+    });
     document.querySelectorAll('[data-preset]').forEach((button) => {
       button.addEventListener('click', () => applyPreset(button.dataset.preset));
     });
@@ -209,9 +221,12 @@
     document.getElementById('pivot-metric').value = state.metric;
     document.getElementById('pivot-scope').value = state.scope;
     document.getElementById('pivot-search').value = state.search || '';
+    const titleInput = document.getElementById('pivot-title-input');
+    if (titleInput && document.activeElement !== titleInput) titleInput.value = state.title || '';
     renderZone('rows', state.rows, document.getElementById('pivot-rows'));
     renderZone('columns', state.columns, document.getElementById('pivot-columns'));
     renderFilters();
+    renderPivotTitle();
     const records = filteredRecords();
     pivotResult = buildPivot(records);
     renderKpis(records, pivotResult);
@@ -324,21 +339,57 @@
     document.getElementById('pivot-kpi-cells').textContent = (result.rows.length * result.columns.length).toLocaleString();
   }
 
+  function renderPivotTitle() {
+    const title = state.title || autoPivotTitle();
+    const titleEl = document.getElementById('pivot-table-title');
+    if (titleEl) titleEl.textContent = title;
+    document.title = `${title} · Registration Insights`;
+  }
+
+  function autoPivotTitle() {
+    const selectedFilters = state.filterFields
+      .map((fieldId) => ({ fieldId, value: state.filters[fieldId] || '' }))
+      .filter((item) => item.value);
+    const preferredOrder = ['track_name', 'product_shape', 'lidocaine_signal', 'lidocaine_candidate', 'country_region', 'origin', 'position_tier', 'primary_indication'];
+    const ordered = [
+      ...preferredOrder.map((fieldId) => selectedFilters.find((item) => item.fieldId === fieldId)).filter(Boolean),
+      ...selectedFilters.filter((item) => !preferredOrder.includes(item.fieldId)),
+    ];
+    const parts = ordered.map((item) => titlePartForFilter(item.fieldId, item.value)).filter(Boolean);
+    if (state.search) parts.push(state.search);
+    return `${unique(parts).join('') || '全赛道'}市场分布图`;
+  }
+
+  function titlePartForFilter(fieldId, value) {
+    const text = displayUiLabel(value)
+      .replace(/非交联水光、肤质改善类/g, '非交联水光')
+      .replace(/交联填充类/g, '交联填充剂');
+    if (fieldId === 'track_name') return text.endsWith('赛道') ? text : `${text}赛道`;
+    return text;
+  }
+
   function renderTable(result) {
     const table = document.getElementById('pivot-table');
     const thead = table.querySelector('thead');
     const tbody = table.querySelector('tbody');
     const metricLabel = metricName();
     const rowHeader = state.rows.length ? state.rows.map((fieldId) => fieldMap.get(fieldId)?.label || fieldId).join(' / ') : '全部';
+    const tableColumns = tableColumnMeta(result, rowHeader);
+    table.querySelector('colgroup')?.remove();
+    table.insertAdjacentHTML('afterbegin', `
+      <colgroup>
+        ${tableColumns.map((column) => `<col data-col-key="${escape(column.key)}" style="width: ${columnWidthFor(column)}px">`).join('')}
+      </colgroup>
+    `);
+    applyTableWidth(table, tableColumns);
     thead.innerHTML = `
       <tr>
-        <th>${escape(rowHeader)}</th>
-        ${result.columns.map((column) => `<th class="num">${escape(column.label)}</th>`).join('')}
-        <th class="num">合计</th>
+        ${tableColumns.map((column, index) => tableHeaderCell(column, index)).join('')}
       </tr>
     `;
     if (!result.rows.length) {
       tbody.innerHTML = `<tr><td colspan="${result.columns.length + 2}" class="muted" style="text-align:center">没有匹配记录</td></tr>`;
+      bindColumnResizers(table, tableColumns);
       return;
     }
     tbody.innerHTML = result.rows.map((row) => {
@@ -349,7 +400,7 @@
       }).join('');
       return `
         <tr>
-          <td><b>${escape(row.label)}</b></td>
+          <td title="${escape(row.label)}"><b>${escape(row.label)}</b></td>
           ${cells}
           <td class="num total-cell">${cellButton(metricValue(row.records), row.records, `${row.label} · 合计`, metricLabel)}</td>
         </tr>
@@ -361,6 +412,7 @@
         <td class="num total-cell">${cellButton(metricValue(result.records), result.records, '全部记录', metricLabel)}</td>
       </tr>
     `;
+    bindColumnResizers(table, tableColumns);
     tbody.querySelectorAll('[data-cell-records]').forEach((button) => {
       button.addEventListener('click', () => {
         const indexes = JSON.parse(button.dataset.cellRecords || '[]');
@@ -372,6 +424,113 @@
         });
       });
     });
+  }
+
+  function tableColumnMeta(result, rowHeader) {
+    return [
+      { key: `row:${state.rows.join('|') || 'all'}`, label: rowHeader, align: 'left', role: 'row', defaultWidth: 220 },
+      ...result.columns.map((column) => ({
+        key: `col:${column.key}`,
+        label: column.label,
+        align: 'num',
+        role: 'value',
+        defaultWidth: suggestedColumnWidth(column.label),
+      })),
+      { key: 'total', label: '合计', align: 'num', role: 'total', defaultWidth: 132 },
+    ];
+  }
+
+  function tableHeaderCell(column, index) {
+    const className = ['pivot-resizable-th', column.align === 'num' ? 'num' : ''].filter(Boolean).join(' ');
+    return `
+      <th class="${className}" data-col-index="${index}" title="${escape(column.label)}">
+        <span class="pivot-th-label">${escape(column.label)}</span>
+        <span class="pivot-col-resizer" data-col-index="${index}" role="separator" aria-orientation="vertical" aria-label="调整${escape(column.label)}列宽" tabindex="0"></span>
+      </th>
+    `;
+  }
+
+  function suggestedColumnWidth(label) {
+    const text = String(label || '');
+    return Math.max(128, Math.min(250, text.length * 14 + 68));
+  }
+
+  function columnWidthFor(column) {
+    const saved = Number(columnWidths[column.key] || 0);
+    if (saved > 0) return saved;
+    return column.defaultWidth;
+  }
+
+  function applyTableWidth(table, columns) {
+    const totalWidth = columns.reduce((sum, column) => sum + columnWidthFor(column), 0);
+    table.style.width = `${Math.max(360, totalWidth)}px`;
+  }
+
+  function bindColumnResizers(table, columns) {
+    table.querySelectorAll('.pivot-col-resizer').forEach((handle) => {
+      const index = Number(handle.dataset.colIndex);
+      handle.addEventListener('pointerdown', (event) => startColumnResize(event, table, columns, index));
+      handle.addEventListener('mousedown', (event) => startColumnResize(event, table, columns, index));
+      handle.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        setColumnWidth(table, columns, index, columnWidthFor(columns[index]) + direction * 18);
+        persistColumnWidths();
+      });
+    });
+  }
+
+  function startColumnResize(event, table, columns, index) {
+    const column = columns[index];
+    if (!column) return;
+    if ('button' in event && event.button !== 0) return;
+    if (activeColumnResize) return;
+    activeColumnResize = true;
+    event.preventDefault();
+    const startX = event.clientX;
+    const startWidth = columnWidthFor(column);
+    table.classList.add('is-resizing');
+    table.querySelector(`[data-col-index="${index}"]`)?.classList.add('is-resizing');
+    handlePointerCapture(event.currentTarget, event.pointerId);
+    const onMove = (moveEvent) => {
+      setColumnWidth(table, columns, index, startWidth + moveEvent.clientX - startX);
+    };
+    const onUp = () => {
+      activeColumnResize = false;
+      table.classList.remove('is-resizing');
+      table.querySelector(`[data-col-index="${index}"]`)?.classList.remove('is-resizing');
+      persistColumnWidths();
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      window.removeEventListener('mouseup', onUp);
+      window.removeEventListener('pointercancel', onUp);
+    };
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('pointerup', onUp);
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('pointercancel', onUp);
+  }
+
+  function setColumnWidth(table, columns, index, width) {
+    const column = columns[index];
+    if (!column) return;
+    const minimum = column.role === 'row' ? minRowColumnWidth : minColumnWidth;
+    const nextWidth = Math.max(minimum, Math.min(maxColumnWidth, Math.round(width)));
+    columnWidths[column.key] = nextWidth;
+    const col = table.querySelectorAll('col')[index];
+    if (col) col.style.width = `${nextWidth}px`;
+    applyTableWidth(table, columns);
+  }
+
+  function handlePointerCapture(target, pointerId) {
+    try {
+      target.setPointerCapture(pointerId);
+    } catch (error) {
+      // Older WebViews can miss pointer capture; window listeners still complete the resize.
+    }
   }
 
   function cellButton(value, records, title, metricLabel) {
@@ -577,6 +736,22 @@
       .replace(/EBD 设备类/g, 'EBD 设备');
   }
 
+  function readStoredColumnWidths() {
+    try {
+      return JSON.parse(localStorage.getItem(columnWidthStorageKey) || '{}') || {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function persistColumnWidths() {
+    try {
+      localStorage.setItem(columnWidthStorageKey, JSON.stringify(columnWidths));
+    } catch (error) {
+      columnWidths = { ...columnWidths };
+    }
+  }
+
   function restoreStateFromUrl(base) {
     const params = new URLSearchParams(location.search);
     const restored = {
@@ -587,6 +762,7 @@
       metric: params.get('metric') || base.metric,
       scope: params.get('scope') || base.scope,
       search: params.get('q') || base.search,
+      title: params.get('title') || base.title,
     };
     params.forEach((value, key) => {
       if (!key.startsWith('f_')) return;
@@ -611,6 +787,7 @@
     if (state.metric !== defaultState.metric) params.set('metric', state.metric);
     if (state.scope !== defaultState.scope) params.set('scope', state.scope);
     if (state.search) params.set('q', state.search);
+    if (state.title) params.set('title', state.title);
     state.filterFields.forEach((fieldId) => {
       const value = state.filters[fieldId];
       if (value) params.set(`f_${fieldId}`, value);

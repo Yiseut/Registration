@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0" />
 <title>自定义透视 · Registration Insights</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="assets/css/theme.css?v=20260616-pivot-1" />
+<link rel="stylesheet" href="assets/css/theme.css?v=20260617-pivot-title-resize-1" />
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
@@ -145,8 +145,13 @@
       </section>
 
       <section class="card lift pivot-table-card">
-        <div class="card-title">
-          <h3>透视表</h3>
+        <div class="card-title pivot-card-title">
+          <div class="pivot-title-stack">
+            <div class="pivot-title-row">
+              <h3 id="pivot-table-title">市场分布图</h3>
+              <input id="pivot-title-input" class="pivot-title-input" type="text" aria-label="自定义透视标题" placeholder="自定义标题" />
+            </div>
+          </div>
           <span class="sub">点击数值查看明细</span>
         </div>
         <div class="pivot-table-scroll">
@@ -166,6 +171,6 @@
 </main>
 
 <script src="assets/js/core.js?v=20260615-categorical-pastel-1"></script>
-<script src="assets/js/pivot.js?v=20260616-lidocaine-source-1"></script>
+<script src="assets/js/pivot.js?v=20260617-pivot-title-resize-1"></script>
 </body>
 </html>

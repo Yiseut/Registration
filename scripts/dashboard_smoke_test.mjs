@@ -155,22 +155,57 @@ async function main() {
   const pivotPage = await openCheckedPage(context, 'pivot.html');
   const pivotState = await pivotPage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',
+    tableTitle: document.querySelector('#pivot-table-title')?.textContent?.trim() || '',
     records: document.querySelector('#pivot-kpi-records')?.textContent?.trim() || '',
     rowChips: Array.from(document.querySelectorAll('#pivot-rows .pivot-assigned-chip')).map((node) => node.textContent?.replace('×', '').trim() || ''),
     columnChips: Array.from(document.querySelectorAll('#pivot-columns .pivot-assigned-chip')).map((node) => node.textContent?.replace('×', '').trim() || ''),
     filters: Array.from(document.querySelectorAll('#pivot-filters select')).map((node) => node.value),
     chartCanvases: document.querySelectorAll('#pivot-chart canvas').length,
+    resizers: document.querySelectorAll('.pivot-col-resizer').length,
     cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(pivotState.h1 === '自定义透视', 'Pivot heading is missing', pivotState.h1);
+  assert(pivotState.tableTitle === '透明质酸钠赛道交联填充剂市场分布图', 'Pivot table title should be generated from default filters', pivotState.tableTitle);
   assert(pivotState.records === '91', 'Pivot default scope should show 91 HA crosslinked records', pivotState.records);
   assert(pivotState.rowChips.includes('利多卡因状态'), 'Pivot default row dimension should be lidocaine status', pivotState.rowChips.join(', '));
   assert(pivotState.columnChips.includes('定位层级'), 'Pivot default column dimension should be positioning tier', pivotState.columnChips.join(', '));
   assert(pivotState.filters.includes('透明质酸钠') && pivotState.filters.includes('交联填充类'), 'Pivot default filters should target HA crosslinked fillers', pivotState.filters.join(', '));
   assert(pivotState.chartCanvases >= 1, 'Pivot chart did not render');
+  assert(pivotState.resizers >= 3, 'Pivot table should expose column resize handles', String(pivotState.resizers));
   assert(pivotState.cellTitles.some((title) => title.includes('含利多卡因 × 韩国进口：13')), 'Pivot should show 13 Korean lidocaine records after official component verification', pivotState.cellTitles.join(' | '));
   assert(pivotState.overflowX <= 1, 'Pivot page has horizontal overflow', String(pivotState.overflowX));
+  const firstColWidthBefore = await pivotPage.locator('#pivot-table col').first().evaluate((node) => parseFloat(node.style.width || getComputedStyle(node).width));
+  const firstResizeHandleLocator = pivotPage.locator('.pivot-col-resizer').first();
+  await firstResizeHandleLocator.scrollIntoViewIfNeeded();
+  const firstResizeHandle = await firstResizeHandleLocator.boundingBox();
+  assert(Boolean(firstResizeHandle), 'Pivot first column resize handle should be measurable');
+  if (firstResizeHandle) {
+    await pivotPage.mouse.move(firstResizeHandle.x + firstResizeHandle.width / 2, firstResizeHandle.y + firstResizeHandle.height / 2);
+    await pivotPage.mouse.down();
+    await pivotPage.mouse.move(firstResizeHandle.x + firstResizeHandle.width / 2 + 54, firstResizeHandle.y + firstResizeHandle.height / 2);
+    await pivotPage.mouse.up();
+    await pivotPage.waitForTimeout(150);
+    const firstColWidthAfter = await pivotPage.locator('#pivot-table col').first().evaluate((node) => parseFloat(node.style.width || getComputedStyle(node).width));
+    assert(firstColWidthAfter >= firstColWidthBefore + 40, 'Pivot column resize should update the first column width', `${firstColWidthBefore} -> ${firstColWidthAfter}`);
+  }
+
+  const nonCrosslinkedPivotParams = new URLSearchParams({
+    f_track_name: '透明质酸钠',
+    f_product_shape: '非交联水光、肤质改善类',
+  });
+  const nonCrosslinkedPivotPage = await openCheckedPage(context, `pivot.html?${nonCrosslinkedPivotParams.toString()}`);
+  const nonCrosslinkedTitle = await nonCrosslinkedPivotPage.locator('#pivot-table-title').textContent();
+  assert(nonCrosslinkedTitle?.trim() === '透明质酸钠赛道非交联水光市场分布图', 'Pivot auto title should reflect HA non-crosslinked filters', nonCrosslinkedTitle?.trim() || '');
+  await nonCrosslinkedPivotPage.fill('#pivot-title-input', '含麻韩国填充剂竞争格局图');
+  await nonCrosslinkedPivotPage.waitForTimeout(150);
+  const customTitleState = await nonCrosslinkedPivotPage.evaluate(() => ({
+    title: document.querySelector('#pivot-table-title')?.textContent?.trim() || '',
+    urlTitle: new URL(location.href).searchParams.get('title') || '',
+  }));
+  assert(customTitleState.title === '含麻韩国填充剂竞争格局图', 'Pivot custom title should override the generated title', customTitleState.title);
+  assert(customTitleState.urlTitle === '含麻韩国填充剂竞争格局图', 'Pivot custom title should be shareable in the URL', customTitleState.urlTitle);
+  await nonCrosslinkedPivotPage.close();
 
   const lipPivotParams = new URLSearchParams({
     rows: 'country_region',
@@ -202,7 +237,11 @@ async function main() {
   assert(qMedPivotState.cellTitles.some((title) => title.includes('瑞典/瑞士 × 含利多卡因：5')), 'Galderma/Q-Med lidocaine records should land under Sweden/Switzerland x lidocaine', qMedPivotState.cellTitles.join(' | '));
   await qMedPivotPage.close();
 
-  await pivotPage.locator('[data-field-id="country_region"]').dragTo(pivotPage.locator('[data-zone="columns"] .pivot-zone-drop'));
+  await pivotPage.evaluate(() => window.scrollTo(0, 0));
+  await pivotPage.waitForTimeout(150);
+  await pivotPage.locator('#pivot-field-pool [data-field-id="country_region"]').scrollIntoViewIfNeeded();
+  await pivotPage.locator('#pivot-columns').scrollIntoViewIfNeeded();
+  await pivotPage.locator('#pivot-field-pool [data-field-id="country_region"]').dragTo(pivotPage.locator('#pivot-columns'));
   await pivotPage.waitForTimeout(500);
   const pivotDragState = await pivotPage.evaluate(() => ({
     columnChips: Array.from(document.querySelectorAll('#pivot-columns .pivot-assigned-chip')).map((node) => node.textContent?.replace('×', '').trim() || ''),
