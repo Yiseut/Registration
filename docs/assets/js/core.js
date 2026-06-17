@@ -274,6 +274,18 @@ function normalizeTags(value) {
 function renderRecordCard(r) {
   const tags = normalizeTags(r.tags).slice(0, 3).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
   const featureTags = normalizeTags(r.feature_tags).slice(0, 4).map((t) => `<span class="tag">${escape(t)}</span>`).join('');
+  const registrant = r.registrant && r.registrant !== r.company
+    ? `<div class="row detail-row"><b>注册人</b><span>${escape(r.registrant)}</span></div>`
+    : '';
+  const officialName = r.official_product_name && r.official_product_name !== r.product_name
+    ? `<div class="row detail-row"><b>官方名称</b><span>${escape(r.official_product_name)}</span></div>`
+    : '';
+  const specification = usefulDetail(r.specification, r.product_name)
+    ? `<div class="row detail-row"><b>型号规格</b><span>${highlightEvidence(r.specification)}</span></div>`
+    : '';
+  const components = usefulDetail(r.components, r.product_name)
+    ? `<div class="row detail-row evidence-row"><b>结构组成</b><span>${highlightEvidence(r.components)}</span></div>`
+    : '';
   const newsSource = r.news_title
     ? `<div class="row"><b>资讯来源</b> ${r.news_url ? `<a href="${escape(r.news_url)}" target="_blank" rel="noreferrer">${escape(r.news_title)}</a>` : escape(r.news_title)}${r.news_account ? ` · ${escape(r.news_account)}` : ''}</div>`
     : '';
@@ -291,9 +303,13 @@ function renderRecordCard(r) {
         <div class="cluster">${verifiedTag}${originTag}</div>
       </div>
       <div class="row"><b>注册企业</b> ${escape(r.company || '—')}</div>
+      ${registrant}
+      ${officialName}
       ${r.primary_indication ? `<div class="row"><b>适应证</b> ${escape(r.primary_indication)}</div>` : ''}
       ${r.material_family ? `<div class="row"><b>材料</b> ${escape(r.material_family)} · ${escape(r.material_form || '')}</div>` : ''}
-      ${r.scope_full ? `<div class="row"><b>说明</b> ${escape(r.scope_full)}</div>` : ''}
+      ${specification}
+      ${components}
+      ${r.scope_full ? `<div class="row detail-row"><b>适用范围</b><span>${highlightEvidence(r.scope_full)}</span></div>` : ''}
       ${r.commercial_name ? `<div class="row"><b>市场名</b> ${escape(r.commercial_name)}</div>` : ''}
       ${r.market_note ? `<div class="row"><b>资讯要点</b> ${escape(r.market_note)}</div>` : ''}
       ${featureTags ? `<div class="cluster" style="margin-top:8px">${featureTags}</div>` : ''}
@@ -305,6 +321,18 @@ function renderRecordCard(r) {
       ${tags ? `<div class="cluster" style="margin-top:8px">${tags}</div>` : ''}
     </div>
   `;
+}
+
+function usefulDetail(value, productName = '') {
+  const text = String(value || '').trim();
+  if (!text || /^[-—/]+$/.test(text)) return false;
+  const compactText = text.replace(/\s+/g, '');
+  const compactProduct = String(productName || '').replace(/\s+/g, '');
+  return compactText !== compactProduct;
+}
+
+function highlightEvidence(value) {
+  return escape(value).replace(/(盐酸利多卡因|利多卡因|Lidocaine)/gi, '<mark class="evidence-mark">$1</mark>');
 }
 
 function escape(str) {

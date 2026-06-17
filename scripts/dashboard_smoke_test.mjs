@@ -152,6 +152,21 @@ async function main() {
   assert(haPositionState.lidocaineTags.length === 13 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
   await haPositionPage.close();
 
+  const lepuDetailPage = await openCheckedPage(context, `tracks/ha.html?q=${encodeURIComponent('国械注准20253131324')}`);
+  await lepuDetailPage.locator('#table-records tbody tr').first().click();
+  await lepuDetailPage.waitForTimeout(250);
+  const lepuDrawerState = await lepuDetailPage.evaluate(() => ({
+    open: document.querySelector('.drawer.open') !== null,
+    text: document.querySelector('.drawer.open')?.textContent || '',
+    highlighted: Array.from(document.querySelectorAll('.drawer.open .evidence-mark')).map((node) => node.textContent || ''),
+  }));
+  assert(lepuDrawerState.open, 'Lepu HA record drawer should open from certificate search');
+  assert(lepuDrawerState.text.includes('型号规格') && lepuDrawerState.text.includes('1.0ml'), 'Lepu HA drawer should show model/specification details', lepuDrawerState.text);
+  assert(lepuDrawerState.text.includes('结构组成') && lepuDrawerState.text.includes('盐酸利多卡因'), 'Lepu HA drawer should show official component evidence for lidocaine', lepuDrawerState.text);
+  assert(lepuDrawerState.text.includes('注册人') && lepuDrawerState.text.includes('四川兴泰普乐医疗科技有限公司'), 'Lepu HA drawer should show the official registrant', lepuDrawerState.text);
+  assert(lepuDrawerState.highlighted.some((value) => value.includes('利多卡因')), 'Lepu HA drawer should highlight lidocaine evidence', lepuDrawerState.highlighted.join(', '));
+  await lepuDetailPage.close();
+
   const pivotPage = await openCheckedPage(context, 'pivot.html');
   const pivotState = await pivotPage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',

@@ -440,6 +440,28 @@ a:hover { color: var(--brand); }
   margin-top: 6px;
 }
 .record-card .row b { color: var(--ink-2); font-weight: 500; }
+.record-card .detail-row {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+  gap: 10px;
+  line-height: 1.56;
+}
+.record-card .detail-row b {
+  padding-top: 1px;
+}
+.record-card .detail-row span {
+  min-width: 0;
+}
+.record-card .evidence-row {
+  margin-top: 8px;
+}
+.record-card .evidence-mark {
+  padding: 0 3px;
+  border-radius: 5px;
+  color: #5d65b8;
+  background: color-mix(in srgb, var(--c-slate) 18%, rgba(255, 255, 255, 0.64));
+  font-weight: 650;
+}
 
 /* ===== Animations ===== */
 
