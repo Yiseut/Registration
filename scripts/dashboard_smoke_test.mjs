@@ -178,9 +178,13 @@ async function main() {
     chartCanvases: document.querySelectorAll('#pivot-chart canvas').length,
     resizers: document.querySelectorAll('.pivot-col-resizer').length,
     cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
+    methodologyBlocks: document.querySelectorAll('.pivot-methodology').length,
+    bodyText: document.body.textContent || '',
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(pivotState.h1 === '自定义透视', 'Pivot heading is missing', pivotState.h1);
+  assert(pivotState.methodologyBlocks === 0, 'Pivot methodology explainer should not appear on the public page', String(pivotState.methodologyBlocks));
+  assert(!pivotState.bodyText.includes('注册证名称或产品名含中文'), 'Pivot public page should not show the old lidocaine methodology copy');
   assert(pivotState.tableTitle === '透明质酸钠赛道交联填充剂市场分布图', 'Pivot table title should be generated from default filters', pivotState.tableTitle);
   assert(pivotState.records === '91', 'Pivot default scope should show 91 HA crosslinked records', pivotState.records);
   assert(pivotState.rowChips.includes('利多卡因状态'), 'Pivot default row dimension should be lidocaine status', pivotState.rowChips.join(', '));
