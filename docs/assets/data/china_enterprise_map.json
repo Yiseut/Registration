@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-17T20:20:59",
+  "generated_at": "2026-06-17T20:44:35",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 108,
-    "mapped_records": 108,
-    "mapped_companies": 62,
+    "candidate_records": 105,
+    "mapped_records": 105,
+    "mapped_companies": 61,
     "mapped_cities": 25,
     "unmapped_companies": 0
   },
@@ -15,11 +15,11 @@
       "lat": 30.2741,
       "lng": 120.1551,
       "companies": 8,
-      "registrations": 13,
+      "registrations": 12,
       "tracks": [
         {
           "name": "玻尿酸",
-          "records": 6
+          "records": 5
         },
         {
           "name": "胶原蛋白",
@@ -47,11 +47,6 @@
           "top_track": "胶原蛋白"
         },
         {
-          "name": "浙江景嘉医疗科技有限公司",
-          "records": 2,
-          "top_track": "玻尿酸"
-        },
-        {
           "name": "浙江珂瑞康生物医疗科技有限公司",
           "records": 2,
           "top_track": "胶原蛋白"
@@ -75,6 +70,11 @@
           "name": "浙江微度医疗器械有限公司",
           "records": 1,
           "top_track": "胶原刺激剂"
+        },
+        {
+          "name": "浙江景嘉医疗科技有限公司",
+          "records": 1,
+          "top_track": "玻尿酸"
         }
       ],
       "records_sample": [
@@ -177,7 +177,7 @@
       ],
       "location_sources": {
         "注册人名称含城市": 6,
-        "维护映射": 7
+        "维护映射": 6
       }
     },
     {
@@ -1003,11 +1003,11 @@
       "lat": 34.3416,
       "lng": 108.9398,
       "companies": 2,
-      "registrations": 4,
+      "registrations": 3,
       "tracks": [
         {
           "name": "胶原蛋白",
-          "records": 3
+          "records": 2
         },
         {
           "name": "玻尿酸",
@@ -1018,7 +1018,7 @@
       "companies_sample": [
         {
           "name": "陕西巨子生物技术有限公司",
-          "records": 3,
+          "records": 2,
           "top_track": "胶原蛋白"
         },
         {
@@ -1051,18 +1051,10 @@
           "company": "陕西巨子生物技术有限公司",
           "track": "胶原蛋白",
           "approval_date": "2025-10-21"
-        },
-        {
-          "certificate_no": "国械注准20263131219",
-          "brand": "巨子生物交联重组胶原蛋白植入剂",
-          "product_name": "交联重组胶原蛋白植入剂",
-          "company": "陕西巨子生物技术有限公司",
-          "track": "胶原蛋白",
-          "approval_date": "2026-06-16"
         }
       ],
       "location_sources": {
-        "维护映射": 4
+        "维护映射": 3
       }
     },
     {
@@ -1263,58 +1255,6 @@
       ],
       "location_sources": {
         "维护映射": 2
-      }
-    },
-    {
-      "city": "重庆",
-      "province": "重庆",
-      "lat": 29.563,
-      "lng": 106.5516,
-      "companies": 2,
-      "registrations": 2,
-      "tracks": [
-        {
-          "name": "胶原蛋白",
-          "records": 1
-        },
-        {
-          "name": "肉毒毒素",
-          "records": 1
-        }
-      ],
-      "leading_track": "胶原蛋白",
-      "companies_sample": [
-        {
-          "name": "重庆芳禾生物科技有限公司",
-          "records": 1,
-          "top_track": "胶原蛋白"
-        },
-        {
-          "name": "重庆誉颜制药有限公司",
-          "records": 1,
-          "top_track": "肉毒毒素"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国械注准20263131252",
-          "brand": "芳禾生物胶原蛋白植入剂",
-          "product_name": "胶原蛋白植入剂",
-          "company": "重庆芳禾生物科技有限公司",
-          "track": "胶原蛋白",
-          "approval_date": "2026-06-16"
-        },
-        {
-          "certificate_no": "国药准字S20260019",
-          "brand": "芮妥欣 Retoxin",
-          "product_name": "注射用重组A型肉毒毒素",
-          "company": "重庆誉颜制药有限公司",
-          "track": "肉毒毒素",
-          "approval_date": "2026-03-25"
-        }
-      ],
-      "location_sources": {
-        "注册人名称含城市": 2
       }
     },
     {
@@ -1694,6 +1634,41 @@
       ],
       "location_sources": {
         "维护映射": 1
+      }
+    },
+    {
+      "city": "重庆",
+      "province": "重庆",
+      "lat": 29.563,
+      "lng": 106.5516,
+      "companies": 1,
+      "registrations": 1,
+      "tracks": [
+        {
+          "name": "肉毒毒素",
+          "records": 1
+        }
+      ],
+      "leading_track": "肉毒毒素",
+      "companies_sample": [
+        {
+          "name": "重庆誉颜制药有限公司",
+          "records": 1,
+          "top_track": "肉毒毒素"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国药准字S20260019",
+          "brand": "芮妥欣 Retoxin",
+          "product_name": "注射用重组A型肉毒毒素",
+          "company": "重庆誉颜制药有限公司",
+          "track": "肉毒毒素",
+          "approval_date": "2026-03-25"
+        }
+      ],
+      "location_sources": {
+        "注册人名称含城市": 1
       }
     },
     {

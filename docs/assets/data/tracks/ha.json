@@ -8,12 +8,12 @@
   },
   "kpi": {
     "total": 110,
-    "main": 108,
-    "companies": 53,
-    "indications": 12,
-    "verified": 108,
-    "domestic": 52,
-    "imported": 53,
+    "main": 106,
+    "companies": 51,
+    "indications": 10,
+    "verified": 106,
+    "domestic": 51,
+    "imported": 52,
     "hkmt": 3
   },
   "company_share": [
@@ -66,7 +66,7 @@
       "value": 2
     }
   ],
-  "long_tail_company_count": 41,
+  "long_tail_company_count": 39,
   "indication_share": [
     {
       "name": "鼻唇沟",
@@ -107,20 +107,12 @@
     {
       "name": "手部",
       "value": 3
-    },
-    {
-      "name": "完整适用范围待官方注册证详情回填",
-      "value": 2
-    },
-    {
-      "name": "待确认",
-      "value": 2
     }
   ],
   "origin_share": [
     {
       "name": "国产",
-      "value": 52
+      "value": 51
     },
     {
       "name": "港澳台",
@@ -128,21 +120,13 @@
     },
     {
       "name": "进口",
-      "value": 53
+      "value": 52
     }
   ],
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
       "value": 106
-    },
-    {
-      "name": "透明质酸钠 / 注射用透明质酸钠溶液 / 水光/肤质类 / NMPA批准证明文件送达信息",
-      "value": 1
-    },
-    {
-      "name": "透明质酸钠 / 交联透明质酸钠凝胶 / 韩国进口 / Humedix / NMPA批准证明文件送达信息",
-      "value": 1
     }
   ],
   "timeline": {
@@ -160,7 +144,7 @@
       17,
       29,
       32,
-      8
+      6
     ]
   },
   "company_indication_heatmap": {
@@ -7544,7 +7528,7 @@
       "id": "RAW-HA-国械注准20263131236",
       "track": "ha",
       "track_name": "透明质酸钠",
-      "record_type": "三类医疗器械",
+      "record_type": "raw_lead",
       "regulatory_class": "三类医疗器械",
       "device_type": "injectable_material",
       "strategic": "玻尿酸",
@@ -7586,33 +7570,31 @@
         "透明质酸钠溶液",
         "NMPA送达信息确认"
       ],
-      "official_status": "verified",
-      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
+      "official_status": "not_found",
+      "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
+      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息；国家政务服务平台NMPA注册证详情查询未同步",
       "official_product_name": "注射用透明质酸钠溶液",
       "official_registrant": "浙江景嘉医疗科技有限公司",
       "official_approval_date": "2026-06-16",
       "official_valid_until": "",
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
-      "portfolio_segments": [
-        "玻尿酸"
-      ],
+      "verified": false,
+      "main_landscape": false,
+      "main_landscape_included": "否",
+      "portfolio_segments": [],
       "source_account": "国家药品监督管理局",
       "source_title": "国家药监局2026年06月17日医疗器械批准证明文件送达信息：浙江景嘉注射用透明质酸钠溶液",
       "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "confidence": "high",
-      "data_status": "已结构化",
+      "data_status": "原始保留",
       "source_dataset": "manual_raw_cert_leads"
     },
     {
       "id": "RAW-HA-国械注进20263130223",
       "track": "ha",
       "track_name": "透明质酸钠",
-      "record_type": "三类医疗器械",
+      "record_type": "raw_lead",
       "regulatory_class": "三类医疗器械",
       "device_type": "injectable_material",
       "strategic": "玻尿酸",
@@ -7653,26 +7635,24 @@
         "交联",
         "NMPA送达信息确认"
       ],
-      "official_status": "verified",
-      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
+      "official_status": "not_found",
+      "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
+      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息；国家政务服务平台NMPA注册证详情查询未同步",
       "official_product_name": "注射用交联透明质酸钠凝胶",
       "official_registrant": "Humedix Co., Ltd.",
       "official_approval_date": "2026-06-16",
       "official_valid_until": "",
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
-      "portfolio_segments": [
-        "玻尿酸"
-      ],
+      "verified": false,
+      "main_landscape": false,
+      "main_landscape_included": "否",
+      "portfolio_segments": [],
       "source_account": "国家药品监督管理局",
       "source_title": "国家药监局2026年06月17日医疗器械批准证明文件送达信息：Humedix注射用交联透明质酸钠凝胶",
       "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "confidence": "high",
-      "data_status": "已结构化",
+      "data_status": "原始保留",
       "source_dataset": "manual_raw_cert_leads"
     }
   ]

@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-06-17T20:20:59",
+  "generated_at": "2026-06-17T20:44:35",
   "kpi": {
     "total_records": 195,
-    "main_records": 188,
-    "excluded": 7,
-    "companies": 101,
-    "indications": 50,
+    "main_records": 184,
+    "excluded": 11,
+    "companies": 98,
+    "indications": 46,
     "verified_share": 100.0,
-    "domestic": 102,
-    "imported": 80,
+    "domestic": 99,
+    "imported": 79,
     "hkmt": 6,
-    "injectable_class3": 149,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白21 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 145,
+    "injectable_class3_breakdown": "HA106 / 胶原蛋白19 / PLA12 / PCL5 / CaHA2 / 琼脂糖1",
     "injectable_drug": 13,
     "injectable_drug_breakdown": "肉毒毒素12 / 去氧胆酸1",
-    "indication_breakdown": "注射填充类 21 类 · 注射用药品 6 类 · EBD 27 类",
-    "recent_12mo": 61,
-    "recent_12mo_share": 31.3,
-    "recent_12mo_breakdown": "HA30 / EBD11 / 胶原蛋白10 / PLA5"
+    "indication_breakdown": "注射填充类 17 类 · 注射用药品 6 类 · EBD 27 类",
+    "recent_12mo": 57,
+    "recent_12mo_share": 29.2,
+    "recent_12mo_breakdown": "HA28 / EBD11 / 胶原蛋白8 / PLA5"
   },
   "segments": [
     {
@@ -26,9 +26,9 @@
       "tagline": "",
       "accent": "#58bfd7",
       "records": 110,
-      "main_records": 108,
-      "companies": 52,
-      "verified": 108,
+      "main_records": 106,
+      "companies": 50,
+      "verified": 106,
       "latest_year": 2026,
       "leading_company": "华熙生物"
     },
@@ -50,11 +50,11 @@
       "tagline": "",
       "accent": "#dd7b8b",
       "records": 21,
-      "main_records": 21,
-      "companies": 13,
-      "verified": 21,
+      "main_records": 19,
+      "companies": 12,
+      "verified": 19,
       "latest_year": 2026,
-      "leading_company": "巨子生物"
+      "leading_company": "双美生物"
     },
     {
       "key": "plla",
@@ -338,20 +338,6 @@
         }
       },
       {
-        "company_key": "巨子生物",
-        "company": "巨子生物",
-        "total": 3,
-        "segments_covered": 1,
-        "by_segment": {
-          "EBD 设备": 0,
-          "新型材料": 0,
-          "玻尿酸": 0,
-          "肉毒毒素": 0,
-          "胶原刺激剂": 0,
-          "胶原蛋白": 3
-        }
-      },
-      {
         "company_key": "双美生物",
         "company": "双美生物",
         "total": 3,
@@ -462,6 +448,20 @@
           "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
+      },
+      {
+        "company_key": "汇美迪斯株式会社 humedix co., ltd.",
+        "company": "汇美迪斯株式会社 Humedix Co., Ltd.",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒毒素": 0,
+          "胶原刺激剂": 0,
+          "胶原蛋白": 0
+        }
       }
     ]
   },
@@ -475,8 +475,6 @@
       "PCL",
       "CaHA",
       "琼脂糖 / Algeness VL / 面部注射填充剂",
-      "透明质酸钠 / 注射用透明质酸钠溶液 / 水光/肤质类 / NMPA批准证明文件送达信息",
-      "透明质酸钠 / 交联透明质酸钠凝胶 / 韩国进口 / Humedix / NMPA批准证明文件送达信息",
       "溶脂针 / 注射溶脂 / 去氧胆酸 / 双下巴"
     ],
     "indications": [
@@ -493,7 +491,7 @@
       "手部",
       "颞部",
       "鱼尾纹",
-      "面部填充"
+      "面颊部平滑度"
     ],
     "cells": [
       [
@@ -588,11 +586,6 @@
       ],
       [
         8,
-        4,
-        1
-      ],
-      [
-        13,
         4,
         1
       ],
@@ -2823,7 +2816,7 @@
           6,
           21,
           40,
-          18
+          15
         ]
       },
       {
@@ -2839,7 +2832,7 @@
           11,
           24,
           18,
-          4
+          3
         ]
       },
       {
@@ -2879,51 +2872,51 @@
   "concentration": {
     "ha": {
       "track_name": "透明质酸钠",
-      "total_certs": 108,
-      "company_count": 53,
-      "hhi": 384.0,
-      "cr4": 30.6,
-      "cr8": 47.2,
+      "total_certs": 106,
+      "company_count": 51,
+      "hhi": 397.0,
+      "cr4": 31.1,
+      "cr8": 48.1,
       "top": [
         {
           "company": "华熙生物",
           "certs": 10,
-          "share": 9.3
+          "share": 9.4
         },
         {
           "company": "艾尔建 / AbbVie",
           "certs": 9,
-          "share": 8.3
+          "share": 8.5
         },
         {
           "company": "高德美 / Galderma",
           "certs": 8,
-          "share": 7.4
+          "share": 7.5
         },
         {
           "company": "爱美客",
           "certs": 6,
-          "share": 5.6
+          "share": 5.7
         },
         {
           "company": "其胜生物",
           "certs": 5,
-          "share": 4.6
+          "share": 4.7
         },
         {
           "company": "LG化学 LG Chem, Ltd.",
           "certs": 5,
-          "share": 4.6
+          "share": 4.7
         },
         {
           "company": "海雅美",
           "certs": 4,
-          "share": 3.7
+          "share": 3.8
         },
         {
           "company": "BNC",
           "certs": 4,
-          "share": 3.7
+          "share": 3.8
         }
       ]
     },
@@ -2979,51 +2972,51 @@
     },
     "collagen": {
       "track_name": "胶原蛋白",
-      "total_certs": 21,
-      "company_count": 13,
-      "hhi": 975.0,
-      "cr4": 52.4,
-      "cr8": 76.2,
+      "total_certs": 19,
+      "company_count": 12,
+      "hhi": 1025.0,
+      "cr4": 52.6,
+      "cr8": 78.9,
       "top": [
-        {
-          "company": "巨子生物",
-          "certs": 3,
-          "share": 14.3
-        },
         {
           "company": "双美生物",
           "certs": 3,
-          "share": 14.3
+          "share": 15.8
         },
         {
           "company": "锦波生物",
           "certs": 3,
-          "share": 14.3
+          "share": 15.8
+        },
+        {
+          "company": "巨子生物",
+          "certs": 2,
+          "share": 10.5
         },
         {
           "company": "崇山生物",
           "certs": 2,
-          "share": 9.5
+          "share": 10.5
         },
         {
           "company": "珂瑞康",
           "certs": 2,
-          "share": 9.5
+          "share": 10.5
         },
         {
           "company": "艾佰瑞",
           "certs": 1,
-          "share": 4.8
+          "share": 5.3
         },
         {
           "company": "奇璞生物",
           "certs": 1,
-          "share": 4.8
+          "share": 5.3
         },
         {
           "company": "斐缦生物",
           "certs": 1,
-          "share": 4.8
+          "share": 5.3
         }
       ]
     },
