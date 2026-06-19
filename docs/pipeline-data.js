@@ -1,26 +1,26 @@
 window.PIPELINE_DASHBOARD_DATA = {
   "meta": {
     "title": "新材料注册进度与来源覆盖",
-    "updated_at": "2026-06-19 23:47",
+    "updated_at": "2026-06-20 00:25",
     "source_csv": "E:\\shared\\code\\registration\\inbox\\pipeline_source_updates.csv",
     "scope_note": "本页是Pipeline来源层，不与已获批注册证主表KPI相加。"
   },
   "summary": {
-    "records_total": 33,
-    "projects_total": 29,
-    "frontstage_ready_projects": 13,
+    "records_total": 37,
+    "projects_total": 32,
+    "frontstage_ready_projects": 15,
     "hidden_records": 2,
-    "conflict_records": 1,
+    "conflict_records": 0,
     "by_track": [
       {
         "track": "caha",
         "track_label": "CaHA/羟基磷灰石",
-        "project_count": 12,
-        "frontstage_ready_count": 5,
+        "project_count": 13,
+        "frontstage_ready_count": 6,
         "pending_or_research_count": 7,
         "highest_grade_counts": {
           "A0": 2,
-          "A1": 1,
+          "A1": 2,
           "A2": 1,
           "A3": 1,
           "A4": 5,
@@ -41,11 +41,12 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "pdrn",
         "track_label": "PDRN/多聚脱氧核糖核苷酸",
-        "project_count": 4,
-        "frontstage_ready_count": 2,
+        "project_count": 5,
+        "frontstage_ready_count": 3,
         "pending_or_research_count": 2,
         "highest_grade_counts": {
           "A1": 1,
+          "A2": 1,
           "A3": 1,
           "A4": 2
         }
@@ -53,11 +54,12 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "pn",
         "track_label": "PN/多聚核苷酸",
-        "project_count": 1,
+        "project_count": 2,
         "frontstage_ready_count": 1,
-        "pending_or_research_count": 0,
+        "pending_or_research_count": 1,
         "highest_grade_counts": {
-          "A1": 1
+          "A1": 1,
+          "A4": 1
         }
       },
       {
@@ -75,7 +77,6 @@ window.PIPELINE_DASHBOARD_DATA = {
     ],
     "lane_gaps": {
       "caha": [
-        "official_acceptance_delivery",
         "registration_testing"
       ],
       "ecm": [
@@ -94,8 +95,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       ],
       "pn": [
         "clinical_registry",
-        "company_disclosure",
-        "industry_media"
+        "company_disclosure"
       ]
     }
   },
@@ -206,6 +206,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       "records": [
         "pipe_caha_harmonyca_clinicaltrials_nct07032597",
         "pipe_caha_harmonyca_abbvie_m21_782"
+      ]
+    },
+    {
+      "project_key": "caha:羟基磷灰石生物陶瓷_菲林普利相关既有证照:四川拜阿蒙生物活性材料有限责任公司_成都睿合医药科技有限公司",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "material": "CaHA/羟基磷灰石",
+      "product": "羟基磷灰石生物陶瓷/菲林普利相关既有证照",
+      "company": "四川拜阿蒙生物活性材料有限责任公司 / 成都睿合医药科技有限公司",
+      "current_stage": "既有证照/非医美基线",
+      "stage_chain": "既有证照/非医美基线",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "official_acceptance_delivery"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2021-12-08",
+      "milestone_dates": [
+        "2021-12-08"
+      ],
+      "reported_status": "NMPA送达信息列示国械注准20173130346，产品名称为羟基磷灰石生物陶瓷，申请人为四川拜阿蒙生物活性材料有限责任公司。",
+      "reported_indication": "官方送达页不展开适用范围；后续详情应区分既有骨/软组织修复证照与面部注射填充专证。",
+      "reported_center_or_pi": "",
+      "next_watch": "查NMPA详情页、产品技术要求及是否存在面部填充适应证新增注册路径。",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_caha_feilin_nmpa_delivery_20211208"
       ]
     },
     {
@@ -635,14 +670,14 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "ECM/脱细胞基质",
       "product": "SIS-ECM医美填充产品",
       "company": "白衣缘生物/康哲美丽",
-      "current_stage": "clinical_to_registration_expected",
-      "stage_chain": "clinical_to_registration_expected",
+      "current_stage": "临床至注册预期",
+      "stage_chain": "临床至注册预期",
       "highest_evidence": "A4",
       "highest_evidence_label": "A4 Professional media, industry account, research report, or secondary database.",
       "evidence_count": 1,
       "public_evidence_count": 1,
       "verified_source_count": 0,
-      "conflict_count": 1,
+      "conflict_count": 0,
       "hidden_lead_count": 0,
       "source_lanes": [
         "industry_media"
@@ -650,9 +685,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "grade_counts": {
         "A4": 1
       },
-      "latest_source_date": "2026-06-17",
+      "latest_source_date": "2025-06-17",
       "milestone_dates": [
-        "2026-06-17"
+        "2025-06-17"
       ],
       "reported_status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
       "reported_indication": "医美填充/水光方向",
@@ -660,7 +695,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "next_watch": "与2025年西格玛受理线索存在阶段冲突，需核验是否为同一产品或不同产品",
       "frontstage_ready": false,
       "records": [
-        "pipe_ecm_baiyiyuan_36kr_20260617_conflict"
+        "pipe_ecm_baiyiyuan_36kr_20250617_conflict"
       ]
     },
     {
@@ -740,8 +775,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "ECM/脱细胞基质",
       "product": "注射用ECM生物凝胶",
       "company": "圣至润合（北京）生物科技有限公司",
-      "current_stage": "clinical_completed_or_financing",
-      "stage_chain": "clinical_completed_or_financing",
+      "current_stage": "临床完成/融资披露",
+      "stage_chain": "临床完成/融资披露",
       "highest_evidence": "A4",
       "highest_evidence_label": "A4 Professional media, industry account, research report, or secondary database.",
       "evidence_count": 1,
@@ -839,6 +874,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
+      "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:江苏吴中_吴中美学_北京丽徕科技有限公司",
+      "track": "pdrn",
+      "track_label": "PDRN/多聚脱氧核糖核苷酸",
+      "material": "PDRN/多聚脱氧核糖核苷酸",
+      "product": "注射用透明质酸钠-PDRN复合溶液",
+      "company": "江苏吴中/吴中美学/北京丽徕科技有限公司",
+      "current_stage": "权益/管线披露",
+      "stage_chain": "权益/管线披露",
+      "highest_evidence": "A2",
+      "highest_evidence_label": "A2 Listed company filing, annual report, interim report, prospectus, or exchange disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A2": 1
+      },
+      "latest_source_date": "2025-04-30",
+      "milestone_dates": [
+        "2025-04-30"
+      ],
+      "reported_status": "年报披露吴中美学与北京丽徕科技签署投资协议，并取得注射用透明质酸钠-PDRN复合溶液产品独家权益。",
+      "reported_indication": "PDRN再生水光/改善皮肤状态方向；具体注册适应证以后续官方受理文件为准。",
+      "reported_center_or_pi": "",
+      "next_watch": "跟踪上市公司临时公告、NMPA受理和注册结果。",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_pdrn_wuzhong_2024_ar"
+      ]
+    },
+    {
       "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:吴中美学_北京丽徕科技有限公司",
       "track": "pdrn",
       "track_label": "PDRN/多聚脱氧核糖核苷酸",
@@ -846,11 +916,11 @@ window.PIPELINE_DASHBOARD_DATA = {
       "product": "注射用透明质酸钠-PDRN复合溶液",
       "company": "吴中美学/北京丽徕科技有限公司",
       "current_stage": "临床进行中",
-      "stage_chain": "临床进行中",
+      "stage_chain": "临床进行中 / 入组完成",
       "highest_evidence": "A3",
       "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
-      "evidence_count": 1,
-      "public_evidence_count": 1,
+      "evidence_count": 2,
+      "public_evidence_count": 2,
       "verified_source_count": 0,
       "conflict_count": 0,
       "hidden_lead_count": 0,
@@ -858,11 +928,12 @@ window.PIPELINE_DASHBOARD_DATA = {
         "company_disclosure"
       ],
       "grade_counts": {
-        "A3": 1
+        "A3": 2
       },
-      "latest_source_date": "2024-07-29",
+      "latest_source_date": "2025-03-04",
       "milestone_dates": [
-        "2024-07-29"
+        "2024-07-29",
+        "2025-03-04"
       ],
       "reported_status": "吴中美学公告称取得丽徕科技PDRN复合溶液产品独家权益；国内尚无PDRN溶液三类医疗器械产品获批上市，丽徕产品已进入临床试验阶段",
       "reported_indication": "功能型水光/抗炎修复/肤质改善方向",
@@ -870,7 +941,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "next_watch": "跟踪临床登记、临床完成和NMPA受理",
       "frontstage_ready": true,
       "records": [
-        "pipe_pdrn_wuzhong_liylai_20240729"
+        "pipe_pdrn_wuzhong_liylai_20240729",
+        "pipe_pdrn_wuzhong_enrollment_20250304"
       ]
     },
     {
@@ -976,6 +1048,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": true,
       "records": [
         "pipe_pn_nifdc_classification_202410"
+      ]
+    },
+    {
+      "project_key": "pn:注射用多聚核苷酸凝胶监管路径:行业总体",
+      "track": "pn",
+      "track_label": "PN/多聚核苷酸",
+      "material": "PN/多聚核苷酸",
+      "product": "注射用多聚核苷酸凝胶监管路径",
+      "company": "行业总体",
+      "current_stage": "分类界定",
+      "stage_chain": "分类界定",
+      "highest_evidence": "A4",
+      "highest_evidence_label": "A4 Professional media, industry account, research report, or secondary database.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "industry_media"
+      ],
+      "grade_counts": {
+        "A4": 1
+      },
+      "latest_source_date": "2025-01-06",
+      "milestone_dates": [
+        "2025-01-06"
+      ],
+      "reported_status": "报告梳理NIFDC对注射用多聚核苷酸凝胶的药械组合产品界定及临床试验要求。",
+      "reported_indication": "面部真皮组织填充、成人眼角细纹、改善皮肤状态等监管描述。",
+      "reported_center_or_pi": "",
+      "next_watch": "继续搜索具体PN企业临床登记、受理号和主文档/终端产品对应关系。",
+      "frontstage_ready": false,
+      "records": [
+        "pipe_pn_sigma_regulatory_intro_20250106"
       ]
     },
     {
@@ -1184,6 +1291,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-19"
     },
     {
+      "lead_id": "pipe_caha_feilin_nmpa_delivery_20211208",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "material": "CaHA/羟基磷灰石",
+      "product": "羟基磷灰石生物陶瓷/菲林普利相关既有证照",
+      "company": "四川拜阿蒙生物活性材料有限责任公司 / 成都睿合医药科技有限公司",
+      "source_stage": "approved_non_aesthetic_baseline",
+      "stage_label": "既有证照/非医美基线",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "official_acceptance_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "NMPA 2021年12月08日医疗器械批准证明文件待领取信息：羟基磷灰石生物陶瓷",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20211208133629120.html",
+      "source_date": "2021-12-08",
+      "reported_status": "NMPA送达信息列示国械注准20173130346，产品名称为羟基磷灰石生物陶瓷，申请人为四川拜阿蒙生物活性材料有限责任公司。",
+      "reported_indication": "官方送达页不展开适用范围；后续详情应区分既有骨/软组织修复证照与面部注射填充专证。",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "查NMPA详情页、产品技术要求及是否存在面部填充适应证新增注册路径。",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "research_note",
+      "note": "用于校正菲林普利线索：有既有三类证照，但不能直接等同新医美面部填充Pipeline。",
+      "added_at": "2026-06-20"
+    },
+    {
       "lead_id": "pipe_caha_harmonyca_clinicaltrials_nct07032597",
       "track": "caha",
       "track_label": "CaHA/羟基磷灰石",
@@ -1302,7 +1436,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "上市注册推进",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "21世纪经济报道：华瑭大昌与CGBio推动羟基磷灰石填充物上市许可",
@@ -1313,9 +1447,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "查合作公告、境内代理、注册检验或受理信息",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "合作线索，不等于临床或受理；先放研究备注。",
+      "note": "已由HTDK/CGBio企业合作公告A3覆盖，媒体转载不再作为主证据。",
       "added_at": "2026-06-19"
     },
     {
@@ -1329,7 +1463,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "注册检验完成",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "21世纪经济报道：HArmonyCa在中国完成注册检验",
@@ -1340,9 +1474,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "查注册检验、临床登记、企业公告或受理号",
       "confidence": "medium",
-      "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
-      "note": "媒体线索，需升级到企业公告或官方节点。",
+      "official_verification_status": "not_applicable",
+      "frontstage_use": "research_note",
+      "note": "已由ClinicalTrials.gov A1与AbbVie临床试验页A3覆盖，保留为早期媒体线索。",
       "added_at": "2026-06-19"
     },
     {
@@ -1356,7 +1490,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "临床进行中",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "21世纪经济报道：Radiesse国内启动鼻唇沟适应证注册临床",
@@ -1367,9 +1501,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "与已获批注册证、NMPA详情和临床阶段做时间线关联",
       "confidence": "medium",
-      "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
-      "note": "如果已在主表获批，应作为历史pipeline节点，不重复计入ongoing。",
+      "official_verification_status": "not_applicable",
+      "frontstage_use": "research_note",
+      "note": "Radiesse已由CMDE官方审评报告A0覆盖；该条仅作为获批前临床历史线索。",
       "added_at": "2026-06-19"
     },
     {
@@ -1448,9 +1582,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "优先查企业公告、临床中心、受理号和注册检验线索",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_found",
       "frontstage_use": "hidden",
-      "note": "当前只是线索，不进入前台正式统计。",
+      "note": "本轮检索确认菲林普利对应羟基磷灰石生物陶瓷既有三类证，但未找到新的面部填充注册临床/受理节点；线索继续隐藏待核验。",
       "added_at": "2026-06-19"
     },
     {
@@ -1475,9 +1609,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "广东省人民医院整形外科",
       "expected_next_milestone": "向企业公告、临床中心、注册检验或受理号交叉核验",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_found",
       "frontstage_use": "hidden",
-      "note": "线下可靠线索，暂不公开计数；用于优先搜索和核验。",
+      "note": "本轮检索仅找到昊海生科年报/半年报A2披露，未找到广东省人民医院或NMPA公开临床完成节点；继续隐藏待核验。",
       "added_at": "2026-06-19"
     },
     {
@@ -1569,7 +1703,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "product": "注射用ECM生物凝胶",
       "company": "圣至润合（北京）生物科技有限公司",
       "source_stage": "clinical_completed_or_financing",
-      "stage_label": "clinical_completed_or_financing",
+      "stage_label": "临床完成/融资披露",
       "evidence_grade": "A4",
       "evidence_rank": 4,
       "evidence_status": "active",
@@ -1613,6 +1747,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "official_verification_status": "pending",
       "frontstage_use": "research_note",
       "note": "主文档不是终端注册证，但对上游材料信息流重要。",
+      "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_ecm_baiyiyuan_36kr_20250617_conflict",
+      "track": "ecm",
+      "track_label": "ECM/脱细胞基质",
+      "material": "ECM/脱细胞基质",
+      "product": "SIS-ECM医美填充产品",
+      "company": "白衣缘生物/康哲美丽",
+      "source_stage": "clinical_to_registration_expected",
+      "stage_label": "临床至注册预期",
+      "evidence_grade": "A4",
+      "evidence_rank": 4,
+      "evidence_status": "archived",
+      "source_lane": "industry_media",
+      "source_type": "media_article",
+      "source_title": "36氪：白衣缘SIS-ECM填充产品即将完成临床研发并有望递交注册",
+      "source_url": "https://eu.36kr.com/zh/p/3346904407579266",
+      "source_date": "2025-06-17",
+      "reported_status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
+      "reported_indication": "医美填充/水光方向",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "与2025年西格玛受理线索存在阶段冲突，需核验是否为同一产品或不同产品",
+      "confidence": "medium",
+      "official_verification_status": "not_applicable",
+      "frontstage_use": "research_note",
+      "note": "阶段口径已由白衣缘/康哲A3临床公告及西格玛A3注册受理公告覆盖；原报道日期修正为2025-06-17并归档。",
       "added_at": "2026-06-19"
     },
     {
@@ -1670,33 +1831,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-19"
     },
     {
-      "lead_id": "pipe_ecm_baiyiyuan_36kr_20260617_conflict",
-      "track": "ecm",
-      "track_label": "ECM/脱细胞基质",
-      "material": "ECM/脱细胞基质",
-      "product": "SIS-ECM医美填充产品",
-      "company": "白衣缘生物/康哲美丽",
-      "source_stage": "clinical_to_registration_expected",
-      "stage_label": "clinical_to_registration_expected",
-      "evidence_grade": "A4",
-      "evidence_rank": 4,
-      "evidence_status": "conflict",
-      "source_lane": "industry_media",
-      "source_type": "media_article",
-      "source_title": "36氪：白衣缘SIS-ECM填充产品即将完成临床研发并有望递交注册",
-      "source_url": "https://eu.36kr.com/zh/p/3346904407579266",
-      "source_date": "2026-06-17",
-      "reported_status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
-      "reported_indication": "医美填充/水光方向",
-      "reported_center_or_pi": "",
-      "expected_next_milestone": "与2025年西格玛受理线索存在阶段冲突，需核验是否为同一产品或不同产品",
-      "confidence": "medium",
-      "official_verification_status": "conflict",
-      "frontstage_use": "research_note",
-      "note": "同一企业不同来源阶段不一致；不要直接合并为一个确定状态。",
-      "added_at": "2026-06-19"
-    },
-    {
       "lead_id": "pipe_pdrn_nifdc_classification_202210",
       "track": "pdrn",
       "track_label": "PDRN/多聚脱氧核糖核苷酸",
@@ -1724,6 +1858,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-19"
     },
     {
+      "lead_id": "pipe_pdrn_wuzhong_2024_ar",
+      "track": "pdrn",
+      "track_label": "PDRN/多聚脱氧核糖核苷酸",
+      "material": "PDRN/多聚脱氧核糖核苷酸",
+      "product": "注射用透明质酸钠-PDRN复合溶液",
+      "company": "江苏吴中/吴中美学/北京丽徕科技有限公司",
+      "source_stage": "company_disclosure_rights",
+      "stage_label": "权益/管线披露",
+      "evidence_grade": "A2",
+      "evidence_rank": 2,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "annual_report",
+      "source_title": "江苏吴中2024年年度报告：取得丽徕科技PDRN复合溶液产品独家权益",
+      "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2025/2025-4/2025-04-30/11077548.PDF",
+      "source_date": "2025-04-30",
+      "reported_status": "年报披露吴中美学与北京丽徕科技签署投资协议，并取得注射用透明质酸钠-PDRN复合溶液产品独家权益。",
+      "reported_indication": "PDRN再生水光/改善皮肤状态方向；具体注册适应证以后续官方受理文件为准。",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "跟踪上市公司临时公告、NMPA受理和注册结果。",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "A2上市公司年报用于确认产品权益与管线存在；临床进度由公司新闻A3补充。",
+      "added_at": "2026-06-20"
+    },
+    {
       "lead_id": "pipe_pdrn_wuzhong_liylai_20240729",
       "track": "pdrn",
       "track_label": "PDRN/多聚脱氧核糖核苷酸",
@@ -1749,6 +1910,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_use": "pipeline_table",
       "note": "企业官网来源，PDRN应作为新增早期材料赛道纳入Pipeline。",
       "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_pdrn_wuzhong_enrollment_20250304",
+      "track": "pdrn",
+      "track_label": "PDRN/多聚脱氧核糖核苷酸",
+      "material": "PDRN/多聚脱氧核糖核苷酸",
+      "product": "注射用透明质酸钠-PDRN复合溶液",
+      "company": "吴中美学/北京丽徕科技有限公司",
+      "source_stage": "clinical_enrollment_completed",
+      "stage_label": "入组完成",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_news",
+      "source_title": "江苏吴中官网：PDRN复合溶液完成全部临床受试者入组",
+      "source_url": "https://www.600200.com/article/168/detail/2287.html",
+      "source_date": "2025-03-04",
+      "reported_status": "江苏吴中官网媒体报道页称PDRN复合溶液已于2025年1月底完成全部临床受试者入组，预计2025年下半年提交上市申请。",
+      "reported_indication": "再生水光/改善皮肤状态方向；正式适应证以后续注册申报或NMPA受理为准。",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "优先跟踪NMPA受理、注册申报、临床完成报告和上市许可。",
+      "confidence": "high",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "与2024年吴中美学取得丽徕PDRN独家权益的企业公告形成连续证据链。",
+      "added_at": "2026-06-20"
     },
     {
       "lead_id": "pipe_pdrn_cirs_202301_regulatory_intro",
@@ -1830,6 +2018,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_use": "pipeline_table",
       "note": "这是监管路径线索，不是获批证照。",
       "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_pn_sigma_regulatory_intro_20250106",
+      "track": "pn",
+      "track_label": "PN/多聚核苷酸",
+      "material": "PN/多聚核苷酸",
+      "product": "注射用多聚核苷酸凝胶监管路径",
+      "company": "行业总体",
+      "source_stage": "regulatory_classified",
+      "stage_label": "分类界定",
+      "evidence_grade": "A4",
+      "evidence_rank": 4,
+      "evidence_status": "active",
+      "source_lane": "industry_media",
+      "source_type": "research_report",
+      "source_title": "西格玛医学：三文鱼针注册介绍及临床试验要求",
+      "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3340&c=View&m=home",
+      "source_date": "2025-01-06",
+      "reported_status": "报告梳理NIFDC对注射用多聚核苷酸凝胶的药械组合产品界定及临床试验要求。",
+      "reported_indication": "面部真皮组织填充、成人眼角细纹、改善皮肤状态等监管描述。",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "继续搜索具体PN企业临床登记、受理号和主文档/终端产品对应关系。",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "research_note",
+      "note": "用于补足PN赛道行业路径背景；不作为具体产品进度。",
+      "added_at": "2026-06-20"
     },
     {
       "lead_id": "pipe_silk_venusilk_chictr2500114891",
@@ -2023,6 +2238,20 @@ window.PIPELINE_DASHBOARD_DATA = {
   ],
   "milestones": [
     {
+      "id": "milestone_pipe_caha_feilin_nmpa_delivery_20211208",
+      "project_key": "caha:羟基磷灰石生物陶瓷_菲林普利相关既有证照:四川拜阿蒙生物活性材料有限责任公司_成都睿合医药科技有限公司",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "date": "2021-12-08",
+      "product": "羟基磷灰石生物陶瓷/菲林普利相关既有证照",
+      "company": "四川拜阿蒙生物活性材料有限责任公司 / 成都睿合医药科技有限公司",
+      "stage": "既有证照/非医美基线",
+      "evidence_grade": "A1",
+      "status": "NMPA送达信息列示国械注准20173130346，产品名称为羟基磷灰石生物陶瓷，申请人为四川拜阿蒙生物活性材料有限责任公司。",
+      "source_title": "NMPA 2021年12月08日医疗器械批准证明文件待领取信息：羟基磷灰石生物陶瓷",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20211208133629120.html"
+    },
+    {
       "id": "milestone_pipe_pdrn_nifdc_classification_202210",
       "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:未披露",
       "track": "pdrn",
@@ -2121,6 +2350,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://app.nifdc.org.cn/biaogzx/dataGk.do?formAction=listFljdResult&index=465"
     },
     {
+      "id": "milestone_pipe_pn_sigma_regulatory_intro_20250106",
+      "project_key": "pn:注射用多聚核苷酸凝胶监管路径:行业总体",
+      "track": "pn",
+      "track_label": "PN/多聚核苷酸",
+      "date": "2025-01-06",
+      "product": "注射用多聚核苷酸凝胶监管路径",
+      "company": "行业总体",
+      "stage": "分类界定",
+      "evidence_grade": "A4",
+      "status": "报告梳理NIFDC对注射用多聚核苷酸凝胶的药械组合产品界定及临床试验要求。",
+      "source_title": "西格玛医学：三文鱼针注册介绍及临床试验要求",
+      "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3340&c=View&m=home"
+    },
+    {
       "id": "milestone_pipe_caha_cgbio_huatang_202311_market_entry",
       "project_key": "caha:caha填充物中国上市许可合作:cgbio_华瑭大昌",
       "track": "caha",
@@ -2198,7 +2441,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "date": "2025-01-22",
       "product": "注射用ECM生物凝胶",
       "company": "圣至润合（北京）生物科技有限公司",
-      "stage": "clinical_completed_or_financing",
+      "stage": "临床完成/融资披露",
       "evidence_grade": "A4",
       "status": "报道回溯称2022年进入临床，2023年融资，丸美生物入股",
       "source_title": "青眼：圣至润合ECM注射产品临床与融资线索",
@@ -2217,6 +2460,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "已获批，注册证号国械注准20253130390",
       "source_title": "CMDE医疗器械产品注册技术审评报告：注射用羟基磷酸钙微球面部填充剂",
       "source_url": "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf"
+    },
+    {
+      "id": "milestone_pipe_pdrn_wuzhong_enrollment_20250304",
+      "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:吴中美学_北京丽徕科技有限公司",
+      "track": "pdrn",
+      "track_label": "PDRN/多聚脱氧核糖核苷酸",
+      "date": "2025-03-04",
+      "product": "注射用透明质酸钠-PDRN复合溶液",
+      "company": "吴中美学/北京丽徕科技有限公司",
+      "stage": "入组完成",
+      "evidence_grade": "A3",
+      "status": "江苏吴中官网媒体报道页称PDRN复合溶液已于2025年1月底完成全部临床受试者入组，预计2025年下半年提交上市申请。",
+      "source_title": "江苏吴中官网：PDRN复合溶液完成全部临床受试者入组",
+      "source_url": "https://www.600200.com/article/168/detail/2287.html"
     },
     {
       "id": "milestone_pipe_caha_radiesse_cmde_20250307",
@@ -2259,6 +2516,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "报道称2024年8月10日CMDE网站公布主文档登记",
       "source_title": "中新经纬：华清智美注射用3D打印人源脱细胞外基质获得主文档登记",
       "source_url": "https://www.jwview.com/jingwei/html/m/04-21/621075.shtml"
+    },
+    {
+      "id": "milestone_pipe_pdrn_wuzhong_2024_ar",
+      "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:江苏吴中_吴中美学_北京丽徕科技有限公司",
+      "track": "pdrn",
+      "track_label": "PDRN/多聚脱氧核糖核苷酸",
+      "date": "2025-04-30",
+      "product": "注射用透明质酸钠-PDRN复合溶液",
+      "company": "江苏吴中/吴中美学/北京丽徕科技有限公司",
+      "stage": "权益/管线披露",
+      "evidence_grade": "A2",
+      "status": "年报披露吴中美学与北京丽徕科技签署投资协议，并取得注射用透明质酸钠-PDRN复合溶液产品独家权益。",
+      "source_title": "江苏吴中2024年年度报告：取得丽徕科技PDRN复合溶液产品独家权益",
+      "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2025/2025-4/2025-04-30/11077548.PDF"
     },
     {
       "id": "milestone_pipe_caha_harmonyca_clinicaltrials_nct07032597",
@@ -2315,6 +2586,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "报道称上市申请获NMPA受理，受理号CQZ2501010",
       "source_title": "星月生物：国内首个面部三类丝素蛋白上市申请获受理",
       "source_url": "https://www.medbelove.com/index.php/2025/06/05/%E6%98%9F%E6%9C%88%E7%94%9F%E7%89%A9-%E5%9B%BD%E5%86%85%E9%A6%96%E4%B8%AA%E3%80%8C%E9%9D%A2%E9%83%A8%E3%80%8D%E4%B8%89%E7%B1%BB%E3%80%8C%E4%B8%9D%E7%B4%A0%E8%9B%8B%E7%99%BD%E3%80%8D%E4%B8%8A/"
+    },
+    {
+      "id": "milestone_pipe_ecm_baiyiyuan_36kr_20250617_conflict",
+      "project_key": "ecm:sis_ecm医美填充产品:白衣缘生物_康哲美丽",
+      "track": "ecm",
+      "track_label": "ECM/脱细胞基质",
+      "date": "2025-06-17",
+      "product": "SIS-ECM医美填充产品",
+      "company": "白衣缘生物/康哲美丽",
+      "stage": "临床至注册预期",
+      "evidence_grade": "A4",
+      "status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
+      "source_title": "36氪：白衣缘SIS-ECM填充产品即将完成临床研发并有望递交注册",
+      "source_url": "https://eu.36kr.com/zh/p/3346904407579266"
     },
     {
       "id": "milestone_pipe_ecm_shengzhirunhe_second_20250703",
@@ -2441,20 +2726,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "报道称2026年1月完成全部受试者入组",
       "source_title": "界面/动脉网：复向医疗丝素蛋白交联HA凝胶完成全部入组",
       "source_url": "https://www.jiemian.com/article/14403444.html"
-    },
-    {
-      "id": "milestone_pipe_ecm_baiyiyuan_36kr_20260617_conflict",
-      "project_key": "ecm:sis_ecm医美填充产品:白衣缘生物_康哲美丽",
-      "track": "ecm",
-      "track_label": "ECM/脱细胞基质",
-      "date": "2026-06-17",
-      "product": "SIS-ECM医美填充产品",
-      "company": "白衣缘生物/康哲美丽",
-      "stage": "clinical_to_registration_expected",
-      "evidence_grade": "A4",
-      "status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
-      "source_title": "36氪：白衣缘SIS-ECM填充产品即将完成临床研发并有望递交注册",
-      "source_url": "https://eu.36kr.com/zh/p/3346904407579266"
     }
   ],
   "evidence_grades": {
