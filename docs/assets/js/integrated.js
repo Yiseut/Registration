@@ -158,10 +158,7 @@
 
   function renderMeta() {
     const generated = formatGeneratedAt(cloudData.generated_at);
-    setText('meta-generated', generated.date);
-    setText('meta-records', records.length);
     setText('method-updated', generated.datetime);
-    setText('method-main-records', records.length);
   }
 
   function renderKpis() {

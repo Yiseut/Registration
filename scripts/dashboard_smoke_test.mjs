@@ -101,7 +101,8 @@ async function main() {
     concentrationRows: document.querySelectorAll('#table-concentration tbody tr').length,
     canvasCount: document.querySelectorAll('canvas').length,
     hasLegacyDataScript: Array.from(document.scripts).some((script) => script.src.includes('codex-data.js')),
-    methodologyText: document.querySelector('.methodology-strip')?.textContent || '',
+    hasMethodologyStrip: document.querySelector('.methodology-strip') !== null,
+    updateText: document.querySelector('.overview-update-time')?.textContent || '',
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
@@ -112,7 +113,10 @@ async function main() {
   assert(overviewState.concentrationRows === 7, 'Concentration table should render seven rows', String(overviewState.concentrationRows));
   assert(overviewState.canvasCount >= 4, 'Overview charts did not render');
   assert(!overviewState.hasLegacyDataScript, 'Legacy codex-data.js should not be loaded on overview');
-  assert(overviewState.methodologyText.includes('不代表销量'), 'Methodology strip is missing non-sales-share disclaimer');
+  assert(!overviewState.hasMethodologyStrip, 'Overview methodology strip should stay removed');
+  assert(overviewState.updateText.includes('更新时间'), 'Overview should keep a simple update time');
+  assert(/\d{4}-\d{2}-\d{2}/.test(overviewState.updateText), 'Overview update time should render a concrete date', overviewState.updateText);
+  assert(!/统计口径|解读边界|覆盖范围|核心记录|不代表销量/.test(overviewState.updateText), 'Overview update line should not show backend methodology copy', overviewState.updateText);
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
 
   await overviewPage.selectOption('#filter-origin', 'hkmt');

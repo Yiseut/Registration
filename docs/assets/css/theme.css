@@ -603,50 +603,25 @@ a:hover { color: var(--brand); }
   margin-top: 48px;
 }
 
-.methodology-strip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin: 18px 0 0;
-  padding: 14px;
-  border: 1px solid var(--hairline);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--brand) 8%, transparent), transparent 38%),
-    var(--surface-2);
+.overview-update-time {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 6px 0 20px;
 }
 
-.methodology-strip > div {
-  min-width: 0;
-  padding: 0 12px;
-  border-left: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
-}
-
-.methodology-strip > div:first-child {
-  border-left: 0;
-}
-
-.methodology-strip span {
-  display: block;
-  margin-bottom: 5px;
+.overview-update-time span {
   color: var(--ink-mute);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
 
-.methodology-strip b {
+.overview-update-time b {
   color: var(--ink);
   font-size: 15px;
   font-weight: 680;
   font-variant-numeric: tabular-nums;
-}
-
-.methodology-strip p {
-  margin: 0;
-  color: var(--ink-3);
-  font-size: 12.5px;
-  line-height: 1.55;
 }
 
 .track-chart-stack {
@@ -1498,15 +1473,6 @@ button.matrix-cell:focus-visible {
     flex: 1 1 100%;
     width: 100%;
     min-width: 0 !important;
-  }
-
-  .methodology-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .methodology-strip > div {
-    padding: 0;
-    border-left: 0;
   }
 
   .company-matrix-row {
