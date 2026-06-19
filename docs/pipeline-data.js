@@ -1,14 +1,14 @@
 window.PIPELINE_DASHBOARD_DATA = {
   "meta": {
     "title": "新材料注册进度与来源覆盖",
-    "updated_at": "2026-06-20 00:47",
+    "updated_at": "2026-06-20 01:07",
     "source_csv": "E:\\shared\\code\\registration\\inbox\\pipeline_source_updates.csv",
     "scope_note": "本页是Pipeline来源层，不与已获批注册证主表KPI相加。"
   },
   "summary": {
-    "records_total": 54,
-    "projects_total": 49,
-    "frontstage_ready_projects": 33,
+    "records_total": 63,
+    "projects_total": 57,
+    "frontstage_ready_projects": 41,
     "hidden_records": 2,
     "conflict_records": 0,
     "by_track": [
@@ -41,11 +41,12 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "collagen",
         "track_label": "胶原蛋白",
-        "project_count": 2,
-        "frontstage_ready_count": 2,
+        "project_count": 6,
+        "frontstage_ready_count": 6,
         "pending_or_research_count": 0,
         "highest_grade_counts": {
-          "A1": 2
+          "A1": 5,
+          "A3": 1
         }
       },
       {
@@ -62,12 +63,12 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "ha",
         "track_label": "透明质酸钠",
-        "project_count": 2,
-        "frontstage_ready_count": 2,
+        "project_count": 6,
+        "frontstage_ready_count": 6,
         "pending_or_research_count": 0,
         "highest_grade_counts": {
-          "A1": 1,
-          "A3": 1
+          "A1": 4,
+          "A3": 2
         }
       },
       {
@@ -165,8 +166,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       ],
       "collagen": [
         "official_approval",
-        "official_acceptance_delivery",
-        "company_disclosure",
         "company_cro_notice",
         "industry_media"
       ],
@@ -177,7 +176,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       ],
       "ha": [
         "official_approval",
-        "official_acceptance_delivery",
         "industry_media"
       ]
     }
@@ -852,6 +850,44 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
+      "project_key": "collagen:交联重组胶原蛋白植入剂:陕西巨子生物技术有限公司_巨子生物",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "重组III型胶原蛋白",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "陕西巨子生物技术有限公司/巨子生物",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 2,
+      "public_evidence_count": 2,
+      "verified_source_count": 2,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure",
+        "official_acceptance_delivery"
+      ],
+      "grade_counts": {
+        "A1": 1,
+        "A2": 1
+      },
+      "latest_source_date": "2026-06-17",
+      "milestone_dates": [
+        "2026-06-17"
+      ],
+      "reported_status": "NMPA送达信息列示受理号CQZ2402149，注册证编号国械注准20263131219，批准日期2026-06-16",
+      "reported_indication": "颈部皱纹/交联重组胶原蛋白植入剂；适应证细节以注册证详情同步为准",
+      "reported_center_or_pi": "",
+      "next_watch": "同步NMPA注册证详情、结构组成、型号规格和说明书适用范围",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_collagen_juzi_nmpa_delivery_20260617",
+        "pipe_collagen_juzi_exchange_20260617"
+      ]
+    },
+    {
       "project_key": "collagen:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
       "track": "collagen",
       "track_label": "胶原蛋白",
@@ -919,6 +955,111 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": true,
       "records": [
         "pipe_collagen_pumch_chictr2400082129"
+      ]
+    },
+    {
+      "project_key": "collagen:胶原蛋白植入剂:重庆芳禾生物科技有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "猪源I型胶原蛋白",
+      "product": "胶原蛋白植入剂",
+      "company": "重庆芳禾生物科技有限公司",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "official_acceptance_delivery"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2026-06-17",
+      "milestone_dates": [
+        "2026-06-17"
+      ],
+      "reported_status": "NMPA送达信息列示受理号CQZ2501047，注册证编号国械注准20263131252，批准日期2026-06-16",
+      "reported_indication": "适应证、结构组成与规格待NMPA详情页同步；行业报道称为面部胶原蛋白植入剂",
+      "reported_center_or_pi": "",
+      "next_watch": "同步NMPA注册证详情与产品说明书，确认SPF猪源胶原、适用皱纹和型号规格",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_collagen_fanghe_nmpa_delivery_20260617"
+      ]
+    },
+    {
+      "project_key": "collagen:胶原蛋白植入剂:成都奇璞生物科技有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "胶原蛋白",
+      "product": "胶原蛋白植入剂",
+      "company": "成都奇璞生物科技有限公司",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "official_acceptance_delivery"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2026-01-08",
+      "milestone_dates": [
+        "2026-01-08"
+      ],
+      "reported_status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
+      "reported_indication": "适应证、结构组成与规格待NMPA注册证详情同步",
+      "reported_center_or_pi": "",
+      "next_watch": "同步注册证详情并判断是否纳入医美前台主表",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_collagen_qipu_nmpa_delivery_20260108"
+      ]
+    },
+    {
+      "project_key": "collagen:交联重组胶原蛋白植入剂:江苏创健医疗科技股份有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "交联重组胶原蛋白",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "江苏创健医疗科技股份有限公司",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2025-12-23",
+      "milestone_dates": [
+        "2025-12-23"
+      ],
+      "reported_status": "企业官网称交联重组胶原蛋白植入剂获NMPA批准上市，注册证编号国械注准20253132643",
+      "reported_indication": "面部真皮组织填充以纠正额部中重度动力性皱纹，包括眉间纹、额头纹和鱼尾纹",
+      "reported_center_or_pi": "",
+      "next_watch": "同步NMPA详情页、结构组成、规格与商业化进度",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_collagen_trautec_company_20251223"
       ]
     },
     {
@@ -1237,6 +1378,111 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
+      "project_key": "ha:注射用交联透明质酸钠凝胶:humedix_co_ltd_成都尚礼汇美生物科技有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "交联透明质酸钠",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "Humedix Co., Ltd./成都尚礼汇美生物科技有限公司",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "official_acceptance_delivery"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2026-06-17",
+      "milestone_dates": [
+        "2026-06-17"
+      ],
+      "reported_status": "NMPA送达信息列示受理号JQZ2400616，注册证编号国械注进20263130223，批准日期2026-06-16",
+      "reported_indication": "交联透明质酸钠凝胶；具体适应证、型号规格和注册人详情待同步",
+      "reported_center_or_pi": "",
+      "next_watch": "同步进口注册证详情，确认韩国/Humedix产地、适应证和含麻/非含麻属性",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_ha_humedix_nmpa_delivery_20260617"
+      ]
+    },
+    {
+      "project_key": "ha:注射用透明质酸钠复合溶液:上海贝泰妮健康科技有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "透明质酸钠复合溶液",
+      "product": "注射用透明质酸钠复合溶液",
+      "company": "上海贝泰妮健康科技有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2024-12-23",
+      "milestone_dates": [
+        "2024-12-23"
+      ],
+      "reported_status": "ChiCTR显示前瞻性、多中心、随机、无治疗对照、优效性临床试验，预计480例",
+      "reported_indication": "暂时性改善成人面部皮肤干燥、肤色暗沉",
+      "reported_center_or_pi": "四川大学华西口腔医院；成都市第三人民医院；咸阳市中心医院；重庆医科大学附属第一医院",
+      "next_watch": "跟踪入组状态、临床完成、注册受理与成分详情；不得在未公开成分前归为PDRN/PN",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_ha_betanni_chictr2400094462"
+      ]
+    },
+    {
+      "project_key": "ha:注射用透明质酸钠溶液:浙江景嘉医疗科技有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "透明质酸钠",
+      "product": "注射用透明质酸钠溶液",
+      "company": "浙江景嘉医疗科技有限公司",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "official_acceptance_delivery"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2026-06-17",
+      "milestone_dates": [
+        "2026-06-17"
+      ],
+      "reported_status": "NMPA送达信息列示受理号CQZ2500187，注册证编号国械注准20263131236，批准日期2026-06-16",
+      "reported_indication": "透明质酸钠注射用溶液；具体适应证和分类待注册证详情同步",
+      "reported_center_or_pi": "",
+      "next_watch": "同步注册证详情，确认是否属于非交联水光/皮肤改善类",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_ha_jingjia_nmpa_delivery_20260617"
+      ]
+    },
+    {
       "project_key": "ha:maili_precise:华东医药",
       "track": "ha",
       "track_label": "透明质酸钠",
@@ -1269,6 +1515,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": true,
       "records": [
         "pipe_ha_maili_precise_huadong_202510_acceptance"
+      ]
+    },
+    {
+      "project_key": "ha:注射用交联透明质酸钠凝胶:海雅美生物技术_珠海_有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "交联透明质酸钠",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "海雅美生物技术（珠海）有限公司",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_cro_notice"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2026-04-03",
+      "milestone_dates": [
+        "2026-04-03"
+      ],
+      "reported_status": "CRO公告称产品获NMPA批准上市，注册证编号国械注准20263130671",
+      "reported_indication": "手背部需要增加组织容量的人群；用于手背部真皮深层，以改善手部皮肤外观",
+      "reported_center_or_pi": "斯丹姆提供策略制定、试验设计、项目管理运营全周期临床服务",
+      "next_watch": "同步NMPA注册证详情并归入手部适应证/交联HA细分",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_ha_haiyamei_sdmcro_20260403"
       ]
     },
     {
@@ -2368,9 +2649,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "查企业公告、临床中心和注册申报节点",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_found",
       "frontstage_use": "pipeline_table",
-      "note": "媒体来源，需补A2/A3或官方证据。",
+      "note": "本轮仅找到证券时报/界面及同源转载披露近200例入组与随访，未找到璞聚官网、临床登记或注册受理号；继续作为待核验管线线索。",
       "added_at": "2026-06-19"
     },
     {
@@ -2395,9 +2676,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "上海市第十人民医院皮肤科",
       "expected_next_milestone": "反查申办方、临床登记、伦理信息和注册申请主体",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_found",
       "frontstage_use": "pipeline_table",
-      "note": "关键临床中心线索；申办方需进一步确认。",
+      "note": "本轮仅找到新京报对上海十院临床研究的采访披露，未定位到申办方、ChiCTR或企业公告；保留为关键临床中心线索，不并入确定项目数。",
       "added_at": "2026-06-19"
     },
     {
@@ -2506,6 +2787,141 @@ window.PIPELINE_DASHBOARD_DATA = {
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
       "note": "复合材料项目，同时具有PCL与重组胶原属性；当前按胶原赛道收录并在材料字段保留复合结构。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_collagen_qipu_nmpa_delivery_20260108",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "胶原蛋白",
+      "product": "胶原蛋白植入剂",
+      "company": "成都奇璞生物科技有限公司",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "official_acceptance_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "NMPA 2026年01月08日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260108164308142.html",
+      "source_date": "2026-01-08",
+      "reported_status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
+      "reported_indication": "适应证、结构组成与规格待NMPA注册证详情同步",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步注册证详情并判断是否纳入医美前台主表",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "补入官方送达源，解决胶原蛋白赛道仅有临床登记、缺少获批节点的问题。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_collagen_fanghe_nmpa_delivery_20260617",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "猪源I型胶原蛋白",
+      "product": "胶原蛋白植入剂",
+      "company": "重庆芳禾生物科技有限公司",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "official_acceptance_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
+      "source_date": "2026-06-17",
+      "reported_status": "NMPA送达信息列示受理号CQZ2501047，注册证编号国械注准20263131252，批准日期2026-06-16",
+      "reported_indication": "适应证、结构组成与规格待NMPA详情页同步；行业报道称为面部胶原蛋白植入剂",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步NMPA注册证详情与产品说明书，确认SPF猪源胶原、适用皱纹和型号规格",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "官方送达页确认获批节点；详情字段仍需用注册证详情回填，避免仅用公众号口径写死适应证。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_collagen_juzi_nmpa_delivery_20260617",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "重组III型胶原蛋白",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "陕西巨子生物技术有限公司/巨子生物",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "official_acceptance_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
+      "source_date": "2026-06-17",
+      "reported_status": "NMPA送达信息列示受理号CQZ2402149，注册证编号国械注准20263131219，批准日期2026-06-16",
+      "reported_indication": "颈部皱纹/交联重组胶原蛋白植入剂；适应证细节以注册证详情同步为准",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步NMPA注册证详情、结构组成、型号规格和说明书适用范围",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "官方送达页确认获批节点；NMPA页面有反爬，已结合搜索索引和用户截图留存字段，待详情页发布后补A0/A1详情。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_collagen_juzi_exchange_20260617",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "重组III型胶原蛋白",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "陕西巨子生物技术有限公司/巨子生物",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A2",
+      "evidence_rank": 2,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "exchange_filing",
+      "source_title": "巨子生物自愿性公告：附属公司交联重组胶原蛋白植入剂获医疗器械注册证",
+      "source_url": "https://news.futunn.com/notice/307544661/giant-biogene-voluntary-announcement",
+      "source_date": "2026-06-17",
+      "reported_status": "公司公告称陕西巨子收到NMPA医疗器械注册证，产品为交联重组III型胶原蛋白植入剂",
+      "reported_indication": "用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步HKEX原公告附件、NMPA注册证详情和商业化节奏",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "上市公司公告补充产品定位、结构和适应证解释，和NMPA送达页互证；公司字段与NMPA送达行统一以避免同一产品被拆成两个项目。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_collagen_trautec_company_20251223",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "交联重组胶原蛋白",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "江苏创健医疗科技股份有限公司",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_news",
+      "source_title": "创健医疗交联重组胶原蛋白植入剂正式获批",
+      "source_url": "https://www.trautec.com.cn/show-216.html",
+      "source_date": "2025-12-23",
+      "reported_status": "企业官网称交联重组胶原蛋白植入剂获NMPA批准上市，注册证编号国械注准20253132643",
+      "reported_indication": "面部真皮组织填充以纠正额部中重度动力性皱纹，包括眉间纹、额头纹和鱼尾纹",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步NMPA详情页、结构组成、规格与商业化进度",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "企业官网补充注册证号和明确适用范围，可与后续NMPA详情互证。",
       "added_at": "2026-06-20"
     },
     {
@@ -2627,7 +3043,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "临床完成/融资披露",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "青眼：圣至润合ECM注射产品临床与融资线索",
@@ -2638,9 +3054,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "查圣至润合官方公众号、临床完成、注册申报和受理号",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "资本与企业背景线索，用于补全项目主体和投资方。",
+      "note": "圣至润合项目已有奥泰康A3临床入组完成和第二款首例入组来源覆盖；本条仅保留资本与主体背景，不进入趋势主表。",
       "added_at": "2026-06-19"
     },
     {
@@ -2708,7 +3124,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "平台/资本线索",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "医美与前沿：华清智美完成数千万A轮融资",
@@ -2719,9 +3135,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "跟踪是否形成终端三类医疗器械产品",
       "confidence": "low",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "平台信息，不进入产品进度计数。",
+      "note": "平台融资信息无法映射到终端三类医美注册产品；保留为材料平台研究背景，不进入产品进度计数。",
       "added_at": "2026-06-19"
     },
     {
@@ -2749,6 +3165,114 @@ window.PIPELINE_DASHBOARD_DATA = {
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
       "note": "ChiCTR公开登记；适合用于HA赛道进行中项目观察。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_ha_betanni_chictr2400094462",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "透明质酸钠复合溶液",
+      "product": "注射用透明质酸钠复合溶液",
+      "company": "上海贝泰妮健康科技有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2400094462 注射用透明质酸钠复合溶液改善皮肤状态临床研究",
+      "source_url": "https://www.chictr.org.cn/hvshowprojectEN.html?id=266296&v=1.0",
+      "source_date": "2024-12-23",
+      "reported_status": "ChiCTR显示前瞻性、多中心、随机、无治疗对照、优效性临床试验，预计480例",
+      "reported_indication": "暂时性改善成人面部皮肤干燥、肤色暗沉",
+      "reported_center_or_pi": "四川大学华西口腔医院；成都市第三人民医院；咸阳市中心医院；重庆医科大学附属第一医院",
+      "expected_next_milestone": "跟踪入组状态、临床完成、注册受理与成分详情；不得在未公开成分前归为PDRN/PN",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "该记录补充HA复合溶液临床线索；页面未披露PDRN/PN成分，不能用于PDRN/PN统计。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_ha_humedix_nmpa_delivery_20260617",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "交联透明质酸钠",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "Humedix Co., Ltd./成都尚礼汇美生物科技有限公司",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "official_acceptance_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
+      "source_date": "2026-06-17",
+      "reported_status": "NMPA送达信息列示受理号JQZ2400616，注册证编号国械注进20263130223，批准日期2026-06-16",
+      "reported_indication": "交联透明质酸钠凝胶；具体适应证、型号规格和注册人详情待同步",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步进口注册证详情，确认韩国/Humedix产地、适应证和含麻/非含麻属性",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "官方送达源先入库，详情字段后续回填；按用户要求新证即便适应证待查也需解释状态。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_ha_jingjia_nmpa_delivery_20260617",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "透明质酸钠",
+      "product": "注射用透明质酸钠溶液",
+      "company": "浙江景嘉医疗科技有限公司",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "official_acceptance_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
+      "source_date": "2026-06-17",
+      "reported_status": "NMPA送达信息列示受理号CQZ2500187，注册证编号国械注准20263131236，批准日期2026-06-16",
+      "reported_indication": "透明质酸钠注射用溶液；具体适应证和分类待注册证详情同步",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "同步注册证详情，确认是否属于非交联水光/皮肤改善类",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "官方送达源先入库，详情字段后续回填；避免新证因适应证缺失在前台消失。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_ha_haiyamei_sdmcro_20260403",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "交联透明质酸钠",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "海雅美生物技术（珠海）有限公司",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_cro_notice",
+      "source_type": "cro_notice",
+      "source_title": "斯丹姆：海雅美生物注射用交联透明质酸钠凝胶获国家药监局批准",
+      "source_url": "https://www.sdmcro.com/zh/new/109",
+      "source_date": "2026-04-03",
+      "reported_status": "CRO公告称产品获NMPA批准上市，注册证编号国械注准20263130671",
+      "reported_indication": "手背部需要增加组织容量的人群；用于手背部真皮深层，以改善手部皮肤外观",
+      "reported_center_or_pi": "斯丹姆提供策略制定、试验设计、项目管理运营全周期临床服务",
+      "expected_next_milestone": "同步NMPA注册证详情并归入手部适应证/交联HA细分",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "CRO原文补充适应证与临床服务信息，是HA赛道获批项目的A3解释源。",
       "added_at": "2026-06-20"
     },
     {
@@ -3032,7 +3556,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "分类界定",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "research_report",
       "source_title": "CIRS：再生材料PDRN&PN注册介绍及临床试验要求",
@@ -3043,9 +3567,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "作为赛道背景，不计为产品进度",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "行业背景线索，需以NIFDC/NMPA和企业项目为准。",
+      "note": "监管路径背景源，不对应单一产品；PDRN前台产品进度以NIFDC分类界定、吴中公告与后续临床/受理源为准。",
       "added_at": "2026-06-19"
     },
     {
@@ -3059,7 +3583,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "主文档/原料",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "research_report",
       "source_title": "中国医疗器械杂志：注射填充类医美产品标准研究与发展趋势",
@@ -3070,9 +3594,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "反查CMDE/NMPA主文档清单和对应终端产品",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "主文档不是终端注册证，但提示上游材料热度。",
+      "note": "行业标准/主文档综述源，用于提示材料热度与源头目录，不对应终端产品进度。",
       "added_at": "2026-06-19"
     },
     {
@@ -3167,7 +3691,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "分类界定",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "research_report",
       "source_title": "西格玛医学：三文鱼针注册介绍及临床试验要求",
@@ -3178,9 +3702,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "继续搜索具体PN企业临床登记、受理号和主文档/终端产品对应关系。",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "用于补足PN赛道行业路径背景；不作为具体产品进度。",
+      "note": "PN监管路径背景源，不对应单一产品；待找到临床登记、企业公告或受理/送达后再升级为项目线索。",
       "added_at": "2026-06-20"
     },
     {
@@ -3275,7 +3799,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "受理/送达",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "needs_verification",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "星月生物：国内首个面部三类丝素蛋白上市申请获受理",
@@ -3286,9 +3810,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "核验NMPA受理/送达和后续注册证",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_found",
       "frontstage_use": "pipeline_table",
-      "note": "专业媒体线索，需补官方受理或企业公告。",
+      "note": "本轮检索未找到企业官网、NMPA受理/送达或注册详情可直达公开源；暂以专业媒体+受理号线索保留在管线表，结论需等官方或企业源补齐。",
       "added_at": "2026-06-19"
     },
     {
@@ -3302,7 +3826,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "阶段完成",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "ByDrug：维纳丝纯丝素蛋白凝胶完成第一阶段临床试验",
@@ -3313,9 +3837,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "全国5家临床试验中心；赵红艺主任牵头",
       "expected_next_milestone": "查企业公告、临床登记更新、随访完成和注册申报",
       "confidence": "medium",
-      "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
-      "note": "与ChiCTR记录互相印证，但仍需企业或官方后续节点。",
+      "official_verification_status": "not_applicable",
+      "frontstage_use": "research_note",
+      "note": "项目主体和适应证已由ChiCTR2500114891 A1覆盖；该媒体进度仅作为阶段性补充，不进入趋势主表计数。",
       "added_at": "2026-06-19"
     },
     {
@@ -3329,20 +3853,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "入组完成",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "needs_verification",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "界面/动脉网：复向医疗丝素蛋白交联HA凝胶完成全部入组",
-      "source_url": "https://www.jiemian.com/article/14403444.html",
+      "source_title": "ByDrug：复向医疗注射用含丝素蛋白的交联透明质酸钠凝胶首个中心入组完成",
+      "source_url": "https://bydrug.pharmcube.com/news/detail/0dcb887c6ee8518773e2b45a30bf1b43",
       "source_date": "2026-05-20",
       "reported_status": "报道称2026年1月完成全部受试者入组",
       "reported_indication": "成人中重度鼻唇沟皱纹",
       "reported_center_or_pi": "",
       "expected_next_milestone": "查企业公告、临床登记和注册申报节点",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_found",
       "frontstage_use": "pipeline_table",
-      "note": "媒体线索，需找企业或临床中心原文。",
+      "note": "本轮搜索到的ChiCTR2500102013实为重庆金赛星PEGDE交联HA鼻唇沟研究，不能映射到复向；本条仍等待企业、临床中心或ChiCTR原始登记。",
       "added_at": "2026-06-19"
     },
     {
@@ -3356,7 +3880,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage_label": "注册预期",
       "evidence_grade": "A4",
       "evidence_rank": 4,
-      "evidence_status": "active",
+      "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
       "source_title": "界面/动脉网：思元丝素蛋白HA凝胶预计2027年提交注册",
@@ -3367,9 +3891,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_center_or_pi": "",
       "expected_next_milestone": "跟踪临床完成与NMPA受理",
       "confidence": "medium",
-      "official_verification_status": "pending",
+      "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "与企业官网A3临床进行中记录配套；预测性节点不进入正式统计。",
+      "note": "思元项目的临床进行中状态已由企业官网A3覆盖；2027提交注册为媒体预测，保留研究备注但不进入项目进度计数。",
       "added_at": "2026-06-19"
     }
   ],
@@ -3583,6 +4107,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "分类界定结果显示注射用多聚核苷酸凝胶由多聚核苷酸、磷酸盐缓冲液组成，按药械组合产品判定程序界定管理",
       "source_title": "NIFDC分类界定结果：注射用多聚核苷酸凝胶",
       "source_url": "https://app.nifdc.org.cn/biaogzx/dataGk.do?formAction=listFljdResult&index=465"
+    },
+    {
+      "id": "milestone_pipe_ha_betanni_chictr2400094462",
+      "project_key": "ha:注射用透明质酸钠复合溶液:上海贝泰妮健康科技有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "date": "2024-12-23",
+      "product": "注射用透明质酸钠复合溶液",
+      "company": "上海贝泰妮健康科技有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR显示前瞻性、多中心、随机、无治疗对照、优效性临床试验，预计480例",
+      "source_title": "ChiCTR2400094462 注射用透明质酸钠复合溶液改善皮肤状态临床研究",
+      "source_url": "https://www.chictr.org.cn/hvshowprojectEN.html?id=266296&v=1.0"
     },
     {
       "id": "milestone_pipe_pn_sigma_regulatory_intro_20250106",
@@ -3949,6 +4487,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://www.chictr.org.cn/showprojEN.html?proj=300007"
     },
     {
+      "id": "milestone_pipe_collagen_trautec_company_20251223",
+      "project_key": "collagen:交联重组胶原蛋白植入剂:江苏创健医疗科技股份有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2025-12-23",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "江苏创健医疗科技股份有限公司",
+      "stage": "已获批",
+      "evidence_grade": "A3",
+      "status": "企业官网称交联重组胶原蛋白植入剂获NMPA批准上市，注册证编号国械注准20253132643",
+      "source_title": "创健医疗交联重组胶原蛋白植入剂正式获批",
+      "source_url": "https://www.trautec.com.cn/show-216.html"
+    },
+    {
       "id": "milestone_pipe_botulinum_aimeike_hutox_20260108",
       "project_key": "botulinum:注射用a型肉毒毒素_hutox:爱美客技术发展股份有限公司_huons_biopharma_co_ltd",
       "track": "botulinum",
@@ -3961,6 +4513,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "获得药品注册证书；批准文号国药准字SJ20260001；规格100U/瓶",
       "source_title": "爱美客：关于公司独家经销进口产品获得药品注册证书的公告",
       "source_url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11906375&stockid=300896"
+    },
+    {
+      "id": "milestone_pipe_collagen_qipu_nmpa_delivery_20260108",
+      "project_key": "collagen:胶原蛋白植入剂:成都奇璞生物科技有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2026-01-08",
+      "product": "胶原蛋白植入剂",
+      "company": "成都奇璞生物科技有限公司",
+      "stage": "已获批",
+      "evidence_grade": "A1",
+      "status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
+      "source_title": "NMPA 2026年01月08日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260108164308142.html"
     },
     {
       "id": "milestone_pipe_ecm_huaqingzhimei_financing_20260116",
@@ -4005,6 +4571,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042505.PDF"
     },
     {
+      "id": "milestone_pipe_ha_haiyamei_sdmcro_20260403",
+      "project_key": "ha:注射用交联透明质酸钠凝胶:海雅美生物技术_珠海_有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "date": "2026-04-03",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "海雅美生物技术（珠海）有限公司",
+      "stage": "已获批",
+      "evidence_grade": "A3",
+      "status": "CRO公告称产品获NMPA批准上市，注册证编号国械注准20263130671",
+      "source_title": "斯丹姆：海雅美生物注射用交联透明质酸钠凝胶获国家药监局批准",
+      "source_url": "https://www.sdmcro.com/zh/new/109"
+    },
+    {
       "id": "milestone_pipe_silk_venusilk_stage1_20260421",
       "project_key": "silk:注射用丝素蛋白凝胶_venusilk:维纳丝医疗科技_苏州_有限公司",
       "track": "silk",
@@ -4043,8 +4623,78 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "入组完成",
       "evidence_grade": "A4",
       "status": "报道称2026年1月完成全部受试者入组",
-      "source_title": "界面/动脉网：复向医疗丝素蛋白交联HA凝胶完成全部入组",
-      "source_url": "https://www.jiemian.com/article/14403444.html"
+      "source_title": "ByDrug：复向医疗注射用含丝素蛋白的交联透明质酸钠凝胶首个中心入组完成",
+      "source_url": "https://bydrug.pharmcube.com/news/detail/0dcb887c6ee8518773e2b45a30bf1b43"
+    },
+    {
+      "id": "milestone_pipe_collagen_juzi_nmpa_delivery_20260617",
+      "project_key": "collagen:交联重组胶原蛋白植入剂:陕西巨子生物技术有限公司_巨子生物",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2026-06-17",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "陕西巨子生物技术有限公司/巨子生物",
+      "stage": "已获批",
+      "evidence_grade": "A1",
+      "status": "NMPA送达信息列示受理号CQZ2402149，注册证编号国械注准20263131219，批准日期2026-06-16",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
+    },
+    {
+      "id": "milestone_pipe_collagen_juzi_exchange_20260617",
+      "project_key": "collagen:交联重组胶原蛋白植入剂:陕西巨子生物技术有限公司_巨子生物",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2026-06-17",
+      "product": "交联重组胶原蛋白植入剂",
+      "company": "陕西巨子生物技术有限公司/巨子生物",
+      "stage": "已获批",
+      "evidence_grade": "A2",
+      "status": "公司公告称陕西巨子收到NMPA医疗器械注册证，产品为交联重组III型胶原蛋白植入剂",
+      "source_title": "巨子生物自愿性公告：附属公司交联重组胶原蛋白植入剂获医疗器械注册证",
+      "source_url": "https://news.futunn.com/notice/307544661/giant-biogene-voluntary-announcement"
+    },
+    {
+      "id": "milestone_pipe_collagen_fanghe_nmpa_delivery_20260617",
+      "project_key": "collagen:胶原蛋白植入剂:重庆芳禾生物科技有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2026-06-17",
+      "product": "胶原蛋白植入剂",
+      "company": "重庆芳禾生物科技有限公司",
+      "stage": "已获批",
+      "evidence_grade": "A1",
+      "status": "NMPA送达信息列示受理号CQZ2501047，注册证编号国械注准20263131252，批准日期2026-06-16",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
+    },
+    {
+      "id": "milestone_pipe_ha_humedix_nmpa_delivery_20260617",
+      "project_key": "ha:注射用交联透明质酸钠凝胶:humedix_co_ltd_成都尚礼汇美生物科技有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "date": "2026-06-17",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "Humedix Co., Ltd./成都尚礼汇美生物科技有限公司",
+      "stage": "已获批",
+      "evidence_grade": "A1",
+      "status": "NMPA送达信息列示受理号JQZ2400616，注册证编号国械注进20263130223，批准日期2026-06-16",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
+    },
+    {
+      "id": "milestone_pipe_ha_jingjia_nmpa_delivery_20260617",
+      "project_key": "ha:注射用透明质酸钠溶液:浙江景嘉医疗科技有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "date": "2026-06-17",
+      "product": "注射用透明质酸钠溶液",
+      "company": "浙江景嘉医疗科技有限公司",
+      "stage": "已获批",
+      "evidence_grade": "A1",
+      "status": "NMPA送达信息列示受理号CQZ2500187，注册证编号国械注准20263131236，批准日期2026-06-16",
+      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
     },
     {
       "id": "milestone_pipe_ha_maili_precise_huadong_202510_acceptance",
