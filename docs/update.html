@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>更新 · Registration Insights</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="assets/css/theme.css?v=20260619-update-console-1" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <span>Registration <strong>Insights</strong></span>
+  </div>
+  <nav>
+    <a href="index.html">总览</a>
+    <a href="tracks/ha.html">透明质酸钠</a>
+    <a href="tracks/botulinum.html">肉毒毒素</a>
+    <a href="tracks/collagen.html">胶原蛋白</a>
+    <a href="tracks/plla.html">PLA</a>
+    <a href="tracks/pcl.html">PCL</a>
+    <a href="tracks/caha.html">CaHA</a>
+    <a href="tracks/niche_materials.html">小众材料</a>
+    <a href="tracks/ebd.html">EBD 设备</a>
+    <a href="pivot.html">自定义透视</a>
+    <a href="update.html" class="active">更新</a>
+  </nav>
+</header>
+
+<main class="shell update-shell">
+  <section class="hero rise">
+    <span class="eyebrow">Update Console</span>
+    <h1>更新</h1>
+    <p class="lede">
+      定期抓取改为人工触发；人工投喂仍在后台项目对话里处理。
+      新线索先进入候选和核验链路，字段完整后再进入主格局和前台。
+    </p>
+    <div class="meta">
+      <a href="index.html">← 返回总览</a>
+      <span>最近一次数据更新时间 <b id="update-generated-inline">—</b></span>
+    </div>
+  </section>
+
+  <section class="update-status-grid rise rise-1" aria-label="更新状态">
+    <article class="update-status-card">
+      <span>最近一次更新时间</span>
+      <b id="update-generated">—</b>
+      <p>来自当前发布 JSON 的生成时间。</p>
+    </article>
+    <article class="update-status-card">
+      <span>当前主格局记录</span>
+      <b id="update-main-records">—</b>
+      <p>用于前台核心市场格局。</p>
+    </article>
+    <article class="update-status-card">
+      <span>更新模式</span>
+      <b>人工触发</b>
+      <p>后台自动定时抓取默认停用。</p>
+    </article>
+  </section>
+
+  <section class="update-actions rise rise-2">
+    <article class="card lift update-action-card">
+      <div class="card-title">
+        <h3>定期抓取</h3>
+        <span class="sub">固定账号池</span>
+      </div>
+      <p>
+        点击按钮复制后台命令，在项目后台对话中执行。它会扫描固定账号池，
+        并复查主表中仍待官方确认的 NMPA 记录；如有新的官方确认，会重建并发布前台。
+      </p>
+      <button type="button" class="update-copy-button" data-copy-target="manual-update-command">复制定期抓取指令</button>
+      <pre id="manual-update-command" class="update-command">cd /d E:\shared\code\registration
+.\Run-Manual-Dashboard-Update.bat</pre>
+    </article>
+
+    <article class="card lift update-action-card">
+      <div class="card-title">
+        <h3>人工投喂</h3>
+        <span class="sub">后台对话</span>
+      </div>
+      <p>
+        人工给出的公众号链接、证号、截图或正文不走等待队列；应当场抽取、
+        去重、核验、入库、重建，前台有变化则发布。
+      </p>
+      <button type="button" class="update-copy-button" data-copy-target="manual-feed-prompt">复制后台处理提示</button>
+      <pre id="manual-feed-prompt" class="update-command">请按项目人工投喂流程处理这条线索：读取原文/截图，抽取证号、产品名、注册人、适应症、规格和结构组成；去重后做 NMPA/官方注册系统核验；按主格局/待复核/细分研究/排除分层；重建并发布前台；最后说明状态链路。</pre>
+    </article>
+  </section>
+
+  <section class="card lift update-workflow rise rise-3" aria-label="更新工作流">
+    <div class="card-title">
+      <h3>工作流</h3>
+      <span class="sub">从线索到前台</span>
+    </div>
+    <div class="workflow-steps">
+      <div>抓取 / 人工投喂</div>
+      <div>候选线索池</div>
+      <div>去重与医美语境过滤</div>
+      <div>NMPA / 官方系统核验</div>
+      <div>结构化入库</div>
+      <div>口径分层</div>
+      <div>数据重建</div>
+      <div>发布与回归</div>
+      <div>待复核回查</div>
+    </div>
+    <p>
+      已收录不等于进入主格局；进入主格局取决于官方详情、适应症/规格/结构组成完整度，以及当前分析口径。
+    </p>
+  </section>
+
+  <div id="update-toast" class="update-toast" role="status" aria-live="polite"></div>
+</main>
+
+<script src="assets/js/core.js?v=20260617-detail-fields-1"></script>
+<script src="assets/js/update.js?v=20260619-update-console-1"></script>
+</body>
+</html>

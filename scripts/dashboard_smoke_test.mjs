@@ -100,6 +100,7 @@ async function main() {
     canvasCount: document.querySelectorAll('canvas').length,
     hasLegacyDataScript: Array.from(document.scripts).some((script) => script.src.includes('codex-data.js')),
     methodologyText: document.querySelector('.methodology-strip')?.textContent || '',
+    navItems: Array.from(document.querySelectorAll('.topbar nav a')).map((node) => node.textContent?.trim() || ''),
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
@@ -109,12 +110,36 @@ async function main() {
   assert(overviewState.canvasCount >= 4, 'Overview charts did not render');
   assert(!overviewState.hasLegacyDataScript, 'Legacy codex-data.js should not be loaded on overview');
   assert(overviewState.methodologyText.includes('不代表销量'), 'Methodology strip is missing non-sales-share disclaimer');
+  assert(overviewState.navItems.includes('更新'), 'Overview nav should expose the update page', overviewState.navItems.join(', '));
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
 
   await overviewPage.selectOption('#filter-origin', 'hkmt');
   await overviewPage.waitForTimeout(250);
   assert(new URL(overviewPage.url()).searchParams.get('origin') === 'hkmt', 'Origin filter did not update the URL');
   await overviewPage.close();
+
+  const updatePage = await openCheckedPage(context, 'update.html');
+  const updateState = await updatePage.evaluate(() => ({
+    h1: document.querySelector('h1')?.textContent?.trim() || '',
+    generated: document.querySelector('#update-generated')?.textContent?.trim() || '',
+    inlineGenerated: document.querySelector('#update-generated-inline')?.textContent?.trim() || '',
+    mainRecords: document.querySelector('#update-main-records')?.textContent?.trim() || '',
+    activeNav: document.querySelector('.topbar nav a.active')?.textContent?.trim() || '',
+    command: document.querySelector('#manual-update-command')?.textContent || '',
+    prompt: document.querySelector('#manual-feed-prompt')?.textContent || '',
+    copyButtons: document.querySelectorAll('.update-copy-button').length,
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(updateState.h1 === '更新', 'Update heading is missing', updateState.h1);
+  assert(updateState.activeNav === '更新', 'Update nav item should be active', updateState.activeNav);
+  assert(updateState.generated !== '—' && updateState.generated !== '读取失败', 'Update page should show latest generated time', updateState.generated);
+  assert(updateState.inlineGenerated === updateState.generated, 'Update inline timestamp should match the status card', `${updateState.inlineGenerated} !== ${updateState.generated}`);
+  assert(updateState.mainRecords === String(expectedRecords), 'Update page main record count should match overview KPI', updateState.mainRecords);
+  assert(updateState.command.includes('Run-Manual-Dashboard-Update.bat'), 'Update command should use the manual dashboard update entry', updateState.command);
+  assert(updateState.prompt.includes('NMPA') && updateState.prompt.includes('适应症'), 'Update manual feed prompt should preserve verification and field guidance', updateState.prompt);
+  assert(updateState.copyButtons >= 2, 'Update page should expose copy buttons', String(updateState.copyButtons));
+  assert(updateState.overflowX <= 1, 'Update page has horizontal overflow', String(updateState.overflowX));
+  await updatePage.close();
 
   const filteredPage = await openCheckedPage(context, 'index.html?segment=botulinum&origin=imported&q=Dysport&grain=year&map=registrations');
   const filteredState = await filteredPage.evaluate(() => ({
@@ -326,6 +351,17 @@ async function main() {
   assert(mobileState.collapsedPanels >= 2, 'Long matrix panels should start collapsed on mobile');
   assert(mobileState.toolbarPosition === 'sticky', 'Mobile record filters should be sticky', mobileState.toolbarPosition);
   await mobilePage.close();
+
+  const mobileUpdatePage = await openCheckedPage(context, 'update.html', { width: 390, height: 900 });
+  const mobileUpdateState = await mobileUpdatePage.evaluate(() => ({
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    h1: document.querySelector('h1')?.textContent?.trim() || '',
+    copyButtons: document.querySelectorAll('.update-copy-button').length,
+  }));
+  assert(mobileUpdateState.h1 === '更新', 'Mobile update heading is missing', mobileUpdateState.h1);
+  assert(mobileUpdateState.copyButtons >= 2, 'Mobile update page should expose copy buttons', String(mobileUpdateState.copyButtons));
+  assert(mobileUpdateState.overflowX <= 1, 'Mobile update page has horizontal overflow', String(mobileUpdateState.overflowX));
+  await mobileUpdatePage.close();
 
   for (const track of manifest.tracks || []) {
     const page = await openCheckedPage(context, `tracks/${track.key}.html`);
