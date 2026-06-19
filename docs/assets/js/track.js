@@ -24,6 +24,7 @@
   const isHaTrack = key === 'ha';
   const isCollagenTrack = key === 'collagen';
   const isEbdTrack = key === 'ebd';
+  const isBotulinumTrack = key === 'botulinum';
   const SUBMENTAL_LIPOLYSIS_INDICATION = '颏下脂肪堆积（双下巴）';
   const JAW_CHIN_CONTOUR_FILLING_INDICATION = '下颌及颏部轮廓改善（填充）';
   const ebdEnergyOrder = ['射频', '超声', '激光 / IPL', '其他能量'];
@@ -90,14 +91,22 @@
 
   const landscapeRecords = data.records.filter((record) => record.main_landscape);
   const kpiRecords = landscapeRecords.length ? landscapeRecords : data.records;
-  const originCounts = countBy(kpiRecords, (record) => record.origin);
+  const kpiDisplayRecords = analysisRecords(kpiRecords);
+  const originCounts = originAnalysisCounts(kpiRecords);
 
   // KPIs
-  setKpi('kpi-main', kpiRecords.length || data.kpi.total);
+  if (isBotulinumTrack) {
+    const mainKpi = document.getElementById('kpi-main')?.closest('.kpi');
+    const mainLabel = mainKpi?.querySelector('.label');
+    const mainUnit = mainKpi?.querySelector('.unit');
+    if (mainLabel) mainLabel.textContent = '主格局产品';
+    if (mainUnit) mainUnit.textContent = '个';
+  }
+  setKpi('kpi-main', kpiDisplayRecords.length || data.kpi.total);
   setKpi('kpi-companies', unique(kpiRecords.map((record) => record.company)).length || data.kpi.companies);
   setKpi('kpi-indications', unique(kpiRecords.flatMap(indicationValues)).length || data.kpi.indications);
   setKpi('kpi-forms', unique(kpiRecords.map((record) => (isHaTrack || isEbdTrack) ? productShape(record) : record.material_form)).length);
-  setKpi('kpi-verified', kpiRecords.filter((record) => record.verified).length || data.kpi.verified);
+  setKpi('kpi-verified', kpiDisplayRecords.filter((record) => record.verified).length || data.kpi.verified);
   const totalDelta = document.getElementById('kpi-total')?.closest('.delta');
   if (totalDelta) totalDelta.remove();
   const verifiedDelta = document.getElementById('kpi-verified')?.closest('.delta');
@@ -112,7 +121,10 @@
   renderIntensityList('chart-indications', data.records, 'primary_indication');
 
   // Origin donut (3 categories — donut is the right shape here)
-  renderDonut('chart-origin', data.origin_share, '产地结构');
+  renderDonut('chart-origin', isBotulinumTrack
+    ? ['国产', '进口', '港澳台'].map((name) => ({ name, value: originCounts.get(name) || 0 }))
+    : data.origin_share,
+  '产地结构');
 
   // Material intensity list
   renderIntensityList('chart-material', data.records, 'material_family');
@@ -152,17 +164,104 @@
     // watchKpis() paints final value first; animation overlays on intersect.
   }
 
+  function botulinumProductKey(record) {
+    if (!record) return '';
+    return [
+      record.brand,
+      record.company,
+      record.registrant,
+      record.product_name || record.official_product_name,
+    ]
+      .filter(Boolean)
+      .join('|')
+      .toLowerCase()
+      .replace(/\s+/g, '');
+  }
+
+  function botulinumProductRecords(records) {
+    if (!isBotulinumTrack) return records || [];
+    const groups = new Map();
+    (records || []).forEach((record) => {
+      const productKey = botulinumProductKey(record) || record.id || record.certificate_no;
+      if (!groups.has(productKey)) groups.set(productKey, []);
+      groups.get(productKey).push(record);
+    });
+    return [...groups.values()].map((items) => {
+      const first = items[0] || {};
+      const certs = unique(items.map((item) => item.certificate_no));
+      const specs = unique(items.map((item) => item.specification));
+      const validUntil = unique(items.map((item) => item.valid_until || item.official_valid_until));
+      const approvalDates = unique(items.map((item) => item.official_approval_date || item.approval_date));
+      const indications = unique(items.flatMap(indicationValues));
+      const tags = unique([
+        first.material_form,
+        first.origin,
+        items.length > 1 ? `${items.length}张批准文号` : '',
+      ]);
+      return {
+        ...first,
+        id: `botulinum-product-${botulinumProductKey(first) || first.id || first.certificate_no}`,
+        certificate_no: certs.join(' / '),
+        specification: specs.join('；') || first.specification,
+        valid_until: validUntil.join(' / ') || first.valid_until,
+        approval_date: approvalDates.join(' / ') || first.approval_date,
+        approved_indications: indications.join(' / '),
+        official_indication: indications.join(' / '),
+        primary_indication: indications.join(' / '),
+        tags,
+        market_note: first.market_note || `${certs.length} 张批准文号按同一品牌产品组展示。`,
+        _certificate_count: items.length,
+      };
+    });
+  }
+
+  function analysisRecords(records) {
+    return isBotulinumTrack ? botulinumProductRecords(records) : (records || []);
+  }
+
+  function analysisCount(records) {
+    return analysisRecords(records).length;
+  }
+
+  function analysisUnit() {
+    return isBotulinumTrack ? '个产品' : '张证';
+  }
+
+  function originAnalysisCounts(records) {
+    return countBy(analysisRecords(records), (record) => record.origin);
+  }
+
+  function indicationAnalysisCounts(records) {
+    if (!isBotulinumTrack) return countBy(records.flatMap(indicationValues), (name) => name);
+    const buckets = new Map();
+    (records || []).forEach((record) => {
+      const productKey = botulinumProductKey(record) || record.id || record.certificate_no;
+      indicationValues(record).forEach((indication) => {
+        if (!buckets.has(indication)) buckets.set(indication, new Set());
+        buckets.get(indication).add(productKey);
+      });
+    });
+    return new Map([...buckets.entries()].map(([name, productKeys]) => [name, productKeys.size]));
+  }
+
   function renderCompanyShare(items, longTail) {
     const el = document.getElementById('chart-companies');
     if (!el) return;
+    const chartItems = isBotulinumTrack
+      ? [...groupRecords(analysisRecords(data.records.filter((record) => record.main_landscape)), (record) => record.company || '未标注厂家').entries()]
+        .map(([name, records]) => ({ name, value: records.length }))
+        .sort((a, b) => b.value - a.value || a.name.localeCompare(b.name, 'zh-CN'))
+        .slice(0, 12)
+      : items;
+    const valueUnit = analysisUnit();
     const inst = ChartFactory.make(el, {
       grid: { left: 130, right: 36, top: 12, bottom: 18 },
       tooltip: {
-        formatter: (p) => `<b>${escape(p.name)}</b><br/>${p.value} 张证 (${(p.value / sum(items) * 100).toFixed(1)}%)`,
+        formatter: (p) => `<b>${escape(p.name)}</b><br/>${p.value} ${valueUnit} (${(p.value / sum(chartItems) * 100).toFixed(1)}%)`,
       },
       xAxis: { type: 'value', splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
       yAxis: {
-        type: 'category', data: items.map((i) => i.name).reverse(),
+        type: 'category', data: chartItems.map((i) => i.name).reverse(),
         axisLabel: {
           color: palette.ink, fontSize: 12,
           formatter: (v) => v.length > 14 ? v.slice(0, 14) + '…' : v,
@@ -170,7 +269,7 @@
       },
       series: [{
         type: 'bar', barMaxWidth: 22,
-        data: items.map((i, idx) => ({
+        data: chartItems.map((i) => ({
           value: i.value, name: i.name,
           itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
@@ -227,14 +326,19 @@
         groups.get(k).push(r);
       });
     });
-    const sorted = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
-    const max = sorted[0][1].length;
+    const sorted = [...groups.entries()].sort((a, b) =>
+      analysisCount(b[1]) - analysisCount(a[1])
+      || String(a[0]).localeCompare(String(b[0]), 'zh-CN')
+    );
+    const max = analysisCount(sorted[0][1]);
 
     const list = document.createElement('div');
     list.className = 'intensity-list';
 
     sorted.forEach(([cat, recs], idx) => {
-      const ratio = recs.length / max;
+      const count = analysisCount(recs);
+      const displayRecs = displayRecords(recs);
+      const ratio = count / max;
       const widthPct = Math.max(8, ratio * 100);
       // Light end (low count) → soft tint of accent; high count → deep accent.
       const startColor = shade(accent, 28);
@@ -248,16 +352,16 @@
         <div class="intensity-track">
           <div class="intensity-bar ${isLight ? 'light' : ''}"
                style="width:${widthPct}%; background: linear-gradient(90deg, ${startColor}, ${endColor}); animation-delay:${idx * 35}ms">
-            ${recs.length}
+            ${count}
           </div>
         </div>
       `;
-      attachIntensityTooltip(row, cat, recs);
+      attachIntensityTooltip(row, cat, displayRecs);
       row.addEventListener('click', () => {
         window.RI.showRecords({
           title: displayUiLabel(cat),
           meta: `${trackDisplayName} · ${categoryKey === 'primary_indication' ? '适应证 / 部位' : '材料家族'}`,
-          records: displayRecords(recs),
+          records: displayRecs,
         });
       });
       list.appendChild(row);
@@ -283,16 +387,16 @@
           ? `<span class="t-cert">${escape(r.certificate_no)}</span>` : '';
         return `<li>
           <span class="t-co">${escape(r.company || '—')}</span>
-          <span class="t-prod">${escape(r.product_name || '—')}</span>
+          <span class="t-prod">${escape(r.brand || r.product_name || '—')}</span>
           ${cert}
         </li>`;
       }).join('');
       const more = recs.length > 10
-        ? `<div class="t-more">… 另 ${recs.length - 10} 条 (点击查看全部)</div>` : '';
+        ? `<div class="t-more">… 另 ${recs.length - 10} ${isBotulinumTrack ? '个' : '条'} (点击查看全部)</div>` : '';
       tip.innerHTML = `
         <div class="t-head">
           <strong>${escape(displayUiLabel(cat))}</strong>
-          <span class="t-count">${recs.length} 张证</span>
+          <span class="t-count">${recs.length} ${analysisUnit()}</span>
         </div>
         <ul>${items}</ul>
         ${more}
@@ -893,7 +997,7 @@
     }
     const landscape = source.filter((record) => record.main_landscape);
     const rows = productShapeGroups(landscape);
-    const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
+    const indicationCounts = indicationAnalysisCounts(landscape);
     const columns = [...indicationCounts.entries()]
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
       .map(([name]) => name);
@@ -903,7 +1007,9 @@
     }
     const max = Math.max(
       1,
-      ...rows.flatMap((row) => columns.map((column) => row.records.filter((record) => indicationValues(record).includes(column)).length))
+      ...rows.flatMap((row) => columns.map((column) =>
+        analysisCount(row.records.filter((record) => indicationValues(record).includes(column)))
+      ))
     );
     const compact = rows.length <= 5 && columns.length <= 4;
     const minWidth = compact ? 196 + columns.length * 230 : Math.max(760, 220 + columns.length * 116);
@@ -921,13 +1027,14 @@
               const cells = columns
                 .map((column) => {
                   const matches = row.records.filter((record) => indicationValues(record).includes(column));
-                  const count = matches.length;
-                  const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
-                  const tooltip = escape(matrixTooltipFromRecords(matches));
-                  return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${tooltip}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" aria-label="${escape(`${row.name} × ${indicationLabel(column)}：${count} 张`)}">${count || ''}</button>`;
+                  const count = analysisCount(matches);
+                  const displayMatches = displayRecords(matches);
+                  const payload = encodeURIComponent(JSON.stringify(displayMatches));
+                  const tooltip = escape(matrixTooltipFromRecords(displayMatches));
+                  return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${tooltip}" data-title="${escape(`${row.name} × ${indicationLabel(column)}`)}" aria-label="${escape(`${row.name} × ${indicationLabel(column)}：${count} ${analysisUnit()}`)}">${count || ''}</button>`;
                 })
                 .join('');
-              return `<div class="matrix-term">${matrixAxisLabel(row.name, row.records.length)}</div>${cells}`;
+              return `<div class="matrix-term">${matrixAxisLabel(row.name, analysisCount(row.records))}</div>${cells}`;
             })
             .join('')}
         </div>
@@ -983,13 +1090,15 @@
       const rows = companyRows(source);
       rows.sort((a, b) =>
         b.shapes.length - a.shapes.length
-        || b.records.length - a.records.length
+        || analysisCount(b.records) - analysisCount(a.records)
         || b.indications.length - a.indications.length
         || a.name.localeCompare(b.name, 'zh-CN')
       );
-      const max = Math.max(1, ...rows.map((row) => row.records.length));
+      const max = Math.max(1, ...rows.map((row) => analysisCount(row.records)));
       holder.innerHTML = rows.map((row) => {
-        const width = Math.max(6, (row.records.length / max) * 100);
+        const recordCount = analysisCount(row.records);
+        const recordLabel = isBotulinumTrack ? '产品' : '注册证';
+        const width = Math.max(6, (recordCount / max) * 100);
         const brands = unique(row.records.map((record) => record.product_name)).slice(0, 6).map(displayUiLabel).join(' / ');
         const payload = encodeURIComponent(JSON.stringify(displayRecords(row.records)));
         return `
@@ -999,7 +1108,7 @@
               <em>${escape(brands)}</em>
               <span class="company-matrix-bar"><i style="width:${width}%"></i></span>
             </span>
-            <span class="company-matrix-stat"><b>${row.records.length}</b><small>注册证</small></span>
+            <span class="company-matrix-stat"><b>${recordCount}</b><small>${recordLabel}</small></span>
             <span class="company-matrix-stat"><b>${row.shapes.length}</b><small>产品形态</small></span>
             <span class="company-matrix-stat"><b>${row.indications.length}</b><small>适应证</small></span>
           </button>
@@ -1461,19 +1570,18 @@
       return;
     }
     const max = Math.max(...hm.companies.flatMap((company) =>
-      hm.indications.map((indication) => companyIndicationMatches(company, indication).length)
+      hm.indications.map((indication) => analysisCount(companyIndicationMatches(company, indication)))
     ), 1);
     const companyTotals = new Map(hm.companies.map((company) => [
       company,
-      unique(data.records
-        .filter((record) => record.main_landscape && (record.company || '未标注厂家') === company)
-        .flatMap(indicationValues)
-      ).length,
+      isBotulinumTrack
+        ? analysisCount(data.records.filter((record) => record.main_landscape && (record.company || '未标注厂家') === company))
+        : unique(data.records
+          .filter((record) => record.main_landscape && (record.company || '未标注厂家') === company)
+          .flatMap(indicationValues)
+        ).length,
     ]));
-    const indicationTotals = new Map(hm.indications.map((indication) => [
-      indication,
-      data.records.filter((record) => record.main_landscape && indicationValues(record).includes(indication)).length,
-    ]));
+    const indicationTotals = indicationAnalysisCounts(data.records.filter((record) => record.main_landscape));
     const compact = hm.companies.length <= 6 && hm.indications.length <= 4;
     const minWidth = compact ? 210 + hm.indications.length * 240 : Math.max(900, 220 + hm.indications.length * 130);
     const gridSizeStyle = compact ? `width:min(100%, ${minWidth}px);` : `min-width:${minWidth}px;`;
@@ -1483,9 +1591,10 @@
     const body = hm.companies.map((company) => {
       const cells = hm.indications.map((indication) => {
         const matches = companyIndicationMatches(company, indication);
-        const count = matches.length;
-        const payload = encodeURIComponent(JSON.stringify(displayRecords(matches)));
-        return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${escape(matrixTooltipFromRecords(matches))}" data-title="${escape(`${company} × ${indicationLabel(indication)}`)}" aria-label="${escape(`${company} × ${indicationLabel(indication)}：${count} 张`)}">${count || ''}</button>`;
+        const count = analysisCount(matches);
+        const displayMatches = displayRecords(matches);
+        const payload = encodeURIComponent(JSON.stringify(displayMatches));
+        return `<button type="button" class="matrix-cell" data-heat="${count ? 'active' : 'empty'}" style="${heatVars(count, max)}" data-records="${payload}" data-tooltip="${escape(matrixTooltipFromRecords(displayMatches))}" data-title="${escape(`${company} × ${indicationLabel(indication)}`)}" aria-label="${escape(`${company} × ${indicationLabel(indication)}：${count} ${analysisUnit()}`)}">${count || ''}</button>`;
       }).join('');
       return `<div class="matrix-term" title="${escape(company)}">${matrixAxisLabel(company, companyTotals.get(company))}</div>${cells}`;
     }).join('');
@@ -1772,11 +1881,11 @@
       .sort((a, b) =>
         b.indications.size - a.indications.size
         || b.segments.size - a.segments.size
-        || b.records.length - a.records.length
+        || analysisCount(b.records) - analysisCount(a.records)
         || a.company.localeCompare(b.company, 'zh-CN')
       )
       .map((row) => row.company);
-    const indicationCounts = countBy(landscape.flatMap(indicationValues), (name) => name);
+    const indicationCounts = indicationAnalysisCounts(landscape);
     const indications = [...indicationCounts.entries()]
       .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-CN'))
       .map(([name]) => name);
@@ -1965,7 +2074,7 @@
   }
 
   function displayRecords(records) {
-    return records.map((record) => {
+    return analysisRecords(records).map((record) => {
       const mapped = { ...record, primary_indication: formatIndications(record) };
       if (isHaTrack) {
         const signal = haLidocaineSignal(record);
@@ -1986,6 +2095,15 @@
         mapped.material_family = ebdCleanMaterialLabel(record);
         mapped.material_form = ebdDeviceSubtype(record);
         mapped.tags = [ebdEnergyType(record), ebdDeviceSubtype(record)].filter(Boolean);
+      }
+      if (isBotulinumTrack) {
+        mapped.material_family = displayUiLabel(record.material_family || '肉毒毒素');
+        mapped.material_form = displayUiLabel(record.material_form || '');
+        mapped.tags = [
+          record.material_form,
+          record.origin,
+          record._certificate_count > 1 ? `${record._certificate_count}张批准文号` : '',
+        ].filter(Boolean);
       }
       return mapped;
     });
