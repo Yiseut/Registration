@@ -105,6 +105,12 @@ async function main() {
     updateText: document.querySelector('.overview-update-time')?.textContent || '',
     chinaMapMetricLabels: Array.from(document.querySelectorAll('.china-map-metrics span')).map((node) => node.textContent?.trim() || ''),
     hasChinaMapRecordMetric: document.querySelector('#china-map-records') !== null,
+    kpiLabels: Array.from(document.querySelectorAll('.kpi .label')).map((node) => node.textContent?.trim() || ''),
+    mainKpiDelta: document.querySelector('#kpi-main')?.closest('.kpi')?.querySelector('.delta')?.textContent?.trim() || '',
+    companyKpiDelta: document.querySelector('#kpi-companies')?.closest('.kpi')?.querySelector('.delta')?.textContent?.trim() || '',
+    removedKpis: ['#kpi-verified', '#kpi-inj3', '#kpi-drug', '#kpi-indications']
+      .filter((selector) => document.querySelector(selector))
+      .join(','),
     originCardLabel: document.querySelector('#kpi-origin-total')?.closest('.kpi')?.querySelector('.label')?.textContent?.trim() || '',
     originTotal: document.querySelector('#kpi-origin-total')?.textContent?.trim() || '',
     originBreakdown: document.querySelector('#kpi-origin-breakdown')?.textContent?.trim() || '',
@@ -124,6 +130,10 @@ async function main() {
   assert(!/统计口径|解读边界|覆盖范围|核心记录|不代表销量/.test(overviewState.updateText), 'Overview update line should not show backend methodology copy', overviewState.updateText);
   assert(!overviewState.hasChinaMapRecordMetric, 'China map header should not show a separate registration-count metric');
   assert(overviewState.chinaMapMetricLabels.join(',') === '城市,注册主体', 'China map header should only show city and registrant metrics', overviewState.chinaMapMetricLabels.join(','));
+  assert(overviewState.kpiLabels.join(',') === '已收录注册证,注册企业 / 集团数,证照数,近 12 个月新增', 'Overview KPI cards should stay trimmed to the user-facing set', overviewState.kpiLabels.join(','));
+  assert(!overviewState.mainKpiDelta, 'Main-record KPI subtitle should stay removed', overviewState.mainKpiDelta);
+  assert(!overviewState.companyKpiDelta, 'Company KPI subtitle should stay removed', overviewState.companyKpiDelta);
+  assert(!overviewState.removedKpis, 'Crossed-out KPI cards should stay removed', overviewState.removedKpis);
   assert(overviewState.originCardLabel === '证照数', 'Origin KPI should be labeled as certificate count', overviewState.originCardLabel);
   assert(overviewState.originTotal === String(expectedRecords), 'Origin KPI total should match main_records', overviewState.originTotal);
   assert(overviewState.originBreakdown === `国内 ${overview.kpi.domestic}张 · 进口 ${overview.kpi.imported}张 · 港澳台 ${overview.kpi.hkmt}张`, 'Origin KPI should show unitized domestic/import/HKMT counts', overviewState.originBreakdown);

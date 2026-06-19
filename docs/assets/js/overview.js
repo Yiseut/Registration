@@ -24,19 +24,11 @@
   const kpi = data.kpi;
   setKpi('kpi-main', kpi.main_records);
   setKpi('kpi-companies', kpi.companies);
-  setKpi('kpi-verified', kpi.verified_share, { decimals: 1, suffix: '%' });
-  document.getElementById('kpi-total').textContent = kpi.total_records;
-  document.getElementById('kpi-mix').textContent = `${kpi.domestic} : ${kpi.imported} : ${kpi.hkmt}`;
-
-  // Material-focused row
-  setKpi('kpi-inj3', kpi.injectable_class3);
-  document.getElementById('kpi-inj3-breakdown').textContent = kpi.injectable_class3_breakdown;
-  setKpi('kpi-drug', kpi.injectable_drug);
-  document.getElementById('kpi-drug-breakdown').textContent = kpi.injectable_drug_breakdown;
-  setKpi('kpi-indications', kpi.indications);
+  setText('kpi-origin-total', kpi.main_records ?? '—');
+  setText('kpi-origin-breakdown', `国内 ${kpi.domestic ?? '—'}张 · 进口 ${kpi.imported ?? '—'}张 · 港澳台 ${kpi.hkmt ?? '—'}张`);
   setKpi('kpi-recent', kpi.recent_12mo);
-  document.getElementById('kpi-recent-share').textContent = kpi.recent_12mo_share;
-  document.getElementById('kpi-recent-breakdown').textContent = kpi.recent_12mo_breakdown;
+  setText('kpi-recent-share', kpi.recent_12mo_share);
+  setText('kpi-recent-breakdown', kpi.recent_12mo_breakdown);
 
   watchKpis();
 

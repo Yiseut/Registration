@@ -165,15 +165,8 @@
     const kpi = cloudData.kpi || {};
     setKpi('kpi-main', kpi.main_records);
     setKpi('kpi-companies', kpi.companies);
-    setKpi('kpi-verified', kpi.verified_share, { decimals: 1, suffix: '%' });
     setText('kpi-origin-total', kpi.main_records ?? '—');
     setText('kpi-origin-breakdown', `国内 ${kpi.domestic ?? '—'}张 · 进口 ${kpi.imported ?? '—'}张 · 港澳台 ${kpi.hkmt ?? '—'}张`);
-    setKpi('kpi-inj3', kpi.injectable_class3);
-    setText('kpi-inj3-breakdown', kpi.injectable_class3_breakdown || '—');
-    setKpi('kpi-drug', kpi.injectable_drug);
-    setText('kpi-drug-breakdown', kpi.injectable_drug_breakdown || '—');
-    setKpi('kpi-indications', unique(records.flatMap(indicationValues)).length || kpi.indications);
-    setText('kpi-indications-breakdown', kpi.indication_breakdown || '—');
     setKpi('kpi-recent', kpi.recent_12mo);
     setText('kpi-recent-share', kpi.recent_12mo_share ?? '—');
     setText('kpi-recent-breakdown', formatRecentBreakdown(kpi.recent_12mo_breakdown));
