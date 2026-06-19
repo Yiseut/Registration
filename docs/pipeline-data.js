@@ -1,41 +1,84 @@
 window.PIPELINE_DASHBOARD_DATA = {
   "meta": {
     "title": "新材料注册进度与来源覆盖",
-    "updated_at": "2026-06-20 00:25",
+    "updated_at": "2026-06-20 00:47",
     "source_csv": "E:\\shared\\code\\registration\\inbox\\pipeline_source_updates.csv",
     "scope_note": "本页是Pipeline来源层，不与已获批注册证主表KPI相加。"
   },
   "summary": {
-    "records_total": 37,
-    "projects_total": 32,
-    "frontstage_ready_projects": 15,
+    "records_total": 54,
+    "projects_total": 49,
+    "frontstage_ready_projects": 33,
     "hidden_records": 2,
     "conflict_records": 0,
     "by_track": [
       {
+        "track": "botulinum",
+        "track_label": "肉毒毒素",
+        "project_count": 4,
+        "frontstage_ready_count": 4,
+        "pending_or_research_count": 0,
+        "highest_grade_counts": {
+          "A1": 2,
+          "A2": 2
+        }
+      },
+      {
         "track": "caha",
         "track_label": "CaHA/羟基磷灰石",
-        "project_count": 13,
-        "frontstage_ready_count": 6,
+        "project_count": 15,
+        "frontstage_ready_count": 8,
         "pending_or_research_count": 7,
         "highest_grade_counts": {
           "A0": 2,
-          "A1": 2,
+          "A1": 3,
           "A2": 1,
-          "A3": 1,
+          "A3": 2,
           "A4": 5,
           "A5": 2
+        }
+      },
+      {
+        "track": "collagen",
+        "track_label": "胶原蛋白",
+        "project_count": 2,
+        "frontstage_ready_count": 2,
+        "pending_or_research_count": 0,
+        "highest_grade_counts": {
+          "A1": 2
         }
       },
       {
         "track": "ecm",
         "track_label": "ECM/脱细胞基质",
         "project_count": 8,
-        "frontstage_ready_count": 3,
-        "pending_or_research_count": 5,
+        "frontstage_ready_count": 4,
+        "pending_or_research_count": 4,
         "highest_grade_counts": {
-          "A3": 3,
-          "A4": 5
+          "A3": 4,
+          "A4": 4
+        }
+      },
+      {
+        "track": "ha",
+        "track_label": "透明质酸钠",
+        "project_count": 2,
+        "frontstage_ready_count": 2,
+        "pending_or_research_count": 0,
+        "highest_grade_counts": {
+          "A1": 1,
+          "A3": 1
+        }
+      },
+      {
+        "track": "pcl",
+        "track_label": "PCL",
+        "project_count": 5,
+        "frontstage_ready_count": 5,
+        "pending_or_research_count": 0,
+        "highest_grade_counts": {
+          "A1": 2,
+          "A3": 3
         }
       },
       {
@@ -49,6 +92,17 @@ window.PIPELINE_DASHBOARD_DATA = {
           "A2": 1,
           "A3": 1,
           "A4": 2
+        }
+      },
+      {
+        "track": "plla",
+        "track_label": "PLLA/PDLLA",
+        "project_count": 2,
+        "frontstage_ready_count": 2,
+        "pending_or_research_count": 0,
+        "highest_grade_counts": {
+          "A1": 1,
+          "A3": 1
         }
       },
       {
@@ -96,10 +150,179 @@ window.PIPELINE_DASHBOARD_DATA = {
       "pn": [
         "clinical_registry",
         "company_disclosure"
+      ],
+      "plla": [
+        "official_approval",
+        "official_acceptance_delivery",
+        "company_cro_notice",
+        "industry_media"
+      ],
+      "pcl": [
+        "official_approval",
+        "official_acceptance_delivery",
+        "company_cro_notice",
+        "industry_media"
+      ],
+      "collagen": [
+        "official_approval",
+        "official_acceptance_delivery",
+        "company_disclosure",
+        "company_cro_notice",
+        "industry_media"
+      ],
+      "botulinum": [
+        "official_approval",
+        "official_acceptance_delivery",
+        "industry_media"
+      ],
+      "ha": [
+        "official_approval",
+        "official_acceptance_delivery",
+        "industry_media"
       ]
     }
   },
   "projects": [
+    {
+      "project_key": "botulinum:dj_01重组a型肉毒毒素注射剂:苏州德进生物制药有限公司",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "重组A型肉毒毒素",
+      "product": "DJ-01重组A型肉毒毒素注射剂",
+      "company": "苏州德进生物制药有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2025-05-20",
+      "milestone_dates": [
+        "2025-05-20"
+      ],
+      "reported_status": "ChiCTR登记；I/II期，执行期2025-04-23至2025-11-02，招募期2025-05-25至2025-09-30",
+      "reported_indication": "中度至重度眉间纹",
+      "reported_center_or_pi": "中国医学科学院整形外科医院",
+      "next_watch": "跟踪临床完成、上市申请受理和NMPA获批",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_botulinum_dj01_chictr2500102819"
+      ]
+    },
+    {
+      "project_key": "botulinum:dn001重组a型肉毒毒素:苏州迪新宸科生物科技有限公司",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "重组A型肉毒毒素",
+      "product": "DN001重组A型肉毒毒素",
+      "company": "苏州迪新宸科生物科技有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2024-08-27",
+      "milestone_dates": [
+        "2024-08-27"
+      ],
+      "reported_status": "ChiCTR登记；I/II期，执行期2024-09-01至2025-12-31",
+      "reported_indication": "中重度眉间纹",
+      "reported_center_or_pi": "北京大学第一医院；中国医学科学院整形外科医院",
+      "next_watch": "跟踪临床完成、上市申请受理和NMPA获批",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_botulinum_dn001_chictr2400088794"
+      ]
+    },
+    {
+      "project_key": "botulinum:注射用a型肉毒毒素_hutox:爱美客技术发展股份有限公司_huons_biopharma_co_ltd",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "A型肉毒毒素",
+      "product": "注射用A型肉毒毒素/HUTOX",
+      "company": "爱美客技术发展股份有限公司 / Huons BioPharma Co., Ltd.",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A2",
+      "highest_evidence_label": "A2 Listed company filing, annual report, interim report, prospectus, or exchange disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A2": 1
+      },
+      "latest_source_date": "2026-01-08",
+      "milestone_dates": [
+        "2026-01-08"
+      ],
+      "reported_status": "获得药品注册证书；批准文号国药准字SJ20260001；规格100U/瓶",
+      "reported_indication": "医美动态皱纹等适应证以药品注册证全文为准",
+      "reported_center_or_pi": "",
+      "next_watch": "补NMPA药品详情页字段、商品名和适应证全文",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_botulinum_aimeike_hutox_20260108"
+      ]
+    },
+    {
+      "project_key": "botulinum:芮妥欣_注射用重组a型肉毒毒素:重庆誉颜制药有限公司_华东医药",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "重组A型肉毒毒素",
+      "product": "芮妥欣/注射用重组A型肉毒毒素",
+      "company": "重庆誉颜制药有限公司 / 华东医药",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
+      "highest_evidence": "A2",
+      "highest_evidence_label": "A2 Listed company filing, annual report, interim report, prospectus, or exchange disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A2": 1
+      },
+      "latest_source_date": "2026-03-28",
+      "milestone_dates": [
+        "2026-03-28"
+      ],
+      "reported_status": "NMPA批准上市；受理号CXSS2400144；批准文号国药准字S20260019；规格100单位/支",
+      "reported_indication": "暂时性改善65岁及65岁以下成人因皱眉肌和/或降眉间肌活动引起的中度至重度眉间纹",
+      "reported_center_or_pi": "",
+      "next_watch": "补NMPA药品详情页字段和上市后新增适应证进展",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_botulinum_yuyan_retoxin_20260328"
+      ]
+    },
     {
       "project_key": "caha:radiesse芮得怡_注射用羟基磷酸钙微球面部填充剂:merz_north_america_inc",
       "track": "caha",
@@ -209,6 +432,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
+      "project_key": "caha:医用含羟基磷灰石微球的交联透明质酸钠凝胶:成都睿漾再生医疗科技有限公司",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "material": "CaHA/羟基磷灰石 + 交联透明质酸钠",
+      "product": "医用含羟基磷灰石微球的交联透明质酸钠凝胶",
+      "company": "成都睿漾再生医疗科技有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2025-08-11",
+      "milestone_dates": [
+        "2025-08-11"
+      ],
+      "reported_status": "ChiCTR登记；执行期2024-11-27至2027-08-13，招募期2025-04-07至2025-08-31",
+      "reported_indication": "颞部凹陷",
+      "reported_center_or_pi": "四川大学华西口腔医院；四川大学华西医院；成都市第二人民医院；成都市第三人民医院",
+      "next_watch": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_caha_ruiyang_chictr2500107432"
+      ]
+    },
+    {
       "project_key": "caha:羟基磷灰石生物陶瓷_菲林普利相关既有证照:四川拜阿蒙生物活性材料有限责任公司_成都睿合医药科技有限公司",
       "track": "caha",
       "track_label": "CaHA/羟基磷灰石",
@@ -311,6 +569,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": true,
       "records": [
         "pipe_caha_cgbio_huatang_official_20231023"
+      ]
+    },
+    {
+      "project_key": "caha:注射用羟基磷灰石微球填充剂:江苏西宏生物医药有限公司_康哲美丽",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "material": "CaHA/羟基磷灰石",
+      "product": "注射用羟基磷灰石微球填充剂",
+      "company": "江苏西宏生物医药有限公司 / 康哲美丽",
+      "current_stage": "临床进行中",
+      "stage_chain": "临床进行中",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2024-01-17",
+      "milestone_dates": [
+        "2024-01-17"
+      ],
+      "reported_status": "企业公告称两款Ⅲ类再生医学注射产品均处于中国注册性临床试验阶段",
+      "reported_indication": "再生医学注射/面部年轻化方向，具体适应证待临床登记或受理文件确认",
+      "reported_center_or_pi": "",
+      "next_watch": "补ChiCTR登记号、临床中心信息、注册检验或受理号",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_caha_xihong_cms_license_20240117"
       ]
     },
     {
@@ -559,6 +852,76 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
+      "project_key": "collagen:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "PCL + 重组Ⅲ型人源化胶原蛋白 + 透明质酸钠",
+      "product": "注射用聚己内酯微球重组Ⅲ型人源化胶原蛋白-透明质酸钠冻干纤维组合包",
+      "company": "西安臻研生物科技有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2025-01-16",
+      "milestone_dates": [
+        "2025-01-16"
+      ],
+      "reported_status": "ChiCTR登记；III期临床，执行期2024-05-01至2026-09-30，招募期2025-01-20至2025-12-31",
+      "reported_indication": "颞部凹陷",
+      "reported_center_or_pi": "四川大学华西口腔医院；成都市第三人民医院；西安交通大学第二附属医院；陕西省人民医院；延安大学咸阳医院；中国人民解放军联勤保障部队第九四〇医院；杭州市第一人民医院；浙江中医药大学附属第三医院",
+      "next_watch": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_collagen_zhenyan_chictr2500096028"
+      ]
+    },
+    {
+      "project_key": "collagen:注射用重组ⅲ型人源化胶原蛋白溶液:中国医学科学院北京协和医院",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "重组Ⅲ型人源化胶原蛋白溶液",
+      "product": "注射用重组Ⅲ型人源化胶原蛋白溶液",
+      "company": "中国医学科学院北京协和医院",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2024-03-21",
+      "milestone_dates": [
+        "2024-03-21"
+      ],
+      "reported_status": "ChiCTR登记；执行期2024-01-18至2025-05-28，招募期2024-03-28至2024-05-28",
+      "reported_indication": "皮肤松弛/额部与颊部皮肤状态改善",
+      "reported_center_or_pi": "中国医学科学院北京协和医院",
+      "next_watch": "确认该研究是否为产品注册性临床或术式比较研究；跟踪注册转化节点",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_collagen_pumch_chictr2400082129"
+      ]
+    },
+    {
       "project_key": "ecm:注射用细胞外基质生物凝胶:圣至润合_北京_生物科技有限公司",
       "track": "ecm",
       "track_label": "ECM/脱细胞基质",
@@ -591,6 +954,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": true,
       "records": [
         "pipe_ecm_shengzhirunhe_20230728_enrollment"
+      ]
+    },
+    {
+      "project_key": "ecm:第二款注射用脱细胞基质生物凝胶:圣至润合_北京_生物科技有限公司",
+      "track": "ecm",
+      "track_label": "ECM/脱细胞基质",
+      "material": "ECM/脱细胞基质",
+      "product": "第二款注射用脱细胞基质生物凝胶",
+      "company": "圣至润合（北京）生物科技有限公司",
+      "current_stage": "首例入组",
+      "stage_chain": "首例入组",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_cro_notice"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2025-06-27",
+      "milestone_dates": [
+        "2025-06-27"
+      ],
+      "reported_status": "南方医科大学珠江医院-整形美容科顺利完成首例入组",
+      "reported_indication": "医美整形美容方向，具体适应证待临床登记或受理文件确认",
+      "reported_center_or_pi": "南方医科大学珠江医院-整形美容科",
+      "next_watch": "跟踪ChiCTR/临床中心披露、注册检验和NMPA受理号",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_ecm_shengzhirunhe_second_20250703"
       ]
     },
     {
@@ -804,38 +1202,248 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
-      "project_key": "ecm:第二款注射用脱细胞基质生物凝胶:圣至润合_北京_生物科技有限公司",
-      "track": "ecm",
-      "track_label": "ECM/脱细胞基质",
-      "material": "ECM/脱细胞基质",
-      "product": "第二款注射用脱细胞基质生物凝胶",
-      "company": "圣至润合（北京）生物科技有限公司",
-      "current_stage": "首例入组",
-      "stage_chain": "首例入组",
-      "highest_evidence": "A4",
-      "highest_evidence_label": "A4 Professional media, industry account, research report, or secondary database.",
+      "project_key": "ha:注射用交联透明质酸钠凝胶:华熙生物科技股份有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "HA/交联透明质酸钠",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "华熙生物科技股份有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2023-11-24",
+      "milestone_dates": [
+        "2023-11-24"
+      ],
+      "reported_status": "ChiCTR登记；执行期2022-11-01至2026-12-31，招募期2022-12-27至2024-04-30",
+      "reported_indication": "鼻背和/或鼻根塑形",
+      "reported_center_or_pi": "北京医院；北京大学第三医院；中日友好医院；南方医科大学珠江医院；河北医科大学第三医院",
+      "next_watch": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_ha_bloomage_chictr2300077935"
+      ]
+    },
+    {
+      "project_key": "ha:maili_precise:华东医药",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "HA/透明质酸",
+      "product": "MaiLi Precise",
+      "company": "华东医药",
+      "current_stage": "受理/送达",
+      "stage_chain": "受理/送达",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
       "evidence_count": 1,
       "public_evidence_count": 1,
       "verified_source_count": 0,
       "conflict_count": 0,
       "hidden_lead_count": 0,
       "source_lanes": [
-        "industry_media"
+        "company_disclosure"
       ],
       "grade_counts": {
-        "A4": 1
+        "A3": 1
       },
-      "latest_source_date": "2025-07-03",
+      "latest_source_date": "2026-06-20",
       "milestone_dates": [
-        "2025-07-03"
+        "2026-06-20"
       ],
-      "reported_status": "报道称第二款注射用脱细胞基质生物凝胶在南方医科大学珠江医院完成首例受试者入组",
-      "reported_indication": "纠正眼眶下凹陷",
-      "reported_center_or_pi": "南方医科大学珠江医院",
-      "next_watch": "反查企业或临床中心原文，跟踪入组进度",
-      "frontstage_ready": false,
+      "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
+      "reported_indication": "改善眶下凹陷",
+      "reported_center_or_pi": "",
+      "next_watch": "补NMPA/CMDE受理号和后续获批节点",
+      "frontstage_ready": true,
       "records": [
-        "pipe_ecm_shengzhirunhe_second_20250703"
+        "pipe_ha_maili_precise_huadong_202510_acceptance"
+      ]
+    },
+    {
+      "project_key": "pcl:注射用聚己内酯填充剂:渼颜空间生物科技_吉林_有限公司",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "注射用聚己内酯填充剂",
+      "company": "渼颜空间生物科技（吉林）有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2022-03-16",
+      "milestone_dates": [
+        "2022-03-16"
+      ],
+      "reported_status": "ChiCTR登记；执行期2022-03-01至2024-03-31，招募期2022-03-16至2022-04-30",
+      "reported_indication": "中重度鼻唇沟皱纹",
+      "reported_center_or_pi": "延边大学附属医院（延边医院）；树兰（杭州）医院；吉林国文医院；吉林省一汽总医院；广州市第一人民医院",
+      "next_watch": "跟踪注册检验、NMPA受理或获批状态",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_pcl_meiyan_chictr2200057746"
+      ]
+    },
+    {
+      "project_key": "pcl:注射用聚己内酯微球填充剂:山东济坤生物制药有限公司",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "注射用聚己内酯微球填充剂",
+      "company": "山东济坤生物制药有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2024-10-10",
+      "milestone_dates": [
+        "2024-10-10"
+      ],
+      "reported_status": "ChiCTR登记；执行期2024-10-15至2025-08-15，招募期2024-10-15至2024-11-30",
+      "reported_indication": "中重度鼻唇沟皱纹",
+      "reported_center_or_pi": "四川大学华西口腔医院；南华大学附属第一医院；青海大学附属医院；河北医科大学第三医院；浙江省中医院；昆明医科大学第一附属医院；广州医科大学附属番禺中心医院；粤北人民医院；延安大学咸阳医院；陕西中医药大学第二附属医院",
+      "next_watch": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_pcl_jikun_chictr2400090613"
+      ]
+    },
+    {
+      "project_key": "pcl:ellansé_m:华东医药",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "Ellansé-M",
+      "company": "华东医药",
+      "current_stage": "受理/送达",
+      "stage_chain": "受理/送达",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2026-06-20",
+      "milestone_dates": [
+        "2026-06-20"
+      ],
+      "reported_status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
+      "reported_indication": "改善颞部凹陷",
+      "reported_center_or_pi": "",
+      "next_watch": "补NMPA受理/送达页面并跟踪获批",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_pcl_ellanse_m_huadong_202501_acceptance"
+      ]
+    },
+    {
+      "project_key": "pcl:ellansé_s:华东医药",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "Ellansé-S",
+      "company": "华东医药",
+      "current_stage": "随访中",
+      "stage_chain": "随访中",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2026-06-20",
+      "milestone_dates": [
+        "2026-06-20"
+      ],
+      "reported_status": "新增适应症临床试验已于2025年12月完成12个月安全性随访，目前在临床试验报告数据整理阶段",
+      "reported_indication": "改善额部轮廓",
+      "reported_center_or_pi": "",
+      "next_watch": "跟踪注册申报、受理和NMPA送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_pcl_ellanse_s_huadong_202512_followup"
+      ]
+    },
+    {
+      "project_key": "pcl:注射用聚己内酯微球填充剂:江苏西宏生物医药有限公司_康哲美丽",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "注射用聚己内酯微球填充剂",
+      "company": "江苏西宏生物医药有限公司 / 康哲美丽",
+      "current_stage": "临床进行中",
+      "stage_chain": "临床进行中",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2024-01-17",
+      "milestone_dates": [
+        "2024-01-17"
+      ],
+      "reported_status": "企业公告称该产品处于中国注册性临床试验阶段，并披露为PCL微球+凝胶载体且含利多卡因",
+      "reported_indication": "再生医学注射/面部年轻化方向，具体适应证待临床登记或受理文件确认",
+      "reported_center_or_pi": "",
+      "next_watch": "补ChiCTR登记号、临床中心信息、注册检验或受理号",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_pcl_xihong_cms_license_20240117"
       ]
     },
     {
@@ -1013,6 +1621,76 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": false,
       "records": [
         "pipe_pdrn_standard_review_20250529"
+      ]
+    },
+    {
+      "project_key": "plla:注射用左旋乳酸_乙二醇共聚物微球填充剂:江苏西宏生物医药有限公司",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "material": "PLA/左旋乳酸-乙二醇共聚物微球",
+      "product": "注射用左旋乳酸-乙二醇共聚物微球填充剂",
+      "company": "江苏西宏生物医药有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2025-01-08",
+      "milestone_dates": [
+        "2025-01-08"
+      ],
+      "reported_status": "ChiCTR登记；I期临床，执行期2025-01-10至2025-02-26",
+      "reported_indication": "中、重度鼻唇沟皱纹",
+      "reported_center_or_pi": "北京友谊医院；河北医科大学第一医院；河南大学淮河医院；咸阳市中心医院；十堰市太和医院；延边大学附属医院；浙江大学医学院附属第二医院；石家庄市人民医院",
+      "next_watch": "跟踪后续临床阶段、注册检验和NMPA受理/送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_plla_xihong_chictr2500095495"
+      ]
+    },
+    {
+      "project_key": "plla:lanluma_v:华东医药",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "material": "PLLA/聚左旋乳酸",
+      "product": "Lanluma V",
+      "company": "华东医药",
+      "current_stage": "随访中",
+      "stage_chain": "随访中",
+      "highest_evidence": "A3",
+      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 0,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "company_disclosure"
+      ],
+      "grade_counts": {
+        "A3": 1
+      },
+      "latest_source_date": "2026-06-20",
+      "milestone_dates": [
+        "2026-06-20"
+      ],
+      "reported_status": "2025年12月完成临床12个月安全性随访，目前在临床试验报告数据整理阶段",
+      "reported_indication": "改善下颌缘",
+      "reported_center_or_pi": "",
+      "next_watch": "跟踪注册申报、受理和NMPA送达",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_plla_lanluma_v_huadong_202512_followup"
       ]
     },
     {
@@ -1237,6 +1915,114 @@ window.PIPELINE_DASHBOARD_DATA = {
   ],
   "records": [
     {
+      "lead_id": "pipe_botulinum_dn001_chictr2400088794",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "重组A型肉毒毒素",
+      "product": "DN001重组A型肉毒毒素",
+      "company": "苏州迪新宸科生物科技有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2400088794：DN001重组A型肉毒毒素治疗中重度眉间纹I/II期临床",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=242298",
+      "source_date": "2024-08-27",
+      "reported_status": "ChiCTR登记；I/II期，执行期2024-09-01至2025-12-31",
+      "reported_indication": "中重度眉间纹",
+      "reported_center_or_pi": "北京大学第一医院；中国医学科学院整形外科医院",
+      "expected_next_milestone": "跟踪临床完成、上市申请受理和NMPA获批",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "经费来源为苏州迪新宸科生物科技有限公司；组长单位显示北京大学第一医院。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_botulinum_dj01_chictr2500102819",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "重组A型肉毒毒素",
+      "product": "DJ-01重组A型肉毒毒素注射剂",
+      "company": "苏州德进生物制药有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2500102819：DJ-01重组A型肉毒毒素改善中重度眉间纹I/II期临床",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=272642",
+      "source_date": "2025-05-20",
+      "reported_status": "ChiCTR登记；I/II期，执行期2025-04-23至2025-11-02，招募期2025-05-25至2025-09-30",
+      "reported_indication": "中度至重度眉间纹",
+      "reported_center_or_pi": "中国医学科学院整形外科医院",
+      "expected_next_milestone": "跟踪临床完成、上市申请受理和NMPA获批",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "ChiCTR公开登记；申办/经费来源为苏州德进生物制药有限公司。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_botulinum_aimeike_hutox_20260108",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "A型肉毒毒素",
+      "product": "注射用A型肉毒毒素/HUTOX",
+      "company": "爱美客技术发展股份有限公司 / Huons BioPharma Co., Ltd.",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A2",
+      "evidence_rank": 2,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "exchange_filing",
+      "source_title": "爱美客：关于公司独家经销进口产品获得药品注册证书的公告",
+      "source_url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11906375&stockid=300896",
+      "source_date": "2026-01-08",
+      "reported_status": "获得药品注册证书；批准文号国药准字SJ20260001；规格100U/瓶",
+      "reported_indication": "医美动态皱纹等适应证以药品注册证全文为准",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "补NMPA药品详情页字段、商品名和适应证全文",
+      "confidence": "high",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "上市公司公告与NMPA送达信息均指向同一批准文号；NMPA详情页需继续补字段。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_botulinum_yuyan_retoxin_20260328",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "material": "重组A型肉毒毒素",
+      "product": "芮妥欣/注射用重组A型肉毒毒素",
+      "company": "重庆誉颜制药有限公司 / 华东医药",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A2",
+      "evidence_rank": 2,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "exchange_filing",
+      "source_title": "华东医药：关于独家经销产品注射用重组A型肉毒毒素注册申请获得上市批准的公告",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042505.PDF",
+      "source_date": "2026-03-28",
+      "reported_status": "NMPA批准上市；受理号CXSS2400144；批准文号国药准字S20260019；规格100单位/支",
+      "reported_indication": "暂时性改善65岁及65岁以下成人因皱眉肌和/或降眉间肌活动引起的中度至重度眉间纹",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "补NMPA药品详情页字段和上市后新增适应证进展",
+      "confidence": "high",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "巨潮资讯上市公司公告，已给出受理号、批准文号、规格、MAH和适应证。",
+      "added_at": "2026-06-20"
+    },
+    {
       "lead_id": "pipe_caha_aphranel_cmde_20250217",
       "track": "caha",
       "track_label": "CaHA/羟基磷灰石",
@@ -1345,6 +2131,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-19"
     },
     {
+      "lead_id": "pipe_caha_ruiyang_chictr2500107432",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "material": "CaHA/羟基磷灰石 + 交联透明质酸钠",
+      "product": "医用含羟基磷灰石微球的交联透明质酸钠凝胶",
+      "company": "成都睿漾再生医疗科技有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2500107432：CaHA+交联HA用于改善颞部凹陷临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=265724",
+      "source_date": "2025-08-11",
+      "reported_status": "ChiCTR登记；执行期2024-11-27至2027-08-13，招募期2025-04-07至2025-08-31",
+      "reported_indication": "颞部凹陷",
+      "reported_center_or_pi": "四川大学华西口腔医院；四川大学华西医院；成都市第二人民医院；成都市第三人民医院",
+      "expected_next_milestone": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "ChiCTR公开登记；申办/经费来源为成都睿漾再生医疗科技有限公司。",
+      "added_at": "2026-06-20"
+    },
+    {
       "lead_id": "pipe_caha_haohai_2025_ar",
       "track": "caha",
       "track_label": "CaHA/羟基磷灰石",
@@ -1397,6 +2210,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_use": "pipeline_table",
       "note": "A3企业合作公告；确认中国注册推进，但不代表已受理或已获批。",
       "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_caha_xihong_cms_license_20240117",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "material": "CaHA/羟基磷灰石",
+      "product": "注射用羟基磷灰石微球填充剂",
+      "company": "江苏西宏生物医药有限公司 / 康哲美丽",
+      "source_stage": "clinical_ongoing",
+      "stage_label": "临床进行中",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_news",
+      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
+      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html",
+      "source_date": "2024-01-17",
+      "reported_status": "企业公告称两款Ⅲ类再生医学注射产品均处于中国注册性临床试验阶段",
+      "reported_indication": "再生医学注射/面部年轻化方向，具体适应证待临床登记或受理文件确认",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "补ChiCTR登记号、临床中心信息、注册检验或受理号",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "企业/合作方原文可确认注册性临床阶段，但未披露受理号和中心清单。",
+      "added_at": "2026-06-20"
     },
     {
       "lead_id": "pipe_caha_harmonyca_abbvie_m21_782",
@@ -1615,6 +2455,60 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-19"
     },
     {
+      "lead_id": "pipe_collagen_pumch_chictr2400082129",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "重组Ⅲ型人源化胶原蛋白溶液",
+      "product": "注射用重组Ⅲ型人源化胶原蛋白溶液",
+      "company": "中国医学科学院北京协和医院",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2400082129：重组Ⅲ型胶原蛋白溶液改善面部皮肤状态临床试验",
+      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=248829&v=1.0",
+      "source_date": "2024-03-21",
+      "reported_status": "ChiCTR登记；执行期2024-01-18至2025-05-28，招募期2024-03-28至2024-05-28",
+      "reported_indication": "皮肤松弛/额部与颊部皮肤状态改善",
+      "reported_center_or_pi": "中国医学科学院北京协和医院",
+      "expected_next_milestone": "确认该研究是否为产品注册性临床或术式比较研究；跟踪注册转化节点",
+      "confidence": "medium",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "研究实施与经费来源显示为医院课题，暂不直接等同企业注册申报，但可作为技术/适应证趋势信号。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_collagen_zhenyan_chictr2500096028",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "material": "PCL + 重组Ⅲ型人源化胶原蛋白 + 透明质酸钠",
+      "product": "注射用聚己内酯微球重组Ⅲ型人源化胶原蛋白-透明质酸钠冻干纤维组合包",
+      "company": "西安臻研生物科技有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2500096028：PCL+重组Ⅲ型胶原+HA组合包用于颞部凹陷临床试验",
+      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=268100&v=1.0",
+      "source_date": "2025-01-16",
+      "reported_status": "ChiCTR登记；III期临床，执行期2024-05-01至2026-09-30，招募期2025-01-20至2025-12-31",
+      "reported_indication": "颞部凹陷",
+      "reported_center_or_pi": "四川大学华西口腔医院；成都市第三人民医院；西安交通大学第二附属医院；陕西省人民医院；延安大学咸阳医院；中国人民解放军联勤保障部队第九四〇医院；杭州市第一人民医院；浙江中医药大学附属第三医院",
+      "expected_next_milestone": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "复合材料项目，同时具有PCL与重组胶原属性；当前按胶原赛道收录并在材料字段保留复合结构。",
+      "added_at": "2026-06-20"
+    },
+    {
       "lead_id": "pipe_ecm_shengzhirunhe_20230728_enrollment",
       "track": "ecm",
       "track_label": "ECM/脱细胞基质",
@@ -1666,6 +2560,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "official_verification_status": "pending",
       "frontstage_use": "pipeline_table",
       "note": "企业和合作方公开公告，可作为ECM pipeline项目；不等同获批。",
+      "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_ecm_shengzhirunhe_second_20250703",
+      "track": "ecm",
+      "track_label": "ECM/脱细胞基质",
+      "material": "ECM/脱细胞基质",
+      "product": "第二款注射用脱细胞基质生物凝胶",
+      "company": "圣至润合（北京）生物科技有限公司",
+      "source_stage": "clinical_first_subject",
+      "stage_label": "首例入组",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_cro_notice",
+      "source_type": "cro_notice",
+      "source_title": "奥泰康：注射用脱细胞基质生物凝胶临床试验首例入组",
+      "source_url": "https://www.healtech.com.cn/news/info.html?id=433",
+      "source_date": "2025-06-27",
+      "reported_status": "南方医科大学珠江医院-整形美容科顺利完成首例入组",
+      "reported_indication": "医美整形美容方向，具体适应证待临床登记或受理文件确认",
+      "reported_center_or_pi": "南方医科大学珠江医院-整形美容科",
+      "expected_next_milestone": "跟踪ChiCTR/临床中心披露、注册检验和NMPA受理号",
+      "confidence": "high",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "由ByDrug媒体线索升级为奥泰康CRO/临床试验原文；仍需后续官方受理号或临床登记交叉确认。",
       "added_at": "2026-06-19"
     },
     {
@@ -1746,7 +2667,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "pending",
       "frontstage_use": "research_note",
-      "note": "主文档不是终端注册证，但对上游材料信息流重要。",
+      "note": "公开报道披露CMDE主文档登记号M2024253-000；本轮未找到CMDE可直达公开详情页，因此继续作为A4研究备注，待官方链接补齐后升格。",
       "added_at": "2026-06-19"
     },
     {
@@ -1777,33 +2698,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-19"
     },
     {
-      "lead_id": "pipe_ecm_shengzhirunhe_second_20250703",
-      "track": "ecm",
-      "track_label": "ECM/脱细胞基质",
-      "material": "ECM/脱细胞基质",
-      "product": "第二款注射用脱细胞基质生物凝胶",
-      "company": "圣至润合（北京）生物科技有限公司",
-      "source_stage": "clinical_first_subject",
-      "stage_label": "首例入组",
-      "evidence_grade": "A4",
-      "evidence_rank": 4,
-      "evidence_status": "active",
-      "source_lane": "industry_media",
-      "source_type": "media_article",
-      "source_title": "ByDrug：圣至润合第二款ECM生物凝胶启动临床试验",
-      "source_url": "https://bydrug.pharmcube.com/news/detail/605b9df096d827387030fc4daf93733c",
-      "source_date": "2025-07-03",
-      "reported_status": "报道称第二款注射用脱细胞基质生物凝胶在南方医科大学珠江医院完成首例受试者入组",
-      "reported_indication": "纠正眼眶下凹陷",
-      "reported_center_or_pi": "南方医科大学珠江医院",
-      "expected_next_milestone": "反查企业或临床中心原文，跟踪入组进度",
-      "confidence": "medium",
-      "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
-      "note": "这是第二款产品线索，不能与2023年完成200例入组的首款项目合并。",
-      "added_at": "2026-06-19"
-    },
-    {
       "lead_id": "pipe_ecm_huaqingzhimei_financing_20260116",
       "track": "ecm",
       "track_label": "ECM/脱细胞基质",
@@ -1829,6 +2723,195 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_use": "research_note",
       "note": "平台信息，不进入产品进度计数。",
       "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_ha_bloomage_chictr2300077935",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "HA/交联透明质酸钠",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "华熙生物科技股份有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2300077935：交联透明质酸钠凝胶鼻背/鼻根塑形临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=185913",
+      "source_date": "2023-11-24",
+      "reported_status": "ChiCTR登记；执行期2022-11-01至2026-12-31，招募期2022-12-27至2024-04-30",
+      "reported_indication": "鼻背和/或鼻根塑形",
+      "reported_center_or_pi": "北京医院；北京大学第三医院；中日友好医院；南方医科大学珠江医院；河北医科大学第三医院",
+      "expected_next_milestone": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "ChiCTR公开登记；适合用于HA赛道进行中项目观察。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_ha_maili_precise_huadong_202510_acceptance",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "material": "HA/透明质酸",
+      "product": "MaiLi Precise",
+      "company": "华东医药",
+      "source_stage": "registration_accepted",
+      "stage_label": "受理/送达",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_website",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html",
+      "source_date": "2026-06-20",
+      "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
+      "reported_indication": "改善眶下凹陷",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "补NMPA/CMDE受理号和后续获批节点",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "企业官网管线页；source_date按本轮核验日记录，受理时间见reported_status。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_pcl_meiyan_chictr2200057746",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "注射用聚己内酯填充剂",
+      "company": "渼颜空间生物科技（吉林）有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2200057746：PCL填充剂矫正中重度鼻唇沟皱纹临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=162638",
+      "source_date": "2022-03-16",
+      "reported_status": "ChiCTR登记；执行期2022-03-01至2024-03-31，招募期2022-03-16至2022-04-30",
+      "reported_indication": "中重度鼻唇沟皱纹",
+      "reported_center_or_pi": "延边大学附属医院（延边医院）；树兰（杭州）医院；吉林国文医院；吉林省一汽总医院；广州市第一人民医院",
+      "expected_next_milestone": "跟踪注册检验、NMPA受理或获批状态",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "ChiCTR公开登记；临床执行期已结束，需继续查注册转化节点。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_pcl_jikun_chictr2400090613",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "注射用聚己内酯微球填充剂",
+      "company": "山东济坤生物制药有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2400090613：PCL微球填充剂纠正中重度鼻唇沟皱纹临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=246563",
+      "source_date": "2024-10-10",
+      "reported_status": "ChiCTR登记；执行期2024-10-15至2025-08-15，招募期2024-10-15至2024-11-30",
+      "reported_indication": "中重度鼻唇沟皱纹",
+      "reported_center_or_pi": "四川大学华西口腔医院；南华大学附属第一医院；青海大学附属医院；河北医科大学第三医院；浙江省中医院；昆明医科大学第一附属医院；广州医科大学附属番禺中心医院；粤北人民医院；延安大学咸阳医院；陕西中医药大学第二附属医院",
+      "expected_next_milestone": "跟踪临床完成、注册检验和NMPA受理/送达",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "ChiCTR公开登记；申办/经费来源为山东济坤生物制药有限公司。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_pcl_xihong_cms_license_20240117",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "注射用聚己内酯微球填充剂",
+      "company": "江苏西宏生物医药有限公司 / 康哲美丽",
+      "source_stage": "clinical_ongoing",
+      "stage_label": "临床进行中",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_news",
+      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
+      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html",
+      "source_date": "2024-01-17",
+      "reported_status": "企业公告称该产品处于中国注册性临床试验阶段，并披露为PCL微球+凝胶载体且含利多卡因",
+      "reported_indication": "再生医学注射/面部年轻化方向，具体适应证待临床登记或受理文件确认",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "补ChiCTR登记号、临床中心信息、注册检验或受理号",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "企业/合作方原文可确认注册性临床阶段，但未披露受理号和中心清单。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_pcl_ellanse_m_huadong_202501_acceptance",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "Ellansé-M",
+      "company": "华东医药",
+      "source_stage": "registration_accepted",
+      "stage_label": "受理/送达",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_website",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html",
+      "source_date": "2026-06-20",
+      "reported_status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
+      "reported_indication": "改善颞部凹陷",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "补NMPA受理/送达页面并跟踪获批",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "企业官网管线页；source_date按本轮核验日记录，受理时间见reported_status。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_pcl_ellanse_s_huadong_202512_followup",
+      "track": "pcl",
+      "track_label": "PCL",
+      "material": "PCL/聚己内酯",
+      "product": "Ellansé-S",
+      "company": "华东医药",
+      "source_stage": "clinical_followup",
+      "stage_label": "随访中",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_website",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html",
+      "source_date": "2026-06-20",
+      "reported_status": "新增适应症临床试验已于2025年12月完成12个月安全性随访，目前在临床试验报告数据整理阶段",
+      "reported_indication": "改善额部轮廓",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "跟踪注册申报、受理和NMPA送达",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "企业官网管线页；source_date按本轮核验日记录，节点日期见reported_status。",
+      "added_at": "2026-06-20"
     },
     {
       "lead_id": "pipe_pdrn_nifdc_classification_202210",
@@ -1991,6 +3074,60 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_use": "research_note",
       "note": "主文档不是终端注册证，但提示上游材料热度。",
       "added_at": "2026-06-19"
+    },
+    {
+      "lead_id": "pipe_plla_xihong_chictr2500095495",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "material": "PLA/左旋乳酸-乙二醇共聚物微球",
+      "product": "注射用左旋乳酸-乙二醇共聚物微球填充剂",
+      "company": "江苏西宏生物医药有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2500095495：左旋乳酸-乙二醇共聚物微球填充剂鼻唇沟临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=253840",
+      "source_date": "2025-01-08",
+      "reported_status": "ChiCTR登记；I期临床，执行期2025-01-10至2025-02-26",
+      "reported_indication": "中、重度鼻唇沟皱纹",
+      "reported_center_or_pi": "北京友谊医院；河北医科大学第一医院；河南大学淮河医院；咸阳市中心医院；十堰市太和医院；延边大学附属医院；浙江大学医学院附属第二医院；石家庄市人民医院",
+      "expected_next_milestone": "跟踪后续临床阶段、注册检验和NMPA受理/送达",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "按现有赛道先归入PLLA/PLA，再单独标注为左旋乳酸-乙二醇共聚物微球。",
+      "added_at": "2026-06-20"
+    },
+    {
+      "lead_id": "pipe_plla_lanluma_v_huadong_202512_followup",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "material": "PLLA/聚左旋乳酸",
+      "product": "Lanluma V",
+      "company": "华东医药",
+      "source_stage": "clinical_followup",
+      "stage_label": "随访中",
+      "evidence_grade": "A3",
+      "evidence_rank": 3,
+      "evidence_status": "active",
+      "source_lane": "company_disclosure",
+      "source_type": "company_website",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html",
+      "source_date": "2026-06-20",
+      "reported_status": "2025年12月完成临床12个月安全性随访，目前在临床试验报告数据整理阶段",
+      "reported_indication": "改善下颌缘",
+      "reported_center_or_pi": "",
+      "expected_next_milestone": "跟踪注册申报、受理和NMPA送达",
+      "confidence": "medium",
+      "official_verification_status": "pending",
+      "frontstage_use": "pipeline_table",
+      "note": "企业官网管线页；source_date按本轮核验日记录，节点日期见reported_status。",
+      "added_at": "2026-06-20"
     },
     {
       "lead_id": "pipe_pn_nifdc_classification_202410",
@@ -2252,6 +3389,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20211208133629120.html"
     },
     {
+      "id": "milestone_pipe_pcl_meiyan_chictr2200057746",
+      "project_key": "pcl:注射用聚己内酯填充剂:渼颜空间生物科技_吉林_有限公司",
+      "track": "pcl",
+      "track_label": "PCL",
+      "date": "2022-03-16",
+      "product": "注射用聚己内酯填充剂",
+      "company": "渼颜空间生物科技（吉林）有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；执行期2022-03-01至2024-03-31，招募期2022-03-16至2022-04-30",
+      "source_title": "ChiCTR2200057746：PCL填充剂矫正中重度鼻唇沟皱纹临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=162638"
+    },
+    {
       "id": "milestone_pipe_pdrn_nifdc_classification_202210",
       "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:未披露",
       "track": "pdrn",
@@ -2308,6 +3459,62 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://www.htdkgroup.com/en/news/htdk-and-cgbio-sign-agreement-to-commercialize-and-license-facetem-hydroxyapatite-fillers-in-the-chinese-market"
     },
     {
+      "id": "milestone_pipe_ha_bloomage_chictr2300077935",
+      "project_key": "ha:注射用交联透明质酸钠凝胶:华熙生物科技股份有限公司",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "date": "2023-11-24",
+      "product": "注射用交联透明质酸钠凝胶",
+      "company": "华熙生物科技股份有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；执行期2022-11-01至2026-12-31，招募期2022-12-27至2024-04-30",
+      "source_title": "ChiCTR2300077935：交联透明质酸钠凝胶鼻背/鼻根塑形临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=185913"
+    },
+    {
+      "id": "milestone_pipe_caha_xihong_cms_license_20240117",
+      "project_key": "caha:注射用羟基磷灰石微球填充剂:江苏西宏生物医药有限公司_康哲美丽",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "date": "2024-01-17",
+      "product": "注射用羟基磷灰石微球填充剂",
+      "company": "江苏西宏生物医药有限公司 / 康哲美丽",
+      "stage": "临床进行中",
+      "evidence_grade": "A3",
+      "status": "企业公告称两款Ⅲ类再生医学注射产品均处于中国注册性临床试验阶段",
+      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
+      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html"
+    },
+    {
+      "id": "milestone_pipe_pcl_xihong_cms_license_20240117",
+      "project_key": "pcl:注射用聚己内酯微球填充剂:江苏西宏生物医药有限公司_康哲美丽",
+      "track": "pcl",
+      "track_label": "PCL",
+      "date": "2024-01-17",
+      "product": "注射用聚己内酯微球填充剂",
+      "company": "江苏西宏生物医药有限公司 / 康哲美丽",
+      "stage": "临床进行中",
+      "evidence_grade": "A3",
+      "status": "企业公告称该产品处于中国注册性临床试验阶段，并披露为PCL微球+凝胶载体且含利多卡因",
+      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
+      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html"
+    },
+    {
+      "id": "milestone_pipe_collagen_pumch_chictr2400082129",
+      "project_key": "collagen:注射用重组ⅲ型人源化胶原蛋白溶液:中国医学科学院北京协和医院",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2024-03-21",
+      "product": "注射用重组Ⅲ型人源化胶原蛋白溶液",
+      "company": "中国医学科学院北京协和医院",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；执行期2024-01-18至2025-05-28，招募期2024-03-28至2024-05-28",
+      "source_title": "ChiCTR2400082129：重组Ⅲ型胶原蛋白溶液改善面部皮肤状态临床试验",
+      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=248829&v=1.0"
+    },
+    {
       "id": "milestone_pipe_ecm_baiyiyuan_cms_20240607",
       "project_key": "ecm:脱细胞基质植入剂:白衣缘生物_康哲美丽",
       "track": "ecm",
@@ -2336,6 +3543,34 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://www.600200.com/article/167/detail/2225.html"
     },
     {
+      "id": "milestone_pipe_botulinum_dn001_chictr2400088794",
+      "project_key": "botulinum:dn001重组a型肉毒毒素:苏州迪新宸科生物科技有限公司",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "date": "2024-08-27",
+      "product": "DN001重组A型肉毒毒素",
+      "company": "苏州迪新宸科生物科技有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；I/II期，执行期2024-09-01至2025-12-31",
+      "source_title": "ChiCTR2400088794：DN001重组A型肉毒毒素治疗中重度眉间纹I/II期临床",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=242298"
+    },
+    {
+      "id": "milestone_pipe_pcl_jikun_chictr2400090613",
+      "project_key": "pcl:注射用聚己内酯微球填充剂:山东济坤生物制药有限公司",
+      "track": "pcl",
+      "track_label": "PCL",
+      "date": "2024-10-10",
+      "product": "注射用聚己内酯微球填充剂",
+      "company": "山东济坤生物制药有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；执行期2024-10-15至2025-08-15，招募期2024-10-15至2024-11-30",
+      "source_title": "ChiCTR2400090613：PCL微球填充剂纠正中重度鼻唇沟皱纹临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=246563"
+    },
+    {
       "id": "milestone_pipe_pn_nifdc_classification_202410",
       "project_key": "pn:注射用多聚核苷酸凝胶:未披露",
       "track": "pn",
@@ -2362,6 +3597,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "报告梳理NIFDC对注射用多聚核苷酸凝胶的药械组合产品界定及临床试验要求。",
       "source_title": "西格玛医学：三文鱼针注册介绍及临床试验要求",
       "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3340&c=View&m=home"
+    },
+    {
+      "id": "milestone_pipe_plla_xihong_chictr2500095495",
+      "project_key": "plla:注射用左旋乳酸_乙二醇共聚物微球填充剂:江苏西宏生物医药有限公司",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "date": "2025-01-08",
+      "product": "注射用左旋乳酸-乙二醇共聚物微球填充剂",
+      "company": "江苏西宏生物医药有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；I期临床，执行期2025-01-10至2025-02-26",
+      "source_title": "ChiCTR2500095495：左旋乳酸-乙二醇共聚物微球填充剂鼻唇沟临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=253840"
     },
     {
       "id": "milestone_pipe_caha_cgbio_huatang_202311_market_entry",
@@ -2404,6 +3653,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "报道称2023年再次发起中国注册临床",
       "source_title": "21世纪经济报道：Radiesse国内启动鼻唇沟适应证注册临床",
       "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html"
+    },
+    {
+      "id": "milestone_pipe_collagen_zhenyan_chictr2500096028",
+      "project_key": "collagen:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
+      "track": "collagen",
+      "track_label": "胶原蛋白",
+      "date": "2025-01-16",
+      "product": "注射用聚己内酯微球重组Ⅲ型人源化胶原蛋白-透明质酸钠冻干纤维组合包",
+      "company": "西安臻研生物科技有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；III期临床，执行期2024-05-01至2026-09-30，招募期2025-01-20至2025-12-31",
+      "source_title": "ChiCTR2500096028：PCL+重组Ⅲ型胶原+HA组合包用于颞部凹陷临床试验",
+      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=268100&v=1.0"
     },
     {
       "id": "milestone_pipe_caha_rejuve_puju_202410_followup",
@@ -2532,6 +3795,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2025/2025-4/2025-04-30/11077548.PDF"
     },
     {
+      "id": "milestone_pipe_botulinum_dj01_chictr2500102819",
+      "project_key": "botulinum:dj_01重组a型肉毒毒素注射剂:苏州德进生物制药有限公司",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "date": "2025-05-20",
+      "product": "DJ-01重组A型肉毒毒素注射剂",
+      "company": "苏州德进生物制药有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；I/II期，执行期2025-04-23至2025-11-02，招募期2025-05-25至2025-09-30",
+      "source_title": "ChiCTR2500102819：DJ-01重组A型肉毒毒素改善中重度眉间纹I/II期临床",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=272642"
+    },
+    {
       "id": "milestone_pipe_caha_harmonyca_clinicaltrials_nct07032597",
       "project_key": "caha:harmonyca_lidocaine:abbvie_allergan_aesthetics",
       "track": "caha",
@@ -2606,14 +3883,28 @@ window.PIPELINE_DASHBOARD_DATA = {
       "project_key": "ecm:第二款注射用脱细胞基质生物凝胶:圣至润合_北京_生物科技有限公司",
       "track": "ecm",
       "track_label": "ECM/脱细胞基质",
-      "date": "2025-07-03",
+      "date": "2025-06-27",
       "product": "第二款注射用脱细胞基质生物凝胶",
       "company": "圣至润合（北京）生物科技有限公司",
       "stage": "首例入组",
-      "evidence_grade": "A4",
-      "status": "报道称第二款注射用脱细胞基质生物凝胶在南方医科大学珠江医院完成首例受试者入组",
-      "source_title": "ByDrug：圣至润合第二款ECM生物凝胶启动临床试验",
-      "source_url": "https://bydrug.pharmcube.com/news/detail/605b9df096d827387030fc4daf93733c"
+      "evidence_grade": "A3",
+      "status": "南方医科大学珠江医院-整形美容科顺利完成首例入组",
+      "source_title": "奥泰康：注射用脱细胞基质生物凝胶临床试验首例入组",
+      "source_url": "https://www.healtech.com.cn/news/info.html?id=433"
+    },
+    {
+      "id": "milestone_pipe_caha_ruiyang_chictr2500107432",
+      "project_key": "caha:医用含羟基磷灰石微球的交联透明质酸钠凝胶:成都睿漾再生医疗科技有限公司",
+      "track": "caha",
+      "track_label": "CaHA/羟基磷灰石",
+      "date": "2025-08-11",
+      "product": "医用含羟基磷灰石微球的交联透明质酸钠凝胶",
+      "company": "成都睿漾再生医疗科技有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR登记；执行期2024-11-27至2027-08-13，招募期2025-04-07至2025-08-31",
+      "source_title": "ChiCTR2500107432：CaHA+交联HA用于改善颞部凹陷临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=265724"
     },
     {
       "id": "milestone_pipe_ecm_baiyiyuan_sigma_20250813_acceptance",
@@ -2658,6 +3949,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://www.chictr.org.cn/showprojEN.html?proj=300007"
     },
     {
+      "id": "milestone_pipe_botulinum_aimeike_hutox_20260108",
+      "project_key": "botulinum:注射用a型肉毒毒素_hutox:爱美客技术发展股份有限公司_huons_biopharma_co_ltd",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "date": "2026-01-08",
+      "product": "注射用A型肉毒毒素/HUTOX",
+      "company": "爱美客技术发展股份有限公司 / Huons BioPharma Co., Ltd.",
+      "stage": "已获批",
+      "evidence_grade": "A2",
+      "status": "获得药品注册证书；批准文号国药准字SJ20260001；规格100U/瓶",
+      "source_title": "爱美客：关于公司独家经销进口产品获得药品注册证书的公告",
+      "source_url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11906375&stockid=300896"
+    },
+    {
       "id": "milestone_pipe_ecm_huaqingzhimei_financing_20260116",
       "project_key": "ecm:人源工程化ecm材料平台:华清智美_深圳_生物科技有限公司",
       "track": "ecm",
@@ -2684,6 +3989,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "首款产品临床试验有序推进；第二及第三款产品进入注册检验",
       "source_title": "昊海生科2025年年度报告",
       "source_url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12008334&stockid=688366"
+    },
+    {
+      "id": "milestone_pipe_botulinum_yuyan_retoxin_20260328",
+      "project_key": "botulinum:芮妥欣_注射用重组a型肉毒毒素:重庆誉颜制药有限公司_华东医药",
+      "track": "botulinum",
+      "track_label": "肉毒毒素",
+      "date": "2026-03-28",
+      "product": "芮妥欣/注射用重组A型肉毒毒素",
+      "company": "重庆誉颜制药有限公司 / 华东医药",
+      "stage": "已获批",
+      "evidence_grade": "A2",
+      "status": "NMPA批准上市；受理号CXSS2400144；批准文号国药准字S20260019；规格100单位/支",
+      "source_title": "华东医药：关于独家经销产品注射用重组A型肉毒毒素注册申请获得上市批准的公告",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042505.PDF"
     },
     {
       "id": "milestone_pipe_silk_venusilk_stage1_20260421",
@@ -2726,6 +4045,62 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "报道称2026年1月完成全部受试者入组",
       "source_title": "界面/动脉网：复向医疗丝素蛋白交联HA凝胶完成全部入组",
       "source_url": "https://www.jiemian.com/article/14403444.html"
+    },
+    {
+      "id": "milestone_pipe_ha_maili_precise_huadong_202510_acceptance",
+      "project_key": "ha:maili_precise:华东医药",
+      "track": "ha",
+      "track_label": "透明质酸钠",
+      "date": "2026-06-20",
+      "product": "MaiLi Precise",
+      "company": "华东医药",
+      "stage": "受理/送达",
+      "evidence_grade": "A3",
+      "status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html"
+    },
+    {
+      "id": "milestone_pipe_pcl_ellanse_m_huadong_202501_acceptance",
+      "project_key": "pcl:ellansé_m:华东医药",
+      "track": "pcl",
+      "track_label": "PCL",
+      "date": "2026-06-20",
+      "product": "Ellansé-M",
+      "company": "华东医药",
+      "stage": "受理/送达",
+      "evidence_grade": "A3",
+      "status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html"
+    },
+    {
+      "id": "milestone_pipe_pcl_ellanse_s_huadong_202512_followup",
+      "project_key": "pcl:ellansé_s:华东医药",
+      "track": "pcl",
+      "track_label": "PCL",
+      "date": "2026-06-20",
+      "product": "Ellansé-S",
+      "company": "华东医药",
+      "stage": "随访中",
+      "evidence_grade": "A3",
+      "status": "新增适应症临床试验已于2025年12月完成12个月安全性随访，目前在临床试验报告数据整理阶段",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html"
+    },
+    {
+      "id": "milestone_pipe_plla_lanluma_v_huadong_202512_followup",
+      "project_key": "plla:lanluma_v:华东医药",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "date": "2026-06-20",
+      "product": "Lanluma V",
+      "company": "华东医药",
+      "stage": "随访中",
+      "evidence_grade": "A3",
+      "status": "2025年12月完成临床12个月安全性随访，目前在临床试验报告数据整理阶段",
+      "source_title": "华东医药科研创新：国内医美主要注册进度",
+      "source_url": "https://www.eastchinapharm.com/innovate.html"
     }
   ],
   "evidence_grades": {
