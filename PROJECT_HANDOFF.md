@@ -20,6 +20,7 @@
 - 总览页事实源为 `docs/assets/data/overview.json`、`docs/assets/data/manifest.json` 和 `docs/assets/data/tracks/*.json`。
 - `scripts/build_data.py` 已补齐前台详情需要的主表字段，包括监管类型、适应证、适用范围、规格、成分、产品标签、来源标题和官方核验状态。
 - 总览页顶部只保留更新时间；统计口径、非销售份额声明、核心记录覆盖范围等后台解释性语言不要作为首页顶部说明条展示，以免造成 184 条全局记录与地图 105 张中国主体注册证之间的口径混淆。
+- 中国企业地图头部只显示城市和注册主体，不显示地图子集注册证总数；地图内部仍可按企业数/注册证数切换观察城市分布。
 - 筛选状态可通过 URL 分享：`segment`、`company`、`class`、`origin`、`q`、`grain`、`map`。
 - 移动端长矩阵默认折叠，注册官方信息筛选区为 sticky。
 - 新增 `scripts/dashboard_smoke_test.mjs` 和 GitHub Actions `Dashboard QA`。

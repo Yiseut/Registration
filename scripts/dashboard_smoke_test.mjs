@@ -103,6 +103,8 @@ async function main() {
     hasLegacyDataScript: Array.from(document.scripts).some((script) => script.src.includes('codex-data.js')),
     hasMethodologyStrip: document.querySelector('.methodology-strip') !== null,
     updateText: document.querySelector('.overview-update-time')?.textContent || '',
+    chinaMapMetricLabels: Array.from(document.querySelectorAll('.china-map-metrics span')).map((node) => node.textContent?.trim() || ''),
+    hasChinaMapRecordMetric: document.querySelector('#china-map-records') !== null,
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
@@ -117,6 +119,8 @@ async function main() {
   assert(overviewState.updateText.includes('更新时间'), 'Overview should keep a simple update time');
   assert(/\d{4}-\d{2}-\d{2}/.test(overviewState.updateText), 'Overview update time should render a concrete date', overviewState.updateText);
   assert(!/统计口径|解读边界|覆盖范围|核心记录|不代表销量/.test(overviewState.updateText), 'Overview update line should not show backend methodology copy', overviewState.updateText);
+  assert(!overviewState.hasChinaMapRecordMetric, 'China map header should not show a separate registration-count metric');
+  assert(overviewState.chinaMapMetricLabels.join(',') === '城市,注册主体', 'China map header should only show city and registrant metrics', overviewState.chinaMapMetricLabels.join(','));
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
 
   await overviewPage.selectOption('#filter-origin', 'hkmt');

@@ -188,7 +188,6 @@
     const metrics = mapData?.metrics || {};
     setText('china-map-cities', metrics.mapped_cities ?? cities.length);
     setText('china-map-companies', metrics.mapped_companies ?? cities.reduce((sum, city) => sum + Number(city.companies || 0), 0));
-    setText('china-map-records', metrics.mapped_records ?? cities.reduce((sum, city) => sum + Number(city.registrations || 0), 0));
     renderChinaMapLegend();
 
     if (!holder) return;
