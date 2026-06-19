@@ -105,6 +105,9 @@ async function main() {
     updateText: document.querySelector('.overview-update-time')?.textContent || '',
     chinaMapMetricLabels: Array.from(document.querySelectorAll('.china-map-metrics span')).map((node) => node.textContent?.trim() || ''),
     hasChinaMapRecordMetric: document.querySelector('#china-map-records') !== null,
+    originCardLabel: document.querySelector('#kpi-origin-total')?.closest('.kpi')?.querySelector('.label')?.textContent?.trim() || '',
+    originTotal: document.querySelector('#kpi-origin-total')?.textContent?.trim() || '',
+    originBreakdown: document.querySelector('#kpi-origin-breakdown')?.textContent?.trim() || '',
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
@@ -121,6 +124,9 @@ async function main() {
   assert(!/统计口径|解读边界|覆盖范围|核心记录|不代表销量/.test(overviewState.updateText), 'Overview update line should not show backend methodology copy', overviewState.updateText);
   assert(!overviewState.hasChinaMapRecordMetric, 'China map header should not show a separate registration-count metric');
   assert(overviewState.chinaMapMetricLabels.join(',') === '城市,注册主体', 'China map header should only show city and registrant metrics', overviewState.chinaMapMetricLabels.join(','));
+  assert(overviewState.originCardLabel === '证照数', 'Origin KPI should be labeled as certificate count', overviewState.originCardLabel);
+  assert(overviewState.originTotal === String(expectedRecords), 'Origin KPI total should match main_records', overviewState.originTotal);
+  assert(overviewState.originBreakdown === `国内 ${overview.kpi.domestic}张 · 进口 ${overview.kpi.imported}张 · 港澳台 ${overview.kpi.hkmt}张`, 'Origin KPI should show unitized domestic/import/HKMT counts', overviewState.originBreakdown);
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
 
   await overviewPage.selectOption('#filter-origin', 'hkmt');

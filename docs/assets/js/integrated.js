@@ -166,7 +166,8 @@
     setKpi('kpi-main', kpi.main_records);
     setKpi('kpi-companies', kpi.companies);
     setKpi('kpi-verified', kpi.verified_share, { decimals: 1, suffix: '%' });
-    setText('kpi-mix', `${kpi.domestic ?? '—'} : ${kpi.imported ?? '—'} : ${kpi.hkmt ?? '—'}`);
+    setText('kpi-origin-total', kpi.main_records ?? '—');
+    setText('kpi-origin-breakdown', `国内 ${kpi.domestic ?? '—'}张 · 进口 ${kpi.imported ?? '—'}张 · 港澳台 ${kpi.hkmt ?? '—'}张`);
     setKpi('kpi-inj3', kpi.injectable_class3);
     setText('kpi-inj3-breakdown', kpi.injectable_class3_breakdown || '—');
     setKpi('kpi-drug', kpi.injectable_drug);

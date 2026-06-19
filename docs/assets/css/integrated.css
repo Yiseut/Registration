@@ -401,6 +401,11 @@
   white-space: nowrap;
 }
 
+.kpi .origin-count-delta {
+  display: block;
+  line-height: 1.45;
+}
+
 .kpi .delta.recent-delta {
   display: flex !important;
   flex-direction: column;

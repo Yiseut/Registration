@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://unpkg.com" crossorigin />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
 <link rel="stylesheet" href="assets/css/theme.css?v=20260619-overview-update-time-1" />
-<link rel="stylesheet" href="assets/css/integrated.css?v=20260619-china-map-metrics-1" />
+<link rel="stylesheet" href="assets/css/integrated.css?v=20260619-origin-counts-1" />
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
 </head>
@@ -102,9 +102,9 @@
       <div class="delta">NMPA / 国家政务平台核验通过</div>
     </div>
     <div class="card kpi lift rise rise-4 tone-sage">
-      <div class="label">国产 : 进口 : 港澳台</div>
-      <div class="value compact"><span id="kpi-mix">— : — : —</span></div>
-      <div class="delta">产地结构</div>
+      <div class="label">证照数</div>
+      <div class="value compact"><span id="kpi-origin-total">—</span><span class="unit">张</span></div>
+      <div class="delta origin-count-delta" id="kpi-origin-breakdown">国内 —张 · 进口 —张 · 港澳台 —张</div>
     </div>
 
     <div class="card kpi lift rise rise-1">
