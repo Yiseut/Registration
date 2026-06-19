@@ -18,6 +18,60 @@
   margin-top: 14px;
 }
 
+.analysis-pages-panel {
+  margin-top: 18px;
+  padding: clamp(16px, 2vw, 24px);
+}
+
+.analysis-pages-panel .section-head {
+  margin: 0 0 14px;
+}
+
+.topic-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.topic-entry-card {
+  display: grid;
+  gap: 8px;
+  min-height: 132px;
+  padding: 18px;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(247, 239, 239, 0.72));
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(94, 71, 72, 0.08);
+}
+
+.topic-entry-card span {
+  color: var(--brand-deep);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topic-entry-card strong {
+  color: var(--ink);
+  font-size: clamp(18px, 1.6vw, 23px);
+  line-height: 1.2;
+}
+
+.topic-entry-card small {
+  color: var(--ink-3);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.topic-entry-card:hover,
+.topic-entry-card:focus-visible {
+  border-color: color-mix(in srgb, var(--brand-deep) 34%, var(--hairline));
+  transform: translateY(-1px);
+}
+
 .china-map-card {
   margin-top: 22px;
   padding: clamp(16px, 2vw, 24px);
@@ -1492,6 +1546,10 @@ button.manufacturer-heat-cell:focus-visible {
 }
 
 @media (max-width: 1100px) {
+  .topic-entry-grid {
+    grid-template-columns: 1fr;
+  }
+
   .china-map-head,
   .china-map-layout {
     grid-template-columns: 1fr;

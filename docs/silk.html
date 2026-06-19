@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>丝素蛋白中国医美转化观察页</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="assets/css/topic.css?v=20260619-topic-1" />
+    <style>
+      .silk-page .hero {
+        grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.72fr);
+      }
+
+      .scope-card {
+        display: grid;
+        gap: 10px;
+      }
+
+      .scope-card div {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .scope-card span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .scope-card strong,
+      .scope-card p {
+        margin: 6px 0 0;
+        color: var(--ink-strong);
+        line-height: 1.5;
+      }
+
+      .silk-kpis {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .silk-kpis article strong small {
+        margin-left: 4px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .silk-kpis p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .analysis-strip,
+      .timeline-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .analysis-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-bottom: 18px;
+      }
+
+      .analysis-card,
+      .timeline-card,
+      .detail-card {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .analysis-card span,
+      .timeline-card span {
+        color: var(--faint);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .analysis-card strong,
+      .timeline-card h3,
+      .detail-card h3 {
+        display: block;
+        margin: 6px 0 0;
+        color: var(--ink-strong);
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .analysis-card p,
+      .timeline-card p,
+      .detail-card p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .timeline-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .timeline-card a,
+      .source-link,
+      .source-list a {
+        display: inline-flex;
+        margin-top: 8px;
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .funnel-scroll {
+        overflow-x: auto;
+        padding: 10px 4px 16px;
+      }
+
+      .funnel-track {
+        position: relative;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(170px, 1fr);
+        gap: 18px;
+        min-width: 760px;
+        padding: 8px 8px 12px;
+      }
+
+      .funnel-track::before {
+        content: "";
+        position: absolute;
+        top: 36px;
+        right: 42px;
+        left: 42px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(0, 166, 125, 0.28), rgba(230, 164, 0, 0.32), rgba(40, 120, 215, 0.28));
+      }
+
+      .funnel-node {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 7px;
+        justify-items: center;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        text-align: center;
+      }
+
+      .funnel-count {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 5px solid var(--surface);
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #00a67d, #e6a400);
+        box-shadow: 0 12px 24px rgba(25, 38, 50, 0.14);
+        font-size: 16px;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .funnel-node.active .funnel-count {
+        background: linear-gradient(135deg, #00a67d, #2878d7);
+        box-shadow: 0 16px 28px rgba(25, 38, 50, 0.22);
+      }
+
+      .funnel-node strong {
+        color: var(--ink-strong);
+        font-size: 12px;
+      }
+
+      .funnel-node em {
+        color: var(--muted);
+        font-style: normal;
+        font-size: 12px;
+      }
+
+      .detail-card span,
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        border-radius: 999px;
+        color: #1f6c54;
+        background: rgba(0, 166, 125, 0.12);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .table-wrap table {
+        min-width: 960px;
+      }
+
+      .table-wrap td {
+        vertical-align: top;
+      }
+
+      .table-wrap td strong {
+        color: var(--ink-strong);
+      }
+
+      .source-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .source-list li {
+        display: grid;
+        gap: 5px;
+        padding: 13px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+      }
+
+      .source-list strong {
+        color: var(--ink-strong);
+      }
+
+      .source-list span {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 1180px) {
+        .timeline-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 1080px) {
+        .silk-kpis,
+        .analysis-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 940px) {
+        .silk-page .hero,
+        .silk-kpis,
+        .analysis-strip,
+        .timeline-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="silk-page">
+    <a class="floating-overview-link" href="./index.html#analysis-pages">专题入口</a>
+    <div class="shell">
+      <aside class="side">
+        <a class="brand" href="./index.html" aria-label="返回总览">
+          <span>RI</span>
+          <div>
+            <strong>Registration Intelligence</strong>
+            <small>医美准入情报</small>
+          </div>
+        </a>
+        <a class="global-return" href="./index.html#analysis-pages">返回专题入口</a>
+        <nav class="nav" aria-label="丝素蛋白观察导航">
+          <a href="#overview" class="active">趋势总览</a>
+          <a href="#funnel-section">转化漏斗</a>
+          <a href="#timeline-section">时间线</a>
+          <a href="#segments">成熟度拆分</a>
+          <a href="#watchlist">观察对象</a>
+          <a href="#sources">来源说明</a>
+        </nav>
+        <div class="side-card">
+          <span>当前页面</span>
+          <strong>丝素蛋白观察页</strong>
+          <p>把材料端热度和终端医美证照分开看。</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero" id="overview">
+          <div>
+            <p class="eyebrow">MATERIAL FUNNEL</p>
+            <h1 id="pageTitle">丝素蛋白中国医美转化观察页</h1>
+            <p class="hero-copy" id="pageSubtitle"></p>
+          </div>
+          <div class="scope-card" aria-label="页面口径">
+            <div>
+              <span>更新时间</span>
+              <strong id="updatedAt">-</strong>
+            </div>
+            <div>
+              <span>页面口径</span>
+              <p id="scopeText"></p>
+            </div>
+          </div>
+        </header>
+
+        <section id="kpis" class="kpis silk-kpis" aria-label="丝素蛋白关键指标"></section>
+
+        <section id="insights" class="analysis-strip" aria-label="丝素蛋白趋势判断"></section>
+
+        <section class="panel" id="funnel-section">
+          <div class="panel-head">
+            <div>
+              <h2>材料到产品的转化漏斗</h2>
+              <p>点击节点查看证据含义；原料主文档和终端注册证分开计算。</p>
+            </div>
+          </div>
+          <div class="funnel-scroll">
+            <div id="funnel" class="funnel-track"></div>
+          </div>
+          <div id="funnelDetails"></div>
+        </section>
+
+        <section class="panel" id="timeline-section">
+          <div class="panel-head">
+            <div>
+              <h2>关键时间线</h2>
+              <p>按公开时间点排列，观察丝素蛋白从原料端向产品端推进的节奏。</p>
+            </div>
+          </div>
+          <div id="timeline" class="timeline-grid"></div>
+        </section>
+
+        <section class="panel" id="segments">
+          <div class="panel-head">
+            <div>
+              <h2>成熟度拆分</h2>
+              <p>把热度拆到不同证据层级，避免一个数字解释所有问题。</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>层级</th>
+                  <th>成熟度</th>
+                  <th>证据</th>
+                  <th>分析含义</th>
+                </tr>
+              </thead>
+              <tbody id="segmentBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="watchlist">
+          <div class="panel-head">
+            <div>
+              <h2>观察对象</h2>
+              <p>优先跟踪能从材料端走向终端医美产品的企业和线索。</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>对象</th>
+                  <th>信号</th>
+                  <th>阶段</th>
+                  <th>下一步</th>
+                  <th>链接</th>
+                </tr>
+              </thead>
+              <tbody id="watchBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="sources">
+          <div class="panel-head">
+            <div>
+              <h2>来源说明</h2>
+              <p>本页把主文档、公开报道和正式注册证分层呈现。</p>
+            </div>
+          </div>
+          <ul id="sourceList" class="source-list"></ul>
+        </section>
+      </main>
+    </div>
+    <script src="assets/js/silk-data.js?v=20260619"></script>
+    <script src="assets/js/silk-app.js?v=20260619"></script>
+  </body>
+</html>

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECM 细胞外基质中国观察页</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="assets/css/topic.css?v=20260619-topic-1" />
+    <style>
+      .ecm-page .hero {
+        grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.72fr);
+      }
+
+      .scope-card {
+        display: grid;
+        gap: 10px;
+      }
+
+      .scope-card div {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .scope-card span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .scope-card strong,
+      .scope-card p {
+        margin: 6px 0 0;
+        color: var(--ink-strong);
+        line-height: 1.5;
+      }
+
+      .ecm-kpis {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .ecm-kpis article strong small {
+        margin-left: 4px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .ecm-kpis p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .analysis-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .analysis-card {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .analysis-card span {
+        color: var(--faint);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .analysis-card strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--ink-strong);
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .analysis-card p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .stage-scroll {
+        overflow-x: auto;
+        padding: 10px 4px 16px;
+      }
+
+      .stage-track {
+        position: relative;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(150px, 1fr);
+        gap: 18px;
+        min-width: 820px;
+        padding: 8px 8px 12px;
+      }
+
+      .stage-track::before {
+        content: "";
+        position: absolute;
+        top: 36px;
+        right: 42px;
+        left: 42px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(0, 166, 125, 0.25), rgba(40, 120, 215, 0.32), rgba(129, 115, 118, 0.18));
+      }
+
+      .stage-node {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 7px;
+        justify-items: center;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        text-align: center;
+      }
+
+      .stage-count {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 5px solid var(--surface);
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #8b98a1, #2878d7);
+        box-shadow: 0 12px 24px rgba(25, 38, 50, 0.14);
+        font-size: 16px;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .stage-node.active .stage-count {
+        background: linear-gradient(135deg, #00a67d, #2878d7);
+        box-shadow: 0 16px 28px rgba(25, 38, 50, 0.22);
+      }
+
+      .stage-node strong {
+        color: var(--ink-strong);
+        font-size: 12px;
+      }
+
+      .stage-node em {
+        color: var(--muted);
+        font-style: normal;
+        font-size: 12px;
+      }
+
+      .stage-detail-card {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .stage-detail-card span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 0 8px;
+        border-radius: 999px;
+        color: #1f6c54;
+        background: rgba(0, 166, 125, 0.12);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .stage-detail-card h3 {
+        margin: 10px 0 6px;
+        color: var(--ink-strong);
+        font-size: 16px;
+      }
+
+      .stage-detail-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .table-wrap table {
+        min-width: 920px;
+      }
+
+      .table-wrap td {
+        vertical-align: top;
+      }
+
+      .table-wrap td strong {
+        color: var(--ink-strong);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        border-radius: 999px;
+        color: #1f6c54;
+        background: rgba(0, 166, 125, 0.12);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .pill.muted {
+        color: var(--muted);
+        background: #edf4f8;
+      }
+
+      .source-link {
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .source-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .source-list li {
+        display: grid;
+        gap: 5px;
+        padding: 13px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+      }
+
+      .source-list strong {
+        color: var(--ink-strong);
+      }
+
+      .source-list span {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 1080px) {
+        .ecm-kpis,
+        .analysis-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 940px) {
+        .ecm-page .hero,
+        .ecm-kpis,
+        .analysis-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="ecm-page">
+    <a class="floating-overview-link" href="./index.html#analysis-pages">专题入口</a>
+    <div class="shell">
+      <aside class="side">
+        <a class="brand" href="./index.html" aria-label="返回总览">
+          <span>RI</span>
+          <div>
+            <strong>Registration Intelligence</strong>
+            <small>医美准入情报</small>
+          </div>
+        </a>
+        <a class="global-return" href="./index.html#analysis-pages">返回专题入口</a>
+        <nav class="nav" aria-label="ECM 观察导航">
+          <a href="#overview" class="active">趋势总览</a>
+          <a href="#stage">证据进度</a>
+          <a href="#boundary">口径边界</a>
+          <a href="#watchlist">观察清单</a>
+          <a href="#sources">来源说明</a>
+        </nav>
+        <div class="side-card">
+          <span>当前页面</span>
+          <strong>ECM 观察页</strong>
+          <p>先判断是否存在可纳入统计的证据，再讨论市场规模和竞争格局。</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero" id="overview">
+          <div>
+            <p class="eyebrow">EARLY SIGNAL</p>
+            <h1 id="pageTitle">ECM 细胞外基质中国观察页</h1>
+            <p class="hero-copy" id="pageSubtitle"></p>
+          </div>
+          <div class="scope-card" aria-label="页面口径">
+            <div>
+              <span>更新时间</span>
+              <strong id="updatedAt">-</strong>
+            </div>
+            <div>
+              <span>页面口径</span>
+              <p id="scopeText"></p>
+            </div>
+          </div>
+        </header>
+
+        <section id="kpis" class="kpis ecm-kpis" aria-label="ECM 关键指标"></section>
+
+        <section id="insights" class="analysis-strip" aria-label="ECM 趋势判断"></section>
+
+        <section class="panel" id="stage">
+          <div class="panel-head">
+            <div>
+              <h2>证据进度</h2>
+              <p>点击节点查看当前证据含义；没有官方证据前，不把概念词当作注册证。</p>
+            </div>
+          </div>
+          <div class="stage-scroll">
+            <div id="stageTimeline" class="stage-track"></div>
+          </div>
+          <div id="stageDetails"></div>
+        </section>
+
+        <section class="panel" id="boundary">
+          <div class="panel-head">
+            <div>
+              <h2>口径边界</h2>
+              <p>先把容易混淆的词拆开，避免把机制描述误算为 ECM 产品。</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>词项</th>
+                  <th>角色</th>
+                  <th>当前状态</th>
+                  <th>纳入规则</th>
+                </tr>
+              </thead>
+              <tbody id="boundaryBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="watchlist">
+          <div class="panel-head">
+            <div>
+              <h2>观察清单</h2>
+              <p>保留有用信号，也明确哪些内容不应并入 ECM。</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>信号</th>
+                  <th>来源</th>
+                  <th>判断</th>
+                  <th>下一步</th>
+                  <th>链接</th>
+                </tr>
+              </thead>
+              <tbody id="watchBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="sources">
+          <div class="panel-head">
+            <div>
+              <h2>来源说明</h2>
+              <p>本页只表达已复核到的证据强度，不替代后续官方注册证核验。</p>
+            </div>
+          </div>
+          <ul id="sourceList" class="source-list"></ul>
+        </section>
+      </main>
+    </div>
+    <script src="assets/js/ecm-data.js?v=20260619"></script>
+    <script src="assets/js/ecm-app.js?v=20260619"></script>
+  </body>
+</html>

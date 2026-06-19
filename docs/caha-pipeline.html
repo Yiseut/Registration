@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>中国 CaHA 临床注册进度</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="assets/css/topic.css?v=20260619-topic-1" />
+    <style>
+      .pipeline-page .hero {
+        grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.68fr);
+      }
+
+      .scope-card {
+        display: grid;
+        gap: 10px;
+      }
+
+      .scope-card div {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+      }
+
+      .scope-card span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .scope-card strong {
+        display: block;
+        margin-top: 5px;
+        color: var(--ink-strong);
+        font-size: 24px;
+        line-height: 1.15;
+      }
+
+      .split-kpis {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .analysis-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .analysis-card {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .analysis-card span {
+        color: var(--faint);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .analysis-card strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--ink-strong);
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .analysis-card p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .trend-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .timeline-panel {
+        grid-column: 1 / -1;
+      }
+
+      .bar-list,
+      .matrix-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 120px minmax(0, 1fr) 44px;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .bar-row span,
+      .bar-row b {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .bar-row b {
+        color: var(--ink-strong);
+        text-align: right;
+        font-size: 15px;
+      }
+
+      .bar-track {
+        height: 16px;
+        border-radius: 999px;
+        background: #edf4f8;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        display: block;
+        height: 100%;
+        min-width: 6px;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #00a67d, #2878d7);
+      }
+
+      .timeline-scroll {
+        overflow-x: auto;
+        padding: 10px 4px 16px;
+      }
+
+      .timeline-track {
+        position: relative;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(132px, 1fr);
+        gap: 18px;
+        min-width: 1040px;
+        padding: 8px 8px 12px;
+      }
+
+      .timeline-track::before {
+        content: "";
+        position: absolute;
+        top: 36px;
+        right: 42px;
+        left: 42px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(0, 166, 125, 0.25), rgba(40, 120, 215, 0.32), rgba(129, 115, 118, 0.18));
+      }
+
+      .timeline-node {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 8px;
+        justify-items: center;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        text-align: center;
+      }
+
+      .timeline-count {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 5px solid var(--surface);
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #00a67d, #2878d7);
+        box-shadow: 0 12px 24px rgba(88, 71, 75, 0.16);
+        font-size: 16px;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .timeline-node.active .timeline-count {
+        background: linear-gradient(135deg, #77656a, #2f7bd8);
+        box-shadow: 0 16px 28px rgba(88, 71, 75, 0.24);
+      }
+
+      .timeline-node strong {
+        color: var(--ink-strong);
+        font-size: 12px;
+        line-height: 1.25;
+      }
+
+      .timeline-node span:last-child {
+        max-width: 130px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .timeline-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .timeline-detail-card {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+      }
+
+      .timeline-detail-card span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 0 8px;
+        border-radius: 999px;
+        color: #1f6c54;
+        background: rgba(0, 166, 125, 0.12);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .timeline-detail-card h3 {
+        margin: 10px 0 6px;
+        color: var(--ink-strong);
+        font-size: 16px;
+        line-height: 1.35;
+      }
+
+      .timeline-detail-card p {
+        margin: 5px 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .timeline-detail-card a {
+        display: inline-flex;
+        margin-top: 6px;
+        color: var(--blue);
+        font-weight: 900;
+      }
+
+      .matrix-row {
+        display: grid;
+        grid-template-columns: 120px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+      }
+
+      .matrix-row > span {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .matrix-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .matrix-tags span,
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        border-radius: 999px;
+        color: var(--muted);
+        background: #edf4f8;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .pill.strong {
+        color: #1f6c54;
+        background: rgba(0, 166, 125, 0.12);
+      }
+
+      .pill.mid {
+        color: #7a5a16;
+        background: rgba(230, 164, 0, 0.16);
+      }
+
+      .project-table table,
+      .evidence-table table {
+        min-width: 1320px;
+      }
+
+      .project-table th,
+      .project-table td,
+      .evidence-table th,
+      .evidence-table td {
+        vertical-align: top;
+      }
+
+      .product-cell strong {
+        display: block;
+        color: var(--ink-strong);
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .product-cell span,
+      .muted-cell {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .numeric-cell {
+        color: var(--ink-strong);
+        font-variant-numeric: tabular-nums;
+        font-weight: 800;
+      }
+
+      .source-link {
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .section-note {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      @media (max-width: 1320px) {
+        .split-kpis,
+        .analysis-strip {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 940px) {
+        .pipeline-page .hero,
+        .split-kpis,
+        .analysis-strip,
+        .trend-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bar-row,
+        .matrix-row {
+          grid-template-columns: 88px minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body class="pipeline-page">
+    <a class="floating-overview-link" href="./index.html?v=matrix-sort-20260509-2335">全局总览</a>
+    <div class="shell">
+      <aside class="side">
+        <a class="brand" href="./index.html" aria-label="返回总览">
+          <span>RI</span>
+          <div>
+            <strong>Registration Intelligence</strong>
+            <small>医美准入情报</small>
+          </div>
+        </a>
+        <a class="global-return" href="./caha.html">返回 CaHA 赛道</a>
+        <nav class="nav" aria-label="CaHA 临床进度导航">
+          <a href="#overview" class="active">趋势总览</a>
+          <a href="#china-projects">中国表格</a>
+          <a href="#overseas-projects">海外表格</a>
+          <a href="#evidence">证据明细</a>
+        </nav>
+        <div class="side-card">
+          <span>当前页面</span>
+          <strong>CaHA 临床注册</strong>
+          <p>中国与海外分表呈现，项目按产品归并，来源按证据展开。</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="hero" id="overview">
+          <div>
+            <p class="eyebrow">CLINICAL PROGRESS</p>
+            <h1 id="pageTitle">中国 CaHA 临床注册进度</h1>
+            <p class="hero-copy" id="pageSubtitle">按产品归并中国市场项目，拆分已获批、进行中和候选跟踪线索</p>
+          </div>
+          <div class="scope-card" aria-label="页面口径">
+            <div>
+              <span>更新时间</span>
+              <strong id="updatedAt">-</strong>
+            </div>
+            <div>
+              <span>表格口径</span>
+              <strong>中国 / 海外分表</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="kpis split-kpis" aria-label="关键指标">
+          <article>
+            <span>中国项目</span>
+            <strong id="kpiChinaProjects">0</strong>
+            <small>按产品归并</small>
+          </article>
+          <article>
+            <span>中国 Ongoing</span>
+            <strong id="kpiChinaOngoing">0</strong>
+            <small>进行中或随访中</small>
+          </article>
+          <article>
+            <span>海外参考</span>
+            <strong id="kpiOverseasProjects">0</strong>
+            <small>单独成表</small>
+          </article>
+          <article>
+            <span>临床登记来源</span>
+            <strong id="kpiClinicalRecords">0</strong>
+            <small>中外合计</small>
+          </article>
+          <article>
+            <span>已知中国中心</span>
+            <strong id="kpiKnownCenters">0</strong>
+            <small>公开来源可见</small>
+          </article>
+        </section>
+
+        <section class="analysis-strip" aria-label="趋势判断">
+          <article class="analysis-card">
+            <span>国内已获批</span>
+            <strong>鼻唇沟先行</strong>
+            <p>优法兰与 RADIESSE 均以中重度鼻唇沟皱纹作为已获批核心适应证。</p>
+          </article>
+          <article class="analysis-card">
+            <span>国内进行中</span>
+            <strong>中面部容量进入 III 期</strong>
+            <p>HArmonyCa Lidocaine 是当前最明确的中国 ongoing 线索。</p>
+          </article>
+          <article class="analysis-card">
+            <span>数据归并</span>
+            <strong>RADIESSE 是 1 个产品、3 条来源</strong>
+            <p>主表只显示 1 行；审评报告和两条临床登记保留在证据明细表。</p>
+          </article>
+        </section>
+
+        <section class="trend-grid" aria-label="分布趋势">
+          <article class="panel timeline-panel">
+            <div class="panel-head">
+              <div>
+                <h2>中国注册进度时间轴</h2>
+                <p>按公开时间点排列，点击节点数字查看产品和状态。</p>
+              </div>
+            </div>
+            <div class="timeline-scroll">
+              <div id="timelineChart" class="timeline-track"></div>
+            </div>
+            <div id="timelineDetails" class="timeline-details"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>适应方向对比</h2>
+              </div>
+            </div>
+            <div id="indicationMatrix" class="matrix-list"></div>
+          </article>
+        </section>
+
+        <section class="panel" id="china-projects">
+          <div class="panel-head">
+            <div>
+              <h2>中国项目进度表</h2>
+              <p id="chinaProjectCount">0 个项目</p>
+            </div>
+          </div>
+          <div class="table-wrap project-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>产品 / 企业</th>
+                  <th>分层</th>
+                  <th>适应方向</th>
+                  <th>当前进度</th>
+                  <th>中心数</th>
+                  <th>计划入组</th>
+                  <th>实际入组</th>
+                  <th>FAS</th>
+                  <th>PPS</th>
+                  <th>SS</th>
+                  <th>中心 FAS 明细</th>
+                  <th>证据</th>
+                  <th>下一步关注</th>
+                </tr>
+              </thead>
+              <tbody id="chinaProjectBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="overseas-projects">
+          <div class="panel-head">
+            <div>
+              <h2>海外参考表</h2>
+              <p id="overseasProjectCount">0 个项目</p>
+            </div>
+          </div>
+          <div class="table-wrap project-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>产品 / 企业</th>
+                  <th>分层</th>
+                  <th>适应方向</th>
+                  <th>当前进度</th>
+                  <th>中心数</th>
+                  <th>计划入组</th>
+                  <th>实际入组</th>
+                  <th>FAS</th>
+                  <th>PPS</th>
+                  <th>SS</th>
+                  <th>中心 FAS 明细</th>
+                  <th>证据</th>
+                  <th>参考价值</th>
+                </tr>
+              </thead>
+              <tbody id="overseasProjectBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="evidence">
+          <div class="panel-head">
+            <div>
+              <h2>结构化证据明细</h2>
+              <p id="evidenceCount">0 条来源记录</p>
+            </div>
+          </div>
+          <div class="table-wrap evidence-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>地区</th>
+                  <th>产品</th>
+                  <th>来源类型</th>
+                  <th>来源编号</th>
+                  <th>状态</th>
+                  <th>分期/阶段</th>
+                  <th>中心数</th>
+                  <th>计划入组</th>
+                  <th>实际入组</th>
+                  <th>FAS</th>
+                  <th>PPS</th>
+                  <th>SS</th>
+                  <th>中心 FAS 明细</th>
+                  <th>来源</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/js/caha-pipeline-data.js?v=20260619-2"></script>
+    <script src="assets/js/caha-pipeline-app.js?v=20260619-2"></script>
+  </body>
+</html>
