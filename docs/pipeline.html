@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>新材料注册进度</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="assets/css/topic.css?v=pipeline-20260619" />
+    <style>
+      .pipeline-shell {
+        min-height: 100vh;
+      }
+
+      .pipeline-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: end;
+      }
+
+      .hero-note {
+        max-width: 760px;
+      }
+
+      .track-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0;
+      }
+
+      .track-tab {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 900;
+        padding: 10px 16px;
+      }
+
+      .track-tab.active {
+        background: var(--ink-strong);
+        border-color: var(--ink-strong);
+        color: #fff;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin: 18px 0;
+      }
+
+      .metric-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .metric-card span {
+        color: var(--faint);
+        display: block;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .metric-card strong {
+        color: var(--ink-strong);
+        display: block;
+        font-size: 34px;
+        line-height: 1.1;
+        margin-top: 8px;
+      }
+
+      .metric-card p {
+        color: var(--muted);
+        margin: 8px 0 0;
+      }
+
+      .pipeline-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .source-bars {
+        display: grid;
+        gap: 12px;
+      }
+
+      .source-bar {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr) 42px;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .source-bar span {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .source-bar b {
+        color: var(--ink-strong);
+        text-align: right;
+      }
+
+      .bar-track {
+        height: 14px;
+        border-radius: 999px;
+        background: #edf4f8;
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        display: block;
+        height: 100%;
+        min-width: 4px;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #00a67d, #2878d7);
+      }
+
+      .timeline-scroll {
+        overflow-x: auto;
+        padding: 10px 2px 16px;
+      }
+
+      .timeline-track {
+        position: relative;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(132px, 1fr);
+        gap: 16px;
+        min-width: 1120px;
+        padding: 8px 8px 16px;
+      }
+
+      .timeline-track::before {
+        content: "";
+        position: absolute;
+        top: 34px;
+        right: 42px;
+        left: 42px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(0, 166, 125, 0.25), rgba(40, 120, 215, 0.32), rgba(129, 115, 118, 0.18));
+      }
+
+      .timeline-node {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 8px;
+        justify-items: center;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        text-align: center;
+      }
+
+      .timeline-count {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 5px solid var(--surface);
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #00a67d, #2878d7);
+        box-shadow: 0 12px 24px rgba(88, 71, 75, 0.16);
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .timeline-node.active .timeline-count {
+        background: linear-gradient(135deg, #77656a, #2f7bd8);
+      }
+
+      .timeline-node strong {
+        color: var(--ink-strong);
+        font-size: 12px;
+      }
+
+      .timeline-node span:last-child {
+        max-width: 132px;
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .timeline-detail-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 10px;
+      }
+
+      .timeline-detail {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+        padding: 14px;
+      }
+
+      .timeline-detail h3 {
+        color: var(--ink-strong);
+        font-size: 17px;
+        margin: 6px 0;
+      }
+
+      .timeline-detail p {
+        color: var(--muted);
+        margin: 5px 0;
+      }
+
+      .badge {
+        display: inline-flex;
+        min-height: 24px;
+        align-items: center;
+        border-radius: 999px;
+        background: #ebe6e7;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 900;
+        padding: 4px 9px;
+      }
+
+      .badge.strong {
+        background: #e5f5f1;
+        color: #08745b;
+      }
+
+      .badge.warn {
+        background: #f7e9d5;
+        color: #9a6d22;
+      }
+
+      .table-scroll {
+        overflow-x: auto;
+      }
+
+      .pipeline-table {
+        border-collapse: collapse;
+        min-width: 1120px;
+        width: 100%;
+      }
+
+      .pipeline-table th,
+      .pipeline-table td {
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        padding: 12px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .pipeline-table th {
+        color: var(--faint);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .pipeline-table strong {
+        color: var(--ink-strong);
+        display: block;
+        line-height: 1.35;
+      }
+
+      .pipeline-table a {
+        color: #2f7bd8;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .muted-line {
+        color: var(--muted);
+        display: block;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      @media (max-width: 980px) {
+        .pipeline-hero,
+        .pipeline-grid,
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page pipeline-shell">
+      <header class="hero pipeline-hero">
+        <div>
+          <p class="eyebrow">PIPELINE INTELLIGENCE</p>
+          <h1 id="pageTitle">新材料注册进度</h1>
+          <p class="hero-note" id="scopeNote"></p>
+        </div>
+        <div class="scope-card">
+          <div>
+            <span>最近更新</span>
+            <strong id="updatedAt">-</strong>
+          </div>
+          <a class="back-link" href="./index.html#analysis-pages">返回总览</a>
+        </div>
+      </header>
+
+      <nav class="track-tabs" id="trackTabs" aria-label="赛道筛选"></nav>
+
+      <section class="metric-grid" aria-label="来源指标">
+        <article class="metric-card">
+          <span>项目/产品线</span>
+          <strong id="kpiProjects">0</strong>
+          <p>按产品和企业归并</p>
+        </article>
+        <article class="metric-card">
+          <span>可上趋势表</span>
+          <strong id="kpiReady">0</strong>
+          <p>A0-A3 且无冲突</p>
+        </article>
+        <article class="metric-card">
+          <span>来源记录</span>
+          <strong id="kpiRecords">0</strong>
+          <p>公开来源和待核验线索</p>
+        </article>
+        <article class="metric-card">
+          <span>线下待核验</span>
+          <strong id="kpiHidden">0</strong>
+          <p>不进入前台统计</p>
+        </article>
+      </section>
+
+      <section class="pipeline-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>进度时间轴</h2>
+              <p>按公开来源时间排序，点击节点查看对应产品和状态。</p>
+            </div>
+          </div>
+          <div class="timeline-scroll">
+            <div class="timeline-track" id="timelineTrack"></div>
+          </div>
+          <div class="timeline-detail-grid" id="timelineDetails"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>证据结构</h2>
+              <p>官方/登记/企业来源越多，趋势判断越稳。</p>
+            </div>
+          </div>
+          <div class="source-bars" id="sourceBars"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>项目进度表</h2>
+            <p>已获批、临床登记、注册推进和待核验项目分开显示。</p>
+          </div>
+          <span id="projectCount" class="badge"></span>
+        </div>
+        <div class="table-scroll">
+          <table class="pipeline-table">
+            <thead>
+              <tr>
+                <th>项目</th>
+                <th>赛道</th>
+                <th>阶段</th>
+                <th>证据</th>
+                <th>适应证/部位</th>
+                <th>临床中心/PI</th>
+                <th>下一步</th>
+              </tr>
+            </thead>
+            <tbody id="projectBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>来源明细</h2>
+            <p>每条来源保留出处，用于继续升级到官方或企业原文。</p>
+          </div>
+          <span id="recordCount" class="badge"></span>
+        </div>
+        <div class="table-scroll">
+          <table class="pipeline-table">
+            <thead>
+              <tr>
+                <th>来源</th>
+                <th>项目</th>
+                <th>阶段</th>
+                <th>状态</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody id="recordBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <script src="./pipeline-data.js?v=20260619"></script>
+    <script src="./pipeline-app.js?v=20260619"></script>
+  </body>
+</html>
