@@ -39,6 +39,29 @@ body {
   font-size: 14px;
 }
 
+.source-alert {
+  display: grid;
+  gap: 7px;
+  margin-top: 18px;
+  padding: 15px 16px;
+  border: 1px solid rgba(178, 113, 94, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 247, 241, 0.86);
+}
+
+.source-alert strong {
+  color: var(--ink-strong);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.source-alert p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 a {
   color: inherit;
   text-decoration: none;
