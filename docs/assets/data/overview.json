@@ -851,7 +851,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 6
+        "days_to_expiry": 4
       },
       {
         "id": "PLLA-国械注准20213130460",
@@ -915,7 +915,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "plla_dashboard_data.json",
-        "days_to_expiry": 6
+        "days_to_expiry": 4
       },
       {
         "id": "COLLAGEN-国械注准20213130488",
@@ -977,7 +977,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "collagen_dashboard_data.json",
-        "days_to_expiry": 10
+        "days_to_expiry": 8
       },
       {
         "id": "HA-国械注许20163130035-鼻唇沟",
@@ -1043,7 +1043,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 14
+        "days_to_expiry": 12
       },
       {
         "id": "HA-国械注准20173133254-鼻唇沟",
@@ -1109,7 +1109,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 27
+        "days_to_expiry": 25
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -1178,7 +1178,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 125
+        "days_to_expiry": 123
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -1241,7 +1241,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "collagen_dashboard_data.json",
-        "days_to_expiry": 130
+        "days_to_expiry": 128
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1303,7 +1303,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "collagen_dashboard_data.json",
-        "days_to_expiry": 138
+        "days_to_expiry": 136
       },
       {
         "id": "HA-国械注进20213130485-面颊部",
@@ -1372,7 +1372,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 161
+        "days_to_expiry": 159
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1438,7 +1438,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 257
+        "days_to_expiry": 255
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1505,7 +1505,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 298
+        "days_to_expiry": 296
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1571,7 +1571,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 298
+        "days_to_expiry": 296
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1637,7 +1637,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 306
+        "days_to_expiry": 304
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1705,7 +1705,7 @@
         "confidence": "official",
         "data_status": "已结构化",
         "source_dataset": "ebd_product_query_20260510.json",
-        "days_to_expiry": 315
+        "days_to_expiry": 313
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1771,7 +1771,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 338
+        "days_to_expiry": 336
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -1837,7 +1837,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 378
+        "days_to_expiry": 376
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -1903,7 +1903,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 388
+        "days_to_expiry": 386
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -1973,7 +1973,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 446
+        "days_to_expiry": 444
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -2040,7 +2040,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 494
+        "days_to_expiry": 492
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -2107,7 +2107,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 544
+        "days_to_expiry": 542
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -2176,7 +2176,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 574
+        "days_to_expiry": 572
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -2245,7 +2245,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 574
+        "days_to_expiry": 572
       },
       {
         "id": "RAW-LASER_IPL-国械注进20183011604",
@@ -2314,7 +2314,7 @@
         "confidence": "official",
         "data_status": "已结构化",
         "source_dataset": "ebd_product_query_wontech_20260604.json",
-        "days_to_expiry": 593
+        "days_to_expiry": 591
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -2380,7 +2380,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 605
+        "days_to_expiry": 603
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -2446,7 +2446,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 605
+        "days_to_expiry": 603
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -2513,7 +2513,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 628
+        "days_to_expiry": 626
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -2581,7 +2581,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 644
+        "days_to_expiry": 642
       },
       {
         "id": "HA-国械注准20183130109-鼻唇沟",
@@ -2647,7 +2647,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 649
+        "days_to_expiry": 647
       },
       {
         "id": "RAW-LASER_IPL-国械注进20173096244",
@@ -2718,7 +2718,7 @@
         "confidence": "official",
         "data_status": "已结构化",
         "source_dataset": "ebd_product_query_wontech_20260604.json",
-        "days_to_expiry": 659
+        "days_to_expiry": 657
       },
       {
         "id": "HA-国械注进20233130150-鼻唇沟",
@@ -2784,7 +2784,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 671
+        "days_to_expiry": 669
       }
     ]
   },

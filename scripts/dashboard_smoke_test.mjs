@@ -28,6 +28,23 @@ async function openCheckedPage(context, path, viewport = { width: 1360, height: 
   return page;
 }
 
+async function clickTimelineYear(page, year) {
+  const clicked = await page.evaluate((targetYear) => {
+    const el = document.getElementById('chart-timeline');
+    const inst = window.echarts?.getInstanceByDom(el);
+    if (!el || !inst) return false;
+    const option = inst.getOption();
+    const years = option.xAxis?.[0]?.data || [];
+    const index = years.findIndex((value) => Number(value) === Number(targetYear));
+    const handlers = inst._$handlers?.click || [];
+    if (index < 0 || !handlers.length) return false;
+    handlers.forEach((handler) => handler.h.call(handler.ctx, { dataIndex: index, seriesName: '主格局新增' }));
+    return true;
+  }, year);
+  assert(clicked, `Could not trigger ${year} timeline drilldown`);
+  await page.waitForTimeout(300);
+}
+
 async function main() {
   const overview = await fetch(urlFor('assets/data/overview.json')).then((res) => res.json());
   const manifest = await fetch(urlFor('assets/data/manifest.json')).then((res) => res.json());
@@ -151,6 +168,33 @@ async function main() {
   assert(haPositionState.koreanTags.length === 13 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
   assert(haPositionState.lidocaineTags.length === 13 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
   await haPositionPage.close();
+
+  const haTimelinePage = await openCheckedPage(context, 'tracks/ha.html');
+  await clickTimelineYear(haTimelinePage, 2026);
+  const haTimelineDrawer = await haTimelinePage.evaluate(() => ({
+    text: document.querySelector('.drawer.open')?.textContent || '',
+    rows: document.querySelectorAll('.drawer.open .record-card').length,
+    pendingData: window.echarts.getInstanceByDom(document.getElementById('chart-timeline'))?.getOption().series
+      ?.find((series) => series.name === '待复核/底层')?.data || [],
+  }));
+  assert(haTimelineDrawer.pendingData.some((value) => Number(value) === 2), 'HA timeline should show two pending 2026 leads in the stacked annual bar', JSON.stringify(haTimelineDrawer.pendingData));
+  assert(haTimelineDrawer.text.includes('主格局 6 张 + 待复核/底层 2 张'), 'HA 2026 drilldown should explain main vs pending counts', haTimelineDrawer.text);
+  assert(haTimelineDrawer.text.includes('Humedix / 汇美迪斯'), 'HA 2026 drilldown should include the pending Humedix certificate registrant group', haTimelineDrawer.text);
+  assert(haTimelineDrawer.text.includes('国械注进20263130223'), 'HA 2026 drilldown should include the pending Humedix certificate number', haTimelineDrawer.text);
+  await haTimelinePage.close();
+
+  const collagenTimelinePage = await openCheckedPage(context, 'tracks/collagen.html');
+  await clickTimelineYear(collagenTimelinePage, 2026);
+  const collagenTimelineDrawer = await collagenTimelinePage.evaluate(() => ({
+    text: document.querySelector('.drawer.open')?.textContent || '',
+    pendingData: window.echarts.getInstanceByDom(document.getElementById('chart-timeline'))?.getOption().series
+      ?.find((series) => series.name === '待复核/底层')?.data || [],
+  }));
+  assert(collagenTimelineDrawer.pendingData.some((value) => Number(value) === 2), 'Collagen timeline should show two pending 2026 leads in the stacked annual bar', JSON.stringify(collagenTimelineDrawer.pendingData));
+  assert(collagenTimelineDrawer.text.includes('主格局 3 张 + 待复核/底层 2 张'), 'Collagen 2026 drilldown should explain main vs pending counts', collagenTimelineDrawer.text);
+  assert(collagenTimelineDrawer.text.includes('交联重组胶原蛋白植入剂') && collagenTimelineDrawer.text.includes('巨子生物'), 'Collagen 2026 drilldown should include the pending Giant Biogene certificate', collagenTimelineDrawer.text);
+  assert(collagenTimelineDrawer.text.includes('国械注准20263131219'), 'Collagen 2026 drilldown should include the pending Giant Biogene certificate number', collagenTimelineDrawer.text);
+  await collagenTimelinePage.close();
 
   const lepuDetailPage = await openCheckedPage(context, `tracks/ha.html?q=${encodeURIComponent('国械注准20253131324')}`);
   await lepuDetailPage.locator('#table-records tbody tr').first().click();

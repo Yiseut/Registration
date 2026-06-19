@@ -57,6 +57,7 @@
   const accent = TRACK_ACCENTS[key] || meta.accent || palette.brand;
   const accentDeep = TRACK_ACCENT_DEEP[key] || palette.ink3;
   const mainBarGradient = () => verticalGradient(shade(accent, 18), accent);
+  const pendingBarGradient = () => verticalGradient('#f2d8a7', '#e0b66d');
   document.title = `${trackDisplayName} · Registration Landscape`;
 
   // Tint the header dot to track accent
@@ -1206,19 +1207,22 @@
     }
     const years = yearly.map((row) => row.year);
     const annual = yearly.map((row) => row.count);
+    const pendingAnnual = yearly.map((row) => row.pending || 0);
+    const totalAnnual = yearly.map((row) => row.count + (row.pending || 0));
     const cum = yearly.map((row) => row.cumulative);
-    const annualMax = Math.max(1, ...annual);
+    const annualMax = Math.max(1, ...totalAnnual);
     const inst = ChartFactory.make(document.getElementById('chart-timeline'), {
-      legend: { show: false },
+      legend: { bottom: 0, data: ['主格局新增', '待复核/底层', '累计获批'] },
       tooltip: {
         trigger: 'axis',
         formatter: (items) => {
           const index = items[0]?.dataIndex ?? 0;
           const row = yearly[index];
-          return `<b>${row.year}</b><br/>当年新增: ${row.count} 张<br/>累计获批: ${row.cumulative} 张`;
+          const pendingLine = row.pending ? `<br/>待复核/底层: ${row.pending} 张` : '';
+          return `<b>${row.year}</b><br/>主格局新增: ${row.count} 张${pendingLine}<br/>当年合计: ${row.count + (row.pending || 0)} 张<br/>主格局累计: ${row.cumulative} 张`;
         },
       },
-      grid: { left: 44, right: 44, top: 30, bottom: 32 },
+      grid: { left: 44, right: 44, top: 30, bottom: 54 },
       xAxis: { type: 'category', data: years, boundaryGap: true },
       yAxis: [
         { type: 'value', name: '当年新增', max: Math.ceil(annualMax / 5) * 5, splitLine: { lineStyle: { color: palette.hairline, type: 'dashed' } } },
@@ -1226,13 +1230,36 @@
       ],
       series: [
         {
-          name: '当年新增', type: 'bar', barMaxWidth: chartBarMaxWidth,
+          name: '主格局新增', type: 'bar', stack: 'annual', barMaxWidth: chartBarMaxWidth,
           itemStyle: {
             color: mainBarGradient(),
+            borderRadius: (params) => (pendingAnnual[params.dataIndex] ? [0, 0, 0, 0] : chartBarRadius),
+          },
+          label: {
+            show: true,
+            position: 'top',
+            color: palette.ink2,
+            fontSize: 11,
+            fontWeight: 600,
+            formatter: (params) => (pendingAnnual[params.dataIndex] ? '' : params.value),
+          },
+          data: annual,
+        },
+        {
+          name: '待复核/底层', type: 'bar', stack: 'annual', barMaxWidth: chartBarMaxWidth,
+          itemStyle: {
+            color: pendingBarGradient(),
             borderRadius: chartBarRadius,
           },
-          label: { show: true, position: 'top', color: palette.ink2, fontSize: 11, fontWeight: 600 },
-          data: annual,
+          label: {
+            show: true,
+            position: 'top',
+            color: palette.ink2,
+            fontSize: 11,
+            fontWeight: 600,
+            formatter: (params) => (params.value ? totalAnnual[params.dataIndex] : ''),
+          },
+          data: pendingAnnual,
         },
         {
           name: '累计获批', type: 'line', yAxisIndex: 1,
@@ -1246,8 +1273,13 @@
     });
     inst.on('click', (p) => {
       const year = years[p.dataIndex];
-      const matches = recordsForTimelineYear(data.records, year);
-      showRecords({ title: `${year} 年新增`, meta: trackDisplayName, records: displayRecords(matches) });
+      const mainMatches = recordsForTimelineYear(data.records, year, { mainOnly: true });
+      const pendingMatches = recordsForTimelineYear(data.records, year, { pendingOnly: true });
+      const matches = [...mainMatches, ...pendingMatches];
+      const meta = pendingMatches.length
+        ? `${trackDisplayName} · 主格局 ${mainMatches.length} 张 + 待复核/底层 ${pendingMatches.length} 张`
+        : `${trackDisplayName} · 主格局口径`;
+      showRecords({ title: `${year} 年新增`, meta, records: displayRecords(matches) });
     });
   }
 
@@ -1354,6 +1386,7 @@
       return data.benchmark.yearly.map((row) => ({
         year: Number(row.year),
         count: Number(row.count || 0),
+        pending: data.records.filter((record) => !record.main_landscape && recordTimelineYear(record) === Number(row.year)).length,
         cumulative: Number(row.cumulative || 0),
         进口: Number(row['进口'] || 0),
         国产: Number(row['国产'] || 0),
@@ -1362,15 +1395,19 @@
     const years = Array.isArray(t?.years) ? t.years : [];
     const values = Array.isArray(t?.values) ? t.values : [];
     const originByYear = new Map();
+    const pendingByYear = new Map();
     data.records
-      .filter((record) => record.main_landscape)
       .forEach((record) => {
         const year = recordTimelineYear(record);
         if (!year) return;
-        if (!originByYear.has(year)) originByYear.set(year, { 国产: 0, 进口: 0, 港澳台: 0 });
-        const bucket = originByYear.get(year);
-        const origin = record.origin || '国产';
-        if (origin in bucket) bucket[origin] += 1;
+        if (record.main_landscape) {
+          if (!originByYear.has(year)) originByYear.set(year, { 国产: 0, 进口: 0, 港澳台: 0 });
+          const bucket = originByYear.get(year);
+          const origin = record.origin || '国产';
+          if (origin in bucket) bucket[origin] += 1;
+        } else {
+          pendingByYear.set(year, (pendingByYear.get(year) || 0) + 1);
+        }
       });
     let cumulative = 0;
     return years.map((year, index) => {
@@ -1380,6 +1417,7 @@
       return {
         year: Number(year),
         count,
+        pending: Number(pendingByYear.get(Number(year)) || 0),
         cumulative,
         进口: Number(origins['进口'] || 0),
         国产: Number(origins['国产'] || 0),
@@ -1388,8 +1426,13 @@
     });
   }
 
-  function recordsForTimelineYear(source, year) {
-    return source.filter((record) => record.main_landscape && recordTimelineYear(record) === Number(year));
+  function recordsForTimelineYear(source, year, options = {}) {
+    return source.filter((record) => {
+      if (recordTimelineYear(record) !== Number(year)) return false;
+      if (options.pendingOnly) return !record.main_landscape;
+      if (options.mainOnly !== false) return record.main_landscape;
+      return true;
+    });
   }
 
   function recordTimelineYear(record) {
