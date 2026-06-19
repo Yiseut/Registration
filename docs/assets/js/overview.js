@@ -17,8 +17,8 @@
   const tracks = (await loadJSON('assets/data/manifest.json')).tracks;
 
   // ---- Hero meta ----
-  document.getElementById('meta-generated').textContent = data.generated_at.slice(0, 10);
-  document.getElementById('meta-records').textContent = data.kpi.total_records;
+  setText('meta-generated', data.generated_at.slice(0, 10));
+  setText('meta-records', data.kpi.total_records);
 
   // ---- KPIs ----
   const kpi = data.kpi;
@@ -329,5 +329,10 @@
     if (hhi >= 1500) return { tag: '<span class="tag warn">中度集中</span>', note: '少数玩家主导' };
     if (cr4 < 40) return { tag: '<span class="tag pos">高度分散</span>', note: 'CR4<40%,多玩家分蛋糕' };
     return { tag: '<span class="tag">中性结构</span>', note: '中游集中度' };
+  }
+
+  function setText(id, value) {
+    const node = document.getElementById(id);
+    if (node) node.textContent = value;
   }
 })();

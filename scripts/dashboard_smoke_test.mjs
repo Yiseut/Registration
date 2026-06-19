@@ -94,6 +94,8 @@ async function main() {
   const overviewPage = await openCheckedPage(context, 'index.html');
   const overviewState = await overviewPage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',
+    heroText: document.querySelector('.hero')?.textContent || '',
+    hasHeroMeta: document.querySelector('.hero .meta') !== null,
     recordRows: document.querySelectorAll('#table-records tbody tr').length,
     recordCount: document.querySelector('#record-count')?.textContent?.trim() || '',
     concentrationRows: document.querySelectorAll('#table-concentration tbody tr').length,
@@ -103,6 +105,8 @@ async function main() {
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
+  assert(!overviewState.heroText.includes('覆盖注射填充'), 'Overview hero descriptive copy should stay removed');
+  assert(!overviewState.hasHeroMeta, 'Overview hero meta row should stay removed');
   assert(overviewState.recordRows === expectedRecords, 'Overview record rows do not match main_records', `${overviewState.recordRows} !== ${expectedRecords}`);
   assert(overviewState.recordCount === String(expectedRecords), 'Overview record count label is wrong', overviewState.recordCount);
   assert(overviewState.concentrationRows === 7, 'Concentration table should render seven rows', String(overviewState.concentrationRows));
