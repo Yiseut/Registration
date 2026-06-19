@@ -163,7 +163,6 @@
 
   function renderKpis() {
     const kpi = cloudData.kpi || {};
-    setKpi('kpi-main', kpi.main_records);
     setKpi('kpi-companies', kpi.companies);
     setText('kpi-origin-total', kpi.main_records ?? '—');
     setText('kpi-origin-breakdown', `国内 ${kpi.domestic ?? '—'}张 · 进口 ${kpi.imported ?? '—'}张 · 港澳台 ${kpi.hkmt ?? '—'}张`);
