@@ -49,7 +49,7 @@
   }
 
   function renderMeta() {
-    setText("pageTitle", data.meta.title || "新材料注册进度");
+    setText("pageTitle", data.meta.title || "注册进度");
     setText("scopeNote", data.meta.scope_note || "");
     setText("updatedAt", data.meta.updated_at || "-");
   }

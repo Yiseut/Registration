@@ -85,11 +85,12 @@ async function main() {
     assert(/利多卡因|lidocaine/i.test(record?.components || ''), 'Official component lidocaine records should keep component lidocaine text', record?.certificate_no || 'missing');
   }
   assert(!lipScopeSkinQualityAnomalies.length, 'Lip-scope HA records should not be classified as skin quality', lipScopeSkinQualityAnomalies.map((record) => record.certificate_no).join(', '));
-  const botoxCerts = ['国药准字SJ20171003', '国药准字SJ20171005'];
+  const botoxCerts = ['国药准字SJ20171003', '国药准字SJ20171004', '国药准字SJ20171005'];
   const botoxRecords = botoxCerts.map((cert) => (botulinumData.records || []).find((record) => record.certificate_no === cert));
   const letybo50Record = (botulinumData.records || []).find((record) => record.certificate_no === '国药准字SJ20210004');
-  assert(botoxRecords.every(Boolean), 'BOTOX should keep the two front-facing 50U/100U approval numbers', botoxRecords.map((record) => record?.certificate_no || 'missing').join(', '));
-  assert(botoxRecords.some((record) => /50单位\/支/.test(record?.specification || '')), 'BOTOX should keep the 50-unit specification evidence');
+  assert(botoxRecords.every(Boolean), 'BOTOX should keep the three approval numbers separated by specification', botoxRecords.map((record) => record?.certificate_no || 'missing').join(', '));
+  assert(botoxRecords.every((record) => record?.valid_until === '2027-06-13'), 'BOTOX records should keep current certificate expiry dates', botoxRecords.map((record) => `${record?.certificate_no || 'missing'}:${record?.valid_until || 'missing'}`).join(', '));
+  assert(botoxRecords.some((record) => /50单位\/支/.test(record?.specification || '') && /3支\/盒/.test(record?.specification || '')), 'BOTOX should keep the 50-unit multi-pack specification evidence');
   assert(botoxRecords.some((record) => /100单位\/支/.test(record?.specification || '')), 'BOTOX should keep the 100-unit specification evidence');
   assert(/Hugel|乐提葆/i.test(`${letybo50Record?.registrant || ''} ${letybo50Record?.brand || ''}`), 'SJ20210004 should belong to Hugel/Letybo, not BOTOX', `${letybo50Record?.registrant || 'missing'} ${letybo50Record?.brand || ''}`);
 
@@ -194,19 +195,25 @@ async function main() {
       mainUnit: document.querySelector('#kpi-main')?.closest('.kpi')?.querySelector('.unit')?.textContent?.trim() || '',
       mix: document.querySelector('#kpi-mix')?.textContent?.trim() || '',
       tableCount: document.querySelector('#records-count')?.textContent?.trim() || '',
+      tableHeaders: Array.from(document.querySelectorAll('#table-records thead th')).map((node) => node.textContent?.trim() || ''),
+      botoxRows: Array.from(document.querySelectorAll('#table-records tbody tr'))
+        .filter((row) => /保妥适|Botox/i.test(row.textContent || ''))
+        .map((row) => Array.from(row.cells).map((cell) => cell.textContent?.trim() || '')),
       abbvieForehead,
     };
   });
   assert(botulinumState.mainLabel === '主格局产品', 'Botulinum main KPI should use product-group wording', botulinumState.mainLabel);
   assert(botulinumState.mainValue === '8' && botulinumState.mainUnit === '个', 'Botulinum main KPI should count eight product groups', `${botulinumState.mainValue}${botulinumState.mainUnit}`);
   assert(botulinumState.mix === '2 : 6 : 0', 'Botulinum origin mix should count product groups, not certificate rows', botulinumState.mix);
-  assert(botulinumState.tableCount === '11', 'Botulinum detail table should exclude the folded BOTOX 50U packaging duplicate from the front-stage main list', botulinumState.tableCount);
+  assert(botulinumState.tableCount === '12', 'Botulinum detail table should include BOTOX certificate variants as separate registration rows', botulinumState.tableCount);
+  assert(botulinumState.tableHeaders.join(',') === '品牌,产品 / 材料,注册人,证号,规格,来源,适应证,批准日,截止日,NMPA 核验状态', 'Botulinum table headers should expose specification and expiry date columns', botulinumState.tableHeaders.join(','));
+  assert(botulinumState.botoxRows.length === 3 && botulinumState.botoxRows.every((row) => row.length === 10), 'BOTOX rows should render as ten-column registration rows', JSON.stringify(botulinumState.botoxRows));
+  assert(botulinumState.botoxRows.some((row) => row.join(' ').includes('国药准字SJ20171004') && row.join(' ').includes('3支/盒') && row.join(' ').includes('2027-06-13')), 'BOTOX SJ20171004 row should expose package specification and expiry date', JSON.stringify(botulinumState.botoxRows));
   assert(botulinumState.abbvieForehead?.text === '1', 'AbbVie x forehead wrinkle matrix should show one BOTOX product group', botulinumState.abbvieForehead?.text || 'missing');
   assert(botulinumState.abbvieForehead?.records?.length === 1, 'AbbVie x forehead wrinkle drilldown should aggregate BOTOX certificates into one card', String(botulinumState.abbvieForehead?.records?.length || 0));
   const botoxMatrixRecord = botulinumState.abbvieForehead?.records?.[0] || {};
-  assert(botoxCerts.every((cert) => String(botoxMatrixRecord.certificate_no || '').includes(cert)), 'BOTOX aggregated card should retain the two front-facing 50U/100U approval numbers', botoxMatrixRecord.certificate_no || '');
-  assert(!String(botoxMatrixRecord.certificate_no || '').includes('国药准字SJ20171004'), 'BOTOX aggregated card should not surface the folded 50U packaging duplicate as a third front-facing certificate', botoxMatrixRecord.certificate_no || '');
-  assert(/50单位\/支/.test(botoxMatrixRecord.specification || '') && /100单位\/支/.test(botoxMatrixRecord.specification || ''), 'BOTOX aggregated card should retain 50U and 100U specifications', botoxMatrixRecord.specification || '');
+  assert(botoxCerts.every((cert) => String(botoxMatrixRecord.certificate_no || '').includes(cert)), 'BOTOX aggregated card should retain all approval numbers while grouping by product', botoxMatrixRecord.certificate_no || '');
+  assert(/50单位\/支/.test(botoxMatrixRecord.specification || '') && /3支\/盒/.test(botoxMatrixRecord.specification || '') && /100单位\/支/.test(botoxMatrixRecord.specification || ''), 'BOTOX aggregated card should retain 50U, multi-pack, and 100U specifications', botoxMatrixRecord.specification || '');
   await botulinumPage.close();
 
   const haPositionUrl = `tracks/ha.html?shape=${encodeURIComponent('交联填充类')}&position=${encodeURIComponent('韩国进口')}&lidocaine=yes`;
@@ -220,7 +227,8 @@ async function main() {
     shape: document.querySelector('#filter-ha-shape')?.value || '',
     position: document.querySelector('#filter-ha-position')?.value || '',
     lidocaine: document.querySelector('#filter-lidocaine')?.value || '',
-    koreanTags: Array.from(document.querySelectorAll('#table-records tbody .ha-position-tag')).map((node) => node.textContent?.trim() || ''),
+    positionTags: Array.from(document.querySelectorAll('#table-records tbody .ha-position-tag')).map((node) => node.textContent?.trim() || ''),
+    brandCells: Array.from(document.querySelectorAll('#table-records tbody tr td:first-child')).map((node) => node.textContent?.trim() || ''),
     lidocaineTags: Array.from(document.querySelectorAll('#table-records tbody .lidocaine-tag')).map((node) => node.textContent?.trim() || ''),
     urlPosition: new URL(location.href).searchParams.get('position') || '',
   }));
@@ -236,7 +244,8 @@ async function main() {
   assert(haPositionState.position === '韩国进口', 'HA position filter was not restored', haPositionState.position);
   assert(haPositionState.lidocaine === 'yes', 'HA lidocaine filter was not restored', haPositionState.lidocaine);
   assert(haPositionState.urlPosition === '韩国进口', 'HA filter state should remain shareable in the URL', haPositionState.urlPosition);
-  assert(haPositionState.koreanTags.length === 13 && haPositionState.koreanTags.every((tag) => tag === '韩国进口'), 'HA filtered rows should all be tagged 韩国进口', haPositionState.koreanTags.join(', '));
+  assert(haPositionState.positionTags.length === 0, 'HA table rows should not duplicate origin/position inside product-material tags', haPositionState.positionTags.join(', '));
+  assert(haPositionState.brandCells.every((text) => !/注射用|透明质酸钠|凝胶|溶液/.test(text)), 'HA brand cells should not echo generic registration product names', haPositionState.brandCells.join(', '));
   assert(haPositionState.lidocaineTags.length === 13 && haPositionState.lidocaineTags.every((tag) => tag === '含利多卡因'), 'HA filtered rows should all carry unified lidocaine tags', haPositionState.lidocaineTags.join(', '));
   await haPositionPage.close();
 

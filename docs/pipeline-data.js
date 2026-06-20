@@ -1,6 +1,6 @@
 window.PIPELINE_DASHBOARD_DATA = {
   "meta": {
-    "title": "新材料注册进度与来源覆盖",
+    "title": "注册进度与来源覆盖",
     "updated_at": "2026-06-20 01:07",
     "source_csv": "E:\\shared\\code\\registration\\inbox\\pipeline_source_updates.csv",
     "scope_note": "本页是Pipeline来源层，不与已获批注册证主表KPI相加。"

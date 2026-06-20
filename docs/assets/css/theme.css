@@ -341,19 +341,36 @@ a:hover { color: var(--brand); }
 .table .num { font-variant-numeric: tabular-nums; text-align: right; }
 .table .nowrap { white-space: nowrap; }
 
-/* Records table: keep narrow categorical columns on a single line */
-#table-records th:nth-child(3),
-#table-records td:nth-child(3),  /* 证号 */
-#table-records th:nth-child(4),
-#table-records td:nth-child(4),  /* 产地 */
-#table-records th:nth-child(6),
-#table-records td:nth-child(6),  /* 批准日 */
-#table-records th:nth-child(7),
-#table-records td:nth-child(7)   /* 核验 */ { white-space: nowrap; }
-#table-records th:nth-child(4),
-#table-records td:nth-child(4) { min-width: 56px; }
-#table-records th:nth-child(6),
-#table-records td:nth-child(6) { min-width: 96px; }
+/* Track record tables: keep compact system columns fixed, while descriptive columns can breathe. */
+.track-records-table th:nth-child(4),
+.track-records-table td:nth-child(4),  /* 证号 */
+.track-records-table th:nth-child(6),
+.track-records-table td:nth-child(6),  /* 来源 */
+.track-records-table th:nth-child(8),
+.track-records-table td:nth-child(8),  /* 批准日 */
+.track-records-table th:nth-child(9),
+.track-records-table td:nth-child(9),  /* 截止日 */
+.track-records-table th:nth-child(10),
+.track-records-table td:nth-child(10)   /* 核验 */ { white-space: nowrap; }
+.track-records-table th:nth-child(4),
+.track-records-table td:nth-child(4) { min-width: 132px; }
+.track-records-table th:nth-child(5),
+.track-records-table td:nth-child(5) { min-width: 160px; max-width: 260px; }
+.track-records-table th:nth-child(6),
+.track-records-table td:nth-child(6) { width: 88px; min-width: 88px; }
+.track-records-table th:nth-child(8),
+.track-records-table td:nth-child(8),
+.track-records-table th:nth-child(9),
+.track-records-table td:nth-child(9) { min-width: 96px; }
+.track-records-table th:nth-child(10),
+.track-records-table td:nth-child(10) { min-width: 110px; }
+
+.table-spec-cell {
+  max-width: 260px;
+  line-height: 1.45;
+  color: var(--ink-2);
+  font-size: 12.5px;
+}
 
 .tag {
   display: inline-flex; align-items: center; gap: 4px;
@@ -1983,4 +2000,79 @@ button.matrix-cell:focus-visible {
   .pivot-title-input {
     width: 100%;
   }
+}
+
+.topbar nav .nav-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.topbar nav .nav-more > summary {
+  min-height: 37px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--ink-2);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  list-style: none;
+  transition: all 200ms var(--ease-out);
+  user-select: none;
+}
+
+.topbar nav .nav-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.topbar nav .nav-more > summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 160ms var(--ease-out);
+}
+
+.topbar nav .nav-more:hover > summary,
+.topbar nav .nav-more[open] > summary {
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+
+.topbar nav .nav-more.active > summary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.topbar nav .nav-more[open] > summary::after {
+  transform: translateY(1px) rotate(225deg);
+}
+
+.topbar nav .nav-more-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 80;
+  min-width: 156px;
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 8px;
+  background: rgba(248, 244, 244, 0.96);
+  box-shadow: var(--shadow-3);
+}
+
+.topbar nav .nav-more-menu a {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 10px;
+  border-radius: 8px;
 }

@@ -1738,7 +1738,7 @@
       });
       if (filtered.length > 80) {
         const note = document.createElement('tr');
-        note.innerHTML = `<td colspan="8" class="muted" style="text-align:center">仅显示前 80 条,共 ${filtered.length} 条匹配</td>`;
+        note.innerHTML = `<td colspan="10" class="muted" style="text-align:center">仅显示前 80 条,共 ${filtered.length} 条匹配</td>`;
         tbody.appendChild(note);
       }
     }
@@ -1778,6 +1778,14 @@
       else params.delete(key);
     }
 
+    function recordSpecification(record) {
+      return record.specification || '—';
+    }
+
+    function recordValidUntil(record) {
+      return record.valid_until || record.official_valid_until || '—';
+    }
+
     function matchesHaLidocaineFilter(record, filterValue) {
       const signal = haLidocaineSignal(record);
       if (filterValue === 'yes') return signal.hasLidocaine;
@@ -1799,9 +1807,11 @@
           </td>
           <td>${escape(r.company)}</td>
           <td><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px">${escape(r.certificate_no || '—')}</span></td>
+          <td><div class="table-spec-cell">${escape(recordSpecification(r))}</div></td>
           <td>${escape(r.origin || '—')}</td>
           <td>${escape(formatIndications(r))}</td>
           <td>${escape(r.approval_date || '—')}</td>
+          <td>${escape(recordValidUntil(r))}</td>
           <td>${verificationBadge(r)}</td>
         </tr>
       `;
@@ -1815,7 +1825,6 @@
       return `
         <div class="table-tag-row">
           <span class="tag product-shape-tag">${escape(productShape(record))}</span>
-          <span class="tag ha-position-tag">${escape(haPositionLabel(record))}</span>
           ${lidocaineTag}
         </div>
       `;
@@ -1841,15 +1850,14 @@
             <div class="muted" style="font-size:11.5px">${escape(r.registrant || '')}</div>
           </td>
           <td><span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px">${escape(r.certificate_no || '—')}</span></td>
+          <td><div class="table-spec-cell">${escape(recordSpecification(r))}</div></td>
           <td>${escape(r.origin || '—')}</td>
           <td>
             ${escape(primary)}
             ${scopeLine}
           </td>
-          <td>
-            <span>${escape(r.approval_date || '—')}</span>
-            ${r.valid_until ? `<div class="muted" style="font-size:11.5px">有效至 ${escape(r.valid_until)}</div>` : ''}
-          </td>
+          <td>${escape(r.approval_date || '—')}</td>
+          <td>${escape(recordValidUntil(r))}</td>
           <td>${verificationBadge(r)}</td>
         </tr>
       `;
@@ -2061,7 +2069,50 @@
   }
 
   function productBrandLabel(record) {
-    return displayUiLabel(record?.brand || record?.commercial_name || record?.aliases || '');
+    const label = displayUiLabel(record?.brand || record?.commercial_name || '');
+    if (!label || isRegistrationNameEcho(label, record)) return '';
+    if (isHaTrack) return haDisplayBrandLabel(label);
+    return label;
+  }
+
+  function isRegistrationNameEcho(label, record) {
+    const normalized = normalizeBrandCompare(label);
+    const candidates = [
+      record?.product_name,
+      record?.official_product_name,
+      record?.commercial_name,
+    ].map(normalizeBrandCompare).filter(Boolean);
+    return candidates.includes(normalized);
+  }
+
+  function normalizeBrandCompare(value) {
+    return displayUiLabel(value || '')
+      .replace(/[（）()，,、;；:：\s·\-_/／]/g, '')
+      .toLowerCase();
+  }
+
+  function haDisplayBrandLabel(label) {
+    if (!isHaGenericRegistrationName(label)) return label;
+    const start = label.search(/乔雅登|Juv[eé]derm|Juvederm|Belotero|Restylane|YVOIRE|Princess|Formaderm|Dermalax|Dermax|MONALISA|A-Viearchee|HyaFilia|Cutegel|MaiLi|STYLAGE|Elravie|e\.p\.t\.q\.|amalian|Artfiller|PREF2F|Kylane|VIVACY|VOLBELLA|VOLUMA|VOLIFT|VOLUX/i);
+    if (start < 0) return '';
+    return cleanupHaBrandLabel(label.slice(start));
+  }
+
+  function isHaGenericRegistrationName(label) {
+    return /透明质酸|Sodium Hyaluronate|hyaluronic acid/i.test(label)
+      && /注射用|医用|凝胶|溶液|Gel|Filler|Syringe|Implants/i.test(label);
+  }
+
+  function cleanupHaBrandLabel(label) {
+    const cleaned = label
+      .replace(/\([^)]*组织修复用生物材料[^)]*\)/g, '')
+      .replace(/（[^）]*组织修复用生物材料[^）]*）/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (/^(Cross-?linked|Modified|Pre-filled|Soft Tissue Implants|Dermal Implants|Sodium Hyaluronate|Hyaluronic acid)/i.test(cleaned)) {
+      return '';
+    }
+    return cleaned;
   }
 
   function verificationBadge(record) {

@@ -8,7 +8,7 @@
   <meta http-equiv="Expires" content="0" />
   <title>肉毒毒素 · Registration Insights</title>
   <link rel="icon" href="data:," />
-  <link rel="stylesheet" href="../assets/css/theme.css?v=20260619-update-console-1" />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=20260620-spec-validity-1" />
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
 </head>
 <body>
@@ -19,17 +19,23 @@
     <span>Registration <strong>Insights</strong></span>
   </div>
   <nav>
-    <a href="../index.html">总览</a>
-    <a href="ha.html" data-key="ha">透明质酸钠</a>
-    <a href="botulinum.html" data-key="botulinum">肉毒毒素</a>
-    <a href="collagen.html" data-key="collagen">胶原蛋白</a>
-    <a href="plla.html" data-key="plla">PLA</a>
-    <a href="pcl.html" data-key="pcl">PCL</a>
-    <a href="caha.html" data-key="caha">CaHA</a>
-    <a href="niche_materials.html" data-key="niche_materials">小众材料</a>
-    <a href="ebd.html" data-key="ebd">EBD 设备</a>
-    <a href="../pivot.html">自定义透视</a>
-  </nav>
+  <a href="../index.html">总览</a>
+  <a href="ha.html" data-key="ha">透明质酸钠</a>
+  <a href="botulinum.html" data-key="botulinum" class="active">肉毒毒素</a>
+  <a href="collagen.html" data-key="collagen">胶原蛋白</a>
+  <a href="plla.html" data-key="plla">PLA</a>
+  <a href="pcl.html" data-key="pcl">PCL</a>
+  <a href="caha.html" data-key="caha">CaHA</a>
+  <a href="niche_materials.html" data-key="niche_materials">小众材料</a>
+  <a href="ebd.html" data-key="ebd">EBD 设备</a>
+  <details class="nav-more">
+    <summary>更多</summary>
+    <div class="nav-more-menu">
+      <a href="../pivot.html">自定义透视</a>
+      <a href="../pipeline.html">注册进度</a>
+    </div>
+  </details>
+</nav>
 </header>
 
 <main class="shell track-shell">
@@ -133,16 +139,18 @@
       <span class="muted">命中 <b id="records-count">0</b> 条</span>
     </div>
     <div style="overflow:auto">
-      <table class="table" id="table-records">
+      <table class="table track-records-table" id="table-records">
         <thead>
           <tr>
             <th>品牌</th>
             <th>产品 / 材料</th>
             <th>注册人</th>
             <th>证号</th>
+            <th>规格</th>
             <th>来源</th>
             <th>适应证</th>
             <th>批准日</th>
+            <th>截止日</th>
             <th>NMPA 核验状态</th>
           </tr>
         </thead>
@@ -160,6 +168,6 @@
 
 <script src="../assets/js/core.js?v=20260617-detail-fields-1"></script>
 <script>window.TRACK_KEY = 'botulinum';</script>
-<script src="../assets/js/track.js?v=20260619-timeline-pending-1"></script>
+<script src="../assets/js/track.js?v=20260620-brand-tags-1"></script>
 </body>
 </html>
