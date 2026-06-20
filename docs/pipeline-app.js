@@ -485,6 +485,10 @@
     const host = $("forecastSummary");
     if (!host) return;
     const rows = forecastRankRows(projects);
+    const panel = document.querySelector(".forecast-panel");
+    if (panel) {
+      panel.classList.toggle("compact", state.track !== "all" && rows.length > 0);
+    }
     setText("forecastTitle", state.track === "all" ? "未来下证顺序预测" : `${selectedTrackLabel()}下证顺序预测`);
     setText("forecastLead", state.track === "all"
       ? "汇总所有在推进项目，观察可能的获批顺序。"
@@ -745,10 +749,12 @@
 
   function renderTimeline() {
     const section = $("timelineSection");
+    const sourceSection = $("sourceQualitySection");
     const host = $("timelineTrack");
     if (!section || !host) return;
     const isAll = state.track === "all";
     section.classList.toggle("section-hidden", isAll);
+    if (sourceSection) sourceSection.classList.toggle("section-hidden", isAll);
     if (isAll) {
       host.innerHTML = "";
       renderTimelineDetails(null);

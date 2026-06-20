@@ -162,7 +162,6 @@ async function main() {
     })),
     hasScopeBackLink: document.querySelector('.scope-card .back-link') !== null,
     scopeCardText: document.querySelector('.scope-card')?.textContent || '',
-    updateRhythmText: document.querySelector('.update-rhythm-card')?.textContent || '',
     metricLabels: Array.from(document.querySelectorAll('.metric-card span:first-child')).map((node) => node.textContent?.trim() || ''),
     hasArchivedKpi: document.querySelector('#kpiArchived') !== null,
     timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
@@ -195,7 +194,7 @@ async function main() {
   assert(pipelineOverview.globalNavLinks.some((link) => link.text === '返回总览' && link.href.includes('index.html')), 'Pipeline global navigation should keep the overview return action in the top-left menu', JSON.stringify(pipelineOverview.globalNavLinks));
   assert(!pipelineOverview.hasScopeBackLink, 'Pipeline update area should not keep the old right-side back link');
   assert(/最近更新|\d{4}-\d{2}-\d{2}/.test(pipelineOverview.scopeCardText), 'Pipeline update area should keep the last-updated timestamp', pipelineOverview.scopeCardText);
-  assert(['每月完整刷新', '事件触发补充', '季度复盘校准'].every((label) => pipelineOverview.updateRhythmText.includes(label)), 'Pipeline should explain the future update rhythm succinctly', pipelineOverview.updateRhythmText);
+  assert(!/更新节奏|每月完整刷新|事件触发补充|季度复盘校准|主数据定期同步/.test(pipelineOverview.bodyText), 'Pipeline dashboard should not expose backend update workflow language', pipelineOverview.bodyText);
   assert(pipelineOverview.metricLabels.join(',') === '注册临床中,受理/审评中,注册检验/型检', 'Pipeline KPI strip should only show pre-approval progress metrics', pipelineOverview.metricLabels.join(','));
   assert(!pipelineOverview.hasArchivedKpi, 'Pipeline should not show an approved/listed KPI without a time window');
   assert(pipelineOverview.timelineHidden, 'Pipeline overview should not show the all-material timeline');
@@ -307,6 +306,30 @@ async function main() {
       const text = row.textContent || '';
       return /吴中美学|江苏吴中|北京丽徕/.test(text) && /PDRN复合溶液/.test(text);
     }).length,
+    forecastCompact: document.querySelector('.forecast-panel')?.classList.contains('compact') || false,
+    timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
+    sourceQualityHidden: document.querySelector('#sourceQualitySection')?.classList.contains('section-hidden') || false,
+    timelineBeforeBasis: (() => {
+      const timeline = document.querySelector('#timelineSection');
+      const basis = document.querySelector('#forecastBasisCards')?.closest('.panel');
+      return Boolean(timeline && basis && (timeline.compareDocumentPosition(basis) & Node.DOCUMENT_POSITION_FOLLOWING));
+    })(),
+    sourceRightOfBasis: (() => {
+      const basis = document.querySelector('#forecastBasisCards')?.closest('.panel');
+      const source = document.querySelector('#sourceQualitySection');
+      if (!basis || !source) return false;
+      const basisRect = basis.getBoundingClientRect();
+      const sourceRect = source.getBoundingClientRect();
+      return sourceRect.left >= basisRect.right - 2;
+    })(),
+    forecastCardRightOfTimeline: (() => {
+      const timeline = document.querySelector('#timelineSection');
+      const card = document.querySelector('#forecastSummary .forecast-rank-card');
+      if (!timeline || !card) return false;
+      const timelineRect = timeline.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      return cardRect.left >= timelineRect.right - 2;
+    })(),
     sourceRows: document.querySelectorAll('#recordBody tr').length,
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
@@ -317,6 +340,10 @@ async function main() {
   assert(pipelinePdrn.contextCards >= 5, 'Combined PDRN/PN view should show classification/regulatory context separately', String(pipelinePdrn.contextCards));
   assert(/赛道背景 \/ 不对应单一企业/.test(pipelinePdrn.contextText) && /主体未披露 \/ 暂不归入企业产品/.test(pipelinePdrn.contextText), 'PDRN context should label industry and undisclosed-subject sources clearly', pipelinePdrn.contextText);
   assert(/注射用多聚核苷酸凝胶/.test(pipelinePdrn.contextText), 'Combined PDRN/PN tab should retain PN regulatory context', pipelinePdrn.contextText);
+  assert(pipelinePdrn.forecastCompact && !pipelinePdrn.timelineHidden && !pipelinePdrn.sourceQualityHidden, 'PDRN forecast should pair the timeline with the right-aligned approval window card', JSON.stringify(pipelinePdrn));
+  assert(pipelinePdrn.timelineBeforeBasis, 'PDRN timeline should appear before forecast basis and cycle ranges', JSON.stringify(pipelinePdrn));
+  assert(pipelinePdrn.sourceRightOfBasis, 'PDRN source quality card should sit to the right of forecast basis on desktop', JSON.stringify(pipelinePdrn));
+  assert(pipelinePdrn.forecastCardRightOfTimeline, 'PDRN approval window card should sit to the right of the timeline on desktop', JSON.stringify(pipelinePdrn));
   assert(pipelinePdrn.sourceRows >= 6, 'PDRN/PN source list should keep product evidence and both PN/PDRN context sources', String(pipelinePdrn.sourceRows));
   assert(pipelinePdrn.overflowX <= 1, 'Pipeline PDRN view has horizontal overflow', String(pipelinePdrn.overflowX));
   await pipelinePage.close();

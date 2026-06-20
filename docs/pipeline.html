@@ -256,38 +256,23 @@
         font-weight: 900;
       }
 
-      .update-rhythm-card {
-        background:
-          linear-gradient(145deg, rgba(255, 253, 249, 0.98), rgba(250, 244, 237, 0.94)),
-          var(--surface);
-      }
-
-      .update-list {
-        display: grid;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-      }
-
-      .update-list li {
-        display: grid;
-        gap: 4px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(255, 253, 249, 0.78);
-        color: var(--muted);
-        line-height: 1.55;
-        list-style: none;
-        padding: 12px;
-      }
-
-      .update-list strong {
-        color: var(--ink-strong);
-        font-size: 14px;
-      }
-
       .forecast-summary {
         display: block;
+      }
+
+      .forecast-main-grid {
+        display: block;
+      }
+
+      .forecast-panel.compact .forecast-main-grid {
+        align-items: start;
+        display: grid;
+        gap: 18px;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.42fr);
+      }
+
+      .forecast-panel.compact .forecast-summary {
+        min-width: 0;
       }
 
       .forecast-rank-list {
@@ -333,6 +318,16 @@
         color: #2f7bd8;
         font-weight: 900;
         white-space: nowrap;
+      }
+
+      .timeline-inline {
+        display: grid;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .timeline-inline .panel-head {
+        margin-bottom: 0;
       }
 
       .basis-grid {
@@ -460,6 +455,12 @@
         grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
         gap: 18px;
         margin-bottom: 18px;
+      }
+
+      .basis-source-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+        gap: 18px;
       }
 
       .section-hidden {
@@ -755,11 +756,16 @@
       @media (max-width: 980px) {
         .pipeline-hero,
         .pipeline-grid,
+        .basis-source-grid,
         .forecast-summary,
         .metric-grid,
         .overview-grid,
         .benchmark-range,
         .benchmark-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .forecast-panel.compact .forecast-main-grid {
           grid-template-columns: 1fr;
         }
 
@@ -875,77 +881,56 @@
           <ol class="analysis-list" id="analysisConclusions"></ol>
         </article>
 
-        <article class="panel update-rhythm-card">
-          <div class="panel-head">
-            <div>
-              <h2>更新节奏</h2>
-              <p>主数据定期同步，临床进展按事件补充。</p>
-            </div>
-          </div>
-          <ul class="update-list">
-            <li>
-              <strong>每月完整刷新</strong>
-              <span>随主仪表盘同步 NMPA 注册证、企业主体、适应证和基础字段。</span>
-            </li>
-            <li>
-              <strong>事件触发补充</strong>
-              <span>出现 ChiCTR 登记、企业公告、CRO/机构公告、官网披露或受理号时，单独更新临床进展。</span>
-            </li>
-            <li>
-              <strong>季度复盘校准</strong>
-              <span>按最新样板案例和政策节点，复核下证顺序、预测窗口和重点观察名单。</span>
-            </li>
-          </ul>
-        </article>
-
-        <article class="panel wide">
+        <article class="panel wide forecast-panel">
           <div class="panel-head">
             <div>
               <h2 id="forecastTitle">未来下证顺序预测</h2>
               <p id="forecastLead">根据当前进展判断下一批可能获批的产品。</p>
             </div>
           </div>
-          <div class="forecast-summary">
-            <div class="forecast-rank-list" id="forecastSummary"></div>
+          <div class="forecast-main-grid">
+            <section class="timeline-inline section-hidden" id="timelineSection">
+              <div class="panel-head">
+                <div>
+                  <h2 id="timelineTitle">材料时间轴</h2>
+                  <p id="timelineNote"></p>
+                </div>
+              </div>
+              <div class="timeline-scroll">
+                <div class="timeline-track" id="timelineTrack"></div>
+              </div>
+              <div class="timeline-detail-grid" id="timelineDetails"></div>
+            </section>
+
+            <div class="forecast-summary">
+              <div class="forecast-rank-list" id="forecastSummary"></div>
+            </div>
           </div>
         </article>
 
-        <article class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>预测依据与样板</h2>
-              <p>参考官方规则和已获批案例。</p>
+        <section class="basis-source-grid wide">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>预测依据与样板</h2>
+                <p>参考官方规则和已获批案例。</p>
+              </div>
             </div>
-          </div>
-          <div class="basis-grid" id="forecastBasisCards"></div>
-          <p class="basis-note" id="forecastMethod">预测仅作顺序参考，实际获批时间以官方信息为准。</p>
-          <div class="benchmark-steps" id="benchmarkSteps"></div>
-        </article>
-      </section>
+            <div class="basis-grid" id="forecastBasisCards"></div>
+            <p class="basis-note" id="forecastMethod">预测仅作顺序参考，实际获批时间以官方信息为准。</p>
+            <div class="benchmark-steps" id="benchmarkSteps"></div>
+          </article>
 
-      <section class="pipeline-grid" id="timelineSection">
-        <article class="panel">
-          <div class="panel-head">
-            <div>
-              <h2 id="timelineTitle">材料时间轴</h2>
-              <p id="timelineNote"></p>
+          <article class="panel source-quality-panel section-hidden" id="sourceQualitySection">
+            <div class="panel-head">
+              <div>
+                <h2>来源质量</h2>
+                <p>优先查看官方、临床登记和企业原文。</p>
+              </div>
             </div>
-          </div>
-          <div class="timeline-scroll">
-            <div class="timeline-track" id="timelineTrack"></div>
-          </div>
-          <div class="timeline-detail-grid" id="timelineDetails"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>来源质量</h2>
-              <p>优先查看官方、临床登记和企业原文。</p>
-            </div>
-          </div>
-          <div class="source-bars" id="sourceBars"></div>
-        </article>
+            <div class="source-bars" id="sourceBars"></div>
+          </article>
+        </section>
       </section>
 
       <section class="panel">
