@@ -99,7 +99,7 @@
     const mainKpi = document.getElementById('kpi-main')?.closest('.kpi');
     const mainLabel = mainKpi?.querySelector('.label');
     const mainUnit = mainKpi?.querySelector('.unit');
-    if (mainLabel) mainLabel.textContent = '主格局产品';
+    if (mainLabel) mainLabel.textContent = '核心产品';
     if (mainUnit) mainUnit.textContent = '个';
   }
   setKpi('kpi-main', kpiDisplayRecords.length || data.kpi.total);
@@ -288,7 +288,7 @@
     });
     inst.on('click', (p) => {
       const matches = data.records.filter((r) => r.main_landscape && r.company === p.name);
-      showRecords({ title: `${p.name} · ${trackDisplayName}`, meta: '主格局口径', records: displayRecords(matches) });
+      showRecords({ title: `${p.name} · ${trackDisplayName}`, meta: '核心清单', records: displayRecords(matches) });
     });
     if (longTail > 0) {
       const tailNote = document.getElementById('long-tail-note') || document.querySelector('[data-company-tail]');
@@ -700,7 +700,7 @@
         records: group.records,
       })),
       {
-        label: '主格局口径',
+        label: '核心清单',
         title: '含利多卡因',
         count: lidocaineRecords.length,
         records: lidocaineRecords,
@@ -721,7 +721,7 @@
     holder.querySelectorAll('[data-index]').forEach((cardEl) => {
       cardEl.addEventListener('click', () => {
         const card = cards[Number(cardEl.dataset.index)];
-        if (card) showRecords({ title: card.title, meta: `${trackDisplayName} · 市场口径`, records: displayRecords(card.records) });
+        if (card) showRecords({ title: card.title, meta: `${trackDisplayName} · 市场清单`, records: displayRecords(card.records) });
       });
     });
   }
@@ -822,8 +822,8 @@
 
     if (noteEl) {
       noteEl.innerHTML = `
-        <b>口径说明</b>
-        <span>主格局 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张；地区定位基于注册人/集团名称映射，并吸收已核实的公开资料，属于注册证数量口径，不代表销量或真实销售份额；若仍出现其他进口，可作为优先复核队列。含利多卡因以官方注册证名称、产品名、型号规格和结构组成为准，中文“利多卡因”或英文“Lidocaine”均计入。</span>
+        <b>说明</b>
+        <span>核心注册证 ${source.filter((record) => record.main_landscape).length} 张，其中交联填充剂 ${crosslinked.length} 张。含利多卡因以官方注册证名称、产品名、型号规格和结构组成为准。</span>
       `;
     }
 
@@ -837,7 +837,7 @@
           label: '核心赛道',
           title: '交联填充剂',
           count: crosslinked.length,
-          sub: `从 ${source.filter((record) => record.main_landscape).length} 张主格局证中筛出`,
+          sub: `从 ${source.filter((record) => record.main_landscape).length} 张核心注册证中筛出`,
           records: crosslinked,
         },
         {
@@ -848,7 +848,7 @@
           records: imported,
         },
         {
-          label: '利多卡因口径',
+          label: '含利多卡因',
           title: '含利多卡因',
           count: lidocaineRecords.length,
           sub: '名称、规格或结构组成出现均计入',
@@ -856,7 +856,7 @@
           kind: 'lidocaine',
         },
         {
-          label: '对照口径',
+          label: '未含利多卡因',
           title: '未见利多卡因',
           count: nonLidocaineRecords.length,
           sub: '注册证名称/产品名未见相关字样',
@@ -1321,14 +1321,14 @@
     const cum = yearly.map((row) => row.cumulative);
     const annualMax = Math.max(1, ...totalAnnual);
     const inst = ChartFactory.make(document.getElementById('chart-timeline'), {
-      legend: { bottom: 0, data: ['主格局新增', '待复核/底层', '累计获批'] },
+      legend: { bottom: 0, data: ['核心新增', '待复核/底层', '累计获批'] },
       tooltip: {
         trigger: 'axis',
         formatter: (items) => {
           const index = items[0]?.dataIndex ?? 0;
           const row = yearly[index];
           const pendingLine = row.pending ? `<br/>待复核/底层: ${row.pending} 张` : '';
-          return `<b>${row.year}</b><br/>主格局新增: ${row.count} 张${pendingLine}<br/>当年合计: ${row.count + (row.pending || 0)} 张<br/>主格局累计: ${row.cumulative} 张`;
+          return `<b>${row.year}</b><br/>核心新增: ${row.count} 张${pendingLine}<br/>当年合计: ${row.count + (row.pending || 0)} 张<br/>核心累计: ${row.cumulative} 张`;
         },
       },
       grid: { left: 44, right: 44, top: 30, bottom: 54 },
@@ -1339,7 +1339,7 @@
       ],
       series: [
         {
-          name: '主格局新增', type: 'bar', stack: 'annual', barMaxWidth: chartBarMaxWidth,
+          name: '核心新增', type: 'bar', stack: 'annual', barMaxWidth: chartBarMaxWidth,
           itemStyle: {
             color: mainBarGradient(),
             borderRadius: (params) => (pendingAnnual[params.dataIndex] ? [0, 0, 0, 0] : chartBarRadius),
@@ -1386,8 +1386,8 @@
       const pendingMatches = recordsForTimelineYear(data.records, year, { pendingOnly: true });
       const matches = [...mainMatches, ...pendingMatches];
       const meta = pendingMatches.length
-        ? `${trackDisplayName} · 主格局 ${mainMatches.length} 张 + 待复核/底层 ${pendingMatches.length} 张`
-        : `${trackDisplayName} · 主格局口径`;
+        ? `${trackDisplayName} · 核心清单 ${mainMatches.length} 张 + 待复核 ${pendingMatches.length} 张`
+        : `${trackDisplayName} · 核心清单`;
       showRecords({ title: `${year} 年新增`, meta, records: displayRecords(matches) });
     });
   }

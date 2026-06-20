@@ -38,7 +38,7 @@ window.ECM_DASHBOARD_DATA = {
       body: "截至当前数据，尚未看到以 ECM/细胞外基质/脱细胞基质作为核心材料，并且适用范围落在医美注射或填充场景的中国注册证。",
     },
     {
-      eyebrow: "口径边界",
+      eyebrow: "材料边界",
       title: "机制里出现 ECM 不等于 ECM 产品",
       body: "HA、PLLA、CaHA 文献或介绍里常出现细胞外基质、胶原重塑等表达，这类内容只能解释作用机制，不能把产品归为 ECM 材料。",
     },
@@ -54,7 +54,7 @@ window.ECM_DASHBOARD_DATA = {
       label: "材料词出现",
       count: 1,
       status: "已出现",
-      detail: "ECM 已进入材料观察口径，但目前主要用于提示和筛选。",
+      detail: "ECM 已进入材料观察范围，目前主要用于提示和筛选。",
     },
     {
       id: "candidate",
@@ -96,7 +96,7 @@ window.ECM_DASHBOARD_DATA = {
       term: "脱细胞基质",
       role: "核心观察词",
       status: "未见确证",
-      rule: "需要看到产品类型、组织来源、适用范围和监管属性；仅出现材料概念不纳入。",
+      rule: "需要看到产品类型、组织来源、适用范围和监管属性；只有材料概念还不能算作产品。",
     },
     {
       term: "再生修复材料",
@@ -122,7 +122,7 @@ window.ECM_DASHBOARD_DATA = {
       signal: "HA 被描述为细胞外基质成分",
       source: "NMPA 科普信息",
       judgment: "不是 ECM 产品",
-      next: "继续归入 HA 赛道，只用于口径边界说明。",
+      next: "继续归入 HA 赛道，只用于材料边界说明。",
       url: "https://www.nmpa.gov.cn/xxgk/kpzhsh/kpzhshylqx/20210723105707187.html?m=&type=pc",
     },
     {
@@ -153,7 +153,7 @@ window.ECM_DASHBOARD_DATA = {
       detail: "195 条记录中未命中 ECM、细胞外基质、脱细胞基质等确证表达。",
     },
     {
-      name: "材料分类口径",
+      name: "材料分类",
       detail: "ECM 被设置为开放观察类目，需结合注册证描述确认。",
     },
     {

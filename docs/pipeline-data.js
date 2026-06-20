@@ -805,7 +805,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "milestone_dates": [
         "2026-06-19"
       ],
-      "reported_status": "据线下医生口径称已完成临床",
+      "reported_status": "据线下医生信息称已完成临床",
       "reported_indication": "待确认",
       "reported_center_or_pi": "广东省人民医院整形外科",
       "next_watch": "向企业公告、临床中心、注册检验或受理号交叉核验",
@@ -1021,7 +1021,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
       "reported_indication": "适应证、结构组成与规格待NMPA注册证详情同步",
       "reported_center_or_pi": "",
-      "next_watch": "同步注册证详情并判断是否纳入医美前台主表",
+      "next_watch": "同步注册证详情并补充适应证、规格和截止日",
       "frontstage_ready": true,
       "records": [
         "pipe_collagen_qipu_nmpa_delivery_20260108"
@@ -1476,7 +1476,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "milestone_dates": [
         "2026-06-20"
       ],
-      "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
+      "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在审评阶段",
       "reported_indication": "改善眶下凹陷",
       "reported_center_or_pi": "",
       "next_watch": "补NMPA/CMDE受理号和后续获批节点",
@@ -1621,7 +1621,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_status": "2026年4月23日获得NMPA三类进口医疗器械上市批准，注册证编号国械注进20263130151",
       "reported_indication": "适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷",
       "reported_center_or_pi": "",
-      "next_watch": "已获批，转入材料市场分析；后续仅跟踪新增适应症、品规或延续注册",
+      "next_watch": "已获批；后续关注新增适应症、品规或延续注册",
       "frontstage_ready": false,
       "records": [
         "pipe_pcl_ellanse_m_huadong_202501_acceptance"
@@ -2695,7 +2695,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_title": "用户线下医生确认：广东省人民医院整形外科临床已完成",
       "source_url": "",
       "source_date": "2026-06-19",
-      "reported_status": "据线下医生口径称已完成临床",
+      "reported_status": "据线下医生信息称已完成临床",
       "reported_indication": "待确认",
       "reported_center_or_pi": "广东省人民医院整形外科",
       "expected_next_milestone": "向企业公告、临床中心、注册检验或受理号交叉核验",
@@ -2779,7 +2779,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
       "reported_indication": "适应证、结构组成与规格待NMPA注册证详情同步",
       "reported_center_or_pi": "",
-      "expected_next_milestone": "同步注册证详情并判断是否纳入医美前台主表",
+      "expected_next_milestone": "同步注册证详情并补充适应证、规格和截止日",
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
@@ -2810,7 +2810,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "formal_dashboard",
-      "note": "官方送达页确认获批节点；详情字段仍需用注册证详情回填，避免仅用公众号口径写死适应证。",
+      "note": "官方送达页确认获批节点；详情字段仍需用注册证详情回填，避免只凭公众号内容固定适应证。",
       "added_at": "2026-06-20"
     },
     {
@@ -3080,7 +3080,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "阶段口径已由白衣缘/康哲A3临床公告及西格玛A3注册受理公告覆盖；原报道日期修正为2025-06-17并归档。",
+      "note": "阶段信息已由白衣缘/康哲A3临床公告及西格玛A3注册受理公告覆盖；原报道日期修正为2025-06-17并归档。",
       "added_at": "2026-06-19"
     },
     {
@@ -3215,7 +3215,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "formal_dashboard",
-      "note": "官方送达源先入库，详情字段后续回填；避免新证因适应证缺失在前台消失。",
+      "note": "官方送达源先入库，详情字段后续回填；避免新证因适应证缺失而漏掉。",
       "added_at": "2026-06-20"
     },
     {
@@ -3262,7 +3262,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_title": "华东医药科研创新：国内医美主要注册进度",
       "source_url": "https://www.eastchinapharm.com/innovate.html",
       "source_date": "2026-06-20",
-      "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
+      "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在审评阶段",
       "reported_indication": "改善眶下凹陷",
       "reported_center_or_pi": "",
       "expected_next_milestone": "补NMPA/CMDE受理号和后续获批节点",
@@ -3373,7 +3373,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_status": "获得NMPA三类进口医疗器械上市批准，注册证编号国械注进20263130151",
       "reported_indication": "适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷",
       "reported_center_or_pi": "",
-      "expected_next_milestone": "转入材料市场分析；仅跟踪新增适应症、品规或延续注册",
+      "expected_next_milestone": "后续关注新增适应症、品规或延续注册",
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "formal_dashboard",
@@ -3539,7 +3539,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "监管路径背景源，不对应单一产品；PDRN前台产品进度以NIFDC分类界定、吴中公告与后续临床/受理源为准。",
+      "note": "监管路径背景源，不对应单一产品；PDRN产品进度以NIFDC分类界定、吴中公告与后续临床/受理源为准。",
       "added_at": "2026-06-19"
     },
     {
@@ -4676,7 +4676,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "company": "华东医药",
       "stage": "受理/送达",
       "evidence_grade": "A3",
-      "status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
+      "status": "2025年10月获得国药局器审中心注册受理，目前处在审评阶段",
       "source_title": "华东医药科研创新：国内医美主要注册进度",
       "source_url": "https://www.eastchinapharm.com/innovate.html"
     },

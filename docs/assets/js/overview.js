@@ -42,7 +42,7 @@
       <div class="name" style="color:${seg.accent}">${escape(seg.name)}</div>
       <div class="tagline">${escape(seg.tagline)}</div>
       <div class="stats">
-        <div><div class="v">${seg.main_records}</div><div class="l">主格局证</div></div>
+        <div><div class="v">${seg.main_records}</div><div class="l">核心证</div></div>
         <div><div class="v">${seg.companies}</div><div class="l">注册人</div></div>
         <div><div class="v">${seg.verified}</div><div class="l">已核验</div></div>
       </div>
@@ -94,7 +94,7 @@
     const fullStack = rows.filter((r) => r.segments_covered >= 3);
     const top = fullStack[0];
     if (top) {
-      callout.innerHTML = `<b>${escape(top.company)}</b> 是目前覆盖最广的集团:跨 ${top.segments_covered} 个战略板块共 ${top.total} 张主格局证。
+      callout.innerHTML = `<b>${escape(top.company)}</b> 是目前覆盖最广的集团：跨 ${top.segments_covered} 个战略板块共 ${top.total} 张核心证。
         多赛道集团总数 ${fullStack.length} 家,其余 ${rows.length - fullStack.length} 家集中在 1–2 个板块。`;
     }
 
@@ -162,7 +162,7 @@
         }
       });
     }
-    showRecords({ title: `${company} · ${segment}`, meta: '主格局口径', records: matches });
+    showRecords({ title: `${company} · ${segment}`, meta: '核心清单', records: matches });
   }
 
   function renderIndicationHeatmap(hm) {
@@ -220,7 +220,7 @@
           if (r.main_landscape && r.material_family === mat && r.primary_indication === ind) matches.push(r);
         });
       }
-      showRecords({ title: `${mat} → ${ind}`, meta: '主格局 · 注射类', records: matches });
+    showRecords({ title: `${mat} → ${ind}`, meta: '核心清单 · 注射类', records: matches });
     });
   }
 

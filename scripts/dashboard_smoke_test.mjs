@@ -38,7 +38,7 @@ async function clickTimelineYear(page, year) {
     const index = years.findIndex((value) => Number(value) === Number(targetYear));
     const handlers = inst._$handlers?.click || [];
     if (index < 0 || !handlers.length) return false;
-    handlers.forEach((handler) => handler.h.call(handler.ctx, { dataIndex: index, seriesName: '主格局新增' }));
+    handlers.forEach((handler) => handler.h.call(handler.ctx, { dataIndex: index, seriesName: '核心新增' }));
     return true;
   }, year);
   assert(clicked, `Could not trigger ${year} timeline drilldown`);
@@ -135,7 +135,7 @@ async function main() {
   assert(!overviewState.hasMethodologyStrip, 'Overview methodology strip should stay removed');
   assert(overviewState.updateText.includes('更新时间'), 'Overview should keep a simple update time');
   assert(/\d{4}-\d{2}-\d{2}/.test(overviewState.updateText), 'Overview update time should render a concrete date', overviewState.updateText);
-  assert(!/统计口径|解读边界|覆盖范围|核心记录|不代表销量/.test(overviewState.updateText), 'Overview update line should not show backend methodology copy', overviewState.updateText);
+  assert(!/统计口径|解读边界|覆盖范围|主格局|不代表销量/.test(overviewState.updateText), 'Overview update line should not show backend methodology copy', overviewState.updateText);
   assert(!overviewState.hasChinaMapRecordMetric, 'China map header should not show a separate registration-count metric');
   assert(overviewState.chinaMapMetricLabels.join(',') === '城市,注册主体', 'China map header should only show city and registrant metrics', overviewState.chinaMapMetricLabels.join(','));
   assert(overviewState.kpiLabels.join(',') === '注册企业 / 集团数,证照数,近 12 个月新增', 'Overview KPI cards should stay trimmed to the user-facing set', overviewState.kpiLabels.join(','));
@@ -155,12 +155,22 @@ async function main() {
   const pipelineOverview = await pipelinePage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',
     scope: document.querySelector('#scopeNote')?.textContent || '',
+    globalNavText: document.querySelector('.pipeline-global-nav')?.textContent || '',
+    globalNavLinks: Array.from(document.querySelectorAll('.pipeline-global-nav a')).map((node) => ({
+      text: node.textContent?.trim() || '',
+      href: node.getAttribute('href') || '',
+    })),
+    hasScopeBackLink: document.querySelector('.scope-card .back-link') !== null,
+    scopeCardText: document.querySelector('.scope-card')?.textContent || '',
+    updateRhythmText: document.querySelector('.update-rhythm-card')?.textContent || '',
     timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
     summaryCards: document.querySelectorAll('#trackSummaryCards .track-summary-card').length,
     forecastCards: document.querySelectorAll('#forecastSummary .forecast-rank-card').length,
     forecastMethod: document.querySelector('#forecastMethod')?.textContent || '',
+    hasForecastMethodCard: document.querySelector('.forecast-method') !== null,
+    forecastSummaryColumns: getComputedStyle(document.querySelector('.forecast-summary')).gridTemplateColumns,
     basisCards: Array.from(document.querySelectorAll('#forecastBasisCards .basis-card')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
-    benchmarkSteps: document.querySelectorAll('#benchmarkSteps .benchmark-step').length,
+    benchmarkRanges: Array.from(document.querySelectorAll('#benchmarkSteps .benchmark-range')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
     kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting', '#kpiArchived'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
     projectText: document.querySelector('#projectBody')?.textContent || '',
     ecmImplantRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /脱细胞基质植入剂/.test(row.textContent || '')).length,
@@ -171,20 +181,32 @@ async function main() {
     ecmSisRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /SIS-ECM医美填充产品/.test(row.textContent || '')).length,
     contextCards: document.querySelectorAll('#contextList .context-card').length,
     contextText: document.querySelector('#contextList')?.textContent || '',
+    hasStandalonePnTab: document.querySelector('[data-track="pn"]') !== null,
+    hasPdrnPnTab: document.querySelector('[data-track="pdrn_pn"]') !== null,
     bodyText: document.body.textContent || '',
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(pipelineOverview.h1 === '注册进度', 'Pipeline page should use a clean user-facing heading', pipelineOverview.h1);
-  assert(pipelineOverview.scope.includes('已获批上市项目转入材料市场分析'), 'Pipeline scope should explain that approved products are removed from registration progress', pipelineOverview.scope);
+  assert(pipelineOverview.scope.includes('关注仍在推进的注册项目'), 'Pipeline scope should stay concise and user-facing', pipelineOverview.scope);
+  assert(['返回总览', '透明质酸钠', 'PCL', '自定义透视', '注册进度'].every((label) => pipelineOverview.globalNavText.includes(label)), 'Pipeline global navigation should render the dashboard menu', pipelineOverview.globalNavText);
+  assert(pipelineOverview.globalNavLinks.some((link) => link.text === 'PCL' && link.href.includes('tracks/pcl.html')), 'Pipeline global navigation should link directly to PCL', JSON.stringify(pipelineOverview.globalNavLinks));
+  assert(pipelineOverview.globalNavLinks.some((link) => link.text === '返回总览' && link.href.includes('index.html')), 'Pipeline global navigation should keep the overview return action in the top-left menu', JSON.stringify(pipelineOverview.globalNavLinks));
+  assert(!pipelineOverview.hasScopeBackLink, 'Pipeline update area should not keep the old right-side back link');
+  assert(/最近更新|\d{4}-\d{2}-\d{2}/.test(pipelineOverview.scopeCardText), 'Pipeline update area should keep the last-updated timestamp', pipelineOverview.scopeCardText);
+  assert(/随主仪表盘更新|临床进展增量补充|预测同步校准/.test(pipelineOverview.updateRhythmText), 'Pipeline should explain the future update rhythm succinctly', pipelineOverview.updateRhythmText);
   assert(pipelineOverview.timelineHidden, 'Pipeline overview should not show the all-material timeline');
   assert(pipelineOverview.summaryCards >= 3, 'Pipeline overview should show material summary cards', String(pipelineOverview.summaryCards));
   assert(pipelineOverview.forecastCards >= 5, 'Pipeline overview should show a ranked summary forecast list', String(pipelineOverview.forecastCards));
-  assert(/官方审评时限|半年度窗口|已获批项目从预测池移出/.test(pipelineOverview.forecastMethod), 'Pipeline forecast method should explain the estimate model and caveats', pipelineOverview.forecastMethod);
-  assert(pipelineOverview.basisCards.length === 3, 'Pipeline should render three forecast basis cards', String(pipelineOverview.basisCards.length));
-  assert(pipelineOverview.basisCards.some((text) => /NMPA\/CMDE|三类医疗器械注册技术审评90日/.test(text)), 'Pipeline basis should include official NMPA/CMDE timing', pipelineOverview.basisCards.join(' | '));
-  assert(pipelineOverview.basisCards.some((text) => /Ellansé-M|国械注进20263130151/.test(text)), 'Pipeline basis should include the approved device benchmark', pipelineOverview.basisCards.join(' | '));
+  assert(/顺序参考|官方信息/.test(pipelineOverview.forecastMethod), 'Pipeline forecast note should stay concise and user-facing', pipelineOverview.forecastMethod);
+  assert(!pipelineOverview.hasForecastMethodCard, 'Pipeline should not render a separate forecast-method card');
+  assert(!pipelineOverview.forecastSummaryColumns || pipelineOverview.forecastSummaryColumns === 'none', 'Pipeline forecast ranking should not reserve a second column for methodology copy', pipelineOverview.forecastSummaryColumns);
+  assert(pipelineOverview.basisCards.length === 4, 'Pipeline should render four forecast basis cards', String(pipelineOverview.basisCards.length));
+  assert(pipelineOverview.basisCards.some((text) => /NMPA\/CMDE|法定周期|受理后的审评/.test(text)), 'Pipeline basis should include official NMPA/CMDE timing', pipelineOverview.basisCards.join(' | '));
+  assert(pipelineOverview.basisCards.some((text) => /Ellansé-M|跟进型材料|2026-04-23/.test(text)), 'Pipeline basis should include the approved follow-on device benchmark', pipelineOverview.basisCards.join(' | '));
+  assert(pipelineOverview.basisCards.some((text) => /优法兰|首证类器械|国械注准20253130390/.test(text)), 'Pipeline basis should include a first-certificate device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
-  assert(pipelineOverview.benchmarkSteps === 5, 'Pipeline should render the five-step registration cycle benchmark', String(pipelineOverview.benchmarkSteps));
+  assert(pipelineOverview.benchmarkRanges.length === 4, 'Pipeline should render four forecast range bars', String(pipelineOverview.benchmarkRanges.length));
+  assert(pipelineOverview.benchmarkRanges.join(' | ').includes('5-9个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[3] > 0, 'Pipeline KPIs should show active clinical projects and archived approvals', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
@@ -193,6 +215,7 @@ async function main() {
   assert(!/行业总体|PDRN\/PN主文档与标准研究|PDRN&PN再生材料注册路径/.test(pipelineOverview.projectText), 'Industry context should not render as active forecast projects', pipelineOverview.projectText);
   assert(pipelineOverview.contextCards >= 3, 'Pipeline overview should render industry/regulatory context cards separately', String(pipelineOverview.contextCards));
   assert(/赛道背景 \/ 不对应单一企业/.test(pipelineOverview.contextText), 'Context cards should explain non-company industry sources', pipelineOverview.contextText);
+  assert(pipelineOverview.hasPdrnPnTab && !pipelineOverview.hasStandalonePnTab, 'Pipeline should combine PN and PDRN into one tab instead of showing an empty PN tab');
   assert(!pipelineOverview.bodyText.includes('来源覆盖'), 'Pipeline public page should not expose source-coverage backend wording');
   assert(pipelineOverview.overflowX <= 1, 'Pipeline overview has horizontal overflow', String(pipelineOverview.overflowX));
 
@@ -227,7 +250,7 @@ async function main() {
   await pipelinePage.locator('#timelineDetails .source-button').first().click();
   await pipelinePage.waitForTimeout(300);
   const pipelineSourceNote = await pipelinePage.locator('#sourceFilterNote').textContent();
-  assert(/已定位|未找到/.test(pipelineSourceNote || ''), 'Pipeline source jump should update the source list note', pipelineSourceNote || '');
+  assert(/找到|未找到/.test(pipelineSourceNote || ''), 'Pipeline source jump should update the source list note', pipelineSourceNote || '');
 
   await pipelinePage.locator('[data-track="pcl"]').click();
   await pipelinePage.waitForTimeout(300);
@@ -244,7 +267,7 @@ async function main() {
   assert(pipelinePcl.rows >= 3, 'PCL view should keep active unapproved projects after removing Ellanse-M', String(pipelinePcl.rows));
   assert(pipelinePcl.overflowX <= 1, 'Pipeline PCL view has horizontal overflow', String(pipelinePcl.overflowX));
 
-  await pipelinePage.locator('[data-track="pdrn"]').click();
+  await pipelinePage.locator('[data-track="pdrn_pn"]').click();
   await pipelinePage.waitForTimeout(300);
   const pipelinePdrn = await pipelinePage.evaluate(() => ({
     activeTab: document.querySelector('.track-tab.active')?.textContent?.trim() || '',
@@ -258,29 +281,15 @@ async function main() {
     sourceRows: document.querySelectorAll('#recordBody tr').length,
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
-  assert(pipelinePdrn.activeTab.includes('PDRN'), 'PDRN tab should become active', pipelinePdrn.activeTab);
+  assert(pipelinePdrn.activeTab.includes('PDRN/PN'), 'Combined PDRN/PN tab should become active', pipelinePdrn.activeTab);
   assert(pipelinePdrn.wuzhongRows === 1, 'WuZhong/Liylai PDRN sources should merge into one product row', String(pipelinePdrn.wuzhongRows));
   assert(/临床进行中|入组完成/.test(pipelinePdrn.projectText), 'Merged WuZhong PDRN row should keep the latest substantive clinical progress', pipelinePdrn.projectText);
   assert(!/行业总体|PDRN\/PN主文档与标准研究|PDRN&PN再生材料注册路径/.test(pipelinePdrn.projectText), 'PDRN industry context should not render as active projects', pipelinePdrn.projectText);
-  assert(pipelinePdrn.contextCards >= 3, 'PDRN view should show classification/regulatory context separately', String(pipelinePdrn.contextCards));
+  assert(pipelinePdrn.contextCards >= 5, 'Combined PDRN/PN view should show classification/regulatory context separately', String(pipelinePdrn.contextCards));
   assert(/赛道背景 \/ 不对应单一企业/.test(pipelinePdrn.contextText) && /主体未披露 \/ 暂不归入企业产品/.test(pipelinePdrn.contextText), 'PDRN context should label industry and undisclosed-subject sources clearly', pipelinePdrn.contextText);
-  assert(pipelinePdrn.sourceRows >= 4, 'PDRN source list should keep both product evidence and context sources', String(pipelinePdrn.sourceRows));
+  assert(/注射用多聚核苷酸凝胶/.test(pipelinePdrn.contextText), 'Combined PDRN/PN tab should retain PN regulatory context', pipelinePdrn.contextText);
+  assert(pipelinePdrn.sourceRows >= 6, 'PDRN/PN source list should keep product evidence and both PN/PDRN context sources', String(pipelinePdrn.sourceRows));
   assert(pipelinePdrn.overflowX <= 1, 'Pipeline PDRN view has horizontal overflow', String(pipelinePdrn.overflowX));
-
-  const pnTab = pipelinePage.locator('[data-track="pn"]');
-  if (await pnTab.count()) {
-    await pnTab.click();
-    await pipelinePage.waitForTimeout(300);
-    const pipelinePn = await pipelinePage.evaluate(() => ({
-      projectText: document.querySelector('#projectBody')?.textContent || '',
-      contextText: document.querySelector('#contextList')?.textContent || '',
-      contextCards: document.querySelectorAll('#contextList .context-card').length,
-      overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    }));
-    assert(!/行业总体/.test(pipelinePn.projectText), 'PN industry context should not render as active projects', pipelinePn.projectText);
-    assert(pipelinePn.contextCards >= 1 && /赛道背景|主体未披露/.test(pipelinePn.contextText), 'PN background-only view should explain context sources', pipelinePn.contextText);
-    assert(pipelinePn.overflowX <= 1, 'Pipeline PN view has horizontal overflow', String(pipelinePn.overflowX));
-  }
   await pipelinePage.close();
 
   const filteredPage = await openCheckedPage(context, 'index.html?segment=botulinum&origin=imported&q=Dysport&grain=year&map=registrations');
@@ -334,7 +343,7 @@ async function main() {
       abbvieForehead,
     };
   });
-  assert(botulinumState.mainLabel === '主格局产品', 'Botulinum main KPI should use product-group wording', botulinumState.mainLabel);
+  assert(botulinumState.mainLabel === '核心产品', 'Botulinum main KPI should use product-group wording', botulinumState.mainLabel);
   assert(botulinumState.mainValue === '8' && botulinumState.mainUnit === '个', 'Botulinum main KPI should count eight product groups', `${botulinumState.mainValue}${botulinumState.mainUnit}`);
   assert(botulinumState.mix === '2 : 6 : 0', 'Botulinum origin mix should count product groups, not certificate rows', botulinumState.mix);
   assert(botulinumState.tableCount === '12', 'Botulinum detail table should include BOTOX certificate variants as separate registration rows', botulinumState.tableCount);
@@ -367,7 +376,7 @@ async function main() {
   assert(haPositionState.positionCards[0] === 91, 'HA crosslinked filler card should use the 91-record scope', String(haPositionState.positionCards[0]));
   assert(haPositionState.positionCards[2] === 50, 'HA lidocaine card should show 50 records under the official registration scope', String(haPositionState.positionCards[2]));
   assert(haPositionState.positionCards[3] === 41, 'HA non-lidocaine card should show the remaining 41 records', String(haPositionState.positionCards[3]));
-  assert(haPositionState.note.includes('不代表销量'), 'HA positioning note should include non-sales-share wording');
+  assert(!/口径|主格局|不代表销量|商业份额/.test(haPositionState.note), 'HA positioning note should avoid backend or caveat copy', haPositionState.note);
   assert(haPositionState.note.includes('型号规格和结构组成为准'), 'HA positioning note should explain the official registration component scope');
   assert(haPositionState.regionCharts >= 2, 'HA positioning charts did not render');
   assert(haPositionState.rows === 13, 'HA Korean lidocaine filter should show 13 rows after official component verification', String(haPositionState.rows));
@@ -390,7 +399,7 @@ async function main() {
       ?.find((series) => series.name === '待复核/底层')?.data || [],
   }));
   assert(haTimelineDrawer.pendingData.some((value) => Number(value) === 2), 'HA timeline should show two pending 2026 leads in the stacked annual bar', JSON.stringify(haTimelineDrawer.pendingData));
-  assert(haTimelineDrawer.text.includes('主格局 6 张 + 待复核/底层 2 张'), 'HA 2026 drilldown should explain main vs pending counts', haTimelineDrawer.text);
+  assert(haTimelineDrawer.text.includes('核心清单 6 张 + 待复核 2 张'), 'HA 2026 drilldown should explain main vs pending counts', haTimelineDrawer.text);
   assert(haTimelineDrawer.text.includes('Humedix / 汇美迪斯'), 'HA 2026 drilldown should include the pending Humedix certificate registrant group', haTimelineDrawer.text);
   assert(haTimelineDrawer.text.includes('国械注进20263130223'), 'HA 2026 drilldown should include the pending Humedix certificate number', haTimelineDrawer.text);
   await haTimelinePage.close();
@@ -403,7 +412,7 @@ async function main() {
       ?.find((series) => series.name === '待复核/底层')?.data || [],
   }));
   assert(collagenTimelineDrawer.pendingData.some((value) => Number(value) === 2), 'Collagen timeline should show two pending 2026 leads in the stacked annual bar', JSON.stringify(collagenTimelineDrawer.pendingData));
-  assert(collagenTimelineDrawer.text.includes('主格局 3 张 + 待复核/底层 2 张'), 'Collagen 2026 drilldown should explain main vs pending counts', collagenTimelineDrawer.text);
+  assert(collagenTimelineDrawer.text.includes('核心清单 3 张 + 待复核 2 张'), 'Collagen 2026 drilldown should explain main vs pending counts', collagenTimelineDrawer.text);
   assert(collagenTimelineDrawer.text.includes('交联重组胶原蛋白植入剂') && collagenTimelineDrawer.text.includes('巨子生物'), 'Collagen 2026 drilldown should include the pending Giant Biogene certificate', collagenTimelineDrawer.text);
   assert(collagenTimelineDrawer.text.includes('国械注准20263131219'), 'Collagen 2026 drilldown should include the pending Giant Biogene certificate number', collagenTimelineDrawer.text);
   await collagenTimelinePage.close();

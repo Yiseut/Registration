@@ -21,8 +21,109 @@
         align-items: end;
       }
 
+      .pipeline-global-nav {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .pipeline-global-nav a,
+      .pipeline-global-nav summary {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 253, 249, 0.82);
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 900;
+        line-height: 1;
+        padding: 0 13px;
+        text-decoration: none;
+        transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+        white-space: nowrap;
+      }
+
+      .pipeline-global-nav a:hover,
+      .pipeline-global-nav a:focus-visible,
+      .pipeline-global-nav summary:hover,
+      .pipeline-global-nav summary:focus-visible {
+        border-color: rgba(207, 100, 69, 0.32);
+        background: rgba(207, 100, 69, 0.10);
+        color: var(--ink-strong);
+        outline: 0;
+        transform: translateY(-1px);
+      }
+
+      .pipeline-global-nav .return-link {
+        color: #8c4a34;
+        background: rgba(207, 100, 69, 0.10);
+      }
+
+      .pipeline-global-nav .active {
+        border-color: var(--ink-strong);
+        background: var(--ink-strong);
+        color: #fffaf5;
+      }
+
+      .pipeline-nav-more {
+        position: relative;
+      }
+
+      .pipeline-nav-more summary {
+        list-style: none;
+      }
+
+      .pipeline-nav-more summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .pipeline-nav-more-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        z-index: 20;
+        display: grid;
+        min-width: 142px;
+        gap: 6px;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 249, 0.98);
+        box-shadow: var(--shadow);
+      }
+
       .hero-note {
         max-width: 760px;
+      }
+
+      .scope-card {
+        display: grid;
+        justify-items: end;
+        min-width: 220px;
+      }
+
+      .scope-card span,
+      .scope-card strong {
+        display: block;
+        text-align: right;
+      }
+
+      .scope-card span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .scope-card strong {
+        color: var(--ink-strong);
+        font-size: 14px;
+        margin-top: 4px;
       }
 
       .track-tabs {
@@ -58,7 +159,7 @@
 
       .metric-card {
         border: 1px solid var(--line);
-        border-radius: var(--radius-lg);
+        border-radius: var(--radius);
         background: var(--surface);
         box-shadow: var(--shadow);
         padding: 18px;
@@ -155,10 +256,38 @@
         font-weight: 900;
       }
 
-      .forecast-summary {
+      .update-rhythm-card {
+        background:
+          linear-gradient(145deg, rgba(255, 253, 249, 0.98), rgba(250, 244, 237, 0.94)),
+          var(--surface);
+      }
+
+      .update-list {
         display: grid;
-        grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.42fr);
-        gap: 14px;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .update-list li {
+        display: grid;
+        gap: 4px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 253, 249, 0.78);
+        color: var(--muted);
+        line-height: 1.55;
+        list-style: none;
+        padding: 12px;
+      }
+
+      .update-list strong {
+        color: var(--ink-strong);
+        font-size: 14px;
+      }
+
+      .forecast-summary {
+        display: block;
       }
 
       .forecast-rank-list {
@@ -206,21 +335,6 @@
         white-space: nowrap;
       }
 
-      .forecast-method {
-        border: 1px dashed var(--line);
-        border-radius: var(--radius);
-        background: #fffaf3;
-        color: var(--muted);
-        line-height: 1.65;
-        padding: 14px;
-      }
-
-      .forecast-method strong {
-        color: var(--ink-strong);
-        display: block;
-        margin-bottom: 8px;
-      }
-
       .basis-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -258,37 +372,87 @@
         text-decoration: none;
       }
 
-      .benchmark-steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-        gap: 10px;
+      .basis-note {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.6;
+        margin: -4px 0 14px;
       }
 
-      .benchmark-step {
+      .benchmark-steps {
+        display: grid;
+        gap: 12px;
+      }
+
+      .range-axis {
+        color: var(--faint);
+        display: grid;
+        font-size: 11px;
+        font-weight: 900;
+        grid-template-columns: repeat(6, 1fr);
+        margin: 2px 0 0;
+      }
+
+      .range-axis span:not(:first-child) {
+        text-align: right;
+      }
+
+      .benchmark-range {
+        align-items: center;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: rgba(255, 255, 255, 0.76);
+        display: grid;
+        gap: 14px;
+        grid-template-columns: minmax(210px, 0.42fr) minmax(0, 1fr);
         padding: 13px;
       }
 
-      .benchmark-step span {
+      .range-copy span {
         color: #2f7bd8;
         display: block;
         font-size: 12px;
         font-weight: 900;
       }
 
-      .benchmark-step strong {
+      .range-copy strong {
         color: var(--ink-strong);
         display: block;
+        font-size: 16px;
         margin-top: 5px;
       }
 
-      .benchmark-step p {
+      .range-copy p {
         color: var(--muted);
         font-size: 12px;
         line-height: 1.55;
         margin: 8px 0 0;
+      }
+
+      .range-rail {
+        position: relative;
+        height: 14px;
+        border-radius: 999px;
+        background: #edf4f8;
+      }
+
+      .range-rail i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: var(--start);
+        width: var(--width);
+        border-radius: inherit;
+        background: linear-gradient(90deg, #00a67d, #2f7bd8);
+        box-shadow: 0 8px 18px rgba(40, 120, 215, 0.16);
+      }
+
+      .range-rail b {
+        position: absolute;
+        right: 0;
+        top: -24px;
+        color: var(--ink-strong);
+        font-size: 12px;
       }
 
       .pipeline-grid {
@@ -594,6 +758,7 @@
         .forecast-summary,
         .metric-grid,
         .overview-grid,
+        .benchmark-range,
         .benchmark-steps {
           grid-template-columns: 1fr;
         }
@@ -601,12 +766,51 @@
         .overview-grid .wide {
           grid-column: auto;
         }
+
+        .pipeline-global-nav {
+          overflow-x: auto;
+          flex-wrap: nowrap;
+          padding-bottom: 4px;
+        }
+
+        .pipeline-nav-more-menu {
+          left: 0;
+          right: auto;
+        }
+
+        .scope-card {
+          justify-items: start;
+          min-width: 0;
+        }
+
+        .scope-card span,
+        .scope-card strong {
+          text-align: left;
+        }
       }
     </style>
   </head>
   <body>
     <div class="page pipeline-shell">
       <header class="hero pipeline-hero">
+        <nav class="pipeline-global-nav" aria-label="全局页面导航">
+          <a class="return-link" href="./index.html">返回总览</a>
+          <a href="./tracks/ha.html">透明质酸钠</a>
+          <a href="./tracks/botulinum.html">肉毒毒素</a>
+          <a href="./tracks/collagen.html">胶原蛋白</a>
+          <a href="./tracks/plla.html">PLA</a>
+          <a href="./tracks/pcl.html">PCL</a>
+          <a href="./tracks/caha.html">CaHA</a>
+          <a href="./tracks/niche_materials.html">小众材料</a>
+          <a href="./tracks/ebd.html">EBD 设备</a>
+          <details class="pipeline-nav-more">
+            <summary class="active">更多</summary>
+            <div class="pipeline-nav-more-menu">
+              <a href="./pivot.html">自定义透视</a>
+              <a class="active" href="./pipeline.html">注册进度</a>
+            </div>
+          </details>
+        </nav>
         <div>
           <p class="eyebrow">PIPELINE INTELLIGENCE</p>
           <h1 id="pageTitle">注册进度</h1>
@@ -617,7 +821,6 @@
             <span>最近更新</span>
             <strong id="updatedAt">-</strong>
           </div>
-          <a class="back-link" href="./index.html">返回总览</a>
         </div>
       </header>
 
@@ -640,9 +843,8 @@
           <p>处于检验或注册前置验证</p>
         </article>
         <article class="metric-card">
-          <span>已移出已获批</span>
+          <span>已获批/上市</span>
           <strong id="kpiArchived">0</strong>
-          <p>转入材料市场分析，不占注册进展</p>
         </article>
       </section>
 
@@ -661,7 +863,7 @@
           <div class="panel-head">
             <div>
               <h2>阶段分布</h2>
-              <p>按活跃项目当前所在注册环节归类。</p>
+              <p>查看项目集中在哪些环节。</p>
             </div>
           </div>
           <div class="source-bars" id="stageOverview"></div>
@@ -671,25 +873,44 @@
           <div class="panel-head">
             <div>
               <h2>分析结论</h2>
-              <p>将已获批存量和仍在注册推进的项目拆开观察。</p>
+              <p>提炼最需要关注的变化。</p>
             </div>
           </div>
           <ol class="analysis-list" id="analysisConclusions"></ol>
+        </article>
+
+        <article class="panel update-rhythm-card">
+          <div class="panel-head">
+            <div>
+              <h2>更新节奏</h2>
+              <p>基础数据同步刷新，临床线索可单独补充。</p>
+            </div>
+          </div>
+          <ul class="update-list">
+            <li>
+              <strong>随主仪表盘更新</strong>
+              <span>NMPA 注册证、企业主体、适应证和已获批项目统一刷新。</span>
+            </li>
+            <li>
+              <strong>临床进展增量补充</strong>
+              <span>ChiCTR、企业公告、CRO/机构公告和官网线索出现变化时单独补入。</span>
+            </li>
+            <li>
+              <strong>预测同步校准</strong>
+              <span>每次更新同时调整下证顺序、预测窗口和来源明细。</span>
+            </li>
+          </ul>
         </article>
 
         <article class="panel wide">
           <div class="panel-head">
             <div>
               <h2 id="forecastTitle">未来下证顺序预测</h2>
-              <p id="forecastLead">基于当前阶段、证据等级和注册周期样板生成。</p>
+              <p id="forecastLead">根据当前进展判断下一批可能获批的产品。</p>
             </div>
           </div>
           <div class="forecast-summary">
             <div class="forecast-rank-list" id="forecastSummary"></div>
-            <div class="forecast-method">
-              <strong>预测口径</strong>
-              <p id="forecastMethod"></p>
-            </div>
           </div>
         </article>
 
@@ -697,10 +918,11 @@
           <div class="panel-head">
             <div>
               <h2>预测依据与样板</h2>
-              <p>把官方时限、已获批药品样板和已获批器械样板拆开作为估算边界。</p>
+              <p>参考官方规则和已获批案例。</p>
             </div>
           </div>
           <div class="basis-grid" id="forecastBasisCards"></div>
+          <p class="basis-note" id="forecastMethod">预测仅作顺序参考，实际获批时间以官方信息为准。</p>
           <div class="benchmark-steps" id="benchmarkSteps"></div>
         </article>
       </section>
@@ -722,8 +944,8 @@
         <article class="panel">
           <div class="panel-head">
             <div>
-              <h2>证据结构</h2>
-              <p>官方/登记/企业来源越多，趋势判断越稳。</p>
+              <h2>来源质量</h2>
+              <p>优先查看官方、临床登记和企业原文。</p>
             </div>
           </div>
           <div class="source-bars" id="sourceBars"></div>
@@ -734,7 +956,7 @@
         <div class="panel-head">
           <div>
             <h2>项目进度表</h2>
-            <p>仅保留仍处于注册推进、临床或待验证状态的项目。</p>
+            <p>当前仍在推进的项目。</p>
           </div>
           <span id="projectCount" class="badge"></span>
         </div>
@@ -760,7 +982,7 @@
         <div class="panel-head">
           <div>
             <h2>赛道背景与监管路径</h2>
-            <p>这些资料用于解释分类界定、主文档或监管路径，不对应单一企业产品，也不进入下证顺序预测。</p>
+            <p>监管背景和具体企业产品分开看。</p>
           </div>
           <span id="contextCount" class="badge"></span>
         </div>
@@ -771,7 +993,7 @@
         <div class="panel-head">
           <div>
             <h2>来源明细</h2>
-            <p>每条来源保留出处，用于继续升级到官方或企业原文。</p>
+            <p>保留出处，方便回看原文。</p>
           </div>
           <div>
             <span id="recordCount" class="badge"></span>
@@ -794,7 +1016,7 @@
         </div>
       </section>
     </div>
-    <script src="./pipeline-data.js?v=20260620-context-rollup"></script>
-    <script src="./pipeline-app.js?v=20260620-context-rollup"></script>
+    <script src="./pipeline-data.js?v=20260620-forecast-ranges"></script>
+    <script src="./pipeline-app.js?v=20260620-forecast-ranges"></script>
   </body>
 </html>

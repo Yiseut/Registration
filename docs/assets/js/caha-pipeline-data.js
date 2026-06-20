@@ -4,7 +4,7 @@ window.CAHA_PIPELINE_DATA = {
     subtitle: "按产品归并中国市场项目，拆分已获批、进行中和候选跟踪线索",
     updated_at: "2026-06-19",
     material_terms: ["CaHA", "羟基磷酸钙", "羟基磷灰石", "calcium hydroxylapatite", "hydroxyapatite"],
-    domestic_scope_note: "主视图只呈现中国市场。海外样本保留为参考字段，便于后续与全球医美数据库衔接。",
+    domestic_scope_note: "优先呈现中国市场。海外样本单独作为参考。",
     table_grain_note: "项目表按产品归并；证据明细表按来源记录展开。RADIESSE 芮得怡是 1 个产品、3 条证据来源，不代表 3 个产品。"
   },
   projects: [
@@ -219,7 +219,7 @@ window.CAHA_PIPELINE_DATA = {
       highest_evidence: "临床登记",
       evidence_count: 1,
       evidence_ids: ["caha-global-harmonyca-nct05452070"],
-      next_watch: "作为全球证据背景，不纳入中国主视图统计。",
+      next_watch: "作为全球背景，和中国项目分开看。",
       confidence: "高"
     },
     {
@@ -640,7 +640,7 @@ window.CAHA_PIPELINE_DATA = {
       completion_date: "2025-05-08",
       source_title: "NCT05452070：HArmonyCa Lidocaine Injectable Gel",
       source_url: "https://clinicaltrials.gov/study/NCT05452070",
-      note: "海外完成项目，不纳入中国主视图统计。"
+      note: "海外完成项目，和中国项目分开看。"
     },
     {
       id: "caha-global-cellulite-nct05885035",
@@ -664,7 +664,7 @@ window.CAHA_PIPELINE_DATA = {
       completion_date: "2023-06-26",
       source_title: "NCT05885035：Calcium Hydroxylapatite for Cellulite Dimples",
       source_url: "https://clinicaltrials.gov/study/NCT05885035",
-      note: "海外体部美学方向，不纳入中国主视图统计。"
+      note: "海外体部美学方向，和中国项目分开看。"
     },
     {
       id: "caha-global-rejuvenation-nct07202117",
@@ -688,7 +688,7 @@ window.CAHA_PIPELINE_DATA = {
       completion_date: "2026-12-01",
       source_title: "NCT07202117：PLLA and CaHA-R for Aesthetic Rejuvenation",
       source_url: "https://clinicaltrials.gov/study/NCT07202117",
-      note: "海外研究，不纳入中国主视图统计。"
+      note: "海外研究，和中国项目分开看。"
     }
   ]
 };

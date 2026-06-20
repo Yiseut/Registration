@@ -218,28 +218,37 @@
 
   function selectedTrackLabel() {
     if (state.track === "all") return "全部材料";
-    const track = (data.summary.by_track || []).find((item) => item.track === state.track);
+    if (state.track === "pdrn_pn") return "PDRN/PN";
+    const track = (data.summary.by_track || []).find((item) => trackGroup(item.track) === state.track);
     return track?.track_label || state.track;
   }
 
+  function trackGroup(track) {
+    return ["pdrn", "pn"].includes(track) ? "pdrn_pn" : track;
+  }
+
+  function inSelectedTrack(item) {
+    return state.track === "all" || trackGroup(item?.track) === state.track;
+  }
+
   function activeProjects() {
-    return activeProjectsAll.filter((project) => state.track === "all" || project.track === state.track);
+    return activeProjectsAll.filter(inSelectedTrack);
   }
 
   function archivedProjects() {
-    return archivedProjectsAll.filter((project) => state.track === "all" || project.track === state.track);
+    return archivedProjectsAll.filter(inSelectedTrack);
   }
 
   function contextProjects() {
     return contextProjectsAll
-      .filter((project) => state.track === "all" || project.track === state.track)
+      .filter(inSelectedTrack)
       .sort((a, b) => latestDateOf(b).localeCompare(latestDateOf(a)));
   }
 
   function activeRecords() {
     return data.records.filter((record) => {
       if (record.frontstage_use === "hidden") return false;
-      if (state.track !== "all" && record.track !== state.track) return false;
+      if (!inSelectedTrack(record)) return false;
       if (activeRecordIds.has(record.lead_id)) return true;
       if (contextRecordIds.has(record.lead_id)) return true;
       return activeProjectIdentities.has(projectIdentity(record)) || activeProjectProducts.has(productIdentity(record));
@@ -248,7 +257,7 @@
 
   function activeMilestones() {
     return data.milestones.filter((item) => {
-      if (state.track !== "all" && item.track !== state.track) return false;
+      if (!inSelectedTrack(item)) return false;
       return activeProjectKeys.has(item.project_key);
     });
   }
@@ -346,21 +355,32 @@
       date,
       label: `预计 ${formatHalfYear(date)}`,
       confidence,
-      basis: `${stageBucketLabel(bucket)}；按${model}和NMPA时限外推${stale ? "；历史节点已过期，按当前未获批状态重估" : ""}`,
+      basis: `${stageBucketLabel(bucket)}；参考${model}和官方审评时间${stale ? "；按最新状态重新估算" : ""}`,
     };
   }
 
   function renderMeta() {
     setText("pageTitle", data.meta.title || "注册进度");
-    setText("scopeNote", "仅展示未获批或仍在新增适应证/品规推进的项目；已获批上市项目转入材料市场分析，不再占用注册进展主视图。");
+    setText("scopeNote", "关注仍在推进的注册项目。已获批产品单独看市场表现。");
     setText("updatedAt", data.meta.updated_at || "-");
   }
 
   function renderTabs() {
     const tabs = $("trackTabs");
     if (!tabs) return;
-    const activeTracks = new Set([...activeProjectsAll, ...contextProjectsAll].map((project) => project.track));
-    const tracks = [{ track: "all", track_label: "总览" }, ...(data.summary.by_track || []).filter((item) => activeTracks.has(item.track))];
+    const activeTracks = new Set([...activeProjectsAll, ...contextProjectsAll].map((project) => trackGroup(project.track)));
+    const seen = new Set();
+    const materialTabs = (data.summary.by_track || []).reduce((items, item) => {
+      const group = trackGroup(item.track);
+      if (!activeTracks.has(group) || seen.has(group)) return items;
+      seen.add(group);
+      items.push({
+        track: group,
+        track_label: group === "pdrn_pn" ? "PDRN/PN" : item.track_label,
+      });
+      return items;
+    }, []);
+    const tracks = [{ track: "all", track_label: "总览" }, ...materialTabs];
     tabs.innerHTML = tracks
       .map((item) => `
         <button class="track-tab ${state.track === item.track ? "active" : ""}" type="button" data-track="${escapeHtml(item.track)}">
@@ -438,11 +458,11 @@
     const project = row.project;
     const stage = `${project.current_stage || ""} ${project.reported_status || ""}`;
     const model = project.track === "botulinum" ? "药品样板" : "三类器械样板";
-    if (row.bucket === "review") return `已进入受理/审评窗口，按${model}叠加NMPA受理后审评/审批时限估算。`;
-    if (/临床完成|随访|入组完成|阶段完成/.test(stage)) return `临床后段信号明确，按${model}中“临床总结/注册申报/技术审评”衔接期外推。`;
-    if (row.bucket === "clinical") return `已进入注册临床，按${model}中临床执行、随访和递交注册申请的区间外推。`;
-    if (row.bucket === "testing") return `仍在注册检验或前置验证，需完成型检/质量资料后再进入临床或受理。`;
-    return "仍属早期线索，缺少受理或临床后段信号，预测窗口保守后移。";
+    if (row.bucket === "review") return `已进入受理或审评，排位靠前。`;
+    if (/临床完成|随访|入组完成|阶段完成/.test(stage)) return `临床进度较明确，重点看后续申报。`;
+    if (row.bucket === "clinical") return `已进入注册临床，继续观察入组、随访和申报节奏。`;
+    if (row.bucket === "testing") return `仍在检验或前置验证，需要等待下一步进展。`;
+    return "仍属早期线索，时间判断更保守。";
   }
 
   function renderForecastSummary(projects) {
@@ -451,11 +471,11 @@
     const rows = forecastRankRows(projects);
     setText("forecastTitle", state.track === "all" ? "未来下证顺序预测" : `${selectedTrackLabel()}下证顺序预测`);
     setText("forecastLead", state.track === "all"
-      ? "按所有未获批项目汇总排序，优先看受理/审评、临床后段和高等级证据。"
-      : "按该材料赛道内未获批项目排序，辅助判断下一批注册节点。");
+      ? "汇总所有在推进项目，观察可能的获批顺序。"
+      : "观察该材料赛道内可能的获批顺序。");
     setText(
       "forecastMethod",
-      "预测不是承诺日期。模型先按当前阶段分层：受理/审评 > 临床完成/随访 > 临床登记/进行中 > 型检/主文档 > 早期线索；再套用官方审评时限和已获批样板项目的实测间隔。官方时限只覆盖受理后的技术审评/审批，不包含企业补正、体系核查、临床执行、注册检验排队和资料准备时间，因此页面用半年度窗口而非具体日期。已获批项目从预测池移出。"
+      "预测仅作顺序参考，实际获批时间以官方信息为准。"
     );
     host.innerHTML = rows.length
       ? rows
@@ -494,8 +514,8 @@
 
     setText("overviewTitle", state.track === "all" ? "注册进展总览" : `${selectedTrackLabel()}进展判断`);
     setText("overviewLead", state.track === "all"
-      ? `当前活跃注册项目 ${projects.length} 个，其中注册临床中 ${buckets.get("clinical") || 0} 个，受理/审评中 ${buckets.get("review") || 0} 个。`
-      : `该材料赛道仍有 ${projects.length} 个项目处于注册推进或待验证阶段。`);
+      ? `当前有 ${projects.length} 个项目仍在推进，其中注册临床中 ${buckets.get("clinical") || 0} 个，受理/审评中 ${buckets.get("review") || 0} 个。`
+      : `该材料赛道仍有 ${projects.length} 个项目在推进。`);
 
     const trackHost = $("trackSummaryCards");
     if (trackHost) {
@@ -535,48 +555,65 @@
       conclusionHost.innerHTML = `
         <li>注册临床密度集中在：${escapeHtml(clinicalTrackText)}。</li>
         <li>近端下证观察对象：${escapeHtml(nearTerm)}。</li>
-        <li>已获批/上市项目 ${archivedProjects().length} 个已移出本页主视图，避免与市场存量混算。</li>
+        <li>已获批/上市项目 ${archivedProjects().length} 个。</li>
       `;
     }
     renderForecastSummary(projects);
   }
 
-  function benchmarkSteps() {
+  function forecastBasisCards() {
     return [
-      ["临床登记/启动", "T0", "确认适应证、中心、样本量和主要终点"],
-      ["入组完成", "T+6-18月", "观察中心执行速度、脱落率和随访周期"],
-      ["临床完成/报告", "T+12-30月", "进入统计分析、临床总结和注册资料准备"],
-      ["递交/受理", "T+18-36月", "进入技术审评、补正、体系核查或注册检验衔接"],
-      ["获批/下证", "T+30-48月", "已获批后转入材料市场分析，仅跟踪新增适应症或品规"],
+      {
+        type: "毒麻类药品",
+        title: "芮妥欣 / 重组A型肉毒毒素",
+        body: "药品路径受临床、生产体系和药审节奏共同影响，周期通常较长。芮妥欣于2026-03-25获批，批准文号国药准字S20260019。",
+        link: "https://epaper.stcn.com/pic/202603/28/018874c2df02934d52986c38465aaf9d.pdf",
+        linkText: "上市公司公告",
+        rangeLabel: "36-60个月",
+        minMonths: 36,
+        maxMonths: 60,
+        rangeNote: "从关键临床到获批的保守长周期参照。",
+      },
+      {
+        type: "首证类器械",
+        title: "优法兰 Aphranel / CaHA",
+        body: "国内首张CaHA面部填充注册证，2025-02-17获批，证号国械注准20253130390。无同类材料先例时，通常需要留出更宽的审评和补充资料空间。",
+        link: "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf",
+        linkText: "CMDE审评报告",
+        rangeLabel: "30-54个月",
+        minMonths: 30,
+        maxMonths: 54,
+        rangeNote: "适合参考国内尚无先例的新材料赛道。",
+      },
+      {
+        type: "跟进型材料",
+        title: "Ellansé-M / 伊妍仕恒耀",
+        body: "同类PCL材料已有上市先例后，后续型号或适应证可参考更成熟的行业路径。2023-05完成中国临床全部入组，2025-01获注册受理，2026-04-23获批。",
+        link: "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260423153223162.html",
+        linkText: "NMPA送达信息",
+        rangeLabel: "18-36个月",
+        minMonths: 18,
+        maxMonths: 36,
+        rangeNote: "适合参考已有首款产品后的跟进型材料。",
+      },
+      {
+        type: "国家法定周期",
+        title: "NMPA/CMDE 受理后流程",
+        body: "法定周期只覆盖受理后的审评和审批，是项目时间下限参考；不包含临床执行、注册检验排队、企业补正和资料准备。",
+        link: "https://zwfw.nmpa.gov.cn/web/taskview/11100000MB0341032Y100017214300101",
+        linkText: "器械首次注册办事指南",
+        rangeLabel: "5-9个月",
+        minMonths: 5,
+        maxMonths: 9,
+        rangeNote: "仅用于理解受理后的最短制度时间。",
+      },
     ];
   }
 
   function renderForecastBasis() {
     const host = $("forecastBasisCards");
     if (!host) return;
-    const cards = [
-      {
-        type: "官方政策基线",
-        title: "NMPA/CMDE 受理后时限",
-        body: "三类医疗器械注册技术审评90日，补正后60日，行政审批20个工作日；药品上市许可申请常规审评约200日，优先审评可缩至130日。临床执行和企业补正时间不计入这些法定时限。",
-        link: "https://zwfw.nmpa.gov.cn/web/taskview/11100000MB0341032Y100017214300101",
-        linkText: "器械首次注册办事指南",
-      },
-      {
-        type: "器械样板",
-        title: "Ellansé-M / 伊妍仕恒耀",
-        body: "2023-05 完成中国临床全部入组；2025-01 获注册受理；2026-04-23 获批，证号国械注进20263130151，适用于成人轻中度颞部凹陷。作为进口三类PCL填充剂样板。",
-        link: "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260423153223162.html",
-        linkText: "NMPA送达信息",
-      },
-      {
-        type: "药品样板",
-        title: "芮妥欣 / 重组A型肉毒毒素",
-        body: "受理号CXSS2400144；2026-03-25获批，批准文号国药准字S20260019；中国III期临床支持，用于成人中重度眉间纹。作为毒麻类药品样板。",
-        link: "https://epaper.stcn.com/pic/202603/28/018874c2df02934d52986c38465aaf9d.pdf",
-        linkText: "上市公司公告",
-      },
-    ];
+    const cards = forecastBasisCards();
     host.innerHTML = cards.map((card) => `
       <article class="basis-card">
         <span>${escapeHtml(card.type)}</span>
@@ -591,13 +628,29 @@
     const host = $("benchmarkSteps");
     renderForecastBasis();
     if (host) {
-      host.innerHTML = benchmarkSteps().map(([stage, timing, note]) => `
-        <div class="benchmark-step">
-          <span>${escapeHtml(timing)}</span>
-          <strong>${escapeHtml(stage)}</strong>
-          <p>${escapeHtml(note)}</p>
+      const maxMonth = Math.max(...forecastBasisCards().map((item) => item.maxMonths), 60);
+      host.innerHTML = `
+        <div class="range-axis" aria-hidden="true">
+          <span>0</span><span>12月</span><span>24月</span><span>36月</span><span>48月</span><span>60月</span>
         </div>
-      `).join("");
+        ${forecastBasisCards().map((item) => {
+          const start = Math.max(0, (item.minMonths / maxMonth) * 100);
+          const width = Math.max(2, ((item.maxMonths - item.minMonths) / maxMonth) * 100);
+          return `
+            <div class="benchmark-range">
+              <div class="range-copy">
+                <span>${escapeHtml(item.type)}</span>
+                <strong>${escapeHtml(item.rangeLabel)}</strong>
+                <p>${escapeHtml(item.rangeNote)}</p>
+              </div>
+              <div class="range-rail" style="--start:${start.toFixed(2)}%; --width:${width.toFixed(2)}%">
+                <i></i>
+                <b>${escapeHtml(item.rangeLabel)}</b>
+              </div>
+            </div>
+          `;
+        }).join("")}
+      `;
     }
   }
 
@@ -677,7 +730,7 @@
       return;
     }
     setText("timelineTitle", `${selectedTrackLabel()}时间轴`);
-    setText("timelineNote", "仅展示该材料赛道未获批项目；虚线节点为按当前阶段外推的预计下证窗口。");
+    setText("timelineNote", "虚线节点为预计下证窗口。");
     const events = timelineEvents();
     if (!events.length) {
       host.innerHTML = "";
@@ -708,7 +761,7 @@
     const body = $("projectBody");
     if (!body) return;
     const projects = activeProjects();
-    setText("projectCount", `${projects.length} 个活跃项目`);
+    setText("projectCount", `${projects.length} 个项目`);
     body.innerHTML = projects
       .map((project) => {
         const forecast = forecastForProject(project);
@@ -815,7 +868,7 @@
     const focusedIds = new Set(state.focusedRecordIds || []);
     const matches = rows.filter((row) => row.dataset.product === state.focusedProduct || focusedIds.has(row.dataset.leadId || ""));
     matches.forEach((row) => row.classList.add("source-highlight"));
-    setText("sourceFilterNote", matches.length ? `已定位 ${matches.length} 条相关来源` : "未找到完全匹配来源，可在清单中按项目名查找。");
+    setText("sourceFilterNote", matches.length ? `找到 ${matches.length} 条来源` : "未找到匹配来源。");
   }
 
   function render() {
