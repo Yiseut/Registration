@@ -152,7 +152,7 @@
 
       .metric-grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 14px;
         margin: 18px 0;
       }
@@ -842,10 +842,6 @@
           <strong id="kpiTesting">0</strong>
           <p>处于检验或注册前置验证</p>
         </article>
-        <article class="metric-card">
-          <span>已获批/上市</span>
-          <strong id="kpiArchived">0</strong>
-        </article>
       </section>
 
       <section class="overview-grid" id="overviewSection">
@@ -883,21 +879,21 @@
           <div class="panel-head">
             <div>
               <h2>更新节奏</h2>
-              <p>基础数据同步刷新，临床线索可单独补充。</p>
+              <p>主数据定期同步，临床进展按事件补充。</p>
             </div>
           </div>
           <ul class="update-list">
             <li>
-              <strong>随主仪表盘更新</strong>
-              <span>NMPA 注册证、企业主体、适应证和已获批项目统一刷新。</span>
+              <strong>每月完整刷新</strong>
+              <span>随主仪表盘同步 NMPA 注册证、企业主体、适应证和基础字段。</span>
             </li>
             <li>
-              <strong>临床进展增量补充</strong>
-              <span>ChiCTR、企业公告、CRO/机构公告和官网线索出现变化时单独补入。</span>
+              <strong>事件触发补充</strong>
+              <span>出现 ChiCTR 登记、企业公告、CRO/机构公告、官网披露或受理号时，单独更新临床进展。</span>
             </li>
             <li>
-              <strong>预测同步校准</strong>
-              <span>每次更新同时调整下证顺序、预测窗口和来源明细。</span>
+              <strong>季度复盘校准</strong>
+              <span>按最新样板案例和政策节点，复核下证顺序、预测窗口和重点观察名单。</span>
             </li>
           </ul>
         </article>

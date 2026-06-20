@@ -163,6 +163,8 @@ async function main() {
     hasScopeBackLink: document.querySelector('.scope-card .back-link') !== null,
     scopeCardText: document.querySelector('.scope-card')?.textContent || '',
     updateRhythmText: document.querySelector('.update-rhythm-card')?.textContent || '',
+    metricLabels: Array.from(document.querySelectorAll('.metric-card span:first-child')).map((node) => node.textContent?.trim() || ''),
+    hasArchivedKpi: document.querySelector('#kpiArchived') !== null,
     timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
     summaryCards: document.querySelectorAll('#trackSummaryCards .track-summary-card').length,
     forecastCards: document.querySelectorAll('#forecastSummary .forecast-rank-card').length,
@@ -171,7 +173,7 @@ async function main() {
     forecastSummaryColumns: getComputedStyle(document.querySelector('.forecast-summary')).gridTemplateColumns,
     basisCards: Array.from(document.querySelectorAll('#forecastBasisCards .basis-card')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
     benchmarkRanges: Array.from(document.querySelectorAll('#benchmarkSteps .benchmark-range')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
-    kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting', '#kpiArchived'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
+    kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
     projectText: document.querySelector('#projectBody')?.textContent || '',
     ecmImplantRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /脱细胞基质植入剂/.test(row.textContent || '')).length,
     ecmShengzhirunheGelRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => {
@@ -193,7 +195,9 @@ async function main() {
   assert(pipelineOverview.globalNavLinks.some((link) => link.text === '返回总览' && link.href.includes('index.html')), 'Pipeline global navigation should keep the overview return action in the top-left menu', JSON.stringify(pipelineOverview.globalNavLinks));
   assert(!pipelineOverview.hasScopeBackLink, 'Pipeline update area should not keep the old right-side back link');
   assert(/最近更新|\d{4}-\d{2}-\d{2}/.test(pipelineOverview.scopeCardText), 'Pipeline update area should keep the last-updated timestamp', pipelineOverview.scopeCardText);
-  assert(/随主仪表盘更新|临床进展增量补充|预测同步校准/.test(pipelineOverview.updateRhythmText), 'Pipeline should explain the future update rhythm succinctly', pipelineOverview.updateRhythmText);
+  assert(['每月完整刷新', '事件触发补充', '季度复盘校准'].every((label) => pipelineOverview.updateRhythmText.includes(label)), 'Pipeline should explain the future update rhythm succinctly', pipelineOverview.updateRhythmText);
+  assert(pipelineOverview.metricLabels.join(',') === '注册临床中,受理/审评中,注册检验/型检', 'Pipeline KPI strip should only show pre-approval progress metrics', pipelineOverview.metricLabels.join(','));
+  assert(!pipelineOverview.hasArchivedKpi, 'Pipeline should not show an approved/listed KPI without a time window');
   assert(pipelineOverview.timelineHidden, 'Pipeline overview should not show the all-material timeline');
   assert(pipelineOverview.summaryCards >= 3, 'Pipeline overview should show material summary cards', String(pipelineOverview.summaryCards));
   assert(pipelineOverview.forecastCards >= 5, 'Pipeline overview should show a ranked summary forecast list', String(pipelineOverview.forecastCards));
@@ -207,7 +211,7 @@ async function main() {
   assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.benchmarkRanges.length === 4, 'Pipeline should render four forecast range bars', String(pipelineOverview.benchmarkRanges.length));
   assert(pipelineOverview.benchmarkRanges.join(' | ').includes('5-9个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
-  assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[3] > 0, 'Pipeline KPIs should show active clinical projects and archived approvals', pipelineOverview.kpis.join(','));
+  assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
   assert(pipelineOverview.ecmShengzhirunheGelRows === 1, 'Shengzhirunhe ECM gel aliases should be merged into one active project row', String(pipelineOverview.ecmShengzhirunheGelRows));
@@ -257,15 +261,40 @@ async function main() {
   const pipelinePcl = await pipelinePage.evaluate(() => ({
     projectText: document.querySelector('#projectBody')?.textContent || '',
     forecastText: document.querySelector('#forecastSummary')?.textContent || '',
-    archived: document.querySelector('#kpiArchived')?.textContent?.trim() || '',
+    hasArchivedKpi: document.querySelector('#kpiArchived') !== null,
     rows: document.querySelectorAll('#projectBody tr').length,
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(!pipelinePcl.projectText.includes('Ellansé-M'), 'Approved Ellanse-M should be removed from active PCL registration progress', pipelinePcl.projectText);
   assert(!pipelinePcl.forecastText.includes('Ellansé-M'), 'Approved Ellanse-M should be removed from PCL forecast ranking', pipelinePcl.forecastText);
-  assert(Number(pipelinePcl.archived) >= 1, 'PCL view should count Ellanse-M as archived/approved', pipelinePcl.archived);
+  assert(!pipelinePcl.hasArchivedKpi, 'PCL view should not show an archived/approved KPI');
   assert(pipelinePcl.rows >= 3, 'PCL view should keep active unapproved projects after removing Ellanse-M', String(pipelinePcl.rows));
   assert(pipelinePcl.overflowX <= 1, 'Pipeline PCL view has horizontal overflow', String(pipelinePcl.overflowX));
+
+  await pipelinePage.locator('[data-track="caha"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelineCaha = await pipelinePage.evaluate(() => {
+    const rowTexts = Array.from(document.querySelectorAll('#projectBody tr')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    const forecastTexts = Array.from(document.querySelectorAll('#forecastSummary .forecast-rank-card')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    const timelineTexts = Array.from(document.querySelectorAll('#timelineTrack .timeline-node')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    const count = (rows, pattern) => rows.filter((text) => pattern.test(text)).length;
+    return {
+      rows: rowTexts.length,
+      cgbioProjectRows: count(rowTexts, /CGBio|华瑭/),
+      cgbioForecastRows: count(forecastTexts, /CGBio|华瑭/),
+      harmonyProjectRows: count(rowTexts, /HArmonyCa/i),
+      haohaiProjectRows: count(rowTexts, /昊海生科/),
+      hasGenericCgbioProject: rowTexts.some((text) => /CaHA填充物中国上市许可合作/.test(text)),
+      hasGenericCgbioForecast: forecastTexts.some((text) => /CaHA填充物中国上市许可合作/.test(text)),
+      hasGenericCgbioTimeline: timelineTexts.some((text) => /CaHA填充物中国上市许可合作/.test(text)),
+      overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    };
+  });
+  assert(pipelineCaha.cgbioProjectRows === 1 && pipelineCaha.cgbioForecastRows === 1, 'CGBio/Huatang FACETEM sources should merge into one CaHA project', JSON.stringify(pipelineCaha));
+  assert(!pipelineCaha.hasGenericCgbioProject && !pipelineCaha.hasGenericCgbioForecast && !pipelineCaha.hasGenericCgbioTimeline, 'Generic CGBio/Huatang cooperation wording should verify FACETEM instead of rendering separately', JSON.stringify(pipelineCaha));
+  assert(pipelineCaha.harmonyProjectRows === 1, 'HArmonyCa sources should merge into one CaHA project row', JSON.stringify(pipelineCaha));
+  assert(pipelineCaha.haohaiProjectRows === 1, 'Haohai CaHA generic and product-series sources should merge into one project row', JSON.stringify(pipelineCaha));
+  assert(pipelineCaha.overflowX <= 1, 'Pipeline CaHA view has horizontal overflow', String(pipelineCaha.overflowX));
 
   await pipelinePage.locator('[data-track="pdrn_pn"]').click();
   await pipelinePage.waitForTimeout(300);

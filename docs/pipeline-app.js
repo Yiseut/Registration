@@ -32,7 +32,16 @@
 
   function canonicalProductGroup(project) {
     const product = canonicalProductName(project?.product);
-    const company = primaryCompanyKey(project?.company);
+    const company = canonicalCompanyKey(project);
+    if (project?.track === "caha" && /cgbio华瑭大昌/.test(company) && /(facetem|caha填充物|羟基磷灰石填充物|上市许可合作)/.test(product)) {
+      return "facetem";
+    }
+    if (project?.track === "caha" && /abbvieallergan/.test(company) && /harmonyca/.test(product)) {
+      return "harmonyca";
+    }
+    if (project?.track === "caha" && /昊海生科/.test(company) && /(caha|羟基磷灰石)/.test(product)) {
+      return "昊海生科caha产品";
+    }
     if (project?.track === "ecm" && /白衣缘生物/.test(company) && /(sis|细胞外基质|脱细胞基质|植入剂|填充产品)/.test(product)) {
       return "白衣缘ecm植入剂";
     }
@@ -50,13 +59,21 @@
       .replace(/[()（）]/g, "");
   }
 
+  function companyAliasKey(value, track) {
+    const company = normalizeKey(value).replace(/[()（）]/g, "");
+    if (track === "caha" && /(cgbio|华瑭|htdk)/.test(company)) return "cgbio华瑭大昌";
+    if (track === "caha" && /(abbvie|allergan|艾尔建)/.test(company)) return "abbvieallergan";
+    if (track === "caha" && /昊海/.test(company)) return "昊海生科";
+    return primaryCompanyKey(value);
+  }
+
   function canonicalCompanyKey(project) {
     const company = normalizeKey(project?.company).replace(/[()（）]/g, "");
     const product = canonicalProductName(project?.product);
     if (project?.track === "pdrn" && /透明质酸钠pdrn复合溶液/.test(product) && /吴中|丽徕/.test(company)) {
       return "吴中美学北京丽徕";
     }
-    return primaryCompanyKey(project?.company);
+    return companyAliasKey(project?.company, project?.track);
   }
 
   function projectGroupKey(project) {
@@ -405,7 +422,6 @@
     setText("kpiClinical", buckets.get("clinical") || 0);
     setText("kpiReview", buckets.get("review") || 0);
     setText("kpiTesting", buckets.get("testing") || 0);
-    setText("kpiArchived", archivedProjects().length);
   }
 
   function renderSourceBars() {
@@ -555,7 +571,7 @@
       conclusionHost.innerHTML = `
         <li>注册临床密度集中在：${escapeHtml(clinicalTrackText)}。</li>
         <li>近端下证观察对象：${escapeHtml(nearTerm)}。</li>
-        <li>已获批/上市项目 ${archivedProjects().length} 个。</li>
+        <li>已获批产品仅作为周期样板，不进入本页进展指标。</li>
       `;
     }
     renderForecastSummary(projects);
@@ -660,19 +676,28 @@
     activeProjects().forEach((project) => {
       (project._source_project_keys || [project.project_key]).forEach((key) => projectByKey.set(key, project));
     });
-    const actualEvents = activeMilestones().map((item) => {
+    const actualGroups = new Map();
+    activeMilestones().forEach((item) => {
       const project = projectByKey.get(item.project_key);
+      const key = project?.project_key || item.project_key;
+      if (!actualGroups.has(key)) actualGroups.set(key, { project, items: [] });
+      actualGroups.get(key).items.push(item);
+    });
+    const actualEvents = [...actualGroups.entries()].map(([key, group]) => {
+      const project = group.project;
+      const latestItem = [...group.items].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")))[0] || group.items[0];
+      const bestItem = [...group.items].sort((a, b) => evidenceRank(a.evidence_grade) - evidenceRank(b.evidence_grade))[0] || latestItem;
       return {
         kind: "actual",
-        key: `actual-${item.id}`,
-        project_key: project?.project_key || item.project_key,
+        key: `actual-${key}`,
+        project_key: key,
         record_ids: project?.records || [],
-        date: item.date || "待补时间",
-        product: item.product,
+        date: latestItem.date || "待补时间",
+        product: project?.product || latestItem.product,
         material: project?.material || "",
-        company: project?.company || item.company,
-        stage: item.stage,
-        evidence_grade: item.evidence_grade,
+        company: project?.company || latestItem.company,
+        stage: project?.current_stage || latestItem.stage,
+        evidence_grade: project?.highest_evidence || bestItem.evidence_grade,
         forecast: project ? forecastForProject(project) : null,
       };
     });
