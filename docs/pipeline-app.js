@@ -1,6 +1,6 @@
 (function () {
   const data = window.PIPELINE_DASHBOARD_DATA || { meta: {}, summary: {}, projects: [], records: [], milestones: [] };
-  const state = { track: "all", activeTimelineKey: "", focusedProduct: "" };
+  const state = { track: "all", activeTimelineKey: "", focusedProduct: "", focusedRecordIds: [] };
   const $ = (id) => document.getElementById(id);
 
   function escapeHtml(value) {
@@ -19,6 +19,48 @@
 
   function normalizeKey(value) {
     return String(value || "").replace(/\s+/g, "").toLowerCase();
+  }
+
+  function canonicalProductName(value) {
+    return normalizeKey(value)
+      .replace(/ecm/g, "细胞外基质")
+      .replace(/脱细胞外基质/g, "细胞外基质")
+      .replace(/脱细胞基质/g, "细胞外基质")
+      .replace(/^注射用/, "")
+      .replace(/[()（）/／、·\-_\s+＋&＆]/g, "");
+  }
+
+  function canonicalProductGroup(project) {
+    const product = canonicalProductName(project?.product);
+    const company = primaryCompanyKey(project?.company);
+    if (project?.track === "ecm" && /白衣缘生物/.test(company) && /(sis|细胞外基质|脱细胞基质|植入剂|填充产品)/.test(product)) {
+      return "白衣缘ecm植入剂";
+    }
+    if (project?.track === "ecm" && /圣至润合/.test(company) && /细胞外基质生物凝胶/.test(product) && !/第二款/.test(product)) {
+      return "圣至润合首款ecm生物凝胶";
+    }
+    if (project?.track === "pdrn" && /透明质酸钠pdrn复合溶液/.test(product)) {
+      return "透明质酸钠pdrn复合溶液";
+    }
+    return product;
+  }
+
+  function primaryCompanyKey(value) {
+    return normalizeKey(String(value || "").split(/[\/／、;；]/)[0])
+      .replace(/[()（）]/g, "");
+  }
+
+  function canonicalCompanyKey(project) {
+    const company = normalizeKey(project?.company).replace(/[()（）]/g, "");
+    const product = canonicalProductName(project?.product);
+    if (project?.track === "pdrn" && /透明质酸钠pdrn复合溶液/.test(product) && /吴中|丽徕/.test(company)) {
+      return "吴中美学北京丽徕";
+    }
+    return primaryCompanyKey(project?.company);
+  }
+
+  function projectGroupKey(project) {
+    return [project?.track, canonicalCompanyKey(project), canonicalProductGroup(project)].join("|");
   }
 
   function projectIdentity(item) {
@@ -42,11 +84,137 @@
     return false;
   }
 
-  const activeProjectsAll = data.projects.filter((project) => !isCompletedProject(project));
+  function isContextProject(project) {
+    const company = String(project?.company || "").trim();
+    const text = `${project?.product || ""} ${project?.current_stage || ""} ${project?.stage_chain || ""}`;
+    if (company === "行业总体") return true;
+    if (company === "未披露" && /分类界定|监管路径|注册路径|主文档|标准研究|原料/.test(text)) return true;
+    return project?.frontstage_ready === false && /行业|监管路径|注册路径|主文档|标准研究/.test(`${company} ${text}`);
+  }
+
+  function displayCompany(item) {
+    const company = String(item?.company || "").trim();
+    if (company === "行业总体") return "赛道背景 / 不对应单一企业";
+    if (company === "未披露") return "主体未披露 / 暂不归入企业产品";
+    return company || "-";
+  }
+
+  function progressRank(project) {
+    const text = `${project?.current_stage || ""} ${project?.stage_chain || ""} ${project?.reported_status || ""}`;
+    if (/已获批|已上市|批准上市|注册证.*获批/.test(text)) return 5;
+    if (/受理|送达|审评|审批|递交|上市注册推进/.test(text)) return 4;
+    if (/临床完成|入组完成|阶段完成|随访|临床后段/.test(text)) return 3;
+    if (/临床|入组/.test(text)) return 2;
+    if (/注册检验|型检|检验|分类界定|主文档|原料/.test(text)) return 1;
+    return 0;
+  }
+
+  function evidenceRank(grade) {
+    const value = Number(String(grade || "").replace(/^A/i, ""));
+    return Number.isFinite(value) ? value : 99;
+  }
+
+  function latestDateOf(project) {
+    return project?.latest_source_date || (project?.milestone_dates || []).slice().sort().at(-1) || "";
+  }
+
+  function mergeGradeCounts(projects) {
+    return projects.reduce((counts, project) => {
+      Object.entries(project.grade_counts || {}).forEach(([grade, count]) => {
+        counts[grade] = (counts[grade] || 0) + Number(count || 0);
+      });
+      return counts;
+    }, {});
+  }
+
+  function uniqueSorted(values) {
+    return [...new Set(values.filter(Boolean))].sort();
+  }
+
+  function bestEvidence(projects) {
+    return [...projects].sort((a, b) => evidenceRank(a.highest_evidence) - evidenceRank(b.highest_evidence))[0] || projects[0];
+  }
+
+  function longestValue(projects, field) {
+    return projects
+      .map((project) => project[field])
+      .filter(Boolean)
+      .sort((a, b) => String(b).length - String(a).length)[0] || "";
+  }
+
+  function consolidateProjectGroup(projects) {
+    if (projects.length === 1) {
+      return { ...projects[0], _source_project_keys: [projects[0].project_key] };
+    }
+    const latest = [...projects].sort((a, b) => latestDateOf(b).localeCompare(latestDateOf(a)))[0];
+    const best = bestEvidence(projects);
+    const progressLead = [...projects].sort((a, b) => {
+      const stageOrder = progressRank(b) - progressRank(a);
+      if (stageOrder) return stageOrder;
+      const evidenceOrder = evidenceRank(a.highest_evidence) - evidenceRank(b.highest_evidence);
+      if (evidenceOrder) return evidenceOrder;
+      return latestDateOf(b).localeCompare(latestDateOf(a));
+    })[0] || latest;
+    const stageChain = [];
+    [...projects]
+      .sort((a, b) => latestDateOf(a).localeCompare(latestDateOf(b)))
+      .forEach((project) => {
+        String(project.stage_chain || project.current_stage || "")
+          .split(/\s*→\s*/)
+          .filter(Boolean)
+          .forEach((stage) => {
+            if (!stageChain.includes(stage)) stageChain.push(stage);
+          });
+      });
+    const recordIds = uniqueSorted(projects.flatMap((project) => project.records || []));
+    const milestoneDates = uniqueSorted(projects.flatMap((project) => project.milestone_dates || []));
+    const sourceLanes = uniqueSorted(projects.flatMap((project) => project.source_lanes || []));
+    return {
+      ...latest,
+      project_key: best.project_key,
+      product: best.product || longestValue(projects, "product") || latest.product,
+      company: longestValue(projects, "company") || latest.company,
+      current_stage: progressLead.current_stage || latest.current_stage,
+      stage_chain: stageChain.join(" → "),
+      highest_evidence: best.highest_evidence,
+      highest_evidence_label: best.highest_evidence_label,
+      evidence_count: recordIds.length || projects.reduce((sum, project) => sum + Number(project.evidence_count || 0), 0),
+      public_evidence_count: projects.reduce((sum, project) => sum + Number(project.public_evidence_count || 0), 0),
+      verified_source_count: projects.reduce((sum, project) => sum + Number(project.verified_source_count || 0), 0),
+      conflict_count: projects.reduce((sum, project) => sum + Number(project.conflict_count || 0), 0),
+      hidden_lead_count: projects.reduce((sum, project) => sum + Number(project.hidden_lead_count || 0), 0),
+      source_lanes: sourceLanes,
+      grade_counts: mergeGradeCounts(projects),
+      latest_source_date: latestDateOf(latest),
+      milestone_dates: milestoneDates,
+      reported_status: progressLead.reported_status || latest.reported_status,
+      reported_indication: progressLead.reported_indication || latest.reported_indication,
+      reported_center_or_pi: progressLead.reported_center_or_pi || latest.reported_center_or_pi,
+      next_watch: progressLead.next_watch || latest.next_watch,
+      records: recordIds,
+      _source_project_keys: projects.map((project) => project.project_key).filter(Boolean),
+      _merged_count: projects.length,
+    };
+  }
+
+  function consolidateProjects(projects) {
+    const groups = new Map();
+    projects.forEach((project) => {
+      const key = projectGroupKey(project);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(project);
+    });
+    return [...groups.values()].map(consolidateProjectGroup);
+  }
+
+  const contextProjectsAll = data.projects.filter((project) => !isCompletedProject(project) && isContextProject(project));
+  const activeProjectsAll = consolidateProjects(data.projects.filter((project) => !isCompletedProject(project) && !isContextProject(project)));
   const archivedProjectsAll = data.projects.filter(isCompletedProject);
-  const activeProjectKeys = new Set(activeProjectsAll.map((project) => project.project_key).filter(Boolean));
+  const activeProjectKeys = new Set(activeProjectsAll.flatMap((project) => project._source_project_keys || [project.project_key]).filter(Boolean));
   const activeProjectIdentities = new Set(activeProjectsAll.map(projectIdentity));
   const activeProjectProducts = new Set(activeProjectsAll.map(productIdentity));
+  const activeRecordIds = new Set(activeProjectsAll.flatMap((project) => project.records || []));
+  const contextRecordIds = new Set(contextProjectsAll.flatMap((project) => project.records || []));
 
   function selectedTrackLabel() {
     if (state.track === "all") return "全部材料";
@@ -62,10 +230,18 @@
     return archivedProjectsAll.filter((project) => state.track === "all" || project.track === state.track);
   }
 
+  function contextProjects() {
+    return contextProjectsAll
+      .filter((project) => state.track === "all" || project.track === state.track)
+      .sort((a, b) => latestDateOf(b).localeCompare(latestDateOf(a)));
+  }
+
   function activeRecords() {
     return data.records.filter((record) => {
       if (record.frontstage_use === "hidden") return false;
       if (state.track !== "all" && record.track !== state.track) return false;
+      if (activeRecordIds.has(record.lead_id)) return true;
+      if (contextRecordIds.has(record.lead_id)) return true;
       return activeProjectIdentities.has(projectIdentity(record)) || activeProjectProducts.has(productIdentity(record));
     });
   }
@@ -150,25 +326,27 @@
     const bucket = stageBucket(project);
     const stage = `${project?.current_stage || ""} ${project?.reported_status || ""}`;
     const anchor = extractLatestDate(stage) || project.latest_source_date || (project.milestone_dates || []).at(-1) || "";
-    let months = 36;
-    if (bucket === "review") months = /审评|审批/.test(stage) ? 10 : 14;
-    else if (bucket === "testing") months = 30;
+    const isDrug = project?.track === "botulinum";
+    let months = isDrug ? 38 : 34;
+    if (bucket === "review") months = isDrug ? 14 : 12;
+    else if (bucket === "testing") months = isDrug ? 30 : 28;
     else if (bucket === "clinical") {
-      if (/临床完成/.test(stage)) months = 16;
-      else if (/随访|入组完成|阶段完成/.test(stage)) months = 22;
-      else months = 30;
+      if (/临床完成/.test(stage)) months = isDrug ? 18 : 16;
+      else if (/随访|入组完成|阶段完成/.test(stage)) months = isDrug ? 24 : 22;
+      else months = isDrug ? 34 : 30;
     } else {
-      months = 42;
+      months = isDrug ? 44 : 42;
     }
     const rawDate = addMonths(anchor, months);
     const stale = rawDate && rawDate < today;
     const date = stale ? addMonths(today, bucket === "review" ? 8 : bucket === "clinical" ? 18 : bucket === "testing" ? 24 : 30) : rawDate;
     const confidence = ["A0", "A1", "A2", "A3"].includes(project.highest_evidence) ? "中高" : "低";
+    const model = isDrug ? "药品样板" : "三类器械样板";
     return {
       date,
       label: `预计 ${formatHalfYear(date)}`,
       confidence,
-      basis: `${stageBucketLabel(bucket)}；按${bucket === "review" ? "受理/审评" : bucket === "clinical" ? "注册临床" : bucket === "testing" ? "注册检验" : "早期线索"}样板外推${stale ? "；历史节点已过期，按当前未获批状态重估" : ""}`,
+      basis: `${stageBucketLabel(bucket)}；按${model}和NMPA时限外推${stale ? "；历史节点已过期，按当前未获批状态重估" : ""}`,
     };
   }
 
@@ -181,7 +359,7 @@
   function renderTabs() {
     const tabs = $("trackTabs");
     if (!tabs) return;
-    const activeTracks = new Set(activeProjectsAll.map((project) => project.track));
+    const activeTracks = new Set([...activeProjectsAll, ...contextProjectsAll].map((project) => project.track));
     const tracks = [{ track: "all", track_label: "总览" }, ...(data.summary.by_track || []).filter((item) => activeTracks.has(item.track))];
     tabs.innerHTML = tracks
       .map((item) => `
@@ -195,6 +373,7 @@
         state.track = button.dataset.track || "all";
         state.activeTimelineKey = "";
         state.focusedProduct = "";
+        state.focusedRecordIds = [];
         render();
       });
     });
@@ -258,11 +437,12 @@
   function forecastRankReason(row) {
     const project = row.project;
     const stage = `${project.current_stage || ""} ${project.reported_status || ""}`;
-    if (row.bucket === "review") return "已进入受理/审评窗口，排序优先于仍在临床或型检阶段的项目。";
-    if (/临床完成|随访|入组完成|阶段完成/.test(stage)) return "临床后段信号明确，等待临床总结、注册申报或技术审评衔接。";
-    if (row.bucket === "clinical") return "已进入注册临床，按临床执行、随访、递交注册申请的节奏外推。";
-    if (row.bucket === "testing") return "仍在注册检验或前置验证，需先完成型检/质量资料后再进入临床或受理。";
-    return "仍属早期线索，预测窗口保守后移。";
+    const model = project.track === "botulinum" ? "药品样板" : "三类器械样板";
+    if (row.bucket === "review") return `已进入受理/审评窗口，按${model}叠加NMPA受理后审评/审批时限估算。`;
+    if (/临床完成|随访|入组完成|阶段完成/.test(stage)) return `临床后段信号明确，按${model}中“临床总结/注册申报/技术审评”衔接期外推。`;
+    if (row.bucket === "clinical") return `已进入注册临床，按${model}中临床执行、随访和递交注册申请的区间外推。`;
+    if (row.bucket === "testing") return `仍在注册检验或前置验证，需完成型检/质量资料后再进入临床或受理。`;
+    return "仍属早期线索，缺少受理或临床后段信号，预测窗口保守后移。";
   }
 
   function renderForecastSummary(projects) {
@@ -275,7 +455,7 @@
       : "按该材料赛道内未获批项目排序，辅助判断下一批注册节点。");
     setText(
       "forecastMethod",
-      "预测不是承诺日期：以三类医疗器械/药品注册的公开路径为基线，包括注册检验或质量研究、临床试验、注册申请受理、技术审评/发补和批准；再叠加 Botox 等已获批毒麻类样板的约 T+30-42 月节奏。已进入受理/审评者前置，临床完成或随访阶段次之，早期线索和低等级证据下调置信。已获批上市项目已从本页预测池移出。"
+      "预测不是承诺日期。模型先按当前阶段分层：受理/审评 > 临床完成/随访 > 临床登记/进行中 > 型检/主文档 > 早期线索；再套用官方审评时限和已获批样板项目的实测间隔。官方时限只覆盖受理后的技术审评/审批，不包含企业补正、体系核查、临床执行、注册检验排队和资料准备时间，因此页面用半年度窗口而非具体日期。已获批项目从预测池移出。"
     );
     host.innerHTML = rows.length
       ? rows
@@ -286,7 +466,7 @@
                 <span class="forecast-rank">${index + 1}</span>
                 <div>
                   <h3>${escapeHtml(project.product)}</h3>
-                  <p>${escapeHtml(project.track_label || project.track)} · ${escapeHtml(project.company || "-")}</p>
+                  <p>${escapeHtml(project.track_label || project.track)} · ${escapeHtml(displayCompany(project))}</p>
                   <p>${escapeHtml(project.current_stage || "-")}｜${escapeHtml(forecastRankReason(row))}</p>
                   <span class="badge ${row.forecast.confidence === "中高" ? "strong" : "warn"}">${escapeHtml(row.forecast.confidence)}置信 · ${escapeHtml(gradeLabel(project.highest_evidence))}</span>
                 </div>
@@ -363,38 +543,81 @@
 
   function benchmarkSteps() {
     return [
-      ["申请/临床登记", "Botox样板 T0", "确定适应证、中心和样本量"],
-      ["入组完成", "T+3-12月", "观察样本量、中心执行速度和脱落率"],
-      ["临床完成/随访", "T+12-24月", "随访周期决定注册申报节奏"],
-      ["递交/受理", "T+18-30月", "进入补正、技术审评和发补风险窗口"],
-      ["获批/下证", "T+30-42月", "下证后转入材料市场分析"],
+      ["临床登记/启动", "T0", "确认适应证、中心、样本量和主要终点"],
+      ["入组完成", "T+6-18月", "观察中心执行速度、脱落率和随访周期"],
+      ["临床完成/报告", "T+12-30月", "进入统计分析、临床总结和注册资料准备"],
+      ["递交/受理", "T+18-36月", "进入技术审评、补正、体系核查或注册检验衔接"],
+      ["获批/下证", "T+30-48月", "已获批后转入材料市场分析，仅跟踪新增适应症或品规"],
     ];
+  }
+
+  function renderForecastBasis() {
+    const host = $("forecastBasisCards");
+    if (!host) return;
+    const cards = [
+      {
+        type: "官方政策基线",
+        title: "NMPA/CMDE 受理后时限",
+        body: "三类医疗器械注册技术审评90日，补正后60日，行政审批20个工作日；药品上市许可申请常规审评约200日，优先审评可缩至130日。临床执行和企业补正时间不计入这些法定时限。",
+        link: "https://zwfw.nmpa.gov.cn/web/taskview/11100000MB0341032Y100017214300101",
+        linkText: "器械首次注册办事指南",
+      },
+      {
+        type: "器械样板",
+        title: "Ellansé-M / 伊妍仕恒耀",
+        body: "2023-05 完成中国临床全部入组；2025-01 获注册受理；2026-04-23 获批，证号国械注进20263130151，适用于成人轻中度颞部凹陷。作为进口三类PCL填充剂样板。",
+        link: "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260423153223162.html",
+        linkText: "NMPA送达信息",
+      },
+      {
+        type: "药品样板",
+        title: "芮妥欣 / 重组A型肉毒毒素",
+        body: "受理号CXSS2400144；2026-03-25获批，批准文号国药准字S20260019；中国III期临床支持，用于成人中重度眉间纹。作为毒麻类药品样板。",
+        link: "https://epaper.stcn.com/pic/202603/28/018874c2df02934d52986c38465aaf9d.pdf",
+        linkText: "上市公司公告",
+      },
+    ];
+    host.innerHTML = cards.map((card) => `
+      <article class="basis-card">
+        <span>${escapeHtml(card.type)}</span>
+        <strong>${escapeHtml(card.title)}</strong>
+        <p>${escapeHtml(card.body)}</p>
+        <a href="${escapeHtml(card.link)}" target="_blank" rel="noreferrer">${escapeHtml(card.linkText)}</a>
+      </article>
+    `).join("");
   }
 
   function renderBenchmark() {
     const host = $("benchmarkSteps");
-    if (!host) return;
-    host.innerHTML = benchmarkSteps().map(([stage, timing, note]) => `
-      <div class="benchmark-step">
-        <span>${escapeHtml(timing)}</span>
-        <strong>${escapeHtml(stage)}</strong>
-        <p>${escapeHtml(note)}</p>
-      </div>
-    `).join("");
+    renderForecastBasis();
+    if (host) {
+      host.innerHTML = benchmarkSteps().map(([stage, timing, note]) => `
+        <div class="benchmark-step">
+          <span>${escapeHtml(timing)}</span>
+          <strong>${escapeHtml(stage)}</strong>
+          <p>${escapeHtml(note)}</p>
+        </div>
+      `).join("");
+    }
   }
 
   function timelineEvents() {
     if (state.track === "all") return [];
-    const projectByKey = new Map(activeProjects().map((project) => [project.project_key, project]));
+    const projectByKey = new Map();
+    activeProjects().forEach((project) => {
+      (project._source_project_keys || [project.project_key]).forEach((key) => projectByKey.set(key, project));
+    });
     const actualEvents = activeMilestones().map((item) => {
       const project = projectByKey.get(item.project_key);
       return {
         kind: "actual",
         key: `actual-${item.id}`,
+        project_key: project?.project_key || item.project_key,
+        record_ids: project?.records || [],
         date: item.date || "待补时间",
         product: item.product,
         material: project?.material || "",
-        company: item.company,
+        company: project?.company || item.company,
         stage: item.stage,
         evidence_grade: item.evidence_grade,
         forecast: project ? forecastForProject(project) : null,
@@ -405,6 +628,8 @@
       return {
         kind: "forecast",
         key: `forecast-${project.project_key}`,
+        project_key: project.project_key,
+        record_ids: project.records || [],
         date: forecast.date || "9999-12-31",
         product: project.product,
         material: project.material,
@@ -430,14 +655,14 @@
         <span class="badge ${event.kind === "forecast" ? "warn" : gradeBadgeClass(event.evidence_grade)}">${event.kind === "forecast" ? "预测节点" : gradeLabel(event.evidence_grade)}</span>
         <h3>${escapeHtml(event.product)}</h3>
         <p><strong>材料</strong> ${escapeHtml(event.material || selectedTrackLabel())}</p>
-        <p><strong>企业</strong> ${escapeHtml(event.company || "-")}</p>
+        <p><strong>企业</strong> ${escapeHtml(displayCompany(event))}</p>
         <p><strong>当前阶段</strong> ${escapeHtml(event.stage || "-")}</p>
         <p><strong>项目预测</strong> ${escapeHtml(forecast ? `${forecast.label}（${forecast.confidence}置信）` : "待判断")}</p>
         <p>${escapeHtml(forecast?.basis || "")}</p>
-        <button class="source-button" type="button" data-product="${escapeHtml(event.product)}">来源</button>
+        <button class="source-button" type="button" data-product="${escapeHtml(event.product)}" data-records="${escapeHtml((event.record_ids || []).join("|"))}">来源</button>
       </article>
     `;
-    host.querySelector(".source-button")?.addEventListener("click", () => focusSourceRows(event.product));
+    host.querySelector(".source-button")?.addEventListener("click", () => focusSourceRows(event.product, event.record_ids || []));
   }
 
   function renderTimeline() {
@@ -493,7 +718,7 @@
               <strong>${escapeHtml(project.product)}</strong>
               <span class="muted-line">${escapeHtml(project.material || project.track_label)}</span>
             </td>
-            <td>${escapeHtml(project.company)}</td>
+            <td>${escapeHtml(displayCompany(project))}</td>
             <td>
               <strong>${escapeHtml(project.current_stage)}</strong>
               <span class="muted-line">${escapeHtml(stageBucketLabel(stageBucket(project)))}</span>
@@ -505,19 +730,44 @@
             <td>${escapeHtml(project.reported_indication || "-")}</td>
             <td>${escapeHtml(project.next_watch || "-")}</td>
             <td>
-              <button class="source-button" type="button" data-product="${escapeHtml(project.product)}">来源</button>
+              <button class="source-button" type="button" data-product="${escapeHtml(project.product)}" data-records="${escapeHtml((project.records || []).join("|"))}">来源</button>
             </td>
           </tr>
         `;
       })
       .join("");
     body.querySelectorAll(".source-button").forEach((button) => {
-      button.addEventListener("click", () => focusSourceRows(button.dataset.product || ""));
+      button.addEventListener("click", () => focusSourceRows(button.dataset.product || "", (button.dataset.records || "").split("|").filter(Boolean)));
     });
   }
 
   function safeDomId(value) {
     return normalizeKey(value).replace(/[^a-z0-9_\-\u4e00-\u9fa5]/g, "-");
+  }
+
+  function renderContext() {
+    const section = $("contextSection");
+    const host = $("contextList");
+    if (!section || !host) return;
+    const items = contextProjects();
+    section.classList.toggle("section-hidden", !items.length);
+    setText("contextCount", `${items.length} 条背景`);
+    host.innerHTML = items
+      .map((project) => `
+        <article class="context-card">
+          <div>
+            <span class="badge warn">${escapeHtml(displayCompany(project))}</span>
+            <strong>${escapeHtml(project.product)}</strong>
+            <p>${escapeHtml(project.reported_status || "-")}</p>
+            <span class="muted-line">${escapeHtml(project.current_stage || "-")} · ${escapeHtml(project.latest_source_date || "待补日期")}</span>
+          </div>
+          <button class="source-button" type="button" data-product="${escapeHtml(project.product)}" data-records="${escapeHtml((project.records || []).join("|"))}">来源</button>
+        </article>
+      `)
+      .join("");
+    host.querySelectorAll(".source-button").forEach((button) => {
+      button.addEventListener("click", () => focusSourceRows(button.dataset.product || "", (button.dataset.records || "").split("|").filter(Boolean)));
+    });
   }
 
   function renderRecords() {
@@ -527,14 +777,14 @@
     setText("recordCount", `${records.length} 条来源`);
     body.innerHTML = records
       .map((record) => `
-        <tr id="source-${safeDomId(record.lead_id || `${record.product}-${record.source_date}`)}" data-product="${escapeHtml(normalizeKey(record.product))}">
+        <tr id="source-${safeDomId(record.lead_id || `${record.product}-${record.source_date}`)}" data-product="${escapeHtml(normalizeKey(record.product))}" data-lead-id="${escapeHtml(record.lead_id || "")}">
           <td>
             <a href="${escapeHtml(record.source_url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(record.source_title || "来源")}</a>
             <span class="muted-line">${escapeHtml(record.source_date || "")}</span>
           </td>
           <td>
             <strong>${escapeHtml(record.product)}</strong>
-            <span class="muted-line">${escapeHtml(record.company)}</span>
+            <span class="muted-line">${escapeHtml(displayCompany(record))}</span>
           </td>
           <td>
             <span class="badge ${gradeBadgeClass(record.evidence_grade)}">${escapeHtml(gradeLabel(record.evidence_grade))}</span>
@@ -548,8 +798,9 @@
     applySourceFocus();
   }
 
-  function focusSourceRows(product) {
+  function focusSourceRows(product, recordIds = []) {
     state.focusedProduct = normalizeKey(product);
+    state.focusedRecordIds = recordIds;
     applySourceFocus();
     $("sourceList")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -561,7 +812,8 @@
       setText("sourceFilterNote", "");
       return;
     }
-    const matches = rows.filter((row) => row.dataset.product === state.focusedProduct);
+    const focusedIds = new Set(state.focusedRecordIds || []);
+    const matches = rows.filter((row) => row.dataset.product === state.focusedProduct || focusedIds.has(row.dataset.leadId || ""));
     matches.forEach((row) => row.classList.add("source-highlight"));
     setText("sourceFilterNote", matches.length ? `已定位 ${matches.length} 条相关来源` : "未找到完全匹配来源，可在清单中按项目名查找。");
   }
@@ -574,6 +826,7 @@
     renderSourceBars();
     renderTimeline();
     renderProjects();
+    renderContext();
     renderRecords();
   }
 

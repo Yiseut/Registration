@@ -159,9 +159,18 @@ async function main() {
     summaryCards: document.querySelectorAll('#trackSummaryCards .track-summary-card').length,
     forecastCards: document.querySelectorAll('#forecastSummary .forecast-rank-card').length,
     forecastMethod: document.querySelector('#forecastMethod')?.textContent || '',
+    basisCards: Array.from(document.querySelectorAll('#forecastBasisCards .basis-card')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
     benchmarkSteps: document.querySelectorAll('#benchmarkSteps .benchmark-step').length,
     kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting', '#kpiArchived'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
     projectText: document.querySelector('#projectBody')?.textContent || '',
+    ecmImplantRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /脱细胞基质植入剂/.test(row.textContent || '')).length,
+    ecmShengzhirunheGelRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => {
+      const text = row.textContent || '';
+      return /圣至润合/.test(text) && /注射用(细胞外基质|ECM)生物凝胶/.test(text) && !/第二款/.test(text);
+    }).length,
+    ecmSisRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /SIS-ECM医美填充产品/.test(row.textContent || '')).length,
+    contextCards: document.querySelectorAll('#contextList .context-card').length,
+    contextText: document.querySelector('#contextList')?.textContent || '',
     bodyText: document.body.textContent || '',
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
@@ -170,10 +179,20 @@ async function main() {
   assert(pipelineOverview.timelineHidden, 'Pipeline overview should not show the all-material timeline');
   assert(pipelineOverview.summaryCards >= 3, 'Pipeline overview should show material summary cards', String(pipelineOverview.summaryCards));
   assert(pipelineOverview.forecastCards >= 5, 'Pipeline overview should show a ranked summary forecast list', String(pipelineOverview.forecastCards));
-  assert(/Botox|T\+30-42|技术审评/.test(pipelineOverview.forecastMethod), 'Pipeline forecast method should cite the benchmark cycle and official review path', pipelineOverview.forecastMethod);
+  assert(/官方审评时限|半年度窗口|已获批项目从预测池移出/.test(pipelineOverview.forecastMethod), 'Pipeline forecast method should explain the estimate model and caveats', pipelineOverview.forecastMethod);
+  assert(pipelineOverview.basisCards.length === 3, 'Pipeline should render three forecast basis cards', String(pipelineOverview.basisCards.length));
+  assert(pipelineOverview.basisCards.some((text) => /NMPA\/CMDE|三类医疗器械注册技术审评90日/.test(text)), 'Pipeline basis should include official NMPA/CMDE timing', pipelineOverview.basisCards.join(' | '));
+  assert(pipelineOverview.basisCards.some((text) => /Ellansé-M|国械注进20263130151/.test(text)), 'Pipeline basis should include the approved device benchmark', pipelineOverview.basisCards.join(' | '));
+  assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.benchmarkSteps === 5, 'Pipeline should render the five-step registration cycle benchmark', String(pipelineOverview.benchmarkSteps));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[3] > 0, 'Pipeline KPIs should show active clinical projects and archived approvals', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
+  assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
+  assert(pipelineOverview.ecmShengzhirunheGelRows === 1, 'Shengzhirunhe ECM gel aliases should be merged into one active project row', String(pipelineOverview.ecmShengzhirunheGelRows));
+  assert(pipelineOverview.ecmSisRows === 0, 'SIS-ECM media wording should verify the Baiyiyuan ECM implant instead of becoming a separate project row', String(pipelineOverview.ecmSisRows));
+  assert(!/行业总体|PDRN\/PN主文档与标准研究|PDRN&PN再生材料注册路径/.test(pipelineOverview.projectText), 'Industry context should not render as active forecast projects', pipelineOverview.projectText);
+  assert(pipelineOverview.contextCards >= 3, 'Pipeline overview should render industry/regulatory context cards separately', String(pipelineOverview.contextCards));
+  assert(/赛道背景 \/ 不对应单一企业/.test(pipelineOverview.contextText), 'Context cards should explain non-company industry sources', pipelineOverview.contextText);
   assert(!pipelineOverview.bodyText.includes('来源覆盖'), 'Pipeline public page should not expose source-coverage backend wording');
   assert(pipelineOverview.overflowX <= 1, 'Pipeline overview has horizontal overflow', String(pipelineOverview.overflowX));
 
@@ -209,6 +228,59 @@ async function main() {
   await pipelinePage.waitForTimeout(300);
   const pipelineSourceNote = await pipelinePage.locator('#sourceFilterNote').textContent();
   assert(/已定位|未找到/.test(pipelineSourceNote || ''), 'Pipeline source jump should update the source list note', pipelineSourceNote || '');
+
+  await pipelinePage.locator('[data-track="pcl"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelinePcl = await pipelinePage.evaluate(() => ({
+    projectText: document.querySelector('#projectBody')?.textContent || '',
+    forecastText: document.querySelector('#forecastSummary')?.textContent || '',
+    archived: document.querySelector('#kpiArchived')?.textContent?.trim() || '',
+    rows: document.querySelectorAll('#projectBody tr').length,
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(!pipelinePcl.projectText.includes('Ellansé-M'), 'Approved Ellanse-M should be removed from active PCL registration progress', pipelinePcl.projectText);
+  assert(!pipelinePcl.forecastText.includes('Ellansé-M'), 'Approved Ellanse-M should be removed from PCL forecast ranking', pipelinePcl.forecastText);
+  assert(Number(pipelinePcl.archived) >= 1, 'PCL view should count Ellanse-M as archived/approved', pipelinePcl.archived);
+  assert(pipelinePcl.rows >= 3, 'PCL view should keep active unapproved projects after removing Ellanse-M', String(pipelinePcl.rows));
+  assert(pipelinePcl.overflowX <= 1, 'Pipeline PCL view has horizontal overflow', String(pipelinePcl.overflowX));
+
+  await pipelinePage.locator('[data-track="pdrn"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelinePdrn = await pipelinePage.evaluate(() => ({
+    activeTab: document.querySelector('.track-tab.active')?.textContent?.trim() || '',
+    projectText: document.querySelector('#projectBody')?.textContent || '',
+    contextText: document.querySelector('#contextList')?.textContent || '',
+    contextCards: document.querySelectorAll('#contextList .context-card').length,
+    wuzhongRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => {
+      const text = row.textContent || '';
+      return /吴中美学|江苏吴中|北京丽徕/.test(text) && /PDRN复合溶液/.test(text);
+    }).length,
+    sourceRows: document.querySelectorAll('#recordBody tr').length,
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(pipelinePdrn.activeTab.includes('PDRN'), 'PDRN tab should become active', pipelinePdrn.activeTab);
+  assert(pipelinePdrn.wuzhongRows === 1, 'WuZhong/Liylai PDRN sources should merge into one product row', String(pipelinePdrn.wuzhongRows));
+  assert(/临床进行中|入组完成/.test(pipelinePdrn.projectText), 'Merged WuZhong PDRN row should keep the latest substantive clinical progress', pipelinePdrn.projectText);
+  assert(!/行业总体|PDRN\/PN主文档与标准研究|PDRN&PN再生材料注册路径/.test(pipelinePdrn.projectText), 'PDRN industry context should not render as active projects', pipelinePdrn.projectText);
+  assert(pipelinePdrn.contextCards >= 3, 'PDRN view should show classification/regulatory context separately', String(pipelinePdrn.contextCards));
+  assert(/赛道背景 \/ 不对应单一企业/.test(pipelinePdrn.contextText) && /主体未披露 \/ 暂不归入企业产品/.test(pipelinePdrn.contextText), 'PDRN context should label industry and undisclosed-subject sources clearly', pipelinePdrn.contextText);
+  assert(pipelinePdrn.sourceRows >= 4, 'PDRN source list should keep both product evidence and context sources', String(pipelinePdrn.sourceRows));
+  assert(pipelinePdrn.overflowX <= 1, 'Pipeline PDRN view has horizontal overflow', String(pipelinePdrn.overflowX));
+
+  const pnTab = pipelinePage.locator('[data-track="pn"]');
+  if (await pnTab.count()) {
+    await pnTab.click();
+    await pipelinePage.waitForTimeout(300);
+    const pipelinePn = await pipelinePage.evaluate(() => ({
+      projectText: document.querySelector('#projectBody')?.textContent || '',
+      contextText: document.querySelector('#contextList')?.textContent || '',
+      contextCards: document.querySelectorAll('#contextList .context-card').length,
+      overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    }));
+    assert(!/行业总体/.test(pipelinePn.projectText), 'PN industry context should not render as active projects', pipelinePn.projectText);
+    assert(pipelinePn.contextCards >= 1 && /赛道背景|主体未披露/.test(pipelinePn.contextText), 'PN background-only view should explain context sources', pipelinePn.contextText);
+    assert(pipelinePn.overflowX <= 1, 'Pipeline PN view has horizontal overflow', String(pipelinePn.overflowX));
+  }
   await pipelinePage.close();
 
   const filteredPage = await openCheckedPage(context, 'index.html?segment=botulinum&origin=imported&q=Dysport&grain=year&map=registrations');

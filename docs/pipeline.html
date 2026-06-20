@@ -9,6 +9,9 @@
     <style>
       .pipeline-shell {
         min-height: 100vh;
+        width: min(1920px, calc(100% - clamp(32px, 4vw, 96px)));
+        margin: 0 auto;
+        padding-bottom: 56px;
       }
 
       .pipeline-hero {
@@ -216,6 +219,43 @@
         color: var(--ink-strong);
         display: block;
         margin-bottom: 8px;
+      }
+
+      .basis-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .basis-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--muted);
+        line-height: 1.6;
+        padding: 14px;
+      }
+
+      .basis-card span {
+        color: var(--faint);
+        display: block;
+        font-size: 12px;
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+
+      .basis-card strong {
+        color: var(--ink-strong);
+        display: block;
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+
+      .basis-card a {
+        color: #2f7bd8;
+        font-weight: 900;
+        text-decoration: none;
       }
 
       .benchmark-steps {
@@ -513,6 +553,36 @@
         margin-left: 10px;
       }
 
+      .context-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .context-card {
+        align-items: start;
+        border: 1px dashed var(--line);
+        border-radius: var(--radius);
+        background: #fffaf3;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: minmax(0, 1fr) auto;
+        padding: 14px;
+      }
+
+      .context-card strong {
+        color: var(--ink-strong);
+        display: block;
+        font-size: 16px;
+        line-height: 1.35;
+        margin-top: 8px;
+      }
+
+      .context-card p {
+        color: var(--muted);
+        line-height: 1.65;
+        margin: 8px 0 0;
+      }
+
       .source-highlight td {
         background: #fff8e8;
         box-shadow: inset 3px 0 #2f7bd8;
@@ -626,10 +696,11 @@
         <article class="panel">
           <div class="panel-head">
             <div>
-              <h2>注册周期样板</h2>
-              <p>以 Botox 等毒麻类/三类械项目作注册节奏参考。</p>
+              <h2>预测依据与样板</h2>
+              <p>把官方时限、已获批药品样板和已获批器械样板拆开作为估算边界。</p>
             </div>
           </div>
+          <div class="basis-grid" id="forecastBasisCards"></div>
           <div class="benchmark-steps" id="benchmarkSteps"></div>
         </article>
       </section>
@@ -685,6 +756,17 @@
         </div>
       </section>
 
+      <section class="panel" id="contextSection">
+        <div class="panel-head">
+          <div>
+            <h2>赛道背景与监管路径</h2>
+            <p>这些资料用于解释分类界定、主文档或监管路径，不对应单一企业产品，也不进入下证顺序预测。</p>
+          </div>
+          <span id="contextCount" class="badge"></span>
+        </div>
+        <div class="context-list" id="contextList"></div>
+      </section>
+
       <section class="panel" id="sourceList">
         <div class="panel-head">
           <div>
@@ -712,7 +794,7 @@
         </div>
       </section>
     </div>
-    <script src="./pipeline-data.js?v=20260620-progress"></script>
-    <script src="./pipeline-app.js?v=20260620-progress"></script>
+    <script src="./pipeline-data.js?v=20260620-context-rollup"></script>
+    <script src="./pipeline-app.js?v=20260620-context-rollup"></script>
   </body>
 </html>

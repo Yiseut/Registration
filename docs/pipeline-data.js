@@ -1139,66 +1139,34 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "ECM/脱细胞基质",
       "product": "脱细胞基质植入剂",
       "company": "白衣缘生物/康哲美丽",
-      "current_stage": "临床进行中",
-      "stage_chain": "临床进行中",
-      "highest_evidence": "A3",
-      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
-      "evidence_count": 1,
-      "public_evidence_count": 1,
-      "verified_source_count": 0,
-      "conflict_count": 0,
-      "hidden_lead_count": 0,
-      "source_lanes": [
-        "company_disclosure"
-      ],
-      "grade_counts": {
-        "A3": 1
-      },
-      "latest_source_date": "2024-06-07",
-      "milestone_dates": [
-        "2024-06-07"
-      ],
-      "reported_status": "企业公告称产品处于中国注册性临床试验阶段",
-      "reported_indication": "面部真皮组织中层至深层注射/鼻唇沟方向",
-      "reported_center_or_pi": "",
-      "next_watch": "跟踪临床完成、注册申报和NMPA受理",
-      "frontstage_ready": true,
-      "records": [
-        "pipe_ecm_baiyiyuan_cms_20240607"
-      ]
-    },
-    {
-      "project_key": "ecm:脱细胞基质植入剂:白衣缘生物",
-      "track": "ecm",
-      "track_label": "ECM/脱细胞基质",
-      "material": "ECM/脱细胞基质",
-      "product": "脱细胞基质植入剂",
-      "company": "白衣缘生物",
       "current_stage": "受理/送达",
-      "stage_chain": "受理/送达",
+      "stage_chain": "临床进行中 → 受理/送达",
       "highest_evidence": "A3",
       "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
-      "evidence_count": 1,
-      "public_evidence_count": 1,
+      "evidence_count": 2,
+      "public_evidence_count": 2,
       "verified_source_count": 0,
       "conflict_count": 0,
       "hidden_lead_count": 0,
       "source_lanes": [
+        "company_disclosure",
         "company_cro_notice"
       ],
       "grade_counts": {
-        "A3": 1
+        "A3": 2
       },
       "latest_source_date": "2025-08-13",
       "milestone_dates": [
+        "2024-06-07",
         "2025-08-13"
       ],
-      "reported_status": "CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
+      "reported_status": "企业公告称产品处于中国注册性临床试验阶段；CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
       "reported_indication": "面部真皮组织中层至深层注射/鼻唇沟方向待官方确认",
       "reported_center_or_pi": "",
       "next_watch": "优先核验NMPA受理号、送达公告或企业原公告",
       "frontstage_ready": true,
       "records": [
+        "pipe_ecm_baiyiyuan_cms_20240607",
         "pipe_ecm_baiyiyuan_sigma_20250813_acceptance"
       ]
     },
@@ -1629,30 +1597,32 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "PCL/聚己内酯",
       "product": "Ellansé-M",
       "company": "华东医药",
-      "current_stage": "受理/送达",
-      "stage_chain": "受理/送达",
-      "highest_evidence": "A3",
-      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
+      "current_stage": "已获批",
+      "stage_chain": "临床入组完成 → 受理/送达 → 已获批",
+      "highest_evidence": "A0",
+      "highest_evidence_label": "A0 Official NMPA approval, delivery notice, review report, or registration certificate.",
       "evidence_count": 1,
       "public_evidence_count": 1,
-      "verified_source_count": 0,
+      "verified_source_count": 1,
       "conflict_count": 0,
       "hidden_lead_count": 0,
       "source_lanes": [
-        "company_disclosure"
+        "official_nmpa_delivery"
       ],
       "grade_counts": {
-        "A3": 1
+        "A0": 1
       },
-      "latest_source_date": "2026-06-20",
+      "latest_source_date": "2026-04-23",
       "milestone_dates": [
-        "2026-06-20"
+        "2023-05-11",
+        "2025-01-01",
+        "2026-04-23"
       ],
-      "reported_status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
-      "reported_indication": "改善颞部凹陷",
+      "reported_status": "2026年4月23日获得NMPA三类进口医疗器械上市批准，注册证编号国械注进20263130151",
+      "reported_indication": "适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷",
       "reported_center_or_pi": "",
-      "next_watch": "补NMPA受理/送达页面并跟踪获批",
-      "frontstage_ready": true,
+      "next_watch": "已获批，转入材料市场分析；后续仅跟踪新增适应症、品规或延续注册",
+      "frontstage_ready": false,
       "records": [
         "pipe_pcl_ellanse_m_huadong_202501_acceptance"
       ]
@@ -3390,24 +3360,24 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "PCL/聚己内酯",
       "product": "Ellansé-M",
       "company": "华东医药",
-      "source_stage": "registration_accepted",
-      "stage_label": "受理/送达",
-      "evidence_grade": "A3",
-      "evidence_rank": 3,
-      "evidence_status": "active",
-      "source_lane": "company_disclosure",
-      "source_type": "company_website",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html",
-      "source_date": "2026-06-20",
-      "reported_status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
-      "reported_indication": "改善颞部凹陷",
+      "source_stage": "approved",
+      "stage_label": "已获批",
+      "evidence_grade": "A0",
+      "evidence_rank": 0,
+      "evidence_status": "verified",
+      "source_lane": "official_nmpa_delivery",
+      "source_type": "nmpa_delivery_notice",
+      "source_title": "2026年04月23日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260423153223162.html",
+      "source_date": "2026-04-23",
+      "reported_status": "获得NMPA三类进口医疗器械上市批准，注册证编号国械注进20263130151",
+      "reported_indication": "适用于颞部，注射至骨膜上层用以改善成人轻中度颞部凹陷",
       "reported_center_or_pi": "",
-      "expected_next_milestone": "补NMPA受理/送达页面并跟踪获批",
-      "confidence": "medium",
-      "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
-      "note": "企业官网管线页；source_date按本轮核验日记录，受理时间见reported_status。",
+      "expected_next_milestone": "转入材料市场分析；仅跟踪新增适应症、品规或延续注册",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "formal_dashboard",
+      "note": "该项目已获批，不再作为注册进展预测对象。",
       "added_at": "2026-06-20"
     },
     {
@@ -4446,12 +4416,12 @@ window.PIPELINE_DASHBOARD_DATA = {
     },
     {
       "id": "milestone_pipe_ecm_baiyiyuan_sigma_20250813_acceptance",
-      "project_key": "ecm:脱细胞基质植入剂:白衣缘生物",
+      "project_key": "ecm:脱细胞基质植入剂:白衣缘生物_康哲美丽",
       "track": "ecm",
       "track_label": "ECM/脱细胞基质",
       "date": "2025-08-13",
       "product": "脱细胞基质植入剂",
-      "company": "白衣缘生物",
+      "company": "白衣缘生物/康哲美丽",
       "stage": "受理/送达",
       "evidence_grade": "A3",
       "status": "CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
@@ -4715,14 +4685,14 @@ window.PIPELINE_DASHBOARD_DATA = {
       "project_key": "pcl:ellansé_m:华东医药",
       "track": "pcl",
       "track_label": "PCL",
-      "date": "2026-06-20",
+      "date": "2026-04-23",
       "product": "Ellansé-M",
       "company": "华东医药",
-      "stage": "受理/送达",
-      "evidence_grade": "A3",
-      "status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html"
+      "stage": "已获批",
+      "evidence_grade": "A0",
+      "status": "2026年4月23日获得NMPA三类进口医疗器械上市批准，注册证编号国械注进20263130151",
+      "source_title": "2026年04月23日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260423153223162.html"
     },
     {
       "id": "milestone_pipe_pcl_ellanse_s_huadong_202512_followup",
