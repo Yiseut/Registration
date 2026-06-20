@@ -422,6 +422,7 @@
     setText("kpiClinical", buckets.get("clinical") || 0);
     setText("kpiReview", buckets.get("review") || 0);
     setText("kpiTesting", buckets.get("testing") || 0);
+    setText("kpiScout", buckets.get("scout") || 0);
   }
 
   function renderSourceBars() {
@@ -525,12 +526,6 @@
     const buckets = countBy(projects, stageBucket);
     const byTrack = countBy(projects, (project) => project.track_label || project.track);
     const topTracks = [...byTrack.entries()].sort((a, b) => b[1] - a[1]);
-    const clinicalTracks = countBy(projects.filter((project) => stageBucket(project) === "clinical"), (project) => project.track_label || project.track);
-    const clinicalTrackText = [...clinicalTracks.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 5)
-      .map(([name, count]) => `${name} ${count}`)
-      .join(" / ") || "暂无";
 
     setText("overviewTitle", state.track === "all" ? "注册进展总览" : `${selectedTrackLabel()}进展判断`);
     setText("overviewLead", state.track === "all"
@@ -543,41 +538,17 @@
         .map(([name, count]) => {
           const trackProjects = projects.filter((project) => (project.track_label || project.track) === name);
           const trackBuckets = countBy(trackProjects, stageBucket);
-          const next = topProjects(trackProjects, 1)[0];
           return `
             <article class="track-summary-card">
               <span>${escapeHtml(name)}</span>
               <strong>${count}</strong>
               <p>临床 ${trackBuckets.get("clinical") || 0} · 受理/审评 ${trackBuckets.get("review") || 0} · 型检 ${trackBuckets.get("testing") || 0}</p>
-              <em>${escapeHtml(next ? `${next.product}｜${forecastForProject(next).label}` : "暂无预测")}</em>
             </article>
           `;
         })
         .join("");
     }
 
-    const stageHost = $("stageOverview");
-    if (stageHost) {
-      const stageRows = ["clinical", "review", "testing", "scout"].map((key) => [stageBucketLabel(key), buckets.get(key) || 0]);
-      const max = Math.max(...stageRows.map(([, count]) => count), 1);
-      stageHost.innerHTML = stageRows.map(([label, count]) => `
-        <div class="source-bar">
-          <span>${escapeHtml(label)}</span>
-          <div class="bar-track"><i class="bar-fill" style="width:${Math.max(7, (count / max) * 100)}%"></i></div>
-          <b>${count}</b>
-        </div>
-      `).join("");
-    }
-
-    const conclusionHost = $("analysisConclusions");
-    if (conclusionHost) {
-      const nearTerm = topProjects(projects, 2).map((project) => `${project.product}（${forecastForProject(project).label}）`).join("；") || "暂无明确近端项目";
-      conclusionHost.innerHTML = `
-        <li>注册临床密度集中在：${escapeHtml(clinicalTrackText)}。</li>
-        <li>近端下证观察对象：${escapeHtml(nearTerm)}。</li>
-        <li>已获批产品仅作为周期样板，不进入本页进展指标。</li>
-      `;
-    }
     renderForecastSummary(projects);
   }
 

@@ -152,7 +152,7 @@
 
       .metric-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 14px;
         margin: 18px 0;
       }
@@ -232,28 +232,6 @@
       .track-summary-card p {
         color: var(--muted);
         margin: 8px 0;
-      }
-
-      .track-summary-card em {
-        color: #2f7bd8;
-        display: block;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 900;
-      }
-
-      .analysis-list {
-        color: var(--muted);
-        display: grid;
-        gap: 10px;
-        line-height: 1.65;
-        margin: 0;
-        padding-left: 20px;
-      }
-
-      .analysis-list li::marker {
-        color: var(--ink-strong);
-        font-weight: 900;
       }
 
       .forecast-summary {
@@ -848,6 +826,11 @@
           <strong id="kpiTesting">0</strong>
           <p>处于检验或注册前置验证</p>
         </article>
+        <article class="metric-card">
+          <span>早期线索</span>
+          <strong id="kpiScout">0</strong>
+          <p>仍需确认临床或受理进展</p>
+        </article>
       </section>
 
       <section class="overview-grid" id="overviewSection">
@@ -859,26 +842,6 @@
             </div>
           </div>
           <div class="track-summary-grid" id="trackSummaryCards"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>阶段分布</h2>
-              <p>查看项目集中在哪些环节。</p>
-            </div>
-          </div>
-          <div class="source-bars" id="stageOverview"></div>
-        </article>
-
-        <article class="panel">
-          <div class="panel-head">
-            <div>
-              <h2>分析结论</h2>
-              <p>提炼最需要关注的变化。</p>
-            </div>
-          </div>
-          <ol class="analysis-list" id="analysisConclusions"></ol>
         </article>
 
         <article class="panel wide forecast-panel">

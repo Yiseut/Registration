@@ -163,16 +163,20 @@ async function main() {
     hasScopeBackLink: document.querySelector('.scope-card .back-link') !== null,
     scopeCardText: document.querySelector('.scope-card')?.textContent || '',
     metricLabels: Array.from(document.querySelectorAll('.metric-card span:first-child')).map((node) => node.textContent?.trim() || ''),
+    hasStageOverview: document.querySelector('#stageOverview') !== null,
     hasArchivedKpi: document.querySelector('#kpiArchived') !== null,
     timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
     summaryCards: document.querySelectorAll('#trackSummaryCards .track-summary-card').length,
+    summaryText: document.querySelector('#trackSummaryCards')?.textContent || '',
+    summaryForecastHighlights: document.querySelectorAll('#trackSummaryCards .track-summary-card em').length,
+    hasAnalysisCard: document.querySelector('#analysisConclusions') !== null,
     forecastCards: document.querySelectorAll('#forecastSummary .forecast-rank-card').length,
     forecastMethod: document.querySelector('#forecastMethod')?.textContent || '',
     hasForecastMethodCard: document.querySelector('.forecast-method') !== null,
     forecastSummaryColumns: getComputedStyle(document.querySelector('.forecast-summary')).gridTemplateColumns,
     basisCards: Array.from(document.querySelectorAll('#forecastBasisCards .basis-card')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
     benchmarkRanges: Array.from(document.querySelectorAll('#benchmarkSteps .benchmark-range')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
-    kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
+    kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting', '#kpiScout'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
     projectText: document.querySelector('#projectBody')?.textContent || '',
     ecmImplantRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /脱细胞基质植入剂/.test(row.textContent || '')).length,
     ecmShengzhirunheGelRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => {
@@ -195,10 +199,13 @@ async function main() {
   assert(!pipelineOverview.hasScopeBackLink, 'Pipeline update area should not keep the old right-side back link');
   assert(/最近更新|\d{4}-\d{2}-\d{2}/.test(pipelineOverview.scopeCardText), 'Pipeline update area should keep the last-updated timestamp', pipelineOverview.scopeCardText);
   assert(!/更新节奏|每月完整刷新|事件触发补充|季度复盘校准|主数据定期同步/.test(pipelineOverview.bodyText), 'Pipeline dashboard should not expose backend update workflow language', pipelineOverview.bodyText);
-  assert(pipelineOverview.metricLabels.join(',') === '注册临床中,受理/审评中,注册检验/型检', 'Pipeline KPI strip should only show pre-approval progress metrics', pipelineOverview.metricLabels.join(','));
+  assert(pipelineOverview.metricLabels.join(',') === '注册临床中,受理/审评中,注册检验/型检,早期线索', 'Pipeline KPI strip should show the four non-duplicated progress buckets', pipelineOverview.metricLabels.join(','));
   assert(!pipelineOverview.hasArchivedKpi, 'Pipeline should not show an approved/listed KPI without a time window');
+  assert(!pipelineOverview.hasStageOverview && !/阶段分布|查看项目集中在哪些环节/.test(pipelineOverview.bodyText), 'Pipeline should not duplicate KPI buckets in a separate stage distribution card', pipelineOverview.bodyText);
   assert(pipelineOverview.timelineHidden, 'Pipeline overview should not show the all-material timeline');
   assert(pipelineOverview.summaryCards >= 3, 'Pipeline overview should show material summary cards', String(pipelineOverview.summaryCards));
+  assert(pipelineOverview.summaryForecastHighlights === 0 && !/预计|暂无预测/.test(pipelineOverview.summaryText), 'Pipeline material summary cards should not repeat forecast project details', pipelineOverview.summaryText);
+  assert(!pipelineOverview.hasAnalysisCard && !/分析结论|提炼最需要关注的变化/.test(pipelineOverview.bodyText), 'Pipeline overview should not render a duplicated analysis conclusion card', pipelineOverview.bodyText);
   assert(pipelineOverview.forecastCards >= 5, 'Pipeline overview should show a ranked summary forecast list', String(pipelineOverview.forecastCards));
   assert(/顺序参考|官方信息/.test(pipelineOverview.forecastMethod), 'Pipeline forecast note should stay concise and user-facing', pipelineOverview.forecastMethod);
   assert(!pipelineOverview.hasForecastMethodCard, 'Pipeline should not render a separate forecast-method card');
@@ -210,7 +217,7 @@ async function main() {
   assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.benchmarkRanges.length === 4, 'Pipeline should render four forecast range bars', String(pipelineOverview.benchmarkRanges.length));
   assert(pipelineOverview.benchmarkRanges.join(' | ').includes('5-9个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
-  assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
+  assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0 && pipelineOverview.kpis[3] >= 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
   assert(pipelineOverview.ecmShengzhirunheGelRows === 1, 'Shengzhirunhe ECM gel aliases should be merged into one active project row', String(pipelineOverview.ecmShengzhirunheGelRows));
