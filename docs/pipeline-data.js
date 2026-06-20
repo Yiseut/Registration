@@ -1,6 +1,6 @@
 window.PIPELINE_DASHBOARD_DATA = {
   "meta": {
-    "title": "注册进度与来源覆盖",
+    "title": "注册进度",
     "updated_at": "2026-06-20 01:07",
     "source_csv": "E:\\shared\\code\\registration\\inbox\\pipeline_source_updates.csv",
     "scope_note": "本页是Pipeline来源层，不与已获批注册证主表KPI相加。"
@@ -3056,7 +3056,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "圣至润合项目已有奥泰康A3临床入组完成和第二款首例入组来源覆盖；本条仅保留资本与主体背景，不进入趋势主表。",
+      "note": "圣至润合项目已有奥泰康A3临床入组完成和第二款首例入组来源佐证；本条仅保留资本与主体背景，不进入趋势主表。",
       "added_at": "2026-06-19"
     },
     {

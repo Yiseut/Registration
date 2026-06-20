@@ -151,6 +151,66 @@ async function main() {
   assert(new URL(overviewPage.url()).searchParams.get('origin') === 'hkmt', 'Origin filter did not update the URL');
   await overviewPage.close();
 
+  const pipelinePage = await openCheckedPage(context, 'pipeline.html');
+  const pipelineOverview = await pipelinePage.evaluate(() => ({
+    h1: document.querySelector('h1')?.textContent?.trim() || '',
+    scope: document.querySelector('#scopeNote')?.textContent || '',
+    timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
+    summaryCards: document.querySelectorAll('#trackSummaryCards .track-summary-card').length,
+    forecastCards: document.querySelectorAll('#forecastSummary .forecast-rank-card').length,
+    forecastMethod: document.querySelector('#forecastMethod')?.textContent || '',
+    benchmarkSteps: document.querySelectorAll('#benchmarkSteps .benchmark-step').length,
+    kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting', '#kpiArchived'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
+    projectText: document.querySelector('#projectBody')?.textContent || '',
+    bodyText: document.body.textContent || '',
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(pipelineOverview.h1 === '注册进度', 'Pipeline page should use a clean user-facing heading', pipelineOverview.h1);
+  assert(pipelineOverview.scope.includes('已获批上市项目转入材料市场分析'), 'Pipeline scope should explain that approved products are removed from registration progress', pipelineOverview.scope);
+  assert(pipelineOverview.timelineHidden, 'Pipeline overview should not show the all-material timeline');
+  assert(pipelineOverview.summaryCards >= 3, 'Pipeline overview should show material summary cards', String(pipelineOverview.summaryCards));
+  assert(pipelineOverview.forecastCards >= 5, 'Pipeline overview should show a ranked summary forecast list', String(pipelineOverview.forecastCards));
+  assert(/Botox|T\+30-42|技术审评/.test(pipelineOverview.forecastMethod), 'Pipeline forecast method should cite the benchmark cycle and official review path', pipelineOverview.forecastMethod);
+  assert(pipelineOverview.benchmarkSteps === 5, 'Pipeline should render the five-step registration cycle benchmark', String(pipelineOverview.benchmarkSteps));
+  assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[3] > 0, 'Pipeline KPIs should show active clinical projects and archived approvals', pipelineOverview.kpis.join(','));
+  assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
+  assert(!pipelineOverview.bodyText.includes('来源覆盖'), 'Pipeline public page should not expose source-coverage backend wording');
+  assert(pipelineOverview.overflowX <= 1, 'Pipeline overview has horizontal overflow', String(pipelineOverview.overflowX));
+
+  await pipelinePage.locator('[data-track="silk"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelineSilk = await pipelinePage.evaluate(() => ({
+    activeTab: document.querySelector('.track-tab.active')?.textContent?.trim() || '',
+    clinical: document.querySelector('#kpiClinical')?.textContent?.trim() || '',
+    timelineHidden: document.querySelector('#timelineSection')?.classList.contains('section-hidden') || false,
+    timelineTitle: document.querySelector('#timelineTitle')?.textContent?.trim() || '',
+    nodes: document.querySelectorAll('#timelineTrack .timeline-node').length,
+    projectedNodes: document.querySelectorAll('#timelineTrack .timeline-node.projected').length,
+    detailText: document.querySelector('#timelineDetails')?.textContent || '',
+    forecastTitle: document.querySelector('#forecastTitle')?.textContent?.trim() || '',
+    forecastCards: document.querySelectorAll('#forecastSummary .forecast-rank-card').length,
+    hasSourceButton: document.querySelector('#timelineDetails .source-button') !== null,
+    projectRows: document.querySelectorAll('#projectBody tr').length,
+    sourceRows: document.querySelectorAll('#recordBody tr').length,
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(pipelineSilk.activeTab.includes('丝素蛋白'), 'Silk tab should become active', pipelineSilk.activeTab);
+  assert(pipelineSilk.clinical === '3', 'Silk should show three clinical-stage active projects', pipelineSilk.clinical);
+  assert(!pipelineSilk.timelineHidden, 'Material tabs should show a material-specific timeline');
+  assert(pipelineSilk.timelineTitle.includes('丝素蛋白'), 'Silk timeline title should name the material track', pipelineSilk.timelineTitle);
+  assert(pipelineSilk.nodes > 0 && pipelineSilk.projectedNodes > 0, 'Silk timeline should include actual and projected nodes', `${pipelineSilk.nodes}/${pipelineSilk.projectedNodes}`);
+  assert(pipelineSilk.forecastTitle.includes('丝素蛋白') && pipelineSilk.forecastCards === 4, 'Silk view should show a track-specific forecast ranking', `${pipelineSilk.forecastTitle} / ${pipelineSilk.forecastCards}`);
+  assert(pipelineSilk.detailText.includes('项目预测') && !/界面新闻|动脉网/.test(pipelineSilk.detailText), 'Timeline point details should stay concise and not duplicate media source copy', pipelineSilk.detailText);
+  assert(pipelineSilk.hasSourceButton, 'Timeline point should expose a source jump button');
+  assert(pipelineSilk.projectRows === 4, 'Silk active table should include three clinical projects plus one review project', String(pipelineSilk.projectRows));
+  assert(pipelineSilk.sourceRows >= 3, 'Silk source list should render related source rows', String(pipelineSilk.sourceRows));
+  assert(pipelineSilk.overflowX <= 1, 'Pipeline silk view has horizontal overflow', String(pipelineSilk.overflowX));
+  await pipelinePage.locator('#timelineDetails .source-button').first().click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelineSourceNote = await pipelinePage.locator('#sourceFilterNote').textContent();
+  assert(/已定位|未找到/.test(pipelineSourceNote || ''), 'Pipeline source jump should update the source list note', pipelineSourceNote || '');
+  await pipelinePage.close();
+
   const filteredPage = await openCheckedPage(context, 'index.html?segment=botulinum&origin=imported&q=Dysport&grain=year&map=registrations');
   const filteredState = await filteredPage.evaluate(() => ({
     rows: document.querySelectorAll('#table-records tbody tr').length,

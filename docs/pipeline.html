@@ -81,11 +81,185 @@
         margin: 8px 0 0;
       }
 
+      .overview-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.72fr);
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .overview-grid .wide {
+        grid-column: 1 / -1;
+      }
+
+      .overview-lead {
+        color: var(--muted);
+        margin: 0 0 16px;
+      }
+
+      .track-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 12px;
+      }
+
+      .track-summary-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.78);
+        padding: 14px;
+      }
+
+      .track-summary-card span {
+        color: var(--faint);
+        display: block;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .track-summary-card strong {
+        color: var(--ink-strong);
+        display: block;
+        font-size: 30px;
+        line-height: 1.1;
+        margin-top: 6px;
+      }
+
+      .track-summary-card p {
+        color: var(--muted);
+        margin: 8px 0;
+      }
+
+      .track-summary-card em {
+        color: #2f7bd8;
+        display: block;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 900;
+      }
+
+      .analysis-list {
+        color: var(--muted);
+        display: grid;
+        gap: 10px;
+        line-height: 1.65;
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .analysis-list li::marker {
+        color: var(--ink-strong);
+        font-weight: 900;
+      }
+
+      .forecast-summary {
+        display: grid;
+        grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.42fr);
+        gap: 14px;
+      }
+
+      .forecast-rank-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .forecast-rank-card {
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.78);
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 40px minmax(0, 1fr) auto;
+        padding: 13px;
+      }
+
+      .forecast-rank {
+        border-radius: 999px;
+        background: #e5f5f1;
+        color: #08745b;
+        display: grid;
+        font-weight: 900;
+        height: 34px;
+        place-items: center;
+        width: 34px;
+      }
+
+      .forecast-rank-card h3 {
+        color: var(--ink-strong);
+        font-size: 16px;
+        line-height: 1.35;
+        margin: 0;
+      }
+
+      .forecast-rank-card p {
+        color: var(--muted);
+        margin: 5px 0 0;
+      }
+
+      .forecast-date {
+        color: #2f7bd8;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      .forecast-method {
+        border: 1px dashed var(--line);
+        border-radius: var(--radius);
+        background: #fffaf3;
+        color: var(--muted);
+        line-height: 1.65;
+        padding: 14px;
+      }
+
+      .forecast-method strong {
+        color: var(--ink-strong);
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .benchmark-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+        gap: 10px;
+      }
+
+      .benchmark-step {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.76);
+        padding: 13px;
+      }
+
+      .benchmark-step span {
+        color: #2f7bd8;
+        display: block;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .benchmark-step strong {
+        color: var(--ink-strong);
+        display: block;
+        margin-top: 5px;
+      }
+
+      .benchmark-step p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.55;
+        margin: 8px 0 0;
+      }
+
       .pipeline-grid {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
         gap: 18px;
         margin-bottom: 18px;
+      }
+
+      .section-hidden {
+        display: none !important;
       }
 
       .source-bars {
@@ -183,6 +357,17 @@
         background: linear-gradient(135deg, #77656a, #2f7bd8);
       }
 
+      .timeline-node.projected .timeline-count {
+        border-color: #2f7bd8;
+        border-style: dashed;
+        color: #2f7bd8;
+        background: #fff;
+      }
+
+      .timeline-node.projected strong {
+        color: #2f7bd8;
+      }
+
       .timeline-node strong {
         color: var(--ink-strong);
         font-size: 12px;
@@ -192,6 +377,14 @@
         max-width: 132px;
         font-size: 12px;
         line-height: 1.35;
+      }
+
+      .timeline-node small {
+        color: var(--faint);
+        display: block;
+        font-size: 11px;
+        line-height: 1.35;
+        max-width: 132px;
       }
 
       .timeline-detail-grid {
@@ -216,6 +409,36 @@
       .timeline-detail p {
         color: var(--muted);
         margin: 5px 0;
+      }
+
+      .timeline-detail p strong {
+        color: var(--ink-strong);
+        display: inline;
+      }
+
+      .forecast-detail {
+        border-style: dashed;
+        background: #fffaf3;
+      }
+
+      .source-button {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--ink-strong);
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 8px;
+        min-height: 32px;
+        padding: 6px 12px;
+      }
+
+      .source-button:hover,
+      .source-button:focus-visible {
+        background: #2f7bd8;
+        outline: none;
       }
 
       .badge {
@@ -284,11 +507,29 @@
         margin-top: 4px;
       }
 
+      .source-filter-note {
+        color: #2f7bd8;
+        font-weight: 900;
+        margin-left: 10px;
+      }
+
+      .source-highlight td {
+        background: #fff8e8;
+        box-shadow: inset 3px 0 #2f7bd8;
+      }
+
       @media (max-width: 980px) {
         .pipeline-hero,
         .pipeline-grid,
-        .metric-grid {
+        .forecast-summary,
+        .metric-grid,
+        .overview-grid,
+        .benchmark-steps {
           grid-template-columns: 1fr;
+        }
+
+        .overview-grid .wide {
+          grid-column: auto;
         }
       }
     </style>
@@ -312,35 +553,93 @@
 
       <nav class="track-tabs" id="trackTabs" aria-label="赛道筛选"></nav>
 
-      <section class="metric-grid" aria-label="来源指标">
+      <section class="metric-grid" aria-label="注册进展指标">
         <article class="metric-card">
-          <span>项目/产品线</span>
-          <strong id="kpiProjects">0</strong>
-          <p>按产品和企业归并</p>
+          <span>注册临床中</span>
+          <strong id="kpiClinical">0</strong>
+          <p>未获批且已有临床推进信号</p>
         </article>
         <article class="metric-card">
-          <span>可上趋势表</span>
-          <strong id="kpiReady">0</strong>
-          <p>A0-A3 且无冲突</p>
+          <span>受理/审评中</span>
+          <strong id="kpiReview">0</strong>
+          <p>已进入递交、受理或审评窗口</p>
         </article>
         <article class="metric-card">
-          <span>来源记录</span>
-          <strong id="kpiRecords">0</strong>
-          <p>公开来源和待核验线索</p>
+          <span>注册检验/型检</span>
+          <strong id="kpiTesting">0</strong>
+          <p>处于检验或注册前置验证</p>
         </article>
         <article class="metric-card">
-          <span>线下待核验</span>
-          <strong id="kpiHidden">0</strong>
-          <p>不进入前台统计</p>
+          <span>已移出已获批</span>
+          <strong id="kpiArchived">0</strong>
+          <p>转入材料市场分析，不占注册进展</p>
         </article>
       </section>
 
-      <section class="pipeline-grid">
+      <section class="overview-grid" id="overviewSection">
         <article class="panel">
           <div class="panel-head">
             <div>
-              <h2>进度时间轴</h2>
-              <p>按公开来源时间排序，点击节点查看对应产品和状态。</p>
+              <h2 id="overviewTitle">注册进展总览</h2>
+              <p id="overviewLead" class="overview-lead"></p>
+            </div>
+          </div>
+          <div class="track-summary-grid" id="trackSummaryCards"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>阶段分布</h2>
+              <p>按活跃项目当前所在注册环节归类。</p>
+            </div>
+          </div>
+          <div class="source-bars" id="stageOverview"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>分析结论</h2>
+              <p>将已获批存量和仍在注册推进的项目拆开观察。</p>
+            </div>
+          </div>
+          <ol class="analysis-list" id="analysisConclusions"></ol>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2 id="forecastTitle">未来下证顺序预测</h2>
+              <p id="forecastLead">基于当前阶段、证据等级和注册周期样板生成。</p>
+            </div>
+          </div>
+          <div class="forecast-summary">
+            <div class="forecast-rank-list" id="forecastSummary"></div>
+            <div class="forecast-method">
+              <strong>预测口径</strong>
+              <p id="forecastMethod"></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>注册周期样板</h2>
+              <p>以 Botox 等毒麻类/三类械项目作注册节奏参考。</p>
+            </div>
+          </div>
+          <div class="benchmark-steps" id="benchmarkSteps"></div>
+        </article>
+      </section>
+
+      <section class="pipeline-grid" id="timelineSection">
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2 id="timelineTitle">材料时间轴</h2>
+              <p id="timelineNote"></p>
             </div>
           </div>
           <div class="timeline-scroll">
@@ -364,7 +663,7 @@
         <div class="panel-head">
           <div>
             <h2>项目进度表</h2>
-            <p>已获批、临床登记、注册推进和待核验项目分开显示。</p>
+            <p>仅保留仍处于注册推进、临床或待验证状态的项目。</p>
           </div>
           <span id="projectCount" class="badge"></span>
         </div>
@@ -373,12 +672,12 @@
             <thead>
               <tr>
                 <th>项目</th>
-                <th>赛道</th>
-                <th>阶段</th>
-                <th>证据</th>
+                <th>企业</th>
+                <th>当前阶段</th>
+                <th>项目预测</th>
                 <th>适应证/部位</th>
-                <th>临床中心/PI</th>
-                <th>下一步</th>
+                <th>下一步观察</th>
+                <th>来源</th>
               </tr>
             </thead>
             <tbody id="projectBody"></tbody>
@@ -386,13 +685,16 @@
         </div>
       </section>
 
-      <section class="panel">
+      <section class="panel" id="sourceList">
         <div class="panel-head">
           <div>
             <h2>来源明细</h2>
             <p>每条来源保留出处，用于继续升级到官方或企业原文。</p>
           </div>
-          <span id="recordCount" class="badge"></span>
+          <div>
+            <span id="recordCount" class="badge"></span>
+            <span id="sourceFilterNote" class="source-filter-note"></span>
+          </div>
         </div>
         <div class="table-scroll">
           <table class="pipeline-table">
@@ -410,7 +712,7 @@
         </div>
       </section>
     </div>
-    <script src="./pipeline-data.js?v=20260619"></script>
-    <script src="./pipeline-app.js?v=20260619"></script>
+    <script src="./pipeline-data.js?v=20260620-progress"></script>
+    <script src="./pipeline-app.js?v=20260620-progress"></script>
   </body>
 </html>
