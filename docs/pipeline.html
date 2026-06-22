@@ -53,6 +53,16 @@
   .metric-card.active { border-color: color-mix(in srgb, var(--brand) 52%, var(--hairline)); box-shadow: var(--shadow-2); }
   .metric-card[disabled] { cursor: default; opacity: 0.5; }
   .metric-card[disabled]:hover { transform: none; box-shadow: var(--shadow-1); }
+  /* KPI cards — one core-palette hue per stage (corner glow + value), so the
+     strip reads as slate / rose / sage / taupe instead of all rose-gray. */
+  .pipeline-shell .kpi.tone-ocean::before { background: radial-gradient(circle at 30% 30%, #8898a0 0%, transparent 70%); opacity: 0.24; }
+  .pipeline-shell .kpi.tone-rose::before  { background: radial-gradient(circle at 30% 30%, #c09090 0%, transparent 70%); opacity: 0.22; }
+  .pipeline-shell .kpi.tone-gold::before  { background: radial-gradient(circle at 30% 30%, #90a090 0%, transparent 70%); opacity: 0.26; }
+  .pipeline-shell .kpi.tone-plum::before  { background: radial-gradient(circle at 30% 30%, #786868 0%, transparent 70%); opacity: 0.15; }
+  .pipeline-shell .kpi.tone-ocean .metric-value { color: #7e8d98; }
+  .pipeline-shell .kpi.tone-rose  .metric-value { color: #bd8a8a; }
+  .pipeline-shell .kpi.tone-gold  .metric-value { color: #7f8f7f; }
+  .pipeline-shell .kpi.tone-plum  .metric-value { color: #786868; }
 
   /* ---- Insight callout ---- */
   .viz-insight { margin: 0 0 20px; line-height: 1.6; }

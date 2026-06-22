@@ -655,17 +655,6 @@
         maxMonths: 36,
         rangeNote: "适合参考已有首款产品后的跟进型材料。",
       },
-      {
-        type: "国家法定周期",
-        title: "NMPA/CMDE 受理后流程",
-        body: "法定周期只覆盖受理后的审评和审批，是项目时间下限参考；不包含临床执行、注册检验排队、企业补正和资料准备。",
-        link: "https://zwfw.nmpa.gov.cn/web/taskview/11100000MB0341032Y100017214300101",
-        linkText: "器械首次注册办事指南",
-        rangeLabel: "5-9个月",
-        minMonths: 5,
-        maxMonths: 9,
-        rangeNote: "仅用于理解受理后的最短制度时间。",
-      },
     ];
   }
 
@@ -1017,7 +1006,7 @@
       },
       xAxis: { type: "category", data: STAGE_BUCKETS.map((b) => b[1]), splitArea: { show: false }, axisLabel: { fontSize: 11.5, interval: 0 } },
       yAxis: { type: "category", data: yLabels, splitArea: { show: false } },
-      visualMap: { min: 0, max: maxV, show: false, inRange: { color: ["#ede0e0", "#c09090"] } },
+      visualMap: { min: 0, max: maxV, show: false, inRange: { color: ["#e7ece6", "#90a090"] } },
       series: [{
         type: "heatmap",
         data,
@@ -1042,8 +1031,8 @@
       xAxis: { type: "value", minInterval: 1 },
       yAxis: { type: "category", data: yLabels },
       series: [
-        { name: "强证据 A0–A3", type: "bar", stack: "g", data: strong, color: "#c09090", barWidth: "58%", itemStyle: { borderRadius: [4, 0, 0, 4] } },
-        { name: "待核验 A4–A6", type: "bar", stack: "g", data: watch, color: "#8898a0", itemStyle: { borderRadius: [0, 4, 4, 0] } },
+        { name: "强证据 A0–A3", type: "bar", stack: "g", data: strong, color: "#8898a0", barWidth: "58%", itemStyle: { borderRadius: [4, 0, 0, 4] } },
+        { name: "待核验 A4–A6", type: "bar", stack: "g", data: watch, color: "#c09090", itemStyle: { borderRadius: [0, 4, 4, 0] } },
       ],
     }, true);
   }
@@ -1058,16 +1047,21 @@
       if (!byWindow.has(window)) byWindow.set(window, []);
       byWindow.get(window).push(project);
     });
-    const entries = [...byWindow.keys()]
-      .sort((a, b) => {
-        if (a === "待判断") return 1;
-        if (b === "待判断") return -1;
-        return a.localeCompare(b);
-      })
-      .map((window) => [window, byWindow.get(window).length]);
+    const windows = [...byWindow.keys()].sort((a, b) => {
+      if (a === "待判断") return 1;
+      if (b === "待判断") return -1;
+      return a.localeCompare(b);
+    });
+    const STAGE_SERIES = [
+      ["clinical", "注册临床中", "#8898a0"],
+      ["review", "受理/审评", "#c09090"],
+      ["testing", "注册检验/型检", "#90a090"],
+      ["scout", "早期线索", "#9d7b7b"],
+    ];
     setText("forecastWindowSub", state.track === "all" ? "全部在研项目" : selectedTrackLabel());
     chart.setOption({
-      grid: { left: 8, right: 16, top: 16, bottom: 22, containLabel: true },
+      grid: { left: 8, right: 16, top: 34, bottom: 22, containLabel: true },
+      legend: { top: 2, data: STAGE_SERIES.map((s) => s[1]) },
       tooltip: {
         trigger: "axis",
         axisPointer: { type: "shadow" },
@@ -1078,15 +1072,16 @@
           return head + tooltipProductList(items);
         },
       },
-      xAxis: { type: "category", data: entries.map((e) => e[0]), axisLabel: { fontSize: 11.5 } },
+      xAxis: { type: "category", data: windows, axisLabel: { fontSize: 11.5 } },
       yAxis: { type: "value", minInterval: 1 },
-      series: [{
+      series: STAGE_SERIES.map(([key, name, color]) => ({
+        name,
         type: "bar",
-        data: entries.map((e) => e[1]),
-        barWidth: "46%",
-        itemStyle: { color: "#c09090", borderRadius: [6, 6, 0, 0] },
-        label: { show: true, position: "top", color: "#9d7b7b", fontSize: 11 },
-      }],
+        stack: "win",
+        color,
+        barWidth: "52%",
+        data: windows.map((w) => byWindow.get(w).filter((p) => stageBucket(p) === key).length),
+      })),
     }, true);
   }
 

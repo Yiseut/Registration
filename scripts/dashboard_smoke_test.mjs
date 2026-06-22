@@ -210,13 +210,12 @@ async function main() {
   assert(/顺序参考|官方信息/.test(pipelineOverview.forecastMethod), 'Pipeline forecast note should stay concise and user-facing', pipelineOverview.forecastMethod);
   assert(!pipelineOverview.hasForecastMethodCard, 'Pipeline should not render a separate forecast-method card');
   assert(!pipelineOverview.forecastSummaryColumns || pipelineOverview.forecastSummaryColumns === 'none', 'Pipeline forecast ranking should not reserve a second column for methodology copy', pipelineOverview.forecastSummaryColumns);
-  assert(pipelineOverview.basisCards.length === 4, 'Pipeline should render four forecast basis cards', String(pipelineOverview.basisCards.length));
-  assert(pipelineOverview.basisCards.some((text) => /NMPA\/CMDE|法定周期|受理后的审评/.test(text)), 'Pipeline basis should include official NMPA/CMDE timing', pipelineOverview.basisCards.join(' | '));
+  assert(pipelineOverview.basisCards.length === 3, 'Pipeline should render three full-cycle forecast basis cards', String(pipelineOverview.basisCards.length));
   assert(pipelineOverview.basisCards.some((text) => /Ellansé-M|跟进型材料|2026-04-23/.test(text)), 'Pipeline basis should include the approved follow-on device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /优法兰|首证类器械|国械注准20253130390/.test(text)), 'Pipeline basis should include a first-certificate device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
-  assert(pipelineOverview.benchmarkRanges.length === 4, 'Pipeline should render four forecast range bars', String(pipelineOverview.benchmarkRanges.length));
-  assert(pipelineOverview.benchmarkRanges.join(' | ').includes('5-9个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
+  assert(pipelineOverview.benchmarkRanges.length === 3, 'Pipeline should render three full-cycle forecast range bars', String(pipelineOverview.benchmarkRanges.length));
+  assert(pipelineOverview.benchmarkRanges.join(' | ').includes('18-36个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0 && pipelineOverview.kpis[3] >= 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡|Radiesse\/瑞德喜/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
