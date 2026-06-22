@@ -36,6 +36,12 @@
     if (project?.track === "caha" && /cgbio华瑭大昌/.test(company) && /(facetem|caha填充物|羟基磷灰石填充物|上市许可合作)/.test(product)) {
       return "facetem";
     }
+    if (project?.track === "caha" && /merz/.test(company) && /(radiesse|瑞德喜|芮得怡|微晶瓷|羟基磷酸钙微球面部填充剂)/.test(product)) {
+      return "radiesse";
+    }
+    if (project?.track === "caha" && /摩漾/.test(company) && /(aphranel|优法兰|羟基磷酸钙微球面部填充剂)/.test(product)) {
+      return "aphranel";
+    }
     if (project?.track === "caha" && /abbvieallergan/.test(company) && /harmonyca/.test(product)) {
       return "harmonyca";
     }
@@ -62,6 +68,7 @@
   function companyAliasKey(value, track) {
     const company = normalizeKey(value).replace(/[()（）]/g, "");
     if (track === "caha" && /(cgbio|华瑭|htdk)/.test(company)) return "cgbio华瑭大昌";
+    if (track === "caha" && /(merz|麦施|梅尔茨)/.test(company)) return "merz";
     if (track === "caha" && /(abbvie|allergan|艾尔建)/.test(company)) return "abbvieallergan";
     if (track === "caha" && /昊海/.test(company)) return "昊海生科";
     return primaryCompanyKey(value);
@@ -88,17 +95,29 @@
     return [item?.track, item?.product].map(normalizeKey).join("|");
   }
 
-  function isCompletedProject(project) {
+  function isExpansionProject(project) {
+    return /新增适应症|新增适应证|扩张|扩展|新适应|品规调整|规格调整|剂型调整/.test(
+      `${project?.current_stage || ""} ${project?.product || ""} ${project?.reported_status || ""}`
+    );
+  }
+
+  function hasCompletedStatus(project) {
     const stage = String(project?.current_stage || "");
     const status = String(project?.reported_status || "");
-    const explicitExpansion = /新增适应症|新增适应证|扩张|扩展|新适应|品规调整|规格调整|剂型调整/.test(`${stage} ${project?.product || ""}`);
-    if (explicitExpansion) return false;
+    if (isExpansionProject(project)) return false;
     if (/既有证照|非医美基线/.test(stage)) return true;
     if (/^(已获批|已上市)$/.test(stage)) return true;
     if (/注册证.*获批|获得.*注册证|NMPA批准上市|批准上市|正式获批/.test(status) && !/临床|入组|随访|受理|审评|注册检验|型检/.test(stage)) {
       return true;
     }
     return false;
+  }
+
+  const completedProjectGroups = new Set(data.projects.filter(hasCompletedStatus).map(projectGroupKey));
+
+  function isCompletedProject(project) {
+    if (hasCompletedStatus(project)) return true;
+    return !isExpansionProject(project) && completedProjectGroups.has(projectGroupKey(project));
   }
 
   function isContextProject(project) {
@@ -348,6 +367,14 @@
   }
 
   function forecastForProject(project) {
+    if (project?.forecast_label_override) {
+      return {
+        date: project.forecast_date_override || "",
+        label: project.forecast_label_override,
+        confidence: project.forecast_confidence || "低",
+        basis: project.forecast_basis_override || "公司口径；待官方信息核验",
+      };
+    }
     const today = data.meta.current_date || "2026-06-20";
     const bucket = stageBucket(project);
     const stage = `${project?.current_stage || ""} ${project?.reported_status || ""}`;
@@ -378,7 +405,6 @@
 
   function renderMeta() {
     setText("pageTitle", data.meta.title || "注册进度");
-    setText("scopeNote", "关注仍在推进的注册项目。已获批产品单独看市场表现。");
     setText("updatedAt", data.meta.updated_at || "-");
   }
 

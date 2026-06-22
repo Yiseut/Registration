@@ -154,7 +154,7 @@ async function main() {
   const pipelinePage = await openCheckedPage(context, 'pipeline.html');
   const pipelineOverview = await pipelinePage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',
-    scope: document.querySelector('#scopeNote')?.textContent || '',
+    hasScopeNote: document.querySelector('#scopeNote') !== null,
     globalNavText: document.querySelector('.pipeline-global-nav')?.textContent || '',
     globalNavLinks: Array.from(document.querySelectorAll('.pipeline-global-nav a')).map((node) => ({
       text: node.textContent?.trim() || '',
@@ -192,7 +192,7 @@ async function main() {
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(pipelineOverview.h1 === '注册进度', 'Pipeline page should use a clean user-facing heading', pipelineOverview.h1);
-  assert(pipelineOverview.scope.includes('关注仍在推进的注册项目'), 'Pipeline scope should stay concise and user-facing', pipelineOverview.scope);
+  assert(!pipelineOverview.hasScopeNote && !/关注仍在推进的注册项目|已获批产品单独看市场表现/.test(pipelineOverview.bodyText), 'Pipeline hero should not render a redundant scope sentence', pipelineOverview.bodyText);
   assert(['返回总览', '透明质酸钠', 'PCL', '自定义透视', '注册进度'].every((label) => pipelineOverview.globalNavText.includes(label)), 'Pipeline global navigation should render the dashboard menu', pipelineOverview.globalNavText);
   assert(pipelineOverview.globalNavLinks.some((link) => link.text === 'PCL' && link.href.includes('tracks/pcl.html')), 'Pipeline global navigation should link directly to PCL', JSON.stringify(pipelineOverview.globalNavLinks));
   assert(pipelineOverview.globalNavLinks.some((link) => link.text === '返回总览' && link.href.includes('index.html')), 'Pipeline global navigation should keep the overview return action in the top-left menu', JSON.stringify(pipelineOverview.globalNavLinks));
@@ -283,6 +283,7 @@ async function main() {
     const rowTexts = Array.from(document.querySelectorAll('#projectBody tr')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
     const forecastTexts = Array.from(document.querySelectorAll('#forecastSummary .forecast-rank-card')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
     const timelineTexts = Array.from(document.querySelectorAll('#timelineTrack .timeline-node')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    const sourceText = document.querySelector('#recordBody')?.textContent || '';
     const count = (rows, pattern) => rows.filter((text) => pattern.test(text)).length;
     return {
       rows: rowTexts.length,
@@ -290,6 +291,10 @@ async function main() {
       cgbioForecastRows: count(forecastTexts, /CGBio|华瑭/),
       harmonyProjectRows: count(rowTexts, /HArmonyCa/i),
       haohaiProjectRows: count(rowTexts, /昊海生科/),
+      hasRadiesseProject: rowTexts.some((text) => /Radiesse|RADIESSE|瑞德喜|芮得怡/.test(text)),
+      hasRadiesseForecast: forecastTexts.some((text) => /Radiesse|RADIESSE|瑞德喜|芮得怡/.test(text)),
+      hasRadiesseTimeline: timelineTexts.some((text) => /Radiesse|RADIESSE|瑞德喜|芮得怡/.test(text)),
+      hasRadiesseSource: /Radiesse|RADIESSE|瑞德喜|芮得怡/.test(sourceText),
       hasGenericCgbioProject: rowTexts.some((text) => /CaHA填充物中国上市许可合作/.test(text)),
       hasGenericCgbioForecast: forecastTexts.some((text) => /CaHA填充物中国上市许可合作/.test(text)),
       hasGenericCgbioTimeline: timelineTexts.some((text) => /CaHA填充物中国上市许可合作/.test(text)),
@@ -300,6 +305,7 @@ async function main() {
   assert(!pipelineCaha.hasGenericCgbioProject && !pipelineCaha.hasGenericCgbioForecast && !pipelineCaha.hasGenericCgbioTimeline, 'Generic CGBio/Huatang cooperation wording should verify FACETEM instead of rendering separately', JSON.stringify(pipelineCaha));
   assert(pipelineCaha.harmonyProjectRows === 1, 'HArmonyCa sources should merge into one CaHA project row', JSON.stringify(pipelineCaha));
   assert(pipelineCaha.haohaiProjectRows === 1, 'Haohai CaHA generic and product-series sources should merge into one project row', JSON.stringify(pipelineCaha));
+  assert(!pipelineCaha.hasRadiesseProject && !pipelineCaha.hasRadiesseForecast && !pipelineCaha.hasRadiesseTimeline && !pipelineCaha.hasRadiesseSource, 'Approved Radiesse/RADIESSE CaHA records should be excluded from active registration progress', JSON.stringify(pipelineCaha));
   assert(pipelineCaha.overflowX <= 1, 'Pipeline CaHA view has horizontal overflow', String(pipelineCaha.overflowX));
 
   await pipelinePage.locator('[data-track="pdrn_pn"]').click();

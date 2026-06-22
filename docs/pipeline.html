@@ -98,10 +98,6 @@
         box-shadow: var(--shadow);
       }
 
-      .hero-note {
-        max-width: 760px;
-      }
-
       .scope-card {
         display: grid;
         justify-items: end;
@@ -683,6 +679,21 @@
         text-decoration: none;
       }
 
+      .source-table {
+        min-width: 1280px;
+        table-layout: fixed;
+      }
+
+      .source-table col:nth-child(1) { width: 24%; }
+      .source-table col:nth-child(2) { width: 20%; }
+      .source-table col:nth-child(3) { width: 13%; }
+      .source-table col:nth-child(4) { width: 20%; }
+      .source-table col:nth-child(5) { width: 23%; }
+
+      .source-table .badge {
+        white-space: normal;
+      }
+
       .muted-line {
         color: var(--muted);
         display: block;
@@ -798,7 +809,6 @@
         <div>
           <p class="eyebrow">PIPELINE INTELLIGENCE</p>
           <h1 id="pageTitle">注册进度</h1>
-          <p class="hero-note" id="scopeNote"></p>
         </div>
         <div class="scope-card">
           <div>
@@ -945,7 +955,14 @@
           </div>
         </div>
         <div class="table-scroll">
-          <table class="pipeline-table">
+          <table class="pipeline-table source-table">
+            <colgroup>
+              <col>
+              <col>
+              <col>
+              <col>
+              <col>
+            </colgroup>
             <thead>
               <tr>
                 <th>来源</th>
