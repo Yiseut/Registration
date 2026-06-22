@@ -218,7 +218,7 @@ async function main() {
   assert(pipelineOverview.benchmarkRanges.length === 4, 'Pipeline should render four forecast range bars', String(pipelineOverview.benchmarkRanges.length));
   assert(pipelineOverview.benchmarkRanges.join(' | ').includes('5-9个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0 && pipelineOverview.kpis[3] >= 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
-  assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
+  assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡|Radiesse\/瑞德喜/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
   assert(pipelineOverview.ecmShengzhirunheGelRows === 1, 'Shengzhirunhe ECM gel aliases should be merged into one active project row', String(pipelineOverview.ecmShengzhirunheGelRows));
   assert(pipelineOverview.ecmSisRows === 0, 'SIS-ECM media wording should verify the Baiyiyuan ECM implant instead of becoming a separate project row', String(pipelineOverview.ecmSisRows));
