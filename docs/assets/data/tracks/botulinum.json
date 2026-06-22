@@ -7,19 +7,19 @@
     "accent": "#737ed0"
   },
   "kpi": {
-    "total": 11,
-    "main": 11,
+    "total": 12,
+    "main": 12,
     "companies": 8,
     "indications": 5,
-    "verified": 11,
+    "verified": 12,
     "domestic": 2,
-    "imported": 9,
+    "imported": 10,
     "hkmt": 0
   },
   "company_share": [
     {
       "name": "艾尔建 / AbbVie",
-      "value": 2
+      "value": 3
     },
     {
       "name": "四环医药 / 渼颜空间",
@@ -54,19 +54,19 @@
   "indication_share": [
     {
       "name": "眉间纹",
-      "value": 11
+      "value": 12
     },
     {
       "name": "鱼尾纹",
-      "value": 2
+      "value": 3
     },
     {
       "name": "咬肌突出",
-      "value": 2
+      "value": 3
     },
     {
       "name": "额纹",
-      "value": 2
+      "value": 3
     },
     {
       "name": "腋窝多汗",
@@ -80,13 +80,13 @@
     },
     {
       "name": "进口",
-      "value": 9
+      "value": 10
     }
   ],
   "material_share": [
     {
       "name": "A型肉毒毒素",
-      "value": 11
+      "value": 12
     }
   ],
   "timeline": {
@@ -98,7 +98,7 @@
       2026
     ],
     "values": [
-      2,
+      3,
       1,
       3,
       3,
@@ -107,8 +107,8 @@
   },
   "company_indication_heatmap": {
     "companies": [
-      "四环医药 / 渼颜空间",
       "艾尔建 / AbbVie",
+      "四环医药 / 渼颜空间",
       "麦施美学 / Merz",
       "Sinclair / 华东医药",
       "兰州生物",
@@ -136,23 +136,23 @@
       ],
       [
         0,
-        1,
-        2
+        0,
+        3
       ],
       [
         3,
-        1,
-        2
+        0,
+        3
       ],
       [
         1,
-        1,
-        2
+        0,
+        3
       ],
       [
         2,
-        1,
-        2
+        0,
+        3
       ],
       [
         0,
@@ -161,7 +161,7 @@
       ],
       [
         0,
-        0,
+        1,
         2
       ],
       [
@@ -266,7 +266,7 @@
       "device_type": "药品 / 毒性药品 / 注射针剂",
       "strategic": "肉毒毒素",
       "brand": "保妥适 Botox",
-      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / 国药准字SJ20171005",
+      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / 国药准字SJ20171004 / 国药准字SJ20171005",
       "product_name": "注射用A型肉毒毒素",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
@@ -276,17 +276,17 @@
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
       "material_form": "传统天然A型",
-      "approval_date": "2009",
+      "approval_date": "2022-06-14",
       "approval_year": 2009,
-      "valid_until": "",
-      "validity_status": "",
+      "valid_until": "2027-06-13",
+      "validity_status": "有效",
       "market_scope": "已获批产品",
       "application_segment": "",
       "primary_indication": "眉间纹",
       "approved_indications": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
       "indication_description": "暂时性改善成人中度至重度眉间纹，通常对应皱眉肌和/或降眉间肌活动。",
       "scope_full": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
-      "specification": "50单位/支、100单位/支",
+      "specification": "50单位/支；包装规格：1支/盒、2支/盒",
       "components": "",
       "lidocaine_status": "",
       "product_tags": "进口 / 高端品牌 / 传统天然A型 / 人血白蛋白 / 精准弥散 / 精细皱纹 / 多规格 / 4个医美适应症",
@@ -313,8 +313,8 @@
       "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
       "official_product_name": "注射用A型肉毒毒素",
       "official_registrant": "Allergan Pharmaceuticals Ireland",
-      "official_approval_date": "2009",
-      "official_valid_until": "",
+      "official_approval_date": "2022-06-14",
+      "official_valid_until": "2027-06-13",
       "official_indication": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
       "official_scope": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
       "verified": true,
@@ -325,8 +325,82 @@
         "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
-      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
-      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "source_title": "药学数据中心进口药品注册证详情；截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://pharm.ncmi.cn/zysjk/ypjkyp/202312/t20231205_399578.html",
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "botulinum_dashboard_data.json"
+    },
+    {
+      "id": "BOTULINUM-国药准字SJ20171004",
+      "track": "botulinum",
+      "track_name": "肉毒毒素",
+      "record_type": "药品",
+      "regulatory_class": "药品批准文号",
+      "device_type": "药品 / 毒性药品 / 注射针剂",
+      "strategic": "肉毒毒素",
+      "brand": "保妥适 Botox",
+      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / 国药准字SJ20171004 / 国药准字SJ20171005",
+      "product_name": "注射用A型肉毒毒素",
+      "company": "艾尔建 / AbbVie",
+      "company_key": "abbvie_allergan",
+      "registrant": "Allergan Pharmaceuticals Ireland",
+      "certificate_no": "国药准字SJ20171004",
+      "origin": "进口",
+      "category": "肉毒毒素",
+      "material_family": "A型肉毒毒素",
+      "material_form": "传统天然A型",
+      "approval_date": "2022-06-14",
+      "approval_year": 2009,
+      "valid_until": "2027-06-13",
+      "validity_status": "有效",
+      "market_scope": "已获批产品",
+      "application_segment": "",
+      "primary_indication": "眉间纹",
+      "approved_indications": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
+      "indication_description": "暂时性改善成人中度至重度眉间纹，通常对应皱眉肌和/或降眉间肌活动。",
+      "scope_full": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
+      "specification": "50单位/支；包装规格：3支/盒、6支/盒",
+      "components": "",
+      "lidocaine_status": "",
+      "product_tags": "进口 / 高端品牌 / 传统天然A型 / 人血白蛋白 / 精准弥散 / 精细皱纹 / 多规格 / 4个医美适应症",
+      "market_claim": "品牌溢价高，公众号和企业新闻均强调其适应症矩阵更完整，适合单独观察合规覆盖优势。",
+      "boundary_reason": "",
+      "indications": [
+        "眉间纹",
+        "鱼尾纹",
+        "咬肌突出",
+        "额纹"
+      ],
+      "tags": [
+        "进口",
+        "高端品牌",
+        "传统天然A型",
+        "人血白蛋白",
+        "精准弥散",
+        "精细皱纹",
+        "多规格",
+        "4个医美适应症"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家药监局NMPA进口药品注册历史数据",
+      "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
+      "official_product_name": "注射用A型肉毒毒素",
+      "official_registrant": "Allergan Pharmaceuticals Ireland",
+      "official_approval_date": "2022-06-14",
+      "official_valid_until": "2027-06-13",
+      "official_indication": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
+      "official_scope": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸",
+        "肉毒毒素"
+      ],
+      "source_account": "公开资料/NMPA公告口径",
+      "source_title": "药学数据中心进口药品注册证详情；截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://pharm.ncmi.cn/zysjk/ypjkyp/202312/t20231205_399581.html",
       "confidence": "high",
       "data_status": "已结构化",
       "source_dataset": "botulinum_dashboard_data.json"
@@ -340,7 +414,7 @@
       "device_type": "药品 / 毒性药品 / 注射针剂",
       "strategic": "肉毒毒素",
       "brand": "保妥适 Botox",
-      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / 国药准字SJ20171005",
+      "aliases": "BOTOX / 批准文号组：国药准字SJ20171003 / 国药准字SJ20171004 / 国药准字SJ20171005",
       "product_name": "注射用A型肉毒毒素",
       "company": "艾尔建 / AbbVie",
       "company_key": "abbvie_allergan",
@@ -350,17 +424,17 @@
       "category": "肉毒毒素",
       "material_family": "A型肉毒毒素",
       "material_form": "传统天然A型",
-      "approval_date": "2009",
+      "approval_date": "2022-06-14",
       "approval_year": 2009,
-      "valid_until": "",
-      "validity_status": "",
+      "valid_until": "2027-06-13",
+      "validity_status": "有效",
       "market_scope": "已获批产品",
       "application_segment": "",
       "primary_indication": "眉间纹",
       "approved_indications": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
       "indication_description": "暂时性改善成人中度至重度眉间纹，通常对应皱眉肌和/或降眉间肌活动。",
       "scope_full": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
-      "specification": "50单位/支、100单位/支",
+      "specification": "100单位/支；包装规格：1支/盒",
       "components": "",
       "lidocaine_status": "",
       "product_tags": "进口 / 高端品牌 / 传统天然A型 / 人血白蛋白 / 精准弥散 / 精细皱纹 / 多规格 / 4个医美适应症",
@@ -387,8 +461,8 @@
       "official_source": "国家药监局 NMPA 进口药品注册历史数据 / 药学数据中心二次校验",
       "official_product_name": "注射用A型肉毒毒素",
       "official_registrant": "Allergan Pharmaceuticals Ireland",
-      "official_approval_date": "2009",
-      "official_valid_until": "",
+      "official_approval_date": "2022-06-14",
+      "official_valid_until": "2027-06-13",
       "official_indication": "眉间纹 / 鱼尾纹 / 咬肌突出 / 额纹",
       "official_scope": "中国医美相关适应症已覆盖皱眉纹/眉间纹、眼角侧皱纹（鱼尾纹）、咬肌突出（肥大）和额纹；前台按适应症事件拆分展示。",
       "verified": true,
@@ -399,8 +473,8 @@
         "肉毒毒素"
       ],
       "source_account": "公开资料/NMPA公告口径",
-      "source_title": "截至2025年7月我国批准6种A型肉毒毒素",
-      "source_url": "https://scjdglj.ordos.gov.cn/zwgk_140666/fdzdgknr/tjsj_161747/202509/t20250903_3831909.html",
+      "source_title": "药学数据中心进口药品注册证详情；截至2025年7月我国批准6种A型肉毒毒素",
+      "source_url": "https://pharm.ncmi.cn/zysjk/ypjkyp/202312/t20231205_400846.html",
       "confidence": "high",
       "data_status": "已结构化",
       "source_dataset": "botulinum_dashboard_data.json"
