@@ -1073,9 +1073,9 @@
     }, true);
   }
 
-  function renderForecastWindowChart() {
-    const chart = getChart("chartForecastWindow");
-    if (!chart) return;
+  function renderForecastTimeline() {
+    const host = $("forecastTimeline");
+    if (!host) return;
     const projects = activeProjects();
     const byWindow = new Map();
     projects.forEach((project) => {
@@ -1088,37 +1088,25 @@
       if (b === "待判断") return -1;
       return a.localeCompare(b);
     });
-    const STAGE_SERIES = [
-      ["clinical", "注册临床中", "#8898a0"],
-      ["review", "受理/审评", "#c09090"],
-      ["testing", "注册检验/型检", "#90a090"],
-      ["scout", "早期线索", "#9d7b7b"],
-    ];
     setText("forecastWindowSub", state.track === "all" ? "全部在研项目" : selectedTrackLabel());
-    chart.setOption({
-      grid: { left: 8, right: 16, top: 34, bottom: 22, containLabel: true },
-      legend: { top: 2, data: STAGE_SERIES.map((s) => s[1]) },
-      tooltip: {
-        trigger: "axis",
-        axisPointer: { type: "shadow" },
-        extraCssText: TOOLTIP_CSS,
-        formatter: (ps) => {
-          const items = byWindow.get(ps[0].name) || [];
-          const head = `<div style="font-weight:600;color:#786868;margin-bottom:6px">${ps[0].name} · 预计下证 ${items.length} 个</div>`;
-          return head + tooltipProductList(items);
-        },
-      },
-      xAxis: { type: "category", data: windows, axisLabel: { fontSize: 11.5 } },
-      yAxis: { type: "value", minInterval: 1 },
-      series: STAGE_SERIES.map(([key, name, color]) => ({
-        name,
-        type: "bar",
-        stack: "win",
-        color,
-        barWidth: "52%",
-        data: windows.map((w) => byWindow.get(w).filter((p) => stageBucket(p) === key).length),
-      })),
-    }, true);
+    if (!windows.length) {
+      host.innerHTML = "<p class='muted' style='font-size:12.5px'>暂无可预测项目。</p>";
+      return;
+    }
+    const max = Math.max(...windows.map((w) => byWindow.get(w).length), 1);
+    host.innerHTML = `<div class="forecast-tl-track">${windows.map((w) => {
+      const items = byWindow.get(w);
+      const n = items.length;
+      const size = Math.round(38 + (n / max) * 14); // 38–52px by count
+      const list = items.slice(0, 12).map((it) => `· ${displayCompany(it)} · ${it.product}`).join("\n");
+      const more = items.length > 12 ? `\n…另 ${items.length - 12} 个` : "";
+      const title = `${w} · 预计下证 ${n} 个\n${list}${more}`;
+      const pending = w === "待判断" ? " pending" : "";
+      return `<div class="ftl-node" title="${escapeHtml(title)}">
+        <div class="ftl-dot-wrap"><span class="ftl-dot${pending}" style="width:${size}px;height:${size}px">${n}</span></div>
+        <span class="ftl-win">${escapeHtml(w)}</span>
+      </div>`;
+    }).join("")}</div>`;
   }
 
   function render() {
@@ -1149,8 +1137,7 @@
       charts.chartTrackStage && charts.chartTrackStage.resize();
       charts.chartEvidence && charts.chartEvidence.resize();
     }
-    renderForecastWindowChart();
-    charts.chartForecastWindow && charts.chartForecastWindow.resize();
+    renderForecastTimeline();
     renderKpis();
     renderOverview();
     renderBenchmark();

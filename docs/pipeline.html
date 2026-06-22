@@ -91,6 +91,17 @@
   .track-summary-card strong { display: block; font-size: 28px; font-weight: 600; color: var(--ink); margin-top: 4px; font-variant-numeric: tabular-nums; }
   .track-summary-card p { margin: 6px 0 0; font-size: 12px; color: var(--ink-3); }
 
+  /* ---- Forecast window timeline (dots with counts) ---- */
+  .forecast-tl { overflow-x: auto; padding: 8px 2px 6px; }
+  .forecast-tl-track { position: relative; display: flex; justify-content: space-between; gap: 8px; min-width: 560px; padding: 0 14px; }
+  .forecast-tl-track::before { content: ""; position: absolute; left: 44px; right: 44px; top: 27px; height: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--brand-glow), var(--brand)); z-index: 0; }
+  .ftl-node { position: relative; z-index: 1; flex: 1 1 0; min-width: 56px; display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: default; }
+  .ftl-dot-wrap { height: 54px; display: grid; place-items: center; }
+  .ftl-dot { display: grid; place-items: center; border-radius: 50%; color: #fff; font-weight: 700; font-size: 13.5px; font-variant-numeric: tabular-nums; background: linear-gradient(135deg, var(--brand), var(--brand-deep)); box-shadow: 0 6px 16px rgba(192, 144, 144, 0.28); border: 3px solid var(--surface); transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out); }
+  .ftl-node:hover .ftl-dot { transform: translateY(-2px) scale(1.06); box-shadow: 0 10px 22px rgba(192, 144, 144, 0.36); }
+  .ftl-dot.pending { background: linear-gradient(135deg, var(--ink-mute), #9aa6b4); box-shadow: 0 6px 16px rgba(136, 152, 160, 0.26); }
+  .ftl-win { font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
   /* ---- Forecast rank list ---- */
   .forecast-panel.compact .forecast-main-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr); gap: 20px; align-items: start; }
   /* auto-fit: multi-column when the panel is full-width (overview), single
@@ -314,7 +325,7 @@
     </div>
     <div class="card lift span-12" id="forecastWindowCard">
       <div class="card-title"><h3>预测下证窗口</h3><span class="sub" id="forecastWindowSub">全部在研项目</span></div>
-      <div id="chartForecastWindow" class="chart"></div>
+      <div id="forecastTimeline" class="forecast-tl"></div>
     </div>
     <article class="card lift span-4 panel section-hidden" id="sourceQualitySection">
       <div class="card-title"><h3>来源质量</h3><span class="sub">证据来源构成</span></div>
