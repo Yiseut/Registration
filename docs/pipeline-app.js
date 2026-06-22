@@ -1011,17 +1011,17 @@
         extraCssText: TOOLTIP_CSS,
         formatter: (p) => {
           const items = cellProjects[`${p.value[0]}_${p.value[1]}`] || [];
-          const head = `<div style="font-weight:600;color:#5a4646${items.length ? ";margin-bottom:6px" : ""}">${escapeHtml(yLabels[p.value[1]])} · ${STAGE_BUCKETS[p.value[0]][1]} · ${items.length} 个</div>`;
+          const head = `<div style="font-weight:600;color:#786868${items.length ? ";margin-bottom:6px" : ""}">${escapeHtml(yLabels[p.value[1]])} · ${STAGE_BUCKETS[p.value[0]][1]} · ${items.length} 个</div>`;
           return items.length ? head + tooltipProductList(items) : head;
         },
       },
       xAxis: { type: "category", data: STAGE_BUCKETS.map((b) => b[1]), splitArea: { show: false }, axisLabel: { fontSize: 11.5, interval: 0 } },
       yAxis: { type: "category", data: yLabels, splitArea: { show: false } },
-      visualMap: { min: 0, max: maxV, show: false, inRange: { color: ["#f7efef", "#e9cccc", "#d6a6a6", "#c09090"] } },
+      visualMap: { min: 0, max: maxV, show: false, inRange: { color: ["#ede0e0", "#c09090"] } },
       series: [{
         type: "heatmap",
         data,
-        label: { show: true, color: "#5a4646", fontSize: 12, fontWeight: 600, formatter: (p) => (p.value[2] ? p.value[2] : "") },
+        label: { show: true, color: "#786868", fontSize: 12, fontWeight: 600, formatter: (p) => (p.value[2] ? p.value[2] : "") },
         itemStyle: { borderColor: "rgba(255,255,255,0.72)", borderWidth: 3, borderRadius: 6 },
         emphasis: { itemStyle: { shadowBlur: 10, shadowColor: "rgba(120,104,104,0.22)" } },
       }],
@@ -1042,8 +1042,8 @@
       xAxis: { type: "value", minInterval: 1 },
       yAxis: { type: "category", data: yLabels },
       series: [
-        { name: "强证据 A0–A3", type: "bar", stack: "g", data: strong, color: "#58bfd7", barWidth: "58%", itemStyle: { borderRadius: [4, 0, 0, 4] } },
-        { name: "待核验 A4–A6", type: "bar", stack: "g", data: watch, color: "#e5b574", itemStyle: { borderRadius: [0, 4, 4, 0] } },
+        { name: "强证据 A0–A3", type: "bar", stack: "g", data: strong, color: "#c09090", barWidth: "58%", itemStyle: { borderRadius: [4, 0, 0, 4] } },
+        { name: "待核验 A4–A6", type: "bar", stack: "g", data: watch, color: "#8898a0", itemStyle: { borderRadius: [0, 4, 4, 0] } },
       ],
     }, true);
   }
@@ -1074,7 +1074,7 @@
         extraCssText: TOOLTIP_CSS,
         formatter: (ps) => {
           const items = byWindow.get(ps[0].name) || [];
-          const head = `<div style="font-weight:600;color:#5a4646;margin-bottom:6px">${ps[0].name} · 预计下证 ${items.length} 个</div>`;
+          const head = `<div style="font-weight:600;color:#786868;margin-bottom:6px">${ps[0].name} · 预计下证 ${items.length} 个</div>`;
           return head + tooltipProductList(items);
         },
       },
