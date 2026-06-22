@@ -1095,18 +1095,30 @@
     }
     const max = Math.max(...windows.map((w) => byWindow.get(w).length), 1);
     host.innerHTML = `<div class="forecast-tl-track">${windows.map((w) => {
-      const items = byWindow.get(w);
-      const n = items.length;
-      const size = Math.round(38 + (n / max) * 14); // 38–52px by count
-      const list = items.slice(0, 12).map((it) => `· ${displayCompany(it)} · ${it.product}`).join("\n");
-      const more = items.length > 12 ? `\n…另 ${items.length - 12} 个` : "";
-      const title = `${w} · 预计下证 ${n} 个\n${list}${more}`;
+      const n = byWindow.get(w).length;
+      const size = Math.round(40 + (n / max) * 16); // 40–56px by count
       const pending = w === "待判断" ? " pending" : "";
-      return `<div class="ftl-node" title="${escapeHtml(title)}">
+      return `<button class="ftl-node" type="button" data-win="${escapeHtml(w)}" aria-label="${escapeHtml(w)} 预计下证 ${n} 个">
         <div class="ftl-dot-wrap"><span class="ftl-dot${pending}" style="width:${size}px;height:${size}px">${n}</span></div>
         <span class="ftl-win">${escapeHtml(w)}</span>
-      </div>`;
-    }).join("")}</div>`;
+      </button>`;
+    }).join("")}</div><div class="ftl-detail" id="forecastDetail"></div>`;
+
+    const detail = $("forecastDetail");
+    const showDetail = (w) => {
+      const items = byWindow.get(w) || [];
+      host.querySelectorAll(".ftl-node").forEach((node) => node.classList.toggle("active", node.dataset.win === w));
+      detail.innerHTML = `<div class="ftl-detail-head"><strong>${escapeHtml(w)}</strong><span>预计下证 ${items.length} 个</span></div>`
+        + `<div class="ftl-detail-list">${items.map((it) => `
+            <div class="ftl-detail-item">
+              <strong>${escapeHtml(displayCompany(it))}</strong>
+              <span>${escapeHtml(it.product)}</span>
+              <em>${escapeHtml(it.current_stage || "")}${it.track_label ? ` · ${escapeHtml(it.track_label)}` : ""}</em>
+            </div>`).join("")}</div>`;
+      detail.classList.add("open");
+    };
+    host.querySelectorAll(".ftl-node").forEach((node) => node.addEventListener("click", () => showDetail(node.dataset.win)));
+    showDetail(windows[0]);
   }
 
   function render() {

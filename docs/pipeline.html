@@ -92,15 +92,40 @@
   .track-summary-card p { margin: 6px 0 0; font-size: 12px; color: var(--ink-3); }
 
   /* ---- Forecast window timeline (dots with counts) ---- */
-  .forecast-tl { overflow-x: auto; padding: 8px 2px 6px; }
-  .forecast-tl-track { position: relative; display: flex; justify-content: space-between; gap: 8px; min-width: 560px; padding: 0 14px; }
-  .forecast-tl-track::before { content: ""; position: absolute; left: 44px; right: 44px; top: 27px; height: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--brand-glow), var(--brand)); z-index: 0; }
-  .ftl-node { position: relative; z-index: 1; flex: 1 1 0; min-width: 56px; display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: default; }
-  .ftl-dot-wrap { height: 54px; display: grid; place-items: center; }
-  .ftl-dot { display: grid; place-items: center; border-radius: 50%; color: #fff; font-weight: 700; font-size: 13.5px; font-variant-numeric: tabular-nums; background: linear-gradient(135deg, var(--brand), var(--brand-deep)); box-shadow: 0 6px 16px rgba(192, 144, 144, 0.28); border: 3px solid var(--surface); transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out); }
-  .ftl-node:hover .ftl-dot { transform: translateY(-2px) scale(1.06); box-shadow: 0 10px 22px rgba(192, 144, 144, 0.36); }
-  .ftl-dot.pending { background: linear-gradient(135deg, var(--ink-mute), #9aa6b4); box-shadow: 0 6px 16px rgba(136, 152, 160, 0.26); }
+  .forecast-tl { overflow-x: auto; padding: 12px 2px 4px; }
+  .forecast-tl-track { position: relative; display: flex; justify-content: space-between; gap: 8px; min-width: 560px; padding: 0 16px; }
+  .forecast-tl-track::before { content: ""; position: absolute; left: 46px; right: 46px; top: 29px; height: 2px; border-radius: 999px; background: linear-gradient(90deg, color-mix(in srgb, var(--brand) 26%, transparent), color-mix(in srgb, var(--brand) 58%, transparent)); z-index: 0; }
+  .ftl-node { position: relative; z-index: 1; flex: 1 1 0; min-width: 56px; display: flex; flex-direction: column; align-items: center; gap: 10px; appearance: none; border: 0; background: transparent; font: inherit; cursor: pointer; }
+  .ftl-dot-wrap { height: 58px; display: grid; place-items: center; }
+  .ftl-dot {
+    display: grid; place-items: center; border-radius: 50%;
+    color: #fff; font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums;
+    background:
+      radial-gradient(circle at 34% 26%, rgba(255,255,255,0.62), rgba(255,255,255,0) 46%),
+      linear-gradient(145deg, #d6abab 0%, var(--brand) 46%, var(--brand-deep) 100%);
+    box-shadow: 0 12px 24px rgba(192,144,144,0.42), 0 3px 8px rgba(120,104,104,0.16),
+      inset 0 1px 2px rgba(255,255,255,0.55), inset 0 -7px 14px rgba(120,104,104,0.20);
+    text-shadow: 0 1px 2px rgba(120,104,104,0.32);
+    transition: transform 240ms var(--ease-spring), box-shadow 220ms var(--ease-out);
+  }
+  .ftl-node:hover .ftl-dot { transform: translateY(-3px) scale(1.08); }
+  .ftl-node.active .ftl-dot { transform: translateY(-3px) scale(1.1); box-shadow: 0 18px 34px rgba(192,144,144,0.5), 0 3px 8px rgba(120,104,104,0.2), inset 0 1px 2px rgba(255,255,255,0.66), inset 0 -7px 14px rgba(120,104,104,0.22); }
+  .ftl-dot.pending {
+    background: radial-gradient(circle at 34% 26%, rgba(255,255,255,0.58), rgba(255,255,255,0) 46%),
+      linear-gradient(145deg, #c2cdda 0%, var(--ink-mute) 46%, #8898a0 100%);
+    box-shadow: 0 12px 24px rgba(136,152,160,0.4), inset 0 1px 2px rgba(255,255,255,0.5), inset 0 -7px 14px rgba(95,110,120,0.2);
+  }
   .ftl-win { font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+  .ftl-detail { display: none; margin-top: 16px; padding: 14px 16px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: rgba(255,253,253,0.72); }
+  .ftl-detail.open { display: block; }
+  .ftl-detail-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .ftl-detail-head strong { font-size: 15px; color: var(--ink); font-weight: 650; }
+  .ftl-detail-head span { font-size: 12px; color: var(--brand-deep); font-weight: 600; }
+  .ftl-detail-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+  .ftl-detail-item { padding: 9px 11px; border-radius: 10px; background: var(--surface); border: 1px solid var(--hairline); }
+  .ftl-detail-item strong { display: block; font-size: 13px; color: var(--ink); font-weight: 600; }
+  .ftl-detail-item span { display: block; font-size: 12px; color: var(--ink-3); margin-top: 2px; line-height: 1.4; }
+  .ftl-detail-item em { display: block; font-size: 11px; color: var(--ink-mute); font-style: normal; margin-top: 3px; }
 
   /* ---- Forecast rank list ---- */
   .forecast-panel.compact .forecast-main-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr); gap: 20px; align-items: start; }
