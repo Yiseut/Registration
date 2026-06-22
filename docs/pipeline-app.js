@@ -1137,6 +1137,12 @@
     $("trackStageCard")?.classList.toggle("section-hidden", !isAll);
     $("evidenceCard")?.classList.toggle("section-hidden", !isAll);
     $("overviewCard")?.classList.toggle("section-hidden", !isAll);
+    // Full-cycle/benchmark and troubled-case sections are general reference;
+    // keep them on the overview only, hide on single-track views.
+    $("cycleSectionHead")?.classList.toggle("section-hidden", !isAll);
+    $("cycleCard")?.classList.toggle("section-hidden", !isAll);
+    $("troubledSectionHead")?.classList.toggle("section-hidden", !isAll);
+    $("troubledSection")?.classList.toggle("section-hidden", !isAll);
     if (isAll) {
       renderTrackStageChart();
       renderEvidenceChart();
