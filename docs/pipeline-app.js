@@ -493,19 +493,12 @@
     const host = $("sourceBars");
     if (!host) return;
     const counts = countBy(activeRecords(), (record) => gradeLabel(record.evidence_grade));
-    const rows = [...counts.entries()];
-    const max = Math.max(...rows.map(([, count]) => count), 1);
+    const rows = [...counts.entries()].sort((a, b) => b[1] - a[1]);
     host.innerHTML = rows.length
       ? rows
-          .map(([label, count]) => `
-            <div class="source-bar">
-              <span>${escapeHtml(label)}</span>
-              <div class="bar-track"><i class="bar-fill" style="width:${Math.max(7, (count / max) * 100)}%"></i></div>
-              <b>${count}</b>
-            </div>
-          `)
+          .map(([label, count]) => `<div class="source-line"><span>${escapeHtml(label)}</span><b>${count}</b></div>`)
           .join("")
-      : "<p>暂无来源。</p>";
+      : "<p class='muted' style='font-size:12.5px'>暂无来源。</p>";
   }
 
   function topProjects(projects, limit = 3) {
@@ -1143,6 +1136,13 @@
     $("cycleCard")?.classList.toggle("section-hidden", !isAll);
     $("troubledSectionHead")?.classList.toggle("section-hidden", !isAll);
     $("troubledSection")?.classList.toggle("section-hidden", !isAll);
+    // On a single track the forecast-window chart shares its row with the
+    // compact 来源质量 panel, so narrow it to span-8 (span-12 on the overview).
+    const fwCard = $("forecastWindowCard");
+    if (fwCard) {
+      fwCard.classList.toggle("span-12", isAll);
+      fwCard.classList.toggle("span-8", !isAll);
+    }
     if (isAll) {
       renderTrackStageChart();
       renderEvidenceChart();
@@ -1150,6 +1150,7 @@
       charts.chartEvidence && charts.chartEvidence.resize();
     }
     renderForecastWindowChart();
+    charts.chartForecastWindow && charts.chartForecastWindow.resize();
     renderKpis();
     renderOverview();
     renderBenchmark();
