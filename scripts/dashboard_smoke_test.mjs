@@ -415,7 +415,7 @@ async function main() {
     activeMap: document.querySelector('[data-map-metric].active')?.dataset.mapMetric || '',
   }));
   assert(filteredState.rows === 1, 'Shared filter URL should show one Dysport row', String(filteredState.rows));
-  assert(filteredState.cert === '国药准字S20200016', 'Dysport certificate should use the corrected approval number', filteredState.cert);
+  assert(filteredState.cert === '国药准字SJ20200016', 'Dysport certificate should use the corrected approval number', filteredState.cert);
   assert(filteredState.query === 'Dysport', 'Query parameter was not restored into the search input', filteredState.query);
   assert(filteredState.segment === 'botulinum', 'Segment parameter was not restored', filteredState.segment);
   assert(filteredState.origin === 'imported', 'Origin parameter was not restored', filteredState.origin);
