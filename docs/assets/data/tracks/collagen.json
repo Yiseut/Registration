@@ -8,11 +8,11 @@
   },
   "kpi": {
     "total": 21,
-    "main": 19,
-    "companies": 12,
-    "indications": 10,
-    "verified": 19,
-    "domestic": 14,
+    "main": 20,
+    "companies": 13,
+    "indications": 11,
+    "verified": 20,
+    "domestic": 15,
     "imported": 2,
     "hkmt": 3
   },
@@ -66,11 +66,11 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 0,
+  "long_tail_company_count": 1,
   "indication_share": [
     {
       "name": "额部",
-      "value": 7
+      "value": 8
     },
     {
       "name": "额部动力纹",
@@ -105,6 +105,10 @@
       "value": 1
     },
     {
+      "name": "待确认",
+      "value": 1
+    },
+    {
       "name": "激光术后创面",
       "value": 1
     }
@@ -112,7 +116,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 14
+      "value": 15
     },
     {
       "name": "港澳台",
@@ -126,7 +130,7 @@
   "material_share": [
     {
       "name": "动物源胶原",
-      "value": 13
+      "value": 14
     },
     {
       "name": "重组/类人源胶原",
@@ -146,7 +150,7 @@
       3,
       2,
       8,
-      3
+      4
     ]
   },
   "company_indication_heatmap": {
@@ -1419,7 +1423,7 @@
       "source_title": "2026年06月17日医疗器械批准证明文件送达信息",
       "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "confidence": "",
-      "data_status": "需复核",
+      "data_status": "需复核/待官方核验",
       "source_dataset": "collagen_dashboard_data.json"
     },
     {
@@ -1443,16 +1447,16 @@
       "material_form": "动物源填充植入剂",
       "approval_date": "2026-06-16",
       "approval_year": 2026,
-      "valid_until": "",
-      "validity_status": "未标注有效期",
+      "valid_until": "2031-06-15",
+      "validity_status": "有效",
       "market_scope": "三类合规准入",
       "application_segment": "",
       "primary_indication": "待确认",
       "approved_indications": "",
-      "indication_description": "已有获批或送达线索，但完整注册证适用范围尚未同步，暂不归入具体适应症竞争格局。",
-      "scope_full": "国家药品监督管理局2026年06月17日医疗器械批准证明文件送达信息显示，该产品于2026-06-16获批；完整适用范围、注射层次、规格和有效期待官方注册证详情同步复核。",
-      "specification": "待官方注册证详情同步复核",
-      "components": "国家药品监督管理局2026年06月17日医疗器械批准证明文件送达信息显示，该产品于2026-06-16获批；完整适用范围、注射层次、规格和有效期待官方注册证详情同步复核。",
+      "indication_description": "该产品用于面部真皮组织填充以纠正额部中重度动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
+      "scope_full": "该产品用于面部真皮组织填充以纠正额部中重度动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
+      "specification": "型号：NCL0106 规格：0.6mL/支·1支/盒； 型号：NCL0110 规格：1.0mL/支·1支/盒",
+      "components": "产品为SPF猪皮纯化而成的胶原蛋白分散于磷酸盐缓冲溶液中，并充填于玻璃材质无菌注射器中制成。其中胶原蛋白含量35mg/mL。包装内含27G无菌注射针1支。过滤除菌及无菌工艺生产，一次性使用。货架有效期24个月。",
       "lidocaine_status": "未见利多卡因",
       "product_tags": "未见利多卡因",
       "market_claim": "",
@@ -1461,24 +1465,26 @@
       "tags": [
         "未见利多卡因"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息；国家政务服务平台NMPA注册证详情查询未同步",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂",
       "official_registrant": "重庆芳禾生物科技有限公司",
       "official_approval_date": "2026-06-16",
-      "official_valid_until": "",
-      "official_indication": "完整适用范围待官方注册证详情回填",
-      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "official_valid_until": "2031-06-15",
+      "official_indication": "额部",
+      "official_scope": "该产品用于面部真皮组织填充以纠正额部中重度动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "胶原蛋白"
+      ],
       "source_account": "医与美前沿",
       "source_title": "医美前沿快讯|芳禾生物旗下“胶原蛋白植入剂”获批上市！",
       "source_url": "https://mp.weixin.qq.com/s/KA5kCThFvoLYUQACnO0bFA",
       "confidence": "",
-      "data_status": "需复核",
+      "data_status": "已结构化",
       "source_dataset": "collagen_dashboard_data.json"
     },
     {

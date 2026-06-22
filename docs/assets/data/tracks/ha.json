@@ -8,12 +8,12 @@
   },
   "kpi": {
     "total": 110,
-    "main": 106,
-    "companies": 51,
+    "main": 108,
+    "companies": 53,
     "indications": 10,
-    "verified": 106,
-    "domestic": 51,
-    "imported": 52,
+    "verified": 108,
+    "domestic": 52,
+    "imported": 53,
     "hkmt": 3
   },
   "company_share": [
@@ -66,11 +66,11 @@
       "value": 2
     }
   ],
-  "long_tail_company_count": 39,
+  "long_tail_company_count": 41,
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 64
+      "value": 65
     },
     {
       "name": "唇部",
@@ -78,7 +78,7 @@
     },
     {
       "name": "肤质改善",
-      "value": 11
+      "value": 12
     },
     {
       "name": "下颌及颏部轮廓改善（填充）",
@@ -112,7 +112,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 51
+      "value": 52
     },
     {
       "name": "港澳台",
@@ -120,13 +120,21 @@
     },
     {
       "name": "进口",
-      "value": 52
+      "value": 53
     }
   ],
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
       "value": 106
+    },
+    {
+      "name": "透明质酸钠 / 注射用透明质酸钠溶液 / 水光/肤质类 / NMPA批准证明文件送达信息",
+      "value": 1
+    },
+    {
+      "name": "透明质酸钠 / 交联透明质酸钠凝胶 / 韩国进口 / Humedix / NMPA批准证明文件送达信息",
+      "value": 1
     }
   ],
   "timeline": {
@@ -144,7 +152,7 @@
       17,
       29,
       32,
-      6
+      8
     ]
   },
   "company_indication_heatmap": {
@@ -7528,7 +7536,7 @@
       "id": "RAW-HA-国械注准20263131236",
       "track": "ha",
       "track_name": "透明质酸钠",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "injectable_material",
       "strategic": "玻尿酸",
@@ -7545,22 +7553,22 @@
       "material_form": "非交联HA溶液",
       "approval_date": "2026-06-16",
       "approval_year": 2026,
-      "valid_until": "",
-      "validity_status": "",
+      "valid_until": "2031-06-15",
+      "validity_status": "有效",
       "market_scope": "水光/肤质类",
       "application_segment": "水光/肤质类",
-      "primary_indication": "待确认",
-      "approved_indications": "完整适用范围待官方注册证详情回填",
-      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格和结构组成待官方注册证详情同步后回填。",
-      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格和结构组成待官方注册证详情同步后回填。",
-      "specification": "待官方注册证详情同步复核",
-      "components": "透明质酸钠；具体结构组成待官方注册证详情回填。",
+      "primary_indication": "肤质改善",
+      "approved_indications": "肤质改善",
+      "indication_description": "该产品用于面部真皮浅层注射，暂时性改善成人皮肤干燥、肤色暗沉。",
+      "scope_full": "该产品用于面部真皮浅层注射，暂时性改善成人皮肤干燥、肤色暗沉。",
+      "specification": "型号:15mg/mL规格：2.0mL、2.5mL、3.0mL、5.0mL。",
+      "components": "该产品由预灌封注射器和封装在预灌封注射器中的透明质酸钠溶液组成。透明质酸钠溶液由透明质酸钠、氯化钠、磷酸氢二钠、磷酸二氢钠和注射用水组成，其中透明质酸钠原料是利用微生物发酵法制得，标示浓度15mg/mL。封装于预灌封注册器中的透明质酸钠溶液采用高温蒸汽灭菌，该产品一次性使用，货架有效期为3年。",
       "lidocaine_status": "",
       "product_tags": "水光/肤质类 / 国产 / 非交联 / 透明质酸钠溶液 / NMPA送达信息确认",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
-        "完整适用范围待官方注册证详情回填"
+        "肤质改善"
       ],
       "tags": [
         "水光",
@@ -7570,19 +7578,21 @@
         "透明质酸钠溶液",
         "NMPA送达信息确认"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息；国家政务服务平台NMPA注册证详情查询未同步",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用透明质酸钠溶液",
       "official_registrant": "浙江景嘉医疗科技有限公司",
       "official_approval_date": "2026-06-16",
-      "official_valid_until": "",
-      "official_indication": "完整适用范围待官方注册证详情回填",
-      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "official_valid_until": "2031-06-15",
+      "official_indication": "肤质改善",
+      "official_scope": "该产品用于面部真皮浅层注射，暂时性改善成人皮肤干燥、肤色暗沉。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
       "source_account": "国家药品监督管理局",
       "source_title": "国家药监局2026年06月17日医疗器械批准证明文件送达信息：浙江景嘉注射用透明质酸钠溶液",
       "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
@@ -7594,16 +7604,16 @@
       "id": "RAW-HA-国械注进20263130223",
       "track": "ha",
       "track_name": "透明质酸钠",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "injectable_material",
       "strategic": "玻尿酸",
       "brand": "Humedix注射用交联透明质酸钠凝胶",
       "aliases": "",
-      "product_name": "注射用交联透明质酸钠凝胶",
+      "product_name": "注射用交联透明质酸钠凝胶Pre-filled Cross-linked Sodium Hyaluronate Syringe",
       "company": "Humedix / 汇美迪斯",
       "company_key": "humedix / 汇美迪斯",
-      "registrant": "Humedix Co., Ltd.",
+      "registrant": "汇美迪斯株式会社Humedix Co., Ltd.",
       "certificate_no": "国械注进20263130223",
       "origin": "进口",
       "category": "透明质酸钠",
@@ -7611,43 +7621,46 @@
       "material_form": "交联HA填充凝胶",
       "approval_date": "2026-06-16",
       "approval_year": 2026,
-      "valid_until": "",
-      "validity_status": "",
+      "valid_until": "2031-06-15",
+      "validity_status": "有效",
       "market_scope": "注射填充类",
       "application_segment": "注射填充类",
-      "primary_indication": "待确认",
-      "approved_indications": "完整适用范围待官方注册证详情回填",
-      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格和结构组成待官方注册证详情同步后回填。",
-      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格和结构组成待官方注册证详情同步后回填。",
-      "specification": "待官方注册证详情同步复核",
-      "components": "交联透明质酸钠凝胶；具体结构组成待官方注册证详情回填。",
-      "lidocaine_status": "",
-      "product_tags": "注射填充类 / 进口 / 韩国进口 / 交联 / NMPA送达信息确认",
+      "primary_indication": "鼻唇沟",
+      "approved_indications": "鼻唇沟",
+      "indication_description": "该产品适用于注射到鼻唇沟部位真皮组织中层至深层，以纠正中重度鼻唇沟皱纹。",
+      "scope_full": "该产品适用于注射到鼻唇沟部位真皮组织中层至深层，以纠正中重度鼻唇沟皱纹。",
+      "specification": "Rephoria HARA – L",
+      "components": "该产品由注射器、预装在注射器中的注射用交联透明质酸钠凝胶注射液以及注射针组成。注射用交联透明质酸钠凝胶注射液由透明质酸钠、盐酸利多卡因、氯化钠、磷酸氢二钠、磷酸二氢钠和注射用水组成，其中透明质酸钠由微生物发酵法制备，标示浓度为20mg/mL（包括经交联的透明质酸钠19mg/mL和未经交联的透明质酸钠1mg/mL），盐酸利多卡因标示浓度为3 mg/mL。每支注射器含27G×1/2”以及30G×1/2”注射针各一只。注射用交联透明质酸钠凝胶经高温蒸汽灭菌，注射针经环氧乙烷灭菌，一次性使用，货架有效期24个月。",
+      "lidocaine_status": "含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 韩国进口 / 交联 / NMPA送达信息确认 / 含利多卡因",
       "market_claim": "",
       "boundary_reason": "",
       "indications": [
-        "完整适用范围待官方注册证详情回填"
+        "鼻唇沟"
       ],
       "tags": [
         "注射填充类",
         "进口",
         "韩国进口",
         "交联",
-        "NMPA送达信息确认"
+        "NMPA送达信息确认",
+        "含利多卡因"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息；国家政务服务平台NMPA注册证详情查询未同步",
-      "official_product_name": "注射用交联透明质酸钠凝胶",
-      "official_registrant": "Humedix Co., Ltd.",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "注射用交联透明质酸钠凝胶Pre-filled Cross-linked Sodium Hyaluronate Syringe",
+      "official_registrant": "汇美迪斯株式会社Humedix Co., Ltd.",
       "official_approval_date": "2026-06-16",
-      "official_valid_until": "",
-      "official_indication": "完整适用范围待官方注册证详情回填",
-      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "official_valid_until": "2031-06-15",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于注射到鼻唇沟部位真皮组织中层至深层，以纠正中重度鼻唇沟皱纹。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
       "source_account": "国家药品监督管理局",
       "source_title": "国家药监局2026年06月17日医疗器械批准证明文件送达信息：Humedix注射用交联透明质酸钠凝胶",
       "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
