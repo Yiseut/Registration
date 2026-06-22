@@ -962,6 +962,20 @@
     return charts[id];
   }
 
+  const TOOLTIP_CSS = "max-width:340px; padding:11px 14px; border-radius:12px; box-shadow:0 12px 32px rgba(120,104,104,0.12);";
+
+  function tooltipProductList(items, limit = 10) {
+    if (!items.length) return "";
+    const lines = items
+      .slice(0, limit)
+      .map((it) => `<div style="font-size:12px;line-height:1.55;color:#786868;white-space:normal">· ${escapeHtml(displayCompany(it))} · ${escapeHtml(it.product)}</div>`)
+      .join("");
+    const more = items.length > limit
+      ? `<div style="font-size:11.5px;color:#9d7b7b;margin-top:4px">…另 ${items.length - limit} 个</div>`
+      : "";
+    return lines + more;
+  }
+
   function trackGroupsAll() {
     const groups = new Map();
     activeProjectsAll.forEach((project) => {
@@ -980,20 +994,26 @@
     const rows = trackGroupsAll();
     const yLabels = rows.map((row) => row.label);
     const data = [];
+    const cellProjects = {};
     let maxV = 1;
     rows.forEach((row, yi) => {
-      const counts = countBy(row.items, stageBucket);
       STAGE_BUCKETS.forEach(([key], xi) => {
-        const value = counts.get(key) || 0;
-        if (value > maxV) maxV = value;
-        data.push([xi, yi, value]);
+        const items = row.items.filter((project) => stageBucket(project) === key);
+        cellProjects[`${xi}_${yi}`] = items;
+        if (items.length > maxV) maxV = items.length;
+        data.push([xi, yi, items.length]);
       });
     });
     chart.setOption({
       grid: { left: 8, right: 16, top: 8, bottom: 26, containLabel: true },
       tooltip: {
         position: "top",
-        formatter: (p) => `${yLabels[p.value[1]]} · ${STAGE_BUCKETS[p.value[0]][1]}<br/>在研项目 <b>${p.value[2]}</b> 个`,
+        extraCssText: TOOLTIP_CSS,
+        formatter: (p) => {
+          const items = cellProjects[`${p.value[0]}_${p.value[1]}`] || [];
+          const head = `<div style="font-weight:600;color:#5a4646${items.length ? ";margin-bottom:6px" : ""}">${escapeHtml(yLabels[p.value[1]])} · ${STAGE_BUCKETS[p.value[0]][1]} · ${items.length} 个</div>`;
+          return items.length ? head + tooltipProductList(items) : head;
+        },
       },
       xAxis: { type: "category", data: STAGE_BUCKETS.map((b) => b[1]), splitArea: { show: false }, axisLabel: { fontSize: 11.5, interval: 0 } },
       yAxis: { type: "category", data: yLabels, splitArea: { show: false } },
@@ -1032,20 +1052,32 @@
     const chart = getChart("chartForecastWindow");
     if (!chart) return;
     const projects = activeProjects();
-    const counts = new Map();
+    const byWindow = new Map();
     projects.forEach((project) => {
       const window = formatHalfYear(forecastForProject(project).date);
-      counts.set(window, (counts.get(window) || 0) + 1);
+      if (!byWindow.has(window)) byWindow.set(window, []);
+      byWindow.get(window).push(project);
     });
-    const entries = [...counts.entries()].sort((a, b) => {
-      if (a[0] === "待判断") return 1;
-      if (b[0] === "待判断") return -1;
-      return a[0].localeCompare(b[0]);
-    });
+    const entries = [...byWindow.keys()]
+      .sort((a, b) => {
+        if (a === "待判断") return 1;
+        if (b === "待判断") return -1;
+        return a.localeCompare(b);
+      })
+      .map((window) => [window, byWindow.get(window).length]);
     setText("forecastWindowSub", state.track === "all" ? "全部在研项目" : selectedTrackLabel());
     chart.setOption({
       grid: { left: 8, right: 16, top: 16, bottom: 22, containLabel: true },
-      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: (ps) => `${ps[0].name}<br/>预计下证 <b>${ps[0].value}</b> 个` },
+      tooltip: {
+        trigger: "axis",
+        axisPointer: { type: "shadow" },
+        extraCssText: TOOLTIP_CSS,
+        formatter: (ps) => {
+          const items = byWindow.get(ps[0].name) || [];
+          const head = `<div style="font-weight:600;color:#5a4646;margin-bottom:6px">${ps[0].name} · 预计下证 ${items.length} 个</div>`;
+          return head + tooltipProductList(items);
+        },
+      },
       xAxis: { type: "category", data: entries.map((e) => e[0]), axisLabel: { fontSize: 11.5 } },
       yAxis: { type: "value", minInterval: 1 },
       series: [{
@@ -1058,32 +1090,21 @@
     }, true);
   }
 
-  function renderVizInsight() {
-    const host = $("vizInsight");
-    if (!host) return;
-    const projects = activeProjects();
-    const total = projects.length;
-    if (!total) {
-      host.innerHTML = "当前筛选下暂无在研项目。";
-      return;
-    }
-    const buckets = countBy(projects, stageBucket);
-    const byTrack = countBy(projects, (project) => trackGroup(project.track));
-    const lead = [...byTrack.entries()].sort((a, b) => b[1] - a[1])[0];
-    const windows = projects.map((project) => formatHalfYear(forecastForProject(project).date)).filter((w) => w !== "待判断").sort();
-    const nearest = windows[0] || "待判断";
-    const scope = state.track === "all" ? "全部赛道" : selectedTrackLabel();
-    host.innerHTML = `${escapeHtml(scope)}当前共 <b>${total}</b> 个在研项目，`
-      + `其中受理/审评阶段 <b>${buckets.get("review") || 0}</b> 个、注册临床中 <b>${buckets.get("clinical") || 0}</b> 个；`
-      + `<b>${escapeHtml(trackGroupLabel(lead[0]))}</b> 赛道最活跃（<b>${lead[1]}</b> 个）；`
-      + `最早的预测下证窗口落在 <b>${escapeHtml(nearest)}</b>。`;
-  }
-
   function render() {
     renderTabs();
-    renderVizInsight();
-    renderTrackStageChart();
-    renderEvidenceChart();
+    // The track x stage heatmap, evidence-strength bar and the overview summary
+    // card are all-material overviews; on a single-track view the four KPI cards
+    // and the forecast panel already cover the same ground, so hide them.
+    const isAll = state.track === "all";
+    $("trackStageCard")?.classList.toggle("section-hidden", !isAll);
+    $("evidenceCard")?.classList.toggle("section-hidden", !isAll);
+    $("overviewCard")?.classList.toggle("section-hidden", !isAll);
+    if (isAll) {
+      renderTrackStageChart();
+      renderEvidenceChart();
+      charts.chartTrackStage && charts.chartTrackStage.resize();
+      charts.chartEvidence && charts.chartEvidence.resize();
+    }
     renderForecastWindowChart();
     renderKpis();
     renderOverview();

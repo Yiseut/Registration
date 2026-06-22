@@ -271,14 +271,12 @@
     <h2>结构与节奏</h2>
     <p>从赛道分布、证据强度与预测窗口三个角度观察在研管线。</p>
   </div>
-  <p class="callout viz-insight rise rise-1" id="vizInsight">—</p>
   <section class="grid grid-12">
-    <div class="card lift span-7">
+    <div class="card lift span-7" id="trackStageCard">
       <div class="card-title"><h3>赛道 × 进展阶段</h3><span class="sub">在研项目数</span></div>
       <div id="chartTrackStage" class="chart chart-tall"></div>
-      <p class="chart-note">颜色越深表示该赛道在对应阶段聚集的项目越多；展示全部赛道，不随上方筛选变化。</p>
     </div>
-    <div class="card lift span-5">
+    <div class="card lift span-5" id="evidenceCard">
       <div class="card-title"><h3>证据可信度结构</h3><span class="sub">按赛道</span></div>
       <div id="chartEvidence" class="chart chart-tall"></div>
       <p class="chart-note">强证据＝官方/受理/上市公司/企业原文（A0–A3）；待核验＝媒体或线下线索（A4–A6）。</p>
@@ -286,7 +284,6 @@
     <div class="card lift span-12">
       <div class="card-title"><h3>预测下证窗口</h3><span class="sub" id="forecastWindowSub">全部在研项目</span></div>
       <div id="chartForecastWindow" class="chart"></div>
-      <p class="chart-note">按模型估算的可能获批半年窗口聚合，仅作顺序与节奏参考，实际以官方信息为准。</p>
     </div>
   </section>
 
@@ -295,7 +292,7 @@
     <p>各赛道在研项目与可能的下证顺序。</p>
   </div>
   <section class="overview-grid" id="overviewSection">
-    <article class="card lift">
+    <article class="card lift" id="overviewCard">
       <div class="panel-head">
         <div>
           <h2 id="overviewTitle">注册进展总览</h2>
