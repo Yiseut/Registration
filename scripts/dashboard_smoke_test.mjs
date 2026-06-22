@@ -155,8 +155,8 @@ async function main() {
   const pipelineOverview = await pipelinePage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',
     hasScopeNote: document.querySelector('#scopeNote') !== null,
-    globalNavText: document.querySelector('.pipeline-global-nav')?.textContent || '',
-    globalNavLinks: Array.from(document.querySelectorAll('.pipeline-global-nav a')).map((node) => ({
+    globalNavText: document.querySelector('#nav-root')?.textContent || '',
+    globalNavLinks: Array.from(document.querySelectorAll('#nav-root a')).map((node) => ({
       text: node.textContent?.trim() || '',
       href: node.getAttribute('href') || '',
     })),
@@ -193,9 +193,9 @@ async function main() {
   }));
   assert(pipelineOverview.h1 === '注册进度', 'Pipeline page should use a clean user-facing heading', pipelineOverview.h1);
   assert(!pipelineOverview.hasScopeNote && !/关注仍在推进的注册项目|已获批产品单独看市场表现/.test(pipelineOverview.bodyText), 'Pipeline hero should not render a redundant scope sentence', pipelineOverview.bodyText);
-  assert(['返回总览', '透明质酸钠', 'PCL', '自定义透视', '注册进度'].every((label) => pipelineOverview.globalNavText.includes(label)), 'Pipeline global navigation should render the dashboard menu', pipelineOverview.globalNavText);
+  assert(['总览', '透明质酸钠', 'PCL', '自定义透视', '注册进度'].every((label) => pipelineOverview.globalNavText.includes(label)), 'Pipeline global navigation should render the shared dashboard topbar menu', pipelineOverview.globalNavText);
   assert(pipelineOverview.globalNavLinks.some((link) => link.text === 'PCL' && link.href.includes('tracks/pcl.html')), 'Pipeline global navigation should link directly to PCL', JSON.stringify(pipelineOverview.globalNavLinks));
-  assert(pipelineOverview.globalNavLinks.some((link) => link.text === '返回总览' && link.href.includes('index.html')), 'Pipeline global navigation should keep the overview return action in the top-left menu', JSON.stringify(pipelineOverview.globalNavLinks));
+  assert(pipelineOverview.globalNavLinks.some((link) => link.text === '总览' && link.href.includes('index.html')), 'Pipeline global navigation should keep an overview link back to the homepage', JSON.stringify(pipelineOverview.globalNavLinks));
   assert(!pipelineOverview.hasScopeBackLink, 'Pipeline update area should not keep the old right-side back link');
   assert(/最近更新|\d{4}-\d{2}-\d{2}/.test(pipelineOverview.scopeCardText), 'Pipeline update area should keep the last-updated timestamp', pipelineOverview.scopeCardText);
   assert(!/更新节奏|每月完整刷新|事件触发补充|季度复盘校准|主数据定期同步/.test(pipelineOverview.bodyText), 'Pipeline dashboard should not expose backend update workflow language', pipelineOverview.bodyText);
@@ -228,6 +228,47 @@ async function main() {
   assert(pipelineOverview.hasPdrnPnTab && !pipelineOverview.hasStandalonePnTab, 'Pipeline should combine PN and PDRN into one tab instead of showing an empty PN tab');
   assert(!pipelineOverview.bodyText.includes('来源覆盖'), 'Pipeline public page should not expose source-coverage backend wording');
   assert(pipelineOverview.overflowX <= 1, 'Pipeline overview has horizontal overflow', String(pipelineOverview.overflowX));
+
+  await pipelinePage.locator('#trackSummaryCards .track-summary-card[data-summary-track="caha"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelineSummaryNav = await pipelinePage.evaluate(() => ({
+    activeTab: document.querySelector('.track-tab.active')?.textContent?.trim() || '',
+    overviewTitle: document.querySelector('#overviewTitle')?.textContent?.trim() || '',
+    projectText: document.querySelector('#projectBody')?.textContent || '',
+  }));
+  assert(pipelineSummaryNav.activeTab.includes('CaHA'), 'Clicking a summary card should activate the matching material tab', JSON.stringify(pipelineSummaryNav));
+  assert(pipelineSummaryNav.overviewTitle.includes('CaHA'), 'Clicking a summary card should refresh the overview section for that material', JSON.stringify(pipelineSummaryNav));
+  assert(!/Radiesse|RADIESSE|瑞德喜|芮得怡/.test(pipelineSummaryNav.projectText), 'Summary-card navigation should keep approved Radiesse out of the CaHA project table', pipelineSummaryNav.projectText);
+
+  await pipelinePage.locator('.metric-card[data-stage-filter="review"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelineReviewFilter = await pipelinePage.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll('#projectBody tr')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    return {
+      countText: document.querySelector('#projectCount')?.textContent?.trim() || '',
+      note: document.querySelector('#projectFilterNote')?.textContent?.trim() || '',
+      active: document.querySelector('.metric-card[data-stage-filter="review"]')?.classList.contains('active') || false,
+      rows,
+    };
+  });
+  assert(pipelineReviewFilter.active && /受理\/审评中/.test(pipelineReviewFilter.countText), 'Clicking the review KPI should filter the project table to review-stage rows', JSON.stringify(pipelineReviewFilter));
+  assert(pipelineReviewFilter.rows.length === 1 && pipelineReviewFilter.rows.every((text) => /受理\/审评中/.test(text)), 'Review KPI filter should show only review-stage products', JSON.stringify(pipelineReviewFilter));
+
+  await pipelinePage.locator('.metric-card[data-stage-filter="clinical"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelineClinicalFilter = await pipelinePage.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll('#projectBody tr')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    const expected = Number(document.querySelector('#kpiClinical')?.textContent || 0);
+    return {
+      countText: document.querySelector('#projectCount')?.textContent?.trim() || '',
+      note: document.querySelector('#projectFilterNote')?.textContent?.trim() || '',
+      active: document.querySelector('.metric-card[data-stage-filter="clinical"]')?.classList.contains('active') || false,
+      expected,
+      rows,
+    };
+  });
+  assert(pipelineClinicalFilter.active && /注册临床中/.test(pipelineClinicalFilter.countText), 'Clicking the clinical KPI should filter the project table to clinical-stage rows', JSON.stringify(pipelineClinicalFilter));
+  assert(pipelineClinicalFilter.rows.length === pipelineClinicalFilter.expected && pipelineClinicalFilter.rows.every((text) => /注册临床中/.test(text)), 'Clinical KPI filter should show the products behind the clinical count', JSON.stringify(pipelineClinicalFilter));
 
   await pipelinePage.locator('[data-track="silk"]').click();
   await pipelinePage.waitForTimeout(300);
@@ -271,10 +312,10 @@ async function main() {
     rows: document.querySelectorAll('#projectBody tr').length,
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
-  assert(!pipelinePcl.projectText.includes('Ellansé-M'), 'Approved Ellanse-M should be removed from active PCL registration progress', pipelinePcl.projectText);
-  assert(!pipelinePcl.forecastText.includes('Ellansé-M'), 'Approved Ellanse-M should be removed from PCL forecast ranking', pipelinePcl.forecastText);
+  assert(pipelinePcl.projectText.includes('Ellansé-M'), 'Ellansé-M new-indication filing should surface as an active PCL project (data-as-truth)', pipelinePcl.projectText);
+  assert(pipelinePcl.forecastText.includes('Ellansé-M'), 'Ellansé-M review-stage filing should rank in the PCL forecast list', pipelinePcl.forecastText);
   assert(!pipelinePcl.hasArchivedKpi, 'PCL view should not show an archived/approved KPI');
-  assert(pipelinePcl.rows >= 3, 'PCL view should keep active unapproved projects after removing Ellanse-M', String(pipelinePcl.rows));
+  assert(pipelinePcl.rows >= 3, 'PCL view should keep multiple active projects', String(pipelinePcl.rows));
   assert(pipelinePcl.overflowX <= 1, 'Pipeline PCL view has horizontal overflow', String(pipelinePcl.overflowX));
 
   await pipelinePage.locator('[data-track="caha"]').click();

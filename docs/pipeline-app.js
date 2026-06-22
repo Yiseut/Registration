@@ -1,7 +1,10 @@
 (function () {
   const data = window.PIPELINE_DASHBOARD_DATA || { meta: {}, summary: {}, projects: [], records: [], milestones: [] };
-  const state = { track: "all", activeTimelineKey: "", focusedProduct: "", focusedRecordIds: [] };
+  const state = { track: "all", activeTimelineKey: "", focusedProduct: "", focusedRecordIds: [], stageFilter: "" };
   const $ = (id) => document.getElementById(id);
+  const charts = {};
+  const RI = window.RI || {};
+  const chartPalette = RI.palette || {};
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -259,6 +262,13 @@
     return track?.track_label || state.track;
   }
 
+  function trackGroupLabel(group) {
+    if (group === "all") return "总览";
+    if (group === "pdrn_pn") return "PDRN/PN";
+    const track = (data.summary.by_track || []).find((item) => trackGroup(item.track) === group);
+    return track?.track_label || group;
+  }
+
   function trackGroup(track) {
     return ["pdrn", "pn"].includes(track) ? "pdrn_pn" : track;
   }
@@ -269,6 +279,27 @@
 
   function activeProjects() {
     return activeProjectsAll.filter(inSelectedTrack);
+  }
+
+  function visibleProjects() {
+    const projects = activeProjects();
+    return state.stageFilter ? projects.filter((project) => stageBucket(project) === state.stageFilter) : projects;
+  }
+
+  function selectTrack(track) {
+    state.track = track || "all";
+    state.activeTimelineKey = "";
+    state.focusedProduct = "";
+    state.focusedRecordIds = [];
+    state.stageFilter = "";
+    render();
+  }
+
+  function selectStageFilter(bucket) {
+    state.stageFilter = state.stageFilter === bucket ? "" : bucket;
+    renderProjects();
+    renderKpis();
+    $("projectTableSection")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function archivedProjects() {
@@ -432,13 +463,7 @@
       `)
       .join("");
     tabs.querySelectorAll("button").forEach((button) => {
-      button.addEventListener("click", () => {
-        state.track = button.dataset.track || "all";
-        state.activeTimelineKey = "";
-        state.focusedProduct = "";
-        state.focusedRecordIds = [];
-        render();
-      });
+      button.addEventListener("click", () => selectTrack(button.dataset.track || "all"));
     });
   }
 
@@ -449,6 +474,19 @@
     setText("kpiReview", buckets.get("review") || 0);
     setText("kpiTesting", buckets.get("testing") || 0);
     setText("kpiScout", buckets.get("scout") || 0);
+    document.querySelectorAll("[data-stage-filter]").forEach((card) => {
+      const bucket = card.dataset.stageFilter || "";
+      const count = buckets.get(bucket) || 0;
+      card.classList.toggle("active", state.stageFilter === bucket);
+      card.disabled = count === 0;
+      card.setAttribute("aria-pressed", String(state.stageFilter === bucket));
+    });
+  }
+
+  function bindMetricCards() {
+    document.querySelectorAll("[data-stage-filter]").forEach((card) => {
+      card.addEventListener("click", () => selectStageFilter(card.dataset.stageFilter || ""));
+    });
   }
 
   function renderSourceBars() {
@@ -550,7 +588,7 @@
     if (!section) return;
     const projects = activeProjects();
     const buckets = countBy(projects, stageBucket);
-    const byTrack = countBy(projects, (project) => project.track_label || project.track);
+    const byTrack = countBy(projects, (project) => trackGroup(project.track));
     const topTracks = [...byTrack.entries()].sort((a, b) => b[1] - a[1]);
 
     setText("overviewTitle", state.track === "all" ? "注册进展总览" : `${selectedTrackLabel()}进展判断`);
@@ -562,17 +600,21 @@
     if (trackHost) {
       trackHost.innerHTML = topTracks
         .map(([name, count]) => {
-          const trackProjects = projects.filter((project) => (project.track_label || project.track) === name);
+          const trackProjects = projects.filter((project) => trackGroup(project.track) === name);
           const trackBuckets = countBy(trackProjects, stageBucket);
+          const label = trackGroupLabel(name);
           return `
-            <article class="track-summary-card">
-              <span>${escapeHtml(name)}</span>
+            <button class="track-summary-card ${state.track === name ? "active" : ""}" type="button" data-summary-track="${escapeHtml(name)}" aria-label="查看${escapeHtml(label)}注册进展">
+              <span>${escapeHtml(label)}</span>
               <strong>${count}</strong>
               <p>临床 ${trackBuckets.get("clinical") || 0} · 受理/审评 ${trackBuckets.get("review") || 0} · 型检 ${trackBuckets.get("testing") || 0}</p>
-            </article>
+            </button>
           `;
         })
         .join("");
+      trackHost.querySelectorAll("[data-summary-track]").forEach((card) => {
+        card.addEventListener("click", () => selectTrack(card.dataset.summaryTrack || "all"));
+      });
     }
 
     renderForecastSummary(projects);
@@ -788,8 +830,11 @@
   function renderProjects() {
     const body = $("projectBody");
     if (!body) return;
-    const projects = activeProjects();
-    setText("projectCount", `${projects.length} 个项目`);
+    const projects = visibleProjects();
+    setText("projectCount", state.stageFilter
+      ? `${stageBucketLabel(state.stageFilter)} ${projects.length} 个项目`
+      : `${projects.length} 个项目`);
+    setText("projectFilterNote", state.stageFilter ? `已筛选：${stageBucketLabel(state.stageFilter)}` : "");
     body.innerHTML = projects
       .map((project) => {
         const forecast = forecastForProject(project);
@@ -816,7 +861,11 @@
           </tr>
         `;
       })
-      .join("");
+      .join("") || `
+        <tr>
+          <td colspan="7">当前筛选下暂无项目。</td>
+        </tr>
+      `;
     body.querySelectorAll(".source-button").forEach((button) => {
       button.addEventListener("click", () => focusSourceRows(button.dataset.product || "", (button.dataset.records || "").split("|").filter(Boolean)));
     });
@@ -899,8 +948,143 @@
     setText("sourceFilterNote", matches.length ? `找到 ${matches.length} 条来源` : "未找到匹配来源。");
   }
 
+  const STAGE_BUCKETS = [
+    ["clinical", "注册临床中"],
+    ["review", "受理/审评"],
+    ["testing", "注册检验/型检"],
+    ["scout", "早期线索"],
+  ];
+
+  function getChart(id) {
+    const el = $(id);
+    if (!el || typeof echarts === "undefined") return null;
+    if (!charts[id]) charts[id] = echarts.init(el, "registration", { renderer: "canvas" });
+    return charts[id];
+  }
+
+  function trackGroupsAll() {
+    const groups = new Map();
+    activeProjectsAll.forEach((project) => {
+      const group = trackGroup(project.track);
+      if (!groups.has(group)) groups.set(group, []);
+      groups.get(group).push(project);
+    });
+    return [...groups.entries()]
+      .map(([group, items]) => ({ group, label: trackGroupLabel(group), items, total: items.length }))
+      .sort((a, b) => a.total - b.total);
+  }
+
+  function renderTrackStageChart() {
+    const chart = getChart("chartTrackStage");
+    if (!chart) return;
+    const rows = trackGroupsAll();
+    const yLabels = rows.map((row) => row.label);
+    const data = [];
+    let maxV = 1;
+    rows.forEach((row, yi) => {
+      const counts = countBy(row.items, stageBucket);
+      STAGE_BUCKETS.forEach(([key], xi) => {
+        const value = counts.get(key) || 0;
+        if (value > maxV) maxV = value;
+        data.push([xi, yi, value]);
+      });
+    });
+    chart.setOption({
+      grid: { left: 8, right: 16, top: 8, bottom: 26, containLabel: true },
+      tooltip: {
+        position: "top",
+        formatter: (p) => `${yLabels[p.value[1]]} · ${STAGE_BUCKETS[p.value[0]][1]}<br/>在研项目 <b>${p.value[2]}</b> 个`,
+      },
+      xAxis: { type: "category", data: STAGE_BUCKETS.map((b) => b[1]), splitArea: { show: false }, axisLabel: { fontSize: 11.5, interval: 0 } },
+      yAxis: { type: "category", data: yLabels, splitArea: { show: false } },
+      visualMap: { min: 0, max: maxV, show: false, inRange: { color: ["#f7efef", "#e9cccc", "#d6a6a6", "#c09090"] } },
+      series: [{
+        type: "heatmap",
+        data,
+        label: { show: true, color: "#5a4646", fontSize: 12, fontWeight: 600, formatter: (p) => (p.value[2] ? p.value[2] : "") },
+        itemStyle: { borderColor: "rgba(255,255,255,0.72)", borderWidth: 3, borderRadius: 6 },
+        emphasis: { itemStyle: { shadowBlur: 10, shadowColor: "rgba(120,104,104,0.22)" } },
+      }],
+    }, true);
+  }
+
+  function renderEvidenceChart() {
+    const chart = getChart("chartEvidence");
+    if (!chart) return;
+    const rows = trackGroupsAll();
+    const yLabels = rows.map((row) => row.label);
+    const strong = rows.map((row) => row.items.filter((p) => ["A0", "A1", "A2", "A3"].includes(p.highest_evidence)).length);
+    const watch = rows.map((row, i) => row.total - strong[i]);
+    chart.setOption({
+      grid: { left: 8, right: 22, top: 34, bottom: 6, containLabel: true },
+      legend: { top: 2, data: ["强证据 A0–A3", "待核验 A4–A6"] },
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" } },
+      xAxis: { type: "value", minInterval: 1 },
+      yAxis: { type: "category", data: yLabels },
+      series: [
+        { name: "强证据 A0–A3", type: "bar", stack: "g", data: strong, color: "#58bfd7", barWidth: "58%", itemStyle: { borderRadius: [4, 0, 0, 4] } },
+        { name: "待核验 A4–A6", type: "bar", stack: "g", data: watch, color: "#e5b574", itemStyle: { borderRadius: [0, 4, 4, 0] } },
+      ],
+    }, true);
+  }
+
+  function renderForecastWindowChart() {
+    const chart = getChart("chartForecastWindow");
+    if (!chart) return;
+    const projects = activeProjects();
+    const counts = new Map();
+    projects.forEach((project) => {
+      const window = formatHalfYear(forecastForProject(project).date);
+      counts.set(window, (counts.get(window) || 0) + 1);
+    });
+    const entries = [...counts.entries()].sort((a, b) => {
+      if (a[0] === "待判断") return 1;
+      if (b[0] === "待判断") return -1;
+      return a[0].localeCompare(b[0]);
+    });
+    setText("forecastWindowSub", state.track === "all" ? "全部在研项目" : selectedTrackLabel());
+    chart.setOption({
+      grid: { left: 8, right: 16, top: 16, bottom: 22, containLabel: true },
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, formatter: (ps) => `${ps[0].name}<br/>预计下证 <b>${ps[0].value}</b> 个` },
+      xAxis: { type: "category", data: entries.map((e) => e[0]), axisLabel: { fontSize: 11.5 } },
+      yAxis: { type: "value", minInterval: 1 },
+      series: [{
+        type: "bar",
+        data: entries.map((e) => e[1]),
+        barWidth: "46%",
+        itemStyle: { color: "#c09090", borderRadius: [6, 6, 0, 0] },
+        label: { show: true, position: "top", color: "#9d7b7b", fontSize: 11 },
+      }],
+    }, true);
+  }
+
+  function renderVizInsight() {
+    const host = $("vizInsight");
+    if (!host) return;
+    const projects = activeProjects();
+    const total = projects.length;
+    if (!total) {
+      host.innerHTML = "当前筛选下暂无在研项目。";
+      return;
+    }
+    const buckets = countBy(projects, stageBucket);
+    const byTrack = countBy(projects, (project) => trackGroup(project.track));
+    const lead = [...byTrack.entries()].sort((a, b) => b[1] - a[1])[0];
+    const windows = projects.map((project) => formatHalfYear(forecastForProject(project).date)).filter((w) => w !== "待判断").sort();
+    const nearest = windows[0] || "待判断";
+    const scope = state.track === "all" ? "全部赛道" : selectedTrackLabel();
+    host.innerHTML = `${escapeHtml(scope)}当前共 <b>${total}</b> 个在研项目，`
+      + `其中受理/审评阶段 <b>${buckets.get("review") || 0}</b> 个、注册临床中 <b>${buckets.get("clinical") || 0}</b> 个；`
+      + `<b>${escapeHtml(trackGroupLabel(lead[0]))}</b> 赛道最活跃（<b>${lead[1]}</b> 个）；`
+      + `最早的预测下证窗口落在 <b>${escapeHtml(nearest)}</b>。`;
+  }
+
   function render() {
     renderTabs();
+    renderVizInsight();
+    renderTrackStageChart();
+    renderEvidenceChart();
+    renderForecastWindowChart();
     renderKpis();
     renderOverview();
     renderBenchmark();
@@ -911,6 +1095,15 @@
     renderRecords();
   }
 
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      Object.values(charts).forEach((chart) => chart && chart.resize());
+    }, 160);
+  });
+
   renderMeta();
+  bindMetricCards();
   render();
 })();
