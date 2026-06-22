@@ -69,13 +69,10 @@
   .viz-insight b { color: var(--brand-deep); font-weight: 650; }
 
   /* ---- Panels reuse .card; helper layouts ---- */
-  .overview-grid {
-    display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
-    gap: 20px; align-items: start;
-  }
-  /* When a track is selected the forecast panel becomes compact (timeline + ranked
-     list side by side) and needs full width, so collapse the overview grid. */
-  .overview-grid:has(.forecast-panel.compact) { grid-template-columns: 1fr; }
+  /* Stack the material-summary card and the forecast panel full-width: the
+     summary cards lay out in 1–2 rows and the ranked forecast becomes a
+     multi-column grid, instead of a squished grid next to a tall thin list. */
+  .overview-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
   .panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
   .panel-head h2 { margin: 0; font-size: 17px; font-weight: 600; color: var(--ink); }
   .panel-head p, .overview-lead { margin: 5px 0 0; font-size: 13px; color: var(--ink-3); line-height: 1.55; }
@@ -96,7 +93,9 @@
 
   /* ---- Forecast rank list ---- */
   .forecast-panel.compact .forecast-main-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr); gap: 20px; align-items: start; }
-  .forecast-rank-list { display: grid; gap: 10px; }
+  /* auto-fit: multi-column when the panel is full-width (overview), single
+     column inside the narrow compact column (track view). */
+  .forecast-rank-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; }
   .forecast-rank-card {
     display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: start;
     padding: 13px; border: 1px solid var(--hairline); border-radius: var(--radius-sm);
