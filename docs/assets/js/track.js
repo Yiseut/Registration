@@ -1783,7 +1783,15 @@
     }
 
     function recordValidUntil(record) {
-      return record.valid_until || record.official_valid_until || '—';
+      const value = record.valid_until || record.official_valid_until || '';
+      if (!value) return '—';
+      // Estimated expiry: we have a valid_until but no official_valid_until
+      // (e.g. domestic drugs whose NMPA page does not publish 有效期截止日).
+      // Render it slightly lighter with a small "推算" marker.
+      if (record.valid_until && !record.official_valid_until) {
+        return `<span style="color:var(--ink-3)" title="按批准日 + 5 年法定有效期推算；境内药品 NMPA 详情页未公示有效期截止日">${escape(value)}<span style="margin-left:4px;font-size:10px;color:var(--ink-mute)">推算</span></span>`;
+      }
+      return escape(value);
     }
 
     function matchesHaLidocaineFilter(record, filterValue) {
@@ -1811,7 +1819,7 @@
           <td>${escape(r.origin || '—')}</td>
           <td>${escape(formatIndications(r))}</td>
           <td>${escape(r.approval_date || '—')}</td>
-          <td>${escape(recordValidUntil(r))}</td>
+          <td>${recordValidUntil(r)}</td>
           <td>${verificationBadge(r)}</td>
         </tr>
       `;
@@ -1857,7 +1865,7 @@
             ${scopeLine}
           </td>
           <td>${escape(r.approval_date || '—')}</td>
-          <td>${escape(recordValidUntil(r))}</td>
+          <td>${recordValidUntil(r)}</td>
           <td>${verificationBadge(r)}</td>
         </tr>
       `;
