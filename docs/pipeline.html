@@ -63,6 +63,9 @@
     display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
     gap: 20px; align-items: start;
   }
+  /* When a track is selected the forecast panel becomes compact (timeline + ranked
+     list side by side) and needs full width, so collapse the overview grid. */
+  .overview-grid:has(.forecast-panel.compact) { grid-template-columns: 1fr; }
   .panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
   .panel-head h2 { margin: 0; font-size: 17px; font-weight: 600; color: var(--ink); }
   .panel-head p, .overview-lead { margin: 5px 0 0; font-size: 13px; color: var(--ink-3); line-height: 1.55; }
