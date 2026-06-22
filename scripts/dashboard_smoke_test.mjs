@@ -175,7 +175,8 @@ async function main() {
     hasForecastMethodCard: document.querySelector('.forecast-method') !== null,
     forecastSummaryColumns: getComputedStyle(document.querySelector('.forecast-summary')).gridTemplateColumns,
     basisCards: Array.from(document.querySelectorAll('#forecastBasisCards .basis-card')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
-    benchmarkRanges: Array.from(document.querySelectorAll('#benchmarkSteps .benchmark-range')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
+    cycleStages: Array.from(document.querySelectorAll('#benchmarkSteps .cycle-stage')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
+    troubledCases: Array.from(document.querySelectorAll('#troubledCases .troubled-card')).map((node) => node.textContent?.replace(/\s+/g, ' ').trim() || ''),
     kpis: ['#kpiClinical', '#kpiReview', '#kpiTesting', '#kpiScout'].map((selector) => Number(document.querySelector(selector)?.textContent || 0)),
     projectText: document.querySelector('#projectBody')?.textContent || '',
     ecmImplantRows: Array.from(document.querySelectorAll('#projectBody tr')).filter((row) => /脱细胞基质植入剂/.test(row.textContent || '')).length,
@@ -214,8 +215,10 @@ async function main() {
   assert(pipelineOverview.basisCards.some((text) => /Ellansé-M|跟进型材料|2026-04-23/.test(text)), 'Pipeline basis should include the approved follow-on device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /优法兰|首证类器械|国械注准20253130390/.test(text)), 'Pipeline basis should include a first-certificate device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
-  assert(pipelineOverview.benchmarkRanges.length === 3, 'Pipeline should render three full-cycle forecast range bars', String(pipelineOverview.benchmarkRanges.length));
-  assert(pipelineOverview.benchmarkRanges.join(' | ').includes('18-36个月') && pipelineOverview.benchmarkRanges.join(' | ').includes('36-60个月'), 'Pipeline range bars should show min/max cycle windows', pipelineOverview.benchmarkRanges.join(' | '));
+  assert(pipelineOverview.cycleStages.length === 5, 'Pipeline should render the five full-cycle registration stages', String(pipelineOverview.cycleStages.length));
+  assert(pipelineOverview.cycleStages.join(' | ').includes('注册临床试验') && pipelineOverview.cycleStages.join(' | ').includes('技术审评'), 'Pipeline cycle stages should cover clinical-to-review steps', pipelineOverview.cycleStages.join(' | '));
+  assert(pipelineOverview.cycleStages.some((text) => text.includes('法定')) && pipelineOverview.cycleStages.some((text) => text.includes('可变')), 'Pipeline cycle stages should mark statutory vs variable steps', pipelineOverview.cycleStages.join(' | '));
+  assert(pipelineOverview.troubledCases.some((text) => /Ultherapy|超声刀/.test(text)) && pipelineOverview.troubledCases.some((text) => /Radiesse|瑞德喜/.test(text)), 'Pipeline should show troubled/stalled registration cases', pipelineOverview.troubledCases.join(' | '));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0 && pipelineOverview.kpis[3] >= 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡|Radiesse\/瑞德喜/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));

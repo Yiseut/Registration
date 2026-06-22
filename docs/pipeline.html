@@ -162,7 +162,25 @@
   .basis-card p { margin: 0 0 8px; font-size: 12.5px; color: var(--ink-3); }
   .basis-card a { color: var(--brand-deep); font-weight: 600; }
   .basis-note { margin: -2px 0 16px; font-size: 12px; color: var(--ink-mute); line-height: 1.6; }
-  .benchmark-steps { display: grid; gap: 12px; }
+  .benchmark-steps { display: grid; gap: 14px; margin-top: 4px; }
+  .cycle-summary { margin: 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-3); }
+  .cycle-summary b { color: var(--brand-deep); font-weight: 650; }
+  .cycle-stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+  .cycle-stage { padding: 12px 13px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.6); }
+  .cycle-stage-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .cycle-stage-head strong { font-size: 13.5px; color: var(--ink); font-weight: 600; }
+  .stage-tag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .stage-tag.legal { background: color-mix(in srgb, #8898a0 20%, #f8f4f4); color: #5d6b76; }
+  .stage-tag.variable { background: color-mix(in srgb, #90a090 20%, #f8f4f4); color: #5f6e5f; }
+  .cycle-stage-dur { display: block; margin: 8px 0 4px; font-size: 19px; font-weight: 650; color: var(--brand-deep); font-variant-numeric: tabular-nums; }
+  .cycle-stage p { margin: 0; font-size: 11.5px; line-height: 1.5; color: var(--ink-3); }
+  .troubled-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .troubled-card { padding: 15px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: color-mix(in srgb, #c09090 6%, var(--surface)); }
+  .troubled-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .troubled-head strong { font-size: 15px; color: var(--ink); font-weight: 650; }
+  .troubled-card .muted-line { margin: 4px 0 0; }
+  .troubled-card p { margin: 8px 0 10px; font-size: 12.5px; line-height: 1.6; color: var(--ink-3); }
+  .troubled-card a { color: var(--brand-deep); font-weight: 600; font-size: 12.5px; }
   .range-axis { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 2px; color: var(--ink-mute); font-size: 11px; font-weight: 600; }
   .range-axis span:not(:first-child) { text-align: right; }
   .benchmark-range { display: grid; grid-template-columns: minmax(200px, 0.42fr) minmax(0, 1fr); gap: 14px; align-items: center; padding: 13px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.6); }
@@ -338,12 +356,12 @@
   </section>
 
   <div class="section-head rise">
-    <h2>预测依据与来源质量</h2>
-    <p>参考官方规则与已获批样板，并查看来源可信度分布。</p>
+    <h2>注册全周期与典型案例</h2>
+    <p>拆解从临床到获批的完整周期，并对照已获批样板与波折案例。</p>
   </div>
   <section class="grid grid-12 basis-source-grid">
     <article class="card lift span-8 panel">
-      <div class="panel-head"><div><h2>预测依据与样板</h2><p>参考官方规则和已获批案例。</p></div></div>
+      <div class="panel-head"><div><h2>注册全周期与样板案例</h2><p>哪些环节是国家法定时限、哪些随产品而变，并以已获批案例为锚点。</p></div></div>
       <div class="basis-grid" id="forecastBasisCards"></div>
       <p class="basis-note" id="forecastMethod">预测仅作顺序参考，实际获批时间以官方信息为准。</p>
       <div class="benchmark-steps" id="benchmarkSteps"></div>
@@ -352,6 +370,14 @@
       <div class="panel-head"><div><h2>来源质量</h2><p>优先查看官方、临床登记和企业原文。</p></div></div>
       <div class="source-bars" id="sourceBars"></div>
     </article>
+  </section>
+
+  <div class="section-head rise">
+    <h2>波折与停滞案例</h2>
+    <p>注册过程出现反复、拖长甚至至今未下证的参考案例。</p>
+  </div>
+  <section class="card lift">
+    <div class="troubled-list" id="troubledCases"></div>
   </section>
 
   <div class="section-head rise">

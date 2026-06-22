@@ -672,34 +672,77 @@
     `).join("");
   }
 
+  function cycleStages() {
+    // Full registration journey, marking which steps carry an official statutory
+    // limit and which are product-specific / variable. Sources: NMPA 器械首次注册办事
+    // 指南 + CMDE; clinical & testing durations are not statutory.
+    return [
+      { stage: "注册临床试验", kind: "可变", duration: "约 1–3 年", note: "时长随产品、适应证与入组随访进度而定，非法定时限。" },
+      { stage: "注册检验 / 型检", kind: "可变", duration: "数月（含排队）", note: "送检与排队时间不固定，非法定时限。" },
+      { stage: "受理 → 技术审评", kind: "法定", duration: "约 60 工作日", note: "CMDE 技术审评法定时限；2024 年三类首次注册实际平均约 99 个工作日。发补会暂停时钟，企业最长可用 1 年补正。" },
+      { stage: "质量体系核查", kind: "法定", duration: "30 工作日", note: "注册质量管理体系现场核查。" },
+      { stage: "行政审批 + 制证", kind: "法定", duration: "20 工作日", note: "受理部门据审评结论作出决定并制证。" },
+    ];
+  }
+
+  function troubledCases() {
+    return [
+      {
+        name: "Ultherapy 超声刀 / Merz",
+        track: "EBD · 聚焦超声",
+        status: "至今未获 NMPA 注册",
+        body: "长期未取得大陆三类注册，目前仅依托海南博鳌乐城先行区特许政策使用；属典型停滞案例，提示高风险设备类审评的不确定性。",
+        link: "https://zhuanlan.zhihu.com/p/572691113",
+        linkText: "Merz 中国背景",
+      },
+      {
+        name: "Radiesse 瑞德喜 / Merz",
+        track: "CaHA",
+        status: "国际 2006 → 中国 2025 获批",
+        body: "全球 2006 年获 FDA，中国直到 2023 年才启动注册临床、2025-03 获批（国械注进20253130124），落地节奏明显滞后于国际。",
+        link: "https://bydrug.pharmcube.com/news/detail/641ea03ddf9bd3bd5f27072aaf2a3aef",
+        linkText: "CMDE 审评报告",
+      },
+    ];
+  }
+
   function renderBenchmark() {
-    const host = $("benchmarkSteps");
     renderForecastBasis();
+    renderTroubledCases();
+    const host = $("benchmarkSteps");
     if (host) {
-      const maxMonth = Math.max(...forecastBasisCards().map((item) => item.maxMonths), 60);
       host.innerHTML = `
-        <div class="range-axis" aria-hidden="true">
-          <span>0</span><span>12月</span><span>24月</span><span>36月</span><span>48月</span><span>60月</span>
-        </div>
-        ${forecastBasisCards().map((item) => {
-          const start = Math.max(0, (item.minMonths / maxMonth) * 100);
-          const width = Math.max(2, ((item.maxMonths - item.minMonths) / maxMonth) * 100);
-          return `
-            <div class="benchmark-range">
-              <div class="range-copy">
-                <span>${escapeHtml(item.type)}</span>
-                <strong>${escapeHtml(item.rangeLabel)}</strong>
-                <p>${escapeHtml(item.rangeNote)}</p>
+        <p class="cycle-summary">受理后法定环节合计约 <b>5–6 个月</b>（理论），实务常 <b>8–12 个月</b>、复杂品种逾一年；临床试验与注册检验本身没有官方法定时间表，所以上方的预测以“关键临床 → 受理 → 获批”的实测案例为锚点。</p>
+        <div class="cycle-stages">
+          ${cycleStages().map((s) => `
+            <div class="cycle-stage">
+              <div class="cycle-stage-head">
+                <strong>${escapeHtml(s.stage)}</strong>
+                <span class="stage-tag ${s.kind === "法定" ? "legal" : "variable"}">${escapeHtml(s.kind)}</span>
               </div>
-              <div class="range-rail" style="--start:${start.toFixed(2)}%; --width:${width.toFixed(2)}%">
-                <i></i>
-                <b>${escapeHtml(item.rangeLabel)}</b>
-              </div>
+              <b class="cycle-stage-dur">${escapeHtml(s.duration)}</b>
+              <p>${escapeHtml(s.note)}</p>
             </div>
-          `;
-        }).join("")}
+          `).join("")}
+        </div>
       `;
     }
+  }
+
+  function renderTroubledCases() {
+    const host = $("troubledCases");
+    if (!host) return;
+    host.innerHTML = troubledCases().map((c) => `
+      <article class="troubled-card">
+        <div class="troubled-head">
+          <strong>${escapeHtml(c.name)}</strong>
+          <span class="badge warn">${escapeHtml(c.status)}</span>
+        </div>
+        <span class="muted-line">${escapeHtml(c.track)}</span>
+        <p>${escapeHtml(c.body)}</p>
+        <a href="${escapeHtml(c.link)}" target="_blank" rel="noreferrer">${escapeHtml(c.linkText)}</a>
+      </article>
+    `).join("");
   }
 
   function timelineEvents() {
