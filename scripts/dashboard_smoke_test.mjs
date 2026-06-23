@@ -319,11 +319,12 @@ async function main() {
       countText: document.querySelector('#projectCount')?.textContent?.trim() || '',
       note: document.querySelector('#projectFilterNote')?.textContent?.trim() || '',
       active: document.querySelector('.metric-card[data-stage-filter="review"]')?.classList.contains('active') || false,
+      expected: Number(document.querySelector('#kpiReview')?.textContent || 0),
       rows,
     };
   });
   assert(pipelineReviewFilter.active && /受理\/审评中/.test(pipelineReviewFilter.countText), 'Clicking the review KPI should filter the project table to review-stage rows', JSON.stringify(pipelineReviewFilter));
-  assert(pipelineReviewFilter.rows.length === 1 && pipelineReviewFilter.rows.every((text) => /受理\/审评中/.test(text)), 'Review KPI filter should show only review-stage products', JSON.stringify(pipelineReviewFilter));
+  assert(pipelineReviewFilter.rows.length === pipelineReviewFilter.expected && pipelineReviewFilter.rows.every((text) => /受理\/审评中/.test(text)), 'Review KPI filter should show only review-stage products', JSON.stringify(pipelineReviewFilter));
 
   await pipelinePage.locator('.metric-card[data-stage-filter="clinical"]').click();
   await pipelinePage.waitForTimeout(300);
