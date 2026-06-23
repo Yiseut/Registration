@@ -146,6 +146,38 @@ async function main() {
   assert(overviewState.originBreakdown === `国内 ${overview.kpi.domestic}张 · 进口 ${overview.kpi.imported}张 · 港澳台 ${overview.kpi.hkmt}张`, 'Origin KPI should show unitized domestic/import/HKMT counts', overviewState.originBreakdown);
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
 
+  await overviewPage.fill('#global-search-input', '海雅美');
+  await overviewPage.waitForSelector('.global-search-result');
+  const globalSearchState = await overviewPage.evaluate(() => ({
+    resultText: document.querySelector('#global-search-results')?.textContent?.replace(/\s+/g, ' ').trim() || '',
+    firstHref: document.querySelector('.global-search-result a')?.getAttribute('href') || '',
+    inputValue: document.querySelector('#global-search-input')?.value || '',
+    filterValue: document.querySelector('#filter-query')?.value || '',
+    visible: document.querySelector('#global-search-results')?.classList.contains('visible') || false,
+  }));
+  assert(globalSearchState.visible, 'Global search results should appear after typing a company name', JSON.stringify(globalSearchState));
+  assert(/海雅美/.test(globalSearchState.resultText) && /透明质酸钠/.test(globalSearchState.resultText), 'Global search should route Haiyamei to the HA product line', globalSearchState.resultText);
+  assert(globalSearchState.firstHref.includes('tracks/ha.html') && decodeURIComponent(globalSearchState.firstHref).includes('海雅美'), 'Global search track link should preserve the query for the material page', globalSearchState.firstHref);
+  assert(globalSearchState.inputValue === '海雅美' && globalSearchState.filterValue === '海雅美', 'Global search should stay synced with the official-record search field', JSON.stringify(globalSearchState));
+
+  await overviewPage.locator('.global-search-result [data-global-action="filter"]').first().click();
+  await overviewPage.waitForTimeout(350);
+  const globalSearchFilterState = await overviewPage.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll('#table-records tbody tr')).map((row) => row.textContent?.replace(/\s+/g, ' ').trim() || '');
+    const params = new URL(location.href).searchParams;
+    return {
+      rows,
+      count: document.querySelector('#record-count')?.textContent?.trim() || '',
+      segment: document.querySelector('#filter-segment')?.value || '',
+      company: document.querySelector('#filter-company')?.value || '',
+      q: params.get('q') || '',
+      urlSegment: params.get('segment') || '',
+    };
+  });
+  assert(globalSearchFilterState.segment === 'ha' && globalSearchFilterState.urlSegment === 'ha', 'Global search filter action should switch the official table to the matching material segment', JSON.stringify(globalSearchFilterState));
+  assert(globalSearchFilterState.rows.length > 0 && globalSearchFilterState.rows.every((row) => /海雅美/.test(row)), 'Global search filter action should show only matching company rows', JSON.stringify(globalSearchFilterState));
+  assert(globalSearchFilterState.q === '海雅美', 'Global search filter action should keep the query in the URL', JSON.stringify(globalSearchFilterState));
+
   await overviewPage.selectOption('#filter-origin', 'hkmt');
   await overviewPage.waitForTimeout(250);
   assert(new URL(overviewPage.url()).searchParams.get('origin') === 'hkmt', 'Origin filter did not update the URL');

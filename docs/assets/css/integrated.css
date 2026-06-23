@@ -18,6 +18,133 @@
   margin-top: 14px;
 }
 
+.global-search-card {
+  margin-top: 18px;
+  padding: clamp(14px, 1.8vw, 20px);
+}
+
+.global-search-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.global-search-field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  color: var(--ink-mute);
+  font-size: 12px;
+  font-weight: 560;
+}
+
+.global-search-field input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 0 15px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--surface) 88%, white);
+  font-size: 15px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.global-search-field input:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--brand) 30%, transparent);
+  outline-offset: 2px;
+  border-color: color-mix(in srgb, var(--brand-deep) 28%, var(--hairline));
+}
+
+.global-search-clear {
+  min-height: 48px;
+  padding-inline: 18px;
+}
+
+.global-search-results {
+  display: none;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.global-search-results.visible {
+  display: grid;
+}
+
+.global-search-result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 92%, white), color-mix(in srgb, var(--surface-2) 54%, white));
+}
+
+.global-search-result-main {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.global-search-result-main strong {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.28;
+}
+
+.global-search-result-main p {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.global-search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.global-search-tags span {
+  max-width: 100%;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--brand-deep);
+  background: color-mix(in srgb, var(--brand-soft) 74%, white);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.global-search-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.global-search-actions .text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  white-space: nowrap;
+}
+
+.global-search-empty {
+  padding: 12px 14px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  font-size: 13px;
+}
+
 .analysis-pages-panel {
   margin-top: 18px;
   padding: clamp(16px, 2vw, 24px);
@@ -1571,6 +1698,14 @@ button.manufacturer-heat-cell:focus-visible {
     justify-items: start;
   }
 
+  .global-search-result {
+    grid-template-columns: 1fr;
+  }
+
+  .global-search-actions {
+    justify-content: flex-start;
+  }
+
   .china-city-rank {
     min-height: 0;
   }
@@ -1633,6 +1768,14 @@ button.manufacturer-heat-cell:focus-visible {
   .records-toolbar,
   .insight-grid {
     grid-template-columns: 1fr;
+  }
+
+  .global-search-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .global-search-clear {
+    width: 100%;
   }
 
   .records-toolbar {

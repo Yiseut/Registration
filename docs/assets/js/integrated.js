@@ -71,6 +71,7 @@
   renderExpiry(cloudData.cert_expiry);
   renderOriginEvolution(cloudData.origin_evolution);
   initRecordFilters();
+  initGlobalSearch();
   renderRecordsTable();
   initMobileCollapses();
   watchKpis();
@@ -1114,6 +1115,8 @@
     });
     document.getElementById('filter-query')?.addEventListener('input', (event) => {
       state.query = event.target.value || '';
+      syncGlobalSearchInput();
+      renderGlobalSearchResults(state.query);
       renderRecordsTable();
       updateUrlState();
     });
@@ -1124,9 +1127,208 @@
       state.origin = 'all';
       state.query = '';
       syncFilters();
+      syncGlobalSearchInput();
+      renderGlobalSearchResults('');
       renderRecordsTable();
       updateUrlState();
     });
+  }
+
+  function initGlobalSearch() {
+    const input = document.getElementById('global-search-input');
+    const clearButton = document.getElementById('global-search-clear');
+    if (!input) return;
+    input.value = state.query || '';
+    renderGlobalSearchResults(input.value);
+    input.addEventListener('input', () => {
+      state.query = input.value || '';
+      syncFilters();
+      renderGlobalSearchResults(state.query);
+      renderRecordsTable();
+      updateUrlState();
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter') return;
+      const first = document.querySelector('.global-search-result [data-global-action="filter"]');
+      if (first) first.click();
+    });
+    clearButton?.addEventListener('click', () => {
+      state.query = '';
+      syncFilters();
+      syncGlobalSearchInput();
+      renderGlobalSearchResults('');
+      renderRecordsTable();
+      updateUrlState();
+      input.focus();
+    });
+  }
+
+  function renderGlobalSearchResults(rawValue) {
+    const root = document.getElementById('global-search-results');
+    if (!root) return;
+    const query = normalizeGlobalSearch(rawValue);
+    if (!query) {
+      root.innerHTML = '';
+      root.classList.remove('visible');
+      return;
+    }
+    const results = globalSearchResults(query).slice(0, 6);
+    root.classList.add('visible');
+    if (!results.length) {
+      root.innerHTML = '<div class="global-search-empty">没有找到匹配记录</div>';
+      return;
+    }
+    root.innerHTML = results.map((item) => globalSearchResultHtml(item, rawValue)).join('');
+    root.querySelectorAll('[data-global-action="filter"]').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.segment = button.dataset.segment || 'all';
+        state.company = button.dataset.company || 'all';
+        state.classKey = 'all';
+        state.origin = 'all';
+        state.query = button.dataset.query || rawValue || '';
+        syncFilters();
+        syncGlobalSearchInput();
+        renderRecordsTable();
+        updateUrlState();
+        document.querySelector('.records-card')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  function globalSearchResults(query) {
+    return buildCompanySearchEntries()
+      .map((entry) => ({
+        ...entry,
+        score: globalSearchScore(entry, query),
+        matchedProducts: entry.records
+          .filter((record) => recordGlobalHaystack(record).includes(query))
+          .map((record) => productLabel(record))
+          .filter(Boolean),
+      }))
+      .filter((entry) => entry.score > 0)
+      .sort((a, b) => b.score - a.score || b.records.length - a.records.length || a.title.localeCompare(b.title, 'zh-CN'));
+  }
+
+  function buildCompanySearchEntries() {
+    const groups = new Map();
+    records.forEach((record) => {
+      const segment = heatSegment(record);
+      const segmentMeta = SEGMENT_BY_CODE[segment];
+      if (!segmentMeta) return;
+      const company = manufacturerGroup(record);
+      const key = `${segment}:${company.key}`;
+      if (!groups.has(key)) {
+        groups.set(key, { segment, segmentMeta, company, records: [] });
+      }
+      groups.get(key).records.push(record);
+    });
+    return [...groups.values()].map((entry) => {
+      const products = unique(entry.records.map(productLabel));
+      const forms = unique(entry.records.map((record) => displayUiLabel(record.materialForm || record.materialFamily || record.trackName || '')));
+      const indications = unique(entry.records.flatMap(indicationValues).map(indicationLabel));
+      const registrants = unique(entry.records.map((record) => record.registrant || record.officialRegistrant));
+      return {
+        ...entry,
+        title: `${entry.company.name} · ${entry.segmentMeta.name}`,
+        products,
+        forms,
+        indications,
+        registrants,
+        haystack: normalizeGlobalSearch([
+          entry.company.key,
+          entry.company.name,
+          entry.segmentMeta.name,
+          entry.segmentMeta.fullName,
+          products.join(' '),
+          forms.join(' '),
+          indications.join(' '),
+          registrants.join(' '),
+          entry.records.map(recordGlobalHaystack).join(' '),
+        ].join(' ')),
+      };
+    });
+  }
+
+  function globalSearchResultHtml(item, rawValue) {
+    const productLine = compactList(item.products, 4);
+    const formLine = compactList(item.forms, 3);
+    const indicationLine = compactList(item.indications, 3);
+    const matchedLine = compactList(unique(item.matchedProducts), 3);
+    const trackHref = `${item.segmentMeta.href}?q=${encodeURIComponent(rawValue || item.company.name)}`;
+    const meta = [
+      `${item.records.length} 张注册证`,
+      formLine ? `${formLine}` : '',
+      indicationLine ? `${indicationLine}` : '',
+    ].filter(Boolean).join(' · ');
+    const detail = [
+      productLine ? `<span>${escape(productLine)}</span>` : '',
+      matchedLine && matchedLine !== productLine ? `<span>命中：${escape(matchedLine)}</span>` : '',
+    ].filter(Boolean).join('');
+    return `
+      <article class="global-search-result">
+        <div class="global-search-result-main">
+          <strong>${escape(item.title)}</strong>
+          <p>${escape(meta)}</p>
+          ${detail ? `<div class="global-search-tags">${detail}</div>` : ''}
+        </div>
+        <div class="global-search-actions">
+          <button
+            type="button"
+            class="text-button"
+            data-global-action="filter"
+            data-segment="${escape(item.segment)}"
+            data-company="${escape(item.company.key)}"
+            data-query="${escape(rawValue || '')}"
+          >筛选清单</button>
+          <a class="text-button" href="${escape(trackHref)}">打开赛道</a>
+        </div>
+      </article>
+    `;
+  }
+
+  function globalSearchScore(entry, query) {
+    const company = normalizeGlobalSearch(`${entry.company.key} ${entry.company.name} ${entry.registrants.join(' ')}`);
+    const products = normalizeGlobalSearch(entry.products.join(' '));
+    const certificates = normalizeGlobalSearch(entry.records.map((record) => record.certificateNo).join(' '));
+    if (company === query) return 120;
+    if (company.includes(query)) return 100;
+    if (certificates.includes(query)) return 92;
+    if (products.includes(query)) return 74;
+    if (entry.haystack.includes(query)) return 46;
+    return 0;
+  }
+
+  function recordGlobalHaystack(record) {
+    return normalizeGlobalSearch([
+      record.certificateNo,
+      record.brand,
+      record.productName,
+      record.officialProductName,
+      record.registrant,
+      record.officialRegistrant,
+      record.companyShort,
+      record.manufacturerGroupName,
+      manufacturerDisplayName(record),
+      record.trackName,
+      record.materialFamily,
+      record.materialForm,
+      record.primaryIndication,
+      record.approvedIndications,
+      record.scopeFull,
+      record.specification,
+      record.components,
+    ].join(' '));
+  }
+
+  function normalizeGlobalSearch(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/[（）()【】[\]{}"'“”‘’·•,，、;；:：/／\\|_\-—\s]+/g, '');
+  }
+
+  function syncGlobalSearchInput() {
+    const input = document.getElementById('global-search-input');
+    if (input && input.value !== state.query) input.value = state.query;
   }
 
   function renderRecordsTable() {
