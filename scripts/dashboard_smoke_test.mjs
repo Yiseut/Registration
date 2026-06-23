@@ -133,6 +133,12 @@ async function main() {
     originCardLabel: document.querySelector('#kpi-origin-total')?.closest('.kpi')?.querySelector('.label')?.textContent?.trim() || '',
     originTotal: document.querySelector('#kpi-origin-total')?.textContent?.trim() || '',
     originBreakdown: document.querySelector('#kpi-origin-breakdown')?.textContent?.trim() || '',
+    hasGlobalSearchCard: document.querySelector('.global-search-card') !== null,
+    hasNavSearch: document.querySelector('#nav-root .global-nav-search #global-search-input') !== null,
+    hasGlobalSearchClear: document.querySelector('#global-search-clear') !== null,
+    globalSearchPlaceholder: document.querySelector('#global-search-input')?.getAttribute('placeholder') || '',
+    globalSearchVisibleText: document.querySelector('.global-nav-search')?.textContent?.replace(/\s+/g, '').trim() || '',
+    globalSearchWidth: Math.round(document.querySelector('.global-nav-search')?.getBoundingClientRect().width || 0),
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
@@ -155,6 +161,11 @@ async function main() {
   assert(overviewState.originCardLabel === '证照数', 'Origin KPI should be labeled as certificate count', overviewState.originCardLabel);
   assert(overviewState.originTotal === String(expectedRecords), 'Origin KPI total should match main_records', overviewState.originTotal);
   assert(overviewState.originBreakdown === `国内 ${overview.kpi.domestic}张 · 进口 ${overview.kpi.imported}张 · 港澳台 ${overview.kpi.hkmt}张`, 'Origin KPI should show unitized domestic/import/HKMT counts', overviewState.originBreakdown);
+  assert(!overviewState.hasGlobalSearchCard, 'Overview should not render the large body-level global search card');
+  assert(overviewState.hasNavSearch, 'Global search should live inside the top navigation');
+  assert(!overviewState.hasGlobalSearchClear, 'Global search should not show a separate clear button');
+  assert(!overviewState.globalSearchPlaceholder && !overviewState.globalSearchVisibleText, 'Nav search should not show visible prompt copy', JSON.stringify(overviewState));
+  assert(overviewState.globalSearchWidth > 90 && overviewState.globalSearchWidth <= 170, 'Nav search should stay compact', String(overviewState.globalSearchWidth));
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
 
   await overviewPage.fill('#global-search-input', '海雅美');
