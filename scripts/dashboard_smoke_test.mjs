@@ -49,12 +49,17 @@ async function main() {
   const overview = await fetch(urlFor('assets/data/overview.json')).then((res) => res.json());
   const manifest = await fetch(urlFor('assets/data/manifest.json')).then((res) => res.json());
   const haData = await fetch(urlFor('assets/data/tracks/ha.json')).then((res) => res.json());
+  const pllaData = await fetch(urlFor('assets/data/tracks/plla.json')).then((res) => res.json());
   const botulinumData = await fetch(urlFor('assets/data/tracks/botulinum.json')).then((res) => res.json());
   const expectedRecords = Number(overview?.kpi?.main_records || 0);
   const volbella = (haData.records || []).find((record) => record.certificate_no === '国械注进20213130109');
   const qMedLidocaineRecords = ['国械注进20213130059', '国械注进20253130284'].map((cert) => (
     (haData.records || []).find((record) => record.certificate_no === cert)
   ));
+  const haiyameiBrandRecords = new Map(['国械注准20243131969', '国械注准20253130898', '国械注准20253131239', '国械注准20263130671'].map((cert) => (
+    [cert, (haData.records || []).find((record) => record.certificate_no === cert)]
+  )));
+  const weimuPllaRecord = (pllaData.records || []).find((record) => record.certificate_no === '国械注准20263130608');
   const officialComponentLidocaineRecords = [
     '国械注进20213130059',
     '国械注进20253130284',
@@ -80,6 +85,12 @@ async function main() {
   for (const record of qMedLidocaineRecords) {
     assert(Boolean(record?.specification), 'Q-Med/Galderma records should keep official specification text', record?.certificate_no || 'missing');
   }
+  assert(haiyameiBrandRecords.get('国械注准20243131969')?.brand === '海π', 'Haiyamei jaw product should display the Haiπ brand', haiyameiBrandRecords.get('国械注准20243131969')?.brand || 'missing');
+  assert(haiyameiBrandRecords.get('国械注准20253130898')?.brand === '克拉·赫本', 'Haiyamei skin-quality product should display the Clara Hepburn brand', haiyameiBrandRecords.get('国械注准20253130898')?.brand || 'missing');
+  assert(haiyameiBrandRecords.get('国械注准20253131239')?.brand === '雅派', 'Haiyamei neck product should display the Yapai brand', haiyameiBrandRecords.get('国械注准20253131239')?.brand || 'missing');
+  assert(haiyameiBrandRecords.get('国械注准20263130671')?.brand === '瑅派', 'Haiyamei hand product should display the Tipai brand', haiyameiBrandRecords.get('国械注准20263130671')?.brand || 'missing');
+  assert(weimuPllaRecord?.brand === '臻好迷', 'Weimu PLLA record should be included with the Zhenhaomi brand', weimuPllaRecord?.brand || 'missing');
+  assert(weimuPllaRecord?.registrant === '上海玮沐医疗科技有限公司', 'Weimu PLLA record should keep the official registrant', weimuPllaRecord?.registrant || 'missing');
   for (const record of officialComponentLidocaineRecords) {
     assert(record?.lidocaine_status === '含利多卡因', 'Official component lidocaine records should be classified as lidocaine', record?.certificate_no || 'missing');
     assert(/利多卡因|lidocaine/i.test(record?.components || ''), 'Official component lidocaine records should keep component lidocaine text', record?.certificate_no || 'missing');
