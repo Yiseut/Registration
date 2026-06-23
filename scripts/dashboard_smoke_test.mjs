@@ -205,6 +205,21 @@ async function main() {
   assert(new URL(overviewPage.url()).searchParams.get('origin') === 'hkmt', 'Origin filter did not update the URL');
   await overviewPage.close();
 
+  for (const path of ['tracks/ha.html', 'tracks/botulinum.html', 'tracks/caha.html']) {
+    const trackPage = await openCheckedPage(context, path);
+    const trackCompanyLayout = await trackPage.evaluate(() => ({
+      bodyText: document.body.textContent || '',
+      hasCompanyChart: document.querySelector('#chart-companies') !== null,
+      hasOriginDonut: document.querySelector('#chart-origin') !== null,
+      companySection: Array.from(document.querySelectorAll('.section-head')).find((node) => /注册主体格局/.test(node.textContent || ''))?.textContent?.replace(/\s+/g, ' ').trim() || '',
+    }));
+    assert(trackCompanyLayout.hasCompanyChart, `${path} should render the unified company/registrant landscape chart`);
+    assert(trackCompanyLayout.companySection.includes('注册主体格局'), `${path} should use the neutral registrant-landscape heading`, trackCompanyLayout.companySection);
+    assert(!trackCompanyLayout.bodyText.includes('厂家竞争力'), `${path} should not present certificate counts as manufacturer competitiveness`);
+    assert(!trackCompanyLayout.hasOriginDonut, `${path} should not mix origin share into the registrant-landscape card`);
+    await trackPage.close();
+  }
+
   const pipelinePage = await openCheckedPage(context, 'pipeline.html');
   const pipelineOverview = await pipelinePage.evaluate(() => ({
     h1: document.querySelector('h1')?.textContent?.trim() || '',
