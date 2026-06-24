@@ -247,7 +247,7 @@
   }
 
   const contextProjectsAll = data.projects.filter((project) => !isCompletedProject(project) && isContextProject(project));
-  const activeProjectsAll = consolidateProjects(data.projects.filter((project) => !isCompletedProject(project) && !isContextProject(project)));
+  const activeProjectsAll = consolidateProjects(data.projects.filter((project) => !isCompletedProject(project) && project.frontstage_ready !== false && !isContextProject(project)));
   const archivedProjectsAll = data.projects.filter(isCompletedProject);
   const activeProjectKeys = new Set(activeProjectsAll.flatMap((project) => project._source_project_keys || [project.project_key]).filter(Boolean));
   const activeProjectIdentities = new Set(activeProjectsAll.map(projectIdentity));
@@ -628,8 +628,8 @@
       },
       {
         type: "首证类器械",
-        title: "优法兰 Aphranel / CaHA",
-        body: "国内首张CaHA面部填充注册证，2025-02-17获批，证号国械注准20253130390。无同类材料先例时，通常需要留出更宽的审评和补充资料空间。",
+        title: "优法兰 Aphranel / CaHA/微晶瓷",
+        body: "国内首张CaHA/微晶瓷面部填充注册证，2025-02-17获批，证号国械注准20253130390。无同类材料先例时，通常需要留出更宽的审评和补充资料空间。",
         link: "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf",
         linkText: "CMDE审评报告",
         rangeLabel: "30-54个月",
@@ -690,7 +690,7 @@
       },
       {
         name: "Radiesse 瑞德喜 / Merz",
-        track: "CaHA",
+        track: "CaHA/微晶瓷",
         status: "国际 2006 → 中国 2025 获批",
         body: "全球 2006 年获 FDA，中国直到 2023 年才启动注册临床、2025-03 获批（国械注进20253130124），落地节奏明显滞后于国际。",
         link: "https://bydrug.pharmcube.com/news/detail/641ea03ddf9bd3bd5f27072aaf2a3aef",

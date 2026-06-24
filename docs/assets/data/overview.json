@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-06-23T18:34:25",
+  "generated_at": "2026-06-24T00:34:16",
   "kpi": {
-    "total_records": 196,
-    "main_records": 188,
+    "total_records": 197,
+    "main_records": 189,
     "excluded": 8,
-    "companies": 102,
-    "indications": 48,
-    "verified_share": 100.0,
-    "domestic": 102,
+    "companies": 103,
+    "indications": 49,
+    "verified_share": 99.5,
+    "domestic": 103,
     "imported": 80,
     "hkmt": 6,
-    "injectable_class3": 149,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白20 / PLA13 / PCL5 / CaHA2 / 琼脂糖1",
+    "injectable_class3": 150,
+    "injectable_class3_breakdown": "HA108 / 胶原蛋白20 / PLA14 / PCL5 / CaHA/微晶瓷2 / 琼脂糖1",
     "injectable_drug": 13,
     "injectable_drug_breakdown": "肉毒毒素12 / 去氧胆酸1",
-    "indication_breakdown": "注射填充类 19 类 · 注射用药品 6 类 · EBD 27 类",
+    "indication_breakdown": "注射填充类 20 类 · 注射用药品 6 类 · EBD 27 类",
     "recent_12mo": 59,
-    "recent_12mo_share": 30.1,
-    "recent_12mo_breakdown": "HA30 / 胶原蛋白9 / EBD9 / PLA6"
+    "recent_12mo_share": 29.9,
+    "recent_12mo_breakdown": "HA29 / 胶原蛋白9 / EBD9 / PLA7"
   },
   "segments": [
     {
@@ -61,9 +61,9 @@
       "name": "PLA",
       "tagline": "",
       "accent": "#9daaf0",
-      "records": 13,
-      "main_records": 13,
-      "companies": 13,
+      "records": 14,
+      "main_records": 14,
+      "companies": 14,
       "verified": 13,
       "latest_year": 2026,
       "leading_company": "圣博玛"
@@ -82,7 +82,7 @@
     },
     {
       "key": "caha",
-      "name": "CaHA",
+      "name": "CaHA/微晶瓷",
       "tagline": "",
       "accent": "#b486d4",
       "records": 5,
@@ -468,8 +468,8 @@
   "indication_heatmap": {
     "materials": [
       "透明质酸钠 / 玻尿酸",
-      "动物源胶原",
       "PLLA",
+      "动物源胶原",
       "A型肉毒毒素",
       "重组/类人源胶原",
       "PCL",
@@ -544,37 +544,37 @@
       [
         0,
         1,
-        5
-      ],
-      [
-        4,
-        1,
-        3
-      ],
-      [
-        12,
-        1,
-        2
-      ],
-      [
-        0,
-        2,
-        10
+        11
       ],
       [
         9,
-        2,
+        1,
         1
       ],
       [
         11,
-        2,
+        1,
         1
       ],
       [
         13,
-        2,
+        1,
         1
+      ],
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        4,
+        2,
+        3
+      ],
+      [
+        12,
+        2,
+        2
       ],
       [
         2,
@@ -649,7 +649,7 @@
         "key": "ha",
         "name": "透明质酸钠",
         "data": [
-          1,
+          0,
           2,
           2,
           1,
@@ -706,7 +706,7 @@
         "key": "plla",
         "name": "PLA",
         "data": [
-          1,
+          0,
           0,
           0,
           0,
@@ -742,7 +742,7 @@
       },
       {
         "key": "caha",
-        "name": "CaHA",
+        "name": "CaHA/微晶瓷",
         "data": [
           0,
           0,
@@ -799,136 +799,6 @@
       }
     ],
     "upcoming_top": [
-      {
-        "id": "HA-国械注进20173135168-鼻唇沟",
-        "track": "ha",
-        "track_name": "透明质酸钠",
-        "record_type": "三类医疗器械",
-        "regulatory_class": "三类医疗器械",
-        "device_type": "器械 / 注射材料 / 透明质酸钠",
-        "strategic": "玻尿酸",
-        "brand": "注射用修饰透明质酸钠凝胶 Princess Volume",
-        "aliases": "",
-        "product_name": "注射用修饰透明质酸钠凝胶Princess Volume",
-        "company": "克罗玛医药有限公司 CROMA-PHARMA",
-        "company_key": "克罗玛医药有限公司 croma-pharma",
-        "registrant": "克罗玛医药有限公司CROMA-PHARMA GmbH",
-        "certificate_no": "国械注进20173135168",
-        "origin": "进口",
-        "category": "透明质酸钠",
-        "material_family": "透明质酸钠 / 玻尿酸",
-        "material_form": "修饰HA填充凝胶",
-        "approval_date": "2021-06-24",
-        "approval_year": 2021,
-        "valid_until": "2026-06-23",
-        "validity_status": "有效",
-        "market_scope": "注射填充类",
-        "application_segment": "注射填充类",
-        "primary_indication": "鼻唇沟",
-        "approved_indications": "鼻唇沟",
-        "indication_description": "该产品适用于面部真皮组织中层至深层注射，以纠正鼻唇沟。",
-        "scope_full": "该产品适用于面部真皮组织中层至深层注射，以纠正鼻唇沟。",
-        "specification": "1.0mL",
-        "components": "该产品由预灌封玻璃注射器、不锈钢注射针和封装在注射器中的凝胶颗粒悬液组成。凝胶颗粒悬液主要由交联透明质酸钠、非交联透明质酸钠、氯化钠、磷酸盐缓冲体系以及注射用水组成，其中透明质酸钠由微生物发酵法制备，标示浓度为23mg/ml（包括交联透明质酸钠 21.85mg/mL 和未经修饰的透明质酸钠1.5mg/mL）。封装了凝胶的注射器已经高温蒸汽灭菌，注射针已经环氧乙烷灭菌。该产品一次性使用。货架有效期三年。",
-        "lidocaine_status": "未见利多卡因",
-        "product_tags": "注射填充类 / 进口 / 非交联",
-        "market_claim": "",
-        "boundary_reason": "",
-        "indications": [
-          "鼻唇沟"
-        ],
-        "tags": [
-          "注射填充类",
-          "进口",
-          "非交联"
-        ],
-        "official_status": "verified",
-        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-        "official_product_name": "注射用修饰透明质酸钠凝胶Princess Volume",
-        "official_registrant": "克罗玛医药有限公司CROMA-PHARMA GmbH",
-        "official_approval_date": "2021-06-24",
-        "official_valid_until": "2026-06-23",
-        "official_indication": "鼻唇沟",
-        "official_scope": "该产品适用于面部真皮组织中层至深层注射，以纠正鼻唇沟。",
-        "verified": true,
-        "main_landscape": true,
-        "main_landscape_included": "是",
-        "portfolio_segments": [
-          "玻尿酸"
-        ],
-        "source_account": "闲话医与美",
-        "source_title": "玻尿酸的2025：医美再无械3神话",
-        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
-        "confidence": "high",
-        "data_status": "已结构化",
-        "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 0
-      },
-      {
-        "id": "PLLA-国械注准20213130460",
-        "track": "plla",
-        "track_name": "PLA",
-        "record_type": "三类医疗器械",
-        "regulatory_class": "三类医疗器械",
-        "device_type": "器械 / 注射针剂 / PLLA",
-        "strategic": "胶原刺激剂",
-        "brand": "濡白天使",
-        "aliases": "",
-        "product_name": "含左旋乳酸-乙二醇共聚物微球的交联透明质酸钠凝胶",
-        "company": "爱美客",
-        "company_key": "imeik",
-        "registrant": "爱美客技术发展股份有限公司",
-        "certificate_no": "国械注准20213130460",
-        "origin": "国产",
-        "category": "PLLA童颜针",
-        "material_family": "PLLA",
-        "material_form": "PLLA/HA复合凝胶",
-        "approval_date": "2021-06-24",
-        "approval_year": 2021,
-        "valid_until": "2026-06-23",
-        "validity_status": "有效",
-        "market_scope": "",
-        "application_segment": "",
-        "primary_indication": "鼻唇沟",
-        "approved_indications": "",
-        "indication_description": "本产品适用于真皮深层、皮下浅层及深层注射填充纠正中、重度鼻唇沟皱纹。",
-        "scope_full": "本产品适用于真皮深层、皮下浅层及深层注射填充纠正中、重度鼻唇沟皱纹。",
-        "specification": "0.5 mL、0.75 mL、1.0 mL、1.5 mL、2.0 mL、2×0.5 mL、2×0.75 mL、2×1.0 mL",
-        "components": "该产品由预灌封注射器、一次性使用无菌注射针和封装在注射器中的凝胶组成。凝胶主要由交联透明质酸钠、左旋乳酸-乙二醇共聚物微球、盐酸利多卡因、磷酸盐缓冲体系组成，其中左旋乳酸-乙二醇共聚物微球标示含量为18%。透明质酸钠是由微生物发酵法制备而成的，其标示浓度为17mg/mL，盐酸利多卡因的标示浓度为3mg/mL。封装了凝胶的注射器经高温蒸汽灭菌，一次性使用无菌注射针经环氧乙烷灭菌或辐照灭菌。该产品一次性使用。产品货架有效期2年。",
-        "lidocaine_status": "含利多卡因",
-        "product_tags": "含利多卡因",
-        "market_claim": "PLLA+玻尿酸复合，即刻塑形+长效胶原再生",
-        "boundary_reason": "",
-        "indications": [],
-        "tags": [
-          "含利多卡因"
-        ],
-        "official_status": "verified",
-        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
-        "official_product_name": "含左旋乳酸-乙二醇共聚物微球的交联透明质酸钠凝胶",
-        "official_registrant": "爱美客技术发展股份有限公司",
-        "official_approval_date": "2021-06-24",
-        "official_valid_until": "2026-06-23",
-        "official_indication": "鼻唇沟",
-        "official_scope": "本产品适用于真皮深层、皮下浅层及深层注射填充纠正中、重度鼻唇沟皱纹。",
-        "verified": true,
-        "main_landscape": true,
-        "main_landscape_included": "是",
-        "portfolio_segments": [
-          "玻尿酸",
-          "胶原刺激剂",
-          "肉毒毒素"
-        ],
-        "source_account": "美圈老卢",
-        "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-        "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-        "confidence": "",
-        "data_status": "已结构化",
-        "source_dataset": "plla_dashboard_data.json",
-        "days_to_expiry": 0
-      },
       {
         "id": "COLLAGEN-国械注准20213130488",
         "track": "collagen",
@@ -989,7 +859,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "collagen_dashboard_data.json",
-        "days_to_expiry": 4
+        "days_to_expiry": 3
       },
       {
         "id": "HA-国械注许20163130035-鼻唇沟",
@@ -1055,7 +925,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 8
+        "days_to_expiry": 7
       },
       {
         "id": "HA-国械注准20173133254-鼻唇沟",
@@ -1121,7 +991,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 21
+        "days_to_expiry": 20
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -1190,7 +1060,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 119
+        "days_to_expiry": 118
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -1253,7 +1123,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "collagen_dashboard_data.json",
-        "days_to_expiry": 124
+        "days_to_expiry": 123
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1315,7 +1185,7 @@
         "confidence": "",
         "data_status": "已结构化",
         "source_dataset": "collagen_dashboard_data.json",
-        "days_to_expiry": 132
+        "days_to_expiry": 131
       },
       {
         "id": "HA-国械注进20213130485-面颊部",
@@ -1384,7 +1254,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 155
+        "days_to_expiry": 154
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1450,7 +1320,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 251
+        "days_to_expiry": 250
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1517,7 +1387,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 292
+        "days_to_expiry": 291
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1583,7 +1453,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 292
+        "days_to_expiry": 291
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1649,7 +1519,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 300
+        "days_to_expiry": 299
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1717,7 +1587,7 @@
         "confidence": "official",
         "data_status": "已结构化",
         "source_dataset": "ebd_product_query_20260510.json",
-        "days_to_expiry": 309
+        "days_to_expiry": 308
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1783,7 +1653,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 332
+        "days_to_expiry": 331
       },
       {
         "id": "BOTULINUM-国药准字SJ20171003",
@@ -1858,7 +1728,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "botulinum_dashboard_data.json",
-        "days_to_expiry": 355
+        "days_to_expiry": 354
       },
       {
         "id": "BOTULINUM-国药准字SJ20171004",
@@ -1933,7 +1803,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "botulinum_dashboard_data.json",
-        "days_to_expiry": 355
+        "days_to_expiry": 354
       },
       {
         "id": "BOTULINUM-国药准字SJ20171005",
@@ -2008,7 +1878,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "botulinum_dashboard_data.json",
-        "days_to_expiry": 355
+        "days_to_expiry": 354
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -2074,7 +1944,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 372
+        "days_to_expiry": 371
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -2140,7 +2010,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 382
+        "days_to_expiry": 381
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -2210,7 +2080,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 440
+        "days_to_expiry": 439
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -2277,7 +2147,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 488
+        "days_to_expiry": 487
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -2344,7 +2214,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 538
+        "days_to_expiry": 537
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -2413,7 +2283,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 568
+        "days_to_expiry": 567
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -2482,7 +2352,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 568
+        "days_to_expiry": 567
       },
       {
         "id": "RAW-LASER_IPL-国械注进20183011604",
@@ -2551,7 +2421,7 @@
         "confidence": "official",
         "data_status": "已结构化",
         "source_dataset": "ebd_product_query_wontech_20260604.json",
-        "days_to_expiry": 587
+        "days_to_expiry": 586
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -2617,7 +2487,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 599
+        "days_to_expiry": 598
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -2683,7 +2553,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 599
+        "days_to_expiry": 598
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -2750,7 +2620,7 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 622
+        "days_to_expiry": 621
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -2818,7 +2688,144 @@
         "confidence": "high",
         "data_status": "已结构化",
         "source_dataset": "ha_benchmark_records_20260505.csv",
-        "days_to_expiry": 638
+        "days_to_expiry": 637
+      },
+      {
+        "id": "HA-国械注准20183130109-鼻唇沟",
+        "track": "ha",
+        "track_name": "透明质酸钠",
+        "record_type": "三类医疗器械",
+        "regulatory_class": "三类医疗器械",
+        "device_type": "器械 / 注射材料 / 透明质酸钠",
+        "strategic": "玻尿酸",
+        "brand": "注射用交联透明质酸钠凝胶",
+        "aliases": "",
+        "product_name": "注射用交联透明质酸钠凝胶",
+        "company": "常州药研所",
+        "company_key": "常州药研所",
+        "registrant": "常州药物研究所有限公司",
+        "certificate_no": "国械注准20183130109",
+        "origin": "国产",
+        "category": "透明质酸钠",
+        "material_family": "透明质酸钠 / 玻尿酸",
+        "material_form": "交联HA填充凝胶",
+        "approval_date": "2022-04-29",
+        "approval_year": 2022,
+        "valid_until": "2028-03-27",
+        "validity_status": "有效",
+        "market_scope": "注射填充类",
+        "application_segment": "注射填充类",
+        "primary_indication": "唇部",
+        "approved_indications": "唇部",
+        "indication_description": "该产品用于面部真皮组织中层注射以纠正中重度鼻唇部皱纹。",
+        "scope_full": "该产品用于面部真皮组织中层注射以纠正中重度鼻唇部皱纹。",
+        "specification": "0.5mL、0.8 mL、1mL、1.2mL 、1.5mL 、2mL",
+        "components": "本产品由预灌封玻璃注射器、2支不锈钢注射针和封装在注射器中的凝胶颗粒悬液组成。凝胶颗粒悬液主要由交联透明质酸钠、氯化钠、磷酸二氢钠、磷酸氢二钠以及注射用水组成，其中透明质酸钠由微生物发酵法制备，标示浓度为为20mg/mL±3mg/mL。注射针的材质为304不锈钢、规格为27G、形状为直形锐针。封装了凝胶的注射器已经高温蒸汽灭菌，注射针已经伽玛射线辐照灭菌。该产品一次性使用。产品有效期3年。",
+        "lidocaine_status": "未见利多卡因",
+        "product_tags": "注射填充类 / 国产 / 交联",
+        "market_claim": "",
+        "boundary_reason": "",
+        "indications": [
+          "唇部"
+        ],
+        "tags": [
+          "注射填充类",
+          "国产",
+          "交联"
+        ],
+        "official_status": "verified",
+        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+        "official_product_name": "注射用交联透明质酸钠凝胶",
+        "official_registrant": "常州药物研究所有限公司",
+        "official_approval_date": "2022-04-29",
+        "official_valid_until": "2028-03-27",
+        "official_indication": "唇部",
+        "official_scope": "该产品用于面部真皮组织中层注射以纠正中重度鼻唇部皱纹。",
+        "verified": true,
+        "main_landscape": true,
+        "main_landscape_included": "是",
+        "portfolio_segments": [
+          "玻尿酸"
+        ],
+        "source_account": "闲话医与美",
+        "source_title": "玻尿酸的2025：医美再无械3神话",
+        "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
+        "confidence": "high",
+        "data_status": "已结构化",
+        "source_dataset": "ha_benchmark_records_20260505.csv",
+        "days_to_expiry": 642
+      },
+      {
+        "id": "RAW-LASER_IPL-国械注进20173096244",
+        "track": "laser_ipl",
+        "track_name": "激光/IPL设备",
+        "record_type": "三类医疗器械",
+        "regulatory_class": "三类医疗器械",
+        "device_type": "energy_device",
+        "strategic": "EBD 设备",
+        "brand": "Pastelle / 帕斯特",
+        "aliases": "",
+        "product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
+        "company": "韩国元泰株式会社WON TECH Co., Ltd.",
+        "company_key": "韩国元泰株式会社won tech co., ltd.",
+        "registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+        "certificate_no": "国械注进20173096244",
+        "origin": "进口",
+        "category": "激光/IPL设备",
+        "material_family": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性色素性病变/文身祛除",
+        "material_form": "",
+        "approval_date": "2023-04-07",
+        "approval_year": 2017,
+        "valid_until": "2028-04-06",
+        "validity_status": "有效",
+        "market_scope": "原始保留",
+        "application_segment": "energy_device",
+        "primary_indication": "良性色素性病变/文身祛除",
+        "approved_indications": "良性色素性病变/文身祛除",
+        "indication_description": "该产品用于皮肤组织的汽化和照射，临床用于在医疗机构中进行良性色素性病变的治疗和去除文身。",
+        "scope_full": "该产品用于皮肤组织的汽化和照射，临床用于在医疗机构中进行良性色素性病变的治疗和去除文身。",
+        "specification": "Pastelle",
+        "components": "由主机、激光传输系统、手柄、脚踏开关、防护眼镜组成。主机由电源装置、激光共振器、接触式液晶显示器组成。",
+        "lidocaine_status": "",
+        "product_tags": "激光/IPL设备 / 三类医疗器械 / 进口 / NMPA官方核验 / 良性色素性病变/文身祛除",
+        "market_claim": "",
+        "boundary_reason": "",
+        "indications": [
+          "良性色素性病变",
+          "文身祛除"
+        ],
+        "tags": [
+          "激光",
+          "IPL设备",
+          "三类医疗器械",
+          "进口",
+          "NMPA官方核验",
+          "良性色素性病变",
+          "文身祛除"
+        ],
+        "official_status": "verified",
+        "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+        "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+        "official_product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
+        "official_registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+        "official_approval_date": "2023-04-07",
+        "official_valid_until": "2028-04-06",
+        "official_indication": "手部",
+        "official_scope": "该产品用于皮肤组织的汽化和照射，临床用于在医疗机构中进行良性色素性病变的治疗和去除文身。",
+        "verified": true,
+        "main_landscape": true,
+        "main_landscape_included": "是",
+        "portfolio_segments": [
+          "EBD 设备"
+        ],
+        "source_account": "NMPA 官方查询",
+        "source_title": "Nd:YAG激光治疗仪Nd:YAG Laser Device 国械注进20173096244 NMPA 医疗器械注册证",
+        "source_url": "https://www.nmpa.gov.cn/",
+        "confidence": "official",
+        "data_status": "已结构化",
+        "source_dataset": "ebd_product_query_wontech_20260604.json",
+        "days_to_expiry": 652
       }
     ]
   },
@@ -2850,7 +2857,7 @@
           6,
           21,
           40,
-          18
+          19
         ]
       },
       {
@@ -3056,51 +3063,51 @@
     },
     "plla": {
       "track_name": "PLA",
-      "total_certs": 13,
-      "company_count": 13,
-      "hhi": 769.0,
-      "cr4": 30.8,
-      "cr8": 61.5,
+      "total_certs": 14,
+      "company_count": 14,
+      "hhi": 714.0,
+      "cr4": 28.6,
+      "cr8": 57.1,
       "top": [
         {
           "company": "圣博玛",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "爱美客",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "丽臻生物科技",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "高德美 / Galderma",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "普丽妍医疗",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "四环医药 / 渼颜空间",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "乐普医疗",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         },
         {
           "company": "西宏生物",
           "certs": 1,
-          "share": 7.7
+          "share": 7.1
         }
       ]
     },
@@ -3130,7 +3137,7 @@
       ]
     },
     "caha": {
-      "track_name": "CaHA",
+      "track_name": "CaHA/微晶瓷",
       "total_certs": 2,
       "company_count": 2,
       "hhi": 5000.0,

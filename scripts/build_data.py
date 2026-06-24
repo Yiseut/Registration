@@ -23,7 +23,7 @@ TRACK_META = [
     {"key": "collagen",   "name": "胶原蛋白",            "tagline": "", "accent": "#dd7b8b"},
     {"key": "plla",       "name": "PLA",                "tagline": "", "accent": "#9daaf0"},
     {"key": "pcl",        "name": "PCL",                 "tagline": "", "accent": "#e5b574"},
-    {"key": "caha",       "name": "CaHA",                "tagline": "", "accent": "#b486d4"},
+    {"key": "caha",       "name": "CaHA/微晶瓷",          "tagline": "", "accent": "#b486d4"},
     {"key": "niche_materials", "name": "小众材料",       "tagline": "", "accent": "#cf6a9d"},
     {"key": "ebd",        "name": "EBD 设备",             "tagline": "", "accent": "#8fa8c8"},
 ]
@@ -246,7 +246,7 @@ def ui_term(value: str | None) -> str:
         .replace("玻尿酸/透明质酸钠", "透明质酸钠")
         .replace("童颜针 / PLLA", "PLA")
         .replace("少女针 / PCL", "PCL")
-        .replace("羟基磷酸钙 / CaHA", "CaHA")
+        .replace("羟基磷酸钙 / CaHA", "CaHA/微晶瓷")
         .replace("肉毒素", "肉毒毒素")
         .replace("EBD 设备类", "EBD 设备")
     )
@@ -526,7 +526,7 @@ def kpi_block(records: list[dict]) -> dict:
 
     track_label = {
         "ha": "HA", "collagen": "胶原蛋白", "plla": "PLA", "pcl": "PCL",
-        "caha": "CaHA", "raw_pmma": "PMMA", "raw_agarose": "琼脂糖",
+        "caha": "CaHA/微晶瓷", "raw_pmma": "PMMA", "raw_agarose": "琼脂糖",
         "botulinum": "肉毒毒素", "raw_lipolysis_injection": "去氧胆酸",
     }
 

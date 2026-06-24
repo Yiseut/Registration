@@ -14,7 +14,7 @@
     { code: 'collagen', name: '胶原蛋白', fullName: '胶原蛋白', color: '#dd7b8b', soft: '#f6dfe4', deep: '#c25f71', href: 'tracks/collagen.html' },
     { code: 'plla', name: 'PLA', fullName: 'PLA', color: '#9daaf0', soft: '#e8ecff', deep: '#7d8fe0', href: 'tracks/plla.html' },
     { code: 'pcl', name: 'PCL', fullName: 'PCL', color: '#e5b574', soft: '#f8ead7', deep: '#c8944d', href: 'tracks/pcl.html' },
-    { code: 'caha', name: 'CaHA', fullName: 'CaHA', color: '#b486d4', soft: '#efe2f7', deep: '#9566b9', href: 'tracks/caha.html' },
+    { code: 'caha', name: 'CaHA/微晶瓷', fullName: 'CaHA/微晶瓷', color: '#b486d4', soft: '#efe2f7', deep: '#9566b9', href: 'tracks/caha.html' },
     { code: 'niche_materials', name: '小众材料', fullName: '小众材料', color: '#cf6a9d', soft: '#f4dbe8', deep: '#b94d84', href: 'tracks/niche_materials.html' },
     { code: 'ebd', name: 'EBD 设备', fullName: 'EBD 设备', color: '#8fa8c8', soft: '#e6edf6', deep: '#6f8bad', href: 'tracks/ebd.html' },
   ];
@@ -470,7 +470,7 @@
     if (/胶原蛋白/.test(label)) return SEGMENT_BY_CODE.collagen.color;
     if (/胶原刺激剂|PLA/.test(label)) return SEGMENT_BY_CODE.plla.color;
     if (/PCL/.test(label)) return SEGMENT_BY_CODE.pcl.color;
-    if (/CaHA|羟基磷酸钙/.test(label)) return SEGMENT_BY_CODE.caha.color;
+    if (/CaHA|微晶瓷|羟基磷酸钙/.test(label)) return SEGMENT_BY_CODE.caha.color;
     if (/EBD|设备|光电/.test(label)) return SEGMENT_BY_CODE.ebd.color;
     const segment = SEGMENTS.find((item) => item.name === trackName || item.fullName === trackName);
     return segment?.color || '#a7abd8';
@@ -2144,7 +2144,7 @@
       .replace(/^玻尿酸$/g, '透明质酸钠')
       .replace(/童颜针\s*\/\s*PLLA/g, 'PLA')
       .replace(/少女针\s*\/\s*PCL/g, 'PCL')
-      .replace(/羟基磷酸钙\s*\/\s*CaHA/g, 'CaHA')
+      .replace(/羟基磷酸钙\s*\/\s*CaHA/g, 'CaHA/微晶瓷')
       .replace(/肉毒素/g, '肉毒毒素')
       .replace(/EBD 设备类/g, 'EBD 设备');
   }

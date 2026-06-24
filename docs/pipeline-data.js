@@ -7,9 +7,9 @@ window.PIPELINE_DASHBOARD_DATA = {
     "scope_note": "分赛道查看医美材料产品的公开临床登记、注册推进和来源覆盖；本页不与已获批注册证主表KPI相加。"
   },
   "summary": {
-    "records_total": 84,
-    "projects_total": 73,
-    "frontstage_ready_projects": 59,
+    "records_total": 85,
+    "projects_total": 74,
+    "frontstage_ready_projects": 60,
     "hidden_records": 2,
     "conflict_records": 0,
     "by_track": [
@@ -26,7 +26,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       },
       {
         "track": "caha",
-        "track_label": "CaHA/羟基磷灰石",
+        "track_label": "CaHA/微晶瓷",
         "project_count": 13,
         "frontstage_ready_count": 8,
         "pending_or_research_count": 5,
@@ -41,11 +41,11 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "collagen",
         "track_label": "胶原蛋白",
-        "project_count": 10,
-        "frontstage_ready_count": 10,
+        "project_count": 9,
+        "frontstage_ready_count": 9,
         "pending_or_research_count": 0,
         "highest_grade_counts": {
-          "A1": 8,
+          "A1": 7,
           "A3": 2
         }
       },
@@ -75,11 +75,11 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "pcl",
         "track_label": "PCL",
-        "project_count": 7,
-        "frontstage_ready_count": 7,
+        "project_count": 8,
+        "frontstage_ready_count": 8,
         "pending_or_research_count": 0,
         "highest_grade_counts": {
-          "A1": 4,
+          "A1": 5,
           "A3": 3
         }
       },
@@ -99,11 +99,11 @@ window.PIPELINE_DASHBOARD_DATA = {
       {
         "track": "plla",
         "track_label": "PLLA/PDLLA",
-        "project_count": 4,
-        "frontstage_ready_count": 4,
+        "project_count": 5,
+        "frontstage_ready_count": 5,
         "pending_or_research_count": 0,
         "highest_grade_counts": {
-          "A1": 3,
+          "A1": 4,
           "A3": 1
         }
       },
@@ -325,8 +325,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:radiesse芮得怡_注射用羟基磷酸钙微球面部填充剂:merz_north_america_inc",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "RADIESSE芮得怡/注射用羟基磷酸钙微球面部填充剂",
       "company": "Merz North America Inc.",
       "current_stage": "已获批",
@@ -360,8 +360,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:优法兰_aphranel_注射用羟基磷酸钙微球面部填充剂:上海摩漾生物科技有限公司",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "优法兰 Aphranel/注射用羟基磷酸钙微球面部填充剂",
       "company": "上海摩漾生物科技有限公司",
       "current_stage": "已获批",
@@ -395,8 +395,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:harmonyca_lidocaine:abbvie_allergan_aesthetics",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石 + HA",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷 + HA",
       "product": "HArmonyCa Lidocaine",
       "company": "AbbVie / Allergan Aesthetics",
       "current_stage": "临床登记",
@@ -433,8 +433,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:医用含羟基磷灰石微球的交联透明质酸钠凝胶:成都睿漾再生医疗科技有限公司",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石 + 交联透明质酸钠",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷 + 交联透明质酸钠",
       "product": "医用含羟基磷灰石微球的交联透明质酸钠凝胶",
       "company": "成都睿漾再生医疗科技有限公司",
       "current_stage": "临床登记",
@@ -468,8 +468,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:羟基磷灰石生物陶瓷_菲林普利相关既有证照:四川拜阿蒙生物活性材料有限责任公司_成都睿合医药科技有限公司",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "羟基磷灰石生物陶瓷/菲林普利相关既有证照",
       "company": "四川拜阿蒙生物活性材料有限责任公司 / 成都睿合医药科技有限公司",
       "current_stage": "既有证照/非医美基线",
@@ -503,8 +503,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:注射用羟基磷灰石微球系列产品:昊海生科",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "注射用羟基磷灰石微球系列产品",
       "company": "昊海生科",
       "current_stage": "临床/型检",
@@ -538,8 +538,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:facetem:cgbio_华瑭大昌",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "FACETEM",
       "company": "CGBio / 华瑭大昌",
       "current_stage": "上市注册推进",
@@ -573,8 +573,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:注射用羟基磷灰石微球填充剂:江苏西宏生物医药有限公司_康哲美丽",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "注射用羟基磷灰石微球填充剂",
       "company": "江苏西宏生物医药有限公司 / 康哲美丽",
       "current_stage": "临床进行中",
@@ -608,8 +608,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:caha填充物中国上市许可合作:cgbio_华瑭大昌",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "CaHA填充物中国上市许可合作",
       "company": "CGBio/华瑭大昌",
       "current_stage": "上市注册推进",
@@ -643,8 +643,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:harmonyca:艾尔建美学_abbvie",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "HArmonyCa",
       "company": "艾尔建美学/AbbVie",
       "current_stage": "注册检验完成",
@@ -678,8 +678,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:radiesse_瑞德喜:merz_麦施医疗",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "Radiesse/瑞德喜",
       "company": "Merz/麦施医疗",
       "current_stage": "临床进行中",
@@ -713,8 +713,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:rejuve_璞聚caha项目:璞聚生物",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "Rejuve/璞聚CaHA项目",
       "company": "璞聚生物",
       "current_stage": "随访中",
@@ -748,8 +748,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "project_key": "caha:注射用羟基磷灰石微球面部填充剂:待确认",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "注射用羟基磷灰石微球面部填充剂",
       "company": "待确认",
       "current_stage": "随访中",
@@ -854,9 +854,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       ]
     },
     {
-      "project_key": "collagen:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
-      "track": "collagen",
-      "track_label": "胶原蛋白",
+      "project_key": "pcl:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
+      "track": "pcl",
+      "track_label": "PCL",
       "material": "PCL + 重组Ⅲ型人源化胶原蛋白 + 透明质酸钠",
       "product": "注射用聚己内酯微球重组Ⅲ型人源化胶原蛋白-透明质酸钠冻干纤维组合包",
       "company": "西安臻研生物科技有限公司",
@@ -885,7 +885,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "next_watch": "跟踪临床完成、注册检验和NMPA受理/送达",
       "frontstage_ready": true,
       "records": [
-        "pipe_collagen_zhenyan_chictr2500096028"
+        "pipe_pcl_zhenyan_chictr2500096028"
       ]
     },
     {
@@ -1128,7 +1128,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_indication": "面部皮肤修护/医疗器械产品线；具体注册适应证需逐项核验",
       "reported_center_or_pi": "",
       "next_watch": "与临床登记、注册证详情和企业公告逐项映射",
-      "frontstage_ready": true,
+      "frontstage_ready": false,
       "records": [
         "pipe_collagen_jland_company_20260620"
       ]
@@ -1210,66 +1210,34 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "ECM/脱细胞基质",
       "product": "脱细胞基质植入剂",
       "company": "白衣缘生物/康哲美丽",
-      "current_stage": "临床进行中",
-      "stage_chain": "临床进行中",
-      "highest_evidence": "A3",
-      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
-      "evidence_count": 1,
-      "public_evidence_count": 1,
-      "verified_source_count": 0,
-      "conflict_count": 0,
-      "hidden_lead_count": 0,
-      "source_lanes": [
-        "company_disclosure"
-      ],
-      "grade_counts": {
-        "A3": 1
-      },
-      "latest_source_date": "2024-06-07",
-      "milestone_dates": [
-        "2024-06-07"
-      ],
-      "reported_status": "企业公告称产品处于中国注册性临床试验阶段",
-      "reported_indication": "面部真皮组织中层至深层注射/鼻唇沟方向",
-      "reported_center_or_pi": "",
-      "next_watch": "跟踪临床完成、注册申报和NMPA受理",
-      "frontstage_ready": true,
-      "records": [
-        "pipe_ecm_baiyiyuan_cms_20240607"
-      ]
-    },
-    {
-      "project_key": "ecm:脱细胞基质植入剂:白衣缘生物",
-      "track": "ecm",
-      "track_label": "ECM/脱细胞基质",
-      "material": "ECM/脱细胞基质",
-      "product": "脱细胞基质植入剂",
-      "company": "白衣缘生物",
       "current_stage": "受理/送达",
-      "stage_chain": "受理/送达",
+      "stage_chain": "临床进行中 → 受理/送达",
       "highest_evidence": "A3",
       "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
-      "evidence_count": 1,
-      "public_evidence_count": 1,
+      "evidence_count": 2,
+      "public_evidence_count": 2,
       "verified_source_count": 0,
       "conflict_count": 0,
       "hidden_lead_count": 0,
       "source_lanes": [
+        "company_disclosure",
         "company_cro_notice"
       ],
       "grade_counts": {
-        "A3": 1
+        "A3": 2
       },
       "latest_source_date": "2025-08-13",
       "milestone_dates": [
+        "2024-06-07",
         "2025-08-13"
       ],
-      "reported_status": "CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
+      "reported_status": "白衣缘/康哲公告确认产品处于中国注册性临床试验阶段；CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
       "reported_indication": "面部真皮组织中层至深层注射/鼻唇沟方向待官方确认",
       "reported_center_or_pi": "",
       "next_watch": "优先核验NMPA受理号、送达公告或企业原公告",
       "frontstage_ready": true,
       "records": [
+        "pipe_ecm_baiyiyuan_cms_20240607",
         "pipe_ecm_baiyiyuan_sigma_20250813_acceptance"
       ]
     },
@@ -2020,8 +1988,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "PCL/聚己内酯",
       "product": "注射用聚己内酯凝胶",
       "company": "山东采采医疗科技有限公司",
-      "current_stage": "临床登记",
-      "stage_chain": "临床登记",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
       "highest_evidence": "A1",
       "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
       "evidence_count": 1,
@@ -2039,10 +2007,10 @@ window.PIPELINE_DASHBOARD_DATA = {
       "milestone_dates": [
         "2025-12-26"
       ],
-      "reported_status": "临床登记显示评价注射用聚己内酯凝胶用于改善成年人轻中度颏后缩",
+      "reported_status": "已由证照库核验获批：国械注准20253132404，批准日2025-11-28；原ChiCTR保留为获批前临床证据",
       "reported_indication": "轻中度颏后缩",
       "reported_center_or_pi": "四川大学华西口腔医院；广州医科大学附属口腔医院；首都医科大学附属北京口腔医院",
-      "next_watch": "跟踪入组、随访完成和注册申报",
+      "next_watch": "转入PCL材料证照清单，不再占用注册进度",
       "frontstage_ready": true,
       "records": [
         "pipe_pcl_caicai_chictr2500115518"
@@ -2055,8 +2023,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "PCL/聚己内酯",
       "product": "注射用聚己内酯填充剂",
       "company": "渼颜空间生物科技（吉林）有限公司",
-      "current_stage": "临床登记",
-      "stage_chain": "临床登记",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
       "highest_evidence": "A1",
       "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
       "evidence_count": 1,
@@ -2074,10 +2042,10 @@ window.PIPELINE_DASHBOARD_DATA = {
       "milestone_dates": [
         "2022-03-16"
       ],
-      "reported_status": "ChiCTR登记；执行期2022-03-01至2024-03-31，招募期2022-03-16至2022-04-30",
+      "reported_status": "已由证照库核验获批：国械注准20253130671，批准日2025-03-31；原ChiCTR保留为获批前临床证据",
       "reported_indication": "中重度鼻唇沟皱纹",
       "reported_center_or_pi": "延边大学附属医院（延边医院）；树兰（杭州）医院；吉林国文医院；吉林省一汽总医院；广州市第一人民医院",
-      "next_watch": "跟踪注册检验、NMPA受理或获批状态",
+      "next_watch": "转入PCL材料证照清单，不再占用注册进度",
       "frontstage_ready": true,
       "records": [
         "pipe_pcl_meiyan_chictr2200057746"
@@ -2160,8 +2128,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "PCL/聚己内酯",
       "product": "Ellansé-M",
       "company": "华东医药",
-      "current_stage": "受理/送达",
-      "stage_chain": "受理/送达",
+      "current_stage": "已获批",
+      "stage_chain": "已获批",
       "highest_evidence": "A3",
       "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
       "evidence_count": 1,
@@ -2179,10 +2147,10 @@ window.PIPELINE_DASHBOARD_DATA = {
       "milestone_dates": [
         "2026-06-20"
       ],
-      "reported_status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
+      "reported_status": "已由证照库核验获批：国械注进20263130151，批准日2026-04-21；原受理线索保留为获批前进度证据",
       "reported_indication": "改善颞部凹陷",
       "reported_center_or_pi": "",
-      "next_watch": "补NMPA受理/送达页面并跟踪获批",
+      "next_watch": "转入PCL材料证照清单，不再占用注册进度",
       "frontstage_ready": true,
       "records": [
         "pipe_pcl_ellanse_m_huadong_202501_acceptance"
@@ -2288,44 +2256,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_indication": "面部真皮层/肤质改善方向",
       "reported_center_or_pi": "",
       "next_watch": "跟踪是否出现企业临床、受理号或三类医疗器械注册证",
-      "frontstage_ready": true,
+      "frontstage_ready": false,
       "records": [
         "pipe_pdrn_nifdc_classification_202210"
-      ]
-    },
-    {
-      "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:江苏吴中_吴中美学_北京丽徕科技有限公司",
-      "track": "pdrn",
-      "track_label": "PDRN/多聚脱氧核糖核苷酸",
-      "material": "PDRN/多聚脱氧核糖核苷酸",
-      "product": "注射用透明质酸钠-PDRN复合溶液",
-      "company": "江苏吴中/吴中美学/北京丽徕科技有限公司",
-      "current_stage": "权益/管线披露",
-      "stage_chain": "权益/管线披露",
-      "highest_evidence": "A2",
-      "highest_evidence_label": "A2 Listed company filing, annual report, interim report, prospectus, or exchange disclosure.",
-      "evidence_count": 1,
-      "public_evidence_count": 1,
-      "verified_source_count": 1,
-      "conflict_count": 0,
-      "hidden_lead_count": 0,
-      "source_lanes": [
-        "company_disclosure"
-      ],
-      "grade_counts": {
-        "A2": 1
-      },
-      "latest_source_date": "2025-04-30",
-      "milestone_dates": [
-        "2025-04-30"
-      ],
-      "reported_status": "年报披露吴中美学与北京丽徕科技签署投资协议，并取得注射用透明质酸钠-PDRN复合溶液产品独家权益。",
-      "reported_indication": "PDRN再生水光/改善皮肤状态方向；具体注册适应证以后续官方受理文件为准。",
-      "reported_center_or_pi": "",
-      "next_watch": "跟踪上市公司临时公告、NMPA受理和注册结果。",
-      "frontstage_ready": true,
-      "records": [
-        "pipe_pdrn_wuzhong_2024_ar"
       ]
     },
     {
@@ -2335,32 +2268,35 @@ window.PIPELINE_DASHBOARD_DATA = {
       "material": "PDRN/多聚脱氧核糖核苷酸",
       "product": "注射用透明质酸钠-PDRN复合溶液",
       "company": "吴中美学/北京丽徕科技有限公司",
-      "current_stage": "临床进行中",
-      "stage_chain": "临床进行中 / 入组完成",
-      "highest_evidence": "A3",
-      "highest_evidence_label": "A3 Company website, partner release, CRO notice, or clinical institution disclosure.",
-      "evidence_count": 2,
-      "public_evidence_count": 2,
-      "verified_source_count": 0,
+      "current_stage": "入组完成",
+      "stage_chain": "权益/管线披露 → 临床进行中 → 入组完成",
+      "highest_evidence": "A2",
+      "highest_evidence_label": "A2 Listed company filing, annual report, interim report, prospectus, or exchange disclosure.",
+      "evidence_count": 3,
+      "public_evidence_count": 3,
+      "verified_source_count": 1,
       "conflict_count": 0,
       "hidden_lead_count": 0,
       "source_lanes": [
         "company_disclosure"
       ],
       "grade_counts": {
+        "A2": 1,
         "A3": 2
       },
-      "latest_source_date": "2025-03-04",
+      "latest_source_date": "2025-04-30",
       "milestone_dates": [
         "2024-07-29",
-        "2025-03-04"
+        "2025-03-04",
+        "2025-04-30"
       ],
-      "reported_status": "吴中美学公告称取得丽徕科技PDRN复合溶液产品独家权益；国内尚无PDRN溶液三类医疗器械产品获批上市，丽徕产品已进入临床试验阶段",
-      "reported_indication": "功能型水光/抗炎修复/肤质改善方向",
+      "reported_status": "上市公司年报确认吴中美学取得北京丽徕科技PDRN复合溶液独家权益；企业公告显示该产品已完成全部临床受试者入组",
+      "reported_indication": "再生水光/皮肤状态改善方向，具体适应证待官方受理资料确认",
       "reported_center_or_pi": "",
-      "next_watch": "跟踪临床登记、临床完成和NMPA受理",
+      "next_watch": "优先核验NMPA受理/送达、CMDE审评或官方临床登记；未见官方受理号前不升格",
       "frontstage_ready": true,
       "records": [
+        "pipe_pdrn_wuzhong_2024_ar",
         "pipe_pdrn_wuzhong_liylai_20240729",
         "pipe_pdrn_wuzhong_enrollment_20250304"
       ]
@@ -2468,6 +2404,41 @@ window.PIPELINE_DASHBOARD_DATA = {
       "frontstage_ready": true,
       "records": [
         "pipe_plla_xtpl_chictr2600121023"
+      ]
+    },
+    {
+      "project_key": "plla:聚乳酸面部填充剂:金华艾普瑞生物科技有限公司",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "material": "PLA/聚乳酸",
+      "product": "聚乳酸面部填充剂",
+      "company": "金华艾普瑞生物科技有限公司",
+      "current_stage": "临床登记",
+      "stage_chain": "临床登记",
+      "highest_evidence": "A1",
+      "highest_evidence_label": "A1 Official acceptance, delivery, review status, testing status, or public clinical registry record.",
+      "evidence_count": 1,
+      "public_evidence_count": 1,
+      "verified_source_count": 1,
+      "conflict_count": 0,
+      "hidden_lead_count": 0,
+      "source_lanes": [
+        "clinical_registry"
+      ],
+      "grade_counts": {
+        "A1": 1
+      },
+      "latest_source_date": "2026-03-23",
+      "milestone_dates": [
+        "2026-03-23"
+      ],
+      "reported_status": "ChiCTR预注册；执行期2026-01-30至2028-12-31，招募期2026-03-24至2026-07-31",
+      "reported_indication": "中重度鼻唇沟皱纹",
+      "reported_center_or_pi": "中国医学科学院北京协和医院；南昌大学第二附属医院；河南科技大学第二附属医院；浙江大学医学院附属邵逸夫医院；金华市中心医院",
+      "next_watch": "跟踪招募、入组和后续注册申报节点",
+      "frontstage_ready": true,
+      "records": [
+        "pipe_plla_apre_chictr2600120937"
       ]
     },
     {
@@ -2605,7 +2576,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "reported_indication": "面部真皮组织填充/成人眼角细纹方向",
       "reported_center_or_pi": "",
       "next_watch": "跟踪PN企业临床、受理号和注册证",
-      "frontstage_ready": true,
+      "frontstage_ready": false,
       "records": [
         "pipe_pn_nifdc_classification_202410"
       ]
@@ -2873,7 +2844,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "expected_next_milestone": "补NMPA药品详情页字段、商品名和适应证全文",
       "confidence": "high",
       "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
+      "frontstage_use": "formal_dashboard",
       "note": "上市公司公告与NMPA送达信息均指向同一批准文号；NMPA详情页需继续补字段。",
       "added_at": "2026-06-20"
     },
@@ -2900,15 +2871,15 @@ window.PIPELINE_DASHBOARD_DATA = {
       "expected_next_milestone": "补NMPA药品详情页字段和上市后新增适应证进展",
       "confidence": "high",
       "official_verification_status": "pending",
-      "frontstage_use": "pipeline_table",
+      "frontstage_use": "formal_dashboard",
       "note": "巨潮资讯上市公司公告，已给出受理号、批准文号、规格、MAH和适应证。",
       "added_at": "2026-06-20"
     },
     {
       "lead_id": "pipe_caha_aphranel_cmde_20250217",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "优法兰 Aphranel/注射用羟基磷酸钙微球面部填充剂",
       "company": "上海摩漾生物科技有限公司",
       "source_stage": "approved",
@@ -2934,8 +2905,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_radiesse_cmde_20250307",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "RADIESSE芮得怡/注射用羟基磷酸钙微球面部填充剂",
       "company": "Merz North America Inc.",
       "source_stage": "approved",
@@ -2961,8 +2932,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_feilin_nmpa_delivery_20211208",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "羟基磷灰石生物陶瓷/菲林普利相关既有证照",
       "company": "四川拜阿蒙生物活性材料有限责任公司 / 成都睿合医药科技有限公司",
       "source_stage": "approved_non_aesthetic_baseline",
@@ -2988,8 +2959,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_harmonyca_clinicaltrials_nct07032597",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石 + HA",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷 + HA",
       "product": "HArmonyCa Lidocaine",
       "company": "AbbVie / Allergan Aesthetics",
       "source_stage": "clinical_registry",
@@ -3015,8 +2986,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_ruiyang_chictr2500107432",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石 + 交联透明质酸钠",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷 + 交联透明质酸钠",
       "product": "医用含羟基磷灰石微球的交联透明质酸钠凝胶",
       "company": "成都睿漾再生医疗科技有限公司",
       "source_stage": "clinical_registry",
@@ -3042,8 +3013,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_haohai_2025_ar",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "注射用羟基磷灰石微球系列产品",
       "company": "昊海生科",
       "source_stage": "clinical_ongoing_and_type_testing",
@@ -3069,8 +3040,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_cgbio_huatang_official_20231023",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "FACETEM",
       "company": "CGBio / 华瑭大昌",
       "source_stage": "market_authorization_prep",
@@ -3096,8 +3067,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_xihong_cms_license_20240117",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "注射用羟基磷灰石微球填充剂",
       "company": "江苏西宏生物医药有限公司 / 康哲美丽",
       "source_stage": "clinical_ongoing",
@@ -3123,8 +3094,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_harmonyca_abbvie_m21_782",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石 + HA",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷 + HA",
       "product": "HArmonyCa Lidocaine",
       "company": "AbbVie / Allergan Aesthetics",
       "source_stage": "clinical_registry_company",
@@ -3150,8 +3121,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_cgbio_huatang_202311_market_entry",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "CaHA填充物中国上市许可合作",
       "company": "CGBio/华瑭大昌",
       "source_stage": "market_authorization_prep",
@@ -3177,8 +3148,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_harmonyca_202409_type_testing",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "HArmonyCa",
       "company": "艾尔建美学/AbbVie",
       "source_stage": "type_testing_completed",
@@ -3204,8 +3175,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_radiesse_2023_clinical",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "Radiesse/瑞德喜",
       "company": "Merz/麦施医疗",
       "source_stage": "clinical_ongoing",
@@ -3231,8 +3202,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_rejuve_puju_202410_followup",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "Rejuve/璞聚CaHA项目",
       "company": "璞聚生物",
       "source_stage": "clinical_followup",
@@ -3258,8 +3229,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_shanghai_tenth_nasolabial_trial",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "注射用羟基磷灰石微球面部填充剂",
       "company": "待确认",
       "source_stage": "clinical_followup",
@@ -3285,8 +3256,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_feilin_manual",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "菲林普利CaHA相关产品",
       "company": "菲林普利/睿合医药",
       "source_stage": "clinical_completed_or_late_stage",
@@ -3312,8 +3283,8 @@ window.PIPELINE_DASHBOARD_DATA = {
     {
       "lead_id": "pipe_caha_haohai_gdph_manual",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
-      "material": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
+      "material": "CaHA/微晶瓷",
       "product": "昊海生科CaHA医美产品",
       "company": "昊海生科",
       "source_stage": "clinical_completed",
@@ -3391,9 +3362,9 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-20"
     },
     {
-      "lead_id": "pipe_collagen_zhenyan_chictr2500096028",
-      "track": "collagen",
-      "track_label": "胶原蛋白",
+      "lead_id": "pipe_pcl_zhenyan_chictr2500096028",
+      "track": "pcl",
+      "track_label": "PCL",
       "material": "PCL + 重组Ⅲ型人源化胶原蛋白 + 透明质酸钠",
       "product": "注射用聚己内酯微球重组Ⅲ型人源化胶原蛋白-透明质酸钠冻干纤维组合包",
       "company": "西安臻研生物科技有限公司",
@@ -3414,7 +3385,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "复合材料项目，同时具有PCL与重组胶原属性；当前按胶原赛道收录并在材料字段保留复合结构。",
+      "note": "复合材料项目，同时具有PCL与重组胶原属性；按官方题名首位材料归入PCL，材料字段保留复合结构。",
       "added_at": "2026-06-20"
     },
     {
@@ -3440,7 +3411,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "expected_next_milestone": "同步注册证详情并判断是否纳入医美前台主表",
       "confidence": "high",
       "official_verification_status": "verified",
-      "frontstage_use": "pipeline_table",
+      "frontstage_use": "formal_dashboard",
       "note": "补入官方送达源，解决胶原蛋白赛道仅有临床登记、缺少获批节点的问题。",
       "added_at": "2026-06-20"
     },
@@ -4574,8 +4545,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "expected_next_milestone": "跟踪是否出现企业临床、受理号或三类医疗器械注册证",
       "confidence": "high",
       "official_verification_status": "verified",
-      "frontstage_use": "pipeline_table",
-      "note": "这是监管路径线索，不是获批证照。",
+      "frontstage_use": "research_note",
+      "note": "这是主体未披露的分类界定/监管路径线索，不作为企业产品进度。",
       "added_at": "2026-06-19"
     },
     {
@@ -4741,6 +4712,33 @@ window.PIPELINE_DASHBOARD_DATA = {
       "added_at": "2026-06-20"
     },
     {
+      "lead_id": "pipe_plla_apre_chictr2600120937",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "material": "PLA/聚乳酸",
+      "product": "聚乳酸面部填充剂",
+      "company": "金华艾普瑞生物科技有限公司",
+      "source_stage": "clinical_registry",
+      "stage_label": "临床登记",
+      "evidence_grade": "A1",
+      "evidence_rank": 1,
+      "evidence_status": "active",
+      "source_lane": "clinical_registry",
+      "source_type": "clinical_registry",
+      "source_title": "ChiCTR2600120937：聚乳酸面部填充剂纠正中重度鼻唇沟皱纹临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=314327",
+      "source_date": "2026-03-23",
+      "reported_status": "ChiCTR预注册；执行期2026-01-30至2028-12-31，招募期2026-03-24至2026-07-31",
+      "reported_indication": "中重度鼻唇沟皱纹",
+      "reported_center_or_pi": "中国医学科学院北京协和医院；南昌大学第二附属医院；河南科技大学第二附属医院；浙江大学医学院附属邵逸夫医院；金华市中心医院",
+      "expected_next_milestone": "跟踪招募、入组和后续注册申报节点",
+      "confidence": "high",
+      "official_verification_status": "verified",
+      "frontstage_use": "pipeline_table",
+      "note": "ChiCTR干预措施写明试验组使用金华艾普瑞生物科技有限公司的聚乳酸面部填充剂；按官方题名先归入PLA/PLLA赛道。",
+      "added_at": "2026-06-24"
+    },
+    {
       "lead_id": "pipe_plla_maikelong_chictr2500101608",
       "track": "plla",
       "track_label": "PLLA/PDLLA",
@@ -4844,8 +4842,8 @@ window.PIPELINE_DASHBOARD_DATA = {
       "expected_next_milestone": "跟踪PN企业临床、受理号和注册证",
       "confidence": "high",
       "official_verification_status": "verified",
-      "frontstage_use": "pipeline_table",
-      "note": "这是监管路径线索，不是获批证照。",
+      "frontstage_use": "research_note",
+      "note": "这是主体未披露的分类界定/监管路径线索，不作为企业产品进度。",
       "added_at": "2026-06-19"
     },
     {
@@ -5070,7 +5068,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_feilin_nmpa_delivery_20211208",
       "project_key": "caha:羟基磷灰石生物陶瓷_菲林普利相关既有证照:四川拜阿蒙生物活性材料有限责任公司_成都睿合医药科技有限公司",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2021-12-08",
       "product": "羟基磷灰石生物陶瓷/菲林普利相关既有证照",
       "company": "四川拜阿蒙生物活性材料有限责任公司 / 成都睿合医药科技有限公司",
@@ -5140,7 +5138,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_cgbio_huatang_official_20231023",
       "project_key": "caha:facetem:cgbio_华瑭大昌",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2023-10-23",
       "product": "FACETEM",
       "company": "CGBio / 华瑭大昌",
@@ -5182,7 +5180,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_xihong_cms_license_20240117",
       "project_key": "caha:注射用羟基磷灰石微球填充剂:江苏西宏生物医药有限公司_康哲美丽",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2024-01-17",
       "product": "注射用羟基磷灰石微球填充剂",
       "company": "江苏西宏生物医药有限公司 / 康哲美丽",
@@ -5490,7 +5488,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_cgbio_huatang_202311_market_entry",
       "project_key": "caha:caha填充物中国上市许可合作:cgbio_华瑭大昌",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-01-15",
       "product": "CaHA填充物中国上市许可合作",
       "company": "CGBio/华瑭大昌",
@@ -5504,7 +5502,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_harmonyca_202409_type_testing",
       "project_key": "caha:harmonyca:艾尔建美学_abbvie",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-01-15",
       "product": "HArmonyCa",
       "company": "艾尔建美学/AbbVie",
@@ -5518,7 +5516,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_radiesse_2023_clinical",
       "project_key": "caha:radiesse_瑞德喜:merz_麦施医疗",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-01-15",
       "product": "Radiesse/瑞德喜",
       "company": "Merz/麦施医疗",
@@ -5529,10 +5527,10 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html"
     },
     {
-      "id": "milestone_pipe_collagen_zhenyan_chictr2500096028",
-      "project_key": "collagen:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
-      "track": "collagen",
-      "track_label": "胶原蛋白",
+      "id": "milestone_pipe_pcl_zhenyan_chictr2500096028",
+      "project_key": "pcl:注射用聚己内酯微球重组ⅲ型人源化胶原蛋白_透明质酸钠冻干纤维组合包:西安臻研生物科技有限公司",
+      "track": "pcl",
+      "track_label": "PCL",
       "date": "2025-01-16",
       "product": "注射用聚己内酯微球重组Ⅲ型人源化胶原蛋白-透明质酸钠冻干纤维组合包",
       "company": "西安臻研生物科技有限公司",
@@ -5546,7 +5544,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_rejuve_puju_202410_followup",
       "project_key": "caha:rejuve_璞聚caha项目:璞聚生物",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-01-20",
       "product": "Rejuve/璞聚CaHA项目",
       "company": "璞聚生物",
@@ -5560,7 +5558,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_shanghai_tenth_nasolabial_trial",
       "project_key": "caha:注射用羟基磷灰石微球面部填充剂:待确认",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-01-20",
       "product": "注射用羟基磷灰石微球面部填充剂",
       "company": "待确认",
@@ -5588,7 +5586,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_aphranel_cmde_20250217",
       "project_key": "caha:优法兰_aphranel_注射用羟基磷酸钙微球面部填充剂:上海摩漾生物科技有限公司",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-02-17",
       "product": "优法兰 Aphranel/注射用羟基磷酸钙微球面部填充剂",
       "company": "上海摩漾生物科技有限公司",
@@ -5616,7 +5614,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_radiesse_cmde_20250307",
       "project_key": "caha:radiesse芮得怡_注射用羟基磷酸钙微球面部填充剂:merz_north_america_inc",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-03-07",
       "product": "RADIESSE芮得怡/注射用羟基磷酸钙微球面部填充剂",
       "company": "Merz North America Inc.",
@@ -5684,7 +5682,7 @@ window.PIPELINE_DASHBOARD_DATA = {
     },
     {
       "id": "milestone_pipe_pdrn_wuzhong_2024_ar",
-      "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:江苏吴中_吴中美学_北京丽徕科技有限公司",
+      "project_key": "pdrn:注射用透明质酸钠_pdrn复合溶液:吴中美学_北京丽徕科技有限公司",
       "track": "pdrn",
       "track_label": "PDRN/多聚脱氧核糖核苷酸",
       "date": "2025-04-30",
@@ -5714,7 +5712,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_harmonyca_clinicaltrials_nct07032597",
       "project_key": "caha:harmonyca_lidocaine:abbvie_allergan_aesthetics",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-05-26",
       "product": "HArmonyCa Lidocaine",
       "company": "AbbVie / Allergan Aesthetics",
@@ -5728,7 +5726,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_harmonyca_abbvie_m21_782",
       "project_key": "caha:harmonyca_lidocaine:abbvie_allergan_aesthetics",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-05-26",
       "product": "HArmonyCa Lidocaine",
       "company": "AbbVie / Allergan Aesthetics",
@@ -5798,7 +5796,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_ruiyang_chictr2500107432",
       "project_key": "caha:医用含羟基磷灰石微球的交联透明质酸钠凝胶:成都睿漾再生医疗科技有限公司",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2025-08-11",
       "product": "医用含羟基磷灰石微球的交联透明质酸钠凝胶",
       "company": "成都睿漾再生医疗科技有限公司",
@@ -5810,7 +5808,7 @@ window.PIPELINE_DASHBOARD_DATA = {
     },
     {
       "id": "milestone_pipe_ecm_baiyiyuan_sigma_20250813_acceptance",
-      "project_key": "ecm:脱细胞基质植入剂:白衣缘生物",
+      "project_key": "ecm:脱细胞基质植入剂:白衣缘生物_康哲美丽",
       "track": "ecm",
       "track_label": "ECM/脱细胞基质",
       "date": "2025-08-13",
@@ -5952,7 +5950,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "id": "milestone_pipe_caha_haohai_2025_ar",
       "project_key": "caha:注射用羟基磷灰石微球系列产品:昊海生科",
       "track": "caha",
-      "track_label": "CaHA/羟基磷灰石",
+      "track_label": "CaHA/微晶瓷",
       "date": "2026-03-21",
       "product": "注射用羟基磷灰石微球系列产品",
       "company": "昊海生科",
@@ -5961,6 +5959,20 @@ window.PIPELINE_DASHBOARD_DATA = {
       "status": "首款产品临床试验有序推进；第二及第三款产品进入注册检验",
       "source_title": "昊海生科2025年年度报告",
       "source_url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12008334&stockid=688366"
+    },
+    {
+      "id": "milestone_pipe_plla_apre_chictr2600120937",
+      "project_key": "plla:聚乳酸面部填充剂:金华艾普瑞生物科技有限公司",
+      "track": "plla",
+      "track_label": "PLLA/PDLLA",
+      "date": "2026-03-23",
+      "product": "聚乳酸面部填充剂",
+      "company": "金华艾普瑞生物科技有限公司",
+      "stage": "临床登记",
+      "evidence_grade": "A1",
+      "status": "ChiCTR预注册；执行期2026-01-30至2028-12-31，招募期2026-03-24至2026-07-31",
+      "source_title": "ChiCTR2600120937：聚乳酸面部填充剂纠正中重度鼻唇沟皱纹临床试验",
+      "source_url": "https://www.chictr.org.cn/showproj.html?proj=314327"
     },
     {
       "id": "milestone_pipe_plla_xtpl_chictr2600121023",

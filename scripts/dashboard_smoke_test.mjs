@@ -51,6 +51,7 @@ async function main() {
   const haData = await fetch(urlFor('assets/data/tracks/ha.json')).then((res) => res.json());
   const pllaData = await fetch(urlFor('assets/data/tracks/plla.json')).then((res) => res.json());
   const botulinumData = await fetch(urlFor('assets/data/tracks/botulinum.json')).then((res) => res.json());
+  const cahaTrackMeta = (manifest.tracks || []).find((track) => track.key === 'caha');
   const expectedRecords = Number(overview?.kpi?.main_records || 0);
   const volbella = (haData.records || []).find((record) => record.certificate_no === '国械注进20213130109');
   const qMedLidocaineRecords = ['国械注进20213130059', '国械注进20253130284'].map((cert) => (
@@ -104,6 +105,7 @@ async function main() {
   assert(botoxRecords.some((record) => /50单位\/支/.test(record?.specification || '') && /3支\/盒/.test(record?.specification || '')), 'BOTOX should keep the 50-unit multi-pack specification evidence');
   assert(botoxRecords.some((record) => /100单位\/支/.test(record?.specification || '')), 'BOTOX should keep the 100-unit specification evidence');
   assert(/Hugel|乐提葆/i.test(`${letybo50Record?.registrant || ''} ${letybo50Record?.brand || ''}`), 'SJ20210004 should belong to Hugel/Letybo, not BOTOX', `${letybo50Record?.registrant || 'missing'} ${letybo50Record?.brand || ''}`);
+  assert(cahaTrackMeta?.name === 'CaHA/微晶瓷', 'CaHA track should use microcrystalline porcelain as the generic material label', cahaTrackMeta?.name || 'missing');
 
   const launchOptions = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH
     ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH }
@@ -289,7 +291,7 @@ async function main() {
   assert(pipelineOverview.cycleStages.some((text) => text.includes('法定')) && pipelineOverview.cycleStages.some((text) => text.includes('可变')), 'Pipeline cycle stages should mark statutory vs variable steps', pipelineOverview.cycleStages.join(' | '));
   assert(pipelineOverview.troubledCases.some((text) => /Ultherapy|超声刀/.test(text)) && pipelineOverview.troubledCases.some((text) => /Radiesse|瑞德喜/.test(text)), 'Pipeline should show troubled/stalled registration cases', pipelineOverview.troubledCases.join(' | '));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0 && pipelineOverview.kpis[3] >= 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
-  assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡|Radiesse\/瑞德喜/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
+  assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡|Radiesse\/瑞德喜|Ellansé-M|山东采采医疗科技有限公司|渼颜空间生物科技/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');
   assert(pipelineOverview.ecmImplantRows === 1, 'Baiyiyuan ECM implant should be merged into one active project row', String(pipelineOverview.ecmImplantRows));
   assert(pipelineOverview.ecmShengzhirunheGelRows === 1, 'Shengzhirunhe ECM gel aliases should be merged into one active project row', String(pipelineOverview.ecmShengzhirunheGelRows));
   assert(pipelineOverview.ecmSisRows === 0, 'SIS-ECM media wording should verify the Baiyiyuan ECM implant instead of becoming a separate project row', String(pipelineOverview.ecmSisRows));
@@ -308,6 +310,7 @@ async function main() {
     projectText: document.querySelector('#projectBody')?.textContent || '',
   }));
   assert(pipelineSummaryNav.activeTab.includes('CaHA'), 'Clicking a summary card should activate the matching material tab', JSON.stringify(pipelineSummaryNav));
+  assert(pipelineSummaryNav.activeTab.includes('微晶瓷'), 'Pipeline CaHA tab should display the microcrystalline porcelain generic label', JSON.stringify(pipelineSummaryNav));
   assert(pipelineSummaryNav.overviewTitle.includes('CaHA'), 'Clicking a summary card should refresh the overview section for that material', JSON.stringify(pipelineSummaryNav));
   assert(!/Radiesse|RADIESSE|瑞德喜|芮得怡/.test(pipelineSummaryNav.projectText), 'Summary-card navigation should keep approved Radiesse out of the CaHA project table', pipelineSummaryNav.projectText);
 
@@ -360,14 +363,14 @@ async function main() {
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(pipelineSilk.activeTab.includes('丝素蛋白'), 'Silk tab should become active', pipelineSilk.activeTab);
-  assert(pipelineSilk.clinical === '3', 'Silk should show three clinical-stage active projects', pipelineSilk.clinical);
+  assert(pipelineSilk.clinical === '2', 'Silk should show two verified active clinical projects', pipelineSilk.clinical);
   assert(!pipelineSilk.timelineHidden, 'Material tabs should show a material-specific timeline');
   assert(pipelineSilk.timelineTitle.includes('丝素蛋白'), 'Silk timeline title should name the material track', pipelineSilk.timelineTitle);
   assert(pipelineSilk.nodes > 0 && pipelineSilk.projectedNodes > 0, 'Silk timeline should include actual and projected nodes', `${pipelineSilk.nodes}/${pipelineSilk.projectedNodes}`);
-  assert(pipelineSilk.forecastTitle.includes('丝素蛋白') && pipelineSilk.forecastCards === 4, 'Silk view should show a track-specific forecast ranking', `${pipelineSilk.forecastTitle} / ${pipelineSilk.forecastCards}`);
+  assert(pipelineSilk.forecastTitle.includes('丝素蛋白') && pipelineSilk.forecastCards === 2, 'Silk view should show a track-specific forecast ranking for verified active projects', `${pipelineSilk.forecastTitle} / ${pipelineSilk.forecastCards}`);
   assert(pipelineSilk.detailText.includes('项目预测') && !/界面新闻|动脉网/.test(pipelineSilk.detailText), 'Timeline point details should stay concise and not duplicate media source copy', pipelineSilk.detailText);
   assert(pipelineSilk.hasSourceButton, 'Timeline point should expose a source jump button');
-  assert(pipelineSilk.projectRows === 4, 'Silk active table should include three clinical projects plus one review project', String(pipelineSilk.projectRows));
+  assert(pipelineSilk.projectRows === 2, 'Silk active table should exclude unverified A4 leads', String(pipelineSilk.projectRows));
   assert(pipelineSilk.sourceRows >= 3, 'Silk source list should render related source rows', String(pipelineSilk.sourceRows));
   assert(pipelineSilk.overflowX <= 1, 'Pipeline silk view has horizontal overflow', String(pipelineSilk.overflowX));
   await pipelinePage.locator('#timelineDetails .source-button').first().click();
@@ -384,11 +387,25 @@ async function main() {
     rows: document.querySelectorAll('#projectBody tr').length,
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
-  assert(pipelinePcl.projectText.includes('Ellansé-M'), 'Ellansé-M new-indication filing should surface as an active PCL project (data-as-truth)', pipelinePcl.projectText);
-  assert(pipelinePcl.forecastText.includes('Ellansé-M'), 'Ellansé-M review-stage filing should rank in the PCL forecast list', pipelinePcl.forecastText);
+  assert(/西安臻研|重组Ⅲ型人源化胶原蛋白/.test(pipelinePcl.projectText), 'PCL view should include the official Xi’an Zhenyan PCL-composite clinical project', pipelinePcl.projectText);
+  assert(!/Ellansé-M|山东采采医疗科技有限公司|渼颜空间生物科技/.test(pipelinePcl.projectText), 'Approved PCL products should not stay in the active PCL project table', pipelinePcl.projectText);
+  assert(!/Ellansé-M|山东采采医疗科技有限公司|渼颜空间生物科技/.test(pipelinePcl.forecastText), 'Approved PCL products should not rank in the active PCL forecast list', pipelinePcl.forecastText);
   assert(!pipelinePcl.hasArchivedKpi, 'PCL view should not show an archived/approved KPI');
   assert(pipelinePcl.rows >= 3, 'PCL view should keep multiple active projects', String(pipelinePcl.rows));
   assert(pipelinePcl.overflowX <= 1, 'Pipeline PCL view has horizontal overflow', String(pipelinePcl.overflowX));
+
+  await pipelinePage.locator('[data-track="plla"]').click();
+  await pipelinePage.waitForTimeout(300);
+  const pipelinePlla = await pipelinePage.evaluate(() => ({
+    projectText: document.querySelector('#projectBody')?.textContent || '',
+    sourceText: document.querySelector('#recordBody')?.textContent || '',
+    rows: document.querySelectorAll('#projectBody tr').length,
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  }));
+  assert(/金华艾普瑞生物科技有限公司/.test(pipelinePlla.projectText) && /聚乳酸面部填充剂/.test(pipelinePlla.projectText), 'PLLA/PLA view should include the newly crawled Apre ChiCTR clinical project', pipelinePlla.projectText);
+  assert(/ChiCTR2600120937/.test(pipelinePlla.sourceText), 'PLLA/PLA source list should expose the Apre ChiCTR source record', pipelinePlla.sourceText);
+  assert(pipelinePlla.rows >= 5, 'PLLA/PLA active table should include the added clinical project', String(pipelinePlla.rows));
+  assert(pipelinePlla.overflowX <= 1, 'Pipeline PLLA/PLA view has horizontal overflow', String(pipelinePlla.overflowX));
 
   await pipelinePage.locator('[data-track="caha"]').click();
   await pipelinePage.waitForTimeout(300);
@@ -472,6 +489,37 @@ async function main() {
   assert(pipelinePdrn.forecastCardRightOfTimeline, 'PDRN approval window card should sit to the right of the timeline on desktop', JSON.stringify(pipelinePdrn));
   assert(pipelinePdrn.sourceRows >= 6, 'PDRN/PN source list should keep product evidence and both PN/PDRN context sources', String(pipelinePdrn.sourceRows));
   assert(pipelinePdrn.overflowX <= 1, 'Pipeline PDRN view has horizontal overflow', String(pipelinePdrn.overflowX));
+
+  await pipelinePage.locator('[data-track="ecm"]').click();
+  await pipelinePage.waitForTimeout(250);
+  const pipelineEcm = await pipelinePage.evaluate(() => {
+    const projectText = document.querySelector('#projectBody')?.textContent || '';
+    const rows = Array.from(document.querySelectorAll('#projectBody tr')).map((row) => row.textContent || '');
+    return {
+      projectText,
+      baiyiyuanRows: rows.filter((text) => /白衣缘生物|康哲美丽/.test(text) && /脱细胞基质植入剂/.test(text)).length,
+      baiyiyuanHasLatestStage: rows.some((text) => /白衣缘生物|康哲美丽/.test(text) && /脱细胞基质植入剂/.test(text) && /受理\/送达/.test(text)),
+    };
+  });
+  assert(pipelineEcm.baiyiyuanRows === 1 && pipelineEcm.baiyiyuanHasLatestStage, 'Baiyiyuan ECM sources should merge into one latest-stage project row', JSON.stringify(pipelineEcm));
+  assert(!/华清智美|SIS-ECM医美填充产品|平台\/资本线索/.test(pipelineEcm.projectText), 'ECM platform/media context should not render as active projects', pipelineEcm.projectText);
+
+  await pipelinePage.locator('[data-track="silk"]').click();
+  await pipelinePage.waitForTimeout(250);
+  const pipelineSilkActiveText = await pipelinePage.evaluate(() => document.querySelector('#projectBody')?.textContent || '');
+  assert(/VenuSilk|南京思元/.test(pipelineSilkActiveText), 'Silk active projects should keep verified clinical/company-source projects', pipelineSilkActiveText);
+  assert(!/星月生物|复向医疗/.test(pipelineSilkActiveText), 'Silk A4/unverified leads should stay out of active project rows', pipelineSilkActiveText);
+
+  await pipelinePage.locator('[data-track="collagen"]').click();
+  await pipelinePage.waitForTimeout(250);
+  const pipelineCollagen = await pipelinePage.evaluate(() => document.querySelector('#projectBody')?.textContent || '');
+  assert(!/科媄氏|巨子生物|奇璞生物|创健医疗|已获批/.test(pipelineCollagen), 'Collagen active progress should exclude product-line notes and approved products', pipelineCollagen);
+
+  await pipelinePage.locator('[data-track="botulinum"]').click();
+  await pipelinePage.waitForTimeout(250);
+  const pipelineBotulinum = await pipelinePage.evaluate(() => document.querySelector('#projectBody')?.textContent || '');
+  assert(/DJ-01|DN001/.test(pipelineBotulinum), 'Botulinum active progress should retain clinical-stage tox projects', pipelineBotulinum);
+  assert(!/HUTOX|芮妥欣|已获批/.test(pipelineBotulinum), 'Approved botulinum products should not remain in active registration progress', pipelineBotulinum);
   await pipelinePage.close();
 
   const filteredPage = await openCheckedPage(context, 'index.html?segment=botulinum&origin=imported&q=Dysport&grain=year&map=registrations');

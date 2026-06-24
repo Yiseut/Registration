@@ -2,7 +2,7 @@
   "track_key": "caha",
   "track_meta": {
     "key": "caha",
-    "name": "CaHA",
+    "name": "CaHA/微晶瓷",
     "tagline": "",
     "accent": "#b486d4"
   },
@@ -151,7 +151,7 @@
     {
       "id": "CAHA-国械注准20253130390",
       "track": "caha",
-      "track_name": "CaHA",
+      "track_name": "CaHA/微晶瓷",
       "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射针剂 / CaHA",
@@ -218,7 +218,7 @@
     {
       "id": "CAHA-国械注进20253130124",
       "track": "caha",
-      "track_name": "CaHA",
+      "track_name": "CaHA/微晶瓷",
       "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射针剂 / CaHA",
@@ -288,7 +288,7 @@
     {
       "id": "CAHA-国械注准20173130346",
       "track": "caha",
-      "track_name": "CaHA",
+      "track_name": "CaHA/微晶瓷",
       "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 骨科或软组织修复边界 / CaHA",
@@ -358,7 +358,7 @@
     {
       "id": "CAHA-国械注准20183131912",
       "track": "caha",
-      "track_name": "CaHA",
+      "track_name": "CaHA/微晶瓷",
       "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 骨缺损填充边界 / CaHA",
@@ -423,7 +423,7 @@
     {
       "id": "CAHA-国械注准20153131017",
       "track": "caha",
-      "track_name": "CaHA",
+      "track_name": "CaHA/微晶瓷",
       "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 骨植入材料边界 / CaHA",
