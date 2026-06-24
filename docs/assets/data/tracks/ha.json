@@ -7,11 +7,11 @@
     "accent": "#58bfd7"
   },
   "kpi": {
-    "total": 110,
+    "total": 111,
     "main": 108,
     "companies": 53,
-    "indications": 10,
-    "verified": 108,
+    "indications": 11,
+    "verified": 107,
     "domestic": 52,
     "imported": 53,
     "hkmt": 3
@@ -70,7 +70,7 @@
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 65
+      "value": 64
     },
     {
       "name": "唇部",
@@ -107,6 +107,10 @@
     {
       "name": "手部",
       "value": 3
+    },
+    {
+      "name": "待确认",
+      "value": 1
     }
   ],
   "origin_share": [
@@ -147,12 +151,12 @@
       2026
     ],
     "values": [
-      11,
+      10,
       11,
       17,
       29,
       32,
-      8
+      9
     ]
   },
   "company_indication_heatmap": {
@@ -501,7 +505,6 @@
       "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "闲话医与美",
@@ -569,7 +572,6 @@
       "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "闲话医与美",
@@ -638,7 +640,6 @@
       "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "闲话医与美",
@@ -865,7 +866,7 @@
       "approval_date": "2021-06-24",
       "approval_year": 2021,
       "valid_until": "2026-06-23",
-      "validity_status": "有效",
+      "validity_status": "已过期",
       "market_scope": "注射填充类",
       "application_segment": "注射填充类",
       "primary_indication": "鼻唇沟",
@@ -896,11 +897,9 @@
       "official_indication": "鼻唇沟",
       "official_scope": "该产品适用于面部真皮组织中层至深层注射，以纠正鼻唇沟。",
       "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
-      "portfolio_segments": [
-        "玻尿酸"
-      ],
+      "main_landscape": false,
+      "main_landscape_included": "否",
+      "portfolio_segments": [],
       "source_account": "闲话医与美",
       "source_title": "玻尿酸的2025：医美再无械3神话",
       "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw",
@@ -1304,7 +1303,6 @@
       "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "闲话医与美",
@@ -3152,7 +3150,6 @@
       "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "闲话医与美",
@@ -3812,7 +3809,6 @@
       "main_landscape_included": "是",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "闲话医与美",
@@ -3830,7 +3826,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "海π",
+      "brand": "注射用交联透明质酸钠凝胶",
       "aliases": "",
       "product_name": "注射用交联透明质酸钠凝胶",
       "company": "海雅美",
@@ -5488,7 +5484,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "克拉·赫本",
+      "brand": "注射用透明质酸钠溶液",
       "aliases": "",
       "product_name": "注射用透明质酸钠溶液",
       "company": "海雅美",
@@ -5554,7 +5550,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "雅派",
+      "brand": "注射用透明质酸钠溶液",
       "aliases": "",
       "product_name": "注射用透明质酸钠溶液",
       "company": "海雅美",
@@ -7343,7 +7339,7 @@
       "regulatory_class": "三类医疗器械",
       "device_type": "器械 / 注射材料 / 透明质酸钠",
       "strategic": "玻尿酸",
-      "brand": "瑅派",
+      "brand": "注射用交联透明质酸钠凝胶 海维纳斯・瑅派",
       "aliases": "",
       "product_name": "注射用交联透明质酸钠凝胶",
       "company": "海雅美",
@@ -7528,6 +7524,70 @@
       "source_account": "国家药监局 NMPA",
       "source_title": "进口医疗器械（注册）国械注进20263130029 基本信息",
       "source_url": "https://www.nmpa.gov.cn/datasearch/search-info.html?nmpa=aWQ9ZDI5NzhlMWJjMDY1NGVmOWJjYTVlMGY1NzE5OTg2OTImaXRlbUlkPWZmODA4MDgxODMwYjEwMzUwMTgzOGQ0ODcxYjUzNTQz",
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "ha_benchmark_records_20260505.csv"
+    },
+    {
+      "id": "HA-国械注进20263130237-待确认",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射材料 / 透明质酸钠",
+      "strategic": "玻尿酸",
+      "brand": "含利多卡因的注射用修饰透明质酸钠凝胶",
+      "aliases": "",
+      "product_name": "含利多卡因的注射用修饰透明质酸钠凝胶",
+      "company": "Medytox Inc.",
+      "company_key": "medytox inc.",
+      "registrant": "Medytox Inc.",
+      "certificate_no": "国械注进20263130237",
+      "origin": "进口",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 玻尿酸",
+      "material_form": "修饰HA填充凝胶",
+      "approval_date": "2026-06-23",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "注射填充类",
+      "application_segment": "注射填充类",
+      "primary_indication": "待确认",
+      "approved_indications": "",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、规格和有效期待注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认获批；完整适用范围、规格和有效期待注册证详情同步后回填。",
+      "specification": "",
+      "components": "含利多卡因的注射用修饰透明质酸钠凝胶",
+      "lidocaine_status": "含利多卡因",
+      "product_tags": "注射填充类 / 进口 / 非交联 / 含利多卡因",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [],
+      "tags": [
+        "注射填充类",
+        "进口",
+        "非交联",
+        "含利多卡因"
+      ],
+      "official_status": "",
+      "official_verification_status": "已官方核验/官方来源",
+      "official_source": "",
+      "official_product_name": "",
+      "official_registrant": "",
+      "official_approval_date": "",
+      "official_valid_until": "",
+      "official_indication": "",
+      "official_scope": "",
+      "verified": false,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
+      "source_account": "国家药品监督管理局",
+      "source_title": "2026年06月24日医疗器械批准证明文件送达信息",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
       "confidence": "high",
       "data_status": "已结构化",
       "source_dataset": "ha_benchmark_records_20260505.csv"

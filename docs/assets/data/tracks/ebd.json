@@ -7,13 +7,13 @@
     "accent": "#8fa8c8"
   },
   "kpi": {
-    "total": 28,
-    "main": 26,
-    "companies": 23,
-    "indications": 27,
-    "verified": 26,
-    "domestic": 18,
-    "imported": 8,
+    "total": 31,
+    "main": 29,
+    "companies": 26,
+    "indications": 28,
+    "verified": 29,
+    "domestic": 20,
+    "imported": 9,
     "hkmt": 0
   },
   "company_share": [
@@ -66,7 +66,7 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 11,
+  "long_tail_company_count": 14,
   "indication_share": [
     {
       "name": "面部轻度皱纹",
@@ -78,6 +78,10 @@
     },
     {
       "name": "面部轻中度皱纹",
+      "value": 3
+    },
+    {
+      "name": "完整适用范围待官方注册证详情回填",
       "value": 3
     },
     {
@@ -111,20 +115,16 @@
     {
       "name": "面部软组织",
       "value": 1
-    },
-    {
-      "name": "轮廓",
-      "value": 1
     }
   ],
   "origin_share": [
     {
       "name": "国产",
-      "value": 18
+      "value": 20
     },
     {
       "name": "进口",
-      "value": 8
+      "value": 9
     }
   ],
   "material_share": [
@@ -198,14 +198,13 @@
       1,
       6,
       9,
-      4
+      7
     ]
   },
   "company_indication_heatmap": {
     "companies": [
       "深圳半岛医疗集团股份有限公司",
       "深圳市宗匠科技有限公司",
-      "上海维脉医疗科技有限公司",
       "乐普医疗",
       "广东花至美容科技有限公司",
       "无锡威脉通医疗科技有限公司",
@@ -223,8 +222,7 @@
       "中下面部",
       "中下面部/颏下/颈部皮肤松弛",
       "颈部皮肤松弛",
-      "颏下",
-      "中上面部轻中度皱纹"
+      "颏下"
     ],
     "cells": [
       [
@@ -234,12 +232,22 @@
       ],
       [
         0,
-        7,
+        6,
         1
       ],
       [
-        7,
+        0,
+        8,
+        1
+      ],
+      [
         2,
+        2,
+        1
+      ],
+      [
+        0,
+        7,
         1
       ],
       [
@@ -249,42 +257,27 @@
       ],
       [
         2,
-        3,
-        1
-      ],
-      [
-        0,
-        8,
-        1
-      ],
-      [
-        0,
         10,
         1
       ],
       [
-        2,
-        11,
+        0,
+        3,
         1
       ],
       [
-        0,
+        2,
         4,
         1
       ],
       [
-        2,
-        5,
-        1
-      ],
-      [
         1,
-        5,
+        4,
         1
       ],
       [
         0,
-        6,
+        5,
         1
       ],
       [
@@ -1938,6 +1931,209 @@
       "source_url": "https://bydrug.pharmcube.com/detailpage/deviceCNImported/2be6afa9232f85ea9fe915d23edc22e1",
       "confidence": "high",
       "data_status": "原始保留",
+      "source_dataset": "manual_raw_cert_leads"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注准20263091317",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "energy_device",
+      "strategic": "EBD 设备",
+      "brand": "半岛皮秒钛蓝宝石",
+      "aliases": "",
+      "product_name": "皮秒钛蓝宝石激光治疗仪",
+      "company": "半岛医疗",
+      "company_key": "半岛医疗",
+      "registrant": "深圳半岛医疗集团股份有限公司",
+      "certificate_no": "国械注准20263091317",
+      "origin": "国产",
+      "category": "激光/IPL设备",
+      "material_family": "皮秒钛蓝宝石激光治疗仪 / 半岛医疗 / 激光设备 / NMPA批准证明文件送达信息",
+      "material_form": "",
+      "approval_date": "2026-06-23",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "原始保留",
+      "application_segment": "energy_device",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、规格和结构组成待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、规格和结构组成待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "激光治疗仪；具体结构组成待官方注册证详情回填。",
+      "lidocaine_status": "",
+      "product_tags": "激光/IPL设备 / 皮秒激光 / 三类医疗器械 / 国产 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "皮秒激光",
+        "三类医疗器械",
+        "国产",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
+      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
+      "official_product_name": "皮秒钛蓝宝石激光治疗仪",
+      "official_registrant": "深圳半岛医疗集团股份有限公司",
+      "official_approval_date": "2026-06-23",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "国家药品监督管理局",
+      "source_title": "国家药监局2026年06月24日医疗器械批准证明文件送达信息：半岛医疗皮秒钛蓝宝石激光治疗仪",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "manual_raw_cert_leads"
+    },
+    {
+      "id": "RAW-RF-国械注准20263091299",
+      "track": "raw_rf",
+      "track_name": "射频设备",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "energy_device",
+      "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
+      "product_name": "射频皮肤治疗仪",
+      "company": "心镜云影",
+      "company_key": "心镜云影",
+      "registrant": "心镜云影医疗科技(枣庄)有限责任公司",
+      "certificate_no": "国械注准20263091299",
+      "origin": "国产",
+      "category": "射频设备",
+      "material_family": "射频皮肤治疗仪 / 心镜云影 / 射频设备 / NMPA批准证明文件送达信息",
+      "material_form": "",
+      "approval_date": "2026-06-23",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "原始保留",
+      "application_segment": "energy_device",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、规格和结构组成待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、规格和结构组成待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "射频皮肤治疗仪；具体结构组成待官方注册证详情回填。",
+      "lidocaine_status": "",
+      "product_tags": "射频设备 / 射频皮肤治疗仪 / 三类医疗器械 / 国产 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "射频设备",
+        "射频皮肤治疗仪",
+        "三类医疗器械",
+        "国产",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
+      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
+      "official_product_name": "射频皮肤治疗仪",
+      "official_registrant": "心镜云影医疗科技(枣庄)有限责任公司",
+      "official_approval_date": "2026-06-23",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "国家药品监督管理局",
+      "source_title": "国家药监局2026年06月24日医疗器械批准证明文件送达信息：心镜云影射频皮肤治疗仪",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
+      "confidence": "high",
+      "data_status": "已结构化",
+      "source_dataset": "manual_raw_cert_leads"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注进20263090235",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "energy_device",
+      "strategic": "EBD 设备",
+      "brand": "Viora",
+      "aliases": "",
+      "product_name": "皮肤治疗仪",
+      "company": "Viora / 欣可丽美学",
+      "company_key": "viora / 欣可丽美学",
+      "registrant": "Viora Ltd.",
+      "certificate_no": "国械注进20263090235",
+      "origin": "进口",
+      "category": "激光/IPL设备",
+      "material_family": "皮肤治疗仪 / Viora / 欣可丽美学 / 能量设备 / NMPA批准证明文件送达信息",
+      "material_form": "",
+      "approval_date": "2026-06-23",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "原始保留",
+      "application_segment": "energy_device",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、规格和结构组成待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、规格和结构组成待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "皮肤治疗仪；具体结构组成待官方注册证详情回填。",
+      "lidocaine_status": "",
+      "product_tags": "激光/IPL设备 / 皮肤治疗仪 / 三类医疗器械 / 进口 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "激光",
+        "IPL设备",
+        "皮肤治疗仪",
+        "三类医疗器械",
+        "进口",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
+      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
+      "official_product_name": "皮肤治疗仪",
+      "official_registrant": "Viora Ltd.",
+      "official_approval_date": "2026-06-23",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "source_account": "国家药品监督管理局",
+      "source_title": "国家药监局2026年06月24日医疗器械批准证明文件送达信息：Viora皮肤治疗仪",
+      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
+      "confidence": "high",
+      "data_status": "已结构化",
       "source_dataset": "manual_raw_cert_leads"
     },
     {

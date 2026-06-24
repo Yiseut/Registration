@@ -7,22 +7,18 @@
     "accent": "#9daaf0"
   },
   "kpi": {
-    "total": 14,
-    "main": 14,
-    "companies": 14,
-    "indications": 5,
-    "verified": 13,
-    "domestic": 11,
+    "total": 12,
+    "main": 11,
+    "companies": 11,
+    "indications": 3,
+    "verified": 11,
+    "domestic": 8,
     "imported": 3,
     "hkmt": 0
   },
   "company_share": [
     {
       "name": "圣博玛",
-      "value": 1
-    },
-    {
-      "name": "爱美客",
       "value": 1
     },
     {
@@ -66,11 +62,11 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 2,
+  "long_tail_company_count": 0,
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 11
+      "value": 9
     },
     {
       "name": "中面部",
@@ -79,20 +75,12 @@
     {
       "name": "颞部",
       "value": 1
-    },
-    {
-      "name": "面部填充",
-      "value": 1
-    },
-    {
-      "name": "中重度鼻唇沟皱纹",
-      "value": 1
     }
   ],
   "origin_share": [
     {
       "name": "国产",
-      "value": 11
+      "value": 8
     },
     {
       "name": "进口",
@@ -102,21 +90,19 @@
   "material_share": [
     {
       "name": "PLLA",
-      "value": 14
+      "value": 11
     }
   ],
   "timeline": {
     "years": [
-      2021,
       2024,
       2025,
       2026
     ],
     "values": [
-      1,
       4,
       5,
-      4
+      2
     ]
   },
   "company_indication_heatmap": {
@@ -284,7 +270,7 @@
       "approval_date": "2021-06-24",
       "approval_year": 2021,
       "valid_until": "2026-06-23",
-      "validity_status": "有效",
+      "validity_status": "已过期",
       "market_scope": "",
       "application_segment": "",
       "primary_indication": "鼻唇沟",
@@ -311,11 +297,10 @@
       "official_indication": "鼻唇沟",
       "official_scope": "本产品适用于真皮深层、皮下浅层及深层注射填充纠正中、重度鼻唇沟皱纹。",
       "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
+      "main_landscape": false,
+      "main_landscape_included": "否",
       "portfolio_segments": [
         "玻尿酸",
-        "胶原刺激剂",
         "肉毒毒素"
       ],
       "source_account": "美圈老卢",
@@ -921,136 +906,6 @@
       "confidence": "",
       "data_status": "已结构化",
       "source_dataset": "plla_dashboard_data.json"
-    },
-    {
-      "id": "PLLA-国械注准20263130608",
-      "track": "plla",
-      "track_name": "PLA",
-      "record_type": "三类医疗器械",
-      "regulatory_class": "三类医疗器械",
-      "device_type": "器械 / 注射针剂 / PLLA",
-      "strategic": "胶原刺激剂",
-      "brand": "臻好迷",
-      "aliases": "",
-      "product_name": "含左旋聚乳酸的交联透明质酸钠微球面部填充剂",
-      "company": "玮沐医疗",
-      "company_key": "玮沐医疗",
-      "registrant": "上海玮沐医疗科技有限公司",
-      "certificate_no": "国械注准20263130608",
-      "origin": "国产",
-      "category": "PLLA童颜针",
-      "material_family": "PLLA",
-      "material_form": "PLLA/HA复合凝胶",
-      "approval_date": "2026-03-24",
-      "approval_year": 2026,
-      "valid_until": "2031-03-23",
-      "validity_status": "有效",
-      "market_scope": "",
-      "application_segment": "",
-      "primary_indication": "面部填充",
-      "approved_indications": "面部填充",
-      "indication_description": "公开送达信息未披露完整适用范围，按产品名称纳入面部填充观察。",
-      "scope_full": "待国家政务服务平台注册证详情补齐。",
-      "specification": "待补充",
-      "components": "待国家政务服务平台注册证详情补齐。",
-      "lidocaine_status": "",
-      "product_tags": "PLLA+HA复合 / 国产 / 微球",
-      "market_claim": "第十四款获批童颜针",
-      "boundary_reason": "",
-      "indications": [
-        "面部填充"
-      ],
-      "tags": [
-        "PLLA+HA复合",
-        "国产",
-        "微球"
-      ],
-      "official_status": "verified",
-      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药监局医疗器械批准证明文件送达信息",
-      "official_product_name": "含左旋聚乳酸的交联透明质酸钠微球面部填充剂",
-      "official_registrant": "上海玮沐医疗科技有限公司",
-      "official_approval_date": "2026-03-24",
-      "official_valid_until": "2031-03-23",
-      "official_indication": "面部填充",
-      "official_scope": "待国家政务服务平台注册证详情补齐。",
-      "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
-      "portfolio_segments": [
-        "胶原刺激剂"
-      ],
-      "source_account": "国家药监局; 西格玛医学",
-      "source_title": "2026年03月25日医疗器械批准证明文件送达信息; 西格玛医学助力玮沐医疗童颜针获得NMPA三类器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260325160649167.html?m=&type=pc; https://www.sigma-stat.com/index.php?a=index&aid=3819&c=View&m=home",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "manual_nmpa_20260623"
-    },
-    {
-      "id": "PLLA-国械注准20263130522",
-      "track": "plla",
-      "track_name": "PLA",
-      "record_type": "三类医疗器械",
-      "regulatory_class": "三类医疗器械",
-      "device_type": "器械 / 注射针剂 / PLLA",
-      "strategic": "胶原刺激剂",
-      "brand": "",
-      "aliases": "",
-      "product_name": "注射用聚左旋乳酸填充剂",
-      "company": "京宇一美",
-      "company_key": "京宇一美",
-      "registrant": "北京京宇一美生物科技有限责任公司",
-      "certificate_no": "国械注准20263130522",
-      "origin": "国产",
-      "category": "PLLA童颜针",
-      "material_family": "PLLA",
-      "material_form": "PLLA微球填充剂",
-      "approval_date": "2026-03-11",
-      "approval_year": 2026,
-      "valid_until": "",
-      "validity_status": "有效",
-      "market_scope": "",
-      "application_segment": "",
-      "primary_indication": "鼻唇沟",
-      "approved_indications": "中重度鼻唇沟皱纹",
-      "indication_description": "公开资料显示该产品针对中重度鼻唇沟皱纹；完整适用范围以国家政务服务平台注册证详情回填。",
-      "scope_full": "待国家政务服务平台注册证详情补齐。",
-      "specification": "待补充",
-      "components": "待国家政务服务平台注册证详情补齐。",
-      "lidocaine_status": "",
-      "product_tags": "国产PLLA / 鼻唇沟 / 详情待回填",
-      "market_claim": "2026年新增获批PLLA童颜针",
-      "boundary_reason": "",
-      "indications": [
-        "中重度鼻唇沟皱纹"
-      ],
-      "tags": [
-        "国产PLLA",
-        "鼻唇沟",
-        "详情待回填"
-      ],
-      "official_status": "delivery_verified",
-      "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药监局医疗器械批准证明文件送达信息",
-      "official_product_name": "注射用聚左旋乳酸填充剂",
-      "official_registrant": "北京京宇一美生物科技有限责任公司",
-      "official_approval_date": "2026-03-11",
-      "official_valid_until": "",
-      "official_indication": "鼻唇沟",
-      "official_scope": "待国家政务服务平台注册证详情补齐。",
-      "verified": false,
-      "main_landscape": true,
-      "main_landscape_included": "是",
-      "portfolio_segments": [
-        "胶原刺激剂"
-      ],
-      "source_account": "国家药监局; 宝丽永昌; 动脉网",
-      "source_title": "2026年03月12日医疗器械批准证明文件送达信息; 恭喜京宇一美注射用聚左旋乳酸填充剂获国家药监局批准; 京宇一美产品信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260312163232162.html; https://www.bioray-med.com/case; https://www.vbdata.cn/companyDetail/58ef8d9e4acd9b4674dc87b33b3b5cdc",
-      "confidence": "high",
-      "data_status": "待详情页回填",
-      "source_dataset": "manual_nmpa_20260624"
     }
   ]
 }
