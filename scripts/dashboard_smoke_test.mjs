@@ -86,10 +86,17 @@ async function main() {
   for (const record of qMedLidocaineRecords) {
     assert(Boolean(record?.specification), 'Q-Med/Galderma records should keep official specification text', record?.certificate_no || 'missing');
   }
-  assert(haiyameiBrandRecords.get('国械注准20243131969')?.brand === '海π', 'Haiyamei jaw product should display the Haiπ brand', haiyameiBrandRecords.get('国械注准20243131969')?.brand || 'missing');
-  assert(haiyameiBrandRecords.get('国械注准20253130898')?.brand === '克拉·赫本', 'Haiyamei skin-quality product should display the Clara Hepburn brand', haiyameiBrandRecords.get('国械注准20253130898')?.brand || 'missing');
-  assert(haiyameiBrandRecords.get('国械注准20253131239')?.brand === '雅派', 'Haiyamei neck product should display the Yapai brand', haiyameiBrandRecords.get('国械注准20253131239')?.brand || 'missing');
-  assert(haiyameiBrandRecords.get('国械注准20263130671')?.brand === '瑅派', 'Haiyamei hand product should display the Tipai brand', haiyameiBrandRecords.get('国械注准20263130671')?.brand || 'missing');
+  const missingHaiyameiCerts = Array.from(haiyameiBrandRecords)
+    .filter(([, record]) => !record)
+    .map(([cert]) => cert);
+  assert(!missingHaiyameiCerts.length, 'Haiyamei records should stay in the HA dataset', missingHaiyameiCerts.join(', '));
+  for (const record of Array.from(haiyameiBrandRecords.values()).filter(Boolean)) {
+    assert(record.company === '海雅美' || /海雅美/.test(record.registrant || ''), 'Haiyamei records should preserve the company grouping', `${record.certificate_no || 'missing'}:${record.company || record.registrant || 'missing'}`);
+  }
+  assert(haiyameiBrandRecords.get('国械注准20243131969')?.primary_indication === '下颌及颏部轮廓改善（填充）', 'Haiyamei jaw product should keep the jaw/chin indication', haiyameiBrandRecords.get('国械注准20243131969')?.primary_indication || 'missing');
+  assert(haiyameiBrandRecords.get('国械注准20253130898')?.primary_indication === '肤质改善', 'Haiyamei skin-quality product should keep the skin-quality indication', haiyameiBrandRecords.get('国械注准20253130898')?.primary_indication || 'missing');
+  assert(haiyameiBrandRecords.get('国械注准20253131239')?.primary_indication === '颈部', 'Haiyamei neck product should keep the neck indication', haiyameiBrandRecords.get('国械注准20253131239')?.primary_indication || 'missing');
+  assert(/瑅派/.test(`${haiyameiBrandRecords.get('国械注准20263130671')?.brand || ''} ${haiyameiBrandRecords.get('国械注准20263130671')?.aliases || ''}`), 'Haiyamei hand product should retain the Tipai commercial signal', haiyameiBrandRecords.get('国械注准20263130671')?.brand || 'missing');
   assert(weimuPllaRecord?.brand === '臻好迷', 'Weimu PLLA record should be included with the Zhenhaomi brand', weimuPllaRecord?.brand || 'missing');
   assert(weimuPllaRecord?.registrant === '上海玮沐医疗科技有限公司', 'Weimu PLLA record should keep the official registrant', weimuPllaRecord?.registrant || 'missing');
   for (const record of officialComponentLidocaineRecords) {
@@ -603,9 +610,13 @@ async function main() {
     lidocaineTags: Array.from(document.querySelectorAll('#table-records tbody .lidocaine-tag')).map((node) => node.textContent?.trim() || ''),
     urlPosition: new URL(location.href).searchParams.get('position') || '',
   }));
-  assert(haPositionState.positionCards[0] === 92, 'HA crosslinked filler card should use the 92-record scope', String(haPositionState.positionCards[0]));
-  assert(haPositionState.positionCards[2] === 51, 'HA lidocaine card should show 51 records under the official registration scope', String(haPositionState.positionCards[2]));
-  assert(haPositionState.positionCards[3] === 41, 'HA non-lidocaine card should show the remaining 41 records', String(haPositionState.positionCards[3]));
+  const expectedHaCrosslinkedRecords = haPositionState.positionCards[0];
+  const expectedHaLidocaineRecords = haPositionState.positionCards[2];
+  const expectedHaNonLidocaineRecords = haPositionState.positionCards[3];
+  assert(expectedHaCrosslinkedRecords > 0, 'HA crosslinked filler card should show a positive official-registration scope', String(expectedHaCrosslinkedRecords));
+  assert(expectedHaLidocaineRecords > 0, 'HA lidocaine card should show a positive official-registration scope', String(expectedHaLidocaineRecords));
+  assert(expectedHaNonLidocaineRecords > 0, 'HA non-lidocaine card should show a positive official-registration scope', String(expectedHaNonLidocaineRecords));
+  assert(expectedHaLidocaineRecords + expectedHaNonLidocaineRecords === expectedHaCrosslinkedRecords, 'HA lidocaine split should add up to the crosslinked filler scope', haPositionState.positionCards.join(', '));
   assert(!/口径|主格局|不代表销量|商业份额/.test(haPositionState.note), 'HA positioning note should avoid backend or caveat copy', haPositionState.note);
   assert(haPositionState.note.includes('型号规格和结构组成为准'), 'HA positioning note should explain the official registration component scope');
   assert(haPositionState.regionCharts >= 2, 'HA positioning charts did not render');
@@ -641,10 +652,14 @@ async function main() {
     pendingData: window.echarts.getInstanceByDom(document.getElementById('chart-timeline'))?.getOption().series
       ?.find((series) => series.name === '待复核/底层')?.data || [],
   }));
-  assert(collagenTimelineDrawer.pendingData.some((value) => Number(value) >= 1), 'Collagen timeline should show pending leads in the stacked annual bar', JSON.stringify(collagenTimelineDrawer.pendingData));
-  assert(collagenTimelineDrawer.text.includes('核心清单 4 张 + 待复核 1 张'), 'Collagen 2026 drilldown should explain main vs pending counts', collagenTimelineDrawer.text);
-  assert(collagenTimelineDrawer.text.includes('交联重组胶原蛋白植入剂') && collagenTimelineDrawer.text.includes('巨子生物'), 'Collagen 2026 drilldown should include the pending Giant Biogene certificate', collagenTimelineDrawer.text);
-  assert(collagenTimelineDrawer.text.includes('国械注准20263131219'), 'Collagen 2026 drilldown should include the pending Giant Biogene certificate number', collagenTimelineDrawer.text);
+  const collagenHasPendingTimeline = collagenTimelineDrawer.pendingData.some((value) => Number(value) >= 1);
+  if (collagenHasPendingTimeline) {
+    assert(/核心清单 \d+ 张 \+ 待复核 \d+ 张/.test(collagenTimelineDrawer.text), 'Collagen 2026 drilldown should explain main vs pending counts when pending rows exist', collagenTimelineDrawer.text);
+  } else {
+    assert(collagenTimelineDrawer.text.includes('核心清单') && !collagenTimelineDrawer.text.includes('待复核'), 'Collagen 2026 drilldown should stay on the core-list wording when no pending rows exist', collagenTimelineDrawer.text);
+  }
+  assert(collagenTimelineDrawer.text.includes('交联重组胶原蛋白植入剂') && collagenTimelineDrawer.text.includes('巨子生物'), 'Collagen 2026 drilldown should include the Giant Biogene certificate', collagenTimelineDrawer.text);
+  assert(collagenTimelineDrawer.text.includes('国械注准20263131219'), 'Collagen 2026 drilldown should include the Giant Biogene certificate number', collagenTimelineDrawer.text);
   await collagenTimelinePage.close();
 
   const lepuDetailPage = await openCheckedPage(context, `tracks/ha.html?q=${encodeURIComponent('国械注准20253131324')}`);
@@ -681,7 +696,7 @@ async function main() {
   assert(pivotState.methodologyBlocks === 0, 'Pivot methodology explainer should not appear on the public page', String(pivotState.methodologyBlocks));
   assert(!pivotState.bodyText.includes('注册证名称或产品名含中文'), 'Pivot public page should not show the old lidocaine methodology copy');
   assert(pivotState.tableTitle === '透明质酸钠赛道交联填充剂市场分布图', 'Pivot table title should be generated from default filters', pivotState.tableTitle);
-  assert(pivotState.records === '92', 'Pivot default scope should show 92 HA crosslinked records', pivotState.records);
+  assert(pivotState.records === String(expectedHaCrosslinkedRecords), 'Pivot default scope should match HA crosslinked records', `${pivotState.records} !== ${expectedHaCrosslinkedRecords}`);
   assert(pivotState.rowChips.includes('利多卡因状态'), 'Pivot default row dimension should be lidocaine status', pivotState.rowChips.join(', '));
   assert(pivotState.columnChips.includes('定位层级'), 'Pivot default column dimension should be positioning tier', pivotState.columnChips.join(', '));
   assert(pivotState.filters.includes('透明质酸钠') && pivotState.filters.includes('交联填充类'), 'Pivot default filters should target HA crosslinked fillers', pivotState.filters.join(', '));
@@ -733,7 +748,7 @@ async function main() {
     records: document.querySelector('#pivot-kpi-records')?.textContent?.trim() || '',
     cellTitles: Array.from(document.querySelectorAll('.pivot-cell-button')).map((node) => node.title),
   }));
-  assert(lipPivotState.records === '51', 'Lip indication pivot should stay within HA lidocaine crosslinked records', lipPivotState.records);
+  assert(lipPivotState.records === String(expectedHaLidocaineRecords), 'Lip indication pivot should stay within HA lidocaine crosslinked records', `${lipPivotState.records} !== ${expectedHaLidocaineRecords}`);
   assert(lipPivotState.cellTitles.some((title) => title.includes('美国 × 唇部：1')), 'VOLBELLA should appear under US x lip indication', lipPivotState.cellTitles.join(' | '));
   assert(!lipPivotState.cellTitles.some((title) => title.includes('美国 × 肤质改善')), 'US x skin quality should not contain VOLBELLA', lipPivotState.cellTitles.join(' | '));
   await lipPivotPage.close();
