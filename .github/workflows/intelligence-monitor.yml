@@ -1,6 +1,12 @@
 name: Intelligence Monitor
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/intelligence-monitor.yml'
+      - 'config/intelligence_monitor.json'
+      - 'scripts/intelligence_monitor.py'
   schedule:
     # 21:00 Asia/Shanghai. This workflow reports leads without failing the build.
     - cron: '0 13 * * *'
