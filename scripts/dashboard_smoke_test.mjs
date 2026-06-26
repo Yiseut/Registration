@@ -61,6 +61,7 @@ async function main() {
     [cert, (haData.records || []).find((record) => record.certificate_no === cert)]
   )));
   const weimuPllaRecord = (pllaData.records || []).find((record) => record.certificate_no === '国械注准20263130608');
+  const jingyuPllaRecord = (pllaData.records || []).find((record) => record.certificate_no === '国械注准20263130522');
   const officialComponentLidocaineRecords = [
     '国械注进20213130059',
     '国械注进20253130284',
@@ -99,6 +100,8 @@ async function main() {
   assert(/瑅派/.test(`${haiyameiBrandRecords.get('国械注准20263130671')?.brand || ''} ${haiyameiBrandRecords.get('国械注准20263130671')?.aliases || ''}`), 'Haiyamei hand product should retain the Tipai commercial signal', haiyameiBrandRecords.get('国械注准20263130671')?.brand || 'missing');
   assert(weimuPllaRecord?.brand === '臻好迷', 'Weimu PLLA record should be included with the Zhenhaomi brand', weimuPllaRecord?.brand || 'missing');
   assert(weimuPllaRecord?.registrant === '上海玮沐医疗科技有限公司', 'Weimu PLLA record should keep the official registrant', weimuPllaRecord?.registrant || 'missing');
+  assert(jingyuPllaRecord?.brand === '时凝萃', 'Jingyu Yimei PLLA record should be included with the Shining Trace brand', jingyuPllaRecord?.brand || 'missing');
+  assert(jingyuPllaRecord?.registrant === '北京京宇一美生物科技有限责任公司', 'Jingyu Yimei PLLA record should keep the official registrant', jingyuPllaRecord?.registrant || 'missing');
   for (const record of officialComponentLidocaineRecords) {
     assert(record?.lidocaine_status === '含利多卡因', 'Official component lidocaine records should be classified as lidocaine', record?.certificate_no || 'missing');
     assert(/利多卡因|lidocaine/i.test(record?.components || ''), 'Official component lidocaine records should keep component lidocaine text', record?.certificate_no || 'missing');
