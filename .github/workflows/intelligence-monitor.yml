@@ -1,0 +1,79 @@
+name: Intelligence Monitor
+
+on:
+  schedule:
+    # 21:00 Asia/Shanghai. This workflow reports leads without failing the build.
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'NMPA search input lookback days'
+        required: false
+        default: '14'
+      run_web_search:
+        description: 'Use Jina search when JINA_API_KEY secret exists'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      seed_url:
+        description: 'Optional NMPA delivery page URL to parse in this run'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run external intelligence monitor
+        id: monitor
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+        run: |
+          DAYS="${{ inputs.days }}"
+          if [ -z "$DAYS" ]; then DAYS=14; fi
+          RUN_SEARCH="${{ inputs.run_web_search }}"
+          if [ -z "$RUN_SEARCH" ]; then RUN_SEARCH=true; fi
+          ARGS=(--days "$DAYS")
+          if [ "$RUN_SEARCH" = "true" ]; then ARGS+=(--run-web-search); fi
+          SEED_URL="${{ inputs.seed_url }}"
+          if [ -n "$SEED_URL" ]; then ARGS+=(--seed-url "$SEED_URL"); fi
+          python scripts/intelligence_monitor.py "${ARGS[@]}"
+
+      - name: Upload monitor report
+        uses: actions/upload-artifact@v4
+        with:
+          name: intelligence-monitor-report
+          path: output/intelligence_monitor/
+
+      - name: Create or update lead issue
+        if: ${{ steps.monitor.outputs.missing_attention_count && steps.monitor.outputs.missing_attention_count != '0' }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: Registration intelligence monitor: pending external leads
+          REPORT_PATH: output/intelligence_monitor/intelligence_monitor_latest.md
+        run: |
+          gh label create intelligence-monitor --color 7057ff --description "External registration lead monitor" || true
+          ISSUE_NUMBER="$(gh issue list --state open --label intelligence-monitor --json number,title --jq '.[] | select(.title == env.ISSUE_TITLE) | .number' | head -n 1)"
+          if [ -z "$ISSUE_NUMBER" ]; then
+            gh issue create --title "$ISSUE_TITLE" --label intelligence-monitor --body-file "$REPORT_PATH"
+          else
+            gh issue comment "$ISSUE_NUMBER" --body-file "$REPORT_PATH"
+          fi

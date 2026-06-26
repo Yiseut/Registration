@@ -161,6 +161,28 @@ npm run test:dashboard -- https://yiseut.github.io/Registration/?v=<commit>
 
 GitHub Actions 已配置 `Dashboard QA`，push 到 `main` 后会重建数据、启动静态服务并运行 Playwright smoke test。
 
+## 外部线索发现机制
+
+为避免再次出现“外部已获批但主表未发现”的缺口，仓库新增 `Intelligence Monitor`：
+
+- 定时：`.github/workflows/intelligence-monitor.yml` 每天 21:00（Asia/Shanghai）运行，也支持手动触发。
+- 官方主线：扫描/发现 NMPA 医疗器械批准证明文件送达信息和电子证照纠错送达信息，以注册证号和 `data/registration_records_master.csv` 做差异比对。
+- 公众号线索：固定账号池和搜索词在 `config/intelligence_monitor.json`，策略是“指定公众号账号 + 获批/批准上市/注册证”等宽召回，不把证号、NMPA、新适应证作为第一层前置过滤。
+- 入库边界：公众号文章只生成候选线索；任何新增记录进入主表和前台前，仍必须经过 NMPA/CMDE/官方注册信息核验。
+- 通知方式：发现可能相关的缺口时创建或更新 `intelligence-monitor` GitHub issue；workflow 本身不因发现线索失败，避免把正常情报提醒变成失败邮件。
+
+本地运行：
+
+```powershell
+python .\scripts\intelligence_monitor.py --days 14 --run-web-search
+```
+
+如果没有配置 `JINA_API_KEY`，脚本仍会生成 `output/intelligence_monitor/search_inputs_latest.csv`，作为 NMPA 和指定公众号的定期搜索输入清单；配置密钥后可自动执行 Jina 搜索。对单个 NMPA 送达页做复核：
+
+```powershell
+python .\scripts\intelligence_monitor.py --seed-url "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260312163232162.html"
+```
+
 ## 2026-06-16 前台可靠性规则
 
 - 总览页顶部只保留更新时间，不展示统计口径、非销售份额声明、核心记录覆盖范围等后台解释性语言。
