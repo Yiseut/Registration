@@ -67,7 +67,7 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-          ISSUE_TITLE: Registration intelligence monitor: pending external leads
+          ISSUE_TITLE: 'Registration intelligence monitor: pending external leads'
           REPORT_PATH: output/intelligence_monitor/intelligence_monitor_latest.md
         run: |
           gh label create intelligence-monitor --color 7057ff --description "External registration lead monitor" || true
