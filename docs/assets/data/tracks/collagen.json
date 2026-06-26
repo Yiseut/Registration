@@ -8,15 +8,19 @@
   },
   "kpi": {
     "total": 21,
-    "main": 20,
+    "main": 21,
     "companies": 13,
-    "indications": 11,
-    "verified": 20,
-    "domestic": 15,
+    "indications": 12,
+    "verified": 21,
+    "domestic": 16,
     "imported": 2,
     "hkmt": 3
   },
   "company_share": [
+    {
+      "name": "巨子生物",
+      "value": 3
+    },
     {
       "name": "双美生物",
       "value": 3
@@ -24,10 +28,6 @@
     {
       "name": "锦波生物",
       "value": 3
-    },
-    {
-      "name": "巨子生物",
-      "value": 2
     },
     {
       "name": "崇山生物",
@@ -105,6 +105,10 @@
       "value": 1
     },
     {
+      "name": "颈部",
+      "value": 1
+    },
+    {
       "name": "待确认",
       "value": 1
     },
@@ -116,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 15
+      "value": 16
     },
     {
       "name": "港澳台",
@@ -134,7 +138,7 @@
     },
     {
       "name": "重组/类人源胶原",
-      "value": 6
+      "value": 7
     }
   ],
   "timeline": {
@@ -150,7 +154,7 @@
       3,
       2,
       8,
-      4
+      5
     ]
   },
   "company_indication_heatmap": {
@@ -1386,16 +1390,16 @@
       "material_form": "重组/类人源填充剂",
       "approval_date": "2026-06-16",
       "approval_year": 2026,
-      "valid_until": "",
-      "validity_status": "未标注有效期",
+      "valid_until": "2031-06-15",
+      "validity_status": "有效",
       "market_scope": "三类合规准入",
       "application_segment": "",
       "primary_indication": "颈部",
       "approved_indications": "",
-      "indication_description": "颈部皱纹、颈纹或颈部软组织修饰相关线索；注册证详情未同步时不作为最终适应症。",
-      "scope_full": "国家药品监督管理局2026年06月17日医疗器械批准证明文件送达信息显示，该产品于2026-06-16获批；公开公告称用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹；完整注册证详情待同步回填。",
-      "specification": "待官方注册证详情同步复核",
-      "components": "国家药品监督管理局2026年06月17日医疗器械批准证明文件送达信息显示，该产品于2026-06-16获批；公开公告称用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹；完整注册证详情待同步回填。",
+      "indication_description": "该产品适用于满足该产品说明书中所列条件下，用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹。",
+      "scope_full": "该产品适用于满足该产品说明书中所列条件下，用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹。",
+      "specification": "型号：T3型，规格：0.5mL/支，1.0mL/支，1.5mL/支，2.0mL/支",
+      "components": "该产品由预灌封注射器、注射针和封装在注射器中的凝胶组成。凝胶由交联重组胶原蛋白、磷酸氢二钠、磷酸二氢钾、氯化钠、注射用水组成，其中交联重组胶原蛋白的标示浓度为20mg/mL。交联前的重组胶原蛋白全长1068个氨基酸，与人III型胶原蛋白序列中的154-1221位氨基酸序列一致。30G×1/2”注射针的材质为304不锈钢，数量为1支。该产品经过伽马射线辐照灭菌，注射针经电子束辐照灭菌。该产品一次性使用，货架有效期两年。",
       "lidocaine_status": "未见利多卡因",
       "product_tags": "未见利多卡因",
       "market_claim": "",
@@ -1404,18 +1408,18 @@
       "tags": [
         "未见利多卡因"
       ],
-      "official_status": "not_found",
-      "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息；国家政务服务平台NMPA注册证详情查询未同步",
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "交联重组胶原蛋白植入剂",
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2026-06-16",
-      "official_valid_until": "",
-      "official_indication": "颈部 / 颈部中重度横纹",
-      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
+      "official_valid_until": "2031-06-15",
+      "official_indication": "颈部",
+      "official_scope": "该产品适用于满足该产品说明书中所列条件下，用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "胶原蛋白"
       ],
@@ -1423,7 +1427,7 @@
       "source_title": "2026年06月17日医疗器械批准证明文件送达信息",
       "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "confidence": "",
-      "data_status": "需复核/待官方核验",
+      "data_status": "已结构化",
       "source_dataset": "collagen_dashboard_data.json"
     },
     {
