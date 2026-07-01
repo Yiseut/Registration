@@ -156,7 +156,7 @@ FOREIGN_REGISTRANT_RE = re.compile(
 )
 
 # How CSV `track` codes map onto the surfaced strategic tracks above.
-EBD_TRACKS = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl",
+EBD_TRACKS = {"raw_rf", "raw_ultrasound", "raw_microneedle", "laser_ipl", "raw_laser_ipl",
               "body_contouring_device", "raw_thermage_rf"}
 NICHE_MATERIAL_TRACKS = {
     "raw_pmma",
