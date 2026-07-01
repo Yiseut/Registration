@@ -8,11 +8,11 @@
   },
   "kpi": {
     "total": 21,
-    "main": 21,
+    "main": 20,
     "companies": 13,
     "indications": 12,
-    "verified": 21,
-    "domestic": 16,
+    "verified": 20,
+    "domestic": 15,
     "imported": 2,
     "hkmt": 3
   },
@@ -27,7 +27,7 @@
     },
     {
       "name": "锦波生物",
-      "value": 3
+      "value": 2
     },
     {
       "name": "崇山生物",
@@ -70,14 +70,14 @@
   "indication_share": [
     {
       "name": "额部",
-      "value": 8
-    },
-    {
-      "name": "额部动力纹",
       "value": 7
     },
     {
       "name": "鼻唇沟",
+      "value": 6
+    },
+    {
+      "name": "额部动力纹",
       "value": 6
     },
     {
@@ -120,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 16
+      "value": 15
     },
     {
       "name": "港澳台",
@@ -138,7 +138,7 @@
     },
     {
       "name": "重组/类人源胶原",
-      "value": 7
+      "value": 6
     }
   ],
   "timeline": {
@@ -150,7 +150,7 @@
       2026
     ],
     "values": [
-      3,
+      2,
       3,
       2,
       8,
@@ -1208,7 +1208,7 @@
       "approval_date": "2021-06-28",
       "approval_year": 2021,
       "valid_until": "2026-06-27",
-      "validity_status": "有效",
+      "validity_status": "已过期",
       "market_scope": "三类合规准入",
       "application_segment": "",
       "primary_indication": "额部动力纹",
@@ -1235,8 +1235,8 @@
       "official_indication": "额部",
       "official_scope": "用于面部真皮组织填充以纠正额部动力性皱纹（包括眉间纹、额头纹和鱼尾纹）。",
       "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
+      "main_landscape": false,
+      "main_landscape_included": "否",
       "portfolio_segments": [
         "胶原蛋白"
       ],

@@ -1,185 +1,14 @@
 {
-  "generated_at": "2026-06-26T23:55:45",
+  "generated_at": "2026-07-01T21:06:36",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 111,
-    "mapped_records": 110,
-    "mapped_companies": 64,
+    "candidate_records": 108,
+    "mapped_records": 107,
+    "mapped_companies": 62,
     "mapped_cities": 25,
     "unmapped_companies": 1
   },
   "cities": [
-    {
-      "city": "北京",
-      "province": "北京",
-      "lat": 39.9042,
-      "lng": 116.4074,
-      "companies": 8,
-      "registrations": 15,
-      "tracks": [
-        {
-          "name": "玻尿酸",
-          "records": 11
-        },
-        {
-          "name": "胶原刺激剂",
-          "records": 2
-        },
-        {
-          "name": "胶原蛋白",
-          "records": 1
-        },
-        {
-          "name": "EBD 设备",
-          "records": 1
-        }
-      ],
-      "leading_track": "玻尿酸",
-      "companies_sample": [
-        {
-          "name": "爱美客技术发展股份有限公司",
-          "records": 6,
-          "top_track": "玻尿酸"
-        },
-        {
-          "name": "四川兴泰普乐医疗科技有限公司",
-          "records": 3,
-          "top_track": "玻尿酸"
-        },
-        {
-          "name": "乐普（北京）医疗器械股份有限公司",
-          "records": 1,
-          "top_track": "胶原刺激剂"
-        },
-        {
-          "name": "北京京宇一美生物科技有限责任公司",
-          "records": 1,
-          "top_track": "胶原刺激剂"
-        },
-        {
-          "name": "北京凯诺瑞和医疗器械有限公司",
-          "records": 1,
-          "top_track": "玻尿酸"
-        },
-        {
-          "name": "北京艾佰瑞生物技术有限公司",
-          "records": 1,
-          "top_track": "胶原蛋白"
-        },
-        {
-          "name": "北京蒙博润生物科技有限公司",
-          "records": 1,
-          "top_track": "玻尿酸"
-        },
-        {
-          "name": "瑞莱思（北京）医疗器械有限公司",
-          "records": 1,
-          "top_track": "玻尿酸"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国械注准20163131804",
-          "brand": "注射用透明质酸钠复合溶液",
-          "product_name": "注射用透明质酸钠复合溶液",
-          "company": "爱美客技术发展股份有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-04-14"
-        },
-        {
-          "certificate_no": "国械注准20163131809",
-          "brand": "医用透明质酸钠-羟丙基甲基纤维素凝胶",
-          "product_name": "医用透明质酸钠-羟丙基甲基纤维素凝胶",
-          "company": "爱美客技术发展股份有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-05-19"
-        },
-        {
-          "certificate_no": "国械注准20163132497",
-          "brand": "医用含聚乙烯醇凝胶微球的透明质酸钠-羟丙基甲基纤维素凝胶",
-          "product_name": "医用含聚乙烯醇凝胶微球的透明质酸钠-羟丙基甲基纤维素凝胶",
-          "company": "爱美客技术发展股份有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-04-30"
-        },
-        {
-          "certificate_no": "国械注准20173134379",
-          "brand": "医用羟丙基甲基纤维素-透明质酸钠溶液",
-          "product_name": "医用羟丙基甲基纤维素-透明质酸钠溶液",
-          "company": "爱美客技术发展股份有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2022-09-02"
-        },
-        {
-          "certificate_no": "国械注准20223130516",
-          "brand": "注射用交联透明质酸钠凝胶",
-          "product_name": "注射用交联透明质酸钠凝胶",
-          "company": "北京凯诺瑞和医疗器械有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2022-04-20"
-        },
-        {
-          "certificate_no": "国械注准20153130014",
-          "brand": "注射用交联透明质酸钠凝胶",
-          "product_name": "注射用交联透明质酸钠凝胶",
-          "company": "北京蒙博润生物科技有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2023-12-21"
-        },
-        {
-          "certificate_no": "国械注准20153130674",
-          "brand": "注射用修饰透明质酸钠凝胶",
-          "product_name": "注射用修饰透明质酸钠凝胶",
-          "company": "爱美客技术发展股份有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2024-02-06"
-        },
-        {
-          "certificate_no": "国械注准20243131967",
-          "brand": "医用含聚乙烯醇凝胶微球的交联透明质酸钠凝胶",
-          "product_name": "医用含聚乙烯醇凝胶微球的交联透明质酸钠凝胶",
-          "company": "爱美客技术发展股份有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2024-09-30"
-        },
-        {
-          "certificate_no": "国械注准20203130700",
-          "brand": "注射用透明质酸钠凝胶",
-          "product_name": "注射用交联透明质酸钠凝胶",
-          "company": "瑞莱思（北京）医疗器械有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-01-26"
-        },
-        {
-          "certificate_no": "国械注准20253131324",
-          "brand": "注射用透明质酸钠溶液",
-          "product_name": "注射用透明质酸钠溶液",
-          "company": "四川兴泰普乐医疗科技有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-07-10"
-        },
-        {
-          "certificate_no": "国械注准20253131642",
-          "brand": "注射用交联透明质酸钠凝胶",
-          "product_name": "注射用交联透明质酸钠凝胶",
-          "company": "四川兴泰普乐医疗科技有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-11-27"
-        },
-        {
-          "certificate_no": "国械注准20253131101",
-          "brand": "悦雅颜",
-          "product_name": "聚乳酸面部填充剂",
-          "company": "乐普（北京）医疗器械股份有限公司",
-          "track": "胶原刺激剂",
-          "approval_date": "2025-05-30"
-        }
-      ],
-      "location_sources": {
-        "维护映射": 9,
-        "注册人名称含城市": 6
-      }
-    },
     {
       "city": "杭州",
       "province": "浙江",
@@ -352,20 +181,24 @@
       }
     },
     {
-      "city": "上海",
-      "province": "上海",
-      "lat": 31.2304,
-      "lng": 121.4737,
-      "companies": 6,
-      "registrations": 10,
+      "city": "北京",
+      "province": "北京",
+      "lat": 39.9042,
+      "lng": 116.4074,
+      "companies": 7,
+      "registrations": 14,
       "tracks": [
         {
           "name": "玻尿酸",
-          "records": 6
+          "records": 11
         },
         {
           "name": "胶原刺激剂",
-          "records": 3
+          "records": 1
+        },
+        {
+          "name": "胶原蛋白",
+          "records": 1
         },
         {
           "name": "EBD 设备",
@@ -375,120 +208,142 @@
       "leading_track": "玻尿酸",
       "companies_sample": [
         {
-          "name": "上海其胜生物制剂有限公司",
-          "records": 5,
+          "name": "爱美客技术发展股份有限公司",
+          "records": 6,
           "top_track": "玻尿酸"
         },
         {
-          "name": "上海建华精细生物制品有限公司",
+          "name": "四川兴泰普乐医疗科技有限公司",
+          "records": 3,
+          "top_track": "玻尿酸"
+        },
+        {
+          "name": "乐普（北京）医疗器械股份有限公司",
+          "records": 1,
+          "top_track": "胶原刺激剂"
+        },
+        {
+          "name": "北京凯诺瑞和医疗器械有限公司",
           "records": 1,
           "top_track": "玻尿酸"
         },
         {
-          "name": "上海摩漾生物科技有限公司",
+          "name": "北京艾佰瑞生物技术有限公司",
           "records": 1,
-          "top_track": "胶原刺激剂"
+          "top_track": "胶原蛋白"
         },
         {
-          "name": "上海玮沐医疗科技有限公司",
+          "name": "北京蒙博润生物科技有限公司",
           "records": 1,
-          "top_track": "胶原刺激剂"
+          "top_track": "玻尿酸"
         },
         {
-          "name": "上海维脉医疗科技有限公司",
+          "name": "瑞莱思（北京）医疗器械有限公司",
           "records": 1,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "和妍（上海）医疗器械有限公司",
-          "records": 1,
-          "top_track": "胶原刺激剂"
+          "top_track": "玻尿酸"
         }
       ],
       "records_sample": [
         {
-          "certificate_no": "国械注准20173130810",
+          "certificate_no": "国械注准20163131804",
+          "brand": "注射用透明质酸钠复合溶液",
+          "product_name": "注射用透明质酸钠复合溶液",
+          "company": "爱美客技术发展股份有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-04-14"
+        },
+        {
+          "certificate_no": "国械注准20163131809",
+          "brand": "医用透明质酸钠-羟丙基甲基纤维素凝胶",
+          "product_name": "医用透明质酸钠-羟丙基甲基纤维素凝胶",
+          "company": "爱美客技术发展股份有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-05-19"
+        },
+        {
+          "certificate_no": "国械注准20163132497",
+          "brand": "医用含聚乙烯醇凝胶微球的透明质酸钠-羟丙基甲基纤维素凝胶",
+          "product_name": "医用含聚乙烯醇凝胶微球的透明质酸钠-羟丙基甲基纤维素凝胶",
+          "company": "爱美客技术发展股份有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-04-30"
+        },
+        {
+          "certificate_no": "国械注准20173134379",
+          "brand": "医用羟丙基甲基纤维素-透明质酸钠溶液",
+          "product_name": "医用羟丙基甲基纤维素-透明质酸钠溶液",
+          "company": "爱美客技术发展股份有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2022-09-02"
+        },
+        {
+          "certificate_no": "国械注准20223130516",
           "brand": "注射用交联透明质酸钠凝胶",
           "product_name": "注射用交联透明质酸钠凝胶",
-          "company": "上海其胜生物制剂有限公司",
+          "company": "北京凯诺瑞和医疗器械有限公司",
           "track": "玻尿酸",
-          "approval_date": "2022-02-08"
+          "approval_date": "2022-04-20"
         },
         {
-          "certificate_no": "国械注准20203130314",
+          "certificate_no": "国械注准20153130014",
           "brand": "注射用交联透明质酸钠凝胶",
           "product_name": "注射用交联透明质酸钠凝胶",
-          "company": "上海其胜生物制剂有限公司",
+          "company": "北京蒙博润生物科技有限公司",
           "track": "玻尿酸",
-          "approval_date": "2024-12-05"
+          "approval_date": "2023-12-21"
         },
         {
-          "certificate_no": "国械注准20243130863",
+          "certificate_no": "国械注准20153130674",
           "brand": "注射用修饰透明质酸钠凝胶",
           "product_name": "注射用修饰透明质酸钠凝胶",
-          "company": "上海建华精细生物制品有限公司",
+          "company": "爱美客技术发展股份有限公司",
           "track": "玻尿酸",
-          "approval_date": "2024-04-30"
+          "approval_date": "2024-02-06"
         },
         {
-          "certificate_no": "国械注准20243131239",
-          "brand": "注射用氨基酸交联透明质酸钠凝胶",
-          "product_name": "注射用氨基酸交联透明质酸钠凝胶",
-          "company": "上海其胜生物制剂有限公司",
+          "certificate_no": "国械注准20243131967",
+          "brand": "医用含聚乙烯醇凝胶微球的交联透明质酸钠凝胶",
+          "product_name": "医用含聚乙烯醇凝胶微球的交联透明质酸钠凝胶",
+          "company": "爱美客技术发展股份有限公司",
           "track": "玻尿酸",
-          "approval_date": "2024-07-10"
+          "approval_date": "2024-09-30"
         },
         {
-          "certificate_no": "国械注准20163131492",
-          "brand": "注射用修饰透明质酸钠凝胶",
-          "product_name": "注射用修饰透明质酸钠凝胶",
-          "company": "上海其胜生物制剂有限公司",
+          "certificate_no": "国械注准20203130700",
+          "brand": "注射用透明质酸钠凝胶",
+          "product_name": "注射用交联透明质酸钠凝胶",
+          "company": "瑞莱思（北京）医疗器械有限公司",
           "track": "玻尿酸",
-          "approval_date": "2025-06-24"
+          "approval_date": "2025-01-26"
         },
         {
-          "certificate_no": "国械注准20253132647",
-          "brand": "含盐酸利多卡因交联透明质酸钠注射填充剂",
-          "product_name": "含盐酸利多卡因交联透明质酸钠注射填充剂",
-          "company": "上海其胜生物制剂有限公司",
+          "certificate_no": "国械注准20253131324",
+          "brand": "注射用透明质酸钠溶液",
+          "product_name": "注射用透明质酸钠溶液",
+          "company": "四川兴泰普乐医疗科技有限公司",
           "track": "玻尿酸",
-          "approval_date": "2025-12-23"
+          "approval_date": "2025-07-10"
         },
         {
-          "certificate_no": "国械注准20263130388",
-          "brand": "汇悦妍",
-          "product_name": "注射用聚左旋乳酸微球填充剂",
-          "company": "和妍（上海）医疗器械有限公司",
+          "certificate_no": "国械注准20253131642",
+          "brand": "注射用交联透明质酸钠凝胶",
+          "product_name": "注射用交联透明质酸钠凝胶",
+          "company": "四川兴泰普乐医疗科技有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-11-27"
+        },
+        {
+          "certificate_no": "国械注准20253131101",
+          "brand": "悦雅颜",
+          "product_name": "聚乳酸面部填充剂",
+          "company": "乐普（北京）医疗器械股份有限公司",
           "track": "胶原刺激剂",
-          "approval_date": "2026-02-13"
-        },
-        {
-          "certificate_no": "国械注准20263130608",
-          "brand": "臻好迷",
-          "product_name": "含左旋聚乳酸的交联透明质酸钠微球面部填充剂",
-          "company": "上海玮沐医疗科技有限公司",
-          "track": "胶原刺激剂",
-          "approval_date": "2026-03-24"
-        },
-        {
-          "certificate_no": "国械注准20253130390",
-          "brand": "优法兰 CC针",
-          "product_name": "注射用羟基磷酸钙微球面部填充剂",
-          "company": "上海摩漾生物科技有限公司",
-          "track": "胶原刺激剂",
-          "approval_date": "2025-02-17"
-        },
-        {
-          "certificate_no": "国械注准20263090660",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "上海维脉医疗科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2026-03-27"
+          "approval_date": "2025-05-30"
         }
       ],
       "location_sources": {
-        "注册人名称含城市": 10
+        "维护映射": 9,
+        "注册人名称含城市": 5
       }
     },
     {
@@ -621,6 +476,133 @@
       ],
       "location_sources": {
         "注册人名称含城市": 10
+      }
+    },
+    {
+      "city": "上海",
+      "province": "上海",
+      "lat": 31.2304,
+      "lng": 121.4737,
+      "companies": 5,
+      "registrations": 9,
+      "tracks": [
+        {
+          "name": "玻尿酸",
+          "records": 6
+        },
+        {
+          "name": "胶原刺激剂",
+          "records": 2
+        },
+        {
+          "name": "EBD 设备",
+          "records": 1
+        }
+      ],
+      "leading_track": "玻尿酸",
+      "companies_sample": [
+        {
+          "name": "上海其胜生物制剂有限公司",
+          "records": 5,
+          "top_track": "玻尿酸"
+        },
+        {
+          "name": "上海建华精细生物制品有限公司",
+          "records": 1,
+          "top_track": "玻尿酸"
+        },
+        {
+          "name": "上海摩漾生物科技有限公司",
+          "records": 1,
+          "top_track": "胶原刺激剂"
+        },
+        {
+          "name": "上海维脉医疗科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "和妍（上海）医疗器械有限公司",
+          "records": 1,
+          "top_track": "胶原刺激剂"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20173130810",
+          "brand": "注射用交联透明质酸钠凝胶",
+          "product_name": "注射用交联透明质酸钠凝胶",
+          "company": "上海其胜生物制剂有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2022-02-08"
+        },
+        {
+          "certificate_no": "国械注准20203130314",
+          "brand": "注射用交联透明质酸钠凝胶",
+          "product_name": "注射用交联透明质酸钠凝胶",
+          "company": "上海其胜生物制剂有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2024-12-05"
+        },
+        {
+          "certificate_no": "国械注准20243130863",
+          "brand": "注射用修饰透明质酸钠凝胶",
+          "product_name": "注射用修饰透明质酸钠凝胶",
+          "company": "上海建华精细生物制品有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2024-04-30"
+        },
+        {
+          "certificate_no": "国械注准20243131239",
+          "brand": "注射用氨基酸交联透明质酸钠凝胶",
+          "product_name": "注射用氨基酸交联透明质酸钠凝胶",
+          "company": "上海其胜生物制剂有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2024-07-10"
+        },
+        {
+          "certificate_no": "国械注准20163131492",
+          "brand": "注射用修饰透明质酸钠凝胶",
+          "product_name": "注射用修饰透明质酸钠凝胶",
+          "company": "上海其胜生物制剂有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-06-24"
+        },
+        {
+          "certificate_no": "国械注准20253132647",
+          "brand": "含盐酸利多卡因交联透明质酸钠注射填充剂",
+          "product_name": "含盐酸利多卡因交联透明质酸钠注射填充剂",
+          "company": "上海其胜生物制剂有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-12-23"
+        },
+        {
+          "certificate_no": "国械注准20263130388",
+          "brand": "汇悦妍",
+          "product_name": "注射用聚左旋乳酸微球填充剂",
+          "company": "和妍（上海）医疗器械有限公司",
+          "track": "胶原刺激剂",
+          "approval_date": "2026-02-13"
+        },
+        {
+          "certificate_no": "国械注准20253130390",
+          "brand": "优法兰 CC针",
+          "product_name": "注射用羟基磷酸钙微球面部填充剂",
+          "company": "上海摩漾生物科技有限公司",
+          "track": "胶原刺激剂",
+          "approval_date": "2025-02-17"
+        },
+        {
+          "certificate_no": "国械注准20263090660",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "上海维脉医疗科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-03-27"
+        }
+      ],
+      "location_sources": {
+        "注册人名称含城市": 9
       }
     },
     {
@@ -1459,18 +1441,18 @@
       "lat": 37.8706,
       "lng": 112.5489,
       "companies": 1,
-      "registrations": 3,
+      "registrations": 2,
       "tracks": [
         {
           "name": "胶原蛋白",
-          "records": 3
+          "records": 2
         }
       ],
       "leading_track": "胶原蛋白",
       "companies_sample": [
         {
           "name": "山西锦波生物医药股份有限公司",
-          "records": 3,
+          "records": 2,
           "top_track": "胶原蛋白"
         }
       ],
@@ -1490,18 +1472,10 @@
           "company": "山西锦波生物医药股份有限公司",
           "track": "胶原蛋白",
           "approval_date": "2023-08-28"
-        },
-        {
-          "certificate_no": "国械注准20213130488",
-          "brand": "薇旖美冻干纤维",
-          "product_name": "重组Ⅲ型人源化胶原蛋白冻干纤维",
-          "company": "山西锦波生物医药股份有限公司",
-          "track": "胶原蛋白",
-          "approval_date": "2021-06-28"
         }
       ],
       "location_sources": {
-        "维护映射": 3
+        "维护映射": 2
       }
     },
     {
