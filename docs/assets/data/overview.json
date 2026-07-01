@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-01T21:06:36",
+  "generated_at": "2026-07-01T21:13:52",
   "kpi": {
-    "total_records": 200,
-    "main_records": 189,
+    "total_records": 202,
+    "main_records": 191,
     "excluded": 11,
-    "companies": 104,
+    "companies": 106,
     "indications": 48,
     "verified_share": 99.5,
-    "domestic": 102,
+    "domestic": 104,
     "imported": 81,
     "hkmt": 6,
-    "injectable_class3": 147,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白20 / PLA11 / PCL5 / CaHA/微晶瓷2 / 琼脂糖1",
+    "injectable_class3": 149,
+    "injectable_class3_breakdown": "HA108 / 胶原蛋白20 / PLA13 / PCL5 / CaHA/微晶瓷2 / 琼脂糖1",
     "injectable_drug": 13,
     "injectable_drug_breakdown": "肉毒毒素12 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 18 类 · 注射用药品 6 类 · EBD 28 类",
-    "recent_12mo": 60,
-    "recent_12mo_share": 30.0,
-    "recent_12mo_breakdown": "HA28 / EBD12 / 胶原蛋白10 / PLA5"
+    "recent_12mo": 62,
+    "recent_12mo_share": 30.7,
+    "recent_12mo_breakdown": "HA28 / EBD12 / 胶原蛋白10 / PLA7"
   },
   "segments": [
     {
@@ -61,10 +61,10 @@
       "name": "PLA",
       "tagline": "",
       "accent": "#9daaf0",
-      "records": 12,
-      "main_records": 11,
-      "companies": 11,
-      "verified": 11,
+      "records": 14,
+      "main_records": 13,
+      "companies": 13,
+      "verified": 13,
       "latest_year": 2026,
       "leading_company": "圣博玛"
     },
@@ -469,8 +469,8 @@
     "materials": [
       "透明质酸钠 / 玻尿酸",
       "动物源胶原",
-      "A型肉毒毒素",
       "PLLA",
+      "A型肉毒毒素",
       "重组/类人源胶原",
       "PCL",
       "CaHA",
@@ -567,24 +567,24 @@
         2
       ],
       [
-        2,
-        2,
-        12
-      ],
-      [
         0,
-        3,
-        9
+        2,
+        11
       ],
       [
         9,
-        3,
+        2,
         1
       ],
       [
         12,
-        3,
+        2,
         1
+      ],
+      [
+        2,
+        3,
+        12
       ],
       [
         5,
@@ -2870,7 +2870,7 @@
           6,
           21,
           40,
-          20
+          22
         ]
       },
       {
@@ -3076,51 +3076,51 @@
     },
     "plla": {
       "track_name": "PLA",
-      "total_certs": 11,
-      "company_count": 11,
-      "hhi": 909.0,
-      "cr4": 36.4,
-      "cr8": 72.7,
+      "total_certs": 13,
+      "company_count": 13,
+      "hhi": 769.0,
+      "cr4": 30.8,
+      "cr8": 61.5,
       "top": [
         {
           "company": "圣博玛",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "丽臻生物科技",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "高德美 / Galderma",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "普丽妍医疗",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "四环医药 / 渼颜空间",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "乐普医疗",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "西宏生物",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         },
         {
           "company": "PRP Science",
           "certs": 1,
-          "share": 9.1
+          "share": 7.7
         }
       ]
     },

@@ -7,12 +7,12 @@
     "accent": "#9daaf0"
   },
   "kpi": {
-    "total": 12,
-    "main": 11,
-    "companies": 11,
+    "total": 14,
+    "main": 13,
+    "companies": 13,
     "indications": 3,
-    "verified": 11,
-    "domestic": 8,
+    "verified": 13,
+    "domestic": 10,
     "imported": 3,
     "hkmt": 0
   },
@@ -60,13 +60,17 @@
     {
       "name": "和妍医疗",
       "value": 1
+    },
+    {
+      "name": "京宇一美",
+      "value": 1
     }
   ],
-  "long_tail_company_count": 0,
+  "long_tail_company_count": 1,
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 9
+      "value": 11
     },
     {
       "name": "中面部",
@@ -80,7 +84,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 8
+      "value": 10
     },
     {
       "name": "进口",
@@ -90,7 +94,7 @@
   "material_share": [
     {
       "name": "PLLA",
-      "value": 11
+      "value": 13
     }
   ],
   "timeline": {
@@ -102,7 +106,7 @@
     "values": [
       4,
       5,
-      2
+      4
     ]
   },
   "company_indication_heatmap": {
@@ -903,6 +907,124 @@
       "source_account": "美圈老卢",
       "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
       "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
+      "confidence": "",
+      "data_status": "已结构化",
+      "source_dataset": "plla_dashboard_data.json"
+    },
+    {
+      "id": "PLLA-国械注准20263130522",
+      "track": "plla",
+      "track_name": "PLA",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PLLA",
+      "strategic": "胶原刺激剂",
+      "brand": "时凝萃",
+      "aliases": "Shining Trace",
+      "product_name": "注射用聚左旋乳酸填充剂",
+      "company": "京宇一美",
+      "company_key": "京宇一美",
+      "registrant": "北京京宇一美生物科技有限责任公司",
+      "certificate_no": "国械注准20263130522",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA微球冻干粉",
+      "approval_date": "2026-03-11",
+      "approval_year": 2026,
+      "valid_until": "2031-03-10",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
+      "primary_indication": "鼻唇沟",
+      "approved_indications": "",
+      "indication_description": "该产品适用于注射到鼻唇沟部位的真皮深层，以纠正中重度鼻唇沟皱纹。",
+      "scope_full": "该产品适用于注射到鼻唇沟部位的真皮深层，以纠正中重度鼻唇沟皱纹。",
+      "specification": "YM01100：100mg/瓶、YM01150：150mg /瓶、YM01300：300mg /瓶",
+      "components": "该产品为聚左旋乳酸微球、甘露醇和羧甲纤维素钠组成的冻干粉。其中聚左旋乳酸微球的标示质量浓度为50%，甘露醇的标示质量浓度均为26.67%，羧甲纤维素钠的标示质量浓度为23.33%。使用前需经0.9%氯化钠注射液复溶为混悬液。该产品经辐照灭菌，一次性使用，货架有效期2年。",
+      "lidocaine_status": "",
+      "product_tags": "",
+      "market_claim": "PLLA微球冻干粉，鼻唇沟真皮深层填充。",
+      "boundary_reason": "",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "注射用聚左旋乳酸填充剂",
+      "official_registrant": "北京京宇一美生物科技有限责任公司",
+      "official_approval_date": "2026-03-11",
+      "official_valid_until": "2031-03-10",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于注射到鼻唇沟部位的真皮深层，以纠正中重度鼻唇沟皱纹。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "胶原刺激剂"
+      ],
+      "source_account": "国家政务服务平台 NMPA",
+      "source_title": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "source_url": "https://app.gjzwfw.gov.cn/jmopen/webapp/html5/apigcylqxcpzccx/index.html",
+      "confidence": "",
+      "data_status": "已结构化",
+      "source_dataset": "plla_dashboard_data.json"
+    },
+    {
+      "id": "PLLA-国械注准20263130608",
+      "track": "plla",
+      "track_name": "PLA",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "器械 / 注射针剂 / PLLA",
+      "strategic": "胶原刺激剂",
+      "brand": "臻好迷",
+      "aliases": "Zhenhaomi",
+      "product_name": "含左旋聚乳酸的交联透明质酸钠微球面部填充剂",
+      "company": "上海玮沐",
+      "company_key": "上海玮沐",
+      "registrant": "上海玮沐医疗科技有限公司",
+      "certificate_no": "国械注准20263130608",
+      "origin": "国产",
+      "category": "PLLA童颜针",
+      "material_family": "PLLA",
+      "material_form": "PLLA/HA复合凝胶",
+      "approval_date": "2026-03-24",
+      "approval_year": 2026,
+      "valid_until": "2031-03-23",
+      "validity_status": "有效",
+      "market_scope": "",
+      "application_segment": "",
+      "primary_indication": "鼻唇沟",
+      "approved_indications": "",
+      "indication_description": "该产品适用于注射到鼻唇沟部位皮下浅层，以纠正中、重度鼻唇沟皱纹。",
+      "scope_full": "该产品适用于注射到鼻唇沟部位皮下浅层，以纠正中、重度鼻唇沟皱纹。",
+      "specification": "H025150LⅡ",
+      "components": "该产品为由交联透明质酸钠和左旋聚乳酸微球组成的干粉，其中壳聚糖作为交联透明质酸钠的交联剂，左旋聚乳酸微球则以物理包埋的方式嵌入其中。产品经电子束辐照灭菌，一次性使用，货架有效期2年。",
+      "lidocaine_status": "",
+      "product_tags": "",
+      "market_claim": "PLLA+交联透明质酸钠复合，鼻唇沟皮下浅层填充。",
+      "boundary_reason": "",
+      "indications": [],
+      "tags": [],
+      "official_status": "verified",
+      "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
+      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "official_product_name": "含左旋聚乳酸的交联透明质酸钠微球面部填充剂",
+      "official_registrant": "上海玮沐医疗科技有限公司",
+      "official_approval_date": "2026-03-24",
+      "official_valid_until": "2031-03-23",
+      "official_indication": "鼻唇沟",
+      "official_scope": "该产品适用于注射到鼻唇沟部位皮下浅层，以纠正中、重度鼻唇沟皱纹。",
+      "verified": true,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "胶原刺激剂"
+      ],
+      "source_account": "国家政务服务平台 NMPA",
+      "source_title": "国家政务服务平台 NMPA 医疗器械注册证查询",
+      "source_url": "https://app.gjzwfw.gov.cn/jmopen/webapp/html5/apigcylqxcpzccx/index.html",
       "confidence": "",
       "data_status": "已结构化",
       "source_dataset": "plla_dashboard_data.json"
