@@ -1385,7 +1385,7 @@
       const mainMatches = recordsForTimelineYear(data.records, year, { mainOnly: true });
       const pendingMatches = recordsForTimelineYear(data.records, year, { pendingOnly: true });
       const matches = [...mainMatches, ...pendingMatches];
-      const meta = pendingMatches.length
+      const meta = pendingAnnual.some((value) => Number(value) > 0)
         ? `${trackDisplayName} · 核心清单 ${mainMatches.length} 张 + 待复核 ${pendingMatches.length} 张`
         : `${trackDisplayName} · 核心清单`;
       showRecords({ title: `${year} 年新增`, meta, records: displayRecords(matches) });
