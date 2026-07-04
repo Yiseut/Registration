@@ -3064,7 +3064,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "pending",
       "frontstage_use": "pipeline_table",
-      "note": "企业/合作方原文可确认注册性临床阶段，但未披露受理号和中心清单。",
+      "note": "企业/合作方确认资料可确认注册性临床阶段，但未披露受理号和中心清单。",
       "added_at": "2026-06-20"
     },
     {
