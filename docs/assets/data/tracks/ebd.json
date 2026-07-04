@@ -317,6 +317,8 @@
       "company": "深圳市宗匠科技有限公司",
       "company_key": "深圳市宗匠科技有限公司",
       "registrant": "深圳市宗匠科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243092006",
       "origin": "国产",
       "category": "射频设备",
@@ -350,7 +352,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "深圳市宗匠科技有限公司",
       "official_approval_date": "2024-10-11",
@@ -363,12 +364,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20243092006 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20243092479",
@@ -384,6 +380,8 @@
       "company": "杭州时光机智能电子科技有限公司",
       "company_key": "杭州时光机智能电子科技有限公司",
       "registrant": "杭州时光机智能电子科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243092479",
       "origin": "国产",
       "category": "射频设备",
@@ -417,7 +415,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "杭州时光机智能电子科技有限公司",
       "official_approval_date": "2024-12-13",
@@ -430,12 +427,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20243092479 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20263090660",
@@ -451,6 +443,8 @@
       "company": "上海维脉医疗科技有限公司",
       "company_key": "上海维脉医疗科技有限公司",
       "registrant": "上海维脉医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263090660",
       "origin": "国产",
       "category": "射频设备",
@@ -484,7 +478,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "上海维脉医疗科技有限公司",
       "official_approval_date": "2026-03-27",
@@ -497,12 +490,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20263090660 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20243092482",
@@ -518,6 +506,8 @@
       "company": "深圳市宗匠科技有限公司",
       "company_key": "深圳市宗匠科技有限公司",
       "registrant": "深圳市宗匠科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243092482",
       "origin": "国产",
       "category": "射频设备",
@@ -551,7 +541,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "深圳市宗匠科技有限公司",
       "official_approval_date": "2024-12-13",
@@ -564,12 +553,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20243092482 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20243092007",
@@ -585,6 +569,8 @@
       "company": "深圳宇石科技有限公司",
       "company_key": "深圳宇石科技有限公司",
       "registrant": "深圳宇石科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243092007",
       "origin": "国产",
       "category": "射频设备",
@@ -618,7 +604,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "深圳宇石科技有限公司",
       "official_approval_date": "2024-10-11",
@@ -631,12 +616,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20243092007 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20263090882",
@@ -652,6 +632,8 @@
       "company": "乐普医疗",
       "company_key": "lepu",
       "registrant": "四川兴泰普乐医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263090882",
       "origin": "国产",
       "category": "射频设备",
@@ -685,7 +667,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "四川兴泰普乐医疗科技有限公司",
       "official_approval_date": "2026-04-27",
@@ -700,12 +681,7 @@
         "胶原刺激剂",
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20263090882 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20253091137",
@@ -721,6 +697,8 @@
       "company": "杭州瑞彼加医疗科技有限公司",
       "company_key": "杭州瑞彼加医疗科技有限公司",
       "registrant": "杭州瑞彼加医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253091137",
       "origin": "国产",
       "category": "射频设备",
@@ -754,7 +732,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "杭州瑞彼加医疗科技有限公司",
       "official_approval_date": "2025-06-06",
@@ -767,12 +744,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20253091137 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20253091300",
@@ -788,6 +760,8 @@
       "company": "深圳金茉科技有限公司",
       "company_key": "深圳金茉科技有限公司",
       "registrant": "深圳金茉科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253091300",
       "origin": "国产",
       "category": "射频设备",
@@ -821,7 +795,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "深圳金茉科技有限公司",
       "official_approval_date": "2025-07-04",
@@ -834,12 +807,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20253091300 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20253091135",
@@ -855,6 +823,8 @@
       "company": "热芙美（湖南）科技有限公司",
       "company_key": "热芙美（湖南）科技有限公司",
       "registrant": "热芙美（湖南）科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253091135",
       "origin": "国产",
       "category": "射频设备",
@@ -888,7 +858,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "热芙美（湖南）科技有限公司",
       "official_approval_date": "2025-06-06",
@@ -901,12 +870,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20253091135 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20253091163",
@@ -922,6 +886,8 @@
       "company": "广东花至美容科技有限公司",
       "company_key": "广东花至美容科技有限公司",
       "registrant": "广东花至美容科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253091163",
       "origin": "国产",
       "category": "射频设备",
@@ -955,7 +921,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "广东花至美容科技有限公司",
       "official_approval_date": "2025-06-20",
@@ -968,12 +933,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20253091163 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20243092361",
@@ -989,6 +949,8 @@
       "company": "无锡威脉通医疗科技有限公司",
       "company_key": "无锡威脉通医疗科技有限公司",
       "registrant": "无锡威脉通医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243092361",
       "origin": "国产",
       "category": "射频设备",
@@ -1022,7 +984,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "无锡威脉通医疗科技有限公司",
       "official_approval_date": "2024-11-21",
@@ -1035,12 +996,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20243092361 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20253091825",
@@ -1056,6 +1012,8 @@
       "company": "普罗米修斯奇迹（深圳）医疗科技有限公司",
       "company_key": "普罗米修斯奇迹（深圳）医疗科技有限公司",
       "registrant": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253091825",
       "origin": "国产",
       "category": "射频设备",
@@ -1089,7 +1047,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "普罗米修斯奇迹（深圳）医疗科技有限公司",
       "official_approval_date": "2025-09-05",
@@ -1102,12 +1059,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20253091825 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20253092104",
@@ -1123,6 +1075,8 @@
       "company": "深圳半岛医疗集团股份有限公司",
       "company_key": "深圳半岛医疗集团股份有限公司",
       "registrant": "深圳半岛医疗集团股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253092104",
       "origin": "国产",
       "category": "射频设备",
@@ -1156,7 +1110,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "深圳半岛医疗集团股份有限公司",
       "official_approval_date": "2025-10-27",
@@ -1169,12 +1122,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20253092104 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20263090453",
@@ -1190,6 +1138,8 @@
       "company": "广东雅思电子有限公司",
       "company_key": "广东雅思电子有限公司",
       "registrant": "广东雅思电子有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263090453",
       "origin": "国产",
       "category": "射频设备",
@@ -1223,7 +1173,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "广东雅思电子有限公司",
       "official_approval_date": "2026-03-03",
@@ -1236,12 +1185,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注准20263090453 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注进20253090264",
@@ -1257,6 +1201,8 @@
       "company": "雅萌株式会社ヤーマン株式会社",
       "company_key": "雅萌株式会社ヤーマン株式会社",
       "registrant": "雅萌株式会社ヤーマン株式会社",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20253090264",
       "origin": "进口",
       "category": "射频设备",
@@ -1290,7 +1236,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "雅萌株式会社ヤーマン株式会社",
       "official_approval_date": "2025-06-20",
@@ -1303,12 +1248,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频皮肤治疗仪 国械注进20253090264 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1324,6 +1264,8 @@
       "company": "深圳半岛医疗集团股份有限公司",
       "company_key": "深圳半岛医疗集团股份有限公司",
       "registrant": "深圳半岛医疗集团股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20223090571",
       "origin": "国产",
       "category": "射频塑形设备",
@@ -1357,7 +1299,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "射频治疗仪",
       "official_registrant": "深圳半岛医疗集团股份有限公司",
       "official_approval_date": "2022-04-29",
@@ -1370,12 +1311,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "射频治疗仪 国械注准20223090571 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-ULTRASOUND-国械注准20263010880",
@@ -1391,6 +1327,8 @@
       "company": "深圳普门科技股份有限公司",
       "company_key": "深圳普门科技股份有限公司",
       "registrant": "深圳普门科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263010880",
       "origin": "国产",
       "category": "超声设备",
@@ -1428,7 +1366,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "聚焦超声皮肤治疗仪",
       "official_registrant": "深圳普门科技股份有限公司",
       "official_approval_date": "2026-04-27",
@@ -1441,12 +1378,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "聚焦超声皮肤治疗仪 国械注准20263010880 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-ULTRASOUND-国械注准20253092193",
@@ -1462,6 +1394,8 @@
       "company": "深圳半岛医疗集团股份有限公司",
       "company_key": "深圳半岛医疗集团股份有限公司",
       "registrant": "深圳半岛医疗集团股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253092193",
       "origin": "国产",
       "category": "超声设备",
@@ -1499,7 +1433,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "聚焦超声皮肤治疗仪",
       "official_registrant": "深圳半岛医疗集团股份有限公司",
       "official_approval_date": "2025-10-30",
@@ -1512,12 +1445,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "聚焦超声皮肤治疗仪 国械注准20253092193 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20253092690",
@@ -1533,6 +1461,8 @@
       "company": "南京麦澜德医疗科技股份有限公司",
       "company_key": "南京麦澜德医疗科技股份有限公司",
       "registrant": "南京麦澜德医疗科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253092690",
       "origin": "国产",
       "category": "激光/IPL设备",
@@ -1567,7 +1497,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA器械查询",
-      "official_source": "国家药监局 NMPA 医疗器械注册证查询",
       "official_product_name": "Nd:YAG皮秒激光治疗仪",
       "official_registrant": "南京麦澜德医疗科技股份有限公司",
       "official_approval_date": "2025-12-29",
@@ -1580,12 +1509,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "Nd:YAG皮秒激光治疗仪 国械注准20253092690 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_20260510.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-LASER_IPL-国械注进20243090658",
@@ -1601,6 +1525,8 @@
       "company": "韩国元泰株式会社원텍(주)",
       "company_key": "韩国元泰株式会社원텍(주)",
       "registrant": "韩国元泰株式会社원텍(주)",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20243090658",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1637,7 +1563,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "皮秒Nd:YAG激光治疗仪Q-Switched Nd:YAG Laser System",
       "official_registrant": "韩国元泰株式会社원텍(주)",
       "official_approval_date": "2024-12-13",
@@ -1650,12 +1575,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "皮秒Nd:YAG激光治疗仪Q-Switched Nd:YAG Laser System 国械注进20243090658 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_wontech_20260604.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-LASER_IPL-国械注进20203090265",
@@ -1671,6 +1591,8 @@
       "company": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
       "company_key": "韩国元泰株式会社won tech co., ltd. (원텍(주))",
       "registrant": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20203090265",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1709,7 +1631,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "Q-开关Nd: YAG皮秒激光治疗仪Q-Switched Nd:YAG Laser System",
       "official_registrant": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
       "official_approval_date": "2023-05-11",
@@ -1722,12 +1643,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "Q-开关Nd: YAG皮秒激光治疗仪Q-Switched Nd:YAG Laser System 国械注进20203090265 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_wontech_20260604.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-LASER_IPL-国械注进20183011604",
@@ -1743,6 +1659,8 @@
       "company": "韩国元泰株式会社WON TECH Co.,Ltd.",
       "company_key": "韩国元泰株式会社won tech co.,ltd.",
       "registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20183011604",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1777,7 +1695,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "掺铥光纤激光治疗仪Thulium Laser Device",
       "official_registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
       "official_approval_date": "2022-09-30",
@@ -1790,12 +1707,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "掺铥光纤激光治疗仪Thulium Laser Device 国械注进20183011604 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_wontech_20260604.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-LASER_IPL-国械注进20173096244",
@@ -1811,6 +1723,8 @@
       "company": "韩国元泰株式会社WON TECH Co., Ltd.",
       "company_key": "韩国元泰株式会社won tech co., ltd.",
       "registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20173096244",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1847,7 +1761,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "Nd:YAG激光治疗仪Nd:YAG Laser Device",
       "official_registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
       "official_approval_date": "2023-04-07",
@@ -1860,12 +1773,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "NMPA 官方查询",
-      "source_title": "Nd:YAG激光治疗仪Nd:YAG Laser Device 国械注进20173096244 NMPA 医疗器械注册证",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "official",
-      "data_status": "已结构化",
-      "source_dataset": "ebd_product_query_wontech_20260604.json"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-THERMAGE_RF-国械注进20153092408",
@@ -1881,6 +1789,8 @@
       "company": "Solta Medical, Inc.",
       "company_key": "solta medical, inc.",
       "registrant": "索塔医疗有限公司Solta Medical, Inc.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20153092408",
       "origin": "进口",
       "category": "热玛吉类/单极射频设备",
@@ -1913,7 +1823,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "射频治疗仪Thermage CPT System",
       "official_registrant": "索塔医疗有限公司Solta Medical, Inc.",
       "official_approval_date": "2023-03-27",
@@ -1926,12 +1835,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "医药魔方/ByDrug",
-      "source_title": "射频治疗仪 Thermage CPT System 中国大陆上市注册信息",
-      "source_url": "https://bydrug.pharmcube.com/detailpage/deviceCNImported/2be6afa9232f85ea9fe915d23edc22e1",
-      "confidence": "high",
-      "data_status": "原始保留",
-      "source_dataset": "manual_raw_cert_leads"
+      "data_status": "原始保留"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263011369",
@@ -1947,6 +1851,8 @@
       "company": "广州信筑",
       "company_key": "广州信筑",
       "registrant": "广州信筑医疗技术有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263011369",
       "origin": "国产",
       "category": "激光/光电设备",
@@ -1979,7 +1885,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "NMPA送达信息已确认/注册证详情未同步，需复查",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
       "official_product_name": "半导体激光治疗仪",
       "official_registrant": "广州信筑医疗技术有限公司",
       "official_approval_date": "2026-06-30",
@@ -1990,12 +1895,7 @@
       "main_landscape": false,
       "main_landscape_included": "否",
       "portfolio_segments": [],
-      "source_account": "国家药品监督管理局",
-      "source_title": "2026年06月30日医疗器械批准证明文件送达信息：广州信筑半导体激光治疗仪",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260630153126102.html",
-      "confidence": "high",
-      "data_status": "原始保留/待官方核验",
-      "source_dataset": "manual_raw_cert_leads"
+      "data_status": "原始保留/待官方核验"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263091317",
@@ -2011,6 +1911,8 @@
       "company": "半岛医疗",
       "company_key": "半岛医疗",
       "registrant": "深圳半岛医疗集团股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263091317",
       "origin": "国产",
       "category": "激光/IPL设备",
@@ -2045,7 +1947,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
       "official_product_name": "皮秒钛蓝宝石激光治疗仪",
       "official_registrant": "深圳半岛医疗集团股份有限公司",
       "official_approval_date": "2026-06-23",
@@ -2058,12 +1959,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "国家药品监督管理局",
-      "source_title": "国家药监局2026年06月24日医疗器械批准证明文件送达信息：半岛医疗皮秒钛蓝宝石激光治疗仪",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "manual_raw_cert_leads"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-RF-国械注准20263091299",
@@ -2079,6 +1975,8 @@
       "company": "心镜云影",
       "company_key": "心镜云影",
       "registrant": "心镜云影医疗科技(枣庄)有限责任公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263091299",
       "origin": "国产",
       "category": "射频设备",
@@ -2112,7 +2010,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
       "official_product_name": "射频皮肤治疗仪",
       "official_registrant": "心镜云影医疗科技(枣庄)有限责任公司",
       "official_approval_date": "2026-06-23",
@@ -2125,12 +2022,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "国家药品监督管理局",
-      "source_title": "国家药监局2026年06月24日医疗器械批准证明文件送达信息：心镜云影射频皮肤治疗仪",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "manual_raw_cert_leads"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-LASER_IPL-国械注进20263090235",
@@ -2146,6 +2038,8 @@
       "company": "Viora / 欣可丽美学",
       "company_key": "viora / 欣可丽美学",
       "registrant": "Viora Ltd.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20263090235",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -2180,7 +2074,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/NMPA批准证明文件送达信息",
-      "official_source": "国家药品监督管理局医疗器械批准证明文件送达信息",
       "official_product_name": "皮肤治疗仪",
       "official_registrant": "Viora Ltd.",
       "official_approval_date": "2026-06-23",
@@ -2193,12 +2086,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "国家药品监督管理局",
-      "source_title": "国家药监局2026年06月24日医疗器械批准证明文件送达信息：Viora皮肤治疗仪",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260624161622129.html",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "manual_raw_cert_leads"
+      "data_status": "已结构化"
     },
     {
       "id": "RAW-ULTRASOUND-国械注准20253092173",
@@ -2214,6 +2102,8 @@
       "company": "曼迪森光电",
       "company_key": "曼迪森光电",
       "registrant": "上海曼迪森光电有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253092173",
       "origin": "国产",
       "category": "超声设备",
@@ -2245,7 +2135,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "半导体激光治疗机",
       "official_registrant": "上海曼迪森光电有限公司",
       "official_approval_date": "2025-10-30",
@@ -2256,12 +2145,7 @@
       "main_landscape": false,
       "main_landscape_included": "否",
       "portfolio_segments": [],
-      "source_account": "丽和康",
-      "source_title": "医美快讯 | 半岛医疗新突破，国产首款III类「聚焦超声皮肤治疗仪」获批！",
-      "source_url": "https://mp.weixin.qq.com/s/5Iiq5Z5ffKb3_SA-ZNRI8A",
-      "confidence": "medium",
-      "data_status": "原始保留",
-      "source_dataset": "emerging_device_scout_20260505_device_leads.csv"
+      "data_status": "原始保留"
     },
     {
       "id": "RAW-MICRONEEDLE-国械注进20143095670",
@@ -2277,6 +2161,8 @@
       "company": "Jeisys / 帝医思",
       "company_key": "jeisys / 帝医思",
       "registrant": "杰希思医疗公司Jeisys Medical Inc.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20143095670",
       "origin": "进口",
       "category": "微针/射频微针设备",
@@ -2308,7 +2194,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "射频微针治疗仪Electrosurgical Unit",
       "official_registrant": "杰希思医疗公司Jeisys Medical Inc.",
       "official_approval_date": "2023-04-07",
@@ -2321,12 +2206,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "采美阿积",
-      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
-      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
-      "confidence": "high",
-      "data_status": "原始保留",
-      "source_dataset": "emerging_device_scout_20260505_device_leads.csv"
+      "data_status": "原始保留"
     },
     {
       "id": "RAW-MICRONEEDLE-国械注进20183251955",
@@ -2342,6 +2222,8 @@
       "company": "EndyMed / 美迪迈",
       "company_key": "endymed / 美迪迈",
       "registrant": "美迪迈医疗激光公司EndyMed Medical Ltd.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20183091955",
       "origin": "进口",
       "category": "微针/射频微针设备",
@@ -2373,7 +2255,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "高频皮肤治疗仪Skin Treatment System",
       "official_registrant": "美迪迈医疗激光公司EndyMed Medical Ltd.",
       "official_approval_date": "2023-01-16",
@@ -2386,12 +2267,7 @@
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "source_account": "采美阿积",
-      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
-      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
-      "confidence": "high",
-      "data_status": "原始保留",
-      "source_dataset": "emerging_device_scout_20260505_device_leads.csv"
+      "data_status": "原始保留"
     },
     {
       "id": "RAW-MICRONEEDLE-国械注进20163090059",
@@ -2407,6 +2283,8 @@
       "company": "Lutronic / 路创丽",
       "company_key": "lutronic / 路创丽",
       "registrant": "（株）路创丽公司 Lutronic Corporation",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20163090059",
       "origin": "进口",
       "category": "微针/射频微针设备",
@@ -2438,7 +2316,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家药监局NMPA医疗器械注册历史数据",
-      "official_source": "国家药监局 NMPA 医疗器械注册历史数据",
       "official_product_name": "射频治疗仪Radio Frequency System",
       "official_registrant": "（株）路创丽公司 Lutronic Corporation",
       "official_approval_date": "2020-08-31",
@@ -2449,12 +2326,7 @@
       "main_landscape": false,
       "main_landscape_included": "否",
       "portfolio_segments": [],
-      "source_account": "采美阿积",
-      "source_title": "采美推荐 | NMPA认证黄金微针:帝医思INTRAcel,半岛黄金微针4.0,EndyMed,路创丽INFINI",
-      "source_url": "https://mp.weixin.qq.com/s/HRrWTy9nG1QG8ajO7zCh4A",
-      "confidence": "high",
-      "data_status": "原始保留",
-      "source_dataset": "emerging_device_scout_20260505_device_leads.csv"
+      "data_status": "原始保留"
     }
   ]
 }

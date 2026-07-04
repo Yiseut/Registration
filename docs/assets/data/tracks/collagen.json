@@ -337,6 +337,8 @@
       "company": "巨子生物",
       "company_key": "巨子生物",
       "registrant": "陕西巨子生物技术有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263130044",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -371,7 +373,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "重组I型α1亚型胶原蛋白及透明质酸钠复合溶液",
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2026-01-14",
@@ -384,12 +385,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "闲话医与美 || 公众号汇总/NMPA校准",
-      "source_title": "2026年以后公开获批补充 || 胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/0NiHLEMxBuJgpZmpo6anKw || https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "ha_benchmark_records_20260505.csv || collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253132517",
@@ -405,6 +401,8 @@
       "company": "艾佰瑞",
       "company_key": "艾佰瑞",
       "registrant": "北京艾佰瑞生物技术有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253132517",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -432,7 +430,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂",
       "official_registrant": "北京艾佰瑞生物技术有限公司",
       "official_approval_date": "2025-12-10",
@@ -445,12 +442,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0697782406001220251229114720780",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注许20173130007",
@@ -466,6 +458,8 @@
       "company": "双美生物",
       "company_key": "双美生物",
       "registrant": "双美生物科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注许20173130007",
       "origin": "港澳台",
       "category": "胶原蛋白",
@@ -493,7 +487,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂Sunmax Collagen Implant I-Plus",
       "official_registrant": "双美生物科技股份有限公司",
       "official_approval_date": "2025-06-03",
@@ -506,12 +499,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0471040996369620251219042411557",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注许20193130064",
@@ -527,6 +515,8 @@
       "company": "双美生物",
       "company_key": "双美生物",
       "registrant": "双美生物科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注许20193130064",
       "origin": "港澳台",
       "category": "胶原蛋白",
@@ -554,7 +544,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂“Sunmax”Collagen Implant I",
       "official_registrant": "双美生物科技股份有限公司",
       "official_approval_date": "2023-04-07",
@@ -567,12 +556,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0471040996367220251219040718235",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253130751",
@@ -588,6 +572,8 @@
       "company": "锦波生物",
       "company_key": "锦波生物",
       "registrant": "山西锦波生物医药股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253130751",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -615,7 +601,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用重组Ⅲ型人源化胶原蛋白凝胶",
       "official_registrant": "山西锦波生物医药股份有限公司",
       "official_approval_date": "2025-04-09",
@@ -628,12 +613,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0694760571930920260423025246896",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20233131245",
@@ -649,6 +629,8 @@
       "company": "锦波生物",
       "company_key": "锦波生物",
       "registrant": "山西锦波生物医药股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20233131245",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -676,7 +658,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用重组Ⅲ型人源化胶原蛋白溶液",
       "official_registrant": "山西锦波生物医药股份有限公司",
       "official_approval_date": "2023-08-28",
@@ -689,12 +670,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0694760571635320231014030604963",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20263130023",
@@ -710,6 +686,8 @@
       "company": "奇璞生物",
       "company_key": "奇璞生物",
       "registrant": "成都奇璞生物科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263130023",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -737,7 +715,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂",
       "official_registrant": "成都奇璞生物科技有限公司",
       "official_approval_date": "2026-01-07",
@@ -750,12 +727,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=16976551130019202602051028011",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253132516",
@@ -771,6 +743,8 @@
       "company": "崇山生物",
       "company_key": "崇山生物",
       "registrant": "浙江崇山生物制品有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253132516",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -798,7 +772,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "医用胶原蛋白植入剂",
       "official_registrant": "浙江崇山生物制品有限公司",
       "official_approval_date": "2025-12-10",
@@ -811,12 +784,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0694001670112320251217043213403",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253131017",
@@ -832,6 +800,8 @@
       "company": "珂瑞康",
       "company_key": "珂瑞康",
       "registrant": "浙江珂瑞康生物医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253131017",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -859,7 +829,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用面部胶原蛋白植入剂",
       "official_registrant": "浙江珂瑞康生物医疗科技有限公司",
       "official_approval_date": "2025-05-27",
@@ -872,12 +841,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://udi.nmpa.gov.cn/showDetailCX.html?deviceRecordKey=0697476242037320260417034138106",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253131612",
@@ -893,6 +857,8 @@
       "company": "珂瑞康",
       "company_key": "珂瑞康",
       "registrant": "浙江珂瑞康生物医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253131612",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -920,7 +886,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用胶原溶液",
       "official_registrant": "浙江珂瑞康生物医疗科技有限公司",
       "official_approval_date": "2025-08-22",
@@ -933,12 +898,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "丽和康",
-      "source_title": "医美快讯 | 首款「含麻」玻尿酸颈纹长效治疗产品获批",
-      "source_url": "https://mp.weixin.qq.com/s/vSCwjyD-BoqCw4DmIm19cQ",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20163131609",
@@ -954,6 +914,8 @@
       "company": "斐缦生物",
       "company_key": "斐缦生物",
       "registrant": "斐缦（长春）医药生物科技有限责任公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20163131609",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -981,7 +943,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "医用胶原充填剂",
       "official_registrant": "斐缦（长春）医药生物科技有限责任公司",
       "official_approval_date": "2021-11-03",
@@ -994,12 +955,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://fiman.com/",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注进20163132859",
@@ -1015,6 +971,8 @@
       "company": "荷兰汉福",
       "company_key": "荷兰汉福",
       "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20163132859",
       "origin": "进口",
       "category": "胶原蛋白",
@@ -1043,7 +1001,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "整形用胶原和PMMA皮下植入物系统ArteColl",
       "official_registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
       "official_approval_date": "2021-10-26",
@@ -1056,12 +1013,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注进20243130041",
@@ -1077,6 +1029,8 @@
       "company": "Suneva",
       "company_key": "suneva",
       "registrant": "圣诺华医疗股份有限公司Suneva Medical, Inc.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20243130041",
       "origin": "进口",
       "category": "胶原蛋白",
@@ -1105,7 +1059,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "整形用胶原和PMMA皮下植入物系统Bellafill",
       "official_registrant": "圣诺华医疗股份有限公司Suneva Medical, Inc.",
       "official_approval_date": "2024-01-17",
@@ -1118,12 +1071,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253132643",
@@ -1139,6 +1087,8 @@
       "company": "创健医疗",
       "company_key": "创健医疗",
       "registrant": "江苏创健医疗科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253132643",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1166,7 +1116,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "交联重组胶原蛋白植入剂",
       "official_registrant": "江苏创健医疗科技股份有限公司",
       "official_approval_date": "2025-12-23",
@@ -1179,12 +1128,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20213130488",
@@ -1200,6 +1144,8 @@
       "company": "锦波生物",
       "company_key": "锦波生物",
       "registrant": "山西锦波生物医药股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20213130488",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1227,7 +1173,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "重组Ⅲ型人源化胶原蛋白冻干纤维",
       "official_registrant": "山西锦波生物医药股份有限公司",
       "official_approval_date": "2021-06-28",
@@ -1240,12 +1185,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20253132049",
@@ -1261,6 +1201,8 @@
       "company": "巨子生物",
       "company_key": "巨子生物",
       "registrant": "陕西巨子生物技术有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253132049",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1288,7 +1230,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "重组I型α1亚型胶原蛋白冻干纤维",
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2025-10-21",
@@ -1301,12 +1242,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20263131133",
@@ -1322,6 +1258,8 @@
       "company": "无锡贝迪生物工程股份有限公司",
       "company_key": "无锡贝迪生物工程股份有限公司",
       "registrant": "无锡贝迪生物工程股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263131133",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1349,7 +1287,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂",
       "official_registrant": "无锡贝迪生物工程股份有限公司",
       "official_approval_date": "2026-06-01",
@@ -1362,12 +1299,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "医美慢谈",
-      "source_title": "新品| 又一款胶原蛋白植入剂获批上市！",
-      "source_url": "https://mp.weixin.qq.com/s/oUH_pnM7uct0l9MUFznqLg",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20263131219",
@@ -1383,6 +1315,8 @@
       "company": "巨子生物",
       "company_key": "巨子生物",
       "registrant": "陕西巨子生物技术有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263131219",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1410,7 +1344,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "交联重组胶原蛋白植入剂",
       "official_registrant": "陕西巨子生物技术有限公司",
       "official_approval_date": "2026-06-16",
@@ -1423,12 +1356,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "国家药品监督管理局",
-      "source_title": "2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20263131252",
@@ -1444,6 +1372,8 @@
       "company": "芳禾生物",
       "company_key": "芳禾生物",
       "registrant": "重庆芳禾生物科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263131252",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1471,7 +1401,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原蛋白植入剂",
       "official_registrant": "重庆芳禾生物科技有限公司",
       "official_approval_date": "2026-06-16",
@@ -1484,12 +1413,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "医与美前沿",
-      "source_title": "医美前沿快讯|芳禾生物旗下“胶原蛋白植入剂”获批上市！",
-      "source_url": "https://mp.weixin.qq.com/s/KA5kCThFvoLYUQACnO0bFA",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注准20203140040",
@@ -1505,6 +1429,8 @@
       "company": "崇山生物",
       "company_key": "崇山生物",
       "registrant": "浙江崇山生物制品有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20203140040",
       "origin": "国产",
       "category": "胶原蛋白",
@@ -1530,7 +1456,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "胶原贴敷料",
       "official_registrant": "浙江崇山生物制品有限公司",
       "official_approval_date": "2024-07-15",
@@ -1543,12 +1468,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "公众号汇总/NMPA校准",
-      "source_title": "胶原蛋白汇总文章交叉校准",
-      "source_url": "https://mp.weixin.qq.com/s/bge82pQPbTp_0khKEVUXaw",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "COLLAGEN-国械注许20193130003",
@@ -1564,6 +1484,8 @@
       "company": "双美生物",
       "company_key": "双美生物",
       "registrant": "双美生物科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注许20193130003",
       "origin": "港澳台",
       "category": "胶原蛋白",
@@ -1591,7 +1513,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "含利多卡因胶原蛋白植入剂Sunmax FACIALGAIN Collagen Implant with Lidocaine",
       "official_registrant": "双美生物科技股份有限公司",
       "official_approval_date": "2023-04-13",
@@ -1604,12 +1525,7 @@
       "portfolio_segments": [
         "胶原蛋白"
       ],
-      "source_account": "UDI/NMPA UDI",
-      "source_title": "UDI 胶原蛋白赛道召回样本",
-      "source_url": "https://www.nmpa.gov.cn/",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "collagen_dashboard_data.json"
+      "data_status": "已结构化"
     }
   ]
 }

@@ -2781,8 +2781,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2400088794：DN001重组A型肉毒毒素治疗中重度眉间纹I/II期临床",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=242298",
       "source_date": "2024-08-27",
       "reported_status": "ChiCTR登记；I/II期，执行期2024-09-01至2025-12-31",
       "reported_indication": "中重度眉间纹",
@@ -2808,8 +2806,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500102819：DJ-01重组A型肉毒毒素改善中重度眉间纹I/II期临床",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=272642",
       "source_date": "2025-05-20",
       "reported_status": "ChiCTR登记；I/II期，执行期2025-04-23至2025-11-02，招募期2025-05-25至2025-09-30",
       "reported_indication": "中度至重度眉间纹",
@@ -2835,8 +2831,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "exchange_filing",
-      "source_title": "爱美客：关于公司独家经销进口产品获得药品注册证书的公告",
-      "source_url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11906375&stockid=300896",
       "source_date": "2026-01-08",
       "reported_status": "获得药品注册证书；批准文号国药准字SJ20260001；规格100U/瓶",
       "reported_indication": "医美动态皱纹等适应证以药品注册证全文为准",
@@ -2862,8 +2856,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "exchange_filing",
-      "source_title": "华东医药：关于独家经销产品注射用重组A型肉毒毒素注册申请获得上市批准的公告",
-      "source_url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042505.PDF",
       "source_date": "2026-03-28",
       "reported_status": "NMPA批准上市；受理号CXSS2400144；批准文号国药准字S20260019；规格100单位/支",
       "reported_indication": "暂时性改善65岁及65岁以下成人因皱眉肌和/或降眉间肌活动引起的中度至重度眉间纹",
@@ -2889,8 +2881,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_approval",
       "source_type": "cmde_review_report",
-      "source_title": "CMDE医疗器械产品注册技术审评报告：注射用羟基磷酸钙微球面部填充剂",
-      "source_url": "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf",
       "source_date": "2025-02-17",
       "reported_status": "已获批，注册证号国械注准20253130390",
       "reported_indication": "用于鼻唇沟部位皮下层注射，以纠正中重度鼻唇沟皱纹",
@@ -2916,8 +2906,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_approval",
       "source_type": "cmde_review_report",
-      "source_title": "CMDE医疗器械产品注册技术审评报告：RADIESSE INJECTABLE IMPLANT",
-      "source_url": "https://www.cmde.org.cn/directory/web/cmde/images/1742778436369013951.pdf",
       "source_date": "2025-03-07",
       "reported_status": "已获批，注册证号国械注进20253130124",
       "reported_indication": "适用于注射到鼻唇沟部位皮下层，以纠正中重度鼻唇沟皱纹",
@@ -2943,8 +2931,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "nmpa_delivery_notice",
-      "source_title": "NMPA 2021年12月08日医疗器械批准证明文件待领取信息：羟基磷灰石生物陶瓷",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20211208133629120.html",
       "source_date": "2021-12-08",
       "reported_status": "NMPA送达信息列示国械注准20173130346，产品名称为羟基磷灰石生物陶瓷，申请人为四川拜阿蒙生物活性材料有限责任公司。",
       "reported_indication": "官方送达页不展开适用范围；后续详情应区分既有骨/软组织修复证照与面部注射填充专证。",
@@ -2970,8 +2956,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ClinicalTrials.gov NCT07032597：HArmonyCa Lidocaine中国中面部容量III期研究",
-      "source_url": "https://clinicaltrials.gov/study/NCT07032597",
       "source_date": "2025-05-26",
       "reported_status": "ClinicalTrials显示中国约9个中心、约252例，评估HArmonyCa Lidocaine恢复/创建中面部容量的安全性和有效性",
       "reported_indication": "中面部容量缺失/中面部软组织增容",
@@ -2997,8 +2981,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500107432：CaHA+交联HA用于改善颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=265724",
       "source_date": "2025-08-11",
       "reported_status": "ChiCTR登记；执行期2024-11-27至2027-08-13，招募期2025-04-07至2025-08-31",
       "reported_indication": "颞部凹陷",
@@ -3024,8 +3006,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "annual_report",
-      "source_title": "昊海生科2025年年度报告",
-      "source_url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12008334&stockid=688366",
       "source_date": "2026-03-21",
       "reported_status": "首款产品临床试验有序推进；第二及第三款产品进入注册检验",
       "reported_indication": "组织填充/医美注射方向（以公告全文和官方资料复核为准）",
@@ -3051,8 +3031,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "HTDK and CGBio Sign Agreement to License FACETEM Hydroxyapatite Fillers in the Chinese Market",
-      "source_url": "https://www.htdkgroup.com/en/news/htdk-and-cgbio-sign-agreement-to-commercialize-and-license-facetem-hydroxyapatite-fillers-in-the-chinese-market",
       "source_date": "2023-10-23",
       "reported_status": "华瑭医疗负责FACETEM在中国大陆的上市注册；获批后拥有十年商业化权益",
       "reported_indication": "FACETEM羟基磷灰石填充剂；具体中国适应证待临床/注册文件确认",
@@ -3078,8 +3056,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
-      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html",
       "source_date": "2024-01-17",
       "reported_status": "企业公告称两款Ⅲ类再生医学注射产品均处于中国注册性临床试验阶段",
       "reported_indication": "再生医学注射/面部年轻化方向，具体适应证待临床登记或受理文件确认",
@@ -3105,8 +3081,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "AbbVie Clinical Trials M21-782：HArmonyCa Lidocaine中国研究",
-      "source_url": "https://abbvieclinicaltrials.com/study/M21-782",
       "source_date": "2025-05-26",
       "reported_status": "AbbVie官方临床页显示Recruitment Complete，研究约252名成人受试者，约9个中国中心",
       "reported_indication": "中重度中面部容量缺失/中面部软组织增容",
@@ -3132,8 +3106,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "21世纪经济报道：华瑭大昌与CGBio推动羟基磷灰石填充物上市许可",
-      "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html",
       "source_date": "2025-01-15",
       "reported_status": "报道称2023年11月双方宣布合作推动上市许可",
       "reported_indication": "CaHA填充物；适应证待查",
@@ -3159,8 +3131,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "21世纪经济报道：HArmonyCa在中国完成注册检验",
-      "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html",
       "source_date": "2025-01-15",
       "reported_status": "报道称2024年9月中国完成注册检验，即将进入临床试验",
       "reported_indication": "CaHA复合医美注射方向；具体适应证待官方确认",
@@ -3186,8 +3156,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "21世纪经济报道：Radiesse国内启动鼻唇沟适应证注册临床",
-      "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html",
       "source_date": "2025-01-15",
       "reported_status": "报道称2023年再次发起中国注册临床",
       "reported_indication": "纠正中重度鼻唇沟皱纹",
@@ -3213,8 +3181,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "needs_verification",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "证券时报/界面：Rejuve完成近200例入组并随访超过6个月",
-      "source_url": "https://www.stcn.com/article/detail/1501379.html",
       "source_date": "2025-01-20",
       "reported_status": "报道提到Rejuve项目完成近200例受试者入组并完成超过6个月随访",
       "reported_indication": "CaHA面部填充方向；具体适应证待查",
@@ -3240,8 +3206,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "needs_verification",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "新京报：上海市第十人民医院承担CaHA面部填充剂多中心临床研究",
-      "source_url": "https://m.bjnews.com.cn/detail/1737370268129650.html",
       "source_date": "2025-01-20",
       "reported_status": "报道称2024年上海市第十人民医院皮肤科承担前瞻性、多中心、单盲、随机对照、非劣效临床研究",
       "reported_indication": "成人中重度鼻唇沟皱纹",
@@ -3267,8 +3231,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "needs_verification",
       "source_lane": "manual_expert_tip",
       "source_type": "manual_expert_tip",
-      "source_title": "用户线下/行业信息：菲林普利等CaHA厂家临床完成或接近下证",
-      "source_url": "",
       "source_date": "2026-06-19",
       "reported_status": "据用户行业信息称已有厂家完成临床且可能下半年或明年下证",
       "reported_indication": "待确认",
@@ -3294,8 +3256,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "needs_verification",
       "source_lane": "manual_expert_tip",
       "source_type": "manual_expert_tip",
-      "source_title": "用户线下医生确认：广东省人民医院整形外科临床已完成",
-      "source_url": "",
       "source_date": "2026-06-19",
       "reported_status": "据线下医生口径称已完成临床",
       "reported_indication": "待确认",
@@ -3321,8 +3281,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2300078494：重组III型胶原蛋白冻干纤维改善面部真皮组织状态临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=212254",
       "source_date": "2023-12-11",
       "reported_status": "临床登记显示评价重组III型人源化胶原蛋白冻干纤维改善面部皮肤状态",
       "reported_indication": "面部皮肤状态改善",
@@ -3348,8 +3306,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2400082129：重组Ⅲ型胶原蛋白溶液改善面部皮肤状态临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=248829&v=1.0",
       "source_date": "2024-03-21",
       "reported_status": "ChiCTR登记；执行期2024-01-18至2025-05-28，招募期2024-03-28至2024-05-28",
       "reported_indication": "皮肤松弛/额部与颊部皮肤状态改善",
@@ -3375,8 +3331,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500096028：PCL+重组Ⅲ型胶原+HA组合包用于颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=268100&v=1.0",
       "source_date": "2025-01-16",
       "reported_status": "ChiCTR登记；III期临床，执行期2024-05-01至2026-09-30，招募期2025-01-20至2025-12-31",
       "reported_indication": "颞部凹陷",
@@ -3402,8 +3356,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "nmpa_delivery_notice",
-      "source_title": "NMPA 2026年01月08日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260108164308142.html",
       "source_date": "2026-01-08",
       "reported_status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
       "reported_indication": "适应证、结构组成与规格待NMPA注册证详情同步",
@@ -3429,8 +3381,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600116713：重组III型胶原蛋白冻干纤维改善鱼尾纹临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=292763&v=1.0",
       "source_date": "2026-01-14",
       "reported_status": "临床登记显示评价重组III型人源化胶原蛋白冻干纤维改善中重度鱼尾纹",
       "reported_indication": "中重度鱼尾纹",
@@ -3456,8 +3406,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600119404：Colnet重组III型胶原蛋白冻干纤维改善口周皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=295856&v=1.0",
       "source_date": "2026-02-26",
       "reported_status": "临床登记显示评价Colnet重组III型人源化胶原蛋白冻干纤维改善口周皱纹",
       "reported_indication": "口周皱纹",
@@ -3483,8 +3431,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "nmpa_delivery_notice",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "source_date": "2026-06-17",
       "reported_status": "NMPA送达信息列示受理号CQZ2501047，注册证编号国械注准20263131252，批准日期2026-06-16",
       "reported_indication": "适应证、结构组成与规格待NMPA详情页同步；行业报道称为面部胶原蛋白植入剂",
@@ -3510,8 +3456,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "nmpa_delivery_notice",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "source_date": "2026-06-17",
       "reported_status": "NMPA送达信息列示受理号CQZ2402149，注册证编号国械注准20263131219，批准日期2026-06-16",
       "reported_indication": "颈部皱纹/交联重组胶原蛋白植入剂；适应证细节以注册证详情同步为准",
@@ -3537,8 +3481,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "exchange_filing",
-      "source_title": "巨子生物自愿性公告：附属公司交联重组胶原蛋白植入剂获医疗器械注册证",
-      "source_url": "https://news.futunn.com/notice/307544661/giant-biogene-voluntary-announcement",
       "source_date": "2026-06-17",
       "reported_status": "公司公告称陕西巨子收到NMPA医疗器械注册证，产品为交联重组III型胶原蛋白植入剂",
       "reported_indication": "用于颈部皮内真皮层注射填充，以纠正颈部中重度横纹",
@@ -3564,8 +3506,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "创健医疗交联重组胶原蛋白植入剂正式获批",
-      "source_url": "https://www.trautec.com.cn/show-216.html",
       "source_date": "2025-12-23",
       "reported_status": "企业官网称交联重组胶原蛋白植入剂获NMPA批准上市，注册证编号国械注准20253132643",
       "reported_indication": "面部真皮组织填充以纠正额部中重度动力性皱纹，包括眉间纹、额头纹和鱼尾纹",
@@ -3591,8 +3531,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_website",
-      "source_title": "聚源生物官网：科媄氏重组III型人源化胶原蛋白医疗器械产品线",
-      "source_url": "https://www.jlandbiotech.com/medical_brand/6",
       "source_date": "2026-06-20",
       "reported_status": "企业官网展示科媄氏重组III型人源化胶原蛋白溶液、修护贴辅料、喷雾和修护凝胶等医疗器械产品",
       "reported_indication": "面部皮肤修护/医疗器械产品线；具体注册适应证需逐项核验",
@@ -3618,8 +3556,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_cro_notice",
       "source_type": "cro_notice",
-      "source_title": "奥泰康：细胞外基质生物凝胶临床试验完成全部入组",
-      "source_url": "https://www.healtech.com.cn/news/info.html?id=274",
       "source_date": "2023-07-28",
       "reported_status": "CRO公告称第200例受试者入组，完成全部临床试验受试者入组",
       "reported_indication": "X部皱纹注射填充；具体部位待核验",
@@ -3645,8 +3581,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "白衣缘生物与康哲药业签订脱细胞基质植入剂独家许可协议",
-      "source_url": "https://www.baiyiyuan.com/article-117.html",
       "source_date": "2024-06-07",
       "reported_status": "企业公告称产品处于中国注册性临床试验阶段",
       "reported_indication": "面部真皮组织中层至深层注射/鼻唇沟方向",
@@ -3672,8 +3606,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_cro_notice",
       "source_type": "cro_notice",
-      "source_title": "奥泰康：注射用脱细胞基质生物凝胶临床试验首例入组",
-      "source_url": "https://www.healtech.com.cn/news/info.html?id=433",
       "source_date": "2025-06-27",
       "reported_status": "CRO公告称注射用脱细胞基质生物凝胶临床试验首例入组",
       "reported_indication": "医美注射方向，具体适应证待临床登记或企业公告确认",
@@ -3699,8 +3631,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_cro_notice",
       "source_type": "cro_notice",
-      "source_title": "西格玛医学：白衣缘生物国内首款ECM植入剂提交注册",
-      "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3564&c=View&m=home",
       "source_date": "2025-08-13",
       "reported_status": "CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
       "reported_indication": "面部真皮组织中层至深层注射/鼻唇沟方向待官方确认",
@@ -3726,8 +3656,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "青眼：圣至润合ECM注射产品临床与融资线索",
-      "source_url": "https://www.iqingyan.cn/Details.aspx?id=64607&type=1",
       "source_date": "2025-01-22",
       "reported_status": "报道回溯称2022年进入临床，2023年融资，丸美生物入股",
       "reported_indication": "再生医美注射方向",
@@ -3753,8 +3681,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "中新经纬：华清智美注射用3D打印人源脱细胞外基质获得主文档登记",
-      "source_url": "https://www.jwview.com/jingwei/html/m/04-21/621075.shtml",
       "source_date": "2025-04-21",
       "reported_status": "报道称2024年8月10日CMDE网站公布主文档登记",
       "reported_indication": "原料/主文档；终端适应证待映射",
@@ -3780,8 +3706,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "36氪：白衣缘SIS-ECM填充产品即将完成临床研发并有望递交注册",
-      "source_url": "https://eu.36kr.com/zh/p/3346904407579266",
       "source_date": "2025-06-17",
       "reported_status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
       "reported_indication": "医美填充/水光方向",
@@ -3807,8 +3731,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "医美与前沿：华清智美完成数千万A轮融资",
-      "source_url": "https://www.medbelove.com/index.php/2026/01/16/%E5%8D%8E%E6%B8%85%E6%99%BA%E7%BE%8E-%E7%A1%AC%E6%A0%B8%E6%8A%80%E6%9C%AF%E6%96%A9%E8%8E%B7%E3%80%8C%E5%8D%83%E4%B8%87%E8%9E%8D%E8%B5%84%E3%80%8D%EF%BC%8C%E9%A2%86%E8%B7%91ecm%E3%80%8C%E4%BA%A7/",
       "source_date": "2026-01-16",
       "reported_status": "报道称融资用于生物3D打印及人源工程化ECM技术迭代与规模化生产",
       "reported_indication": "平台型材料；终端医美适应证待查",
@@ -3834,8 +3756,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2300077935：交联透明质酸钠凝胶鼻背/鼻根塑形临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=185913",
       "source_date": "2023-11-24",
       "reported_status": "ChiCTR登记；执行期2022-11-01至2026-12-31，招募期2022-12-27至2024-04-30",
       "reported_indication": "鼻背和/或鼻根塑形",
@@ -3861,8 +3781,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2400094462 注射用透明质酸钠复合溶液改善皮肤状态临床研究",
-      "source_url": "https://www.chictr.org.cn/hvshowprojectEN.html?id=266296&v=1.0",
       "source_date": "2024-12-23",
       "reported_status": "ChiCTR显示前瞻性、多中心、随机、无治疗对照、优效性临床试验，预计480例",
       "reported_indication": "暂时性改善成人面部皮肤干燥、肤色暗沉",
@@ -3888,8 +3806,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500099220 注射用透明质酸钠复合溶液改善皮肤状态临床研究",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=272902&v=1.0",
       "source_date": "2025-03-19",
       "reported_status": "ChiCTR显示临床执行期2023-08-03至2024-04-08，招募状态为结束。",
       "reported_indication": "改善面部皮肤状态",
@@ -3915,8 +3831,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "official_acceptance_directory",
-      "source_title": "CDE受理品种目录：CQZ2401469 注射用透明质酸钠复合溶液",
-      "source_url": "",
       "source_date": "2025-01-08",
       "reported_status": "受理号CQZ2401469，申请类型为药械组合，企业名称为四川兴泰普乐医疗科技有限公司。",
       "reported_indication": "官方受理目录未披露适应证；结合临床登记观察为改善面部皮肤状态。",
@@ -3942,8 +3856,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "annual_report",
-      "source_title": "乐普医疗2025年年度报告摘要：注射用透明质酸钠复合溶液研发进度",
-      "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-04-23/27ed9e3f-d5be-4651-8034-a58398b4df65.PDF",
       "source_date": "2026-04-23",
       "reported_status": "年报核心产品研发进度列示该产品处于申报注册阶段，预期获证时间为2026Q4。",
       "reported_indication": "皮肤科药械产品线；具体适应证以注册证为准。",
@@ -3969,8 +3881,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600123040：修饰透明质酸钠-重组弹性蛋白复合凝胶矫正眶下凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=315119",
       "source_date": "2026-04-21",
       "reported_status": "III期临床；执行期2025-11-01至2027-12-31，招募期2026-04-24至2026-12-31。",
       "reported_indication": "眶下凹陷",
@@ -3996,8 +3906,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600118966：交联透明质酸钠凝胶纠正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=299905",
       "source_date": "2026-02-13",
       "reported_status": "临床执行期2024-05-24至2025-09-29，方案包含末次注射后48周随访。",
       "reported_indication": "中重度鼻唇沟皱纹",
@@ -4023,8 +3931,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500114694：驻颜传奇透明质酸钠复合溶液改善皮肤状态临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=300932",
       "source_date": "2025-12-16",
       "reported_status": "临床执行期2025-12-25至2027-12-24，试验组使用驻颜传奇生产的透明质酸钠复合溶液。",
       "reported_indication": "成人皮肤干燥、肤色暗沉及皮肤弹性",
@@ -4050,8 +3956,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500114695：含利多卡因交联透明质酸钠凝胶鼻唇沟注射疼痛改善临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=301022",
       "source_date": "2025-12-16",
       "reported_status": "临床执行期2025-12-21至2026-06-30，左右侧对照评价注射疼痛改善。",
       "reported_indication": "鼻唇沟皱纹注射疼痛改善",
@@ -4077,8 +3981,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500101160：MATEX交联透明质酸钠凝胶中面部容量缺失临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=268546",
       "source_date": "2025-04-21",
       "reported_status": "临床执行期2025-03-20至2027-02-28，申办方为MATEX LAB S.p.A.，代理人为重庆金赛星。",
       "reported_indication": "中面部容量缺失和/或中面部轮廓缺陷",
@@ -4104,8 +4006,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500102013：MATEX交联透明质酸钠凝胶鼻唇沟临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=271421",
       "source_date": "2025-05-07",
       "reported_status": "临床执行期2025-03-06至2027-05-31，申办者代理人为重庆金赛星医疗科技有限公司。",
       "reported_indication": "中重度鼻唇沟皱纹",
@@ -4131,8 +4031,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2400086166：Genoss交联透明质酸钠凝胶纠正静态额部皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=235205",
       "source_date": "2024-06-26",
       "reported_status": "临床执行期2024-05-31至2026-07-31，经费来源为Genoss及其中国代理。",
       "reported_indication": "静态额部皱纹",
@@ -4158,8 +4056,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2400082084：华熙修饰透明质酸钠凝胶矫正眶下凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=224132",
       "source_date": "2024-03-20",
       "reported_status": "临床执行期2024-01-15至2025-12-31，招募期2024-03-20至2024-07-31。",
       "reported_indication": "眶下凹陷",
@@ -4185,8 +4081,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500112303：华熙修饰透明质酸钠凝胶纠正颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=193851",
       "source_date": "2025-11-12",
       "reported_status": "临床执行期2022-11-01至2026-11-30，招募期2023-01-19至2023-03-07。",
       "reported_indication": "颞部凹陷",
@@ -4212,8 +4106,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "annual_report",
-      "source_title": "康拓医疗2025年年度报告：交联透明质酸钠凝胶处于技术审评阶段",
-      "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-31/12038816.PDF",
       "source_date": "2026-03-31",
       "reported_status": "年报披露交联透明质酸钠凝胶已顺利通过现场体系审核，处于技术审评阶段，预计2026年度获批注册。",
       "reported_indication": "颈部中重度皱纹",
@@ -4239,8 +4131,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "nmpa_delivery_notice",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "source_date": "2026-06-17",
       "reported_status": "NMPA送达信息列示受理号JQZ2400616，注册证编号国械注进20263130223，批准日期2026-06-16",
       "reported_indication": "交联透明质酸钠凝胶；具体适应证、型号规格和注册人详情待同步",
@@ -4266,8 +4156,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_acceptance_delivery",
       "source_type": "nmpa_delivery_notice",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html",
       "source_date": "2026-06-17",
       "reported_status": "NMPA送达信息列示受理号CQZ2500187，注册证编号国械注准20263131236，批准日期2026-06-16",
       "reported_indication": "透明质酸钠注射用溶液；具体适应证和分类待注册证详情同步",
@@ -4293,8 +4181,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_cro_notice",
       "source_type": "cro_notice",
-      "source_title": "斯丹姆：海雅美生物注射用交联透明质酸钠凝胶获国家药监局批准",
-      "source_url": "https://www.sdmcro.com/zh/new/109",
       "source_date": "2026-04-03",
       "reported_status": "CRO公告称海雅美注射用交联透明质酸钠凝胶获国家药监局批准",
       "reported_indication": "面部注射填充方向，具体适用范围以注册证详情为准",
@@ -4320,8 +4206,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_website",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html",
       "source_date": "2026-06-20",
       "reported_status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
       "reported_indication": "改善眶下凹陷",
@@ -4347,8 +4231,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2200057746：PCL填充剂矫正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=162638",
       "source_date": "2022-03-16",
       "reported_status": "ChiCTR登记；执行期2022-03-01至2024-03-31，招募期2022-03-16至2022-04-30",
       "reported_indication": "中重度鼻唇沟皱纹",
@@ -4374,8 +4256,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2400090613：PCL微球填充剂纠正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=246563",
       "source_date": "2024-10-10",
       "reported_status": "ChiCTR登记；执行期2024-10-15至2025-08-15，招募期2024-10-15至2024-11-30",
       "reported_indication": "中重度鼻唇沟皱纹",
@@ -4401,8 +4281,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500115518：聚己内酯凝胶改善轻中度颏后缩临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowprojectEN.html?id=291377&v=1.0",
       "source_date": "2025-12-26",
       "reported_status": "临床登记显示评价注射用聚己内酯凝胶用于改善成年人轻中度颏后缩",
       "reported_indication": "轻中度颏后缩",
@@ -4428,8 +4306,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600122338：聚己内酯面部填充剂改善鱼尾纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showprojEN.html?proj=317985",
       "source_date": "2026-04-13",
       "reported_status": "临床登记显示评价DEXLEVO生产的聚己内酯面部填充剂改善眼部鱼尾纹",
       "reported_indication": "中度至重度鱼尾纹",
@@ -4455,8 +4331,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
-      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html",
       "source_date": "2024-01-17",
       "reported_status": "企业公告披露注射用聚己内酯微球填充剂和CaHA微球填充剂独占许可合作",
       "reported_indication": "再生医学注射产品；具体适应证待临床登记和注册资料确认",
@@ -4482,8 +4356,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_website",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html",
       "source_date": "2026-06-20",
       "reported_status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
       "reported_indication": "改善颞部凹陷",
@@ -4509,8 +4381,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_website",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html",
       "source_date": "2026-06-20",
       "reported_status": "新增适应症临床试验已于2025年12月完成12个月安全性随访，目前在临床试验报告数据整理阶段",
       "reported_indication": "改善额部轮廓",
@@ -4536,8 +4406,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_classification",
       "source_type": "classification_result",
-      "source_title": "NIFDC分类界定结果：注射用透明质酸钠复合溶液/PDRN复合溶液",
-      "source_url": "https://app.nifdc.org.cn/biaogzx/dataGk.do?formAction=listFljdResult&index=377",
       "source_date": "2022-10-27",
       "reported_status": "分类界定结果显示该类产品由透明质酸钠和PDRN复合溶液组成，用于面部真皮层改善皮肤状态，按以医疗器械为主的药械组合产品路径判断",
       "reported_indication": "面部真皮层/肤质改善方向",
@@ -4563,8 +4431,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "annual_report",
-      "source_title": "江苏吴中2024年年度报告：取得丽徕科技PDRN复合溶液产品独家权益",
-      "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2025/2025-4/2025-04-30/11077548.PDF",
       "source_date": "2025-04-30",
       "reported_status": "年报披露吴中美学与北京丽徕科技签署投资协议，并取得注射用透明质酸钠-PDRN复合溶液产品独家权益。",
       "reported_indication": "PDRN再生水光/改善皮肤状态方向；具体注册适应证以后续官方受理文件为准。",
@@ -4590,8 +4456,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "吴中美学投资丽徕科技，布局再生水光PDRN婴儿针",
-      "source_url": "https://www.600200.com/article/167/detail/2225.html",
       "source_date": "2024-07-29",
       "reported_status": "吴中美学公告称取得丽徕科技PDRN复合溶液产品独家权益；国内尚无PDRN溶液三类医疗器械产品获批上市，丽徕产品已进入临床试验阶段",
       "reported_indication": "功能型水光/抗炎修复/肤质改善方向",
@@ -4617,8 +4481,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "江苏吴中官网：PDRN复合溶液完成全部临床受试者入组",
-      "source_url": "https://www.600200.com/article/168/detail/2287.html",
       "source_date": "2025-03-04",
       "reported_status": "企业公告称PDRN复合溶液完成全部临床受试者入组",
       "reported_indication": "再生水光/皮肤状态改善方向，具体适应证待官方注册资料确认",
@@ -4644,8 +4506,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "research_report",
-      "source_title": "CIRS：再生材料PDRN&PN注册介绍及临床试验要求",
-      "source_url": "https://www.cirs-group.com/cn/md/zai-sheng-cai-liao-pdrn-and-pn-zhu-ce-jie-shao-ji-lin-chuang-shi-yan-yao-qiu",
       "source_date": "2023-01-13",
       "reported_status": "报告称国内尚无已批准的PDRN/PN医美医疗器械注册证，医美类产品风险高，按三类器械监管",
       "reported_indication": "医美注射/皮肤修复/肤质改善方向",
@@ -4671,8 +4531,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "research_report",
-      "source_title": "中国医疗器械杂志：注射填充类医美产品标准研究与发展趋势",
-      "source_url": "https://zgylqxzz.xml-journal.net/cn/article/pdf/preview/10.12455/j.issn.1671-7104.250440.pdf",
       "source_date": "2025-05-29",
       "reported_status": "文章称截至2025年5月29日国内已有10家企业完成PDRN医疗器械主文档登记、2家企业完成PN主文档登记，但尚未有三类械字号PDRN/PN产品上市",
       "reported_indication": "PDRN/PN原料主文档与未来注射填充方向",
@@ -4698,8 +4556,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500095495：左旋乳酸-乙二醇共聚物微球填充剂鼻唇沟临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=253840",
       "source_date": "2025-01-08",
       "reported_status": "ChiCTR登记；I期临床，执行期2025-01-10至2025-02-26",
       "reported_indication": "中、重度鼻唇沟皱纹",
@@ -4725,8 +4581,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600120937：聚乳酸面部填充剂纠正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=314327",
       "source_date": "2026-03-23",
       "reported_status": "ChiCTR预注册；执行期2026-01-30至2028-12-31，招募期2026-03-24至2026-07-31",
       "reported_indication": "中重度鼻唇沟皱纹",
@@ -4752,8 +4606,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500101608：聚左旋乳酸面部填充剂纠正颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=270763",
       "source_date": "2025-04-27",
       "reported_status": "临床登记显示评价聚左旋乳酸面部填充剂纠正颞部凹陷",
       "reported_indication": "颞部凹陷",
@@ -4779,8 +4631,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2600121023：PLLA微球交联HA凝胶改善中面部容量缺失临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=311740",
       "source_date": "2026-03-24",
       "reported_status": "临床登记显示评价含聚左旋乳酸微球的交联透明质酸钠凝胶改善中面部容量缺失和轮廓缺陷",
       "reported_indication": "中面部容量缺失和/或轮廓缺陷",
@@ -4806,8 +4656,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_website",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html",
       "source_date": "2026-06-20",
       "reported_status": "2025年12月完成临床12个月安全性随访，目前在临床试验报告数据整理阶段",
       "reported_indication": "改善下颌缘",
@@ -4833,8 +4681,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "official_classification",
       "source_type": "classification_result",
-      "source_title": "NIFDC分类界定结果：注射用多聚核苷酸凝胶",
-      "source_url": "https://app.nifdc.org.cn/biaogzx/dataGk.do?formAction=listFljdResult&index=465",
       "source_date": "2024-10-31",
       "reported_status": "分类界定结果显示注射用多聚核苷酸凝胶由多聚核苷酸、磷酸盐缓冲液组成，按药械组合产品判定程序界定管理",
       "reported_indication": "面部真皮组织填充/成人眼角细纹方向",
@@ -4860,8 +4706,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "industry_media",
       "source_type": "research_report",
-      "source_title": "西格玛医学：三文鱼针注册介绍及临床试验要求",
-      "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3340&c=View&m=home",
       "source_date": "2025-01-06",
       "reported_status": "CRO专业文章梳理PN/三文鱼针在境内注册与临床试验要求",
       "reported_indication": "PN/三文鱼针医美注射方向；项目级信息需官方和企业来源补齐",
@@ -4887,8 +4731,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR2500114891 注射用丝素蛋白凝胶额纹临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=290634&v=1.0",
       "source_date": "2025-12-18",
       "reported_status": "临床登记显示评价注射用丝素蛋白凝胶纠正额部动力性皱纹的有效性和安全性",
       "reported_indication": "额部动力性皱纹/额头纹",
@@ -4914,8 +4756,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
-      "source_title": "ChiCTR英文页：Silk fibroin gel for injection correcting dynamic forehead wrinkles",
-      "source_url": "https://www.chictr.org.cn/showprojEN.html?proj=300007",
       "source_date": "2025-12-18",
       "reported_status": "ChiCTR英文页显示研究评价注射用丝素蛋白凝胶纠正额部动力性皱纹的有效性和安全性",
       "reported_indication": "额部动力性皱纹/额头纹",
@@ -4941,8 +4781,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "active",
       "source_lane": "company_disclosure",
       "source_type": "company_news",
-      "source_title": "思元医疗：医用再生丝素蛋白-透明质酸钠凝胶临床研究正在开展",
-      "source_url": "https://www.siyuanyl.com/news/42.html",
       "source_date": "2025-04-03",
       "reported_status": "企业公告称三家医院开展多中心随机对照临床试验并已通过伦理",
       "reported_indication": "颞部凹陷",
@@ -4968,8 +4806,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "needs_verification",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "星月生物：国内首个面部三类丝素蛋白上市申请获受理",
-      "source_url": "https://www.medbelove.com/index.php/2025/06/05/%E6%98%9F%E6%9C%88%E7%94%9F%E7%89%A9-%E5%9B%BD%E5%86%85%E9%A6%96%E4%B8%AA%E3%80%8C%E9%9D%A2%E9%83%A8%E3%80%8D%E4%B8%89%E7%B1%BB%E3%80%8C%E4%B8%9D%E7%B4%A0%E8%9B%8B%E7%99%BD%E3%80%8D%E4%B8%8A/",
       "source_date": "2025-06-05",
       "reported_status": "报道称上市申请获NMPA受理，受理号CQZ2501010",
       "reported_indication": "面部适应证/水光定位待官方确认",
@@ -4995,8 +4831,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "ByDrug：维纳丝纯丝素蛋白凝胶完成第一阶段临床试验",
-      "source_url": "https://bydrug.pharmcube.com/news/detail/700c8d9c7676d6b95c2c1c9c279b8c51",
       "source_date": "2026-04-21",
       "reported_status": "报道称已完成A组全部入组，启动B组程序，并完成数十例受试者入组",
       "reported_indication": "额部动力性皱纹/额头纹",
@@ -5022,8 +4856,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "needs_verification",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "ByDrug：复向医疗注射用含丝素蛋白的交联透明质酸钠凝胶首个中心入组完成",
-      "source_url": "https://bydrug.pharmcube.com/news/detail/0dcb887c6ee8518773e2b45a30bf1b43",
       "source_date": "2026-05-20",
       "reported_status": "报道称2026年1月完成全部受试者入组",
       "reported_indication": "成人中重度鼻唇沟皱纹",
@@ -5049,8 +4881,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "evidence_status": "archived",
       "source_lane": "industry_media",
       "source_type": "media_article",
-      "source_title": "界面/动脉网：思元丝素蛋白HA凝胶预计2027年提交注册",
-      "source_url": "https://www.jiemian.com/article/14403444.html",
       "source_date": "2026-05-20",
       "reported_status": "报道称项目已启动临床入组，预计2027年可提交注册",
       "reported_indication": "颞部填充",
@@ -5075,8 +4905,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "既有证照/非医美基线",
       "evidence_grade": "A1",
       "status": "NMPA送达信息列示国械注准20173130346，产品名称为羟基磷灰石生物陶瓷，申请人为四川拜阿蒙生物活性材料有限责任公司。",
-      "source_title": "NMPA 2021年12月08日医疗器械批准证明文件待领取信息：羟基磷灰石生物陶瓷",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20211208133629120.html"
     },
     {
       "id": "milestone_pipe_pcl_meiyan_chictr2200057746",
@@ -5089,8 +4917,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2022-03-01至2024-03-31，招募期2022-03-16至2022-04-30",
-      "source_title": "ChiCTR2200057746：PCL填充剂矫正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=162638"
     },
     {
       "id": "milestone_pipe_pdrn_nifdc_classification_202210",
@@ -5103,8 +4929,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "分类界定",
       "evidence_grade": "A1",
       "status": "分类界定结果显示该类产品由透明质酸钠和PDRN复合溶液组成，用于面部真皮层改善皮肤状态，按以医疗器械为主的药械组合产品路径判断",
-      "source_title": "NIFDC分类界定结果：注射用透明质酸钠复合溶液/PDRN复合溶液",
-      "source_url": "https://app.nifdc.org.cn/biaogzx/dataGk.do?formAction=listFljdResult&index=377"
     },
     {
       "id": "milestone_pipe_pdrn_cirs_202301_regulatory_intro",
@@ -5117,8 +4941,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "分类界定",
       "evidence_grade": "A4",
       "status": "报告称国内尚无已批准的PDRN/PN医美医疗器械注册证，医美类产品风险高，按三类器械监管",
-      "source_title": "CIRS：再生材料PDRN&PN注册介绍及临床试验要求",
-      "source_url": "https://www.cirs-group.com/cn/md/zai-sheng-cai-liao-pdrn-and-pn-zhu-ce-jie-shao-ji-lin-chuang-shi-yan-yao-qiu"
     },
     {
       "id": "milestone_pipe_ecm_shengzhirunhe_20230728_enrollment",
@@ -5131,8 +4953,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "入组完成",
       "evidence_grade": "A3",
       "status": "CRO公告称第200例受试者入组，完成全部临床试验受试者入组",
-      "source_title": "奥泰康：细胞外基质生物凝胶临床试验完成全部入组",
-      "source_url": "https://www.healtech.com.cn/news/info.html?id=274"
     },
     {
       "id": "milestone_pipe_caha_cgbio_huatang_official_20231023",
@@ -5145,8 +4965,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "上市注册推进",
       "evidence_grade": "A3",
       "status": "华瑭医疗负责FACETEM在中国大陆的上市注册；获批后拥有十年商业化权益",
-      "source_title": "HTDK and CGBio Sign Agreement to License FACETEM Hydroxyapatite Fillers in the Chinese Market",
-      "source_url": "https://www.htdkgroup.com/en/news/htdk-and-cgbio-sign-agreement-to-commercialize-and-license-facetem-hydroxyapatite-fillers-in-the-chinese-market"
     },
     {
       "id": "milestone_pipe_ha_bloomage_chictr2300077935",
@@ -5159,8 +4977,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2022-11-01至2026-12-31，招募期2022-12-27至2024-04-30",
-      "source_title": "ChiCTR2300077935：交联透明质酸钠凝胶鼻背/鼻根塑形临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=185913"
     },
     {
       "id": "milestone_pipe_collagen_jland_chictr2300078494",
@@ -5173,8 +4989,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价重组III型人源化胶原蛋白冻干纤维改善面部皮肤状态",
-      "source_title": "ChiCTR2300078494：重组III型胶原蛋白冻干纤维改善面部真皮组织状态临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=212254"
     },
     {
       "id": "milestone_pipe_caha_xihong_cms_license_20240117",
@@ -5187,8 +5001,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A3",
       "status": "企业公告称两款Ⅲ类再生医学注射产品均处于中国注册性临床试验阶段",
-      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
-      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html"
     },
     {
       "id": "milestone_pipe_pcl_xihong_cms_license_20240117",
@@ -5201,8 +5013,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A3",
       "status": "企业公告披露注射用聚己内酯微球填充剂和CaHA微球填充剂独占许可合作",
-      "source_title": "西宏医药与康哲药业签订再生医学注射产品独占许可协议",
-      "source_url": "https://www.jsxihong.com/gongsixinwen/258.html"
     },
     {
       "id": "milestone_pipe_collagen_pumch_chictr2400082129",
@@ -5215,8 +5025,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2024-01-18至2025-05-28，招募期2024-03-28至2024-05-28",
-      "source_title": "ChiCTR2400082129：重组Ⅲ型胶原蛋白溶液改善面部皮肤状态临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=248829&v=1.0"
     },
     {
       "id": "milestone_pipe_ecm_baiyiyuan_cms_20240607",
@@ -5229,8 +5037,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A3",
       "status": "企业公告称产品处于中国注册性临床试验阶段",
-      "source_title": "白衣缘生物与康哲药业签订脱细胞基质植入剂独家许可协议",
-      "source_url": "https://www.baiyiyuan.com/article-117.html"
     },
     {
       "id": "milestone_pipe_pdrn_wuzhong_liylai_20240729",
@@ -5243,8 +5049,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A3",
       "status": "吴中美学公告称取得丽徕科技PDRN复合溶液产品独家权益；国内尚无PDRN溶液三类医疗器械产品获批上市，丽徕产品已进入临床试验阶段",
-      "source_title": "吴中美学投资丽徕科技，布局再生水光PDRN婴儿针",
-      "source_url": "https://www.600200.com/article/167/detail/2225.html"
     },
     {
       "id": "milestone_pipe_botulinum_dn001_chictr2400088794",
@@ -5257,8 +5061,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；I/II期，执行期2024-09-01至2025-12-31",
-      "source_title": "ChiCTR2400088794：DN001重组A型肉毒毒素治疗中重度眉间纹I/II期临床",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=242298"
     },
     {
       "id": "milestone_pipe_pcl_jikun_chictr2400090613",
@@ -5271,8 +5073,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2024-10-15至2025-08-15，招募期2024-10-15至2024-11-30",
-      "source_title": "ChiCTR2400090613：PCL微球填充剂纠正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=246563"
     },
     {
       "id": "milestone_pipe_pn_nifdc_classification_202410",
@@ -5285,8 +5085,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "分类界定",
       "evidence_grade": "A1",
       "status": "分类界定结果显示注射用多聚核苷酸凝胶由多聚核苷酸、磷酸盐缓冲液组成，按药械组合产品判定程序界定管理",
-      "source_title": "NIFDC分类界定结果：注射用多聚核苷酸凝胶",
-      "source_url": "https://app.nifdc.org.cn/biaogzx/dataGk.do?formAction=listFljdResult&index=465"
     },
     {
       "id": "milestone_pipe_ha_betanni_chictr2400094462",
@@ -5299,8 +5097,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR显示前瞻性、多中心、随机、无治疗对照、优效性临床试验，预计480例",
-      "source_title": "ChiCTR2400094462 注射用透明质酸钠复合溶液改善皮肤状态临床研究",
-      "source_url": "https://www.chictr.org.cn/hvshowprojectEN.html?id=266296&v=1.0"
     },
     {
       "id": "milestone_pipe_pn_sigma_regulatory_intro_20250106",
@@ -5313,8 +5109,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "分类界定",
       "evidence_grade": "A4",
       "status": "CRO专业文章梳理PN/三文鱼针在境内注册与临床试验要求",
-      "source_title": "西格玛医学：三文鱼针注册介绍及临床试验要求",
-      "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3340&c=View&m=home"
     },
     {
       "id": "milestone_pipe_plla_xihong_chictr2500095495",
@@ -5327,8 +5121,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；I期临床，执行期2025-01-10至2025-02-26",
-      "source_title": "ChiCTR2500095495：左旋乳酸-乙二醇共聚物微球填充剂鼻唇沟临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=253840"
     },
     {
       "id": "milestone_pipe_ha_xtpl_cqz2401469_acceptance_20250108",
@@ -5341,8 +5133,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "受理/审评",
       "evidence_grade": "A1",
       "status": "受理号CQZ2401469，申请类型为药械组合，官方品名为注射用透明质酸钠复合溶液",
-      "source_title": "CDE受理品种目录：CQZ2401469 注射用透明质酸钠复合溶液",
-      "source_url": ""
     },
     {
       "id": "milestone_pipe_ha_bloomage_infraorbital_chictr2400082084",
@@ -5355,8 +5145,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床完成",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2024-01-15至2025-12-31，招募期2024-03-20至2024-07-31",
-      "source_title": "ChiCTR2400082084：华熙修饰透明质酸钠凝胶矫正眶下凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=224132"
     },
     {
       "id": "milestone_pipe_ha_genoss_forehead_chictr2400086166",
@@ -5369,8 +5157,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2024-05-31至2026-07-31，经费来源为Genoss及其中国代理",
-      "source_title": "ChiCTR2400086166：Genoss交联透明质酸钠凝胶纠正静态额部皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=235205"
     },
     {
       "id": "milestone_pipe_ha_matex_jinsaixing_chictr2500101160",
@@ -5383,8 +5169,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2025-03-20至2027-02-28，适应证为中面部容量缺失/轮廓缺陷",
-      "source_title": "ChiCTR2500101160：MATEX交联透明质酸钠凝胶中面部容量缺失临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=268546"
     },
     {
       "id": "milestone_pipe_ha_matex_jinsaixing_chictr2500102013",
@@ -5397,8 +5181,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2025-03-06至2027-05-31，适应证为中重度鼻唇沟皱纹",
-      "source_title": "ChiCTR2500102013：MATEX交联透明质酸钠凝胶鼻唇沟临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=271421"
     },
     {
       "id": "milestone_pipe_ha_bloomage_temporal_chictr2500112303",
@@ -5411,8 +5193,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2022-11-01至2026-11-30，招募期2023-01-19至2023-03-07",
-      "source_title": "ChiCTR2500112303：华熙修饰透明质酸钠凝胶纠正颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=193851"
     },
     {
       "id": "milestone_pipe_ha_haohai_lidocaine_chictr2500114695",
@@ -5425,8 +5205,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2025-12-21至2026-06-30，评价鼻唇沟注射疼痛改善",
-      "source_title": "ChiCTR2500114695：含利多卡因交联透明质酸钠凝胶鼻唇沟注射疼痛改善临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=301022"
     },
     {
       "id": "milestone_pipe_ha_zhuyan_chictr2500114694",
@@ -5439,8 +5217,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2025-12-25至2027-12-24，试验组使用驻颜传奇生产的透明质酸钠复合溶液",
-      "source_title": "ChiCTR2500114694：驻颜传奇透明质酸钠复合溶液改善皮肤状态临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=300932"
     },
     {
       "id": "milestone_pipe_ha_jikun_chictr2600118966",
@@ -5453,8 +5229,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床完成",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2024-05-24至2025-09-29，方案包含末次注射后48周随访",
-      "source_title": "ChiCTR2600118966：交联透明质酸钠凝胶纠正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=299905"
     },
     {
       "id": "milestone_pipe_ha_kontour_meiyan_crosslinked_annual_20260331",
@@ -5467,8 +5241,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "受理/审评",
       "evidence_grade": "A2",
       "status": "年报披露已通过现场体系审核，处于技术审评阶段，预计2026年度获批注册",
-      "source_title": "康拓医疗2025年年度报告：交联透明质酸钠凝胶处于技术审评阶段",
-      "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-31/12038816.PDF"
     },
     {
       "id": "milestone_pipe_ha_zhenyan_elastin_chictr2600123040",
@@ -5481,8 +5253,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；III期临床，执行期2025-11-01至2027-12-31，招募期2026-04-24至2026-12-31",
-      "source_title": "ChiCTR2600123040：修饰透明质酸钠-重组弹性蛋白复合凝胶矫正眶下凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=315119"
     },
     {
       "id": "milestone_pipe_caha_cgbio_huatang_202311_market_entry",
@@ -5495,8 +5265,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "上市注册推进",
       "evidence_grade": "A4",
       "status": "报道称2023年11月双方宣布合作推动上市许可",
-      "source_title": "21世纪经济报道：华瑭大昌与CGBio推动羟基磷灰石填充物上市许可",
-      "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html"
     },
     {
       "id": "milestone_pipe_caha_harmonyca_202409_type_testing",
@@ -5509,8 +5277,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "注册检验完成",
       "evidence_grade": "A4",
       "status": "报道称2024年9月中国完成注册检验，即将进入临床试验",
-      "source_title": "21世纪经济报道：HArmonyCa在中国完成注册检验",
-      "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html"
     },
     {
       "id": "milestone_pipe_caha_radiesse_2023_clinical",
@@ -5523,8 +5289,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A4",
       "status": "报道称2023年再次发起中国注册临床",
-      "source_title": "21世纪经济报道：Radiesse国内启动鼻唇沟适应证注册临床",
-      "source_url": "https://www.21jingji.com/article/20250115/herald/593372e3c134ea3a03ddf56fd70ebd3f.html"
     },
     {
       "id": "milestone_pipe_pcl_zhenyan_chictr2500096028",
@@ -5537,8 +5301,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；III期临床，执行期2024-05-01至2026-09-30，招募期2025-01-20至2025-12-31",
-      "source_title": "ChiCTR2500096028：PCL+重组Ⅲ型胶原+HA组合包用于颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=268100&v=1.0"
     },
     {
       "id": "milestone_pipe_caha_rejuve_puju_202410_followup",
@@ -5551,8 +5313,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "随访中",
       "evidence_grade": "A4",
       "status": "报道提到Rejuve项目完成近200例受试者入组并完成超过6个月随访",
-      "source_title": "证券时报/界面：Rejuve完成近200例入组并随访超过6个月",
-      "source_url": "https://www.stcn.com/article/detail/1501379.html"
     },
     {
       "id": "milestone_pipe_caha_shanghai_tenth_nasolabial_trial",
@@ -5565,8 +5325,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "随访中",
       "evidence_grade": "A4",
       "status": "报道称2024年上海市第十人民医院皮肤科承担前瞻性、多中心、单盲、随机对照、非劣效临床研究",
-      "source_title": "新京报：上海市第十人民医院承担CaHA面部填充剂多中心临床研究",
-      "source_url": "https://m.bjnews.com.cn/detail/1737370268129650.html"
     },
     {
       "id": "milestone_pipe_ecm_shengzhirunhe_20250122_financing",
@@ -5579,8 +5337,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床完成/融资披露",
       "evidence_grade": "A4",
       "status": "报道回溯称2022年进入临床，2023年融资，丸美生物入股",
-      "source_title": "青眼：圣至润合ECM注射产品临床与融资线索",
-      "source_url": "https://www.iqingyan.cn/Details.aspx?id=64607&type=1"
     },
     {
       "id": "milestone_pipe_caha_aphranel_cmde_20250217",
@@ -5593,8 +5349,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A0",
       "status": "已获批，注册证号国械注准20253130390",
-      "source_title": "CMDE医疗器械产品注册技术审评报告：注射用羟基磷酸钙微球面部填充剂",
-      "source_url": "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf"
     },
     {
       "id": "milestone_pipe_pdrn_wuzhong_enrollment_20250304",
@@ -5607,8 +5361,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "入组完成",
       "evidence_grade": "A3",
       "status": "企业公告称PDRN复合溶液完成全部临床受试者入组",
-      "source_title": "江苏吴中官网：PDRN复合溶液完成全部临床受试者入组",
-      "source_url": "https://www.600200.com/article/168/detail/2287.html"
     },
     {
       "id": "milestone_pipe_caha_radiesse_cmde_20250307",
@@ -5621,8 +5373,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A0",
       "status": "已获批，注册证号国械注进20253130124",
-      "source_title": "CMDE医疗器械产品注册技术审评报告：RADIESSE INJECTABLE IMPLANT",
-      "source_url": "https://www.cmde.org.cn/directory/web/cmde/images/1742778436369013951.pdf"
     },
     {
       "id": "milestone_pipe_ha_xtpl_chictr2500099220",
@@ -5635,8 +5385,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床完成",
       "evidence_grade": "A1",
       "status": "ChiCTR显示临床执行期2023-08-03至2024-04-08，招募状态为结束",
-      "source_title": "ChiCTR2500099220 注射用透明质酸钠复合溶液改善皮肤状态临床研究",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=272902&v=1.0"
     },
     {
       "id": "milestone_pipe_silk_siyuan_temporal_20250403",
@@ -5649,8 +5397,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床进行中",
       "evidence_grade": "A3",
       "status": "企业公告称三家医院开展多中心随机对照临床试验并已通过伦理",
-      "source_title": "思元医疗：医用再生丝素蛋白-透明质酸钠凝胶临床研究正在开展",
-      "source_url": "https://www.siyuanyl.com/news/42.html"
     },
     {
       "id": "milestone_pipe_ecm_huaqingzhimei_masterfile_20240810",
@@ -5663,8 +5409,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "主文档/原料",
       "evidence_grade": "A4",
       "status": "报道称2024年8月10日CMDE网站公布主文档登记",
-      "source_title": "中新经纬：华清智美注射用3D打印人源脱细胞外基质获得主文档登记",
-      "source_url": "https://www.jwview.com/jingwei/html/m/04-21/621075.shtml"
     },
     {
       "id": "milestone_pipe_plla_maikelong_chictr2500101608",
@@ -5677,8 +5421,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价聚左旋乳酸面部填充剂纠正颞部凹陷",
-      "source_title": "ChiCTR2500101608：聚左旋乳酸面部填充剂纠正颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=270763"
     },
     {
       "id": "milestone_pipe_pdrn_wuzhong_2024_ar",
@@ -5691,8 +5433,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "权益/管线披露",
       "evidence_grade": "A2",
       "status": "年报披露吴中美学与北京丽徕科技签署投资协议，并取得注射用透明质酸钠-PDRN复合溶液产品独家权益。",
-      "source_title": "江苏吴中2024年年度报告：取得丽徕科技PDRN复合溶液产品独家权益",
-      "source_url": "https://file.finance.sina.com.cn/211.154.219.97%3A9494/MRGG/CNSESH_STOCK/2025/2025-4/2025-04-30/11077548.PDF"
     },
     {
       "id": "milestone_pipe_botulinum_dj01_chictr2500102819",
@@ -5705,8 +5445,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；I/II期，执行期2025-04-23至2025-11-02，招募期2025-05-25至2025-09-30",
-      "source_title": "ChiCTR2500102819：DJ-01重组A型肉毒毒素改善中重度眉间纹I/II期临床",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=272642"
     },
     {
       "id": "milestone_pipe_caha_harmonyca_clinicaltrials_nct07032597",
@@ -5719,8 +5457,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ClinicalTrials显示中国约9个中心、约252例，评估HArmonyCa Lidocaine恢复/创建中面部容量的安全性和有效性",
-      "source_title": "ClinicalTrials.gov NCT07032597：HArmonyCa Lidocaine中国中面部容量III期研究",
-      "source_url": "https://clinicaltrials.gov/study/NCT07032597"
     },
     {
       "id": "milestone_pipe_caha_harmonyca_abbvie_m21_782",
@@ -5733,8 +5469,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A3",
       "status": "AbbVie官方临床页显示Recruitment Complete，研究约252名成人受试者，约9个中国中心",
-      "source_title": "AbbVie Clinical Trials M21-782：HArmonyCa Lidocaine中国研究",
-      "source_url": "https://abbvieclinicaltrials.com/study/M21-782"
     },
     {
       "id": "milestone_pipe_pdrn_standard_review_20250529",
@@ -5747,8 +5481,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "主文档/原料",
       "evidence_grade": "A4",
       "status": "文章称截至2025年5月29日国内已有10家企业完成PDRN医疗器械主文档登记、2家企业完成PN主文档登记，但尚未有三类械字号PDRN/PN产品上市",
-      "source_title": "中国医疗器械杂志：注射填充类医美产品标准研究与发展趋势",
-      "source_url": "https://zgylqxzz.xml-journal.net/cn/article/pdf/preview/10.12455/j.issn.1671-7104.250440.pdf"
     },
     {
       "id": "milestone_pipe_silk_xingyue_cqz2501010",
@@ -5761,8 +5493,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "受理/送达",
       "evidence_grade": "A4",
       "status": "报道称上市申请获NMPA受理，受理号CQZ2501010",
-      "source_title": "星月生物：国内首个面部三类丝素蛋白上市申请获受理",
-      "source_url": "https://www.medbelove.com/index.php/2025/06/05/%E6%98%9F%E6%9C%88%E7%94%9F%E7%89%A9-%E5%9B%BD%E5%86%85%E9%A6%96%E4%B8%AA%E3%80%8C%E9%9D%A2%E9%83%A8%E3%80%8D%E4%B8%89%E7%B1%BB%E3%80%8C%E4%B8%9D%E7%B4%A0%E8%9B%8B%E7%99%BD%E3%80%8D%E4%B8%8A/"
     },
     {
       "id": "milestone_pipe_ecm_baiyiyuan_36kr_20250617_conflict",
@@ -5775,8 +5505,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床至注册预期",
       "evidence_grade": "A4",
       "status": "报道称SIS-ECM填充产品即将完成临床研发，有望于今年递交产品注册申请",
-      "source_title": "36氪：白衣缘SIS-ECM填充产品即将完成临床研发并有望递交注册",
-      "source_url": "https://eu.36kr.com/zh/p/3346904407579266"
     },
     {
       "id": "milestone_pipe_ecm_shengzhirunhe_second_20250703",
@@ -5789,8 +5517,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "首例入组",
       "evidence_grade": "A3",
       "status": "CRO公告称注射用脱细胞基质生物凝胶临床试验首例入组",
-      "source_title": "奥泰康：注射用脱细胞基质生物凝胶临床试验首例入组",
-      "source_url": "https://www.healtech.com.cn/news/info.html?id=433"
     },
     {
       "id": "milestone_pipe_caha_ruiyang_chictr2500107432",
@@ -5803,8 +5529,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR登记；执行期2024-11-27至2027-08-13，招募期2025-04-07至2025-08-31",
-      "source_title": "ChiCTR2500107432：CaHA+交联HA用于改善颞部凹陷临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=265724"
     },
     {
       "id": "milestone_pipe_ecm_baiyiyuan_sigma_20250813_acceptance",
@@ -5817,8 +5541,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "受理/送达",
       "evidence_grade": "A3",
       "status": "CRO公告称已提交NMPA III类医疗器械注册申请并获得受理",
-      "source_title": "西格玛医学：白衣缘生物国内首款ECM植入剂提交注册",
-      "source_url": "https://www.sigma-stat.com/index.php?a=index&aid=3564&c=View&m=home"
     },
     {
       "id": "milestone_pipe_silk_venusilk_chictr2500114891",
@@ -5831,8 +5553,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价注射用丝素蛋白凝胶纠正额部动力性皱纹的有效性和安全性",
-      "source_title": "ChiCTR2500114891 注射用丝素蛋白凝胶额纹临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=290634&v=1.0"
     },
     {
       "id": "milestone_pipe_silk_venusilk_chictr_en_300007",
@@ -5845,8 +5565,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR英文页显示研究评价注射用丝素蛋白凝胶纠正额部动力性皱纹的有效性和安全性",
-      "source_title": "ChiCTR英文页：Silk fibroin gel for injection correcting dynamic forehead wrinkles",
-      "source_url": "https://www.chictr.org.cn/showprojEN.html?proj=300007"
     },
     {
       "id": "milestone_pipe_collagen_trautec_company_20251223",
@@ -5859,8 +5577,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A3",
       "status": "企业官网称交联重组胶原蛋白植入剂获NMPA批准上市，注册证编号国械注准20253132643",
-      "source_title": "创健医疗交联重组胶原蛋白植入剂正式获批",
-      "source_url": "https://www.trautec.com.cn/show-216.html"
     },
     {
       "id": "milestone_pipe_pcl_caicai_chictr2500115518",
@@ -5873,8 +5589,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价注射用聚己内酯凝胶用于改善成年人轻中度颏后缩",
-      "source_title": "ChiCTR2500115518：聚己内酯凝胶改善轻中度颏后缩临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowprojectEN.html?id=291377&v=1.0"
     },
     {
       "id": "milestone_pipe_botulinum_aimeike_hutox_20260108",
@@ -5887,8 +5601,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A2",
       "status": "获得药品注册证书；批准文号国药准字SJ20260001；规格100U/瓶",
-      "source_title": "爱美客：关于公司独家经销进口产品获得药品注册证书的公告",
-      "source_url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11906375&stockid=300896"
     },
     {
       "id": "milestone_pipe_collagen_qipu_nmpa_delivery_20260108",
@@ -5901,8 +5613,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A1",
       "status": "NMPA送达信息列示胶原蛋白植入剂获批，注册证编号国械注准20263130023，批准日期2026-01-07",
-      "source_title": "NMPA 2026年01月08日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/directory/web/nmpa/zwfw/sdxx/sdxxylqx/qxpjfb/20260108164308142.html"
     },
     {
       "id": "milestone_pipe_collagen_meishangjie_chictr2600116713",
@@ -5915,8 +5625,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价重组III型人源化胶原蛋白冻干纤维改善中重度鱼尾纹",
-      "source_title": "ChiCTR2600116713：重组III型胶原蛋白冻干纤维改善鱼尾纹临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=292763&v=1.0"
     },
     {
       "id": "milestone_pipe_ecm_huaqingzhimei_financing_20260116",
@@ -5929,8 +5637,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "平台/资本线索",
       "evidence_grade": "A4",
       "status": "报道称融资用于生物3D打印及人源工程化ECM技术迭代与规模化生产",
-      "source_title": "医美与前沿：华清智美完成数千万A轮融资",
-      "source_url": "https://www.medbelove.com/index.php/2026/01/16/%E5%8D%8E%E6%B8%85%E6%99%BA%E7%BE%8E-%E7%A1%AC%E6%A0%B8%E6%8A%80%E6%9C%AF%E6%96%A9%E8%8E%B7%E3%80%8C%E5%8D%83%E4%B8%87%E8%9E%8D%E8%B5%84%E3%80%8D%EF%BC%8C%E9%A2%86%E8%B7%91ecm%E3%80%8C%E4%BA%A7/"
     },
     {
       "id": "milestone_pipe_collagen_jinbo_colnet_chictr2600119404",
@@ -5943,8 +5649,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价Colnet重组III型人源化胶原蛋白冻干纤维改善口周皱纹",
-      "source_title": "ChiCTR2600119404：Colnet重组III型胶原蛋白冻干纤维改善口周皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/hvshowproject.html?id=295856&v=1.0"
     },
     {
       "id": "milestone_pipe_caha_haohai_2025_ar",
@@ -5957,8 +5661,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床/型检",
       "evidence_grade": "A2",
       "status": "首款产品临床试验有序推进；第二及第三款产品进入注册检验",
-      "source_title": "昊海生科2025年年度报告",
-      "source_url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12008334&stockid=688366"
     },
     {
       "id": "milestone_pipe_plla_apre_chictr2600120937",
@@ -5971,8 +5673,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "ChiCTR预注册；执行期2026-01-30至2028-12-31，招募期2026-03-24至2026-07-31",
-      "source_title": "ChiCTR2600120937：聚乳酸面部填充剂纠正中重度鼻唇沟皱纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=314327"
     },
     {
       "id": "milestone_pipe_plla_xtpl_chictr2600121023",
@@ -5985,8 +5685,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价含聚左旋乳酸微球的交联透明质酸钠凝胶改善中面部容量缺失和轮廓缺陷",
-      "source_title": "ChiCTR2600121023：PLLA微球交联HA凝胶改善中面部容量缺失临床试验",
-      "source_url": "https://www.chictr.org.cn/showproj.html?proj=311740"
     },
     {
       "id": "milestone_pipe_botulinum_yuyan_retoxin_20260328",
@@ -5999,8 +5697,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A2",
       "status": "NMPA批准上市；受理号CXSS2400144；批准文号国药准字S20260019；规格100单位/支",
-      "source_title": "华东医药：关于独家经销产品注射用重组A型肉毒毒素注册申请获得上市批准的公告",
-      "source_url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042505.PDF"
     },
     {
       "id": "milestone_pipe_ha_haiyamei_sdmcro_20260403",
@@ -6013,8 +5709,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A3",
       "status": "CRO公告称海雅美注射用交联透明质酸钠凝胶获国家药监局批准",
-      "source_title": "斯丹姆：海雅美生物注射用交联透明质酸钠凝胶获国家药监局批准",
-      "source_url": "https://www.sdmcro.com/zh/new/109"
     },
     {
       "id": "milestone_pipe_pcl_dexlevo_chictr2600122338",
@@ -6027,8 +5721,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "临床登记",
       "evidence_grade": "A1",
       "status": "临床登记显示评价DEXLEVO生产的聚己内酯面部填充剂改善眼部鱼尾纹",
-      "source_title": "ChiCTR2600122338：聚己内酯面部填充剂改善鱼尾纹临床试验",
-      "source_url": "https://www.chictr.org.cn/showprojEN.html?proj=317985"
     },
     {
       "id": "milestone_pipe_silk_venusilk_stage1_20260421",
@@ -6041,8 +5733,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "阶段完成",
       "evidence_grade": "A4",
       "status": "报道称已完成A组全部入组，启动B组程序，并完成数十例受试者入组",
-      "source_title": "ByDrug：维纳丝纯丝素蛋白凝胶完成第一阶段临床试验",
-      "source_url": "https://bydrug.pharmcube.com/news/detail/700c8d9c7676d6b95c2c1c9c279b8c51"
     },
     {
       "id": "milestone_pipe_ha_xtpl_lepu_annual_20260423",
@@ -6055,8 +5745,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "获证预期",
       "evidence_grade": "A2",
       "status": "年报核心产品研发进度列示该产品处于申报注册阶段，预期获证时间为2026Q4",
-      "source_title": "乐普医疗2025年年度报告摘要：注射用透明质酸钠复合溶液研发进度",
-      "source_url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-04-23/27ed9e3f-d5be-4651-8034-a58398b4df65.PDF"
     },
     {
       "id": "milestone_pipe_silk_siyuan_2027_submit_expected",
@@ -6069,8 +5757,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "注册预期",
       "evidence_grade": "A4",
       "status": "报道称项目已启动临床入组，预计2027年可提交注册",
-      "source_title": "界面/动脉网：思元丝素蛋白HA凝胶预计2027年提交注册",
-      "source_url": "https://www.jiemian.com/article/14403444.html"
     },
     {
       "id": "milestone_pipe_silk_fuxiang_nasolabial_202601_enrollment",
@@ -6083,8 +5769,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "入组完成",
       "evidence_grade": "A4",
       "status": "报道称2026年1月完成全部受试者入组",
-      "source_title": "ByDrug：复向医疗注射用含丝素蛋白的交联透明质酸钠凝胶首个中心入组完成",
-      "source_url": "https://bydrug.pharmcube.com/news/detail/0dcb887c6ee8518773e2b45a30bf1b43"
     },
     {
       "id": "milestone_pipe_collagen_juzi_nmpa_delivery_20260617",
@@ -6097,8 +5781,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A1",
       "status": "NMPA送达信息列示受理号CQZ2402149，注册证编号国械注准20263131219，批准日期2026-06-16",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
     },
     {
       "id": "milestone_pipe_collagen_juzi_exchange_20260617",
@@ -6111,8 +5793,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A2",
       "status": "公司公告称陕西巨子收到NMPA医疗器械注册证，产品为交联重组III型胶原蛋白植入剂",
-      "source_title": "巨子生物自愿性公告：附属公司交联重组胶原蛋白植入剂获医疗器械注册证",
-      "source_url": "https://news.futunn.com/notice/307544661/giant-biogene-voluntary-announcement"
     },
     {
       "id": "milestone_pipe_collagen_fanghe_nmpa_delivery_20260617",
@@ -6125,8 +5805,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A1",
       "status": "NMPA送达信息列示受理号CQZ2501047，注册证编号国械注准20263131252，批准日期2026-06-16",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
     },
     {
       "id": "milestone_pipe_ha_humedix_nmpa_delivery_20260617",
@@ -6139,8 +5817,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A1",
       "status": "NMPA送达信息列示受理号JQZ2400616，注册证编号国械注进20263130223，批准日期2026-06-16",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
     },
     {
       "id": "milestone_pipe_ha_jingjia_nmpa_delivery_20260617",
@@ -6153,8 +5829,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "已获批",
       "evidence_grade": "A1",
       "status": "NMPA送达信息列示受理号CQZ2500187，注册证编号国械注准20263131236，批准日期2026-06-16",
-      "source_title": "NMPA 2026年06月17日医疗器械批准证明文件送达信息",
-      "source_url": "https://www.nmpa.gov.cn/zwfw/sdxx/sdxxylqx/qxpjfb/20260617173835108.html"
     },
     {
       "id": "milestone_pipe_collagen_jland_company_20260620",
@@ -6167,8 +5841,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "权益/管线披露",
       "evidence_grade": "A3",
       "status": "企业官网展示科媄氏重组III型人源化胶原蛋白溶液、修护贴辅料、喷雾和修护凝胶等医疗器械产品",
-      "source_title": "聚源生物官网：科媄氏重组III型人源化胶原蛋白医疗器械产品线",
-      "source_url": "https://www.jlandbiotech.com/medical_brand/6"
     },
     {
       "id": "milestone_pipe_ha_maili_precise_huadong_202510_acceptance",
@@ -6181,8 +5853,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "受理/送达",
       "evidence_grade": "A3",
       "status": "2025年10月获得国药局器审中心注册受理，目前处在技术审评阶段",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html"
     },
     {
       "id": "milestone_pipe_pcl_ellanse_m_huadong_202501_acceptance",
@@ -6195,8 +5865,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "受理/送达",
       "evidence_grade": "A3",
       "status": "2025年1月获得NMPA注册受理通知，目前处在注册审批阶段",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html"
     },
     {
       "id": "milestone_pipe_pcl_ellanse_s_huadong_202512_followup",
@@ -6209,8 +5877,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "随访中",
       "evidence_grade": "A3",
       "status": "新增适应症临床试验已于2025年12月完成12个月安全性随访，目前在临床试验报告数据整理阶段",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html"
     },
     {
       "id": "milestone_pipe_plla_lanluma_v_huadong_202512_followup",
@@ -6223,8 +5889,6 @@ window.PIPELINE_DASHBOARD_DATA = {
       "stage": "随访中",
       "evidence_grade": "A3",
       "status": "2025年12月完成临床12个月安全性随访，目前在临床试验报告数据整理阶段",
-      "source_title": "华东医药科研创新：国内医美主要注册进度",
-      "source_url": "https://www.eastchinapharm.com/innovate.html"
     }
   ],
   "evidence_grades": {

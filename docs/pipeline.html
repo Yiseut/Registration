@@ -301,7 +301,7 @@
   <section class="hero rise">
     <span class="eyebrow">Pipeline Intelligence · 2026</span>
     <h1><span class="gradient">注册进度</span></h1>
-    <p class="lede">分赛道追踪在研产品的公开临床登记、受理审评与下证预测；本页为来源层观察，不与已获批注册证主表 KPI 相加。</p>
+    <p class="lede">分赛道追踪在研产品的注册进度、受理审评与下证预测；本页用于观察项目状态，不与已获批注册证主表 KPI 相加。</p>
   </section>
 
   <section class="overview-update-time scope-card rise rise-1" aria-label="更新时间">
@@ -346,14 +346,14 @@
     <div class="card lift span-5" id="evidenceCard">
       <div class="card-title"><h3>证据可信度结构</h3><span class="sub">按赛道</span></div>
       <div id="chartEvidence" class="chart chart-tall"></div>
-      <p class="chart-note">强证据＝官方/受理/上市公司/企业原文（A0–A3）；待核验＝媒体或线下线索（A4–A6）。</p>
+      <p class="chart-note">A0–A3 为确认度较高记录；A4–A6 为待复核记录。</p>
     </div>
     <div class="card lift span-12" id="forecastWindowCard">
       <div class="card-title"><h3>预测下证窗口</h3><span class="sub" id="forecastWindowSub">全部在研项目</span></div>
       <div id="forecastTimeline" class="forecast-tl"></div>
     </div>
     <article class="card lift span-4 panel section-hidden" id="sourceQualitySection">
-      <div class="card-title"><h3>来源质量</h3><span class="sub">证据来源构成</span></div>
+      <div class="card-title"><h3>确认程度</h3><span class="sub">记录确认构成</span></div>
       <div class="source-summary" id="sourceBars"></div>
     </article>
   </section>
@@ -431,7 +431,7 @@
       <table class="pipeline-table">
         <thead>
           <tr>
-            <th>项目</th><th>企业</th><th>当前阶段</th><th>项目预测</th><th>适应证 / 部位</th><th>下一步观察</th><th>来源</th>
+            <th>项目</th><th>企业</th><th>当前阶段</th><th>项目预测</th><th>适应证 / 部位</th><th>下一步观察</th><th>明细</th>
           </tr>
         </thead>
         <tbody id="projectBody"></tbody>
@@ -451,18 +451,18 @@
   </section>
 
   <div class="section-head rise">
-    <h2>来源明细</h2>
-    <p>保留出处，方便回看原文。</p>
+    <h2>记录明细</h2>
+    <p>按项目汇总阶段、状态和备注。</p>
   </div>
   <section class="card lift" id="sourceList">
     <div class="card-title control-title">
-      <div><h3>来源明细</h3><span class="sub"><span id="recordCount"></span><span id="sourceFilterNote" class="source-filter-note"></span></span></div>
+      <div><h3>记录明细</h3><span class="sub"><span id="recordCount"></span><span id="sourceFilterNote" class="source-filter-note"></span></span></div>
     </div>
     <div class="pipeline-table-wrap">
       <table class="pipeline-table source-table">
         <colgroup><col><col><col><col><col></colgroup>
         <thead>
-          <tr><th>来源</th><th>项目</th><th>阶段</th><th>状态</th><th>备注</th></tr>
+          <tr><th>记录</th><th>项目</th><th>阶段</th><th>状态</th><th>备注</th></tr>
         </thead>
         <tbody id="recordBody"></tbody>
       </table>

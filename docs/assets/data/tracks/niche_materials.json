@@ -102,6 +102,8 @@
       "company": "兰州生物技术开发有限公司（代理）",
       "company_key": "兰州生物技术开发有限公司（代理）",
       "registrant": "集美生股份有限公司GHIMAS S.p.A.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20253130037",
       "origin": "进口",
       "category": "琼脂糖",
@@ -133,7 +135,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "琼脂糖面部注射填充剂ALGENESS VL",
       "official_registrant": "集美生股份有限公司GHIMAS S.p.A.",
       "official_approval_date": "2025-01-20",
@@ -146,12 +147,7 @@
       "portfolio_segments": [
         "新型材料"
       ],
-      "source_account": "丽和康",
-      "source_title": "行业快讯 | 首个「琼脂糖」面部填充剂获批，国产医美材料迎来新突破！",
-      "source_url": "https://www.bioray-med.com/hyrd/337.html",
-      "confidence": "high",
-      "data_status": "原始保留",
-      "source_dataset": "manual_raw_cert_leads"
+      "data_status": "原始保留"
     },
     {
       "id": "RAW-LIPOLYSIS_INJECTION-国药准字H20254519",
@@ -167,6 +163,8 @@
       "company": "南京迈诺威医药科技有限公司",
       "company_key": "南京迈诺威医药科技有限公司",
       "registrant": "南京迈诺威医药科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国药准字H20254519",
       "origin": "国产",
       "category": "溶脂注射/去氧胆酸",
@@ -199,7 +197,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA药品查询",
-      "official_source": "国家政务服务平台 NMPA 国产药品查询",
       "official_product_name": "去氧胆酸注射液",
       "official_registrant": "南京迈诺威医药科技有限公司",
       "official_approval_date": "2025-06-10",
@@ -212,12 +209,7 @@
       "portfolio_segments": [
         "新型材料"
       ],
-      "source_account": "",
-      "source_title": "重磅！首批合规溶脂针正式出货，领启中国注射溶脂合规新纪元！",
-      "source_url": "https://mp.weixin.qq.com/s/6_gF__DaCgXu4v1nnNt4YQ",
-      "confidence": "medium",
-      "data_status": "原始保留",
-      "source_dataset": "emerging_device_scout_20260505_emerging_material_leads.csv"
+      "data_status": "原始保留"
     }
   ]
 }

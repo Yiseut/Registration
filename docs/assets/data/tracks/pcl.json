@@ -129,6 +129,8 @@
       "company": "Sinclair / 华东医药",
       "company_key": "sinclair",
       "registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20213130100",
       "origin": "进口",
       "category": "PCL少女针",
@@ -162,7 +164,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚己内酯微球面部填充剂Polycaprolactone Gel for Injection",
       "official_registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
       "official_approval_date": "2025-12-30",
@@ -176,12 +177,7 @@
         "胶原刺激剂",
         "肉毒毒素"
       ],
-      "source_account": "中国整形美容协会三正规平台 / 公众号交叉",
-      "source_title": "注射用聚己内酯微球面部填充剂价格对比；“少女针”来了！美容美到了鼻唇沟",
-      "source_url": "https://www.caparz.cn/index/product/detail/id/210.html",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "pcl_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PCL-国械注准20243131626",
@@ -197,6 +193,8 @@
       "company": "山东采采 / 谷雨春",
       "company_key": "山东采采 / 谷雨春",
       "registrant": "山东采采医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243131626",
       "origin": "国产",
       "category": "PCL少女针",
@@ -229,7 +227,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚己内酯微球面部填充剂",
       "official_registrant": "山东采采医疗科技有限公司",
       "official_approval_date": "2024-08-27",
@@ -242,12 +239,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "国家生物材料创新合作平台 / 华龙证券交叉",
-      "source_title": "喜报 | 热烈祝贺我院在孵项目获批第三类医疗器械注册证！",
-      "source_url": "https://mp.weixin.qq.com/s/oe8cKFLQIFHTjUZpgoXpdA",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "pcl_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PCL-国械注准20253130671",
@@ -263,6 +255,8 @@
       "company": "四环医药 / 渼颜空间",
       "company_key": "sihuan",
       "registrant": "渼颜空间生物科技（吉林）有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253130671",
       "origin": "国产",
       "category": "PCL少女针",
@@ -297,7 +291,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚己内酯微球面部填充剂",
       "official_registrant": "渼颜空间生物科技（吉林）有限公司",
       "official_approval_date": "2025-03-31",
@@ -312,12 +305,7 @@
         "胶原刺激剂",
         "肉毒毒素"
       ],
-      "source_account": "四环医药中期报告 / 医美部落公开页 / 兔灵产品库交叉",
-      "source_title": "四环医药中期报告；四环医药旗下「PCL面部微球」获批",
-      "source_url": "https://ir.sihuanpharm.com/media/rw2a3vqo/hkex-eps_20250915_11841228_0.pdf",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "pcl_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PCL-国械注准20253132404",
@@ -333,6 +321,8 @@
       "company": "山东采采 / 谷雨春",
       "company_key": "山东采采 / 谷雨春",
       "registrant": "山东采采医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253132404",
       "origin": "国产",
       "category": "PCL少女针",
@@ -365,7 +355,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚己内酯微球面部填充剂",
       "official_registrant": "山东采采医疗科技有限公司",
       "official_approval_date": "2025-11-28",
@@ -378,12 +367,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "丽和康",
-      "source_title": "医美快讯 | 国内首个“可降解微球类”+“下颏部位”填充剂横空出世！",
-      "source_url": "https://mp.weixin.qq.com/s/Yfc9O14pXJmRAfsUnLJBfQ",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "pcl_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PCL-国械注进20263130151",
@@ -399,6 +383,8 @@
       "company": "Sinclair / 华东医药",
       "company_key": "sinclair",
       "registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20263130151",
       "origin": "进口",
       "category": "PCL少女针",
@@ -432,7 +418,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚己内酯微球面部填充剂Polycaprolactone Gel for Injection",
       "official_registrant": "艾克蒂思医疗有限公司AQTIS Medical B.V.",
       "official_approval_date": "2026-04-21",
@@ -446,12 +431,7 @@
         "胶原刺激剂",
         "肉毒毒素"
       ],
-      "source_account": "华东医药公告 / NMPA官方查询",
-      "source_title": "华东医药：关于全资子公司获得医疗器械注册证的公告",
-      "source_url": "http://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12171420&stockid=000963",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "pcl_dashboard_data.json"
+      "data_status": "已结构化"
     }
   ]
 }

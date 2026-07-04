@@ -294,7 +294,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "面部皱纹",
       summary: "企业合作公告明确中国大陆上市许可推进，临床登记仍待公开。",
       source_code: "商业化合作",
-      source_url: "https://www.htdkgroup.com/news/htdk-and-cgbio-sign-agreement-to-commercialize-and-license-facetem-hydroxyapatite-fillers-in-the-chinese-market"
     },
     {
       id: "milestone-harmonyca-test",
@@ -310,7 +309,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "面部软组织",
       summary: "注册检验节点与后续中国 III 期登记形成连续路径。",
       source_code: "注册检验完成",
-      source_url: "https://www.sohu.com/a/808056114_100202861"
     },
     {
       id: "milestone-aphranel-approval",
@@ -326,7 +324,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "鼻唇沟",
       summary: "国产 CaHA/微晶瓷面部填充剂获批，用于中重度鼻唇沟皱纹。",
       source_code: "国械注准20253130390",
-      source_url: "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf"
     },
     {
       id: "milestone-radiesse-approval",
@@ -342,7 +339,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "鼻唇沟",
       summary: "进口微晶瓷填充剂获批；多条临床登记归并为同一产品证据链。",
       source_code: "国械注进20253130124",
-      source_url: "https://www.cmde.org.cn/directory/web/cmde/images/1742778436369013951.pdf"
     },
     {
       id: "milestone-harmonyca-start",
@@ -358,7 +354,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "中面部",
       summary: "当前最明确的中国 ongoing 项目，聚焦中面部容量恢复/创建。",
       source_code: "NCT07032597",
-      source_url: "https://clinicaltrials.gov/study/NCT07032597"
     },
     {
       id: "milestone-harmonyca-completion",
@@ -374,7 +369,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "中面部",
       summary: "登记预计完成时间，后续重点看结果披露与注册受理。",
       source_code: "NCT07032597",
-      source_url: "https://clinicaltrials.gov/study/NCT07032597"
     },
     {
       id: "milestone-rejuve-pending-date",
@@ -390,7 +384,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "面部软组织",
       summary: "公开报道显示近 200 例注册临床入组并随访；官方登记号和时间节点待补。",
       source_code: "公开报道",
-      source_url: "https://www.stcn.com/article/detail/1501379.html"
     },
     {
       id: "milestone-osderma-pending-date",
@@ -406,7 +399,6 @@ window.CAHA_PIPELINE_DATA = {
       indication_site: "面部填充",
       summary: "企业管线显示处于型检或计划临床阶段，需继续核验公开时间点。",
       source_code: "企业管线",
-      source_url: "https://www.osderma.com/pages/pipline/index.html"
     }
   ],
   records: [
@@ -428,8 +420,6 @@ window.CAHA_PIPELINE_DATA = {
       pps_count: 186,
       ss_count: 188,
       center_fas_detail: "未公开",
-      source_title: "CMDE 医疗器械产品注册技术审评报告：注射用羟基磷酸钙微球面部填充剂",
-      source_url: "https://www.cmde.org.cn/directory/web/cmde/images/1740709639133081872.pdf",
       note: "报告披露结构组成、适用范围、型号规格和临床评价概述。"
     },
     {
@@ -450,8 +440,6 @@ window.CAHA_PIPELINE_DATA = {
       pps_count: 115,
       ss_count: 120,
       center_fas_detail: "未公开",
-      source_title: "CMDE 医疗器械产品注册技术审评报告：RADIESSE INJECTABLE IMPLANT",
-      source_url: "https://www.cmde.org.cn/directory/web/cmde/images/1742778436369013951.pdf",
       note: "审评报告披露注册临床设计、样本量和适用范围。"
     },
     {
@@ -474,8 +462,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2017-07-27",
       completion_date: "2018-11-30",
-      source_title: "NCT03282357：Radiesse for Correction of Nasolabial Folds in China",
-      source_url: "https://clinicaltrials.gov/study/NCT03282357",
       note: "Radiesse 中国鼻唇沟研究登记。"
     },
     {
@@ -498,8 +484,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2021-01-13",
       completion_date: "2022-04-27",
-      source_title: "NCT04647721：Radiesse for Moderate to Severe Nasolabial Folds",
-      source_url: "https://clinicaltrials.gov/study/NCT04647721",
       note: "Radiesse 中国鼻唇沟补充临床登记。"
     },
     {
@@ -522,8 +506,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2025-05-26",
       completion_date: "2026-10",
-      source_title: "NCT07032597：HArmonyCa Lidocaine for Mid-Face Volume",
-      source_url: "https://clinicaltrials.gov/study/NCT07032597",
       note: "中国 III 期，中面部容量方向，是本页重点 ongoing 项目。"
     },
     {
@@ -546,8 +528,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "不适用",
       start_date: "2024-09",
       completion_date: "",
-      source_title: "HArmonyCa 在中国完成注册检验，即将进入临床试验",
-      source_url: "https://www.sohu.com/a/808056114_100202861",
       note: "作为中国临床前节点线索，与后续 NCT07032597 相互印证。"
     },
     {
@@ -568,8 +548,6 @@ window.CAHA_PIPELINE_DATA = {
       pps_count: "",
       ss_count: "",
       center_fas_detail: "未公开",
-      source_title: "证券时报/界面新闻：Rejuve 注册临床入组与随访进度",
-      source_url: "https://www.stcn.com/article/detail/1501379.html",
       note: "非官方临床登记；用于观察进度，待官方证据补齐。"
     },
     {
@@ -590,8 +568,6 @@ window.CAHA_PIPELINE_DATA = {
       pps_count: "",
       ss_count: "",
       center_fas_detail: "不适用",
-      source_title: "睿星医疗研发管线",
-      source_url: "https://www.osderma.com/pages/pipline/index.html",
       note: "企业管线线索，待二次核验。"
     },
     {
@@ -614,8 +590,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2023-10-23",
       completion_date: "",
-      source_title: "华瑭医疗与 CGBio 签署 FACETEM 合作协议",
-      source_url: "https://www.htdkgroup.com/news/htdk-and-cgbio-sign-agreement-to-commercialize-and-license-facetem-hydroxyapatite-fillers-in-the-chinese-market",
       note: "合作公告明确中国上市许可推进，但未披露临床登记。"
     },
     {
@@ -638,8 +612,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2022-09-02",
       completion_date: "2025-05-08",
-      source_title: "NCT05452070：HArmonyCa Lidocaine Injectable Gel",
-      source_url: "https://clinicaltrials.gov/study/NCT05452070",
       note: "海外完成项目，和中国项目分开看。"
     },
     {
@@ -662,8 +634,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2023-01-01",
       completion_date: "2023-06-26",
-      source_title: "NCT05885035：Calcium Hydroxylapatite for Cellulite Dimples",
-      source_url: "https://clinicaltrials.gov/study/NCT05885035",
       note: "海外体部美学方向，和中国项目分开看。"
     },
     {
@@ -686,8 +656,6 @@ window.CAHA_PIPELINE_DATA = {
       center_fas_detail: "未公开",
       start_date: "2025-11-01",
       completion_date: "2026-12-01",
-      source_title: "NCT07202117：PLLA and CaHA-R for Aesthetic Rejuvenation",
-      source_url: "https://clinicaltrials.gov/study/NCT07202117",
       note: "海外研究，和中国项目分开看。"
     }
   ]

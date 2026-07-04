@@ -334,7 +334,7 @@
       A0: "官方获批/审评",
       A1: "官方受理/临床登记",
       A2: "上市公司披露",
-      A3: "企业/机构原文",
+      A3: "企业/机构确认",
       A4: "媒体/研究线索",
       A5: "线下待核验",
       A6: "传闻线索",
@@ -498,7 +498,7 @@
       ? rows
           .map(([label, count]) => `<div class="source-line"><span>${escapeHtml(label)}</span><b>${count}</b></div>`)
           .join("")
-      : "<p class='muted' style='font-size:12.5px'>暂无来源。</p>";
+      : "<p class='muted' style='font-size:12.5px'>暂无记录。</p>";
   }
 
   function topProjects(projects, limit = 3) {
@@ -805,7 +805,7 @@
         <p><strong>当前阶段</strong> ${escapeHtml(event.stage || "-")}</p>
         <p><strong>项目预测</strong> ${escapeHtml(forecast ? `${forecast.label}（${forecast.confidence}置信）` : "待判断")}</p>
         <p>${escapeHtml(forecast?.basis || "")}</p>
-        <button class="source-button" type="button" data-product="${escapeHtml(event.product)}" data-records="${escapeHtml((event.record_ids || []).join("|"))}">来源</button>
+        <button class="source-button" type="button" data-product="${escapeHtml(event.product)}" data-records="${escapeHtml((event.record_ids || []).join("|"))}">明细</button>
       </article>
     `;
     host.querySelector(".source-button")?.addEventListener("click", () => focusSourceRows(event.product, event.record_ids || []));
@@ -881,7 +881,7 @@
             <td>${escapeHtml(project.reported_indication || "-")}</td>
             <td>${escapeHtml(project.next_watch || "-")}</td>
             <td>
-              <button class="source-button" type="button" data-product="${escapeHtml(project.product)}" data-records="${escapeHtml((project.records || []).join("|"))}">来源</button>
+              <button class="source-button" type="button" data-product="${escapeHtml(project.product)}" data-records="${escapeHtml((project.records || []).join("|"))}">明细</button>
             </td>
           </tr>
         `;
@@ -916,7 +916,7 @@
             <p>${escapeHtml(project.reported_status || "-")}</p>
             <span class="muted-line">${escapeHtml(project.current_stage || "-")} · ${escapeHtml(project.latest_source_date || "待补日期")}</span>
           </div>
-          <button class="source-button" type="button" data-product="${escapeHtml(project.product)}" data-records="${escapeHtml((project.records || []).join("|"))}">来源</button>
+          <button class="source-button" type="button" data-product="${escapeHtml(project.product)}" data-records="${escapeHtml((project.records || []).join("|"))}">明细</button>
         </article>
       `)
       .join("");
@@ -929,12 +929,12 @@
     const body = $("recordBody");
     if (!body) return;
     const records = activeRecords();
-    setText("recordCount", `${records.length} 条来源`);
+    setText("recordCount", `${records.length} 条记录`);
     body.innerHTML = records
       .map((record) => `
         <tr id="source-${safeDomId(record.lead_id || `${record.product}-${record.source_date}`)}" data-product="${escapeHtml(normalizeKey(record.product))}" data-lead-id="${escapeHtml(record.lead_id || "")}">
           <td>
-            <a href="${escapeHtml(record.source_url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(record.source_title || "来源")}</a>
+            <strong>${escapeHtml(record.lead_id || "记录")}</strong>
             <span class="muted-line">${escapeHtml(record.source_date || "")}</span>
           </td>
           <td>
@@ -970,7 +970,7 @@
     const focusedIds = new Set(state.focusedRecordIds || []);
     const matches = rows.filter((row) => row.dataset.product === state.focusedProduct || focusedIds.has(row.dataset.leadId || ""));
     matches.forEach((row) => row.classList.add("source-highlight"));
-    setText("sourceFilterNote", matches.length ? `找到 ${matches.length} 条来源` : "未找到匹配来源。");
+    setText("sourceFilterNote", matches.length ? `找到 ${matches.length} 条记录` : "未找到匹配记录。");
   }
 
   const STAGE_BUCKETS = [

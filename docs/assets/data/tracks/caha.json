@@ -162,6 +162,8 @@
       "company": "摩漾生物",
       "company_key": "摩漾生物",
       "registrant": "上海摩漾生物科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253130390",
       "origin": "国产",
       "category": "CaHA羟基磷酸钙微球",
@@ -195,7 +197,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用羟基磷酸钙微球面部填充剂",
       "official_registrant": "上海摩漾生物科技有限公司",
       "official_approval_date": "2025-02-17",
@@ -208,12 +209,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "摩漾生物/美通社 + 公众号线索",
-      "source_title": "摩漾生物旗下aphranel®优法兰™CC针获NMPA三类医疗器械注册首证",
-      "source_url": "https://www.prnasia.com/story/479794-1.shtml",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "caha_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "CAHA-国械注进20253130124",
@@ -229,6 +225,8 @@
       "company": "麦施美学 / Merz",
       "company_key": "merz",
       "registrant": "梅尔茨北美公司Merz North America Inc.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20253130124",
       "origin": "进口",
       "category": "CaHA羟基磷酸钙微球",
@@ -263,7 +261,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用羟基磷酸钙微球面部填充剂RADIESSE INJECTABLE IMPLANT",
       "official_registrant": "梅尔茨北美公司Merz North America Inc.",
       "official_approval_date": "2025-03-07",
@@ -278,12 +275,7 @@
         "胶原刺激剂",
         "肉毒毒素"
       ],
-      "source_account": "麦施美学/美通社 + 医美部落公开页",
-      "source_title": "麦施美学旗下重要星品XEOMIN®思奥美®和RADIESSE 芮得怡上市会正式召开；Radiesse正式获批",
-      "source_url": "https://www.prnasia.com/story/513176-1.shtml",
-      "confidence": "high",
-      "data_status": "已结构化",
-      "source_dataset": "caha_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "CAHA-国械注准20173130346",
@@ -299,6 +291,8 @@
       "company": "四川拜阿蒙 / 睿合医药",
       "company_key": "四川拜阿蒙 / 睿合医药",
       "registrant": "四川拜阿蒙生物活性材料有限责任公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20173130346",
       "origin": "国产",
       "category": "CaHA边界市场",
@@ -337,7 +331,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "羟基磷灰石生物陶瓷",
       "official_registrant": "四川拜阿蒙生物活性材料有限责任公司",
       "official_approval_date": "2021-12-02",
@@ -348,12 +341,7 @@
       "main_landscape": false,
       "main_landscape_included": "否",
       "portfolio_segments": [],
-      "source_account": "医药魔方/中华网/界面新闻交叉",
-      "source_title": "羟基磷灰石生物陶瓷注册信息；菲林普利引领再生填充新范式",
-      "source_url": "https://bydrug.pharmcube.com/detailpage/deviceCNImported/42d1b2ce7d39b4581689fc4d20efdb9d",
-      "confidence": "medium_high",
-      "data_status": "已结构化",
-      "source_dataset": "caha_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "CAHA-国械注准20183131912",
@@ -369,6 +357,8 @@
       "company": "昊海生科 / 上海倍尔康",
       "company_key": "昊海生科 / 上海倍尔康",
       "registrant": "上海倍尔康生物医学科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20183131912",
       "origin": "国产",
       "category": "CaHA边界市场",
@@ -402,7 +392,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "羟基磷灰石生物陶瓷",
       "official_registrant": "上海倍尔康生物医学科技有限公司",
       "official_approval_date": "2023-03-20",
@@ -413,12 +402,7 @@
       "main_landscape": false,
       "main_landscape_included": "否",
       "portfolio_segments": [],
-      "source_account": "医美部落/容蝶网/界面新闻交叉",
-      "source_title": "昊海生科：海魅·云境新品发布，正式布局再生医美",
-      "source_url": "https://www.sohu.com/a/742457641_121303447",
-      "confidence": "medium_high",
-      "data_status": "已结构化",
-      "source_dataset": "caha_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "CAHA-国械注准20153131017",
@@ -434,6 +418,8 @@
       "company": "上海睿星 / 铭融医药",
       "company_key": "上海睿星 / 铭融医药",
       "registrant": "上海睿星医疗器材有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20153131017",
       "origin": "国产",
       "category": "CaHA边界市场",
@@ -467,7 +453,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "复合磷酸钙骨植入材料",
       "official_registrant": "上海睿星医疗器材有限公司",
       "official_approval_date": "2024-07-25",
@@ -478,12 +463,7 @@
       "main_landscape": false,
       "main_landscape_included": "否",
       "portfolio_segments": [],
-      "source_account": "悦龄塑官网/药品招商信息/界面新闻交叉",
-      "source_title": "悦龄塑官网；复合磷酸钙骨植入材料招商代理",
-      "source_url": "https://www.yuelingsu.com/",
-      "confidence": "medium_high",
-      "data_status": "已结构化",
-      "source_dataset": "caha_dashboard_data.json"
+      "data_status": "已结构化"
     }
   ]
 }

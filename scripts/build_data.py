@@ -459,6 +459,8 @@ def build_record_card(row: dict) -> dict:
         "company": best_company_label(row),
         "company_key": best_company_key(row),
         "registrant": safe_strip(row.get("registrant")),
+        "agent_name": safe_strip(row.get("agent_name")),
+        "agent_address": safe_strip(row.get("agent_address")),
         "certificate_no": safe_strip(row.get("certificate_no")),
         "origin": safe_strip(row.get("origin")) or "未标注",
         "category": safe_strip(row.get("category")),
@@ -484,7 +486,6 @@ def build_record_card(row: dict) -> dict:
         "tags": [ui_term(tag) for tag in split_indications(row.get("product_tags"))],
         "official_status": safe_strip(row.get("official_status")),
         "official_verification_status": safe_strip(row.get("official_verification_status")),
-        "official_source": safe_strip(row.get("official_source")),
         "official_product_name": safe_strip(row.get("official_product_name")),
         "official_registrant": safe_strip(row.get("official_registrant")),
         "official_approval_date": safe_strip(row.get("official_approval_date")),
@@ -495,12 +496,7 @@ def build_record_card(row: dict) -> dict:
         "main_landscape": safe_strip(row.get("main_landscape_included")) == "是",
         "main_landscape_included": safe_strip(row.get("main_landscape_included")),
         "portfolio_segments": split_portfolio(row.get("portfolio_segments")),
-        "source_account": safe_strip(row.get("source_account")),
-        "source_title": ui_term(row.get("source_title")),
-        "source_url": safe_strip(row.get("source_url")),
-        "confidence": safe_strip(row.get("confidence")),
         "data_status": safe_strip(row.get("data_status")),
-        "source_dataset": safe_strip(row.get("source_dataset")),
     }
 
 

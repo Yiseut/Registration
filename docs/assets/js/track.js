@@ -1710,7 +1710,6 @@
             r.certificate_no,
             formatIndications(r),
             r.scope_full,
-            r.news_title,
             r.market_note,
             ...(r.feature_tags || []),
             r.indication_description,
@@ -2125,8 +2124,7 @@
 
   function verificationBadge(record) {
     const statusText = record?.official_verification_status || record?.officialVerificationStatus || '';
-    const sourceText = record?.official_source || record?.officialSource || '';
-    const title = escape([statusText, sourceText].filter(Boolean).join(' · ') || (record?.verified ? '已通过 NMPA 核验' : '尚未通过 NMPA 核验，需复核'));
+    const title = escape(statusText || (record?.verified ? '已通过 NMPA 核验' : '尚未通过 NMPA 核验，需复核'));
     return record?.verified
       ? `<span class="verify-badge ok" title="${title}"><span class="ico">✓</span>已核验</span>`
       : `<span class="verify-badge pending" title="${title}"><span class="ico">⌛</span>待核验</span>`;

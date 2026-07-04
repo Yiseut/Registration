@@ -73,7 +73,7 @@ if not exist ".git" (
 echo.
 
 echo [4/6] Staging integrated site files...
-git add -A .gitignore README.md PROJECT_HANDOFF.md Open-Dashboard.bat sync-and-publish.bat data docs scripts || goto error
+git add -A .gitignore AGENTS.md README.md PROJECT_HANDOFF.md Open-Dashboard.bat sync-and-publish.bat data docs scripts || goto error
 git diff --cached --name-only | findstr /I /R "\\videos\\ \\output\\ \\test-results\\ \\.playwright-cli\\" >nul
 if not errorlevel 1 (
   echo [ERROR] A generated or video folder was staged. Aborting before commit.

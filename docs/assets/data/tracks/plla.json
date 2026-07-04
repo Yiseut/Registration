@@ -207,6 +207,8 @@
       "company": "圣博玛",
       "company_key": "圣博玛",
       "registrant": "长春圣博玛生物材料有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20213130276",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -232,7 +234,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "聚乳酸面部填充剂",
       "official_registrant": "长春圣博玛生物材料有限公司",
       "official_approval_date": "2024-05-31",
@@ -245,12 +246,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20213130460",
@@ -266,6 +262,8 @@
       "company": "爱美客",
       "company_key": "imeik",
       "registrant": "爱美客技术发展股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20213130460",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -293,7 +291,6 @@
       ],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "含左旋乳酸-乙二醇共聚物微球的交联透明质酸钠凝胶",
       "official_registrant": "爱美客技术发展股份有限公司",
       "official_approval_date": "2021-06-24",
@@ -307,12 +304,7 @@
         "玻尿酸",
         "肉毒毒素"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注进20243130043",
@@ -328,6 +320,8 @@
       "company": "丽臻生物科技",
       "company_key": "丽臻生物科技",
       "registrant": "（株）丽臻生物科技股份有限公司REGEN Biotech, Inc.",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20243130043",
       "origin": "进口",
       "category": "PLLA童颜针",
@@ -353,7 +347,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "聚乳酸面部填充剂 AestheFill",
       "official_registrant": "（株）丽臻生物科技股份有限公司REGEN Biotech, Inc.",
       "official_approval_date": "2024-01-17",
@@ -366,12 +359,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注进20243130557",
@@ -387,6 +375,8 @@
       "company": "高德美 / Galderma",
       "company_key": "galderma",
       "registrant": "科医有限公司Q-Med AB",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20243130557",
       "origin": "进口",
       "category": "PLLA童颜针",
@@ -412,7 +402,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸填充剂Poly-L-lactic acid implant for injection",
       "official_registrant": "科医有限公司Q-Med AB",
       "official_approval_date": "2024-09-30",
@@ -427,12 +416,7 @@
         "胶原刺激剂",
         "肉毒毒素"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20243132279",
@@ -448,6 +432,8 @@
       "company": "普丽妍医疗",
       "company_key": "普丽妍医疗",
       "registrant": "普丽妍（南京）医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20243132279",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -473,7 +459,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "聚乳酸面部填充剂",
       "official_registrant": "普丽妍（南京）医疗科技有限公司",
       "official_approval_date": "2024-11-21",
@@ -486,12 +471,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20253130831",
@@ -507,6 +487,8 @@
       "company": "四环医药 / 渼颜空间",
       "company_key": "sihuan",
       "registrant": "渼颜空间生物科技（吉林）有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253130831",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -532,7 +514,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "聚乳酸面部填充剂",
       "official_registrant": "渼颜空间生物科技（吉林）有限公司",
       "official_approval_date": "2025-04-23",
@@ -547,12 +528,7 @@
         "胶原刺激剂",
         "肉毒毒素"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20253131101",
@@ -568,6 +544,8 @@
       "company": "乐普医疗",
       "company_key": "lepu",
       "registrant": "乐普（北京）医疗器械股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253131101",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -593,7 +571,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "聚乳酸面部填充剂",
       "official_registrant": "乐普（北京）医疗器械股份有限公司",
       "official_approval_date": "2025-05-30",
@@ -608,12 +585,7 @@
         "胶原刺激剂",
         "EBD 设备"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20253131356",
@@ -629,6 +601,8 @@
       "company": "西宏生物",
       "company_key": "西宏生物",
       "registrant": "江苏西宏生物医药有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253131356",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -654,7 +628,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸微球填充剂",
       "official_registrant": "江苏西宏生物医药有限公司",
       "official_approval_date": "2025-09-11",
@@ -668,12 +641,7 @@
         "玻尿酸",
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注进20253130300",
@@ -689,6 +657,8 @@
       "company": "PRP Science",
       "company_key": "prp science",
       "registrant": "PRP SCIENCE Co.,Ltd.(주)피알피사이언스",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20253130300",
       "origin": "进口",
       "category": "PLLA童颜针",
@@ -714,7 +684,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸面部填充剂",
       "official_registrant": "PRP SCIENCE Co.,Ltd.(주)피알피사이언스",
       "official_approval_date": "2025-07-10",
@@ -727,12 +696,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20253132268",
@@ -748,6 +712,8 @@
       "company": "浙江微度",
       "company_key": "浙江微度",
       "registrant": "浙江微度医疗器械有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20253132268",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -773,7 +739,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸微球填充剂",
       "official_registrant": "浙江微度医疗器械有限公司",
       "official_approval_date": "2025-11-05",
@@ -786,12 +751,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20263130095",
@@ -807,6 +767,8 @@
       "company": "伊臻生物",
       "company_key": "伊臻生物",
       "registrant": "成都伊臻生物科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263130095",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -832,7 +794,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸填充剂",
       "official_registrant": "成都伊臻生物科技有限公司",
       "official_approval_date": "2026-02-12",
@@ -845,12 +806,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20263130388",
@@ -866,6 +822,8 @@
       "company": "和妍医疗",
       "company_key": "和妍医疗",
       "registrant": "和妍（上海）医疗器械有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263130388",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -891,7 +849,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸微球填充剂",
       "official_registrant": "和妍（上海）医疗器械有限公司",
       "official_approval_date": "2026-02-13",
@@ -904,12 +861,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "美圈老卢",
-      "source_title": "别乱打童颜针！2026最新12款合规械3清单，收藏这一篇就够了！",
-      "source_url": "https://mp.weixin.qq.com/s?__biz=MzIyMDEzNzE3NQ==&mid=2649626559&idx=1&sn=dfbf04d3a96de1ad3c97e3b5f7b26be9&chksm=8eb83beb55b6923c75a005f146f5726783f17d9adabe2fc432abd1a851f0db1a40a6f42574ee&mpshare=1&scene=24&srcid=0504GRcPNjQfByNWbwqWuV8x&sharer_shareinfo=d013d2d849ed18db09325f6226830bce&sharer_shareinfo_first=d013d2d849ed18db09325f6226830bce#rd",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20263130522",
@@ -925,6 +877,8 @@
       "company": "京宇一美",
       "company_key": "京宇一美",
       "registrant": "北京京宇一美生物科技有限责任公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263130522",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -950,7 +904,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "注射用聚左旋乳酸填充剂",
       "official_registrant": "北京京宇一美生物科技有限责任公司",
       "official_approval_date": "2026-03-11",
@@ -963,12 +916,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "国家政务服务平台 NMPA",
-      "source_title": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "source_url": "https://app.gjzwfw.gov.cn/jmopen/webapp/html5/apigcylqxcpzccx/index.html",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     },
     {
       "id": "PLLA-国械注准20263130608",
@@ -984,6 +932,8 @@
       "company": "上海玮沐",
       "company_key": "上海玮沐",
       "registrant": "上海玮沐医疗科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注准20263130608",
       "origin": "国产",
       "category": "PLLA童颜针",
@@ -1009,7 +959,6 @@
       "tags": [],
       "official_status": "verified",
       "official_verification_status": "已官方核验/国家政务服务平台NMPA器械查询",
-      "official_source": "国家政务服务平台 NMPA 医疗器械注册证查询",
       "official_product_name": "含左旋聚乳酸的交联透明质酸钠微球面部填充剂",
       "official_registrant": "上海玮沐医疗科技有限公司",
       "official_approval_date": "2026-03-24",
@@ -1022,12 +971,7 @@
       "portfolio_segments": [
         "胶原刺激剂"
       ],
-      "source_account": "国家政务服务平台 NMPA",
-      "source_title": "国家政务服务平台 NMPA 医疗器械注册证查询",
-      "source_url": "https://app.gjzwfw.gov.cn/jmopen/webapp/html5/apigcylqxcpzccx/index.html",
-      "confidence": "",
-      "data_status": "已结构化",
-      "source_dataset": "plla_dashboard_data.json"
+      "data_status": "已结构化"
     }
   ]
 }

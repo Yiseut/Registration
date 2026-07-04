@@ -130,7 +130,7 @@
           <p><strong>状态</strong> ${escapeHtml(item.status || "-")}</p>
           <p><strong>方向</strong> ${escapeHtml(item.indication_site || "-")}</p>
           <p>${escapeHtml(item.summary || "")}</p>
-          ${item.source_url ? `<a href="${escapeHtml(item.source_url)}" target="_blank" rel="noreferrer">${escapeHtml(item.source_code || "查看来源")}</a>` : ""}
+          ${item.source_code ? `<span>${escapeHtml(item.source_code)}</span>` : ""}
         </article>
       `)
       .join("");
@@ -235,7 +235,7 @@
   function renderEvidenceTable() {
     const body = $("evidenceBody");
     if (!body) return;
-    setText("evidenceCount", `${records.length} 条来源记录`);
+    setText("evidenceCount", `${records.length} 条记录`);
     body.innerHTML = records
       .map((record) => `
         <tr>
@@ -255,10 +255,7 @@
           <td class="numeric-cell">${escapeHtml(displayValue(record.pps_count))}</td>
           <td class="numeric-cell">${escapeHtml(displayValue(record.ss_count))}</td>
           <td>${escapeHtml(record.center_fas_detail || "-")}</td>
-          <td>
-            <a class="source-link" href="${escapeHtml(record.source_url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(record.source_title || "来源")}</a>
-            <span class="muted-cell">${escapeHtml(record.note || "")}</span>
-          </td>
+          <td><span class="muted-cell">${escapeHtml(record.note || "-")}</span></td>
         </tr>
       `)
       .join("");

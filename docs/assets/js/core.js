@@ -277,6 +277,9 @@ function renderRecordCard(r) {
   const registrant = r.registrant && r.registrant !== r.company
     ? `<div class="row detail-row"><b>注册人</b><span>${escape(r.registrant)}</span></div>`
     : '';
+  const agent = r.agent_name
+    ? `<div class="row detail-row"><b>境内代理人</b><span>${escape(r.agent_name)}${r.agent_address ? `<br><small>${escape(r.agent_address)}</small>` : ''}</span></div>`
+    : '';
   const officialName = r.official_product_name && r.official_product_name !== r.product_name
     ? `<div class="row detail-row"><b>官方名称</b><span>${escape(r.official_product_name)}</span></div>`
     : '';
@@ -285,9 +288,6 @@ function renderRecordCard(r) {
     : '';
   const components = usefulDetail(r.components, r.product_name)
     ? `<div class="row detail-row evidence-row"><b>结构组成</b><span>${highlightEvidence(r.components)}</span></div>`
-    : '';
-  const newsSource = r.news_title
-    ? `<div class="row"><b>资讯来源</b> ${r.news_url ? `<a href="${escape(r.news_url)}" target="_blank" rel="noreferrer">${escape(r.news_title)}</a>` : escape(r.news_title)}${r.news_account ? ` · ${escape(r.news_account)}` : ''}</div>`
     : '';
   const verifiedTag = r.verified
     ? '<span class="verify-badge ok" title="已通过 NMPA 国家政务平台核验"><span class="ico">✓</span>NMPA</span>'
@@ -304,6 +304,7 @@ function renderRecordCard(r) {
       </div>
       <div class="row"><b>注册企业</b> ${escape(r.company || '—')}</div>
       ${registrant}
+      ${agent}
       ${officialName}
       ${r.primary_indication ? `<div class="row"><b>适应证</b> ${escape(r.primary_indication)}</div>` : ''}
       ${r.material_family ? `<div class="row"><b>材料</b> ${escape(r.material_family)} · ${escape(r.material_form || '')}</div>` : ''}
@@ -311,9 +312,8 @@ function renderRecordCard(r) {
       ${components}
       ${r.scope_full ? `<div class="row detail-row"><b>适用范围</b><span>${highlightEvidence(r.scope_full)}</span></div>` : ''}
       ${r.commercial_name ? `<div class="row"><b>市场名</b> ${escape(r.commercial_name)}</div>` : ''}
-      ${r.market_note ? `<div class="row"><b>资讯要点</b> ${escape(r.market_note)}</div>` : ''}
+      ${r.market_note ? `<div class="row"><b>产品要点</b> ${escape(r.market_note)}</div>` : ''}
       ${featureTags ? `<div class="cluster" style="margin-top:8px">${featureTags}</div>` : ''}
-      ${newsSource}
       <div class="row">
         ${r.approval_date ? `<span><b>批准</b> ${escape(r.approval_date)}</span>` : ''}
         ${r.valid_until ? `<span><b>到期</b> ${escape(r.valid_until)}</span>` : ''}
