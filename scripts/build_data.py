@@ -485,7 +485,7 @@ def build_record_card(row: dict) -> dict:
         "indications": split_indications(row.get("approved_indications"), row),
         "tags": [ui_term(tag) for tag in split_indications(row.get("product_tags"))],
         "official_status": safe_strip(row.get("official_status")),
-        "official_verification_status": safe_strip(row.get("official_verification_status")).replace("/官方来源", "").replace("／官方来源", ""),
+        "official_verification_status": safe_strip(row.get("official_verification_status")).replace("／", "/").split("/")[0],
         "official_product_name": safe_strip(row.get("official_product_name")),
         "official_registrant": safe_strip(row.get("official_registrant")),
         "official_approval_date": safe_strip(row.get("official_approval_date")),

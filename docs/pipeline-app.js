@@ -1137,7 +1137,7 @@
     $("troubledSectionHead")?.classList.toggle("section-hidden", !isAll);
     $("troubledSection")?.classList.toggle("section-hidden", !isAll);
     // On a single track the forecast-window chart shares its row with the
-    // compact 来源质量 panel, so narrow it to span-8 (span-12 on the overview).
+    // Keep the confirmation panel compact so it aligns with the overview layout.
     const fwCard = $("forecastWindowCard");
     if (fwCard) {
       fwCard.classList.toggle("span-12", isAll);
