@@ -413,7 +413,7 @@ async function main() {
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(/金华艾普瑞生物科技有限公司/.test(pipelinePlla.projectText) && /聚乳酸面部填充剂/.test(pipelinePlla.projectText), 'PLLA/PLA view should include the newly crawled Apre ChiCTR clinical project', pipelinePlla.projectText);
-  assert(/ChiCTR2600120937/.test(pipelinePlla.sourceText), 'PLLA/PLA source list should expose the Apre ChiCTR source record', pipelinePlla.sourceText);
+  assert(/pipe_plla_apre_chictr2600120937/.test(pipelinePlla.sourceText), 'PLLA/PLA record list should keep the Apre project record id without exposing the source title', pipelinePlla.sourceText);
   assert(pipelinePlla.rows >= 5, 'PLLA/PLA active table should include the added clinical project', String(pipelinePlla.rows));
   assert(pipelinePlla.overflowX <= 1, 'Pipeline PLLA/PLA view has horizontal overflow', String(pipelinePlla.overflowX));
 
@@ -587,7 +587,7 @@ async function main() {
   assert(botulinumState.mainValue === '8' && botulinumState.mainUnit === '个', 'Botulinum main KPI should count eight product groups', `${botulinumState.mainValue}${botulinumState.mainUnit}`);
   assert(botulinumState.mix === '2 : 6 : 0', 'Botulinum origin mix should count product groups, not certificate rows', botulinumState.mix);
   assert(botulinumState.tableCount === '12', 'Botulinum detail table should include BOTOX certificate variants as separate registration rows', botulinumState.tableCount);
-  assert(botulinumState.tableHeaders.join(',') === '品牌,产品 / 材料,注册人,证号,规格,来源,适应证,批准日,截止日,NMPA 核验状态', 'Botulinum table headers should expose specification and expiry date columns', botulinumState.tableHeaders.join(','));
+  assert(botulinumState.tableHeaders.join(',') === '品牌,产品 / 材料,注册人,证号,规格,产地,适应证,批准日,截止日,NMPA 核验状态', 'Botulinum table headers should expose specification and expiry date columns', botulinumState.tableHeaders.join(','));
   assert(botulinumState.botoxRows.length === 3 && botulinumState.botoxRows.every((row) => row.length === 10), 'BOTOX rows should render as ten-column registration rows', JSON.stringify(botulinumState.botoxRows));
   assert(botulinumState.botoxRows.some((row) => row.join(' ').includes('国药准字SJ20171004') && row.join(' ').includes('3支/盒') && row.join(' ').includes('2027-06-13')), 'BOTOX SJ20171004 row should expose package specification and expiry date', JSON.stringify(botulinumState.botoxRows));
   assert(botulinumState.abbvieForehead?.text === '1', 'AbbVie x forehead wrinkle matrix should show one BOTOX product group', botulinumState.abbvieForehead?.text || 'missing');

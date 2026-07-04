@@ -5,7 +5,7 @@ window.CAHA_PIPELINE_DATA = {
     updated_at: "2026-06-19",
     material_terms: ["CaHA", "羟基磷酸钙", "羟基磷灰石", "calcium hydroxylapatite", "hydroxyapatite"],
     domestic_scope_note: "优先呈现中国市场。海外样本单独作为参考。",
-    table_grain_note: "项目表按产品归并；证据明细表按来源记录展开。RADIESSE 芮得怡是 1 个产品、3 条证据来源，不代表 3 个产品。"
+    table_grain_note: "项目表按产品归并；证据明细表按记录展开。RADIESSE 芮得怡是 1 个产品、3 条证据记录，不代表 3 个产品。"
   },
   projects: [
     {

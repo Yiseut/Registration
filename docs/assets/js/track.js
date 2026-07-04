@@ -1397,7 +1397,7 @@
     if (!el) return;
     const yearly = timelineRows(data.timeline);
     if (!yearly.length) {
-      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无来源演变数据</div>';
+      el.innerHTML = '<div class="muted" style="text-align:center;padding:40px">暂无产地演变数据</div>';
       return;
     }
     const years = yearly.map((row) => row.year);

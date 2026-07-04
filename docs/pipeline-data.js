@@ -4,7 +4,7 @@ window.PIPELINE_DASHBOARD_DATA = {
     "updated_at": "2026-06-23 23:58",
     "current_date": "2026-06-23",
     "source_csv": "E:\\shared\\code\\registration\\inbox\\pipeline_source_updates.csv",
-    "scope_note": "分赛道查看医美材料产品的公开临床登记、注册推进和来源覆盖；本页不与已获批注册证主表KPI相加。"
+    "scope_note": "分赛道查看医美材料产品的公开临床登记、注册推进和记录覆盖；本页不与已获批注册证主表KPI相加。"
   },
   "summary": {
     "records_total": 85,
@@ -2608,7 +2608,7 @@ window.PIPELINE_DASHBOARD_DATA = {
         "2025-01-06"
       ],
       "reported_status": "CRO专业文章梳理PN/三文鱼针在境内注册与临床试验要求",
-      "reported_indication": "PN/三文鱼针医美注射方向；项目级信息需官方和企业来源补齐",
+      "reported_indication": "PN/三文鱼针医美注射方向；项目级信息需官方和企业资料补齐",
       "reported_center_or_pi": "",
       "next_watch": "继续查找PN项目级临床登记、企业公告和受理号",
       "frontstage_ready": false,
@@ -2789,7 +2789,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "经费来源为苏州迪新宸科生物科技有限公司；组长单位显示北京大学第一医院。",
+      "note": "经费方为苏州迪新宸科生物科技有限公司；组长单位显示北京大学第一医院。",
       "added_at": "2026-06-20"
     },
     {
@@ -2814,7 +2814,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "ChiCTR公开登记；申办/经费来源为苏州德进生物制药有限公司。",
+      "note": "ChiCTR公开登记；申办/经费方为苏州德进生物制药有限公司。",
       "added_at": "2026-06-20"
     },
     {
@@ -2889,7 +2889,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "formal_dashboard",
-      "note": "A0官方审评报告；来源层用于给pipeline页提供已获批基线。",
+      "note": "A0官方审评报告；记录层用于给pipeline页提供已获批基线。",
       "added_at": "2026-06-19"
     },
     {
@@ -2989,7 +2989,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "ChiCTR公开登记；申办/经费来源为成都睿漾再生医疗科技有限公司。",
+      "note": "ChiCTR公开登记；申办/经费方为成都睿漾再生医疗科技有限公司。",
       "added_at": "2026-06-20"
     },
     {
@@ -3289,7 +3289,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "临床登记可证明公开临床记录存在；与同公司官网产品线作为不同来源层交叉查看。",
+      "note": "临床登记可证明公开临床记录存在；与同公司官网产品线作为不同记录层交叉查看。",
       "added_at": "2026-06-20"
     },
     {
@@ -3314,7 +3314,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "研究实施与经费来源显示为医院课题，暂不直接等同企业注册申报，但可作为技术/适应证趋势信号。",
+      "note": "研究实施与经费方显示为医院课题，暂不直接等同企业注册申报，但可作为技术/适应证趋势信号。",
       "added_at": "2026-06-20"
     },
     {
@@ -3389,7 +3389,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "临床登记可证明公开临床记录存在；登记申请人为南京西格玛，项目主办和资金来源指向江苏美尚洁。",
+      "note": "临床登记可证明公开临床记录存在；登记申请人为南京西格玛，项目主办和资金方指向江苏美尚洁。",
       "added_at": "2026-06-20"
     },
     {
@@ -3414,7 +3414,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "临床登记可证明公开临床记录存在；申办/资金来源和产品权属需继续与企业公告交叉确认。",
+      "note": "临床登记可证明公开临床记录存在；申办/资金方和产品权属需继续与企业公告交叉确认。",
       "added_at": "2026-06-20"
     },
     {
@@ -3664,7 +3664,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "medium",
       "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "圣至润合项目已有奥泰康A3临床入组完成和第二款首例入组来源佐证；本条仅保留资本与主体背景，不进入趋势主表。",
+      "note": "圣至润合项目已有奥泰康A3临床入组完成和第二款首例入组记录佐证；本条仅保留资本与主体背景，不进入趋势主表。",
       "added_at": "2026-06-19"
     },
     {
@@ -4032,7 +4032,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_lane": "clinical_registry",
       "source_type": "clinical_registry",
       "source_date": "2024-06-26",
-      "reported_status": "临床执行期2024-05-31至2026-07-31，经费来源为Genoss及其中国代理。",
+      "reported_status": "临床执行期2024-05-31至2026-07-31，经费方为Genoss及其中国代理。",
       "reported_indication": "静态额部皱纹",
       "reported_center_or_pi": "中国医学科学院北京协和医院",
       "expected_next_milestone": "跟踪额部适应证是否单独注册或并入既有注册证扩项。",
@@ -4264,7 +4264,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "verified",
       "frontstage_use": "pipeline_table",
-      "note": "ChiCTR公开登记；申办/经费来源为山东济坤生物制药有限公司。",
+      "note": "ChiCTR公开登记；申办/经费方为山东济坤生物制药有限公司。",
       "added_at": "2026-06-20"
     },
     {
@@ -4464,7 +4464,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "pending",
       "frontstage_use": "pipeline_table",
-      "note": "企业官网来源，PDRN应作为新增早期材料赛道纳入Pipeline。",
+      "note": "企业官网资料，PDRN应作为新增早期材料赛道纳入Pipeline。",
       "added_at": "2026-06-19"
     },
     {
@@ -4708,13 +4708,13 @@ window.PIPELINE_DASHBOARD_DATA = {
       "source_type": "research_report",
       "source_date": "2025-01-06",
       "reported_status": "CRO专业文章梳理PN/三文鱼针在境内注册与临床试验要求",
-      "reported_indication": "PN/三文鱼针医美注射方向；项目级信息需官方和企业来源补齐",
+      "reported_indication": "PN/三文鱼针医美注射方向；项目级信息需官方和企业资料补齐",
       "reported_center_or_pi": "",
       "expected_next_milestone": "继续查找PN项目级临床登记、企业公告和受理号",
       "confidence": "medium",
       "official_verification_status": "not_applicable",
       "frontstage_use": "research_note",
-      "note": "该来源用于监管路径背景，不代表某个单一产品已进入临床或获批。",
+      "note": "该记录用于监管路径背景，不代表某个单一产品已进入临床或获批。",
       "added_at": "2026-06-20"
     },
     {
@@ -4789,7 +4789,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "confidence": "high",
       "official_verification_status": "pending",
       "frontstage_use": "pipeline_table",
-      "note": "企业官网来源，可作为丝素填充剂重要ongoing项目。",
+      "note": "企业官网资料，可作为丝素填充剂重要ongoing项目。",
       "added_at": "2026-06-19"
     },
     {
@@ -5156,7 +5156,7 @@ window.PIPELINE_DASHBOARD_DATA = {
       "company": "Genoss Co., Ltd. / 吉诺偲（上海）医疗器械有限公司",
       "stage": "临床登记",
       "evidence_grade": "A1",
-      "status": "ChiCTR登记；执行期2024-05-31至2026-07-31，经费来源为Genoss及其中国代理",
+      "status": "ChiCTR登记；执行期2024-05-31至2026-07-31，经费方为Genoss及其中国代理",
     },
     {
       "id": "milestone_pipe_ha_matex_jinsaixing_chictr2500101160",
