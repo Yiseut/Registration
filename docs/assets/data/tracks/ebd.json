@@ -8,11 +8,11 @@
   },
   "kpi": {
     "total": 33,
-    "main": 29,
+    "main": 30,
     "companies": 26,
-    "indications": 28,
-    "verified": 29,
-    "domestic": 20,
+    "indications": 29,
+    "verified": 30,
+    "domestic": 21,
     "imported": 9,
     "hkmt": 0
   },
@@ -23,6 +23,10 @@
     },
     {
       "name": "深圳市宗匠科技有限公司",
+      "value": 2
+    },
+    {
+      "name": "深圳普门科技股份有限公司",
       "value": 2
     },
     {
@@ -60,10 +64,6 @@
     {
       "name": "无锡威脉通医疗科技有限公司",
       "value": 1
-    },
-    {
-      "name": "普罗米修斯奇迹（深圳）医疗科技有限公司",
-      "value": 1
     }
   ],
   "long_tail_company_count": 14,
@@ -74,14 +74,14 @@
     },
     {
       "name": "手部",
-      "value": 8
-    },
-    {
-      "name": "面部轻中度皱纹",
-      "value": 3
+      "value": 9
     },
     {
       "name": "完整适用范围待官方注册证详情回填",
+      "value": 4
+    },
+    {
+      "name": "面部轻中度皱纹",
       "value": 3
     },
     {
@@ -120,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 20
+      "value": 21
     },
     {
       "name": "进口",
@@ -197,7 +197,7 @@
       1,
       1,
       6,
-      9,
+      10,
       7
     ]
   },
@@ -216,8 +216,8 @@
       "热芙美（湖南）科技有限公司"
     ],
     "indications": [
-      "面部轻度皱纹",
       "手部",
+      "面部轻度皱纹",
       "完整适用范围待官方注册证详情回填",
       "面部轻中度皱纹",
       "中下面部",
@@ -228,17 +228,17 @@
     ],
     "cells": [
       [
-        0,
+        1,
         1,
         2
       ],
       [
-        0,
+        1,
         6,
         1
       ],
       [
-        0,
+        1,
         8,
         1
       ],
@@ -248,12 +248,12 @@
         1
       ],
       [
-        0,
+        1,
         7,
         1
       ],
       [
-        0,
+        1,
         9,
         1
       ],
@@ -263,7 +263,7 @@
         1
       ],
       [
-        0,
+        1,
         4,
         1
       ],
@@ -273,7 +273,7 @@
         1
       ],
       [
-        1,
+        0,
         5,
         1
       ],
@@ -319,6 +319,11 @@
       ],
       [
         2,
+        2,
+        1
+      ],
+      [
+        0,
         2,
         1
       ],
@@ -1868,7 +1873,7 @@
       "id": "RAW-LASER_IPL-国械注准20253091270",
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "energy_device",
       "strategic": "EBD 设备",
@@ -1885,18 +1890,18 @@
       "category": "激光/光电设备",
       "material_family": "二氧化碳激光治疗机 / 激光设备 / NMPA批准证明文件送达信息",
       "material_form": "",
-      "approval_date": "2026-07-02",
+      "approval_date": "2025-06-27",
       "approval_year": 2025,
-      "valid_until": "",
-      "validity_status": "",
+      "valid_until": "2030-06-26",
+      "validity_status": "有效",
       "market_scope": "原始保留",
       "application_segment": "energy_device",
       "primary_indication": "待官方详情同步",
       "approved_indications": "完整适用范围待官方注册证详情回填",
-      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "scope_full": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
-      "specification": "待官方注册证详情同步复核",
-      "components": "待官方注册证详情同步复核",
+      "indication_description": "产品在医疗机构中使用，通过对人体组织的汽化、碳化、凝固和照射达到治疗的目的，用于疣、痣、汗管瘤的治疗，扫描模式可用于减轻中老年面部细小皱纹。",
+      "scope_full": "产品在医疗机构中使用，通过对人体组织的汽化、碳化、凝固和照射达到治疗的目的，用于疣、痣、汗管瘤的治疗，扫描模式可用于减轻中老年面部细小皱纹。",
+      "specification": "Yucca G36、Yucca G39",
+      "components": "本产品由主机、导光系统、脚踏开关组成；主机由二氧化碳激光器、冷却系统、安全防护系统、电源及控制装置组成；导光系统由导光臂、瞄准装置、光学图形扫描器和手具组成。",
       "lidocaine_status": "",
       "product_tags": "二氧化碳激光 / EBD设备 / 三类医疗器械 / NMPA送达信息确认",
       "market_claim": "",
@@ -1911,20 +1916,20 @@
         "NMPA送达信息确认"
       ],
       "official_status": "verified",
-      "official_verification_status": "NMPA送达信息已确认",
+      "official_verification_status": "已官方核验",
       "official_product_name": "二氧化碳激光治疗机",
       "official_registrant": "深圳普门科技股份有限公司",
-      "official_approval_date": "2026-07-02",
-      "official_valid_until": "",
-      "official_indication": "完整适用范围待官方注册证详情回填",
-      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "official_approval_date": "2025-06-27",
+      "official_valid_until": "2030-06-26",
+      "official_indication": "手部",
+      "official_scope": "产品在医疗机构中使用，通过对人体组织的汽化、碳化、凝固和照射达到治疗的目的，用于疣、痣、汗管瘤的治疗，扫描模式可用于减轻中老年面部细小皱纹。",
       "verified": true,
-      "main_landscape": false,
-      "main_landscape_included": "否",
+      "main_landscape": true,
+      "main_landscape_included": "是",
       "portfolio_segments": [
         "EBD 设备"
       ],
-      "data_status": "原始保留/待官方核验"
+      "data_status": "原始保留"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263011369",

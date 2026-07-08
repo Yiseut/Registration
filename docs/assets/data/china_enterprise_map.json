@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-09T00:42:56",
+  "generated_at": "2026-07-09T00:45:09",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 109,
-    "mapped_records": 108,
+    "candidate_records": 110,
+    "mapped_records": 109,
     "mapped_companies": 63,
     "mapped_cities": 25,
     "unmapped_companies": 1
@@ -352,6 +352,146 @@
       }
     },
     {
+      "city": "深圳",
+      "province": "广东",
+      "lat": 22.5431,
+      "lng": 114.0579,
+      "companies": 6,
+      "registrations": 11,
+      "tracks": [
+        {
+          "name": "EBD 设备",
+          "records": 11
+        }
+      ],
+      "leading_track": "EBD 设备",
+      "companies_sample": [
+        {
+          "name": "深圳半岛医疗集团股份有限公司",
+          "records": 4,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "深圳市宗匠科技有限公司",
+          "records": 2,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "深圳普门科技股份有限公司",
+          "records": 2,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "深圳宇石科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "深圳金茉科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20243092006",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "深圳市宗匠科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2024-10-11"
+        },
+        {
+          "certificate_no": "国械注准20243092482",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "深圳市宗匠科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2024-12-13"
+        },
+        {
+          "certificate_no": "国械注准20243092007",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "深圳宇石科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2024-10-11"
+        },
+        {
+          "certificate_no": "国械注准20253091300",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "深圳金茉科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2025-07-04"
+        },
+        {
+          "certificate_no": "国械注准20253091825",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "普罗米修斯奇迹（深圳）医疗科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2025-09-05"
+        },
+        {
+          "certificate_no": "国械注准20253092104",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "深圳半岛医疗集团股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2025-10-27"
+        },
+        {
+          "certificate_no": "国械注准20223090571",
+          "brand": "",
+          "product_name": "射频治疗仪",
+          "company": "深圳半岛医疗集团股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2022-04-29"
+        },
+        {
+          "certificate_no": "国械注准20263010880",
+          "brand": "",
+          "product_name": "聚焦超声皮肤治疗仪",
+          "company": "深圳普门科技股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-04-27"
+        },
+        {
+          "certificate_no": "国械注准20253092193",
+          "brand": "",
+          "product_name": "聚焦超声皮肤治疗仪",
+          "company": "深圳半岛医疗集团股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2025-10-30"
+        },
+        {
+          "certificate_no": "国械注准20253091270",
+          "brand": "",
+          "product_name": "二氧化碳激光治疗机",
+          "company": "深圳普门科技股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2025-06-27"
+        },
+        {
+          "certificate_no": "国械注准20263091317",
+          "brand": "半岛皮秒钛蓝宝石",
+          "product_name": "皮秒钛蓝宝石激光治疗仪",
+          "company": "深圳半岛医疗集团股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-06-23"
+        }
+      ],
+      "location_sources": {
+        "注册人名称含城市": 11
+      }
+    },
+    {
       "city": "上海",
       "province": "上海",
       "lat": 31.2304,
@@ -485,138 +625,6 @@
           "company": "上海维脉医疗科技有限公司",
           "track": "EBD 设备",
           "approval_date": "2026-03-27"
-        }
-      ],
-      "location_sources": {
-        "注册人名称含城市": 10
-      }
-    },
-    {
-      "city": "深圳",
-      "province": "广东",
-      "lat": 22.5431,
-      "lng": 114.0579,
-      "companies": 6,
-      "registrations": 10,
-      "tracks": [
-        {
-          "name": "EBD 设备",
-          "records": 10
-        }
-      ],
-      "leading_track": "EBD 设备",
-      "companies_sample": [
-        {
-          "name": "深圳半岛医疗集团股份有限公司",
-          "records": 4,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "深圳市宗匠科技有限公司",
-          "records": 2,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "普罗米修斯奇迹（深圳）医疗科技有限公司",
-          "records": 1,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "深圳宇石科技有限公司",
-          "records": 1,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "深圳普门科技股份有限公司",
-          "records": 1,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "深圳金茉科技有限公司",
-          "records": 1,
-          "top_track": "EBD 设备"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国械注准20243092006",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "深圳市宗匠科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2024-10-11"
-        },
-        {
-          "certificate_no": "国械注准20243092482",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "深圳市宗匠科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2024-12-13"
-        },
-        {
-          "certificate_no": "国械注准20243092007",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "深圳宇石科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2024-10-11"
-        },
-        {
-          "certificate_no": "国械注准20253091300",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "深圳金茉科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2025-07-04"
-        },
-        {
-          "certificate_no": "国械注准20253091825",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "普罗米修斯奇迹（深圳）医疗科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2025-09-05"
-        },
-        {
-          "certificate_no": "国械注准20253092104",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "深圳半岛医疗集团股份有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2025-10-27"
-        },
-        {
-          "certificate_no": "国械注准20223090571",
-          "brand": "",
-          "product_name": "射频治疗仪",
-          "company": "深圳半岛医疗集团股份有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2022-04-29"
-        },
-        {
-          "certificate_no": "国械注准20263010880",
-          "brand": "",
-          "product_name": "聚焦超声皮肤治疗仪",
-          "company": "深圳普门科技股份有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2026-04-27"
-        },
-        {
-          "certificate_no": "国械注准20253092193",
-          "brand": "",
-          "product_name": "聚焦超声皮肤治疗仪",
-          "company": "深圳半岛医疗集团股份有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2025-10-30"
-        },
-        {
-          "certificate_no": "国械注准20263091317",
-          "brand": "半岛皮秒钛蓝宝石",
-          "product_name": "皮秒钛蓝宝石激光治疗仪",
-          "company": "深圳半岛医疗集团股份有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2026-06-23"
         }
       ],
       "location_sources": {
