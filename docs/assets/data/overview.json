@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-04T23:00:14",
+  "generated_at": "2026-07-09T00:42:56",
   "kpi": {
-    "total_records": 202,
-    "main_records": 191,
-    "excluded": 11,
+    "total_records": 203,
+    "main_records": 190,
+    "excluded": 13,
     "companies": 106,
     "indications": 48,
     "verified_share": 99.5,
     "domestic": 104,
     "imported": 81,
-    "hkmt": 6,
-    "injectable_class3": 149,
-    "injectable_class3_breakdown": "HA108 / 胶原蛋白20 / PLA13 / PCL5 / CaHA/微晶瓷2 / 琼脂糖1",
+    "hkmt": 5,
+    "injectable_class3": 148,
+    "injectable_class3_breakdown": "HA107 / 胶原蛋白20 / PLA13 / PCL5 / CaHA/微晶瓷2 / 琼脂糖1",
     "injectable_drug": 13,
     "injectable_drug_breakdown": "肉毒毒素12 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 18 类 · 注射用药品 6 类 · EBD 28 类",
-    "recent_12mo": 62,
-    "recent_12mo_share": 30.7,
-    "recent_12mo_breakdown": "HA28 / EBD12 / 胶原蛋白10 / PLA7"
+    "recent_12mo": 61,
+    "recent_12mo_share": 30.0,
+    "recent_12mo_breakdown": "HA28 / EBD11 / 胶原蛋白10 / PLA7"
   },
   "segments": [
     {
@@ -26,9 +26,9 @@
       "tagline": "",
       "accent": "#58bfd7",
       "records": 111,
-      "main_records": 108,
+      "main_records": 107,
       "companies": 52,
-      "verified": 107,
+      "verified": 106,
       "latest_year": 2026,
       "leading_company": "华熙生物"
     },
@@ -109,7 +109,7 @@
       "name": "EBD 设备",
       "tagline": "",
       "accent": "#8fa8c8",
-      "records": 32,
+      "records": 33,
       "main_records": 29,
       "companies": 26,
       "verified": 29,
@@ -394,20 +394,6 @@
         }
       },
       {
-        "company_key": "和康生物科技股份有限公司",
-        "company": "和康生物科技股份有限公司",
-        "total": 2,
-        "segments_covered": 1,
-        "by_segment": {
-          "EBD 设备": 0,
-          "新型材料": 0,
-          "玻尿酸": 2,
-          "肉毒毒素": 0,
-          "胶原刺激剂": 0,
-          "胶原蛋白": 0
-        }
-      },
-      {
         "company_key": "东邦医疗 dong bang medical co., ltd.",
         "company": "东邦医疗 Dong Bang Medical Co., Ltd.",
         "total": 2,
@@ -462,6 +448,20 @@
           "胶原刺激剂": 0,
           "胶原蛋白": 0
         }
+      },
+      {
+        "company_key": "格莱威医疗",
+        "company": "格莱威医疗",
+        "total": 2,
+        "segments_covered": 1,
+        "by_segment": {
+          "EBD 设备": 0,
+          "新型材料": 0,
+          "玻尿酸": 2,
+          "肉毒毒素": 0,
+          "胶原刺激剂": 0,
+          "胶原蛋白": 0
+        }
       }
     ]
   },
@@ -499,7 +499,7 @@
       [
         0,
         0,
-        61
+        60
       ],
       [
         1,
@@ -869,7 +869,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 10
+        "days_to_expiry": 5
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -885,8 +885,8 @@
         "company": "麦施美学 / Merz",
         "company_key": "merz",
         "registrant": "安缇思股份公司 Anteis SA",
-        "agent_name": "麦施商务管理咨询（上海）有限公司",
-        "agent_address": "中国（上海）自由贸易试验区东方路710号汤臣金融大厦608室",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20213130421",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -934,7 +934,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 108
+        "days_to_expiry": 103
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -950,8 +950,8 @@
         "company": "荷兰汉福",
         "company_key": "荷兰汉福",
         "registrant": "荷兰汉福生物科技公司Hafod Bioscience B.V.",
-        "agent_name": "广东友邦医药有限公司",
-        "agent_address": "佛山市禅城区石湾镇街道深村田心村南大街12号A座二楼（201-206室）（住所申报）",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20163132859",
         "origin": "进口",
         "category": "胶原蛋白",
@@ -993,7 +993,7 @@
           "胶原蛋白"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 113
+        "days_to_expiry": 108
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1051,7 +1051,7 @@
           "胶原蛋白"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 121
+        "days_to_expiry": 116
       },
       {
         "id": "HA-国械注进20213130485-面颊部",
@@ -1067,8 +1067,8 @@
         "company": "艾尔建 / AbbVie",
         "company_key": "abbvie_allergan",
         "registrant": "艾尔建 Allergan",
-        "agent_name": "艾尔建医疗器械（上海）有限公司",
-        "agent_address": "中国（上海）自由贸易试验区日阪路301号1幢第三层B部位",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20213130485",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -1084,7 +1084,7 @@
         "approved_indications": "面颊部 / 鼻部",
         "indication_description": "产品适用于面颊部深层（皮下和/或骨膜上）注射，以重塑面部容积；适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
         "scope_full": "产品适用于面颊部深层（皮下和/或骨膜上）注射，以重塑面部容积；适用于鼻背、鼻小柱和前鼻棘部位骨膜上层（硬骨膜上和/或软骨膜上）注射，以改善外鼻体积及形态。",
-        "specification": "1.0ml/支, 2支/盒",
+        "specification": "",
         "components": "含利多卡因注射用交联透明质酸钠凝胶 Juvéderm VOLUMA with Lidocaine",
         "lidocaine_status": "含利多卡因",
         "product_tags": "注射填充类 / 进口 / 交联 / 含利多卡因",
@@ -1116,7 +1116,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 144
+        "days_to_expiry": 139
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1132,8 +1132,8 @@
         "company": "东邦医疗 Dong Bang Medical Co., Ltd.",
         "company_key": "东邦医疗 dong bang medical co., ltd.",
         "registrant": "株式会社东方医疗 Dong Bang Medical Co.,Ltd.",
-        "agent_name": "东邦生物科技（北京）有限公司",
-        "agent_address": "北京市朝阳区阜通东大街1号院3号楼14层3单元131705",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20223130127",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -1178,7 +1178,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 240
+        "days_to_expiry": 235
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1241,7 +1241,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 281
+        "days_to_expiry": 276
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1257,8 +1257,8 @@
         "company": "北京爱思特医疗美容有限公司 / ACROSS CO., LTD.",
         "company_key": "北京爱思特医疗美容有限公司 / across co., ltd.",
         "registrant": "亚可罗思有限责任公司ACROSS CO., LTD.",
-        "agent_name": "河北雅之颜医药有限公司",
-        "agent_address": "石家庄高新区昆仑南大街769号1#A01",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20223130181",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -1303,7 +1303,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 281
+        "days_to_expiry": 276
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1365,7 +1365,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 289
+        "days_to_expiry": 284
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1429,7 +1429,7 @@
           "EBD 设备"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 298
+        "days_to_expiry": 293
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1491,7 +1491,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 321
+        "days_to_expiry": 316
       },
       {
         "id": "BOTULINUM-国药准字SJ20171003",
@@ -1562,7 +1562,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 344
+        "days_to_expiry": 339
       },
       {
         "id": "BOTULINUM-国药准字SJ20171004",
@@ -1633,7 +1633,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 344
+        "days_to_expiry": 339
       },
       {
         "id": "BOTULINUM-国药准字SJ20171005",
@@ -1704,7 +1704,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 344
+        "days_to_expiry": 339
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -1720,8 +1720,8 @@
         "company": "LG化学 LG Chem, Ltd.",
         "company_key": "lg化学 lg chem, ltd.",
         "registrant": "俪维美学有限公司 LYV Sciences Co.,Ltd",
-        "agent_name": "爱尔集健生科技（北京）有限公司",
-        "agent_address": "北京市朝阳区霄云里8号楼1单元2层201室041",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20173132005",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -1766,7 +1766,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 361
+        "days_to_expiry": 356
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -1828,7 +1828,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 371
+        "days_to_expiry": 366
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -1893,7 +1893,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 429
+        "days_to_expiry": 424
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -1909,8 +1909,8 @@
         "company": "细基生物株式会社 CG Bio Co., Ltd.",
         "company_key": "细基生物株式会社 cg bio co., ltd.",
         "registrant": "细基生物株式会社CG Bio Co., Ltd.",
-        "agent_name": "北京大熊伟业医药科技有限公司",
-        "agent_address": "北京市朝阳区东三环北路38号院4号楼3层301-L301-5号",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20223130501",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -1956,7 +1956,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 477
+        "days_to_expiry": 472
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -2019,7 +2019,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 527
+        "days_to_expiry": 522
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -2035,8 +2035,8 @@
         "company": "麦施美学 / Merz",
         "company_key": "merz",
         "registrant": "安缇思股份公司Anteis SA",
-        "agent_name": "麦施商务管理咨询（上海）有限公司",
-        "agent_address": "中国（上海）自由贸易试验区东方路710号汤臣金融大厦608室",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20233130009",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -2084,7 +2084,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 557
+        "days_to_expiry": 552
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -2100,8 +2100,8 @@
         "company": "高德美 / Galderma",
         "company_key": "galderma",
         "registrant": "科医有限公司Q-Med AB",
-        "agent_name": "科医国际贸易（上海）有限公司",
-        "agent_address": "中国（上海）自由贸易试验区基隆路1号汤臣国际贸易大楼2017室",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20233130011",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -2149,7 +2149,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 557
+        "days_to_expiry": 552
       },
       {
         "id": "RAW-LASER_IPL-国械注进20183011604",
@@ -2165,8 +2165,8 @@
         "company": "韩国元泰株式会社WON TECH Co.,Ltd.",
         "company_key": "韩国元泰株式会社won tech co.,ltd.",
         "registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
-        "agent_name": "北京元泰美康科技有限公司",
-        "agent_address": "北京市朝阳区阜通东大街1号院3号楼4层3单元130510",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20183011604",
         "origin": "进口",
         "category": "激光/IPL设备",
@@ -2214,7 +2214,7 @@
           "EBD 设备"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 576
+        "days_to_expiry": 571
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -2230,8 +2230,8 @@
         "company": "LG化学 LG Chem, Ltd.",
         "company_key": "lg化学 lg chem, ltd.",
         "registrant": "俪维美学有限公司 LYV Sciences Co., Ltd",
-        "agent_name": "爱尔集健生科技（北京）有限公司",
-        "agent_address": "北京市朝阳区霄云里8号楼1单元2层201室041",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20183131717",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -2276,7 +2276,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 588
+        "days_to_expiry": 583
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -2292,8 +2292,8 @@
         "company": "科妍生物科技股份有限公司",
         "company_key": "科妍生物科技股份有限公司",
         "registrant": "科妍生物科技股份有限公司",
-        "agent_name": "科医国际贸易（上海）有限公司",
-        "agent_address": "中国（上海）自由贸易试验区基隆路1号汤臣国际贸易大楼2017室",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注许20183130062",
         "origin": "港澳台",
         "category": "透明质酸钠",
@@ -2338,7 +2338,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 588
+        "days_to_expiry": 583
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -2354,8 +2354,8 @@
         "company": "吉诺斯株式会社 GENOSS Co., Ltd.",
         "company_key": "吉诺斯株式会社 genoss co., ltd.",
         "registrant": "吉诺斯株式会社GENOSS Co., Ltd.",
-        "agent_name": "吉诺偲（上海）医疗器械有限公司",
-        "agent_address": "上海市浦东新区芙蓉花路500弄16号5楼504室、505室",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20233130068",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -2401,7 +2401,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 611
+        "days_to_expiry": 606
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -2417,8 +2417,8 @@
         "company": "高德美 / Galderma",
         "company_key": "galderma",
         "registrant": "科医有限公司Q-Med AB",
-        "agent_name": "科医国际贸易（上海）有限公司",
-        "agent_address": "中国（上海）自由贸易试验区基隆路1号汤臣国际贸易大楼2017 室",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20173136998",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -2465,7 +2465,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 627
+        "days_to_expiry": 622
       },
       {
         "id": "HA-国械注准20183130109-鼻唇沟",
@@ -2527,7 +2527,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 632
+        "days_to_expiry": 627
       },
       {
         "id": "RAW-LASER_IPL-国械注进20173096244",
@@ -2543,8 +2543,8 @@
         "company": "韩国元泰株式会社WON TECH Co., Ltd.",
         "company_key": "韩国元泰株式会社won tech co., ltd.",
         "registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
-        "agent_name": "北京元泰美康科技有限公司",
-        "agent_address": "北京市朝阳区阜通东大街1号院3号楼4层3单元130510",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20173096244",
         "origin": "进口",
         "category": "激光/IPL设备",
@@ -2594,7 +2594,7 @@
           "EBD 设备"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 642
+        "days_to_expiry": 637
       },
       {
         "id": "HA-国械注进20233130150-鼻唇沟",
@@ -2610,8 +2610,8 @@
         "company": "（株）爱思尔有限公司 SCL CO., LTD.",
         "company_key": "（株）爱思尔有限公司 scl co., ltd.",
         "registrant": "（株）爱思尔有限公司SCL CO.,LTD.",
-        "agent_name": "北京宇军生物科技有限公司",
-        "agent_address": "北京市海淀区西三环北路89号8层A-078",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20233130150",
         "origin": "进口",
         "category": "透明质酸钠",
@@ -2656,7 +2656,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 654
+        "days_to_expiry": 649
       },
       {
         "id": "RAW-MICRONEEDLE-国械注进20183251955",
@@ -2672,8 +2672,8 @@
         "company": "EndyMed / 美迪迈",
         "company_key": "endymed / 美迪迈",
         "registrant": "美迪迈医疗激光公司EndyMed Medical Ltd.",
-        "agent_name": "欧华美科 (上海) 医学科技有限公司",
-        "agent_address": "上海市松江区北松公路5688号2幢二楼B209",
+        "agent_name": "",
+        "agent_address": "",
         "certificate_no": "国械注进20183091955",
         "origin": "进口",
         "category": "微针/射频微针设备",
@@ -2718,7 +2718,7 @@
           "EBD 设备"
         ],
         "data_status": "原始保留",
-        "days_to_expiry": 655
+        "days_to_expiry": 650
       }
     ]
   },
@@ -2777,7 +2777,7 @@
           0,
           0,
           0,
-          1,
+          0,
           0,
           3,
           0,
@@ -2806,11 +2806,11 @@
   "concentration": {
     "ha": {
       "track_name": "透明质酸钠",
-      "total_certs": 108,
+      "total_certs": 107,
       "company_count": 53,
-      "hhi": 384.0,
-      "cr4": 30.6,
-      "cr8": 47.2,
+      "hhi": 389.0,
+      "cr4": 30.8,
+      "cr8": 47.7,
       "top": [
         {
           "company": "华熙生物",
@@ -2820,12 +2820,12 @@
         {
           "company": "艾尔建 / AbbVie",
           "certs": 9,
-          "share": 8.3
+          "share": 8.4
         },
         {
           "company": "高德美 / Galderma",
           "certs": 8,
-          "share": 7.4
+          "share": 7.5
         },
         {
           "company": "爱美客",
@@ -2835,12 +2835,12 @@
         {
           "company": "其胜生物",
           "certs": 5,
-          "share": 4.6
+          "share": 4.7
         },
         {
           "company": "LG化学 LG Chem, Ltd.",
           "certs": 5,
-          "share": 4.6
+          "share": 4.7
         },
         {
           "company": "海雅美",

@@ -7,7 +7,7 @@
     "accent": "#8fa8c8"
   },
   "kpi": {
-    "total": 32,
+    "total": 33,
     "main": 29,
     "companies": 26,
     "indications": 28,
@@ -205,10 +205,10 @@
     "companies": [
       "深圳半岛医疗集团股份有限公司",
       "深圳市宗匠科技有限公司",
+      "深圳普门科技股份有限公司",
       "乐普医疗",
       "广东花至美容科技有限公司",
       "无锡威脉通医疗科技有限公司",
-      "普罗米修斯奇迹（深圳）医疗科技有限公司",
       "杭州时光机智能电子科技有限公司",
       "杭州瑞彼加医疗科技有限公司",
       "深圳宇石科技有限公司",
@@ -218,9 +218,11 @@
     "indications": [
       "面部轻度皱纹",
       "手部",
+      "完整适用范围待官方注册证详情回填",
       "面部轻中度皱纹",
       "中下面部",
       "中下面部/颏下/颈部皮肤松弛",
+      "待官方详情同步",
       "颈部皮肤松弛",
       "颏下"
     ],
@@ -241,8 +243,8 @@
         1
       ],
       [
-        2,
-        2,
+        3,
+        3,
         1
       ],
       [
@@ -256,48 +258,73 @@
         1
       ],
       [
-        2,
+        3,
         10,
         1
       ],
       [
         0,
-        3,
+        4,
         1
       ],
       [
-        2,
-        4,
+        3,
+        5,
         1
       ],
       [
         1,
-        4,
-        1
-      ],
-      [
-        0,
         5,
         1
       ],
       [
-        3,
+        4,
+        2,
+        1
+      ],
+      [
+        8,
+        2,
+        1
+      ],
+      [
+        7,
+        2,
+        1
+      ],
+      [
+        5,
+        2,
+        1
+      ],
+      [
+        4,
         0,
+        1
+      ],
+      [
+        8,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        5,
+        0,
+        1
+      ],
+      [
+        2,
+        2,
         1
       ],
       [
         6,
-        0,
-        1
-      ],
-      [
-        5,
-        0,
-        1
-      ],
-      [
-        4,
-        0,
+        2,
         1
       ]
     ]
@@ -1201,8 +1228,8 @@
       "company": "雅萌株式会社ヤーマン株式会社",
       "company_key": "雅萌株式会社ヤーマン株式会社",
       "registrant": "雅萌株式会社ヤーマン株式会社",
-      "agent_name": "海南倍捷医疗科技有限公司",
-      "agent_address": "海南省琼海市博鳌乐城国际医疗旅游先行区康乐路01号国际医学产业中心F栋二层",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20253090264",
       "origin": "进口",
       "category": "射频设备",
@@ -1525,8 +1552,8 @@
       "company": "韩国元泰株式会社원텍(주)",
       "company_key": "韩国元泰株式会社원텍(주)",
       "registrant": "韩国元泰株式会社원텍(주)",
-      "agent_name": "北京元泰美康科技有限公司",
-      "agent_address": "北京市朝阳区阜通东大街1号院3号楼4层3单元130510",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20243090658",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1591,8 +1618,8 @@
       "company": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
       "company_key": "韩国元泰株式会社won tech co., ltd. (원텍(주))",
       "registrant": "韩国元泰株式会社WON TECH Co., Ltd. (원텍(주))",
-      "agent_name": "北京元泰美康科技有限公司",
-      "agent_address": "北京市朝阳区阜通东大街1号院3号楼4层3单元130510",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20203090265",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1659,8 +1686,8 @@
       "company": "韩国元泰株式会社WON TECH Co.,Ltd.",
       "company_key": "韩国元泰株式会社won tech co.,ltd.",
       "registrant": "韩国元泰株式会社WON TECH Co.,Ltd.",
-      "agent_name": "北京元泰美康科技有限公司",
-      "agent_address": "北京市朝阳区阜通东大街1号院3号楼4层3单元130510",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20183011604",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1723,8 +1750,8 @@
       "company": "韩国元泰株式会社WON TECH Co., Ltd.",
       "company_key": "韩国元泰株式会社won tech co., ltd.",
       "registrant": "韩国元泰株式会社WON TECH Co., Ltd.",
-      "agent_name": "北京元泰美康科技有限公司",
-      "agent_address": "北京市朝阳区阜通东大街1号院3号楼4层3单元130510",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20173096244",
       "origin": "进口",
       "category": "激光/IPL设备",
@@ -1789,8 +1816,8 @@
       "company": "Solta Medical, Inc.",
       "company_key": "solta medical, inc.",
       "registrant": "索塔医疗有限公司Solta Medical, Inc.",
-      "agent_name": "索塔（上海）健康管理有限公司",
-      "agent_address": "中国（上海）自由贸易试验区富特北路358号第4层401部位",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20153092408",
       "origin": "进口",
       "category": "热玛吉类/单极射频设备",
@@ -1836,6 +1863,68 @@
         "EBD 设备"
       ],
       "data_status": "原始保留"
+    },
+    {
+      "id": "RAW-LASER_IPL-国械注准20253091270",
+      "track": "laser_ipl",
+      "track_name": "激光/IPL设备",
+      "record_type": "raw_lead",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "energy_device",
+      "strategic": "EBD 设备",
+      "brand": "",
+      "aliases": "",
+      "product_name": "二氧化碳激光治疗机",
+      "company": "深圳普门科技股份有限公司",
+      "company_key": "深圳普门科技股份有限公司",
+      "registrant": "深圳普门科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
+      "certificate_no": "国械注准20253091270",
+      "origin": "国产",
+      "category": "激光/光电设备",
+      "material_family": "二氧化碳激光治疗机 / 激光设备 / NMPA批准证明文件送达信息",
+      "material_form": "",
+      "approval_date": "2026-07-02",
+      "approval_year": 2025,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "原始保留",
+      "application_segment": "energy_device",
+      "primary_indication": "待官方详情同步",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "待官方注册证详情同步复核",
+      "lidocaine_status": "",
+      "product_tags": "二氧化碳激光 / EBD设备 / 三类医疗器械 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "二氧化碳激光",
+        "EBD设备",
+        "三类医疗器械",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "verified",
+      "official_verification_status": "NMPA送达信息已确认",
+      "official_product_name": "二氧化碳激光治疗机",
+      "official_registrant": "深圳普门科技股份有限公司",
+      "official_approval_date": "2026-07-02",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": true,
+      "main_landscape": false,
+      "main_landscape_included": "否",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
+      "data_status": "原始保留/待官方核验"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263011369",
@@ -2161,8 +2250,8 @@
       "company": "Jeisys / 帝医思",
       "company_key": "jeisys / 帝医思",
       "registrant": "杰希思医疗公司Jeisys Medical Inc.",
-      "agent_name": "帝医思（上海）贸易有限公司",
-      "agent_address": "上海市闵行区吴中路1439号7幢A栋4层505室",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20143095670",
       "origin": "进口",
       "category": "微针/射频微针设备",
@@ -2222,8 +2311,8 @@
       "company": "EndyMed / 美迪迈",
       "company_key": "endymed / 美迪迈",
       "registrant": "美迪迈医疗激光公司EndyMed Medical Ltd.",
-      "agent_name": "欧华美科 (上海) 医学科技有限公司",
-      "agent_address": "上海市松江区北松公路5688号2幢二楼B209",
+      "agent_name": "",
+      "agent_address": "",
       "certificate_no": "国械注进20183091955",
       "origin": "进口",
       "category": "微针/射频微针设备",
