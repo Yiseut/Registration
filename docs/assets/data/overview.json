@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-13T21:07:02",
+  "generated_at": "2026-07-14T21:06:35",
   "kpi": {
-    "total_records": 203,
+    "total_records": 207,
     "main_records": 191,
-    "excluded": 12,
+    "excluded": 16,
     "companies": 106,
     "indications": 49,
     "verified_share": 99.5,
@@ -16,7 +16,7 @@
     "injectable_drug_breakdown": "肉毒毒素12 / 去氧胆酸1",
     "indication_breakdown": "注射填充类 18 类 · 注射用药品 6 类 · EBD 29 类",
     "recent_12mo": 59,
-    "recent_12mo_share": 29.1,
+    "recent_12mo_share": 28.5,
     "recent_12mo_breakdown": "HA27 / EBD11 / 胶原蛋白10 / PLA6"
   },
   "segments": [
@@ -109,7 +109,7 @@
       "name": "EBD 设备",
       "tagline": "",
       "accent": "#8fa8c8",
-      "records": 33,
+      "records": 37,
       "main_records": 30,
       "companies": 26,
       "verified": 30,
@@ -869,7 +869,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 1
+        "days_to_expiry": 0
       },
       {
         "id": "HA-国械注进20213130421-鼻唇沟",
@@ -934,7 +934,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 99
+        "days_to_expiry": 98
       },
       {
         "id": "COLLAGEN-国械注进20163132859",
@@ -993,7 +993,7 @@
           "胶原蛋白"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 104
+        "days_to_expiry": 103
       },
       {
         "id": "COLLAGEN-国械注准20163131609",
@@ -1051,7 +1051,7 @@
           "胶原蛋白"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 112
+        "days_to_expiry": 111
       },
       {
         "id": "HA-国械注进20213130485-面颊部",
@@ -1116,7 +1116,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 135
+        "days_to_expiry": 134
       },
       {
         "id": "HA-国械注进20223130127-鼻唇沟",
@@ -1178,7 +1178,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 231
+        "days_to_expiry": 230
       },
       {
         "id": "HA-国械注准20223130481-鼻唇沟",
@@ -1241,7 +1241,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 272
+        "days_to_expiry": 271
       },
       {
         "id": "HA-国械注进20223130181-鼻唇沟",
@@ -1303,7 +1303,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 272
+        "days_to_expiry": 271
       },
       {
         "id": "HA-国械注准20223130516-鼻唇沟",
@@ -1365,7 +1365,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 280
+        "days_to_expiry": 279
       },
       {
         "id": "RAW-BODY_CONTOURING_DEVICE-国械注准20223090571",
@@ -1429,7 +1429,7 @@
           "EBD 设备"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 289
+        "days_to_expiry": 288
       },
       {
         "id": "HA-国械注准20173130810-鼻唇沟",
@@ -1491,7 +1491,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 312
+        "days_to_expiry": 311
       },
       {
         "id": "BOTULINUM-国药准字SJ20171003",
@@ -1562,7 +1562,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 335
+        "days_to_expiry": 334
       },
       {
         "id": "BOTULINUM-国药准字SJ20171004",
@@ -1633,7 +1633,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 335
+        "days_to_expiry": 334
       },
       {
         "id": "BOTULINUM-国药准字SJ20171005",
@@ -1704,7 +1704,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 335
+        "days_to_expiry": 334
       },
       {
         "id": "HA-国械注进20173132005-鼻唇沟",
@@ -1766,7 +1766,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 352
+        "days_to_expiry": 351
       },
       {
         "id": "HA-国械注准20223130874-鼻唇沟",
@@ -1828,7 +1828,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 362
+        "days_to_expiry": 361
       },
       {
         "id": "HA-国械注准20173134379-额部",
@@ -1893,7 +1893,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 420
+        "days_to_expiry": 419
       },
       {
         "id": "HA-国械注进20223130501-鼻唇沟",
@@ -1956,7 +1956,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 468
+        "days_to_expiry": 467
       },
       {
         "id": "HA-国械注准20223131647-中面部",
@@ -2019,7 +2019,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 518
+        "days_to_expiry": 517
       },
       {
         "id": "HA-国械注进20233130009-鼻唇沟",
@@ -2084,7 +2084,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 548
+        "days_to_expiry": 547
       },
       {
         "id": "HA-国械注进20233130011-中面部",
@@ -2149,7 +2149,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 548
+        "days_to_expiry": 547
       },
       {
         "id": "RAW-LASER_IPL-国械注进20183011604",
@@ -2214,7 +2214,7 @@
           "EBD 设备"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 567
+        "days_to_expiry": 566
       },
       {
         "id": "HA-国械注进20183131717-鼻唇沟",
@@ -2276,7 +2276,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 579
+        "days_to_expiry": 578
       },
       {
         "id": "HA-国械注许20183130062-鼻唇沟",
@@ -2338,7 +2338,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 579
+        "days_to_expiry": 578
       },
       {
         "id": "HA-国械注进20233130068-鼻唇沟",
@@ -2401,7 +2401,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 602
+        "days_to_expiry": 601
       },
       {
         "id": "HA-国械注进20173136998-鼻唇沟",
@@ -2465,7 +2465,7 @@
           "肉毒毒素"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 618
+        "days_to_expiry": 617
       },
       {
         "id": "HA-国械注准20183130109-鼻唇沟",
@@ -2527,7 +2527,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 623
+        "days_to_expiry": 622
       },
       {
         "id": "RAW-LASER_IPL-国械注进20173096244",
@@ -2594,7 +2594,7 @@
           "EBD 设备"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 633
+        "days_to_expiry": 632
       },
       {
         "id": "HA-国械注进20233130150-鼻唇沟",
@@ -2656,7 +2656,7 @@
           "玻尿酸"
         ],
         "data_status": "已结构化",
-        "days_to_expiry": 645
+        "days_to_expiry": 644
       },
       {
         "id": "RAW-MICRONEEDLE-国械注进20183251955",
@@ -2718,7 +2718,7 @@
           "EBD 设备"
         ],
         "data_status": "原始保留",
-        "days_to_expiry": 646
+        "days_to_expiry": 645
       }
     ]
   },
