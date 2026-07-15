@@ -8,11 +8,11 @@
   },
   "kpi": {
     "total": 111,
-    "main": 107,
+    "main": 106,
     "companies": 53,
     "indications": 11,
-    "verified": 106,
-    "domestic": 52,
+    "verified": 105,
+    "domestic": 51,
     "imported": 53,
     "hkmt": 2
   },
@@ -58,11 +58,11 @@
       "value": 3
     },
     {
-      "name": "山东凯乐普生物工程有限公司",
+      "name": "麦施美学 / Merz",
       "value": 2
     },
     {
-      "name": "麦施美学 / Merz",
+      "name": "东邦医疗 Dong Bang Medical Co., Ltd.",
       "value": 2
     }
   ],
@@ -70,7 +70,7 @@
   "indication_share": [
     {
       "name": "鼻唇沟",
-      "value": 63
+      "value": 62
     },
     {
       "name": "唇部",
@@ -116,7 +116,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 52
+      "value": 51
     },
     {
       "name": "进口",
@@ -130,7 +130,7 @@
   "material_share": [
     {
       "name": "透明质酸钠 / 玻尿酸",
-      "value": 105
+      "value": 104
     },
     {
       "name": "透明质酸钠 / 注射用透明质酸钠溶液 / 水光/肤质类 / NMPA批准证明文件送达信息",
@@ -151,7 +151,7 @@
       2026
     ],
     "values": [
-      9,
+      8,
       11,
       17,
       29,
@@ -657,7 +657,7 @@
       "approval_date": "2021-07-15",
       "approval_year": 2021,
       "valid_until": "2026-07-14",
-      "validity_status": "有效",
+      "validity_status": "已过期",
       "market_scope": "注射填充类",
       "application_segment": "注射填充类",
       "primary_indication": "鼻唇沟",
@@ -687,8 +687,8 @@
       "official_indication": "鼻唇沟",
       "official_scope": "该产品适用于面部真皮组织中层至深层注射以纠正中重度鼻唇沟皱褶。",
       "verified": true,
-      "main_landscape": true,
-      "main_landscape_included": "是",
+      "main_landscape": false,
+      "main_landscape_included": "否",
       "portfolio_segments": [
         "玻尿酸"
       ],

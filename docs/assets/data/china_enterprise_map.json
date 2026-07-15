@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-14T21:06:35",
+  "generated_at": "2026-07-15T21:05:18",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 110,
-    "mapped_records": 109,
+    "candidate_records": 109,
+    "mapped_records": 108,
     "mapped_companies": 63,
     "mapped_cities": 25,
     "unmapped_companies": 1
@@ -1457,49 +1457,6 @@
       }
     },
     {
-      "city": "济宁",
-      "province": "山东",
-      "lat": 35.4149,
-      "lng": 116.5872,
-      "companies": 1,
-      "registrations": 2,
-      "tracks": [
-        {
-          "name": "玻尿酸",
-          "records": 2
-        }
-      ],
-      "leading_track": "玻尿酸",
-      "companies_sample": [
-        {
-          "name": "山东凯乐普生物工程有限公司",
-          "records": 2,
-          "top_track": "玻尿酸"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国械注准20173133254",
-          "brand": "注射用交联透明质酸钠凝胶",
-          "product_name": "注射用修饰透明质酸钠凝胶",
-          "company": "山东凯乐普生物工程有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2021-07-15"
-        },
-        {
-          "certificate_no": "国械注准20243130343",
-          "brand": "注射用修饰透明质酸钠凝胶",
-          "product_name": "注射用修饰透明质酸钠凝胶",
-          "company": "山东凯乐普生物工程有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2024-02-21"
-        }
-      ],
-      "location_sources": {
-        "维护映射": 2
-      }
-    },
-    {
       "city": "兰州",
       "province": "甘肃",
       "lat": 36.0611,
@@ -1672,6 +1629,41 @@
       ],
       "location_sources": {
         "注册人名称含城市": 1
+      }
+    },
+    {
+      "city": "济宁",
+      "province": "山东",
+      "lat": 35.4149,
+      "lng": 116.5872,
+      "companies": 1,
+      "registrations": 1,
+      "tracks": [
+        {
+          "name": "玻尿酸",
+          "records": 1
+        }
+      ],
+      "leading_track": "玻尿酸",
+      "companies_sample": [
+        {
+          "name": "山东凯乐普生物工程有限公司",
+          "records": 1,
+          "top_track": "玻尿酸"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20243130343",
+          "brand": "注射用修饰透明质酸钠凝胶",
+          "product_name": "注射用修饰透明质酸钠凝胶",
+          "company": "山东凯乐普生物工程有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2024-02-21"
+        }
+      ],
+      "location_sources": {
+        "维护映射": 1
       }
     },
     {
