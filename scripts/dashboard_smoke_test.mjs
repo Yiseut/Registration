@@ -296,9 +296,13 @@ async function main() {
   assert(pipelineOverview.basisCards.some((text) => /Ellansé-M|跟进型材料|2026-04-23/.test(text)), 'Pipeline basis should include the approved follow-on device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /优法兰|首证类器械|国械注准20253130390/.test(text)), 'Pipeline basis should include a first-certificate device benchmark', pipelineOverview.basisCards.join(' | '));
   assert(pipelineOverview.basisCards.some((text) => /芮妥欣|国药准字S20260019/.test(text)), 'Pipeline basis should include the approved drug benchmark', pipelineOverview.basisCards.join(' | '));
-  assert(pipelineOverview.cycleStages.length === 5, 'Pipeline should render the five full-cycle registration stages', String(pipelineOverview.cycleStages.length));
-  assert(pipelineOverview.cycleStages.join(' | ').includes('注册临床试验') && pipelineOverview.cycleStages.join(' | ').includes('技术审评'), 'Pipeline cycle stages should cover clinical-to-review steps', pipelineOverview.cycleStages.join(' | '));
-  assert(pipelineOverview.cycleStages.some((text) => text.includes('法定')) && pipelineOverview.cycleStages.some((text) => text.includes('可变')), 'Pipeline cycle stages should mark statutory vs variable steps', pipelineOverview.cycleStages.join(' | '));
+  assert(pipelineOverview.cycleStages.length === 6, 'Pipeline should render the six full-cycle registration stages', String(pipelineOverview.cycleStages.length));
+  assert(pipelineOverview.cycleStages.join(' | ').includes('临床前研究') && pipelineOverview.cycleStages.join(' | ').includes('注册临床试验') && pipelineOverview.cycleStages.join(' | ').includes('技术审评'), 'Pipeline cycle should cover the complete preclinical-to-review journey', pipelineOverview.cycleStages.join(' | '));
+  assert(/Base Case|42–54|3.5–4.5 年/.test(pipelineOverview.bodyText), 'Pipeline cycle should default to the Base Case planning range', pipelineOverview.bodyText);
+  await pipelinePage.locator('[data-cycle-scenario="worst"]').click();
+  await pipelinePage.waitForTimeout(150);
+  const worstCycle = await pipelinePage.locator('#cycleCard').textContent();
+  assert(/Worst Case|66–90|5.5–7.5 年/.test(worstCycle || ''), 'Pipeline cycle should switch to the Worst Case range', worstCycle || '');
   assert(pipelineOverview.troubledCases.some((text) => /Ultherapy|超声刀/.test(text)) && pipelineOverview.troubledCases.some((text) => /Radiesse|瑞德喜/.test(text)), 'Pipeline should show troubled/stalled registration cases', pipelineOverview.troubledCases.join(' | '));
   assert(pipelineOverview.kpis[0] > 0 && pipelineOverview.kpis[1] > 0 && pipelineOverview.kpis[3] >= 0, 'Pipeline KPIs should show active pre-approval progress only', pipelineOverview.kpis.join(','));
   assert(!/HUTOX|芮妥欣\/注射用重组|RADIESSE芮得怡|Radiesse\/瑞德喜|Ellansé-M|山东采采医疗科技有限公司|渼颜空间生物科技/.test(pipelineOverview.projectText), 'Approved/listed products should stay out of the active pipeline project table');

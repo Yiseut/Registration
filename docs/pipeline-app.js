@@ -665,17 +665,44 @@
     `).join("");
   }
 
-  function cycleStages() {
-    // Full registration journey, marking which steps carry an official statutory
-    // limit and which are product-specific / variable. Sources: NMPA 器械首次注册办事
-    // 指南 + CMDE; clinical & testing durations are not statutory.
-    return [
-      { stage: "注册临床试验", kind: "可变", duration: "约 1–3 年", note: "时长随产品、适应证与入组随访进度而定，非法定时限。" },
-      { stage: "注册检验 / 型检", kind: "可变", duration: "数月（含排队）", note: "送检与排队时间不固定，非法定时限。" },
-      { stage: "受理 → 技术审评", kind: "法定", duration: "约 60 工作日", note: "CMDE 技术审评法定时限；2024 年三类首次注册实际平均约 99 个工作日。发补会暂停时钟，企业最长可用 1 年补正。" },
-      { stage: "质量体系核查", kind: "法定", duration: "30 工作日", note: "注册质量管理体系现场核查。" },
-      { stage: "行政审批 + 制证", kind: "法定", duration: "20 工作日", note: "受理部门据审评结论作出决定并制证。" },
+  const cycleScenarios = {
+    best: {
+      label: "Best Case",
+      title: "路径成熟 · 执行顺利",
+      summary: "产品定型充分、试验入组顺利，未发生重大方案调整，审评阶段无实质性发补。",
+      total: "24–30",
+      totalLabel: "约 2–2.5 年",
+      stages: ["4–6", "2–3", "9–12", "1–2", "4–5", "1"],
+    },
+    base: {
+      label: "Base Case",
+      title: "常见情景 · 完整临床路径",
+      summary: "完成常规临床前评价与多中心注册临床，经历一次资料补正或常规沟通。",
+      total: "42–54",
+      totalLabel: "约 3.5–4.5 年",
+      stages: ["9–12", "4–6", "15–20", "2–3", "7–10", "1–2"],
+    },
+    worst: {
+      label: "Worst Case",
+      title: "复杂情景 · 出现反复",
+      summary: "材料或工艺需要追加验证，临床入组或随访延迟，并出现多轮发补或补充试验。",
+      total: "66–90",
+      totalLabel: "约 5.5–7.5 年",
+      stages: ["15–20", "8–12", "24–36", "3–6", "12–18", "1–2"],
+    },
+  };
+
+  function cycleStages(scenarioKey = "base") {
+    const durations = cycleScenarios[scenarioKey]?.stages || cycleScenarios.base.stages;
+    const stages = [
+      { stage: "临床前研究", note: "材料表征、生物学评价、动物试验与工艺定型" },
+      { stage: "注册检验与临床准备", note: "注册检验、临床方案、伦理与中心启动" },
+      { stage: "注册临床试验", note: "受试者入组、治疗、随访、数据清理与统计" },
+      { stage: "注册申报", note: "申报资料整合、形式审查与受理" },
+      { stage: "技术审评与体系核查", note: "三类器械技术审评法定 90 个工作日；发补等另计" },
+      { stage: "行政审批与制证", note: "收到审评意见后，行政审批法定 20 个工作日" },
     ];
+    return stages.map((stage, index) => ({ ...stage, duration: `${durations[index]} 个月` }));
   }
 
   function troubledCases() {
@@ -705,20 +732,49 @@
     const host = $("benchmarkSteps");
     if (host) {
       host.innerHTML = `
-        <p class="cycle-summary">受理后法定环节合计约 <b>5–6 个月</b>（理论），实务常 <b>8–12 个月</b>、复杂品种逾一年；临床试验与注册检验本身没有官方法定时间表，所以上方的预测以“关键临床 → 受理 → 获批”的实测案例为锚点。</p>
-        <div class="cycle-stages">
-          ${cycleStages().map((s) => `
-            <div class="cycle-stage">
-              <div class="cycle-stage-head">
-                <strong>${escapeHtml(s.stage)}</strong>
-                <span class="stage-tag ${s.kind === "法定" ? "legal" : "variable"}">${escapeHtml(s.kind)}</span>
-              </div>
+        <div class="cycle-scenario-bar">
+          <div class="cycle-scenario-copy" id="cycleScenarioCopy"></div>
+          <div class="cycle-scenario-tabs" role="tablist" aria-label="产品注册开发周期情景">
+            ${Object.entries(cycleScenarios).map(([key, scenario]) => `
+              <button class="cycle-scenario-tab ${key === "base" ? "active" : ""}" type="button" role="tab" aria-selected="${key === "base"}" data-cycle-scenario="${key}">${escapeHtml(scenario.label)}</button>
+            `).join("")}
+          </div>
+        </div>
+        <div class="cycle-overview">
+          <div class="cycle-timeline-wrap"><div class="cycle-timeline" id="cycleTimeline"></div></div>
+          <aside class="cycle-total" id="cycleTotal" aria-live="polite"></aside>
+        </div>
+        <p class="cycle-footnote">时间区间用于项目规划，不代表监管承诺。阶段可并行推进；实际周期取决于产品风险、临床证据路径、入组随访、补充资料及质量体系准备情况。</p>
+      `;
+
+      const renderScenario = (scenarioKey) => {
+        const scenario = cycleScenarios[scenarioKey] || cycleScenarios.base;
+        const copy = $("cycleScenarioCopy");
+        const timeline = $("cycleTimeline");
+        const total = $("cycleTotal");
+        if (copy) copy.innerHTML = `<span>${escapeHtml(scenario.label)}</span><strong>${escapeHtml(scenario.title)}</strong><p>${escapeHtml(scenario.summary)}</p>`;
+        if (timeline) timeline.innerHTML = cycleStages(scenarioKey).map((s, index) => `
+          <article class="cycle-stage">
+            <span class="cycle-stage-marker">${index + 1}</span>
+            <div class="cycle-stage-content">
+              <strong>${escapeHtml(s.stage)}</strong>
               <b class="cycle-stage-dur">${escapeHtml(s.duration)}</b>
               <p>${escapeHtml(s.note)}</p>
             </div>
-          `).join("")}
-        </div>
-      `;
+          </article>
+        `).join("");
+        if (total) total.innerHTML = `<span>完整周期</span><div><strong>${escapeHtml(scenario.total)}</strong><b>个月 · ${escapeHtml(scenario.totalLabel)}</b></div><p>从产品定型前的临床前研究起算，直至注册证获批。</p>`;
+        host.querySelectorAll("[data-cycle-scenario]").forEach((button) => {
+          const active = button.dataset.cycleScenario === scenarioKey;
+          button.classList.toggle("active", active);
+          button.setAttribute("aria-selected", String(active));
+        });
+      };
+
+      host.querySelectorAll("[data-cycle-scenario]").forEach((button) => {
+        button.addEventListener("click", () => renderScenario(button.dataset.cycleScenario || "base"));
+      });
+      renderScenario("base");
     }
   }
 

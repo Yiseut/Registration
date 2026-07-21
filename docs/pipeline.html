@@ -201,18 +201,35 @@
   .basis-card p { margin: 0 0 8px; font-size: 12.5px; color: var(--ink-3); }
   .basis-card a { color: var(--brand-deep); font-weight: 600; }
   .basis-note { margin: -2px 0 16px; font-size: 12px; color: var(--ink-mute); line-height: 1.6; }
-  .benchmark-steps { display: grid; gap: 14px; margin-top: 4px; }
-  .cycle-summary { margin: 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-3); }
-  .cycle-summary b { color: var(--brand-deep); font-weight: 650; }
-  .cycle-stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
-  .cycle-stage { padding: 12px 13px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.6); }
-  .cycle-stage-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .cycle-stage-head strong { font-size: 13.5px; color: var(--ink); font-weight: 600; }
-  .stage-tag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
-  .stage-tag.legal { background: color-mix(in srgb, #8898a0 20%, #f8f4f4); color: #5d6b76; }
-  .stage-tag.variable { background: color-mix(in srgb, #90a090 20%, #f8f4f4); color: #5f6e5f; }
-  .cycle-stage-dur { display: block; margin: 8px 0 4px; font-size: 19px; font-weight: 650; color: var(--brand-deep); font-variant-numeric: tabular-nums; }
-  .cycle-stage p { margin: 0; font-size: 11.5px; line-height: 1.5; color: var(--ink-3); }
+  .benchmark-steps { display: grid; gap: 18px; margin-top: 6px; }
+  .cycle-scenario-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 20px; border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(135deg, rgba(255,255,255,.82), rgba(246,239,238,.72)); }
+  .cycle-scenario-copy { max-width: 650px; }
+  .cycle-scenario-copy span { display: block; margin-bottom: 4px; color: var(--ink-mute); font-size: 11px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+  .cycle-scenario-copy strong { color: var(--ink); font-family: "Source Han Serif CN", "思源宋体", serif; font-size: 20px; font-weight: 650; }
+  .cycle-scenario-copy p { margin: 5px 0 0; color: var(--ink-3); font-size: 12.5px; line-height: 1.65; }
+  .cycle-scenario-tabs { display: inline-flex; flex: 0 0 auto; gap: 5px; padding: 4px; border: 1px solid var(--hairline); border-radius: 999px; background: rgba(255,255,255,.76); }
+  .cycle-scenario-tab { appearance: none; min-width: 82px; padding: 8px 13px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-3); cursor: pointer; font: inherit; font-size: 12px; font-weight: 600; transition: color 180ms var(--ease-out), background 180ms var(--ease-out), box-shadow 180ms var(--ease-out); }
+  .cycle-scenario-tab:hover { color: var(--ink); }
+  .cycle-scenario-tab.active { color: #fff; background: var(--ink); box-shadow: 0 7px 16px rgba(80,67,67,.16); }
+  .cycle-scenario-tab:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .cycle-overview { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 18px; align-items: stretch; }
+  .cycle-timeline-wrap { overflow-x: auto; padding: 4px 2px 10px; }
+  .cycle-timeline { position: relative; display: grid; grid-template-columns: repeat(6, minmax(142px, 1fr)); min-width: 900px; padding: 8px 0 2px; }
+  .cycle-timeline::before { content: ""; position: absolute; top: 31px; left: 7%; right: 7%; height: 2px; background: linear-gradient(90deg, #aeb7bc 0%, #c69b9b 56%, #786868 100%); }
+  .cycle-stage { position: relative; z-index: 1; display: grid; grid-template-rows: 48px auto; justify-items: center; min-width: 0; padding: 0 8px; text-align: center; }
+  .cycle-stage-marker { display: grid; width: 48px; height: 48px; place-items: center; border: 6px solid var(--surface); border-radius: 50%; color: #fff; background: linear-gradient(145deg, #d0acac, #9f7777); box-shadow: 0 9px 20px rgba(120,104,104,.2); font-family: Didot, "Times New Roman", serif; font-size: 17px; font-weight: 700; }
+  .cycle-stage:nth-child(-n+2) .cycle-stage-marker { background: linear-gradient(145deg, #bdc7cc, #7e8d98); }
+  .cycle-stage:nth-child(3) .cycle-stage-marker { background: linear-gradient(145deg, #abbbaa, #718371); }
+  .cycle-stage-content { padding-top: 13px; }
+  .cycle-stage-content strong { display: block; min-height: 38px; color: var(--ink); font-size: 13px; font-weight: 650; line-height: 1.42; }
+  .cycle-stage-dur { display: block; margin: 5px 0 4px; color: var(--brand-deep); font-family: Didot, "Times New Roman", serif; font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .cycle-stage-content p { margin: 0 auto; max-width: 150px; color: var(--ink-3); font-size: 11px; line-height: 1.5; }
+  .cycle-total { display: flex; flex-direction: column; justify-content: space-between; min-height: 190px; padding: 18px; border-radius: var(--radius); color: #fdfafa; background: linear-gradient(155deg, #817070, #554949); box-shadow: 0 18px 38px rgba(85,73,73,.18); }
+  .cycle-total span { font-size: 11px; font-weight: 650; letter-spacing: .11em; opacity: .7; text-transform: uppercase; }
+  .cycle-total strong { display: block; margin: 10px 0 4px; font-family: Didot, "Times New Roman", serif; font-size: 36px; font-weight: 700; line-height: 1; }
+  .cycle-total b { font-size: 14px; font-weight: 600; }
+  .cycle-total p { margin: 18px 0 0; font-size: 11.5px; line-height: 1.55; opacity: .78; }
+  .cycle-footnote { margin: -2px 2px 0; color: var(--ink-mute); font-size: 11.5px; line-height: 1.65; }
   .troubled-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
   .troubled-card { padding: 15px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: color-mix(in srgb, #c09090 6%, var(--surface)); }
   .troubled-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
@@ -266,6 +283,25 @@
 
   @media (max-width: 960px) {
     .overview-grid, .forecast-panel.compact .forecast-main-grid, .benchmark-range, .basis-source-grid { grid-template-columns: 1fr; }
+    .cycle-scenario-bar { align-items: flex-start; flex-direction: column; }
+    .cycle-overview { grid-template-columns: 1fr; }
+    .cycle-total { min-height: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .cycle-scenario-bar { padding: 16px; }
+    .cycle-scenario-tabs { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+    .cycle-scenario-tab { min-width: 0; padding-inline: 7px; }
+    .cycle-timeline-wrap { overflow: visible; }
+    .cycle-timeline { display: grid; grid-template-columns: 1fr; min-width: 0; gap: 0; padding: 0 0 0 3px; }
+    .cycle-timeline::before { top: 24px; bottom: 24px; left: 26px; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, #aeb7bc 0%, #c69b9b 56%, #786868 100%); }
+    .cycle-stage { grid-template: auto / 48px minmax(0, 1fr); justify-items: start; gap: 13px; padding: 8px 0; text-align: left; }
+    .cycle-stage-marker { width: 46px; height: 46px; border-width: 5px; }
+    .cycle-stage-content { padding: 2px 0 8px; }
+    .cycle-stage-content strong { min-height: 0; }
+    .cycle-stage-dur { margin: 2px 0; font-size: 20px; }
+    .cycle-stage-content p { max-width: none; margin: 0; }
+    .cycle-total strong { font-size: 34px; }
   }
 </style>
 </head>
@@ -399,15 +435,15 @@
   </section>
 
   <div class="section-head rise" id="cycleSectionHead">
-    <h2>注册全周期与典型案例</h2>
-    <p>拆解从临床到获批的完整周期，并对照已获批样板与波折案例。</p>
+    <h2>产品注册开发周期</h2>
+    <p>从临床前研究到获批上市，查看不同项目条件下的完整时间路径。</p>
   </div>
   <section class="grid grid-12 basis-source-grid">
     <article class="card lift span-12 panel" id="cycleCard">
-      <div class="panel-head"><div><h2>注册全周期与样板案例</h2><p>哪些环节是国家法定时限、哪些随产品而变，并以已获批案例为锚点。</p></div></div>
+      <div class="panel-head"><div><h2>产品注册开发周期</h2><p>Best、Base 与 Worst Case 展示项目执行顺利程度带来的周期差异；默认显示常见情景。</p></div></div>
+      <div class="benchmark-steps" id="benchmarkSteps"></div>
       <div class="basis-grid" id="forecastBasisCards"></div>
       <p class="basis-note" id="forecastMethod">预测仅作顺序参考，实际获批时间以官方信息为准。</p>
-      <div class="benchmark-steps" id="benchmarkSteps"></div>
     </article>
   </section>
 
