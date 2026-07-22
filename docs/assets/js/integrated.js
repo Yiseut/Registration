@@ -530,15 +530,23 @@
     const grain = state.trendGrain === 'year' ? 'year' : 'month';
     const periodRows = buildTrendPeriods(source, grain);
     const trendSegments = MATERIAL_SEGMENTS;
+    const trendMetricNote = document.getElementById('trend-metric-note');
+    if (trendMetricNote) {
+      trendMetricNote.textContent = grain === 'year'
+        ? '柱：当前有效证书按首次注册年份 · 线：累计有效证书'
+        : '按本证批准日期统计的当月证书';
+    }
 
     const segmentSeries = trendSegments
       .map((segment) => ({
         name: segment.name,
         code: segment.code,
         color: segment.color,
-        data: periodRows.map((period) => source.filter((record) => {
-          const date = approvalParts(record);
-          return date && trendPeriodKey(date, grain) === period.key && trendSegment(record) === segment.code;
+        data: periodRows.map((period) => (grain === 'year' ? activeSource : source).filter((record) => {
+          const periodKey = grain === 'year'
+            ? String(originalRegistrationYear(record) || '')
+            : trendPeriodKey(approvalParts(record), grain);
+          return periodKey === period.key && trendSegment(record) === segment.code;
         }).length),
       }))
       .filter((item) => item.data.some(Boolean));
@@ -548,10 +556,9 @@
       }
       return -1;
     });
-    const cumulativeValues = periodRows.map((period) => activeSource.filter((record) => {
-      const date = approvalParts(record);
-      return date && approvalPeriodIndex(date) <= trendPeriodEndIndex(period, grain);
-    }).length);
+    const cumulativeValues = grain === 'year'
+      ? periodRows.map((period) => activeSource.filter((record) => originalRegistrationYear(record) <= Number(period.key)).length)
+      : [];
     const series = segmentSeries.map((segment, seriesIndex) => ({
       name: segment.name,
       code: segment.code,
@@ -565,27 +572,29 @@
         itemStyle: crystalBarStyle(segment.color, topSeriesIdx[periodIndex] === seriesIndex ? [6, 6, 0, 0] : 0),
       })),
     }));
-    series.push({
-      name: '累计有效证书',
-      code: 'active-cumulative',
-      type: 'line',
-      yAxisIndex: 1,
-      data: cumulativeValues,
-      smooth: 0.28,
-      symbol: 'circle',
-      symbolSize: 8,
-      showSymbol: true,
-      z: 8,
-      lineStyle: { color: '#6f6060', width: 3, shadowBlur: 8, shadowColor: 'rgba(111,96,96,.18)' },
-      itemStyle: { color: '#fdf9f8', borderColor: '#6f6060', borderWidth: 3 },
-      emphasis: { focus: 'series', scale: 1.25 },
-      areaStyle: {
-        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          { offset: 0, color: 'rgba(111,96,96,.13)' },
-          { offset: 1, color: 'rgba(111,96,96,0)' },
-        ]),
-      },
-    });
+    if (grain === 'year') {
+      series.push({
+        name: '累计有效证书',
+        code: 'active-cumulative',
+        type: 'line',
+        yAxisIndex: 1,
+        data: cumulativeValues,
+        smooth: 0.28,
+        symbol: 'circle',
+        symbolSize: 8,
+        showSymbol: true,
+        z: 8,
+        lineStyle: { color: '#6f6060', width: 3, shadowBlur: 8, shadowColor: 'rgba(111,96,96,.18)' },
+        itemStyle: { color: '#fdf9f8', borderColor: '#6f6060', borderWidth: 3 },
+        emphasis: { focus: 'series', scale: 1.25 },
+        areaStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: 'rgba(111,96,96,.13)' },
+            { offset: 1, color: 'rgba(111,96,96,0)' },
+          ]),
+        },
+      });
+    }
 
     const chart = makeChart(document.getElementById('chart-trend'), {
       color: segmentSeries.map((segment) => segment.color),
@@ -604,8 +613,11 @@
             return `<span class="echart-tip-dot" style="background:${color}"></span>${escape(item.seriesName)}：${item.value} 条`;
           }).join('<br/>');
           const total = barItems.reduce((sum, item) => sum + Number(item.value || 0), 0);
-          const cumulativeLine = `<span class="echart-tip-dot" style="background:#6f6060"></span>累计有效：${Number(cumulative?.value || 0)} 张`;
-          return `<b>${escape(period?.fullLabel || '')}</b><br/>${cumulativeLine}<br/>新增 ${total} 条${lines ? `<br/>${lines}` : ''}`;
+          const cumulativeLine = cumulative
+            ? `<span class="echart-tip-dot" style="background:#6f6060"></span>累计有效：${Number(cumulative.value || 0)} 张<br/>`
+            : '';
+          const totalLabel = grain === 'year' ? '当年首次注册' : '当月批准/延续';
+          return `<b>${escape(period?.fullLabel || '')}</b><br/>${cumulativeLine}${totalLabel} ${total} 张${lines ? `<br/>${lines}` : ''}`;
         },
       },
       xAxis: {
@@ -613,20 +625,19 @@
         data: periodRows.map((period) => period.label),
         axisLabel: { rotate: grain === 'month' ? 32 : 0, fontSize: 11 },
       },
-      yAxis: [
-        { type: 'value', name: '新增证数', minInterval: 1 },
-        { type: 'value', name: '累计有效', minInterval: 1, splitLine: { show: false }, axisLabel: { color: '#786868' }, nameTextStyle: { color: '#786868' } },
-      ],
+      yAxis: grain === 'year'
+        ? [
+            { type: 'value', name: '证书数', minInterval: 1 },
+            { type: 'value', name: '累计有效', minInterval: 1, splitLine: { show: false }, axisLabel: { color: '#786868' }, nameTextStyle: { color: '#786868' } },
+          ]
+        : { type: 'value', name: '批准/延续证数', minInterval: 1 },
       series,
     });
     if (chart) {
       chart.on('click', (point) => {
         const period = periodRows[point.dataIndex];
         if (point.seriesName === '累计有效证书') {
-          const matches = activeSource.filter((record) => {
-            const date = approvalParts(record);
-            return date && approvalPeriodIndex(date) <= trendPeriodEndIndex(period, grain);
-          });
+          const matches = activeSource.filter((record) => originalRegistrationYear(record) <= Number(period.key));
           showRecords({
             title: `${period.fullLabel} · 累计有效证书`,
             meta: `${matches.length} 张当前有效证书`,
@@ -635,9 +646,11 @@
           return;
         }
         const segment = trendSegments.find((item) => item.name === point.seriesName);
-        const matches = source.filter((record) => {
-          const date = approvalParts(record);
-          return date && trendPeriodKey(date, grain) === period.key && trendSegment(record) === segment?.code;
+        const matches = (grain === 'year' ? activeSource : source).filter((record) => {
+          const periodKey = grain === 'year'
+            ? String(originalRegistrationYear(record) || '')
+            : trendPeriodKey(approvalParts(record), grain);
+          return periodKey === period.key && trendSegment(record) === segment?.code;
         });
         showRecords({
           title: `${period.fullLabel} · ${segment?.name || point.seriesName}`,
@@ -651,6 +664,18 @@
   function isCurrentlyActiveCertificate(record) {
     const status = `${record.validityStatus || ''} ${record.dataStatus || ''}`;
     return !/已过期|失效|注销|撤销|excluded/i.test(status);
+  }
+
+  function originalRegistrationYear(record) {
+    const certificateNo = String(record.certificateNo || '');
+    const certificateYear = certificateNo.match(/(?:19|20)\d{2}/)?.[0];
+    if (certificateYear) return Number(certificateYear);
+    const legacyDrugYear = certificateNo.match(/国药准字[A-Z]{1,2}\d{2}(\d{2})\d{4}$/i)?.[1];
+    if (legacyDrugYear) {
+      const shortYear = Number(legacyDrugYear);
+      return shortYear >= 80 ? 1900 + shortYear : 2000 + shortYear;
+    }
+    return Number(approvalParts(record)?.year || 0);
   }
 
   function renderInjectableStructure() {
@@ -1555,17 +1580,8 @@
   }
 
   function trendPeriodKey(date, grain) {
+    if (!date) return '';
     return grain === 'month' ? `${date.year}-${String(date.month).padStart(2, '0')}` : String(date.year);
-  }
-
-  function approvalPeriodIndex(date) {
-    return Number(date.year || 0) * 12 + Number(date.month || 1) - 1;
-  }
-
-  function trendPeriodEndIndex(period, grain) {
-    if (grain === 'year') return Number(period.key) * 12 + 11;
-    const match = String(period.key || '').match(/(\d{4})-(\d{2})/);
-    return Number(match?.[1] || 0) * 12 + Number(match?.[2] || 1) - 1;
   }
 
   function trendSegment(record) {
