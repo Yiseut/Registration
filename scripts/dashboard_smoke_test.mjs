@@ -151,6 +151,20 @@ async function main() {
     globalSearchPlaceholder: document.querySelector('#global-search-input')?.getAttribute('placeholder') || '',
     globalSearchVisibleText: document.querySelector('.global-nav-search')?.textContent?.replace(/\s+/g, '').trim() || '',
     globalSearchWidth: Math.round(document.querySelector('.global-nav-search')?.getBoundingClientRect().width || 0),
+    trend: (() => {
+      const chart = window.echarts?.getInstanceByDom(document.querySelector('#chart-trend'));
+      const option = chart?.getOption() || {};
+      const cumulative = (option.series || []).find((series) => series.name === '累计有效证书');
+      const axisIndex = Array.isArray(cumulative?.yAxisIndex) ? cumulative.yAxisIndex[0] : cumulative?.yAxisIndex;
+      return {
+        subtitle: document.querySelector('.trend-panel .sub')?.textContent?.trim() || '',
+        seriesNames: (option.series || []).map((series) => series.name),
+        cumulativeType: cumulative?.type || '',
+        cumulativeAxisIndex: Number(axisIndex),
+        cumulativeValues: (cumulative?.data || []).map((item) => Number(item?.value ?? item)),
+        yAxisCount: (option.yAxis || []).length,
+      };
+    })(),
     overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
   }));
   assert(overviewState.h1.includes('市场格局'), 'Overview heading is missing');
@@ -178,7 +192,27 @@ async function main() {
   assert(!overviewState.hasGlobalSearchClear, 'Global search should not show a separate clear button');
   assert(!overviewState.globalSearchPlaceholder && !overviewState.globalSearchVisibleText, 'Nav search should not show visible prompt copy', JSON.stringify(overviewState));
   assert(overviewState.globalSearchWidth > 90 && overviewState.globalSearchWidth <= 170, 'Nav search should stay compact', String(overviewState.globalSearchWidth));
+  assert(/新增证书/.test(overviewState.trend.subtitle) && /累计有效证书/.test(overviewState.trend.subtitle), 'Trend card should explain the bar and cumulative-line metrics', overviewState.trend.subtitle);
+  assert(overviewState.trend.seriesNames.includes('累计有效证书'), 'Trend chart should include the cumulative active-certificate series', JSON.stringify(overviewState.trend));
+  assert(overviewState.trend.cumulativeType === 'line' && overviewState.trend.cumulativeAxisIndex === 1, 'Cumulative active certificates should render as a line on the right axis', JSON.stringify(overviewState.trend));
+  assert(overviewState.trend.yAxisCount === 2, 'Trend chart should use separate axes for annual additions and cumulative active certificates', String(overviewState.trend.yAxisCount));
+  assert(overviewState.trend.cumulativeValues.length > 0 && overviewState.trend.cumulativeValues.every((value, index, values) => index === 0 || value >= values[index - 1]), 'Monthly cumulative active-certificate values should be non-decreasing', JSON.stringify(overviewState.trend.cumulativeValues));
   assert(overviewState.overflowX <= 1, 'Overview has horizontal overflow', String(overviewState.overflowX));
+
+  await overviewPage.locator('[data-trend-grain="year"]').click();
+  await overviewPage.waitForTimeout(250);
+  const annualTrendState = await overviewPage.evaluate(() => {
+    const chart = window.echarts?.getInstanceByDom(document.querySelector('#chart-trend'));
+    const option = chart?.getOption() || {};
+    const cumulative = (option.series || []).find((series) => series.name === '累计有效证书');
+    return {
+      years: (option.xAxis?.[0]?.data || []).map(String),
+      values: (cumulative?.data || []).map((item) => Number(item?.value ?? item)),
+    };
+  });
+  assert(annualTrendState.years[0] === '2020', 'Annual cumulative trend should start in 2020', JSON.stringify(annualTrendState));
+  assert(annualTrendState.values.length === annualTrendState.years.length && annualTrendState.values.every((value, index, values) => index === 0 || value >= values[index - 1]), 'Annual cumulative active-certificate values should cover every year and stay non-decreasing', JSON.stringify(annualTrendState));
+  assert(annualTrendState.values.at(-1) > 0, 'Current cumulative active-certificate total should be greater than zero', JSON.stringify(annualTrendState));
 
   await overviewPage.fill('#global-search-input', '海雅美');
   await overviewPage.waitForSelector('.global-search-result');

@@ -526,6 +526,7 @@
 
   function renderTrend() {
     const source = records.filter((record) => record.board !== 'device');
+    const activeSource = source.filter(isCurrentlyActiveCertificate);
     const grain = state.trendGrain === 'year' ? 'year' : 'month';
     const periodRows = buildTrendPeriods(source, grain);
     const trendSegments = MATERIAL_SEGMENTS;
@@ -547,6 +548,10 @@
       }
       return -1;
     });
+    const cumulativeValues = periodRows.map((period) => activeSource.filter((record) => {
+      const date = approvalParts(record);
+      return date && approvalPeriodIndex(date) <= trendPeriodEndIndex(period, grain);
+    }).length);
     const series = segmentSeries.map((segment, seriesIndex) => ({
       name: segment.name,
       code: segment.code,
@@ -560,24 +565,47 @@
         itemStyle: crystalBarStyle(segment.color, topSeriesIdx[periodIndex] === seriesIndex ? [6, 6, 0, 0] : 0),
       })),
     }));
+    series.push({
+      name: '累计有效证书',
+      code: 'active-cumulative',
+      type: 'line',
+      yAxisIndex: 1,
+      data: cumulativeValues,
+      smooth: 0.28,
+      symbol: 'circle',
+      symbolSize: 8,
+      showSymbol: true,
+      z: 8,
+      lineStyle: { color: '#6f6060', width: 3, shadowBlur: 8, shadowColor: 'rgba(111,96,96,.18)' },
+      itemStyle: { color: '#fdf9f8', borderColor: '#6f6060', borderWidth: 3 },
+      emphasis: { focus: 'series', scale: 1.25 },
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          { offset: 0, color: 'rgba(111,96,96,.13)' },
+          { offset: 1, color: 'rgba(111,96,96,0)' },
+        ]),
+      },
+    });
 
     const chart = makeChart(document.getElementById('chart-trend'), {
       color: segmentSeries.map((segment) => segment.color),
       legend: { bottom: 0, type: 'scroll', itemWidth: 18, itemHeight: 10 },
-      grid: { left: 36, right: 24, top: 30, bottom: 50, containLabel: true },
+      grid: { left: 36, right: 42, top: 34, bottom: 50, containLabel: true },
       tooltip: {
         trigger: 'axis',
-        axisPointer: { type: 'shadow' },
+        axisPointer: { type: 'cross', crossStyle: { color: 'rgba(120,104,104,.24)' } },
         formatter: (items) => {
           const period = periodRows[items[0]?.dataIndex];
-          const active = items.filter((item) => Number(item.value) > 0);
-          const lines = active.map((item) => {
+          const barItems = items.filter((item) => item.seriesType === 'bar' && Number(item.value) > 0);
+          const cumulative = items.find((item) => item.seriesName === '累计有效证书');
+          const lines = barItems.map((item) => {
             const matched = segmentSeries.find((segment) => segment.name === item.seriesName);
             const color = escape(String(matched?.color || '#a7abd8'));
             return `<span class="echart-tip-dot" style="background:${color}"></span>${escape(item.seriesName)}：${item.value} 条`;
           }).join('<br/>');
-          const total = active.reduce((sum, item) => sum + Number(item.value || 0), 0);
-          return `<b>${escape(period?.fullLabel || '')}</b><br/>新增 ${total} 条${lines ? `<br/>${lines}` : ''}`;
+          const total = barItems.reduce((sum, item) => sum + Number(item.value || 0), 0);
+          const cumulativeLine = `<span class="echart-tip-dot" style="background:#6f6060"></span>累计有效：${Number(cumulative?.value || 0)} 张`;
+          return `<b>${escape(period?.fullLabel || '')}</b><br/>${cumulativeLine}<br/>新增 ${total} 条${lines ? `<br/>${lines}` : ''}`;
         },
       },
       xAxis: {
@@ -585,12 +613,27 @@
         data: periodRows.map((period) => period.label),
         axisLabel: { rotate: grain === 'month' ? 32 : 0, fontSize: 11 },
       },
-      yAxis: { type: 'value', name: '新增证数' },
+      yAxis: [
+        { type: 'value', name: '新增证数', minInterval: 1 },
+        { type: 'value', name: '累计有效', minInterval: 1, splitLine: { show: false }, axisLabel: { color: '#786868' }, nameTextStyle: { color: '#786868' } },
+      ],
       series,
     });
     if (chart) {
       chart.on('click', (point) => {
         const period = periodRows[point.dataIndex];
+        if (point.seriesName === '累计有效证书') {
+          const matches = activeSource.filter((record) => {
+            const date = approvalParts(record);
+            return date && approvalPeriodIndex(date) <= trendPeriodEndIndex(period, grain);
+          });
+          showRecords({
+            title: `${period.fullLabel} · 累计有效证书`,
+            meta: `${matches.length} 张当前有效证书`,
+            records: matches.map(toDrawerRecord),
+          });
+          return;
+        }
         const segment = trendSegments.find((item) => item.name === point.seriesName);
         const matches = source.filter((record) => {
           const date = approvalParts(record);
@@ -603,6 +646,11 @@
         });
       });
     }
+  }
+
+  function isCurrentlyActiveCertificate(record) {
+    const status = `${record.validityStatus || ''} ${record.dataStatus || ''}`;
+    return !/已过期|失效|注销|撤销|excluded/i.test(status);
   }
 
   function renderInjectableStructure() {
@@ -1508,6 +1556,16 @@
 
   function trendPeriodKey(date, grain) {
     return grain === 'month' ? `${date.year}-${String(date.month).padStart(2, '0')}` : String(date.year);
+  }
+
+  function approvalPeriodIndex(date) {
+    return Number(date.year || 0) * 12 + Number(date.month || 1) - 1;
+  }
+
+  function trendPeriodEndIndex(period, grain) {
+    if (grain === 'year') return Number(period.key) * 12 + 11;
+    const match = String(period.key || '').match(/(\d{4})-(\d{2})/);
+    return Number(match?.[1] || 0) * 12 + Number(match?.[2] || 1) - 1;
   }
 
   function trendSegment(record) {
