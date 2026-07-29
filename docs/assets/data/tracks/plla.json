@@ -7,13 +7,13 @@
     "accent": "#9daaf0"
   },
   "kpi": {
-    "total": 14,
-    "main": 13,
-    "companies": 13,
-    "indications": 3,
+    "total": 15,
+    "main": 14,
+    "companies": 14,
+    "indications": 4,
     "verified": 13,
     "domestic": 10,
-    "imported": 3,
+    "imported": 4,
     "hkmt": 0
   },
   "company_share": [
@@ -66,7 +66,7 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 1,
+  "long_tail_company_count": 2,
   "indication_share": [
     {
       "name": "鼻唇沟",
@@ -79,6 +79,10 @@
     {
       "name": "颞部",
       "value": 1
+    },
+    {
+      "name": "完整适用范围待官方注册证详情回填",
+      "value": 1
     }
   ],
   "origin_share": [
@@ -88,13 +92,17 @@
     },
     {
       "name": "进口",
-      "value": 3
+      "value": 4
     }
   ],
   "material_share": [
     {
       "name": "PLLA",
       "value": 13
+    },
+    {
+      "name": "聚乳酸 / JUVELOOK / 韩国进口 / 三类医疗器械 / NMPA送达信息确认",
+      "value": 1
     }
   ],
   "timeline": {
@@ -106,7 +114,7 @@
     "values": [
       4,
       5,
-      4
+      5
     ]
   },
   "company_indication_heatmap": {
@@ -972,6 +980,69 @@
         "胶原刺激剂"
       ],
       "data_status": "已结构化"
+    },
+    {
+      "id": "RAW-PLLA-国械注进20263130274",
+      "track": "plla",
+      "track_name": "PLA",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "injectable_material",
+      "strategic": "胶原刺激剂",
+      "brand": "JUVELOOK",
+      "aliases": "",
+      "product_name": "聚乳酸面部填充剂",
+      "company": "VAIM / JUVELOOK",
+      "company_key": "vaim / juvelook",
+      "registrant": "VAIM Co., Ltd.",
+      "agent_name": "北京菲思尼生物科技有限责任公司",
+      "agent_address": "",
+      "certificate_no": "国械注进20263130274",
+      "origin": "进口",
+      "category": "童颜针 / PLA",
+      "material_family": "聚乳酸 / JUVELOOK / 韩国进口 / 三类医疗器械 / NMPA送达信息确认",
+      "material_form": "聚乳酸面部填充剂",
+      "approval_date": "2026-07-28",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "注射填充类",
+      "application_segment": "注射填充类",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "待官方注册证详情同步复核",
+      "lidocaine_status": "",
+      "product_tags": "聚乳酸 / JUVELOOK / 韩国进口 / 三类医疗器械 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "聚乳酸",
+        "JUVELOOK",
+        "韩国进口",
+        "三类医疗器械",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "error",
+      "official_verification_status": "NMPA送达信息已确认",
+      "official_product_name": "聚乳酸面部填充剂",
+      "official_registrant": "VAIM Co., Ltd.",
+      "official_approval_date": "2026-07-28",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": false,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "胶原刺激剂"
+      ],
+      "data_status": "已结构化/待官方核验"
     }
   ]
 }

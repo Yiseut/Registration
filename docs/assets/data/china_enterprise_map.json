@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-27T22:03:43",
+  "generated_at": "2026-07-29T15:21:01",
   "scope": "中国及港澳台注册主体，按注册人名称和维护表推断城市；进口注册人不纳入中国企业分布。",
   "metrics": {
-    "candidate_records": 109,
-    "mapped_records": 108,
-    "mapped_companies": 63,
-    "mapped_cities": 25,
+    "candidate_records": 117,
+    "mapped_records": 116,
+    "mapped_companies": 69,
+    "mapped_cities": 26,
     "unmapped_companies": 1
   },
   "cities": [
@@ -15,11 +15,11 @@
       "lat": 39.9042,
       "lng": 116.4074,
       "companies": 8,
-      "registrations": 15,
+      "registrations": 16,
       "tracks": [
         {
           "name": "玻尿酸",
-          "records": 11
+          "records": 12
         },
         {
           "name": "胶原刺激剂",
@@ -38,7 +38,7 @@
       "companies_sample": [
         {
           "name": "爱美客技术发展股份有限公司",
-          "records": 6,
+          "records": 7,
           "top_track": "玻尿酸"
         },
         {
@@ -176,7 +176,7 @@
         }
       ],
       "location_sources": {
-        "维护映射": 9,
+        "维护映射": 10,
         "注册人名称含城市": 6
       }
     },
@@ -632,6 +632,98 @@
       }
     },
     {
+      "city": "广州",
+      "province": "广东",
+      "lat": 23.1291,
+      "lng": 113.2644,
+      "companies": 5,
+      "registrations": 5,
+      "tracks": [
+        {
+          "name": "EBD 设备",
+          "records": 4
+        },
+        {
+          "name": "胶原蛋白",
+          "records": 1
+        }
+      ],
+      "leading_track": "EBD 设备",
+      "companies_sample": [
+        {
+          "name": "广东花至美容科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "广东雅思电子有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "广州信筑医疗技术有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "广州美央创新科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "肽源（广州）生物科技有限公司",
+          "records": 1,
+          "top_track": "胶原蛋白"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20253091163",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "广东花至美容科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2025-06-20"
+        },
+        {
+          "certificate_no": "国械注准20263090453",
+          "brand": "",
+          "product_name": "射频皮肤治疗仪",
+          "company": "广东雅思电子有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-03-03"
+        },
+        {
+          "certificate_no": "国械注准20263011369",
+          "brand": "",
+          "product_name": "半导体激光治疗仪",
+          "company": "广州信筑医疗技术有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-06-30"
+        },
+        {
+          "certificate_no": "国械注准20263091431",
+          "brand": "等离子皮肤治疗仪",
+          "product_name": "等离子皮肤治疗仪",
+          "company": "广州美央创新科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-07-10"
+        },
+        {
+          "certificate_no": "国械注准20263131546",
+          "brand": "重组III型α1亚型人源化胶原蛋白及透明质酸钠植入剂",
+          "product_name": "重组III型α1亚型人源化胶原蛋白及透明质酸钠植入剂",
+          "company": "肽源（广州）生物科技有限公司",
+          "track": "胶原蛋白",
+          "approval_date": "2026-07-28"
+        }
+      ],
+      "location_sources": {
+        "维护映射": 2,
+        "注册人名称含城市": 3
+      }
+    },
+    {
       "city": "常州",
       "province": "江苏",
       "lat": 31.8107,
@@ -739,16 +831,120 @@
       }
     },
     {
+      "city": "长春",
+      "province": "吉林",
+      "lat": 43.8171,
+      "lng": 125.3235,
+      "companies": 4,
+      "registrations": 6,
+      "tracks": [
+        {
+          "name": "胶原刺激剂",
+          "records": 3
+        },
+        {
+          "name": "玻尿酸",
+          "records": 1
+        },
+        {
+          "name": "胶原蛋白",
+          "records": 1
+        },
+        {
+          "name": "EBD 设备",
+          "records": 1
+        }
+      ],
+      "leading_track": "胶原刺激剂",
+      "companies_sample": [
+        {
+          "name": "渼颜空间生物科技（吉林）有限公司",
+          "records": 3,
+          "top_track": "胶原刺激剂"
+        },
+        {
+          "name": "吉林省科英激光股份有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "斐缦（长春）医药生物科技有限责任公司",
+          "records": 1,
+          "top_track": "胶原蛋白"
+        },
+        {
+          "name": "长春圣博玛生物材料有限公司",
+          "records": 1,
+          "top_track": "胶原刺激剂"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20253132016",
+          "brand": "注射用透明质酸钠复合溶液",
+          "product_name": "注射用透明质酸钠复合溶液",
+          "company": "渼颜空间生物科技（吉林）有限公司",
+          "track": "玻尿酸",
+          "approval_date": "2025-09-29"
+        },
+        {
+          "certificate_no": "国械注准20213130276",
+          "brand": "艾维岚",
+          "product_name": "聚乳酸面部填充剂",
+          "company": "长春圣博玛生物材料有限公司",
+          "track": "胶原刺激剂",
+          "approval_date": "2024-05-31"
+        },
+        {
+          "certificate_no": "国械注准20253130831",
+          "brand": "斯弗妍",
+          "product_name": "聚乳酸面部填充剂",
+          "company": "渼颜空间生物科技（吉林）有限公司",
+          "track": "胶原刺激剂",
+          "approval_date": "2025-04-23"
+        },
+        {
+          "certificate_no": "国械注准20253130671",
+          "brand": "倾研",
+          "product_name": "注射用聚己内酯微球面部填充剂",
+          "company": "渼颜空间生物科技（吉林）有限公司",
+          "track": "胶原刺激剂",
+          "approval_date": "2025-03-31"
+        },
+        {
+          "certificate_no": "国械注准20163131609",
+          "brand": "弗缦 FILLDERM",
+          "product_name": "医用胶原充填剂",
+          "company": "斐缦（长春）医药生物科技有限责任公司",
+          "track": "胶原蛋白",
+          "approval_date": "2021-11-03"
+        },
+        {
+          "certificate_no": "国械注准20263091439",
+          "brand": "掺铒光纤激光治疗仪",
+          "product_name": "掺铒光纤激光治疗仪",
+          "company": "吉林省科英激光股份有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-07-10"
+        }
+      ],
+      "location_sources": {
+        "维护映射": 3,
+        "注册人名称含城市": 2,
+        "省级名称推断": 1
+      }
+    },
+    {
       "city": "济南",
       "province": "山东",
       "lat": 36.6512,
       "lng": 117.1201,
       "companies": 3,
-      "registrations": 14,
+      "registrations": 15,
       "tracks": [
         {
           "name": "玻尿酸",
-          "records": 12
+          "records": 13
         },
         {
           "name": "胶原刺激剂",
@@ -759,7 +955,7 @@
       "companies_sample": [
         {
           "name": "华熙生物科技股份有限公司",
-          "records": 10,
+          "records": 11,
           "top_track": "玻尿酸"
         },
         {
@@ -872,93 +1068,7 @@
         }
       ],
       "location_sources": {
-        "维护映射": 12,
-        "注册人名称含城市": 2
-      }
-    },
-    {
-      "city": "长春",
-      "province": "吉林",
-      "lat": 43.8171,
-      "lng": 125.3235,
-      "companies": 3,
-      "registrations": 5,
-      "tracks": [
-        {
-          "name": "胶原刺激剂",
-          "records": 3
-        },
-        {
-          "name": "玻尿酸",
-          "records": 1
-        },
-        {
-          "name": "胶原蛋白",
-          "records": 1
-        }
-      ],
-      "leading_track": "胶原刺激剂",
-      "companies_sample": [
-        {
-          "name": "渼颜空间生物科技（吉林）有限公司",
-          "records": 3,
-          "top_track": "胶原刺激剂"
-        },
-        {
-          "name": "斐缦（长春）医药生物科技有限责任公司",
-          "records": 1,
-          "top_track": "胶原蛋白"
-        },
-        {
-          "name": "长春圣博玛生物材料有限公司",
-          "records": 1,
-          "top_track": "胶原刺激剂"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国械注准20253132016",
-          "brand": "注射用透明质酸钠复合溶液",
-          "product_name": "注射用透明质酸钠复合溶液",
-          "company": "渼颜空间生物科技（吉林）有限公司",
-          "track": "玻尿酸",
-          "approval_date": "2025-09-29"
-        },
-        {
-          "certificate_no": "国械注准20213130276",
-          "brand": "艾维岚",
-          "product_name": "聚乳酸面部填充剂",
-          "company": "长春圣博玛生物材料有限公司",
-          "track": "胶原刺激剂",
-          "approval_date": "2024-05-31"
-        },
-        {
-          "certificate_no": "国械注准20253130831",
-          "brand": "斯弗妍",
-          "product_name": "聚乳酸面部填充剂",
-          "company": "渼颜空间生物科技（吉林）有限公司",
-          "track": "胶原刺激剂",
-          "approval_date": "2025-04-23"
-        },
-        {
-          "certificate_no": "国械注准20253130671",
-          "brand": "倾研",
-          "product_name": "注射用聚己内酯微球面部填充剂",
-          "company": "渼颜空间生物科技（吉林）有限公司",
-          "track": "胶原刺激剂",
-          "approval_date": "2025-03-31"
-        },
-        {
-          "certificate_no": "国械注准20163131609",
-          "brand": "弗缦 FILLDERM",
-          "product_name": "医用胶原充填剂",
-          "company": "斐缦（长春）医药生物科技有限责任公司",
-          "track": "胶原蛋白",
-          "approval_date": "2021-11-03"
-        }
-      ],
-      "location_sources": {
-        "维护映射": 3,
+        "维护映射": 13,
         "注册人名称含城市": 2
       }
     },
@@ -1100,54 +1210,6 @@
       }
     },
     {
-      "city": "广州",
-      "province": "广东",
-      "lat": 23.1291,
-      "lng": 113.2644,
-      "companies": 2,
-      "registrations": 2,
-      "tracks": [
-        {
-          "name": "EBD 设备",
-          "records": 2
-        }
-      ],
-      "leading_track": "EBD 设备",
-      "companies_sample": [
-        {
-          "name": "广东花至美容科技有限公司",
-          "records": 1,
-          "top_track": "EBD 设备"
-        },
-        {
-          "name": "广东雅思电子有限公司",
-          "records": 1,
-          "top_track": "EBD 设备"
-        }
-      ],
-      "records_sample": [
-        {
-          "certificate_no": "国械注准20253091163",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "广东花至美容科技有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2025-06-20"
-        },
-        {
-          "certificate_no": "国械注准20263090453",
-          "brand": "",
-          "product_name": "射频皮肤治疗仪",
-          "company": "广东雅思电子有限公司",
-          "track": "EBD 设备",
-          "approval_date": "2026-03-03"
-        }
-      ],
-      "location_sources": {
-        "维护映射": 2
-      }
-    },
-    {
       "city": "成都",
       "province": "四川",
       "lat": 30.5728,
@@ -1245,6 +1307,54 @@
           "company": "无锡威脉通医疗科技有限公司",
           "track": "EBD 设备",
           "approval_date": "2024-11-21"
+        }
+      ],
+      "location_sources": {
+        "注册人名称含城市": 2
+      }
+    },
+    {
+      "city": "苏州",
+      "province": "江苏",
+      "lat": 31.2989,
+      "lng": 120.5853,
+      "companies": 2,
+      "registrations": 2,
+      "tracks": [
+        {
+          "name": "EBD 设备",
+          "records": 2
+        }
+      ],
+      "leading_track": "EBD 设备",
+      "companies_sample": [
+        {
+          "name": "苏州瀚诺馨生物科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        },
+        {
+          "name": "苏州芙迈蕾医疗科技有限公司",
+          "records": 1,
+          "top_track": "EBD 设备"
+        }
+      ],
+      "records_sample": [
+        {
+          "certificate_no": "国械注准20263091442",
+          "brand": "皮秒Q开关Nd:YAG激光治疗仪",
+          "product_name": "皮秒Q开关Nd:YAG激光治疗仪",
+          "company": "苏州瀚诺馨生物科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-07-10"
+        },
+        {
+          "certificate_no": "国械注准20263091428",
+          "brand": "强脉冲光与激光治疗设备",
+          "product_name": "强脉冲光与激光治疗设备",
+          "company": "苏州芙迈蕾医疗科技有限公司",
+          "track": "EBD 设备",
+          "approval_date": "2026-07-10"
         }
       ],
       "location_sources": {

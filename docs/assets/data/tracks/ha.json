@@ -7,19 +7,19 @@
     "accent": "#58bfd7"
   },
   "kpi": {
-    "total": 111,
-    "main": 106,
-    "companies": 53,
-    "indications": 11,
+    "total": 114,
+    "main": 109,
+    "companies": 54,
+    "indications": 12,
     "verified": 105,
-    "domestic": 51,
-    "imported": 53,
+    "domestic": 53,
+    "imported": 54,
     "hkmt": 2
   },
   "company_share": [
     {
       "name": "华熙生物",
-      "value": 10
+      "value": 11
     },
     {
       "name": "艾尔建 / AbbVie",
@@ -31,7 +31,7 @@
     },
     {
       "name": "爱美客",
-      "value": 6
+      "value": 7
     },
     {
       "name": "其胜生物",
@@ -66,7 +66,7 @@
       "value": 2
     }
   ],
-  "long_tail_company_count": 41,
+  "long_tail_company_count": 42,
   "indication_share": [
     {
       "name": "鼻唇沟",
@@ -109,6 +109,10 @@
       "value": 3
     },
     {
+      "name": "完整适用范围待官方注册证详情回填",
+      "value": 3
+    },
+    {
       "name": "待确认",
       "value": 1
     }
@@ -116,11 +120,11 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 51
+      "value": 53
     },
     {
       "name": "进口",
-      "value": 53
+      "value": 54
     },
     {
       "name": "港澳台",
@@ -139,6 +143,18 @@
     {
       "name": "透明质酸钠 / 交联透明质酸钠凝胶 / 韩国进口 / Humedix / NMPA批准证明文件送达信息",
       "value": 1
+    },
+    {
+      "name": "透明质酸钠 / 交联HA / 含利多卡因 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "value": 1
+    },
+    {
+      "name": "透明质酸钠 / 羟丙基甲基纤维素 / 复合凝胶 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "value": 1
+    },
+    {
+      "name": "透明质酸钠 / 交联HA / 含利多卡因 / 韩国进口 / 三类医疗器械 / NMPA送达信息确认",
+      "value": 1
     }
   ],
   "timeline": {
@@ -156,7 +172,7 @@
       17,
       29,
       32,
-      9
+      12
     ]
   },
   "company_indication_heatmap": {
@@ -7283,6 +7299,199 @@
         "玻尿酸"
       ],
       "data_status": "原始保留"
+    },
+    {
+      "id": "RAW-HA-国械注准20263131525",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "injectable_material",
+      "strategic": "玻尿酸",
+      "brand": "含盐酸利多卡因注射用交联透明质酸钠凝胶",
+      "aliases": "",
+      "product_name": "含盐酸利多卡因注射用交联透明质酸钠凝胶",
+      "company": "华熙生物",
+      "company_key": "bloomage",
+      "registrant": "华熙生物科技股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
+      "certificate_no": "国械注准20263131525",
+      "origin": "国产",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 交联HA / 含利多卡因 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "material_form": "交联HA填充凝胶",
+      "approval_date": "2026-07-28",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "注射填充类",
+      "application_segment": "注射填充类",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "待官方注册证详情同步复核",
+      "lidocaine_status": "含利多卡因",
+      "product_tags": "透明质酸钠 / 交联HA / 含利多卡因 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "透明质酸钠",
+        "交联HA",
+        "含利多卡因",
+        "国产",
+        "三类医疗器械",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "error",
+      "official_verification_status": "NMPA送达信息已确认",
+      "official_product_name": "含盐酸利多卡因注射用交联透明质酸钠凝胶",
+      "official_registrant": "华熙生物科技股份有限公司",
+      "official_approval_date": "2026-07-28",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": false,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
+      "data_status": "已结构化/待官方核验"
+    },
+    {
+      "id": "RAW-HA-国械注准20263131539",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "injectable_material",
+      "strategic": "玻尿酸",
+      "brand": "医用交联透明质酸钠-羟丙基甲基纤维素凝胶",
+      "aliases": "",
+      "product_name": "医用交联透明质酸钠-羟丙基甲基纤维素凝胶",
+      "company": "爱美客",
+      "company_key": "imeik",
+      "registrant": "爱美客技术发展股份有限公司",
+      "agent_name": "",
+      "agent_address": "",
+      "certificate_no": "国械注准20263131539",
+      "origin": "国产",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 羟丙基甲基纤维素 / 复合凝胶 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "material_form": "交联HA-HPMC复合凝胶",
+      "approval_date": "2026-07-28",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "注射填充类",
+      "application_segment": "注射填充类",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "待官方注册证详情同步复核",
+      "lidocaine_status": "",
+      "product_tags": "透明质酸钠 / 羟丙基甲基纤维素 / 复合凝胶 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "透明质酸钠",
+        "羟丙基甲基纤维素",
+        "复合凝胶",
+        "国产",
+        "三类医疗器械",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "error",
+      "official_verification_status": "NMPA送达信息已确认",
+      "official_product_name": "医用交联透明质酸钠-羟丙基甲基纤维素凝胶",
+      "official_registrant": "爱美客技术发展股份有限公司",
+      "official_approval_date": "2026-07-28",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": false,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸",
+        "肉毒毒素"
+      ],
+      "data_status": "已结构化/待官方核验"
+    },
+    {
+      "id": "RAW-HA-国械注进20263130272",
+      "track": "ha",
+      "track_name": "透明质酸钠",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "injectable_material",
+      "strategic": "玻尿酸",
+      "brand": "含利多卡因注射用交联透明质酸钠凝胶",
+      "aliases": "",
+      "product_name": "含利多卡因注射用交联透明质酸钠凝胶",
+      "company": "LG Chem / 爱尔集健生",
+      "company_key": "lg chem / 爱尔集健生",
+      "registrant": "LG Chem, Ltd.",
+      "agent_name": "爱尔集健生科技（北京）有限公司",
+      "agent_address": "",
+      "certificate_no": "国械注进20263130272",
+      "origin": "进口",
+      "category": "透明质酸钠",
+      "material_family": "透明质酸钠 / 交联HA / 含利多卡因 / 韩国进口 / 三类医疗器械 / NMPA送达信息确认",
+      "material_form": "交联HA填充凝胶",
+      "approval_date": "2026-07-28",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "注射填充类",
+      "application_segment": "注射填充类",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "待官方注册证详情同步复核",
+      "lidocaine_status": "含利多卡因",
+      "product_tags": "透明质酸钠 / 交联HA / 含利多卡因 / 韩国进口 / 三类医疗器械 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "透明质酸钠",
+        "交联HA",
+        "含利多卡因",
+        "韩国进口",
+        "三类医疗器械",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "error",
+      "official_verification_status": "NMPA送达信息已确认",
+      "official_product_name": "含利多卡因注射用交联透明质酸钠凝胶",
+      "official_registrant": "LG Chem, Ltd.",
+      "official_approval_date": "2026-07-28",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": false,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "玻尿酸"
+      ],
+      "data_status": "已结构化/待官方核验"
     }
   ]
 }

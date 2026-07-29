@@ -8,11 +8,11 @@
   },
   "kpi": {
     "total": 37,
-    "main": 30,
-    "companies": 26,
+    "main": 35,
+    "companies": 31,
     "indications": 29,
-    "verified": 30,
-    "domestic": 21,
+    "verified": 31,
+    "domestic": 26,
     "imported": 9,
     "hkmt": 0
   },
@@ -66,7 +66,7 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 14,
+  "long_tail_company_count": 19,
   "indication_share": [
     {
       "name": "面部轻度皱纹",
@@ -77,11 +77,11 @@
       "value": 8
     },
     {
-      "name": "面部轻中度皱纹",
-      "value": 3
+      "name": "完整适用范围待官方注册证详情回填",
+      "value": 8
     },
     {
-      "name": "完整适用范围待官方注册证详情回填",
+      "name": "面部轻中度皱纹",
       "value": 3
     },
     {
@@ -120,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 21
+      "value": 26
     },
     {
       "name": "进口",
@@ -198,7 +198,7 @@
       1,
       6,
       10,
-      7
+      12
     ]
   },
   "company_indication_heatmap": {
@@ -1918,7 +1918,7 @@
       "id": "RAW-LASER_IPL-国械注准20263011369",
       "track": "raw_laser_ipl",
       "track_name": "EBD 设备 / 激光与光电",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "energy_device",
       "strategic": "EBD 设备",
@@ -1969,9 +1969,11 @@
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
       "verified": true,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
       "data_status": "原始保留/待官方核验"
     },
     {
@@ -2169,7 +2171,7 @@
       "id": "RAW-LASER_IPL-国械注准20263091439",
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "energy_device",
       "strategic": "EBD 设备",
@@ -2212,7 +2214,7 @@
         "NMPA送达信息确认"
       ],
       "official_status": "error",
-      "official_verification_status": "官方查询失败",
+      "official_verification_status": "NMPA送达信息已确认",
       "official_product_name": "掺铒光纤激光治疗仪",
       "official_registrant": "吉林省科英激光股份有限公司",
       "official_approval_date": "2026-07-10",
@@ -2220,16 +2222,18 @@
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
       "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
       "data_status": "原始保留/待官方核验"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263091431",
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "energy_device",
       "strategic": "EBD 设备",
@@ -2272,7 +2276,7 @@
         "NMPA送达信息确认"
       ],
       "official_status": "error",
-      "official_verification_status": "官方查询失败",
+      "official_verification_status": "NMPA送达信息已确认",
       "official_product_name": "等离子皮肤治疗仪",
       "official_registrant": "广州美央创新科技有限公司",
       "official_approval_date": "2026-07-10",
@@ -2280,16 +2284,18 @@
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
       "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
       "data_status": "原始保留/待官方核验"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263091442",
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "energy_device",
       "strategic": "EBD 设备",
@@ -2332,7 +2338,7 @@
         "NMPA送达信息确认"
       ],
       "official_status": "error",
-      "official_verification_status": "官方查询失败",
+      "official_verification_status": "NMPA送达信息已确认",
       "official_product_name": "皮秒Q开关Nd:YAG激光治疗仪",
       "official_registrant": "苏州瀚诺馨生物科技有限公司",
       "official_approval_date": "2026-07-10",
@@ -2340,16 +2346,18 @@
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
       "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
       "data_status": "原始保留/待官方核验"
     },
     {
       "id": "RAW-LASER_IPL-国械注准20263091428",
       "track": "laser_ipl",
       "track_name": "激光/IPL设备",
-      "record_type": "raw_lead",
+      "record_type": "三类医疗器械",
       "regulatory_class": "三类医疗器械",
       "device_type": "energy_device",
       "strategic": "EBD 设备",
@@ -2392,7 +2400,7 @@
         "NMPA送达信息确认"
       ],
       "official_status": "error",
-      "official_verification_status": "官方查询失败",
+      "official_verification_status": "NMPA送达信息已确认",
       "official_product_name": "强脉冲光与激光治疗设备",
       "official_registrant": "苏州芙迈蕾医疗科技有限公司",
       "official_approval_date": "2026-07-10",
@@ -2400,9 +2408,11 @@
       "official_indication": "完整适用范围待官方注册证详情回填",
       "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
       "verified": false,
-      "main_landscape": false,
-      "main_landscape_included": "否",
-      "portfolio_segments": [],
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "EBD 设备"
+      ],
       "data_status": "原始保留/待官方核验"
     },
     {

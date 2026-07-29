@@ -7,12 +7,12 @@
     "accent": "#dd7b8b"
   },
   "kpi": {
-    "total": 21,
-    "main": 20,
-    "companies": 13,
-    "indications": 12,
+    "total": 22,
+    "main": 21,
+    "companies": 14,
+    "indications": 13,
     "verified": 20,
-    "domestic": 15,
+    "domestic": 16,
     "imported": 2,
     "hkmt": 3
   },
@@ -66,7 +66,7 @@
       "value": 1
     }
   ],
-  "long_tail_company_count": 1,
+  "long_tail_company_count": 2,
   "indication_share": [
     {
       "name": "额部",
@@ -120,7 +120,7 @@
   "origin_share": [
     {
       "name": "国产",
-      "value": 15
+      "value": 16
     },
     {
       "name": "港澳台",
@@ -139,6 +139,10 @@
     {
       "name": "重组/类人源胶原",
       "value": 6
+    },
+    {
+      "name": "重组III型α1亚型人源化胶原蛋白 / 透明质酸钠 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "value": 1
     }
   ],
   "timeline": {
@@ -154,7 +158,7 @@
       3,
       2,
       8,
-      5
+      6
     ]
   },
   "company_indication_heatmap": {
@@ -1526,6 +1530,69 @@
         "胶原蛋白"
       ],
       "data_status": "已结构化"
+    },
+    {
+      "id": "RAW-COLLAGEN-国械注准20263131546",
+      "track": "collagen",
+      "track_name": "胶原蛋白",
+      "record_type": "三类医疗器械",
+      "regulatory_class": "三类医疗器械",
+      "device_type": "injectable_material",
+      "strategic": "胶原蛋白",
+      "brand": "重组III型α1亚型人源化胶原蛋白及透明质酸钠植入剂",
+      "aliases": "",
+      "product_name": "重组III型α1亚型人源化胶原蛋白及透明质酸钠植入剂",
+      "company": "肽源生物",
+      "company_key": "肽源生物",
+      "registrant": "肽源（广州）生物科技有限公司",
+      "agent_name": "",
+      "agent_address": "",
+      "certificate_no": "国械注准20263131546",
+      "origin": "国产",
+      "category": "胶原蛋白",
+      "material_family": "重组III型α1亚型人源化胶原蛋白 / 透明质酸钠 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "material_form": "重组胶原蛋白-HA复合植入剂",
+      "approval_date": "2026-07-28",
+      "approval_year": 2026,
+      "valid_until": "",
+      "validity_status": "",
+      "market_scope": "注射填充类",
+      "application_segment": "注射填充类",
+      "primary_indication": "完整适用范围待官方注册证详情回填",
+      "approved_indications": "完整适用范围待官方注册证详情回填",
+      "indication_description": "NMPA批准证明文件送达信息确认获批；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "scope_full": "NMPA批准证明文件送达信息确认该产品获批上市；完整适用范围、注射层次、规格、结构组成和有效期待官方注册证详情同步后回填。",
+      "specification": "待官方注册证详情同步复核",
+      "components": "待官方注册证详情同步复核",
+      "lidocaine_status": "",
+      "product_tags": "重组III型α1亚型人源化胶原蛋白 / 透明质酸钠 / 国产 / 三类医疗器械 / NMPA送达信息确认",
+      "market_claim": "",
+      "boundary_reason": "",
+      "indications": [
+        "完整适用范围待官方注册证详情回填"
+      ],
+      "tags": [
+        "重组III型α1亚型人源化胶原蛋白",
+        "透明质酸钠",
+        "国产",
+        "三类医疗器械",
+        "NMPA送达信息确认"
+      ],
+      "official_status": "error",
+      "official_verification_status": "NMPA送达信息已确认",
+      "official_product_name": "重组III型α1亚型人源化胶原蛋白及透明质酸钠植入剂",
+      "official_registrant": "肽源（广州）生物科技有限公司",
+      "official_approval_date": "2026-07-28",
+      "official_valid_until": "",
+      "official_indication": "完整适用范围待官方注册证详情回填",
+      "official_scope": "NMPA批准证明文件送达信息确认获批；完整适用范围待官方注册证详情回填。",
+      "verified": false,
+      "main_landscape": true,
+      "main_landscape_included": "是",
+      "portfolio_segments": [
+        "胶原蛋白"
+      ],
+      "data_status": "已结构化/待官方核验"
     }
   ]
 }
